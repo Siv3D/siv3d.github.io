@@ -313,9 +313,72 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        チュートリアル
+      </label>
+    
     <a href="./" title="チュートリアル" class="md-nav__link md-nav__link--active">
       チュートリアル
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#siv3d" title="Siv3D の基本" class="md-nav__link">
+    Siv3D の基本
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="インクルードするヘッダ" class="md-nav__link">
+    インクルードするヘッダ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="エントリーポイント" class="md-nav__link">
+    エントリーポイント
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="最小のプログラム" class="md-nav__link">
+    最小のプログラム
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="メインループとウィンドウ" class="md-nav__link">
+    メインループとウィンドウ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -342,6 +405,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#siv3d" title="Siv3D の基本" class="md-nav__link">
+    Siv3D の基本
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="インクルードするヘッダ" class="md-nav__link">
+    インクルードするヘッダ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="エントリーポイント" class="md-nav__link">
+    エントリーポイント
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="最小のプログラム" class="md-nav__link">
+    最小のプログラム
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="メインループとウィンドウ" class="md-nav__link">
+    メインループとウィンドウ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -354,6 +467,50 @@
                 
                 
                 <h1 id="_1">チュートリアル</h1>
+<h2 id="siv3d">Siv3D の基本</h2>
+<h3 id="_2">インクルードするヘッダ</h3>
+<p>Siv3D のプログラムを書くときは、いつも <code class="codehilite"><span class="o">&lt;</span><span class="n">Siv3D</span><span class="p">.</span><span class="n">hpp</span><span class="o">&gt;</span></code> ヘッダをインクルードします。
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+</pre></div></p>
+<p>これだけで、Siv3D のほぼすべての機能を使ってプログラムを書けるようになります。<br />
+「ほぼ」というのは、マクロを定義することで利用可能になる上級者向けのいくつかの機能や、実験的な機能を提供するおまけのヘッダがあるためです。今はまだ説明しません。</p>
+<p>C++ のプログラマなら、ほかにも <code class="codehilite"><span class="o">&lt;</span><span class="n">iostream</span><span class="o">&gt;</span></code> や <code class="codehilite"><span class="o">&lt;</span><span class="n">vector</span><span class="o">&gt;</span></code> などの C++ 標準ライブラリをインクルードしたくなるかもしれませんが、その必要はありません。すでに <code class="codehilite"><span class="o">&lt;</span><span class="n">Siv3D</span><span class="p">.</span><span class="n">hpp</span><span class="o">&gt;</span></code> の中で、Siv3D のプログラミングでよく使われる主要な C++ 標準ライブラリがインクルードされているためです。また、標準ライブラリの機能の多くが、より便利な Siv3D の関数やクラスで再実装されているので、Siv3D の学習の序盤で C++ 標準ライブラリの関数を使うことはめったにありません。</p>
+<h3 id="_3">エントリーポイント</h3>
+<p>通常、C++ のエントリーポイントは <code class="codehilite"><span class="nb">int</span> <span class="n">main</span><span class="p">()</span></code> です。しかし、Siv3D では、この <code class="codehilite"><span class="n">main</span><span class="p">()</span></code> 関数は Siv3D エンジンによって実装されていて、次のようにユーザの見えないところで、ウィンドウやグラフィックスの初期化処理を行うプログラムがすでに用意されています。
+<div class="codehilite"><pre><span></span><span class="o">//</span> <span class="err">説明のための疑似コード</span>
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="err">{</span>
+    <span class="n">Siv3D</span> <span class="err">の初期化</span><span class="p">...</span>
+
+    <span class="n">Main</span><span class="p">();</span> <span class="o">//</span> <span class="err">この関数をユーザがプログラムする</span>
+
+    <span class="n">Siv3D</span> <span class="err">の終了処理</span><span class="p">...</span>
+<span class="err">}</span>
+</pre></div>
+ユーザが実装するプログラムは、このプログラムの <code class="codehilite"><span class="n">void</span> <span class="n">Main</span><span class="p">()</span></code> 関数です。</p>
+<p>事前に初期化処理が完了しているので、<code class="codehilite"><span class="n">Main</span></code> 関数の中でいきなり Siv3D の機能を使うことができますし、<code class="codehilite"><span class="n">Main</span></code> 関数の実行が終了したら、ロードしたアセットやウィンドウの後片付けを Siv3D が自動的に行ってくれます。</p>
+<h3 id="_4">最小のプログラム</h3>
+<p>ここまでの話をまとめて、これが Siv3D の最小のプログラムです。
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+ここでの <code class="codehilite"><span class="n">Main</span></code> 関数はすぐに終了してしまうので、このプログラムを実行しても、ほとんど何も反応が無いように見えるでしょう。</p>
+<h3 id="_5">メインループとウィンドウ</h3>
+<p><code class="codehilite"><span class="n">Main</span></code> 関数がしばらく続くようにするため、<strong>メインループ</strong> を実装します。
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="hll">    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="p">}</span>
+</pre></div></p>
                 
                   
                 
