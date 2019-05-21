@@ -367,6 +367,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#hello-siv3d" title="Hello, Siv3D!" class="md-nav__link">
+    Hello, Siv3D!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#print" title="もっと Print" class="md-nav__link">
+    もっと Print
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -444,6 +458,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#hello-siv3d" title="Hello, Siv3D!" class="md-nav__link">
+    Hello, Siv3D!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#print" title="もっと Print" class="md-nav__link">
+    もっと Print
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -475,8 +503,12 @@
 <p>これだけで、Siv3D のほぼすべての機能を使ってプログラムを書けるようになります。<br />
 「ほぼ」というのは、マクロを定義することで利用可能になる上級者向けのいくつかの機能や、実験的な機能を提供するおまけのヘッダがあるためです。今はまだ説明しません。</p>
 <p>C++ のプログラマなら、ほかにも <code class="codehilite"><span class="o">&lt;</span><span class="n">iostream</span><span class="o">&gt;</span></code> や <code class="codehilite"><span class="o">&lt;</span><span class="n">vector</span><span class="o">&gt;</span></code> などの C++ 標準ライブラリをインクルードしたくなるかもしれませんが、その必要はありません。すでに <code class="codehilite"><span class="o">&lt;</span><span class="n">Siv3D</span><span class="p">.</span><span class="n">hpp</span><span class="o">&gt;</span></code> の中で、Siv3D のプログラミングでよく使われる主要な C++ 標準ライブラリがインクルードされているためです。また、標準ライブラリの機能の多くが、より便利な Siv3D の関数やクラスで再実装されているので、Siv3D の学習の序盤で C++ 標準ライブラリの関数を使うことはめったにありません。</p>
+<div class="admonition 文法">
+<p class="admonition-title">文法</p>
+<p><code class="codehilite"># <span class="k">include</span> <span class="o">&lt;</span>???<span class="o">&gt;</span></code> または <code class="codehilite"># <span class="k">include</span> <span class="s2">&quot;</span><span class="s">???</span><span class="s2">&quot;</span></code> で、ヘッダ <code class="codehilite"><span class="o">???</span></code> をインクルードします。前者の書き方では、標準ライブラリや、プロジェクトの設定でインクルードパスに設定されているフォルダのファイルが対象になり、後者では相対パスまたは絶対パスでファイルを検索します。Siv3D のプロジェクトでは、Siv3D のヘッダがあるディレクトリがインクルードパスに設定されていて、<code class="codehilite"># <span class="k">include</span> <span class="o">&lt;</span><span class="nv">Siv3D</span>.<span class="nv">hpp</span><span class="o">&gt;</span></code> で Siv3D のヘッダをインクルードできます。Siv3D 以外のプロジェクトで同じように書いても <code class="codehilite"><span class="n">Siv3D</span><span class="p">.</span><span class="n">hpp</span></code> を見つけられずコンパイルエラーになります。</p>
+</div>
 <h3 id="_3">エントリーポイント</h3>
-<p>通常、C++ のエントリーポイントは <code class="codehilite"><span class="nb">int</span> <span class="n">main</span><span class="p">()</span></code> です。しかし、Siv3D では、この <code class="codehilite"><span class="n">main</span><span class="p">()</span></code> 関数は Siv3D エンジンによって実装されていて、次のようにユーザの見えないところで、ウィンドウやグラフィックスの初期化処理を行うプログラムがすでに用意されています。
+<p>通常、C++ のエントリーポイントは <code class="codehilite"><span class="nb">int</span> <span class="n">main</span><span class="p">()</span></code> です。しかし、Siv3D ではこの <code class="codehilite"><span class="n">main</span><span class="p">()</span></code> 関数は Siv3D エンジンによって実装されていて、次のようにユーザの見えないところで、ウィンドウやグラフィックスの初期化処理を行うプログラムがすでに用意されています。
 <div class="codehilite"><pre><span></span><span class="o">//</span> <span class="err">説明のための疑似コード</span>
 <span class="nb">int</span> <span class="n">main</span><span class="p">()</span>
 <span class="err">{</span>
@@ -490,7 +522,7 @@
 ユーザが実装するプログラムは、このプログラムの <code class="codehilite"><span class="n">void</span> <span class="n">Main</span><span class="p">()</span></code> 関数です。</p>
 <p>事前に初期化処理が完了しているので、<code class="codehilite"><span class="n">Main</span></code> 関数の中でいきなり Siv3D の機能を使うことができますし、<code class="codehilite"><span class="n">Main</span></code> 関数の実行が終了したら、ロードしたアセットやウィンドウの後片付けを Siv3D が自動的に行ってくれます。</p>
 <h3 id="_4">最小のプログラム</h3>
-<p>ここまでの話をまとめて、これが Siv3D の最小のプログラムです。
+<p>ここまでの話を踏まえて、これが Siv3D の最小のプログラムです。
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -499,8 +531,12 @@
 <span class="p">}</span>
 </pre></div>
 ここでの <code class="codehilite"><span class="n">Main</span></code> 関数はすぐに終了してしまうので、このプログラムを実行しても、ほとんど何も反応が無いように見えるでしょう。</p>
+<div class="admonition 文法">
+<p class="admonition-title">文法</p>
+<p>これは関数を定義するプログラムです。<code class="codehilite"><span class="n">Main</span></code> は関数の名前を、<code class="codehilite"><span class="n">void</span></code> はこの関数が結果の値を返さないことを表します。<code class="codehilite"><span class="err">{</span> <span class="err">}</span></code> 内には、この関数で実行したいプログラムを上から順に記述します。途中で <code class="codehilite"><span class="k">return</span></code> するか、終端までたどり着くと関数の実行は終了します。</p>
+</div>
 <h3 id="_5">メインループとウィンドウ</h3>
-<p><code class="codehilite"><span class="n">Main</span></code> 関数がしばらく続くようにするため、<strong>メインループ</strong> を実装します。
+<p>プログラムがすぐに終了してしまっては、ユーザとインタラクションするようなアプリケーションが作れません。<code class="codehilite"><span class="n">Main</span></code> 関数がずっと続くように <strong>メインループ</strong> を実装しましょう。次のプログラムを実行するとウィンドウが表示されます。
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -510,7 +546,63 @@
 </span><span class="hll">
 </span><span class="hll">    <span class="p">}</span>
 </span><span class="p">}</span>
-</pre></div></p>
+</pre></div>
+新しく加えた行は <code class="codehilite"><span class="k">while</span></code> 文によってくり返し実行され、プログラムが半永久的に続くようになります。くり返しのたびに <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span></code> 関数がウィンドウの表示や音楽の再生、マウスやキーボードの入力情報などを更新するので、グラフィックスの表示やユーザとのやり取りをプログラムできるようになります。</p>
+<div class="admonition 文法">
+<p class="admonition-title">文法</p>
+<p><code class="codehilite"><span class="k">while</span><span class="ss">()</span></code> 文は、<code class="codehilite"><span class="p">(</span> <span class="p">)</span></code> 内の条件が真 (true) の間、<code class="codehilite"><span class="err">{</span> <span class="err">}</span></code> で囲まれた部分をくり返し実行します。</p>
+</div>
+<p><code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span></code> は普段は <code class="codehilite"><span class="k">true</span></code> を返しますが、ウィンドウが閉じられたり、エスケープキーが押されたりするなど、アプリケーションを終了させる特別な <strong>ユーザアクション</strong> が実行されると、以降はずっと <code class="codehilite"><span class="k">false</span></code> を返すようになります。 アプリケーションはこの状態になったら速やかにメインループから抜け、<code class="codehilite"><span class="n">Main</span></code> 関数を終了させる必要があります。といっても、上記のプログラムのように書いていれば、自然にこの通りに動作するので心配はありません。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>デフォルトでは「ウィンドウを閉じる」「エスケープキーを押す」「<code class="codehilite"><span class="nv">System</span>::<span class="k">Exit</span></code> 関数を呼ぶ」の 3 つが、アプリケーションを終了させるためのユーザアクションとして設定されています。この設定は<code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="n">SetTerminationTriggers</span></code> 関数に <code class="codehilite"><span class="n">UserAction</span></code> フラグの組み合わせを渡すことでカスタマイズできます。</p>
+</div>
+<h3 id="hello-siv3d">Hello, Siv3D!</h3>
+<p>画面にメッセージを表示してみましょう。Siv3D でテキストや数値を簡単に画面に表示するには、デバッグ表示のための機能 <code class="codehilite"><span class="n">Print</span></code> を使うと便利です。</p>
+<p><div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="hll">    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Hello, Siv3D!&quot;</span><span class="p">;</span>
+</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<code class="codehilite"><span class="n">Print</span></code> に向かって、出力の記号 <code class="codehilite"><span class="o">&lt;&lt;</span></code> でテキストを送ると、そのテキストが画面に表示されます。</p>
+<p><img alt="" src="../images/tutorial/410.png" /></p>
+<div class="admonition 文法">
+<p class="admonition-title">文法</p>
+<p>テキストをプログラムに登場させるときは <code class="codehilite"><span class="ss">&quot; &quot;</span></code> で囲みます。Siv3D ではさらに、日本語を扱いやすい UTF-32 という形式でテキストデータを扱うため、<code class="codehilite"><span class="err">&quot;</span></code> の先頭には <code class="codehilite"><span class="n">U</span></code> というプレフィックスを付けます。</p>
+</div>
+<h3 id="print">もっと Print</h3>
+<p><code class="codehilite"><span class="n">Print</span></code> に送れるのは 1 つのテキストだけではありません。数値や配列、日付なども送ってみましょう。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Hello, Siv3D!&quot;</span><span class="p">;</span>
+
+<span class="hll">    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;This is fun!&quot;</span><span class="p">;</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="mi">365</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot; days&quot;</span><span class="p">;</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="mi">100</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">Range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">Date</span><span class="o">::</span><span class="n">Today</span><span class="p">();</span>
+</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><img alt="" src="../images/tutorial/510.png" /></p>
                 
                   
                 
