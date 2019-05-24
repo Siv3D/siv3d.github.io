@@ -13,7 +13,7 @@
         <meta name="description" content="Siv3D: An open source C++17 library for creative coding">
       
       
-        <link rel="canonical" href="https://siv3d.github.io/">
+        <link rel="canonical" href="https://siv3d.github.io/ja-jp/sample/app/">
       
       
         <meta name="author" content="Ryo Suzuki">
@@ -37,18 +37,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="assets/images/favicon.ico">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
-        <title>Getting started with Siv3D - Siv3D</title>
+        <title>アプリ - Siv3D</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.750b69bd.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.750b69bd.css">
       
-        <link rel="stylesheet" href="assets/stylesheets/application-palette.224b79ff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -66,12 +66,12 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     
-      <link rel="stylesheet" href="siv3d_styles.css">
+      <link rel="stylesheet" href="../../../siv3d_styles.css">
     
     
       
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#getting-started" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -118,7 +118,7 @@
               Siv3D
             </span>
             <span class="md-header-nav__topic">
-              Getting started with Siv3D
+              アプリ
             </span>
           
         </div>
@@ -174,7 +174,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="." title="English" class="md-tabs__link md-tabs__link--active">
+        <a href="../../.." title="English" class="md-tabs__link">
           English
         </a>
       
@@ -187,7 +187,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="ja-jp/" title="日本語" class="md-tabs__link">
+        <a href="../../" title="日本語" class="md-tabs__link md-tabs__link--active">
           日本語
         </a>
       
@@ -222,12 +222,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
     
     <label class="md-nav__link" for="nav-1">
       English
@@ -243,123 +241,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Getting started with Siv3D
-      </label>
-    
-    <a href="." title="Getting started with Siv3D" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../.." title="Getting started with Siv3D" class="md-nav__link">
       Getting started with Siv3D
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" title="Requirements" class="md-nav__link">
-    Requirements
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows" title="Windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos" title="macOS" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-opensiv3d-sdk" title="Installing OpenSiv3D SDK" class="md-nav__link">
-    Installing OpenSiv3D SDK
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows_1" title="Windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos_1" title="macOS" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-an-opensiv3d-application" title="Building an OpenSiv3D Application" class="md-nav__link">
-    Building an OpenSiv3D Application
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows_2" title="Windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos_2" title="macOS" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -388,7 +274,7 @@
 
 
   <li class="md-nav__item">
-    <a href="tutorial/basic/" title="1. First steps" class="md-nav__link">
+    <a href="../../../tutorial/basic/" title="1. First steps" class="md-nav__link">
       1. First steps
     </a>
   </li>
@@ -400,7 +286,7 @@
 
 
   <li class="md-nav__item">
-    <a href="tutorial/shape/" title="2. Drawing shapes" class="md-nav__link">
+    <a href="../../../tutorial/shape/" title="2. Drawing shapes" class="md-nav__link">
       2. Drawing shapes
     </a>
   </li>
@@ -436,7 +322,7 @@
 
 
   <li class="md-nav__item">
-    <a href="sample/game/" title="Game" class="md-nav__link">
+    <a href="../../../sample/game/" title="Game" class="md-nav__link">
       Game
     </a>
   </li>
@@ -448,7 +334,7 @@
 
 
   <li class="md-nav__item">
-    <a href="sample/app/" title="Application" class="md-nav__link">
+    <a href="../../../sample/app/" title="Application" class="md-nav__link">
       Application
     </a>
   </li>
@@ -468,10 +354,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       日本語
@@ -489,7 +377,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ja-jp/" title="Siv3D をはじめよう" class="md-nav__link">
+    <a href="../../" title="Siv3D をはじめよう" class="md-nav__link">
       Siv3D をはじめよう
     </a>
   </li>
@@ -520,7 +408,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ja-jp/tutorial/basic/" title="1. Siv3D の基本" class="md-nav__link">
+    <a href="../../tutorial/basic/" title="1. Siv3D の基本" class="md-nav__link">
       1. Siv3D の基本
     </a>
   </li>
@@ -532,7 +420,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ja-jp/tutorial/shape/" title="2. 図形を描く" class="md-nav__link">
+    <a href="../../tutorial/shape/" title="2. 図形を描く" class="md-nav__link">
       2. 図形を描く
     </a>
   </li>
@@ -547,10 +435,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
     
     <label class="md-nav__link" for="nav-2-3">
       サンプル
@@ -568,7 +458,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ja-jp/sample/game/" title="ゲーム" class="md-nav__link">
+    <a href="../game/" title="ゲーム" class="md-nav__link">
       ゲーム
     </a>
   </li>
@@ -578,11 +468,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="ja-jp/sample/app/" title="アプリ" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        アプリ
+      </label>
+    
+    <a href="./" title="アプリ" class="md-nav__link md-nav__link--active">
       アプリ
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="スケッチ" class="md-nav__link">
+    スケッチ
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -597,7 +525,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ja-jp/community/community/" title="コミュニティ" class="md-nav__link">
+    <a href="../../community/community/" title="コミュニティ" class="md-nav__link">
       コミュニティ
     </a>
   </li>
@@ -609,7 +537,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ja-jp/shop/shop/" title="ショップ" class="md-nav__link">
+    <a href="../../shop/shop/" title="ショップ" class="md-nav__link">
       ショップ
     </a>
   </li>
@@ -641,83 +569,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requirements" title="Requirements" class="md-nav__link">
-    Requirements
+  <a href="#_2" title="スケッチ" class="md-nav__link">
+    スケッチ
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows" title="Windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos" title="macOS" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-opensiv3d-sdk" title="Installing OpenSiv3D SDK" class="md-nav__link">
-    Installing OpenSiv3D SDK
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows_1" title="Windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos_1" title="macOS" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-an-opensiv3d-application" title="Building an OpenSiv3D Application" class="md-nav__link">
-    Building an OpenSiv3D Application
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows_2" title="Windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos_2" title="macOS" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -738,84 +592,60 @@
               
                 
                 
-                <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+                <h1 id="_1">アプリ</h1>
+<h2 id="_2">スケッチ</h2>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+    <span class="c1">// キャンバスのサイズ</span>
+    <span class="k">constexpr</span> <span class="n">Size</span> <span class="n">canvasSize</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
 
-    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+    <span class="c1">// ペンの太さ</span>
+    <span class="k">constexpr</span> <span class="n">int32</span> <span class="n">thickness</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
 
-    <span class="k">const</span> <span class="n">Texture</span> <span class="n">cat</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="p">));</span>
+    <span class="c1">// ペンの色</span>
+    <span class="k">constexpr</span> <span class="n">Color</span> <span class="n">penColor</span> <span class="o">=</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">;</span>
 
-    <span class="n">Vec2</span> <span class="n">catPos</span><span class="p">(</span><span class="mi">650</span><span class="p">,</span> <span class="mi">450</span><span class="p">);</span>
+    <span class="c1">// 書き込み用の画像データを用意</span>
+    <span class="n">Image</span> <span class="n">image</span><span class="p">(</span><span class="n">canvasSize</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+    <span class="c1">// 表示用のテクスチャ（内容を更新するので DynamicTexture）</span>
+    <span class="n">DynamicTexture</span> <span class="n">texture</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">font</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Hello, Siv3D!🐣&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Black</span><span class="p">);</span>
-
-        <span class="n">font</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">()).</span><span class="n">draw</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.6</span><span class="p">));</span>
-
-        <span class="n">cat</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">80</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">catPos</span><span class="p">);</span>
-
-        <span class="n">Circle</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span> <span class="mi">40</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">KeyA</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Hello!&quot;</span><span class="p">;</span>
+            <span class="c1">// 書き込む線の始点は直前のフレームのマウスカーソル座標</span>
+            <span class="c1">// （初回はタッチ操作時の座標のジャンプを防ぐため、現在のマウスカーソル座標にする）</span>
+            <span class="k">const</span> <span class="n">Point</span> <span class="n">from</span> <span class="o">=</span> <span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">()</span> <span class="o">?</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">()</span> <span class="o">:</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">PreviousPos</span><span class="p">();</span>
+
+            <span class="c1">// 書き込む線の終点は現在のマウスカーソル座標</span>
+            <span class="k">const</span> <span class="n">Point</span> <span class="n">to</span> <span class="o">=</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+
+            <span class="c1">// image に線を書き込む</span>
+            <span class="n">Line</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">).</span><span class="n">overwrite</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">thickness</span><span class="p">,</span> <span class="n">penColor</span><span class="p">);</span>
+
+            <span class="c1">// 書き込み終わった image でテクスチャを更新</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Move the cat&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">20</span><span class="p">)))</span>
+        <span class="c1">// 描いたものを消去するボタンが押されたら</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Clear&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="mi">120</span><span class="p">))</span>
         <span class="p">{</span>
-            <span class="n">catPos</span> <span class="o">=</span> <span class="n">RandomVec2</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Rect</span><span class="p">());</span>
+            <span class="c1">// 画像を白で塗りつぶす</span>
+            <span class="n">image</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+            <span class="c1">// 塗りつぶし終わった image でテクスチャを更新</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
         <span class="p">}</span>
+
+        <span class="c1">// テクスチャを表示</span>
+        <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-
-<h1 id="getting-started">Getting started</h1>
-<h2 id="requirements">Requirements</h2>
-<h3 id="windows">Windows</h3>
-<ul>
-<li>Windows 7 SP1 / 8.1 / 10 (64-bit)</li>
-<li><strong>Visual Studio 2019 version 16.1</strong><ul>
-<li>Install <strong>Desktop development with C++</strong> from the Visual Studio Installer</li>
-</ul>
-</li>
-</ul>
-<h3 id="macos">macOS</h3>
-<ul>
-<li>macOS High Sierra v10.13 or newer</li>
-<li>Xcode 10.1 or newer</li>
-</ul>
-<h2 id="installing-opensiv3d-sdk">Installing OpenSiv3D SDK</h2>
-<h3 id="windows_1">Windows</h3>
-<ol>
-<li>Download <strong><a href="#">OpenSiv3D Installer for Windows Desktop</a></strong> and run the installer.</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Use the Control Panel to uninstall OpenSiv3D SDK.</p>
-</div>
-<h3 id="macos_1">macOS</h3>
-<ol>
-<li>Download <strong><a href="#">OpenSiv3D Project Templates for macOS</a></strong> and extract its contents.</li>
-</ol>
-<h2 id="building-an-opensiv3d-application">Building an OpenSiv3D Application</h2>
-<h3 id="windows_2">Windows</h3>
-<ol>
-<li>Lanuch Visual Studio 2019 and open a <strong>New Project Dialog</strong> by clicking <strong>Create a new project</strong>.</li>
-<li>Select <strong>OpenSiv3D(X.X.X)</strong> project and then click <strong>Next</strong>.</li>
-<li>Type a name for the project.</li>
-<li>Click <strong>OK</strong> to create the project.</li>
-<li>On the <strong>Build</strong> menu, click <strong>Build Solution</strong>.</li>
-<li>On the <strong>Debug</strong> menu, click <strong>Start Debugging</strong>.</li>
-</ol>
-<h3 id="macos_2">macOS</h3>
-<ol>
-<li>Open the project file (siv3d_vX.X.X_macOS/examples/empty/empty.xcodeproj) in Xcode.</li>
-<li>Click <strong>Run button ▶️</strong> to build and run the application.</li>
-</ol>
                 
                   
                 
@@ -836,14 +666,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href="../game/" title="ゲーム" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                ゲーム
+              </span>
+            </div>
+          </a>
         
-          <a href="tutorial/basic/" title="1. First steps" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../../community/community/" title="コミュニティ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                1. First steps
+                コミュニティ
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -870,7 +714,7 @@
       </div>
       
   <div class="md-footer-social">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/Siv3D/OpenSiv3D" class="md-footer-social__link fa fa-github"></a>
     
@@ -884,9 +728,9 @@
       
     </div>
     
-      <script src="assets/javascripts/application.39abc4af.js"></script>
+      <script src="../../../assets/javascripts/application.39abc4af.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
     
   </body>

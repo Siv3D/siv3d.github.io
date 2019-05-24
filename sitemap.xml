@@ -6,12 +6,22 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://siv3d.github.io/tutorial-basic/</loc>
+     <loc>https://siv3d.github.io/tutorial/basic/</loc>
      <lastmod>2019-05-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://siv3d.github.io/tutorial-shape/</loc>
+     <loc>https://siv3d.github.io/tutorial/shape/</loc>
+     <lastmod>2019-05-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/sample/game/</loc>
+     <lastmod>2019-05-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/sample/app/</loc>
      <lastmod>2019-05-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -21,17 +31,32 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://siv3d.github.io/ja-jp/tutorial-basic/</loc>
+     <loc>https://siv3d.github.io/ja-jp/tutorial/basic/</loc>
      <lastmod>2019-05-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://siv3d.github.io/ja-jp/tutorial-shape/</loc>
+     <loc>https://siv3d.github.io/ja-jp/tutorial/shape/</loc>
      <lastmod>2019-05-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://siv3d.github.io/ja-jp/sample-game/</loc>
+     <loc>https://siv3d.github.io/ja-jp/sample/game/</loc>
+     <lastmod>2019-05-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/sample/app/</loc>
+     <lastmod>2019-05-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/community/community/</loc>
+     <lastmod>2019-05-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/shop/shop/</loc>
      <lastmod>2019-05-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
