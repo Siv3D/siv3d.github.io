@@ -346,9 +346,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Application
+      </label>
+    
     <a href="./" title="Application" class="md-nav__link md-nav__link--active">
       Application
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sketch" title="Sketch" class="md-nav__link">
+    Sketch
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -560,6 +589,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sketch" title="Sketch" class="md-nav__link">
+    Sketch
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -571,7 +616,61 @@
               
                 
                 
-                <h1 id="application">Application</h1>
+                <h1 id="application">Application<a class="headerlink" href="#application" title="Permanent link">&para;</a></h1>
+<h2 id="sketch">Sketch<a class="headerlink" href="#sketch" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../images/app-sketch.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// キャンバスのサイズ</span>
+    <span class="k">constexpr</span> <span class="n">Size</span> <span class="n">canvasSize</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+
+    <span class="c1">// ペンの太さ</span>
+    <span class="k">constexpr</span> <span class="n">int32</span> <span class="n">thickness</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+
+    <span class="c1">// ペンの色</span>
+    <span class="k">constexpr</span> <span class="n">Color</span> <span class="n">penColor</span> <span class="o">=</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">;</span>
+
+    <span class="c1">// 書き込み用の画像データを用意</span>
+    <span class="n">Image</span> <span class="n">image</span><span class="p">(</span><span class="n">canvasSize</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+    <span class="c1">// 表示用のテクスチャ（内容を更新するので DynamicTexture）</span>
+    <span class="n">DynamicTexture</span> <span class="n">texture</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// 書き込む線の始点は直前のフレームのマウスカーソル座標</span>
+            <span class="c1">// （初回はタッチ操作時の座標のジャンプを防ぐため、現在のマウスカーソル座標にする）</span>
+            <span class="k">const</span> <span class="n">Point</span> <span class="n">from</span> <span class="o">=</span> <span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">()</span> <span class="o">?</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">()</span> <span class="o">:</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">PreviousPos</span><span class="p">();</span>
+
+            <span class="c1">// 書き込む線の終点は現在のマウスカーソル座標</span>
+            <span class="k">const</span> <span class="n">Point</span> <span class="n">to</span> <span class="o">=</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+
+            <span class="c1">// image に線を書き込む</span>
+            <span class="n">Line</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">).</span><span class="n">overwrite</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">thickness</span><span class="p">,</span> <span class="n">penColor</span><span class="p">);</span>
+
+            <span class="c1">// 書き込み終わった image でテクスチャを更新</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 描いたものを消去するボタンが押されたら</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Clear&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="mi">120</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="c1">// 画像を白で塗りつぶす</span>
+            <span class="n">image</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+            <span class="c1">// 塗りつぶし終わった image でテクスチャを更新</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// テクスチャを表示</span>
+        <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 

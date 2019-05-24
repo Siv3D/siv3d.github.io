@@ -672,8 +672,8 @@
               
                 
                 
-                <h1 id="2">2. 図形を描く</h1>
-<h2 id="21">2.1 円を描く</h2>
+                <h1 id="2">2. 図形を描く<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+<h2 id="21">2.1 円を描く<a class="headerlink" href="#21" title="Permanent link">&para;</a></h2>
 <p>画面に図形を描く方法を学びましょう。Siv3D では、図形オブジェクトを作成し、その <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> メンバ関数を呼んで描画を行うのが基本的なやり方です。円を描くときは <code class="codehilite"><span class="n">Circle</span></code> を作成し、その <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> を呼びます。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -745,7 +745,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<h2 id="22">2.2 色を付ける</h2>
+<h2 id="22">2.2 色を付ける<a class="headerlink" href="#22" title="Permanent link">&para;</a></h2>
 <p>図形に色を付けたいときは <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> 関数に色を渡します。色の指定の方法は大きく 4 通りあります。</p>
 <table>
 <thead>
@@ -854,7 +854,7 @@
 </pre></div>
 
 <p><img alt="" src="../images/220.gif" /></p>
-<h2 id="23">2.3 背景の色を変える</h2>
+<h2 id="23">2.3 背景の色を変える<a class="headerlink" href="#23" title="Permanent link">&para;</a></h2>
 <p>背景の色を変えるには <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">SetBackground</span></code> 関数に色を渡します。新しい背景色は、次の <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span></code> で画面の描画内容をリセットするときから反映されます。背景色は一度設定すると、再度変更されるまで同じ設定が使われます。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -885,7 +885,7 @@
 </pre></div>
 
 <p><img alt="" src="../images/231.gif" /></p>
-<h2 id="24">2.4 長方形を描く</h2>
+<h2 id="24">2.4 長方形を描く<a class="headerlink" href="#24" title="Permanent link">&para;</a></h2>
 <p>長方形を描くときは <code class="codehilite"><span class="n">Rect</span></code> を作成し、<code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> を呼びます。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -914,7 +914,7 @@
 <p><img alt="" src="../images/240.gif" /></p>
 <p>図形は <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> した順番に描画されます。このプログラムでは、マウスカーソルに追従する赤い正方形よりも、画面の下にある水色の大きな長方形が上に来ます。</p>
 <p><code class="codehilite"><span class="n">Rect</span></code> 型は左上の座標と幅、高さをそれぞれ <code class="codehilite"><span class="n">int32</span> <span class="n">x</span></code>, <code class="codehilite"><span class="n">int32</span> <span class="n">y</span></code>, <code class="codehilite"><span class="n">int32</span> <span class="n">w</span></code>, <code class="codehilite"><span class="n">int32</span> <span class="n">h</span></code> というメンバ変数で表します。整数ではなく浮動小数点数で扱いたい場合は、すべての要素が <code class="codehilite"><span class="n">double</span></code> 型である <code class="codehilite"><span class="n">RectF</span></code> を使います。</p>
-<h2 id="25">2.5 枠を描く</h2>
+<h2 id="25">2.5 枠を描く<a class="headerlink" href="#25" title="Permanent link">&para;</a></h2>
 <p>図形は、<code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> の代わりに <code class="codehilite"><span class="n">drawFrame</span><span class="p">()</span></code> することで、枠だけを描けます。</p>
                 
                   
