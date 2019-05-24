@@ -13,7 +13,7 @@
         <meta name="description" content="Siv3D: An open source C++17 library for creative coding">
       
       
-        <link rel="canonical" href="https://siv3d.github.io/ja-jp/tutorial/">
+        <link rel="canonical" href="https://siv3d.github.io/ja-jp/tutorial-shape/">
       
       
         <meta name="author" content="Ryo Suzuki">
@@ -42,7 +42,7 @@
     
     
       
-        <title>チュートリアル - Siv3D</title>
+        <title>2. 図形を描く - Siv3D</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#2" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -118,7 +118,7 @@
               Siv3D
             </span>
             <span class="md-header-nav__topic">
-              チュートリアル
+              2. 図形を描く
             </span>
           
         </div>
@@ -254,10 +254,46 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../tutorial/" title="Tutorial" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2">
+    
+    <label class="md-nav__link" for="nav-1-2">
       Tutorial
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-2">
+        Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial-basic/" title="1. Siv3D の基本" class="md-nav__link">
+      1. Siv3D の基本
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial-shape/" title="2. 図形を描く" class="md-nav__link">
+      2. 図形を描く
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -306,6 +342,39 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      チュートリアル
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        チュートリアル
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial-basic/" title="1. Siv3D の基本" class="md-nav__link">
+      1. Siv3D の基本
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -314,11 +383,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        チュートリアル
+        2. 図形を描く
       </label>
     
-    <a href="./" title="チュートリアル" class="md-nav__link md-nav__link--active">
-      チュートリアル
+    <a href="./" title="2. 図形を描く" class="md-nav__link md-nav__link--active">
+      2. 図形を描く
     </a>
     
       
@@ -332,112 +401,37 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-siv3d" title="1. Siv3D の基本" class="md-nav__link">
-    1. Siv3D の基本
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11" title="1.1 インクルードするヘッダ" class="md-nav__link">
-    1.1 インクルードするヘッダ
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12" title="1.2 エントリーポイント" class="md-nav__link">
-    1.2 エントリーポイント
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13" title="1.3 最小のプログラム" class="md-nav__link">
-    1.3 最小のプログラム
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14" title="1.4 メインループとウィンドウ" class="md-nav__link">
-    1.4 メインループとウィンドウ
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#15-hello-siv3d" title="1.5 Hello, Siv3D!" class="md-nav__link">
-    1.5 Hello, Siv3D!
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#16-print" title="1.6 もっと Print" class="md-nav__link">
-    1.6 もっと Print
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#17-print" title="1.7 Print したものを消す" class="md-nav__link">
-    1.7 Print したものを消す
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#18" title="1.8 画面の座標系" class="md-nav__link">
-    1.8 画面の座標系
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" title="2. 図形を描く" class="md-nav__link">
-    2. 図形を描く
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#21" title="2.1 円を描く" class="md-nav__link">
     2.1 円を描く
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#22" title="2.2 色を付ける" class="md-nav__link">
     2.2 色を付ける
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#23" title="2.3 背景の色を変える" class="md-nav__link">
     2.3 背景の色を変える
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#24" title="2.4 長方形を描く" class="md-nav__link">
     2.4 長方形を描く
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#25" title="2.5 枠を描く" class="md-nav__link">
+    2.5 枠を描く
+  </a>
   
 </li>
       
@@ -449,6 +443,47 @@
   
 </nav>
     
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      サンプル
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        サンプル
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sample-game/" title="ゲーム" class="md-nav__link">
+      ゲーム
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -478,112 +513,37 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-siv3d" title="1. Siv3D の基本" class="md-nav__link">
-    1. Siv3D の基本
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11" title="1.1 インクルードするヘッダ" class="md-nav__link">
-    1.1 インクルードするヘッダ
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12" title="1.2 エントリーポイント" class="md-nav__link">
-    1.2 エントリーポイント
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13" title="1.3 最小のプログラム" class="md-nav__link">
-    1.3 最小のプログラム
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14" title="1.4 メインループとウィンドウ" class="md-nav__link">
-    1.4 メインループとウィンドウ
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#15-hello-siv3d" title="1.5 Hello, Siv3D!" class="md-nav__link">
-    1.5 Hello, Siv3D!
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#16-print" title="1.6 もっと Print" class="md-nav__link">
-    1.6 もっと Print
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#17-print" title="1.7 Print したものを消す" class="md-nav__link">
-    1.7 Print したものを消す
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#18" title="1.8 画面の座標系" class="md-nav__link">
-    1.8 画面の座標系
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" title="2. 図形を描く" class="md-nav__link">
-    2. 図形を描く
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#21" title="2.1 円を描く" class="md-nav__link">
     2.1 円を描く
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#22" title="2.2 色を付ける" class="md-nav__link">
     2.2 色を付ける
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#23" title="2.3 背景の色を変える" class="md-nav__link">
     2.3 背景の色を変える
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#24" title="2.4 長方形を描く" class="md-nav__link">
     2.4 長方形を描く
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#25" title="2.5 枠を描く" class="md-nav__link">
+    2.5 枠を描く
+  </a>
   
 </li>
       
@@ -604,183 +564,8 @@
               
                 
                 
-                <h1 id="_1">チュートリアル</h1>
-<h2 id="1-siv3d">1. Siv3D の基本</h2>
-<h3 id="11">1.1 インクルードするヘッダ</h3>
-<p>Siv3D のプログラムを書くときは、いつも <code class="codehilite"><span class="o">&lt;</span><span class="n">Siv3D</span><span class="p">.</span><span class="n">hpp</span><span class="o">&gt;</span></code> ヘッダをインクルードします。
-<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-</pre></div></p>
-<p>これだけで、Siv3D のほぼすべての機能を使ってプログラムを書けるようになります。<br />
-「ほぼ」というのは、マクロを定義することで利用可能になる上級者向けのいくつかの機能や、実験的な機能を提供するおまけのヘッダがあるためです。今はまだ説明しません。</p>
-<p>C++ のプログラマなら、ほかにも <code class="codehilite"><span class="o">&lt;</span><span class="n">iostream</span><span class="o">&gt;</span></code> や <code class="codehilite"><span class="o">&lt;</span><span class="n">vector</span><span class="o">&gt;</span></code> などの C++ 標準ライブラリをインクルードしたくなるかもしれませんが、その必要はありません。すでに <code class="codehilite"><span class="o">&lt;</span><span class="n">Siv3D</span><span class="p">.</span><span class="n">hpp</span><span class="o">&gt;</span></code> の中で、Siv3D のプログラミングでよく使われる主要な C++ 標準ライブラリがインクルードされているためです。また、標準ライブラリの機能の多くが、より便利な Siv3D の関数やクラスで再実装されているので、Siv3D の学習の序盤で C++ 標準ライブラリの関数を使うことはめったにありません。</p>
-<div class="admonition 文法">
-<p class="admonition-title">文法</p>
-<p><code class="codehilite"># <span class="k">include</span> <span class="o">&lt;</span>???<span class="o">&gt;</span></code> または <code class="codehilite"># <span class="k">include</span> <span class="s2">&quot;</span><span class="s">???</span><span class="s2">&quot;</span></code> で、ヘッダ <code class="codehilite"><span class="o">???</span></code> をインクルードします。前者の書き方では、標準ライブラリや、プロジェクトの設定でインクルードパスに設定されているフォルダのファイルが対象になり、後者では相対パスまたは絶対パスでファイルを検索します。Siv3D のプロジェクトでは、Siv3D のヘッダがあるディレクトリがインクルードパスに設定されていて、<code class="codehilite"># <span class="k">include</span> <span class="o">&lt;</span><span class="nv">Siv3D</span>.<span class="nv">hpp</span><span class="o">&gt;</span></code> で Siv3D のヘッダをインクルードできます。Siv3D 以外のプロジェクトで同じように書いても <code class="codehilite"><span class="n">Siv3D</span><span class="p">.</span><span class="n">hpp</span></code> を見つけられずコンパイルエラーになります。</p>
-</div>
-<h3 id="12">1.2 エントリーポイント</h3>
-<p>通常、C++ のエントリーポイントは <code class="codehilite"><span class="nb">int</span> <span class="n">main</span><span class="p">()</span></code> です。しかし、Siv3D ではこの <code class="codehilite"><span class="n">main</span><span class="p">()</span></code> 関数は Siv3D エンジンによって実装されていて、次のようにユーザの見えないところで、ウィンドウやグラフィックスの初期化処理を行うプログラムがすでに用意されています。
-<div class="codehilite"><pre><span></span><span class="o">//</span> <span class="err">説明のための疑似コード</span>
-<span class="nb">int</span> <span class="n">main</span><span class="p">()</span>
-<span class="err">{</span>
-    <span class="n">Siv3D</span> <span class="err">の初期化</span><span class="p">...</span>
-
-    <span class="n">Main</span><span class="p">();</span> <span class="o">//</span> <span class="err">この関数をユーザがプログラムする</span>
-
-    <span class="n">Siv3D</span> <span class="err">の終了処理</span><span class="p">...</span>
-<span class="err">}</span>
-</pre></div>
-ユーザが実装するプログラムは、このプログラムの <code class="codehilite"><span class="n">void</span> <span class="n">Main</span><span class="p">()</span></code> 関数です。</p>
-<p>事前に初期化処理が完了しているので、<code class="codehilite"><span class="n">Main</span></code> 関数の中でいきなり Siv3D の機能を使うことができますし、<code class="codehilite"><span class="n">Main</span></code> 関数の実行が終了したら、ロードしたアセットやウィンドウの後片付けを Siv3D が自動的に行ってくれます。</p>
-<h3 id="13">1.3 最小のプログラム</h3>
-<p>ここまでの話を踏まえて、これが Siv3D の最小のプログラムです。
-<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-
-<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
-<span class="p">{</span>
-
-<span class="p">}</span>
-</pre></div>
-ここでの <code class="codehilite"><span class="n">Main</span></code> 関数はすぐに終了してしまうので、このプログラムを実行しても、ほとんど何も反応が無いように見えるでしょう。</p>
-<div class="admonition 文法">
-<p class="admonition-title">文法</p>
-<p>これは関数を定義するプログラムです。<code class="codehilite"><span class="n">Main</span></code> は関数の名前を、<code class="codehilite"><span class="n">void</span></code> はこの関数が結果の値を返さないことを表します。<code class="codehilite"><span class="err">{</span> <span class="err">}</span></code> 内には、この関数で実行したいプログラムを上から順に記述します。途中で <code class="codehilite"><span class="k">return</span></code> するか、終端までたどり着くと関数の実行は終了します。</p>
-</div>
-<h3 id="14">1.4 メインループとウィンドウ</h3>
-<p>プログラムがすぐに終了してしまっては、ユーザとインタラクションするようなアプリケーションが作れません。<code class="codehilite"><span class="n">Main</span></code> 関数がずっと続くように <strong>メインループ</strong> を実装しましょう。次のプログラムを実行するとウィンドウが表示されます。
-<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-
-<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="hll">    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
-</span><span class="hll">    <span class="p">{</span>
-</span><span class="hll">
-</span><span class="hll">    <span class="p">}</span>
-</span><span class="p">}</span>
-</pre></div>
-新しく加えた行は <code class="codehilite"><span class="k">while</span></code> 文によってくり返し実行され、プログラムが半永久的に続くようになります。くり返しのたびに <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span></code> 関数がウィンドウの表示や音楽の再生、マウスやキーボードの入力情報などを更新するので、グラフィックスの表示やユーザとのやり取りをプログラムできるようになります。</p>
-<div class="admonition 文法">
-<p class="admonition-title">文法</p>
-<p><code class="codehilite"><span class="k">while</span><span class="ss">()</span></code> 文は、<code class="codehilite"><span class="p">(</span> <span class="p">)</span></code> 内の条件が真 (true) の間、<code class="codehilite"><span class="err">{</span> <span class="err">}</span></code> で囲まれた部分をくり返し実行します。</p>
-</div>
-<p><code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span></code> は普段は <code class="codehilite"><span class="k">true</span></code> を返しますが、ウィンドウが閉じられたり、エスケープキーが押されたりするなど、アプリケーションを終了させる特別な <strong>ユーザアクション</strong> が実行されると、以降はずっと <code class="codehilite"><span class="k">false</span></code> を返すようになります。 アプリケーションはこの状態になったら速やかにメインループから抜け、<code class="codehilite"><span class="n">Main</span></code> 関数を終了させる必要があります。といっても、上記のプログラムのように書いていれば、自然にこの通りに動作するので心配はありません。</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>デフォルトでは「ウィンドウを閉じる」「エスケープキーを押す」「<code class="codehilite"><span class="nv">System</span>::<span class="k">Exit</span></code> 関数を呼ぶ」の 3 つが、アプリケーションを終了させるためのユーザアクションとして設定されています。この設定は<code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="n">SetTerminationTriggers</span></code> 関数に <code class="codehilite"><span class="n">UserAction</span></code> フラグの組み合わせを渡すことでカスタマイズできます。</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>メインループは、使用しているモニターのリフレッシュレートと同じ速度で繰り返されます（通常は毎秒 60, 120, または 144 フレーム）。<code class="codehilite"><span class="n">Graphics</span><span class="p">::</span><span class="n">SetTargetFrameRateHz</span></code> 関数に値を渡すことで、この上限を解除できます。</p>
-</div>
-<h3 id="15-hello-siv3d">1.5 Hello, Siv3D!</h3>
-<p>画面にメッセージを表示してみましょう。Siv3D でテキストや数値を簡単に画面に表示するには、デバッグ表示のための機能 <code class="codehilite"><span class="n">Print</span></code> を使うと便利です。</p>
-<p><div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-
-<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="hll">    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Hello, Siv3D!&quot;</span><span class="p">;</span>
-</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
-    <span class="p">{</span>
-
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-<code class="codehilite"><span class="n">Print</span></code> に向かって、出力の記号 <code class="codehilite"><span class="o">&lt;&lt;</span></code> でテキストを送ると、そのテキストが画面に表示されます。</p>
-<p><img alt="" src="../images/tutorial/410.png" /></p>
-<div class="admonition 文法">
-<p class="admonition-title">文法</p>
-<p>テキストをプログラムに登場させるときは <code class="codehilite"><span class="ss">&quot; &quot;</span></code> で囲みます。Siv3D ではさらに、日本語を扱いやすい UTF-32 という形式でテキストデータを扱うため、<code class="codehilite"><span class="err">&quot;</span></code> の先頭には <code class="codehilite"><span class="n">U</span></code> というプレフィックスを付けます。</p>
-</div>
-<h3 id="16-print">1.6 もっと Print</h3>
-<p><code class="codehilite"><span class="n">Print</span></code> に送れるのは 1 つのテキストだけではありません。数値や配列、日付なども送ってみましょう。</p>
-<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-
-<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Hello, Siv3D!&quot;</span><span class="p">;</span>
-
-<span class="hll">    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;This is fun!&quot;</span><span class="p">;</span>
-</span><span class="hll">
-</span><span class="hll">    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="mi">365</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot; days&quot;</span><span class="p">;</span>
-</span><span class="hll">
-</span><span class="hll">    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="mi">100</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
-</span><span class="hll">
-</span><span class="hll">    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">Range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-</span><span class="hll">
-</span><span class="hll">    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">Date</span><span class="o">::</span><span class="n">Today</span><span class="p">();</span>
-</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
-    <span class="p">{</span>
-
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-<p><img alt="" src="../images/tutorial/510.png" /></p>
-<h3 id="17-print">1.7 Print したものを消す</h3>
-<p><code class="codehilite"><span class="n">Print</span></code> した内容は蓄積されるので、次のように <code class="codehilite"><span class="n">Print</span></code> をメインループの中で使うと、毎フレーム新しいメッセージが追加されて、古いメッセージを画面の外に追いやります。画面からあふれたメッセージは自動的に消えるので、<code class="codehilite"><span class="n">Print</span></code> のし過ぎを心配する必要はありません。</p>
-<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-
-<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">int32</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">count</span><span class="p">;</span>
-
-        <span class="o">++</span><span class="n">count</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-<p><img alt="" src="../images/tutorial/610.png" /></p>
-<p>メッセージが画面外に消えるのを待たずに、プログラムを使って消去したいときには <code class="codehilite"><span class="n">ClearPrint</span></code> 関数を使います。プログラムのメインループの先頭で <code class="codehilite"><span class="n">ClearPrint</span></code> すると、その時点で蓄積されていたメッセージが全部消去され、つねに最新の <code class="codehilite"><span class="n">Print</span></code> した内容だけが表示されるようになります。</p>
-<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-
-<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">int32</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
-    <span class="p">{</span>
-<span class="hll">        <span class="n">ClearPrint</span><span class="p">();</span> <span class="c1">// Print したメッセージを消去</span>
-</span>
-        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">count</span><span class="p">;</span>
-
-        <span class="o">++</span><span class="n">count</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Siv3D で整数を扱うときは、<code class="codehilite"><span class="nb">int</span></code> や <code class="codehilite"><span class="n">unsigned</span> <span class="n">long</span> <span class="n">long</span></code> のような標準の型名の代わりに、<code class="codehilite"><span class="n">int32</span></code> や <code class="codehilite"><span class="n">uint64</span></code> のようにサイズを明示的に示した型名を使います。これらの型名を使うことで、プラットフォーム間での移植性が高まり、一貫性のある読みやすいコードになります。</p>
-</div>
-<h3 id="18">1.8 画面の座標系</h3>
-<p>ウィンドウ内の黒い部分が <strong>画面</strong> で、Siv3D はこの領域に文字や図形、画像を表示できます。
-画面のサイズは、基本の状態では <strong>幅 800 ピクセル、高さ 600 ピクセル</strong> です。画面上の位置を表す座標系は、一番左上のピクセルを「X 座標 0」「Y 座標 0」を表す <code class="codehilite"><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></code> と表記し、右に進むと X 座標が大きく、下に進むと Y 座標が大きくなります。画面の一番右下のピクセルの座標は <code class="codehilite"><span class="p">(</span><span class="mi">799</span><span class="p">,</span> <span class="mi">599</span><span class="p">)</span></code> です。 </p>
-<p><code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">Pos</span></code> 関数を使うと、現在のマウスカーソルの座標を <code class="codehilite"><span class="n">Point</span></code> 型で取得できます。<code class="codehilite"><span class="n">Point</span></code> 型の値は X 座標を表す <code class="codehilite"><span class="n">int32</span> <span class="n">x</span></code> と Y 座標を表す <code class="codehilite"><span class="n">int32</span> <span class="n">y</span></code> の 2 つの要素を持っていますが、そのまま丸ごと <code class="codehilite"><span class="n">Print</span></code> に送って表示することもできます。</p>
-<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-
-<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="n">ClearPrint</span><span class="p">();</span>
-
-<span class="hll">        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span> <span class="c1">// 現在のマウスカーソル座標を表示</span>
-</span><span class="hll">
-</span><span class="hll">        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;X: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">().</span><span class="n">x</span><span class="p">;</span> <span class="c1">// X 座標だけを表示</span>
-</span><span class="hll">
-</span><span class="hll">        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Y: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">().</span><span class="n">y</span><span class="p">;</span> <span class="c1">// Y 座標だけを表示</span>
-</span>    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-<p><img alt="" src="../images/tutorial/710.gif" /></p>
-<h2 id="2">2. 図形を描く</h2>
-<h3 id="21">2.1 円を描く</h3>
+                <h1 id="2">2. 図形を描く</h1>
+<h2 id="21">2.1 円を描く</h2>
 <p>画面に図形を描く方法を学びましょう。Siv3D では、図形オブジェクトを作成し、その <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> メンバ関数を呼んで描画を行うのが基本的なやり方です。円を描くときは <code class="codehilite"><span class="n">Circle</span></code> を作成し、その <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> を呼びます。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -852,7 +637,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<h3 id="22">2.2 色を付ける</h3>
+<h2 id="22">2.2 色を付ける</h2>
 <p>図形に色を付けたいときは <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> 関数に色を渡します。色の指定の方法は大きく 4 通りあります。</p>
 <table>
 <thead>
@@ -961,7 +746,7 @@
 </pre></div>
 
 <p><img alt="" src="../images/tutorial/220.gif" /></p>
-<h3 id="23">2.3 背景の色を変える</h3>
+<h2 id="23">2.3 背景の色を変える</h2>
 <p>背景の色を変えるには <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">SetBackground</span></code> 関数に色を渡します。新しい背景色は、次の <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span></code> で画面の描画内容をリセットするときから反映されます。背景色は一度設定すると、再度変更されるまで同じ設定が使われます。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -992,8 +777,37 @@
 </pre></div>
 
 <p><img alt="" src="../images/tutorial/231.gif" /></p>
-<h3 id="24">2.4 長方形を描く</h3>
-<p>長方形を描くときは <code class="codehilite"><span class="n">Rect</span></code> を作成し、その <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> を呼びます。</p>
+<h2 id="24">2.4 長方形を描く</h2>
+<p>長方形を描くときは <code class="codehilite"><span class="n">Rect</span></code> を作成し、<code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> を呼びます。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 座標 (20, 40) を左上の基準位置にして、幅 400, 高さ 100 の長方形を描く </span>
+        <span class="n">Rect</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+
+        <span class="c1">// 座標 (20, 40) を左上の基準位置にして、幅が 80 の正方形を描く </span>
+        <span class="n">Rect</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">80</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+
+        <span class="c1">// 座標 (400, 300) を中心の基準位置にして、幅 80, 高さ 40 の長方形を描く</span>
+        <span class="n">Rect</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">40</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Pink</span><span class="p">);</span>
+
+        <span class="c1">// マウスカーソルの座標を中心の基準位置にして、幅が 100 の正方形を描く </span>
+        <span class="n">Rect</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">()),</span> <span class="mi">100</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+
+        <span class="c1">// 座標や大きさを浮動小数点数 (小数を含む数）で指定したい場合は RectF</span>
+        <span class="n">RectF</span><span class="p">(</span><span class="mf">200.4</span><span class="p">,</span> <span class="mf">450.3</span><span class="p">,</span> <span class="mf">390.5</span><span class="p">,</span> <span class="mf">122.5</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><img alt="" src="../images/tutorial/240.gif" /></p>
+<p>図形は <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> した順番に描画されます。このプログラムでは、マウスカーソルに追従する赤い正方形よりも、画面の下にある水色の大きな長方形が上に来ます。</p>
+<p><code class="codehilite"><span class="n">Rect</span></code> 型は左上の座標と幅、高さをそれぞれ <code class="codehilite"><span class="n">int32</span> <span class="n">x</span></code>, <code class="codehilite"><span class="n">int32</span> <span class="n">y</span></code>, <code class="codehilite"><span class="n">int32</span> <span class="n">w</span></code>, <code class="codehilite"><span class="n">int32</span> <span class="n">h</span></code> というメンバ変数で表します。整数ではなく浮動小数点数で扱いたい場合は、すべての要素が <code class="codehilite"><span class="n">double</span></code> 型である <code class="codehilite"><span class="n">RectF</span></code> を使います。</p>
+<h2 id="25">2.5 枠を描く</h2>
+<p>図形は、<code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> の代わりに <code class="codehilite"><span class="n">drawFrame</span><span class="p">()</span></code> することで、枠だけを描けます。</p>
                 
                   
                 
@@ -1014,7 +828,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../" title="Siv3D をはじめよう" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../tutorial-basic/" title="1. Siv3D の基本" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1023,11 +837,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Siv3D をはじめよう
+                1. Siv3D の基本
               </span>
             </div>
           </a>
         
+        
+          <a href="../sample-game/" title="ゲーム" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                ゲーム
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
