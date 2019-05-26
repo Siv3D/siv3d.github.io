@@ -407,6 +407,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#piano" title="Piano" class="md-nav__link">
+    Piano
+  </a>
+  
+</li>
+      
       
       
       
@@ -671,6 +678,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#piano" title="Piano" class="md-nav__link">
+    Piano
+  </a>
+  
+</li>
+      
       
       
       
@@ -740,6 +754,81 @@
 
         <span class="c1">// テクスチャを表示</span>
         <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="piano">Piano<a class="headerlink" href="#piano" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../images/app-piano.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 白鍵の大きさ</span>
+    <span class="k">constexpr</span> <span class="n">Size</span> <span class="n">keySize</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+
+    <span class="c1">// 楽器の種類</span>
+    <span class="k">constexpr</span> <span class="n">GMInstrument</span> <span class="n">instrument</span> <span class="o">=</span> <span class="n">GMInstrument</span><span class="o">::</span><span class="n">Piano1</span><span class="p">;</span>
+
+    <span class="c1">// ウインドウをリサイズ</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="mi">12</span> <span class="o">*</span> <span class="n">keySize</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">keySize</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+
+    <span class="c1">// 鍵盤の数</span>
+    <span class="k">constexpr</span> <span class="n">int32</span> <span class="n">NumKeys</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+    <span class="c1">// 音を作成</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Audio</span><span class="p">,</span> <span class="n">NumKeys</span><span class="o">&gt;</span> <span class="n">sounds</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">NumKeys</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">sounds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Audio</span><span class="p">(</span><span class="n">Wave</span><span class="p">(</span><span class="n">instrument</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">uint8</span><span class="o">&gt;</span><span class="p">(</span><span class="n">PianoKey</span><span class="o">::</span><span class="n">A3</span> <span class="o">+</span> <span class="n">i</span><span class="p">),</span> <span class="mf">0.5</span><span class="n">s</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 対応するキー</span>
+    <span class="k">constexpr</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Key</span><span class="p">,</span> <span class="n">NumKeys</span><span class="o">&gt;</span> <span class="n">keys</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="n">KeyTab</span><span class="p">,</span> <span class="n">Key1</span><span class="p">,</span> <span class="n">KeyQ</span><span class="p">,</span>
+        <span class="n">KeyW</span><span class="p">,</span> <span class="n">Key3</span><span class="p">,</span> <span class="n">KeyE</span><span class="p">,</span> <span class="n">Key4</span><span class="p">,</span> <span class="n">KeyR</span><span class="p">,</span> <span class="n">KeyT</span><span class="p">,</span> <span class="n">Key6</span><span class="p">,</span> <span class="n">KeyY</span><span class="p">,</span> <span class="n">Key7</span><span class="p">,</span> <span class="n">KeyU</span><span class="p">,</span> <span class="n">Key8</span><span class="p">,</span> <span class="n">KeyI</span><span class="p">,</span>
+        <span class="n">KeyO</span><span class="p">,</span> <span class="n">Key0</span><span class="p">,</span> <span class="n">KeyP</span><span class="p">,</span> <span class="n">KeyMinus</span><span class="p">,</span> <span class="n">KeyGraveAccent</span><span class="p">,</span>
+    <span class="p">};</span>
+
+    <span class="c1">// 描画位置計算用のオフセット値</span>
+    <span class="k">constexpr</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">int32</span><span class="p">,</span> <span class="n">NumKeys</span><span class="o">&gt;</span> <span class="n">keyPositions</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span>
+    <span class="p">};</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// キーが押されたら対応する音を再生</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">NumKeys</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">down</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">sounds</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">playOneShot</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 白鍵を描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">NumKeys</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="c1">// オフセット値が偶数</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">IsEven</span><span class="p">(</span><span class="n">keyPositions</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+            <span class="p">{</span>
+                <span class="n">RectF</span><span class="p">(</span><span class="n">keyPositions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">keySize</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">keySize</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">keySize</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
+                    <span class="p">.</span><span class="n">stretched</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="nl">Pink</span> <span class="p">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 黒鍵を描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">NumKeys</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="c1">// オフセット値が奇数</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">IsOdd</span><span class="p">(</span><span class="n">keyPositions</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+            <span class="p">{</span>
+                <span class="n">RectF</span><span class="p">(</span><span class="n">keySize</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="mf">0.68</span> <span class="o">+</span> <span class="n">keyPositions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">keySize</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">keySize</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="mf">0.58</span><span class="p">,</span> <span class="n">keySize</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="mf">0.62</span><span class="p">)</span>
+                    <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="nl">Pink</span> <span class="p">:</span> <span class="n">Color</span><span class="p">(</span><span class="mi">24</span><span class="p">));</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
