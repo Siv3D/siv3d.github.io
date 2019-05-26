@@ -303,18 +303,54 @@
           
           
 
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3">
+    
+    <label class="md-nav__link" for="nav-1-3">
+      Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-3">
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/fullscreen/" title="Fullscreen" class="md-nav__link">
+      Fullscreen
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-4" type="checkbox" id="nav-1-4" checked>
     
-    <label class="md-nav__link" for="nav-1-3">
+    <label class="md-nav__link" for="nav-1-4">
       Sample
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-1-3">
+      <label class="md-nav__title" for="nav-1-4">
         Sample
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -355,6 +391,13 @@
         <li class="md-nav__item">
   <a href="#breakout" title="Breakout" class="md-nav__link">
     Breakout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinball" title="Pinball" class="md-nav__link">
+    Pinball
   </a>
   
 </li>
@@ -505,10 +548,46 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
     
     <label class="md-nav__link" for="nav-2-3">
-      サンプル
+      リファレンス
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-2-3">
+        リファレンス
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ja-jp/reference/fullscreen/" title="フルスクリーン" class="md-nav__link">
+      フルスクリーン
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      サンプル
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
         サンプル
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -595,6 +674,13 @@
         <li class="md-nav__item">
   <a href="#breakout" title="Breakout" class="md-nav__link">
     Breakout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinball" title="Pinball" class="md-nav__link">
+    Pinball
   </a>
   
 </li>
@@ -702,6 +788,204 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+
+<h2 id="pinball">Pinball<a class="headerlink" href="#pinball" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../images/game-pinball.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="c1">// 外周の枠の頂点リストを作成</span>
+<span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span> <span class="n">CreateFrame</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">leftAnchor</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">rightAnchor</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span> <span class="n">points</span> <span class="o">=</span> <span class="p">{</span> <span class="n">leftAnchor</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="p">};</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">Range</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">points</span> <span class="o">&lt;&lt;</span> <span class="n">OffsetCircular</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.0</span><span class="p">),</span> <span class="mi">7</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">3</span><span class="n">_deg</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">points</span> <span class="o">&lt;&lt;</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">rightAnchor</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 接触しているかに応じて色を決定</span>
+<span class="n">ColorF</span> <span class="n">GetColor</span><span class="p">(</span><span class="k">const</span> <span class="n">P2Body</span><span class="o">&amp;</span> <span class="n">body</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">P2BodyID</span><span class="o">&gt;&amp;</span> <span class="n">list</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">list</span><span class="p">.</span><span class="n">includes</span><span class="p">(</span><span class="n">body</span><span class="p">.</span><span class="n">id</span><span class="p">())</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="nl">White</span> <span class="p">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// フレームレートを 60 に固定</span>
+    <span class="n">Graphics</span><span class="o">::</span><span class="n">SetTargetFrameRateHz</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+    <span class="c1">// フレームレートに依存しない、物理シミュレーションの更新</span>
+    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">timeDelta</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">;</span>
+
+    <span class="c1">// 背景色を設定</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">));</span>
+
+    <span class="c1">// 物理演算用のワールド</span>
+    <span class="n">P2World</span> <span class="nf">world</span><span class="p">(</span><span class="mf">6.0</span><span class="p">);</span>
+
+    <span class="c1">// 左右フリッパーの軸の座標</span>
+    <span class="k">constexpr</span> <span class="n">Vec2</span> <span class="nf">leftFlipperAnchor</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">rightFlipperAnchor</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="c1">// 固定の枠</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">P2Body</span><span class="o">&gt;</span> <span class="n">frames</span><span class="p">;</span>
+    <span class="c1">// 外周</span>
+    <span class="n">frames</span> <span class="o">&lt;&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticLineString</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">LineString</span><span class="p">(</span><span class="n">CreateFrame</span><span class="p">(</span><span class="n">leftFlipperAnchor</span><span class="p">,</span> <span class="n">rightFlipperAnchor</span><span class="p">)));</span>
+    <span class="c1">// 左上の (</span>
+    <span class="n">frames</span> <span class="o">&lt;&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticLineString</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">LineString</span><span class="p">(</span><span class="n">Range</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">).</span><span class="n">map</span><span class="p">([</span><span class="o">=</span><span class="p">](</span><span class="n">int32</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">OffsetCircular</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.0</span><span class="p">),</span> <span class="mf">5.5</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">3</span><span class="n">_deg</span><span class="p">).</span><span class="n">toVec2</span><span class="p">();</span> <span class="p">})));</span>
+    <span class="c1">// 右上の )</span>
+    <span class="n">frames</span> <span class="o">&lt;&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticLineString</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">LineString</span><span class="p">(</span><span class="n">Range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">).</span><span class="n">map</span><span class="p">([</span><span class="o">=</span><span class="p">](</span><span class="n">int32</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">OffsetCircular</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.0</span><span class="p">),</span> <span class="mf">5.5</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">3</span><span class="n">_deg</span><span class="p">).</span><span class="n">toVec2</span><span class="p">();</span> <span class="p">})));</span>
+
+    <span class="c1">// バンパー</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">P2Body</span><span class="o">&gt;</span> <span class="n">bumpers</span><span class="p">;</span>
+    <span class="c1">// ● x3</span>
+    <span class="n">bumpers</span> <span class="o">&lt;&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticCircle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">17</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+    <span class="n">bumpers</span> <span class="o">&lt;&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticCircle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+    <span class="n">bumpers</span> <span class="o">&lt;&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticCircle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+    <span class="c1">// ▲ x2</span>
+    <span class="n">bumpers</span> <span class="o">&lt;&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticTriangle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Triangle</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">));</span>
+    <span class="n">bumpers</span> <span class="o">&lt;&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticTriangle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Triangle</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">),</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">));</span>
+
+    <span class="c1">// 左フリッパー</span>
+    <span class="n">P2Body</span> <span class="n">leftFlipper</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createDynamicRect</span><span class="p">(</span><span class="n">leftFlipperAnchor</span><span class="p">,</span> <span class="n">RectF</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">),</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">));</span>
+    <span class="c1">// 左フリッパーのジョイント</span>
+    <span class="k">const</span> <span class="n">P2PivotJoint</span> <span class="n">leftJoint</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createPivotJoint</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">leftFlipper</span><span class="p">,</span> <span class="n">leftFlipperAnchor</span><span class="p">).</span><span class="n">setLimits</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="n">_deg</span><span class="p">,</span> <span class="mi">25</span><span class="n">_deg</span><span class="p">).</span><span class="n">setLimitEnabled</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+    <span class="c1">// 右フリッパー</span>
+    <span class="n">P2Body</span> <span class="n">rightFlipper</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createDynamicRect</span><span class="p">(</span><span class="n">rightFlipperAnchor</span><span class="p">,</span> <span class="n">RectF</span><span class="p">(</span><span class="o">-</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">),</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">));</span>
+    <span class="c1">// 右フリッパーのジョイント</span>
+    <span class="k">const</span> <span class="n">P2PivotJoint</span> <span class="n">rightJoint</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createPivotJoint</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rightFlipper</span><span class="p">,</span> <span class="n">rightFlipperAnchor</span><span class="p">).</span><span class="n">setLimits</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="n">_deg</span><span class="p">,</span> <span class="mi">20</span><span class="n">_deg</span><span class="p">).</span><span class="n">setLimitEnabled</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+    <span class="c1">// スピナー ＋</span>
+    <span class="k">const</span> <span class="n">P2Body</span> <span class="n">spinner</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createDynamicRect</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="o">-</span><span class="mf">5.8</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">),</span> <span class="n">SizeF</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)).</span><span class="n">addRect</span><span class="p">(</span><span class="n">SizeF</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">));</span>
+    <span class="c1">// スピナーのジョイント</span>
+    <span class="n">P2PivotJoint</span> <span class="n">spinnerJoint</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createPivotJoint</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">spinner</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="o">-</span><span class="mf">5.8</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">)).</span><span class="n">setMaxMotorTorque</span><span class="p">(</span><span class="mf">0.05</span><span class="p">).</span><span class="n">setMotorSpeed</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">setMotorEnabled</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+    <span class="c1">// 風車の |</span>
+    <span class="n">frames</span> <span class="o">&lt;&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticLine</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Line</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">));</span>
+    <span class="c1">// 風車の羽 ／</span>
+    <span class="k">const</span> <span class="n">P2Body</span> <span class="n">windmillWing</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createDynamicRect</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">),</span> <span class="n">SizeF</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">));</span>
+    <span class="c1">// 風車のジョイント</span>
+    <span class="k">const</span> <span class="n">P2PivotJoint</span> <span class="n">windmillJoint</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createPivotJoint</span><span class="p">(</span><span class="n">frames</span><span class="p">.</span><span class="n">back</span><span class="p">(),</span> <span class="n">windmillWing</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">)).</span><span class="n">setMotorSpeed</span><span class="p">(</span><span class="mi">240</span><span class="n">_deg</span><span class="p">).</span><span class="n">setMaxMotorTorque</span><span class="p">(</span><span class="mf">10000.0</span><span class="p">).</span><span class="n">setMotorEnabled</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+    <span class="c1">// 振り子の軸</span>
+    <span class="k">const</span> <span class="n">P2Body</span> <span class="n">pendulumbase</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticDummy</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="p">));</span>
+    <span class="c1">// 振り子 ●</span>
+    <span class="n">P2Body</span> <span class="n">pendulum</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createDynamicCircle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">),</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+    <span class="c1">// 振り子のジョイント</span>
+    <span class="k">const</span> <span class="n">P2DistanceJoint</span> <span class="n">pendulumJoint</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createDistanceJoint</span><span class="p">(</span><span class="n">pendulumbase</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="p">),</span> <span class="n">pendulum</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">),</span> <span class="mi">7</span><span class="p">);</span>
+
+    <span class="c1">// エレベーターの上部 ●</span>
+    <span class="k">const</span> <span class="n">P2Body</span> <span class="n">elevatorA</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticCircle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span> <span class="mf">0.3</span><span class="p">);</span>
+    <span class="c1">// エレベーターの床 －</span>
+    <span class="k">const</span> <span class="n">P2Body</span> <span class="n">elevatorB</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createRect</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span> <span class="n">SizeF</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">));</span>
+    <span class="c1">// エレベーターのジョイント</span>
+    <span class="n">P2SliderJoint</span> <span class="n">elevatorSliderJoint</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createSliderJoint</span><span class="p">(</span><span class="n">elevatorA</span><span class="p">,</span> <span class="n">elevatorB</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)).</span><span class="n">setLimits</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">).</span><span class="n">setLimitEnabled</span><span class="p">(</span><span class="nb">true</span><span class="p">).</span><span class="n">setMaxMotorForce</span><span class="p">(</span><span class="mi">10000</span><span class="p">).</span><span class="n">setMotorSpeed</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">);</span>
+
+    <span class="c1">// ボール 〇</span>
+    <span class="k">const</span> <span class="n">P2Body</span> <span class="n">ball</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createDynamicCircle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">),</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">));</span>
+    <span class="k">const</span> <span class="n">P2BodyID</span> <span class="n">ballID</span> <span class="o">=</span> <span class="n">ball</span><span class="p">.</span><span class="n">id</span><span class="p">();</span>
+
+    <span class="c1">// エレベーターのアニメーション用ストップウォッチ</span>
+    <span class="n">Stopwatch</span> <span class="nf">sliderStopwatch</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+    <span class="c1">// 2D カメラ</span>
+    <span class="k">const</span> <span class="n">Camera2D</span> <span class="nf">camera</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">),</span> <span class="mf">24.0</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">/////////////////////////////////////////</span>
+        <span class="c1">//</span>
+        <span class="c1">// 更新</span>
+        <span class="c1">//</span>
+
+        <span class="c1">// 振り子の抵抗</span>
+        <span class="n">pendulum</span><span class="p">.</span><span class="n">applyForce</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="n">pendulum</span><span class="p">.</span><span class="n">getVelocity</span><span class="p">().</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="o">?</span> <span class="mf">0.01</span> <span class="o">:</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">));</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">sliderStopwatch</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="n">s</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// エレベーターの巻き上げを停止</span>
+            <span class="n">elevatorSliderJoint</span><span class="p">.</span><span class="n">setMotorEnabled</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+            <span class="n">sliderStopwatch</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">sliderStopwatch</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="n">s</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// エレベーターの巻き上げ</span>
+            <span class="n">elevatorSliderJoint</span><span class="p">.</span><span class="n">setMotorEnabled</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 左フリッパーの操作</span>
+        <span class="n">leftFlipper</span><span class="p">.</span><span class="n">applyTorque</span><span class="p">(</span><span class="n">KeyLeft</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="o">-</span><span class="mi">80</span> <span class="o">:</span> <span class="mi">40</span><span class="p">);</span>
+
+        <span class="c1">// 右フリッパーの操作</span>
+        <span class="n">rightFlipper</span><span class="p">.</span><span class="n">applyTorque</span><span class="p">(</span><span class="n">KeyRight</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="mi">80</span> <span class="o">:</span> <span class="o">-</span><span class="mi">40</span><span class="p">);</span>
+
+        <span class="c1">// 物理演算ワールドの更新</span>
+        <span class="n">world</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">timeDelta</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+
+        <span class="c1">// ボールと接触しているボディの ID を取得</span>
+        <span class="n">Array</span><span class="o">&lt;</span><span class="n">P2BodyID</span><span class="o">&gt;</span> <span class="n">collidedIDs</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="p">[</span><span class="n">pair</span><span class="p">,</span> <span class="n">collision</span><span class="p">]</span> <span class="o">:</span> <span class="n">world</span><span class="p">.</span><span class="n">getCollisions</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="n">a</span> <span class="o">==</span> <span class="n">ballID</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">collidedIDs</span> <span class="o">&lt;&lt;</span> <span class="n">pair</span><span class="p">.</span><span class="n">b</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="n">b</span> <span class="o">==</span> <span class="n">ballID</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">collidedIDs</span> <span class="o">&lt;&lt;</span> <span class="n">pair</span><span class="p">.</span><span class="n">a</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">/////////////////////////////////////////</span>
+        <span class="c1">//</span>
+        <span class="c1">// 描画</span>
+        <span class="c1">//</span>
+
+        <span class="c1">// 描画用の Transformer2D</span>
+        <span class="k">const</span> <span class="k">auto</span> <span class="n">transformer</span> <span class="o">=</span> <span class="n">camera</span><span class="p">.</span><span class="n">createTransformer</span><span class="p">();</span>
+
+        <span class="c1">// 枠の描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">frame</span> <span class="p">:</span> <span class="n">frames</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">frame</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// スピナーの描画</span>
+        <span class="n">spinner</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">GetColor</span><span class="p">(</span><span class="n">spinner</span><span class="p">,</span> <span class="n">collidedIDs</span><span class="p">));</span>
+
+        <span class="c1">// バンパーの描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">bumper</span> <span class="p">:</span> <span class="n">bumpers</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">bumper</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">GetColor</span><span class="p">(</span><span class="n">bumper</span><span class="p">,</span> <span class="n">collidedIDs</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 風車の描画</span>
+        <span class="n">windmillWing</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">GetColor</span><span class="p">(</span><span class="n">windmillWing</span><span class="p">,</span> <span class="n">collidedIDs</span><span class="p">));</span>
+
+        <span class="c1">// 振り子の描画</span>
+        <span class="n">pendulum</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">GetColor</span><span class="p">(</span><span class="n">pendulum</span><span class="p">,</span> <span class="n">collidedIDs</span><span class="p">));</span>
+
+        <span class="c1">// エレベーターの描画</span>
+        <span class="n">elevatorA</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">GetColor</span><span class="p">(</span><span class="n">elevatorA</span><span class="p">,</span> <span class="n">collidedIDs</span><span class="p">));</span>
+        <span class="n">elevatorB</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">GetColor</span><span class="p">(</span><span class="n">elevatorB</span><span class="p">,</span> <span class="n">collidedIDs</span><span class="p">));</span>
+
+        <span class="c1">// ボールの描画</span>
+        <span class="n">ball</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+        <span class="c1">// フリッパーの描画</span>
+        <span class="n">leftFlipper</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+        <span class="n">rightFlipper</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+
+        <span class="c1">// ジョイントの可視化</span>
+        <span class="n">leftJoint</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
+        <span class="n">rightJoint</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
+        <span class="n">spinnerJoint</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
+        <span class="n">windmillJoint</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
+        <span class="n">pendulumJoint</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
+        <span class="n">elevatorSliderJoint</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
@@ -722,7 +1006,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../tutorial/shape/" title="2. Drawing shapes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../reference/fullscreen/" title="Fullscreen" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -731,7 +1015,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                2. Drawing shapes
+                Fullscreen
               </span>
             </div>
           </a>
