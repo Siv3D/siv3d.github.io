@@ -594,6 +594,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" title="絵文字タワー" class="md-nav__link">
+    絵文字タワー
+  </a>
+  
+</li>
+      
       
       
       
@@ -681,6 +688,13 @@
         <li class="md-nav__item">
   <a href="#_3" title="ピンボール" class="md-nav__link">
     ピンボール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="絵文字タワー" class="md-nav__link">
+    絵文字タワー
   </a>
   
 </li>
@@ -983,6 +997,89 @@
         <span class="n">windmillJoint</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
         <span class="n">pendulumJoint</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
         <span class="n">elevatorSliderJoint</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="_4">絵文字タワー<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 背景色を設定</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">));</span>
+
+    <span class="c1">// 登場する絵文字</span>
+    <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">emojis</span> <span class="o">=</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;🐘&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;🐧&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;🐐&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;🐤&quot;</span> <span class="p">};</span>
+
+    <span class="c1">// 画像のスケール</span>
+    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.04</span><span class="p">;</span>
+
+    <span class="c1">// 絵文字の形状情報とテクスチャを作成</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiPolygon</span><span class="o">&gt;</span> <span class="n">polygons</span><span class="p">;</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;</span> <span class="n">textures</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">emoji</span> <span class="p">:</span> <span class="n">emojis</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// 絵文字の画像から形状情報を作成</span>
+        <span class="n">polygons</span> <span class="o">&lt;&lt;</span> <span class="n">Emoji</span><span class="o">::</span><span class="n">CreateImage</span><span class="p">(</span><span class="n">emoji</span><span class="p">).</span><span class="n">alphaToPolygonsCentered</span><span class="p">().</span><span class="n">simplified</span><span class="p">(</span><span class="mf">0.8</span><span class="p">).</span><span class="n">scale</span><span class="p">(</span><span class="n">scale</span><span class="p">);</span>
+
+        <span class="c1">// 絵文字の画像からテクスチャを作成</span>
+        <span class="n">textures</span> <span class="o">&lt;&lt;</span> <span class="n">Texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="n">emoji</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 物理演算用のワールド</span>
+    <span class="n">P2World</span> <span class="n">world</span><span class="p">;</span>
+
+    <span class="c1">// 床 －</span>
+    <span class="k">const</span> <span class="n">P2Body</span> <span class="n">line</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticLine</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Line</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">P2Material</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+    <span class="c1">// 登場した絵文字のボディ</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">P2Body</span><span class="o">&gt;</span> <span class="n">bodies</span><span class="p">;</span>
+
+    <span class="c1">// ボディ ID と絵文字のインデックスの対応テーブル</span>
+    <span class="n">HashTable</span><span class="o">&lt;</span><span class="n">P2BodyID</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">table</span><span class="p">;</span>
+
+    <span class="c1">// 2D カメラ</span>
+    <span class="n">Camera2D</span> <span class="n">camera</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">),</span> <span class="mi">20</span><span class="p">);</span>
+
+    <span class="c1">// 絵文字のインデックス</span>
+    <span class="kt">size_t</span> <span class="n">index</span> <span class="o">=</span> <span class="n">Random</span><span class="p">(</span><span class="n">polygons</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 物理演算ワールドの更新</span>
+        <span class="n">world</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+
+        <span class="c1">// 2D カメラの操作と更新</span>
+        <span class="n">camera</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+
+        <span class="c1">// Transformer2D の作成</span>
+        <span class="k">auto</span> <span class="n">t</span> <span class="o">=</span> <span class="n">camera</span><span class="p">.</span><span class="n">createTransformer</span><span class="p">();</span>
+
+        <span class="c1">// 左クリックされたら</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// ボディを追加</span>
+            <span class="n">bodies</span> <span class="o">&lt;&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">createPolygons</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">PosF</span><span class="p">(),</span> <span class="n">polygons</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">P2Material</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+            <span class="c1">// ボディ ID と絵文字のインデックスの対応を追加</span>
+            <span class="n">table</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">bodies</span><span class="p">.</span><span class="n">back</span><span class="p">().</span><span class="n">id</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">exchange</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">Random</span><span class="p">(</span><span class="n">polygons</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)));</span>
+        <span class="p">}</span>
+
+        <span class="c1">// すべてのボディを描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">body</span> <span class="p">:</span> <span class="n">bodies</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">textures</span><span class="p">[</span><span class="n">table</span><span class="p">[</span><span class="n">body</span><span class="p">.</span><span class="n">id</span><span class="p">()]].</span><span class="n">scaled</span><span class="p">(</span><span class="n">scale</span><span class="p">).</span><span class="n">rotated</span><span class="p">(</span><span class="n">body</span><span class="p">.</span><span class="n">getAngle</span><span class="p">()).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">body</span><span class="p">.</span><span class="n">getPos</span><span class="p">());</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 床を描画</span>
+        <span class="n">line</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Green</span><span class="p">);</span>
+
+        <span class="c1">// 現在操作できる絵文字を描画</span>
+        <span class="n">textures</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">scaled</span><span class="p">(</span><span class="n">scale</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">PosF</span><span class="p">(),</span> <span class="n">AlphaF</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">+</span> <span class="n">Periodic</span><span class="o">::</span><span class="n">Sine0_1</span><span class="p">(</span><span class="mi">1</span><span class="n">s</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">));</span>
+
+        <span class="c1">// 2D カメラ操作のエフェクトを表示</span>
+        <span class="n">camera</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
