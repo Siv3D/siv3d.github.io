@@ -330,6 +330,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/json/" title="JSON file" class="md-nav__link">
+      JSON file
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -410,6 +422,13 @@
         <li class="md-nav__item">
   <a href="#piano" title="Piano" class="md-nav__link">
     Piano
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kaleidoscope-sketch" title="Kaleidoscope sketch" class="md-nav__link">
+    Kaleidoscope sketch
   </a>
   
 </li>
@@ -569,6 +588,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ja-jp/reference/json/" title="JSON ファイル" class="md-nav__link">
+      JSON ファイル
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -685,6 +716,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#kaleidoscope-sketch" title="Kaleidoscope sketch" class="md-nav__link">
+    Kaleidoscope sketch
+  </a>
+  
+</li>
+      
       
       
       
@@ -704,7 +742,7 @@
                 
                 <h1 id="application">Application<a class="headerlink" href="#application" title="Permanent link">&para;</a></h1>
 <h2 id="sketch">Sketch<a class="headerlink" href="#sketch" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../images/app-sketch.gif" /></p>
+<p><img alt="" src="../images/app-sketch.gif" />
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -756,10 +794,9 @@
         <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
-
+</pre></div></p>
 <h2 id="piano">Piano<a class="headerlink" href="#piano" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../images/app-piano.gif" /></p>
+<p><img alt="" src="../images/app-piano.gif" />
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -831,7 +868,72 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
+</pre></div></p>
+<h2 id="kaleidoscope-sketch">Kaleidoscope sketch<a class="headerlink" href="#kaleidoscope-sketch" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../images/app-kaleidoscope-paint.gif" />
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// キャンバスのサイズ</span>
+    <span class="k">constexpr</span> <span class="n">Size</span> <span class="n">canvasSize</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+
+    <span class="c1">// 分割数</span>
+    <span class="k">constexpr</span> <span class="n">int32</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+
+    <span class="c1">// 背景色</span>
+    <span class="k">constexpr</span> <span class="n">Color</span> <span class="n">backgroundColor</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+
+    <span class="c1">// ウィンドウをキャンバスのサイズに</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">canvasSize</span><span class="p">);</span>
+
+    <span class="c1">// 書き込み用の画像</span>
+    <span class="n">Image</span> <span class="n">image</span><span class="p">(</span><span class="n">canvasSize</span><span class="p">,</span> <span class="n">backgroundColor</span><span class="p">);</span>
+
+    <span class="c1">// 画像を表示するための動的テクスチャ</span>
+    <span class="n">DynamicTexture</span> <span class="n">texture</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// 画面の中心が (0, 0) になるようにマウスカーソルの座標を移動</span>
+            <span class="k">const</span> <span class="n">Vec2</span> <span class="n">begin</span> <span class="o">=</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">()</span> <span class="o">?</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">PosF</span><span class="p">()</span> <span class="o">:</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">PreviousPosF</span><span class="p">())</span> <span class="o">-</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">();</span>
+            <span class="k">const</span> <span class="n">Vec2</span> <span class="n">end</span> <span class="o">=</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">PosF</span><span class="p">()</span> <span class="o">-</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">();</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="c1">// 円座標に変換</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Circular</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="n">cs</span> <span class="o">=</span> <span class="p">{</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span> <span class="p">};</span>
+
+                <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">c</span> <span class="p">:</span> <span class="n">cs</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="c1">// 角度をずらす</span>
+                    <span class="n">c</span><span class="p">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">IsEven</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">?</span> <span class="p">(</span><span class="o">-</span><span class="n">c</span><span class="p">.</span><span class="n">theta</span> <span class="o">-</span> <span class="mi">2</span><span class="n">_pi</span> <span class="o">/</span> <span class="n">N</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">:</span> <span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">theta</span> <span class="o">+</span> <span class="mi">2</span><span class="n">_pi</span> <span class="o">/</span> <span class="n">N</span> <span class="o">*</span> <span class="n">i</span><span class="p">);</span>
+                <span class="p">}</span>
+
+                <span class="c1">// ずらした位置をもとに、画像に線を書き込む</span>
+                <span class="n">Line</span><span class="p">(</span><span class="n">cs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cs</span><span class="p">[</span><span class="mi">1</span><span class="p">]).</span><span class="n">moveBy</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">())</span>
+                    <span class="p">.</span><span class="n">paint</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HSV</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span> <span class="o">*</span> <span class="mf">60.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 書き込んだ画像でテクスチャを更新</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">fillIfNotBusy</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">MouseR</span><span class="p">.</span><span class="n">down</span><span class="p">())</span> <span class="c1">// 右クリックされたら</span>
+        <span class="p">{</span>
+            <span class="c1">// 画像を塗りつぶす</span>
+            <span class="n">image</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">backgroundColor</span><span class="p">);</span>
+
+            <span class="c1">// 塗りつぶした画像でテクスチャを更新</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// テクスチャを描く</span>
+        <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
                 
                   
                 
