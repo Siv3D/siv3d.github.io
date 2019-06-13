@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#fullscreen" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -294,6 +294,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/animation/" title="3. Animation" class="md-nav__link">
+      3. Animation
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -353,8 +365,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="フルスクリーン解像度を選択する" class="md-nav__link">
-    フルスクリーン解像度を選択する
+  <a href="#selecting-a-native-fullscreen-resolution" title="Selecting a native fullscreen resolution" class="md-nav__link">
+    Selecting a native fullscreen resolution
   </a>
   
 </li>
@@ -378,6 +390,18 @@
   <li class="md-nav__item">
     <a href="../json/" title="JSON file" class="md-nav__link">
       JSON file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2d-shadow/" title="2D shadow" class="md-nav__link">
+      2D shadow
     </a>
   </li>
 
@@ -538,6 +562,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ja-jp/tutorial/animation/" title="3. 動きを作る" class="md-nav__link">
+      3. 動きを作る
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -582,6 +618,18 @@
   <li class="md-nav__item">
     <a href="../../ja-jp/reference/json/" title="JSON ファイル" class="md-nav__link">
       JSON ファイル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ja-jp/reference/2d-shadow/" title="2D 図形の影" class="md-nav__link">
+      2D 図形の影
     </a>
   </li>
 
@@ -689,8 +737,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="フルスクリーン解像度を選択する" class="md-nav__link">
-    フルスクリーン解像度を選択する
+  <a href="#selecting-a-native-fullscreen-resolution" title="Selecting a native fullscreen resolution" class="md-nav__link">
+    Selecting a native fullscreen resolution
   </a>
   
 </li>
@@ -712,8 +760,8 @@
               
                 
                 
-                <h1 id="_1">フルスクリーン<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">フルスクリーン解像度を選択する<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+                <h1 id="fullscreen">Fullscreen<a class="headerlink" href="#fullscreen" title="Permanent link">&para;</a></h1>
+<h2 id="selecting-a-native-fullscreen-resolution">Selecting a native fullscreen resolution<a class="headerlink" href="#selecting-a-native-fullscreen-resolution" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Windows かつ高 DPI に設定されたディスプレイでは、高 DPI 対応のウィンドウを作成しないと、最大解像度のフルスクリーンを正しく表示できません。<code class="codehilite"><span class="o">&lt;</span><span class="n">Siv3D</span><span class="p">.</span><span class="n">hpp</span><span class="o">&gt;</span></code> のインクルード前に <code class="codehilite"><span class="n">SIV3D_WINDOWS_HIGH_DPI</span></code> マクロを定義することで高 DPI 対応ウィンドウを作成できます。高 DPI ディスプレイにおいて、高 DPI 対応ウィンドウはドットバイドットで表示されるため、ウィンドウの見た目が小さくなります。</p>
@@ -723,9 +771,6 @@
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// SetFullscreen の解像度に応じてシーンの解像度も変更するように</span>
-    <span class="n">Scene</span><span class="o">::</span><span class="n">SetScaleMode</span><span class="p">(</span><span class="n">ScaleMode</span><span class="o">::</span><span class="n">ResizeFill</span><span class="p">);</span>
-
     <span class="c1">// 現在のモニタで使用可能なフルスクリーン解像度を取得</span>
     <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">Size</span><span class="o">&gt;</span> <span class="n">resolutions</span> <span class="o">=</span> <span class="n">Graphics</span><span class="o">::</span><span class="n">GetFullscreenResolutions</span><span class="p">();</span>
 
@@ -788,7 +833,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../tutorial/shape/" title="2. Drawing shapes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../tutorial/animation/" title="3. Animation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -797,7 +842,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                2. Drawing shapes
+                3. Animation
               </span>
             </div>
           </a>
