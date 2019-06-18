@@ -310,7 +310,7 @@
 
 
   <li class="md-nav__item">
-    <a href="./" title="4. 2D intersection" class="md-nav__link">
+    <a href="../../../tutorial/2d-intersection/" title="4. 2D intersection" class="md-nav__link">
       4. 2D intersection
     </a>
   </li>
@@ -581,8 +581,63 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#41" title="4.1" class="md-nav__link">
-    4.1
+  <a href="#41" title="4.1 マウスオーバー" class="md-nav__link">
+    4.1 マウスオーバー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42" title="4.2 図形のクリック" class="md-nav__link">
+    4.2 図形のクリック
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="クリック" class="md-nav__link">
+    クリック
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="押されている" class="md-nav__link">
+    押されている
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43" title="4.3 図形の交差" class="md-nav__link">
+    4.3 図形の交差
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44" title="4.4 図形の包含判定" class="md-nav__link">
+    4.4 図形の包含判定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45" title="4.5 線分と交差する点" class="md-nav__link">
+    4.5 線分と交差する点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46" title="4.6 マウスカーソルのスタイル" class="md-nav__link">
+    4.6 マウスカーソルのスタイル
   </a>
   
 </li>
@@ -761,8 +816,63 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#41" title="4.1" class="md-nav__link">
-    4.1
+  <a href="#41" title="4.1 マウスオーバー" class="md-nav__link">
+    4.1 マウスオーバー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42" title="4.2 図形のクリック" class="md-nav__link">
+    4.2 図形のクリック
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="クリック" class="md-nav__link">
+    クリック
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="押されている" class="md-nav__link">
+    押されている
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43" title="4.3 図形の交差" class="md-nav__link">
+    4.3 図形の交差
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44" title="4.4 図形の包含判定" class="md-nav__link">
+    4.4 図形の包含判定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45" title="4.5 線分と交差する点" class="md-nav__link">
+    4.5 線分と交差する点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46" title="4.6 マウスカーソルのスタイル" class="md-nav__link">
+    4.6 マウスカーソルのスタイル
   </a>
   
 </li>
@@ -786,7 +896,320 @@
                 
                 <h1 id="4">4. あたり判定<a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
 <p>この章では、マウスカーソルや図形とのインタラクションを処理する方法を学びます。</p>
-<h2 id="41">4.1<a class="headerlink" href="#41" title="Permanent link">&para;</a></h2>
+<h2 id="41">4.1 マウスオーバー<a class="headerlink" href="#41" title="Permanent link">&para;</a></h2>
+<p>ある図形 g の領域にマウスカーソルが重なっているかを、<code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">()</span></code> で調べられます。</p>
+<p><img alt="" src="../images/4010.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+    <span class="k">const</span> <span class="n">Circle</span> <span class="n">circle</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">circle</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// 円にマウスカーソルが重なっていれば水色</span>
+            <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="c1">// 重なっていなければ灰色</span>
+            <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>このプログラムは条件演算子を使うとさらに短く書けます。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+    <span class="k">const</span> <span class="n">Circle</span> <span class="n">circle</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 円にマウスカーソルが重なっていれば水色、そうでなければ灰色</span>
+<span class="hll">        <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">circle</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">()</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="nl">Skyblue</span> <span class="p">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="42">4.2 図形のクリック<a class="headerlink" href="#42" title="Permanent link">&para;</a></h2>
+<h3 id="_1">クリック<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>ある図形 g が左クリック（またはタッチ）されたかを、<code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="n">leftClicked</span><span class="p">()</span></code> で調べられます。<code class="codehilite"><span class="n">leftClicked</span><span class="p">()</span></code> は、接触のアクションのうち、最初に接触した瞬間のみを「クリックされた」と判定します。図形を押し続けていても反応はありません。</p>
+<p><img alt="" src="../images/4020.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+    <span class="k">const</span> <span class="n">Circle</span> <span class="n">circle</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="n">int32</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">ClearPrint</span><span class="p">();</span>
+
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">count</span><span class="p">;</span>
+
+        <span class="c1">// 円が左クリックされたら</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">circle</span><span class="p">.</span><span class="n">leftClicked</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="o">++</span><span class="n">count</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="_2">押されている<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>ある図形 g が左クリック（またはタッチ）で押されているかを、<code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="n">leftPressed</span><span class="p">()</span></code> で調べられます。<code class="codehilite"><span class="n">leftClicked</span><span class="p">()</span></code> と異なり、押され続けていれば、最初の接触以降もつねに「押されている」と判定されます。</p>
+<p><img alt="" src="../images/4021.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+    <span class="k">const</span> <span class="n">Circle</span> <span class="n">circle</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 円が押されていれば水色、そうでなければ灰色</span>
+        <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">circle</span><span class="p">.</span><span class="n">leftPressed</span><span class="p">()</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="nl">Skyblue</span> <span class="p">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="43">4.3 図形の交差<a class="headerlink" href="#43" title="Permanent link">&para;</a></h2>
+<p>2 つの図形 g と h が交差しているかは、<code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">h</span><span class="p">)</span></code> で調べられます。</p>
+<p><img alt="" src="../images/4030.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">Rect</span> <span class="n">rect</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">circle</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="k">const</span> <span class="n">Polygon</span> <span class="n">star</span> <span class="o">=</span> <span class="n">Shape2D</span><span class="o">::</span><span class="n">Star</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">300</span><span class="p">));</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="n">Circle</span> <span class="n">c</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span> <span class="mi">30</span><span class="p">);</span>
+
+        <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="nl">Skyblue</span> <span class="p">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+
+        <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">circle</span><span class="p">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="nl">Skyblue</span> <span class="p">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+
+        <span class="n">star</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">star</span><span class="p">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="nl">Skyblue</span> <span class="p">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+
+        <span class="n">c</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>楕円どうしなど、一部の図形では交差判定が未実装の場合があります。実装状況は <a href="https://github.com/Siv3D/OpenSiv3D/blob/master/Siv3D/include/Siv3D/Intersection.hpp">Intersection.hpp</a> で確認できます。</p>
+</div>
+<h2 id="44">4.4 図形の包含判定<a class="headerlink" href="#44" title="Permanent link">&para;</a></h2>
+<p>ある図形 <code class="codehilite"><span class="k">g</span></code> が <code class="codehilite"><span class="n">h</span></code> を包含しているかは <code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="k">contains</span><span class="p">(</span><span class="n">h</span><span class="p">)</span></code> で調べられます。</p>
+<p><img alt="" src="../images/4040.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">Rect</span> <span class="n">rect</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">circle</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="k">const</span> <span class="n">Polygon</span> <span class="n">star</span> <span class="o">=</span> <span class="n">Shape2D</span><span class="o">::</span><span class="n">Star</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">300</span><span class="p">));</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="n">Circle</span> <span class="n">c</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span> <span class="mi">30</span><span class="p">);</span>
+
+        <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="nl">Skyblue</span> <span class="p">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+
+        <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">circle</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="nl">Skyblue</span> <span class="p">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+
+        <span class="n">star</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">star</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="nl">Skyblue</span> <span class="p">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+
+        <span class="n">c</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="45">4.5 線分と交差する点<a class="headerlink" href="#45" title="Permanent link">&para;</a></h2>
+<p>ある図形 <code class="codehilite"><span class="k">g</span></code> と <code class="codehilite"><span class="n">h</span></code> の詳細な交差情報を <code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="n">intersectsAt</span><span class="p">(</span><span class="n">h</span><span class="p">)</span></code> で取得できます。次のようなプログラムで、図形が交差する座標を取得できます。</p>
+<p><img alt="" src="../images/4050.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">Rect</span> <span class="n">rect</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">circle</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">Triangle</span> <span class="n">triangle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">));</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="n">Line</span> <span class="n">line</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">());</span>
+
+        <span class="c1">// rect と line の交差情報を取得</span>
+<span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="n">points</span> <span class="o">=</span> <span class="n">rect</span><span class="p">.</span><span class="n">intersectsAt</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+</span>        <span class="p">{</span>
+            <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+
+            <span class="c1">// 交差する座標に赤い円を表示</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">point</span> <span class="p">:</span> <span class="n">points</span><span class="p">.</span><span class="n">value</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="mi">4</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="c1">// 交差しない</span>
+        <span class="p">{</span>
+            <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// circle と line の交差情報を取得</span>
+<span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="n">points</span> <span class="o">=</span> <span class="n">circle</span><span class="p">.</span><span class="n">intersectsAt</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+</span>        <span class="p">{</span>
+            <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+
+            <span class="c1">// 交差する座標に赤い円を表示</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">point</span> <span class="p">:</span> <span class="n">points</span><span class="p">.</span><span class="n">value</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="mi">4</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="c1">// 交差しない</span>
+        <span class="p">{</span>
+            <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// triangle と line の交差情報を取得</span>
+<span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="n">points</span> <span class="o">=</span> <span class="n">triangle</span><span class="p">.</span><span class="n">intersectsAt</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+</span>        <span class="p">{</span>
+            <span class="n">triangle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+
+            <span class="c1">// 交差する座標に赤い円を表示</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">point</span> <span class="p">:</span> <span class="n">points</span><span class="p">.</span><span class="n">value</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="mi">4</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="c1">// 交差しない</span>
+        <span class="p">{</span>
+            <span class="n">triangle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">line</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code class="codehilite"><span class="na">.intersectsAt</span><span class="p">()</span></code> の戻り値 <code class="codehilite"><span class="n">points</span></code> は <code class="codehilite"><span class="n">Optional</span><span class="o">&lt;</span><span class="nb">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;&gt;</span></code> 型です。交差する座標を取得する前に、上記サンプルのように <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="nv">points</span><span class="ss">)</span></code> で <code class="codehilite"><span class="n">Optional</span></code> が値を持つかをチェックする必要があります。2 つの図形が交差しない場合 <code class="codehilite"><span class="n">Optional</span></code> は値を持ちません。2 つの線分がぴったりオーバーラップするようなケースでは、<code class="codehilite"><span class="n">Optional</span></code> が値を持っていても、その値は空の配列になります。</p>
+</div>
+<h2 id="46">4.6 マウスカーソルのスタイル<a class="headerlink" href="#46" title="Permanent link">&para;</a></h2>
+<p>マウスカーソルのスタイルを変更したいときは、<code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">RequestStyle</span><span class="p">()</span></code> を通して、変更したいカーソルのスタイルをリクエストします。手の形にしたい場合は <code class="codehilite"><span class="n">CursorStyle</span><span class="p">::</span><span class="n">Hand</span></code> を、カーソルを非表示にしたい場合は <code class="codehilite"><span class="n">CursorStyle</span><span class="p">::</span><span class="n">Hidden</span></code> を指定します。マウスカーソルのリクエストは、そのフレームにのみ適用されるので、変更を維持したい場合は毎フレームにわたりリクエストをし続ける必要があります。</p>
+<table>
+<thead>
+<tr>
+<th>CursorStyle</th>
+<th>カーソルの形状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CursorStyle::Arrow</td>
+<td>矢印（通常）</td>
+</tr>
+<tr>
+<td>CursorStyle::Ibeam</td>
+<td>I マーク</td>
+</tr>
+<tr>
+<td>CursorStyle::Cross</td>
+<td>十字のマーク</td>
+</tr>
+<tr>
+<td>CursorStyle::Hand</td>
+<td>手のアイコン</td>
+</tr>
+<tr>
+<td>CursorStyle::NotAllowed</td>
+<td>禁止のマーク</td>
+</tr>
+<tr>
+<td>CursorStyle::ResizeUpDown</td>
+<td>上下のリサイズ</td>
+</tr>
+<tr>
+<td>CursorStyle::ResizeLeftRight</td>
+<td>左右のリサイズ</td>
+</tr>
+<tr>
+<td>CursorStyle::Hidden</td>
+<td>非表示</td>
+</tr>
+<tr>
+<td>CursorStyle::Default</td>
+<td>Arrow と同じ</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../images/4060.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">ColorF</span> <span class="n">buttonColor</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">button</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+    <span class="n">Transition</span> <span class="n">press</span><span class="p">(</span><span class="mf">0.05</span><span class="n">s</span><span class="p">,</span> <span class="mf">0.05</span><span class="n">s</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="kt">bool</span> <span class="n">mouseOver</span> <span class="o">=</span> <span class="n">button</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">();</span>
+
+        <span class="c1">// 円の上にマウスカーソルがあれば</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mouseOver</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// マウスカーソルを手の形に</span>
+            <span class="n">Cursor</span><span class="o">::</span><span class="n">RequestStyle</span><span class="p">(</span><span class="n">CursorStyle</span><span class="o">::</span><span class="n">Hand</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">press</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">button</span><span class="p">.</span><span class="n">leftPressed</span><span class="p">());</span>
+
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">t</span> <span class="o">=</span> <span class="n">press</span><span class="p">.</span><span class="n">value</span><span class="p">();</span>
+
+        <span class="n">button</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="n">lerp</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">t</span><span class="p">))</span>
+            <span class="p">.</span><span class="n">drawShadow</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">).</span><span class="n">lerp</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">t</span><span class="p">),</span> <span class="mi">12</span> <span class="o">-</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span> <span class="o">-</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">buttonColor</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
