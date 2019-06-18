@@ -382,8 +382,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#44" title="4.4 図形の包含判定" class="md-nav__link">
-    4.4 図形の包含判定
+  <a href="#44" title="4.4 図形を内側に含む" class="md-nav__link">
+    4.4 図形を内側に含む
   </a>
   
 </li>
@@ -881,8 +881,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#44" title="4.4 図形の包含判定" class="md-nav__link">
-    4.4 図形の包含判定
+  <a href="#44" title="4.4 図形を内側に含む" class="md-nav__link">
+    4.4 図形を内側に含む
   </a>
   
 </li>
@@ -1048,8 +1048,8 @@
 <p class="admonition-title">Info</p>
 <p>楕円どうしなど、一部の図形では交差判定が未実装の場合があります。実装状況は <a href="https://github.com/Siv3D/OpenSiv3D/blob/master/Siv3D/include/Siv3D/Intersection.hpp">Intersection.hpp</a> で確認できます。</p>
 </div>
-<h2 id="44">4.4 図形の包含判定<a class="headerlink" href="#44" title="Permanent link">&para;</a></h2>
-<p>ある図形 <code class="codehilite"><span class="k">g</span></code> が <code class="codehilite"><span class="n">h</span></code> を包含しているかは <code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="k">contains</span><span class="p">(</span><span class="n">h</span><span class="p">)</span></code> で調べられます。</p>
+<h2 id="44">4.4 図形を内側に含む<a class="headerlink" href="#44" title="Permanent link">&para;</a></h2>
+<p>ある図形 <code class="codehilite"><span class="k">g</span></code> が別の図形 <code class="codehilite"><span class="n">h</span></code> を完全に内側に含んでいるかは、<code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="k">contains</span><span class="p">(</span><span class="n">h</span><span class="p">)</span></code> で調べられます。次のサンプルでは、マウスカーソルに追従する円が長方形や星などの図形の内部に完全に含まれているときに、その図形の色を変更します。</p>
 <p><img alt="" src="../images/4040.gif" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
