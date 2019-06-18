@@ -304,6 +304,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2d-intersection/" title="4. 2D intersection" class="md-nav__link">
+      4. 2D intersection
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -680,16 +692,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#34" title="3.4 イージング" class="md-nav__link">
-    3.4 イージング
+  <a href="#34" title="3.4 トランジション" class="md-nav__link">
+    3.4 トランジション
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transition" title="Transition" class="md-nav__link">
+    Transition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mouselpressed" title="MouseL.pressed()" class="md-nav__link">
+    MouseL.pressed()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#35" title="3.5 トランジション" class="md-nav__link">
-    3.5 トランジション
+  <a href="#35" title="3.5 イージング" class="md-nav__link">
+    3.5 イージング
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#min-max" title="Min, Max" class="md-nav__link">
+    Min, Max
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="線形補間" class="md-nav__link">
+    線形補間
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="イージング" class="md-nav__link">
+    イージング
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -701,6 +760,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2d-intersection/" title="4. あたり判定" class="md-nav__link">
+      4. あたり判定
+    </a>
   </li>
 
         
@@ -990,16 +1061,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#34" title="3.4 イージング" class="md-nav__link">
-    3.4 イージング
+  <a href="#34" title="3.4 トランジション" class="md-nav__link">
+    3.4 トランジション
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transition" title="Transition" class="md-nav__link">
+    Transition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mouselpressed" title="MouseL.pressed()" class="md-nav__link">
+    MouseL.pressed()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#35" title="3.5 トランジション" class="md-nav__link">
-    3.5 トランジション
+  <a href="#35" title="3.5 イージング" class="md-nav__link">
+    3.5 イージング
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#min-max" title="Min, Max" class="md-nav__link">
+    Min, Max
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="線形補間" class="md-nav__link">
+    線形補間
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="イージング" class="md-nav__link">
+    イージング
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1225,19 +1343,192 @@
 </pre></div>
 
 <h3 id="periodicsine0_1">Periodic::Sine0_1()<a class="headerlink" href="#periodicsine0_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>
+<p>指定した周期で、0.0～1.0 の範囲で正弦波（サインカーブ）を描く数値の変化を返す関数です。</p>
+<p><img alt="" src="../images/3032.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 2 秒周期で、サインカーブの速度での左右移動を繰り返す</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">700</span> <span class="o">*</span> <span class="n">Periodic</span><span class="o">::</span><span class="n">Sine0_1</span><span class="p">(</span><span class="mi">2</span><span class="n">s</span><span class="p">);</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 <h3 id="periodicsawtooth0_1">Periodic::Sawtooth0_1()<a class="headerlink" href="#periodicsawtooth0_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>
+<p>指定した周期で、0.0 → 1.0 への変化を繰り返す関数です。</p>
+<p><img alt="" src="../images/3033.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 2 秒周期で、左 → 右への移動を繰り返す </span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">700</span> <span class="o">*</span> <span class="n">Periodic</span><span class="o">::</span><span class="n">Sawtooth0_1</span><span class="p">(</span><span class="mi">2</span><span class="n">s</span><span class="p">);</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 <h3 id="periodicjump0_1">Periodic::Jump0_1()<a class="headerlink" href="#periodicjump0_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>
+<p>指定した周期で、地面からジャンプしたときの速度のような数値変化を繰り返す関数です。</p>
+<p><img alt="" src="../images/3034.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 2 秒周期で、ジャンプのような移動を繰り返す </span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">h</span> <span class="o">=</span> <span class="mi">500</span> <span class="o">*</span> <span class="n">Periodic</span><span class="o">::</span><span class="n">Jump0_1</span><span class="p">(</span><span class="mi">2</span><span class="n">s</span><span class="p">);</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">550</span> <span class="o">-</span> <span class="n">h</span><span class="p">,</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
-<h2 id="34">3.4 イージング<a class="headerlink" href="#34" title="Permanent link">&para;</a></h2>
-<h2 id="35">3.5 トランジション<a class="headerlink" href="#35" title="Permanent link">&para;</a></h2>
+<h2 id="34">3.4 トランジション<a class="headerlink" href="#34" title="Permanent link">&para;</a></h2>
+<h3 id="transition">Transition<a class="headerlink" href="#transition" title="Permanent link">&para;</a></h3>
+<p>値が少しずつ大きくなって最大値に到達する。そこから徐々に小さくなって最小値に戻る、といった挙動をプログラムするときには <code class="codehilite"><span class="n">Transition</span></code> を使うと便利です。<code class="codehilite"><span class="n">Transition</span></code> のコンストラクタには、最小値から最大値に増加する所要時間と、最大値から最小値に減少する所要時間を設定します。あとは毎フレーム、<code class="codehilite"><span class="n">Transition</span><span class="p">::</span><span class="k">update</span><span class="p">()</span></code> に、増加の場合は <code class="codehilite"><span class="k">true</span></code> を、減少の場合は <code class="codehilite"><span class="k">false</span></code> を渡せば、設定された速度で値が変化します。<code class="codehilite"><span class="n">Transitgion</span><span class="p">::</span><span class="n">value</span><span class="p">()</span></code> で現在の値を取得できます。</p>
+<h3 id="mouselpressed">MouseL.pressed()<a class="headerlink" href="#mouselpressed" title="Permanent link">&para;</a></h3>
+<p>マウスの左ボタンが押されている（タッチディスプレイの場合は画面がタッチされている）かを、<code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="nv">MouseL</span>.<span class="nv">pressed</span><span class="ss">())</span></code> で調べられます。次のサンプルでは、左ボタンが押されていると扇形が大きくなり、離されていると小さくなります。</p>
+<p><img alt="" src="../images/3040.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+
+    <span class="c1">// 2.0 秒かけて 0.0 から 1.0 になる速度で増加し</span>
+    <span class="c1">// 0.5 秒かけて 1.0 から 0.0 になる速度で減少するトランジション</span>
+    <span class="n">Transition</span> <span class="n">transition</span><span class="p">(</span><span class="mf">2.0</span><span class="n">s</span><span class="p">,</span> <span class="mf">0.5</span><span class="n">s</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// マウスの左ボタンが押されていたら増加</span>
+            <span class="n">transition</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="c1">// 押されていなかったら減少</span>
+            <span class="n">transition</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">t</span> <span class="o">=</span> <span class="n">transition</span><span class="p">.</span><span class="n">value</span><span class="p">();</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="mi">200</span><span class="p">).</span><span class="n">drawPie</span><span class="p">(</span><span class="mi">0</span><span class="n">_deg</span><span class="p">,</span> <span class="mi">360</span><span class="n">_deg</span> <span class="o">*</span> <span class="n">t</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><code class="codehilite"><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span></code> は <code class="codehilite"><span class="n">bool</span></code> 型の値を返すので、このプログラムは次のように短く書けます。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+
+    <span class="c1">// 2.0 秒かけて 0.0 から 1.0 になる速度で増加し、</span>
+    <span class="c1">// 0.5 秒かけて 1.0 から 0.0 になる速度で減少するトランジション</span>
+    <span class="n">Transition</span> <span class="n">transition</span><span class="p">(</span><span class="mf">2.0</span><span class="n">s</span><span class="p">,</span> <span class="mf">0.5</span><span class="n">s</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// マウスの左ボタンが押されていたら増加、押されていなかったら減少</span>
+<span class="hll">        <span class="n">transition</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">());</span>
+</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">t</span> <span class="o">=</span> <span class="n">transition</span><span class="p">.</span><span class="n">value</span><span class="p">();</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="mi">200</span><span class="p">).</span><span class="n">drawPie</span><span class="p">(</span><span class="mi">0</span><span class="n">_deg</span><span class="p">,</span> <span class="mi">360</span><span class="n">_deg</span> <span class="o">*</span> <span class="n">t</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="35">3.5 イージング<a class="headerlink" href="#35" title="Permanent link">&para;</a></h2>
+<h3 id="min-max">Min, Max<a class="headerlink" href="#min-max" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="k">Min</span><span class="p">()</span></code> 関数は、与えられた引数の中の最小値を返します。<code class="codehilite"><span class="k">Max</span><span class="p">()</span></code> 関数は最大値を返します。</p>
+<h3 id="_1">線形補間<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>あるベクトル A から別のベクトル B への線形補間は <code class="codehilite"><span class="n">A</span><span class="p">.</span><span class="n">lerp</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span></code> で計算できます。A と B の中間のベクトルは <code class="codehilite"><span class="n">A</span><span class="p">.</span><span class="n">lerp</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span></code> で計算します。</p>
+<p><img alt="" src="../images/3050.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+
+    <span class="k">constexpr</span> <span class="n">Vec2</span> <span class="n">begin</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">Vec2</span> <span class="n">end</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+
+    <span class="n">Stopwatch</span> <span class="n">stopwatch</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">stopwatch</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 移動の割合 0.0～1.0</span>
+<span class="hll">        <span class="k">const</span> <span class="kt">double</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Min</span><span class="p">(</span><span class="n">stopwatch</span><span class="p">.</span><span class="n">sF</span><span class="p">(),</span> <span class="mf">1.0</span><span class="p">);</span>
+</span>
+        <span class="c1">// begin と end の線形補間</span>
+<span class="hll">        <span class="k">const</span> <span class="n">Vec2</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">begin</span><span class="p">.</span><span class="n">lerp</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="mi">40</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="_2">イージング<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>0.0 から 1.0 に一定の割合で値を増加させるだけでは単調な動きになってしまいます。はじめは少しずつ加速し、ゴールに近づくとゆっくりになるといったように、速度に変化を与えると、より洗練された視覚効果を実現できます。0.0 → 1.0 の単調増加を、特徴的なカーブに変換できる <strong>イージング関数</strong> を取り入れて、アニメーションの印象を改善しましょう。</p>
+<p><img alt="" src="../images/3051.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+
+    <span class="k">constexpr</span> <span class="n">Vec2</span> <span class="n">begin</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">Vec2</span> <span class="n">end</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+
+    <span class="n">Stopwatch</span> <span class="n">stopwatch</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">stopwatch</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 移動の割合 0.0～1.0</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Min</span><span class="p">(</span><span class="n">stopwatch</span><span class="p">.</span><span class="n">sF</span><span class="p">(),</span> <span class="mf">1.0</span><span class="p">);</span>
+
+        <span class="c1">// イージング関数を適用</span>
+<span class="hll">        <span class="k">const</span> <span class="kt">double</span> <span class="n">e</span> <span class="o">=</span> <span class="n">EaseInOutExpo</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+</span>
+        <span class="c1">// begin と end の線形補間</span>
+<span class="hll">        <span class="k">const</span> <span class="n">Vec2</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">begin</span><span class="p">.</span><span class="n">lerp</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="n">e</span><span class="p">);</span>
+</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="mi">40</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>イージング関数は全部で約 30 種類用意されています。一覧は <a href="https://easings.net/">Easing Functions Cheat Sheet</a> で確認できます。<code class="codehilite"><span class="n">EaseInOutExpo</span><span class="p">()</span></code> 以外にも、<code class="codehilite"><span class="n">EaseOutBounce</span><span class="p">()</span></code> や <code class="codehilite"><span class="n">EaseInOutBack</span><span class="p">()</span></code> など様々なイージング関数を試してみましょう。</p>
                 
                   
                 
@@ -1273,13 +1564,13 @@
           </a>
         
         
-          <a href="../../reference/fullscreen/" title="フルスクリーン" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../2d-intersection/" title="4. あたり判定" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                フルスクリーン
+                4. あたり判定
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
