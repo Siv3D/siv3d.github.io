@@ -13,7 +13,7 @@
         <meta name="description" content="Siv3D: An open source C++17 library for creative coding">
       
       
-        <link rel="canonical" href="https://siv3d.github.io/ja-jp/store/store/">
+        <link rel="canonical" href="https://siv3d.github.io/ja-jp/tutorial/texture/">
       
       
         <meta name="author" content="Ryo Suzuki">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Siv3D ストア - Siv3D</title>
+        <title>5. 画像を描く - Siv3D</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#5" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -118,7 +118,7 @@
               Siv3D
             </span>
             <span class="md-header-nav__topic">
-              Siv3D ストア
+              5. 画像を描く
             </span>
           
         </div>
@@ -507,10 +507,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
     
     <label class="md-nav__link" for="nav-2-2">
       チュートリアル
@@ -528,7 +530,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/basic/" title="1. Siv3D の基本" class="md-nav__link">
+    <a href="../basic/" title="1. Siv3D の基本" class="md-nav__link">
       1. Siv3D の基本
     </a>
   </li>
@@ -540,7 +542,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/shape/" title="2. 図形を描く" class="md-nav__link">
+    <a href="../shape/" title="2. 図形を描く" class="md-nav__link">
       2. 図形を描く
     </a>
   </li>
@@ -552,7 +554,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/animation/" title="3. 動きを作る" class="md-nav__link">
+    <a href="../animation/" title="3. 動きを作る" class="md-nav__link">
       3. 動きを作る
     </a>
   </li>
@@ -564,7 +566,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/2d-intersection/" title="4. あたり判定" class="md-nav__link">
+    <a href="../2d-intersection/" title="4. あたり判定" class="md-nav__link">
       4. あたり判定
     </a>
   </li>
@@ -574,11 +576,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../tutorial/texture/" title="5. 画像を描く" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        5. 画像を描く
+      </label>
+    
+    <a href="./" title="5. 画像を描く" class="md-nav__link md-nav__link--active">
       5. 画像を描く
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51" title="5.1" class="md-nav__link">
+    5.1
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -711,49 +751,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Siv3D ストア
-      </label>
-    
-    <a href="./" title="Siv3D ストア" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../store/store/" title="Siv3D ストア" class="md-nav__link">
       Siv3D ストア
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#line" title="LINE スタンプ" class="md-nav__link">
-    LINE スタンプ
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -783,8 +785,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#line" title="LINE スタンプ" class="md-nav__link">
-    LINE スタンプ
+  <a href="#51" title="5.1" class="md-nav__link">
+    5.1
   </a>
   
 </li>
@@ -806,9 +808,9 @@
               
                 
                 
-                <h1 id="_1">ショップ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="line">LINE スタンプ<a class="headerlink" href="#line" title="Permanent link">&para;</a></h2>
-<p><a href="https://line.me/S/sticker/6732840">Siv3D くん LINE スタンプ</a></p>
+                <h1 id="5">5. 画像を描く<a class="headerlink" href="#5" title="Permanent link">&para;</a></h1>
+<p>この章では、絵文字やアイコン、画像データを画面に描く方法を学びます。</p>
+<h2 id="51">5.1<a class="headerlink" href="#51" title="Permanent link">&para;</a></h2>
                 
                   
                 
@@ -829,7 +831,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../community/community/" title="コミュニティ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../2d-intersection/" title="4. あたり判定" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -838,11 +840,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                コミュニティ
+                4. あたり判定
               </span>
             </div>
           </a>
         
+        
+          <a href="../../reference/fullscreen/" title="フルスクリーン" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                フルスクリーン
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>

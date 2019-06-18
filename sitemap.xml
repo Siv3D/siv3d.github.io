@@ -26,6 +26,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://siv3d.github.io/tutorial/texture/</loc>
+     <lastmod>2019-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://siv3d.github.io/reference/fullscreen/</loc>
      <lastmod>2019-06-18</lastmod>
      <changefreq>daily</changefreq>
@@ -82,6 +87,11 @@
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/2d-intersection/</loc>
+     <lastmod>2019-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/tutorial/texture/</loc>
      <lastmod>2019-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
