@@ -456,6 +456,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#221" title="2.21 グラデーション" class="md-nav__link">
+    2.21 グラデーション
+  </a>
+  
+</li>
+      
       
       
       
@@ -1053,6 +1060,13 @@
         <li class="md-nav__item">
   <a href="#220" title="2.20 円/長方形/角丸長方形の影" class="md-nav__link">
     2.20 円/長方形/角丸長方形の影
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#221" title="2.21 グラデーション" class="md-nav__link">
+    2.21 グラデーション
   </a>
   
 </li>
@@ -1932,6 +1946,31 @@
 </pre></div>
 
 <p>これら以外の形状の影を作りたい場合は <a href="../../reference/2d-shadow">リファレンス/2D 図形の影</a> が参考になります。</p>
+<h2 id="221">2.21 グラデーション<a class="headerlink" href="#221" title="Permanent link">&para;</a></h2>
+<p><code class="codehilite"><span class="n">Line</span></code> や <code class="codehilite"><span class="n">Triangle</span></code>, <code class="codehilite"><span class="n">Rect</span></code>, <code class="codehilite"><span class="n">RectF</span></code>, <code class="codehilite"><span class="n">Quad</span></code> には、頂点ごとに色を指定し、グラデーションで塗りつぶすオプションがあります。</p>
+<p><img alt="" src="../images/2210.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Line</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Yellow</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
+
+        <span class="n">Triangle</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">HSV</span><span class="p">(</span><span class="mi">120</span><span class="p">),</span> <span class="n">HSV</span><span class="p">(</span><span class="mi">240</span><span class="p">));</span>
+
+        <span class="c1">// 左から右へのグラデーション</span>
+        <span class="n">Rect</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">left</span> <span class="o">=</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">,</span> <span class="n">Arg</span><span class="o">::</span><span class="n">right</span> <span class="o">=</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Blue</span><span class="p">);</span>
+
+        <span class="c1">// 上から下へのグラデーション</span>
+        <span class="n">Rect</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">top</span> <span class="o">=</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">Arg</span><span class="o">::</span><span class="n">bottom</span> <span class="o">=</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
