@@ -2,132 +2,142 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://siv3d.github.io/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/tutorial/basic/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/tutorial/shape/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/tutorial/animation/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/tutorial/2d-intersection/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/tutorial/texture/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/tutorial/array/</loc>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/reference/fullscreen/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/reference/json/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/reference/2d-shadow/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/sample/game/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/sample/app/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/community/community/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/store/store/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/basic/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/shape/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/animation/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/2d-intersection/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/texture/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/tutorial/array/</loc>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/reference/fullscreen/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/reference/json/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/reference/2d-shadow/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/sample/game/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/sample/app/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/community/community/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/store/store/</loc>
-     <lastmod>2019-06-20</lastmod>
+     <lastmod>2019-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
