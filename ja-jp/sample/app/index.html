@@ -757,6 +757,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#image-to-polygon" title="Image to Polygon" class="md-nav__link">
+    Image to Polygon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sketch-to-polygon" title="Sketch to Polygon" class="md-nav__link">
+    Sketch to Polygon
+  </a>
+  
+</li>
+      
       
       
       
@@ -839,6 +853,20 @@
         <li class="md-nav__item">
   <a href="#_4" title="万華鏡スケッチ" class="md-nav__link">
     万華鏡スケッチ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-to-polygon" title="Image to Polygon" class="md-nav__link">
+    Image to Polygon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sketch-to-polygon" title="Sketch to Polygon" class="md-nav__link">
+    Sketch to Polygon
   </a>
   
 </li>
@@ -1050,6 +1078,126 @@
         <span class="p">}</span>
 
         <span class="c1">// テクスチャを描く</span>
+        <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="image-to-polygon">Image to Polygon<a class="headerlink" href="#image-to-polygon" title="Permanent link">&para;</a></h2>
+<p><video src="../images/app-image-to-polygon.mp4" autoplay loop muted></video>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 使用する画像</span>
+    <span class="k">const</span> <span class="n">Image</span> <span class="n">image</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/siv3d-kun.png&quot;</span><span class="p">);</span>
+
+    <span class="c1">// アルファ値 1 以上の領域を Polygon 化</span>
+    <span class="k">const</span> <span class="n">Polygon</span> <span class="n">polygon</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">alphaToPolygon</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+
+    <span class="c1">// テクスチャ</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">texture</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
+
+    <span class="c1">// 移動のオフセット</span>
+    <span class="k">constexpr</span> <span class="n">Vec2</span> <span class="n">pos</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+
+    <span class="c1">// Polygon 単純化時の基準距離（ピクセル）</span>
+    <span class="kt">double</span> <span class="n">maxDistance</span> <span class="o">=</span> <span class="mf">4.0</span><span class="p">;</span>
+
+    <span class="c1">// 単純化した Polygon</span>
+    <span class="n">Polygon</span> <span class="n">simplifiedPolygon</span> <span class="o">=</span> <span class="n">polygon</span><span class="p">.</span><span class="n">simplified</span><span class="p">(</span><span class="n">maxDistance</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 単純化した Polygon の頂点数を表示</span>
+        <span class="n">ClearPrint</span><span class="p">();</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">simplifiedPolygon</span><span class="p">.</span><span class="n">vertices</span><span class="p">().</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot; vertices&quot;</span><span class="p">;</span>
+
+        <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
+
+        <span class="c1">// 単純化した Polygon を表示</span>
+        <span class="n">simplifiedPolygon</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
+            <span class="p">.</span><span class="n">drawWireframe</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Yellow</span><span class="p">);</span>
+
+        <span class="c1">// 単純化した Polygon をマウスカーソルに追従させて表示</span>
+        <span class="n">simplifiedPolygon</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">()</span> <span class="o">-</span> <span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.5</span><span class="p">));</span>
+
+        <span class="c1">// Polygon 単純化時の基準距離を制御</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;{:.1f}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">maxDistance</span><span class="p">),</span> <span class="n">maxDistance</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="c1">// スライダーに変更があれば、単純化した Polygon を新しい基準値で再作成</span>
+            <span class="n">simplifiedPolygon</span> <span class="o">=</span> <span class="n">polygon</span><span class="p">.</span><span class="n">simplified</span><span class="p">(</span><span class="n">maxDistance</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="sketch-to-polygon">Sketch to Polygon<a class="headerlink" href="#sketch-to-polygon" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../images/app-sketch-to-polygon.gif" />
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// キャンバスのサイズ</span>
+    <span class="k">constexpr</span> <span class="n">Size</span> <span class="n">canvasSize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+
+    <span class="c1">// ペンの太さ</span>
+    <span class="k">constexpr</span> <span class="n">int32</span> <span class="n">thickness</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+    <span class="c1">// 書き込み用の画像データを用意</span>
+    <span class="n">Image</span> <span class="n">image</span><span class="p">(</span><span class="n">canvasSize</span><span class="p">,</span> <span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+
+    <span class="c1">// 表示用のテクスチャ（内容を更新するので DynamicTexture）</span>
+    <span class="n">DynamicTexture</span> <span class="n">texture</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
+
+    <span class="c1">// 作成した Polygon の配列</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Polygon</span><span class="o">&gt;</span> <span class="n">polygons</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// ペンの色</span>
+        <span class="k">const</span> <span class="n">Color</span> <span class="n">penColor</span> <span class="o">=</span> <span class="n">HSV</span><span class="p">(</span><span class="n">polygons</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">*</span> <span class="mi">20</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// 書き込む線の始点は直前のフレームのマウスカーソル座標</span>
+            <span class="c1">// （初回はタッチ操作時の座標のジャンプを防ぐため、現在のマウスカーソル座標にする）</span>
+            <span class="k">const</span> <span class="n">Point</span> <span class="n">from</span> <span class="o">=</span> <span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">()</span> <span class="o">?</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">()</span> <span class="o">:</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">PreviousPos</span><span class="p">();</span>
+
+            <span class="c1">// 書き込む線の終点は現在のマウスカーソル座標</span>
+            <span class="k">const</span> <span class="n">Point</span> <span class="n">to</span> <span class="o">=</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+
+            <span class="c1">// image に線を書き込む</span>
+            <span class="n">Line</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">).</span><span class="n">overwrite</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">thickness</span><span class="p">,</span> <span class="n">penColor</span><span class="p">);</span>
+
+            <span class="c1">// 書き込み終わった image でテクスチャを更新</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">up</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// 画像の非透過部分から Polygon を作成（穴無し）</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="n">Polygon</span> <span class="n">polygon</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">alphaToPolygon</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">false</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="c1">// 少し単純化してから追加</span>
+                <span class="n">polygons</span> <span class="o">&lt;&lt;</span> <span class="n">polygon</span><span class="p">.</span><span class="n">simplified</span><span class="p">(</span><span class="mf">2.0</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 画像データをリセット</span>
+            <span class="n">image</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+
+            <span class="c1">// テクスチャを更新</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">image</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// それぞれの Polygon を描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">polygon</span><span class="p">]</span> <span class="o">:</span> <span class="n">Indexed</span><span class="p">(</span><span class="n">polygons</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">polygon</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+                <span class="p">.</span><span class="n">drawWireframe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">HSV</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">20</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="c1">// テクスチャを表示</span>
         <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
