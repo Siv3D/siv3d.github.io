@@ -819,6 +819,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" title="音楽プレイヤー" class="md-nav__link">
+    音楽プレイヤー
+  </a>
+  
+</li>
+      
       
       
       
@@ -915,6 +922,13 @@
         <li class="md-nav__item">
   <a href="#sketch-to-polygon" title="Sketch to Polygon" class="md-nav__link">
     Sketch to Polygon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="音楽プレイヤー" class="md-nav__link">
+    音楽プレイヤー
   </a>
   
 </li>
@@ -1250,6 +1264,87 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div></p>
+<h2 id="_5">音楽プレイヤー<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 音楽</span>
+    <span class="n">Audio</span> <span class="n">audio</span><span class="p">;</span>
+
+    <span class="c1">// FFT の結果</span>
+    <span class="n">FFTResult</span> <span class="n">fft</span><span class="p">;</span>
+
+    <span class="c1">// 再生位置の変更の有無</span>
+    <span class="kt">bool</span> <span class="n">hasChanged</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 再生・演奏時間</span>
+        <span class="k">const</span> <span class="n">String</span> <span class="n">time</span> <span class="o">=</span> <span class="n">FormatTime</span><span class="p">(</span><span class="n">SecondsF</span><span class="p">(</span><span class="n">audio</span><span class="p">.</span><span class="n">posSec</span><span class="p">()),</span> <span class="sa">U</span><span class="s">&quot;M:ss&quot;</span><span class="p">)</span>
+            <span class="o">+</span> <span class="n">U</span><span class="sc">&#39;/&#39;</span> <span class="o">+</span> <span class="n">FormatTime</span><span class="p">(</span><span class="n">SecondsF</span><span class="p">(</span><span class="n">audio</span><span class="p">.</span><span class="n">lengthSec</span><span class="p">()),</span> <span class="sa">U</span><span class="s">&quot;M:ss&quot;</span><span class="p">);</span>
+
+        <span class="c1">// プログレスバーの進み具合</span>
+        <span class="kt">double</span> <span class="n">progress</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">audio</span><span class="p">.</span><span class="n">posSample</span><span class="p">())</span> <span class="o">/</span> <span class="n">audio</span><span class="p">.</span><span class="n">samples</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">audio</span><span class="p">.</span><span class="n">isPlaying</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// FFT 解析</span>
+            <span class="n">FFT</span><span class="o">::</span><span class="n">Analyze</span><span class="p">(</span><span class="n">fft</span><span class="p">,</span> <span class="n">audio</span><span class="p">);</span>
+
+            <span class="c1">// 結果を可視化</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="mi">800</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">const</span> <span class="kt">double</span> <span class="n">size</span> <span class="o">=</span> <span class="n">Pow</span><span class="p">(</span><span class="n">fft</span><span class="p">.</span><span class="n">buffer</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mf">0.6f</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">;</span>
+                <span class="n">RectF</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">bottomLeft</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">480</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="mi">240</span> <span class="o">-</span> <span class="n">i</span><span class="p">));</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 周波数表示</span>
+            <span class="n">Rect</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">().</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Height</span><span class="p">()).</span><span class="n">draw</span><span class="p">();</span>
+            <span class="n">ClearPrint</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;{} Hz&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">().</span><span class="n">x</span> <span class="o">*</span> <span class="n">fft</span><span class="p">.</span><span class="n">resolution</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 再生</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Play&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="mi">120</span><span class="p">,</span> <span class="n">audio</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">audio</span><span class="p">.</span><span class="n">isPlaying</span><span class="p">()))</span>
+        <span class="p">{</span>
+            <span class="n">audio</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="mf">0.2</span><span class="n">s</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 一時停止</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Pause&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">170</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="mi">120</span><span class="p">,</span> <span class="n">audio</span><span class="p">.</span><span class="n">isPlaying</span><span class="p">()))</span>
+        <span class="p">{</span>
+            <span class="n">audio</span><span class="p">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.2</span><span class="n">s</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// フォルダから音楽ファイルを開く</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Open&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="mi">120</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">audio</span><span class="p">.</span><span class="n">stop</span><span class="p">(</span><span class="mf">0.5</span><span class="n">s</span><span class="p">);</span>
+            <span class="n">audio</span> <span class="o">=</span> <span class="n">Dialog</span><span class="o">::</span><span class="n">OpenAudio</span><span class="p">();</span>
+            <span class="n">audio</span><span class="p">.</span><span class="n">play</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">// スライダー</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">progress</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">540</span><span class="p">),</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">590</span><span class="p">,</span> <span class="o">!</span><span class="n">audio</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">()))</span>
+        <span class="p">{</span>
+            <span class="n">audio</span><span class="p">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.1</span><span class="n">s</span><span class="p">);</span>
+
+            <span class="c1">// 再生位置を変更</span>
+            <span class="n">audio</span><span class="p">.</span><span class="n">setPosSample</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">int64</span><span class="o">&gt;</span><span class="p">(</span><span class="n">audio</span><span class="p">.</span><span class="n">samples</span><span class="p">()</span> <span class="o">*</span> <span class="n">progress</span><span class="p">));</span>
+
+            <span class="c1">// ノイズを避けるため、スライダーから手を離すまで再生は再開しない</span>
+            <span class="n">hasChanged</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">hasChanged</span> <span class="o">&amp;&amp;</span> <span class="n">MouseL</span><span class="p">.</span><span class="n">up</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// 再生を再開</span>
+            <span class="n">audio</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="mf">0.1</span><span class="n">s</span><span class="p">);</span>
+            <span class="n">hasChanged</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
