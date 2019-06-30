@@ -13,7 +13,7 @@
         <meta name="description" content="Siv3D: An open source C++17 library for creative coding">
       
       
-        <link rel="canonical" href="https://siv3d.github.io/ja-jp/reference/2d-shadow/">
+        <link rel="canonical" href="https://siv3d.github.io/ja-jp/reference/nlp/">
       
       
         <meta name="author" content="Ryo Suzuki">
@@ -42,7 +42,7 @@
     
     
       
-        <title>2D 図形の影 - Siv3D</title>
+        <title>自然言語処理 - Siv3D</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#2d" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -118,7 +118,7 @@
               Siv3D
             </span>
             <span class="md-header-nav__topic">
-              2D 図形の影
+              自然言語処理
             </span>
           
         </div>
@@ -684,49 +684,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        2D 図形の影
-      </label>
-    
-    <a href="./" title="2D 図形の影" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../2d-shadow/" title="2D 図形の影" class="md-nav__link">
       2D 図形の影
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="シーンと同じサイズの画像に影を焼きこむ" class="md-nav__link">
-    シーンと同じサイズの画像に影を焼きこむ
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -746,11 +708,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../nlp/" title="自然言語処理" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        自然言語処理
+      </label>
+    
+    <a href="./" title="自然言語処理" class="md-nav__link md-nav__link--active">
       自然言語処理
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="日本語の形態素解析" class="md-nav__link">
+    日本語の形態素解析
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -857,8 +857,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="シーンと同じサイズの画像に影を焼きこむ" class="md-nav__link">
-    シーンと同じサイズの画像に影を焼きこむ
+  <a href="#_2" title="日本語の形態素解析" class="md-nav__link">
+    日本語の形態素解析
   </a>
   
 </li>
@@ -880,57 +880,66 @@
               
                 
                 
-                <h1 id="2d">2D 図形の影<a class="headerlink" href="#2d" title="Permanent link">&para;</a></h1>
-<p><code class="codehilite"><span class="n">Rect</span></code>, <code class="codehilite"><span class="n">RectF</span></code>, <code class="codehilite"><span class="n">Circle</span></code>, <code class="codehilite"><span class="n">ReoundRect</span></code> には <code class="codehilite"><span class="na">.drawShadow</span><span class="p">()</span></code> が用意されていますが、それ以外の図形の影を描きたい場合は、使い方に応じていくつかの手法を選択して実装する必要があります。</p>
-<h2 id="_1">シーンと同じサイズの画像に影を焼きこむ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>影を落とす図形の座標や形状が変化しない場合、シーンと同じ大きさの <code class="codehilite"><span class="n">Image</span></code> にあらかじめ影を焼きこむのが最も簡単な方法です。</p>
-<p><img alt="" src="../images/2d-shadow-0.png" /></p>
+                <h1 id="_1">自然言語処理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">日本語の形態素解析<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>プログラムを実行する前に、モデルデータが含まれる <code class="codehilite"><span class="n">jumanpp</span><span class="o">-</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="o">-</span><span class="n">rc2</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">xz</span></code> を <a href="https://github.com/ku-nlp/jumanpp/releases">https://github.com/ku-nlp/jumanpp/releases</a> からダウンロード・解凍し、<code class="codehilite"><span class="n">model</span></code> フォルダにある <code class="codehilite"><span class="n">jumandic</span><span class="p">.</span><span class="n">jppmdl</span></code> (約 450MB) を、プロジェクトの <code class="codehilite"><span class="n">nlp</span><span class="o">/</span><span class="n">japanese</span><span class="o">/</span><span class="n">jumanpp</span></code> フォルダ（<code class="codehilite"><span class="n">README</span><span class="p">.</span><span class="n">md</span></code> と <code class="codehilite"><span class="n">LICENSE</span></code> が入っているフォルダ）にコピーしておく必要があります。
+<img alt="" src="../images/nlp-japanese.gif" />
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+    <span class="c1">// テキスト表示用のフォント</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Medium</span><span class="p">);</span>
 
-    <span class="k">const</span> <span class="n">Polygon</span> <span class="n">star</span> <span class="o">=</span> <span class="n">Shape2D</span><span class="o">::</span><span class="n">Star</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">));</span>
-    <span class="k">const</span> <span class="n">Polygon</span> <span class="n">arrow</span> <span class="o">=</span> <span class="n">Shape2D</span><span class="o">::</span><span class="n">Arrow</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="mi">50</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">));</span>
+    <span class="c1">// 解析対象のテキスト</span>
+    <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="sa">U</span><span class="s">&quot;今日は良い天気ですね。&quot;</span><span class="p">;</span>
 
-    <span class="c1">// 影を焼きこむ画像を用意</span>
-    <span class="k">constexpr</span> <span class="n">Size</span> <span class="n">canvaSize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
-    <span class="n">Image</span> <span class="n">shadowImage</span><span class="p">(</span><span class="n">canvaSize</span><span class="p">,</span> <span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+    <span class="c1">// 入力テキストが更新されているか確認するためのデータ</span>
+    <span class="n">String</span> <span class="n">previous</span><span class="p">;</span>
 
-    <span class="c1">// 影を落とす図形を描画</span>
-    <span class="n">star</span><span class="p">.</span><span class="n">overwrite</span><span class="p">(</span><span class="n">shadowImage</span><span class="p">,</span> <span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">));</span>
-    <span class="n">arrow</span><span class="p">.</span><span class="n">overwrite</span><span class="p">(</span><span class="n">shadowImage</span><span class="p">,</span> <span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">));</span>
-
-    <span class="c1">// 画像にガウシアンブラーを書ける</span>
-    <span class="n">shadowImage</span><span class="p">.</span><span class="n">gaussianBlur</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
-
-    <span class="c1">// 画像からテクスチャを作成</span>
-    <span class="k">const</span> <span class="n">Texture</span> <span class="n">texture</span><span class="p">(</span><span class="n">shadowImage</span><span class="p">);</span>
-
-    <span class="kt">bool</span> <span class="n">showShadow</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="kt">bool</span> <span class="n">showShape</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="c1">// 形態素解析の結果をまとめたテキスト</span>
+    <span class="n">String</span> <span class="n">result</span><span class="p">;</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="c1">// 影の描画</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">showShadow</span><span class="p">)</span>
+        <span class="c1">// キーボードからテキストを入力</span>
+        <span class="n">TextInput</span><span class="o">::</span><span class="n">UpdateText</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+
+        <span class="c1">// 未変換の入力も取得</span>
+        <span class="k">const</span> <span class="n">String</span> <span class="n">current</span> <span class="o">=</span> <span class="n">text</span> <span class="o">+</span> <span class="n">TextInput</span><span class="o">::</span><span class="n">GetEditingText</span><span class="p">();</span>
+
+        <span class="c1">// 入力が更新されたら形態素解析を再実行</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">current</span> <span class="o">!=</span> <span class="n">previous</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+            <span class="c1">// 形態素解析</span>
+            <span class="k">const</span> <span class="k">auto</span> <span class="n">morphemes</span> <span class="o">=</span> <span class="n">NLP</span><span class="o">::</span><span class="n">Japanese</span><span class="o">::</span><span class="n">AnalyzeMorphology</span><span class="p">(</span><span class="n">current</span><span class="p">);</span>
+
+            <span class="n">result</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
+            <span class="c1">// 形態素の情報を取得</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">morpheme</span> <span class="p">:</span> <span class="n">morphemes</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// 空の形態素はスキップ</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">morpheme</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">continue</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">// 表層形、見出し語、品詞分類</span>
+                <span class="n">result</span> <span class="o">+=</span> <span class="sa">U</span><span class="s">&quot;{}({}/{}) &quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">morpheme</span><span class="p">.</span><span class="n">surface</span><span class="p">,</span> <span class="n">morpheme</span><span class="p">.</span><span class="n">surfaceBase</span><span class="p">,</span> <span class="n">morpheme</span><span class="p">.</span><span class="n">wordSubClassID</span> <span class="o">?</span> <span class="n">morpheme</span><span class="p">.</span><span class="nl">wordSubClass</span> <span class="p">:</span> <span class="n">morpheme</span><span class="p">.</span><span class="n">wordClass</span><span class="p">);</span>
+            <span class="p">}</span>
         <span class="p">}</span>
 
-        <span class="c1">// 図形の描画</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">showShape</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">star</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
-            <span class="n">arrow</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
-        <span class="p">}</span>
+        <span class="n">previous</span> <span class="o">=</span> <span class="n">current</span><span class="p">;</span>
 
-        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">CheckBox</span><span class="p">(</span><span class="n">showShadow</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Shadow&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">200</span><span class="p">);</span>
-        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">CheckBox</span><span class="p">(</span><span class="n">showShape</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Shape&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="mi">200</span><span class="p">);</span>
+        <span class="c1">// テキストを表示</span>
+        <span class="n">font</span><span class="p">(</span><span class="n">current</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Rect</span><span class="p">().</span><span class="n">stretched</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">));</span>
+
+        <span class="c1">// 形態素解析の結果を表示</span>
+        <span class="n">font</span><span class="p">(</span><span class="n">result</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Rect</span><span class="p">().</span><span class="n">stretched</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">).</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Yellow</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
+</pre></div></p>
                 
                   
                 
@@ -951,7 +960,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../json/" title="JSON ファイル" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../navmesh/" title="ナビメッシュ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -960,19 +969,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                JSON ファイル
+                ナビメッシュ
               </span>
             </div>
           </a>
         
         
-          <a href="../navmesh/" title="ナビメッシュ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../sample/game/" title="ゲーム" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                ナビメッシュ
+                ゲーム
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

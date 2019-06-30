@@ -13,7 +13,7 @@
         <meta name="description" content="Siv3D: An open source C++17 library for creative coding">
       
       
-        <link rel="canonical" href="https://siv3d.github.io/reference/json/">
+        <link rel="canonical" href="https://siv3d.github.io/reference/navmesh/">
       
       
         <meta name="author" content="Ryo Suzuki">
@@ -42,7 +42,7 @@
     
     
       
-        <title>JSON file - Siv3D</title>
+        <title>NavMesh - Siv3D</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#json-file" tabindex="1" class="md-skip">
+      <a href="#navmesh" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -118,7 +118,7 @@
               Siv3D
             </span>
             <span class="md-header-nav__topic">
-              JSON file
+              NavMesh
             </span>
           
         </div>
@@ -384,49 +384,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        JSON file
-      </label>
-    
-    <a href="./" title="JSON file" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../json/" title="JSON file" class="md-nav__link">
       JSON file
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#loading-dataset-from-a-json-file" title="Loading dataset from a JSON file" class="md-nav__link">
-    Loading dataset from a JSON file
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -446,11 +408,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../navmesh/" title="NavMesh" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        NavMesh
+      </label>
+    
+    <a href="./" title="NavMesh" class="md-nav__link md-nav__link--active">
       NavMesh
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2d-navmesh" title="2D マップの作成と NavMesh" class="md-nav__link">
+    2D マップの作成と NavMesh
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -857,8 +857,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#loading-dataset-from-a-json-file" title="Loading dataset from a JSON file" class="md-nav__link">
-    Loading dataset from a JSON file
+  <a href="#2d-navmesh" title="2D マップの作成と NavMesh" class="md-nav__link">
+    2D マップの作成と NavMesh
   </a>
   
 </li>
@@ -880,98 +880,131 @@
               
                 
                 
-                <h1 id="json-file">JSON File<a class="headerlink" href="#json-file" title="Permanent link">&para;</a></h1>
-<h2 id="loading-dataset-from-a-json-file">Loading dataset from a JSON file<a class="headerlink" href="#loading-dataset-from-a-json-file" title="Permanent link">&para;</a></h2>
+                <h1 id="navmesh">NavMesh<a class="headerlink" href="#navmesh" title="Permanent link">&para;</a></h1>
+<h2 id="2d-navmesh">2D マップの作成と NavMesh<a class="headerlink" href="#2d-navmesh" title="Permanent link">&para;</a></h2>
+<p><video src="../images/app-2d-navmesh.mp4" autoplay loop muted></video>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
-<span class="k">struct</span> <span class="n">Country</span>
+<span class="c1">// Vec2 から NavMesh 用の Vec3 へ変換</span>
+<span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">Vec3</span> <span class="nf">ToVec3</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">xy</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">String</span> <span class="n">code</span><span class="p">;</span>
-    <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
-    <span class="n">String</span> <span class="n">native</span><span class="p">;</span>
-    <span class="n">String</span> <span class="n">phone</span><span class="p">;</span>
-    <span class="n">String</span> <span class="n">continent</span><span class="p">;</span>
-    <span class="n">String</span> <span class="n">capital</span><span class="p">;</span>
-    <span class="n">String</span> <span class="n">currency</span><span class="p">;</span>
-    <span class="n">Array</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">languages</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="kt">void</span> <span class="nf">CodeToFlag</span><span class="p">(</span><span class="k">const</span> <span class="n">String</span><span class="o">&amp;</span> <span class="n">code</span><span class="p">,</span> <span class="n">DynamicTexture</span><span class="o">&amp;</span> <span class="n">texture</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">code</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">const</span> <span class="n">String</span> <span class="n">emoji</span> <span class="o">=</span> <span class="p">{</span> <span class="n">char32</span><span class="p">(</span><span class="mh">0x1F1E6</span> <span class="o">+</span> <span class="p">(</span><span class="n">code</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">U</span><span class="sc">&#39;A&#39;</span><span class="p">)),</span> <span class="n">char32</span><span class="p">(</span><span class="mh">0x1F1E6</span> <span class="o">+</span> <span class="p">(</span><span class="n">code</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">U</span><span class="sc">&#39;A&#39;</span><span class="p">))</span> <span class="p">};</span>
-    <span class="n">texture</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">Emoji</span><span class="o">::</span><span class="n">CreateImage</span><span class="p">(</span><span class="n">emoji</span><span class="p">));</span>
+    <span class="k">return</span> <span class="n">Vec3</span><span class="p">(</span><span class="n">xy</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">xy</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">const</span> <span class="n">JSONReader</span> <span class="n">json</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/countries/countries.json&quot;</span><span class="p">);</span>
+    <span class="c1">// 画面サイズを変更</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">);</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">json</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Failed to load `countries.json`&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="c1">// マップの領域</span>
+    <span class="k">constexpr</span> <span class="n">Rect</span> <span class="n">mapArea</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">720</span><span class="p">);</span>
 
-    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Country</span><span class="o">&gt;</span> <span class="n">countries</span><span class="p">;</span>
+    <span class="c1">// ナビメッシュ</span>
+    <span class="n">NavMesh</span> <span class="n">navMesh</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">object</span> <span class="p">:</span> <span class="n">json</span><span class="p">.</span><span class="n">objectView</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="n">Country</span> <span class="n">country</span><span class="p">;</span>
-        <span class="n">country</span><span class="p">.</span><span class="n">code</span>        <span class="o">=</span> <span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
-        <span class="n">country</span><span class="p">.</span><span class="n">name</span>        <span class="o">=</span> <span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;name&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span>
-        <span class="n">country</span><span class="p">.</span><span class="n">native</span>      <span class="o">=</span> <span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;native&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span>
-        <span class="n">country</span><span class="p">.</span><span class="n">phone</span>       <span class="o">=</span> <span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;phone&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span>
-        <span class="n">country</span><span class="p">.</span><span class="n">continent</span>   <span class="o">=</span> <span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;continent&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span>
-        <span class="n">country</span><span class="p">.</span><span class="n">capital</span>     <span class="o">=</span> <span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;capital&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span>
-        <span class="n">country</span><span class="p">.</span><span class="n">currency</span>    <span class="o">=</span> <span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;currency&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">language</span> <span class="p">:</span> <span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;languages&quot;</span><span class="p">].</span><span class="n">arrayView</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="n">country</span><span class="p">.</span><span class="n">languages</span> <span class="o">&lt;&lt;</span> <span class="n">language</span><span class="p">.</span><span class="n">getString</span><span class="p">();</span>
-        <span class="p">}</span>
+    <span class="c1">// マップの形状を表現する　Polygon</span>
+    <span class="n">Polygon</span> <span class="n">polygon</span><span class="p">;</span>
 
-        <span class="n">countries</span> <span class="o">&lt;&lt;</span> <span class="n">country</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="c1">// 経路</span>
+    <span class="n">LineString</span> <span class="n">path</span><span class="p">;</span>
 
-    <span class="k">constexpr</span> <span class="n">ColorF</span> <span class="n">textColor</span><span class="p">(</span><span class="mf">0.15</span><span class="p">);</span>
-    <span class="k">const</span> <span class="n">Font</span> <span class="n">fontBig</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Heavy</span><span class="p">);</span>
-    <span class="k">const</span> <span class="n">Font</span> <span class="n">fontMedium</span><span class="p">(</span><span class="mi">26</span><span class="p">);</span>
-    <span class="n">DynamicTexture</span> <span class="n">flagTexture</span><span class="p">;</span>
-    <span class="n">CodeToFlag</span><span class="p">(</span><span class="n">countries</span><span class="p">.</span><span class="n">front</span><span class="p">().</span><span class="n">code</span><span class="p">,</span> <span class="n">flagTexture</span><span class="p">);</span>
+    <span class="c1">// 現在地</span>
+    <span class="n">Vec2</span> <span class="n">pos</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 
-    <span class="kt">size_t</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// 目的地</span>
+    <span class="n">Vec2</span> <span class="n">destination</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+
+    <span class="c1">// 更新の必要の有無</span>
+    <span class="kt">bool</span> <span class="n">dirty</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="c1">// 入力モード 0: マップ, 1: 現在地, 2: 目的地</span>
+    <span class="kt">size_t</span> <span class="n">inputMode</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Previous&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">420</span><span class="p">)))</span>
+        <span class="c1">// マップエリアを表示</span>
+        <span class="n">mapArea</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">));</span>
+
+        <span class="c1">// マップの形状を表示（更新が必要な時はグレー）</span>
+        <span class="n">polygon</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">dirty</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="nl">Gray</span> <span class="p">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Yellow</span><span class="p">);</span>
+        <span class="n">polygon</span><span class="p">.</span><span class="n">drawWireframe</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Gray</span><span class="p">);</span>
+
+        <span class="c1">// マップエリア上での操作</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mapArea</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="p">(</span><span class="n">countries</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">%</span> <span class="n">countries</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-            <span class="n">CodeToFlag</span><span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">code</span><span class="p">,</span> <span class="n">flagTexture</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">inputMode</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">const</span> <span class="n">Circle</span> <span class="n">shape</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">()),</span> <span class="mi">30</span><span class="p">);</span>
+                <span class="n">shape</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+                <span class="p">{</span>
+                    <span class="c1">// マップの Polygon に円を追加</span>
+                    <span class="n">dirty</span> <span class="o">|=</span> <span class="n">polygon</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">shape</span><span class="p">.</span><span class="n">asPolygon</span><span class="p">());</span>
+                <span class="p">}</span>
+
+                <span class="c1">// カーソルは非表示</span>
+                <span class="n">Cursor</span><span class="o">::</span><span class="n">RequestStyle</span><span class="p">(</span><span class="n">CursorStyle</span><span class="o">::</span><span class="n">Hidden</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">inputMode</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+                <span class="p">{</span>
+                    <span class="c1">// 現在地を変更</span>
+                    <span class="n">pos</span> <span class="o">=</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+                    <span class="n">path</span> <span class="o">=</span> <span class="n">navMesh</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">ToVec3</span><span class="p">(</span><span class="n">pos</span><span class="p">),</span> <span class="n">ToVec3</span><span class="p">(</span><span class="n">destination</span><span class="p">)).</span><span class="n">map</span><span class="p">([](</span><span class="k">auto</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Vec2</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">z</span><span class="p">);</span> <span class="p">});</span>
+                <span class="p">}</span>
+
+                <span class="c1">// カーソルは手のマーク</span>
+                <span class="n">Cursor</span><span class="o">::</span><span class="n">RequestStyle</span><span class="p">(</span><span class="n">CursorStyle</span><span class="o">::</span><span class="n">Hand</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">inputMode</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+                <span class="p">{</span>
+                    <span class="c1">// 目的地を変更</span>
+                    <span class="n">destination</span> <span class="o">=</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+                    <span class="n">path</span> <span class="o">=</span> <span class="n">navMesh</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">ToVec3</span><span class="p">(</span><span class="n">pos</span><span class="p">),</span> <span class="n">ToVec3</span><span class="p">(</span><span class="n">destination</span><span class="p">)).</span><span class="n">map</span><span class="p">([](</span><span class="k">auto</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Vec2</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">z</span><span class="p">);</span> <span class="p">});</span>
+                <span class="p">}</span>
+
+                <span class="c1">// カーソルは手のマーク</span>
+                <span class="n">Cursor</span><span class="o">::</span><span class="n">RequestStyle</span><span class="p">(</span><span class="n">CursorStyle</span><span class="o">::</span><span class="n">Hand</span><span class="p">);</span>
+            <span class="p">}</span>
         <span class="p">}</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Next&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">680</span><span class="p">,</span> <span class="mi">420</span><span class="p">)))</span>
+        <span class="c1">// 入力モードを変更するラジオボタン</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">inputMode</span><span class="p">,</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;map&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;position&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;destination&quot;</span> <span class="p">},</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">1050</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="mi">180</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Build Path&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">1050</span><span class="p">,</span> <span class="mi">180</span><span class="p">),</span> <span class="mi">180</span><span class="p">))</span>
         <span class="p">{</span>
-            <span class="o">++</span><span class="n">index</span> <span class="o">%=</span> <span class="n">countries</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-            <span class="n">CodeToFlag</span><span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">code</span><span class="p">,</span> <span class="n">flagTexture</span><span class="p">);</span>
+            <span class="c1">// 計算コスト削減のため Polygon を単純化</span>
+            <span class="n">polygon</span> <span class="o">=</span> <span class="n">polygon</span><span class="p">.</span><span class="n">simplified</span><span class="p">(</span><span class="mf">2.0</span><span class="p">);</span>
+
+            <span class="c1">// NavMesh を更新</span>
+            <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">Float3</span><span class="o">&gt;</span> <span class="n">vertices</span> <span class="o">=</span> <span class="n">polygon</span><span class="p">.</span><span class="n">vertices</span><span class="p">().</span><span class="n">map</span><span class="p">([](</span><span class="k">auto</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Float3</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">y</span><span class="p">);</span> <span class="p">});</span>
+            <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">uint16</span><span class="o">&gt;</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">polygon</span><span class="p">.</span><span class="n">indices</span><span class="p">().</span><span class="n">map</span><span class="p">([](</span><span class="k">auto</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">uint16</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="p">});</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">navMesh</span><span class="p">.</span><span class="n">build</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">indices</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="c1">// 経路を計算</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="n">navMesh</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">ToVec3</span><span class="p">(</span><span class="n">pos</span><span class="p">),</span> <span class="n">ToVec3</span><span class="p">(</span><span class="n">destination</span><span class="p">)).</span><span class="n">map</span><span class="p">([](</span><span class="k">auto</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Vec2</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">z</span><span class="p">);</span> <span class="p">});</span>
+                <span class="n">dirty</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="p">}</span>
         <span class="p">}</span>
 
-        <span class="k">const</span> <span class="n">Country</span><span class="o">&amp;</span> <span class="n">country</span> <span class="o">=</span> <span class="n">countries</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+        <span class="c1">// 経路を表示</span>
+        <span class="n">path</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
 
-        <span class="n">Rect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">780</span><span class="p">,</span> <span class="mi">400</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
-        <span class="n">flagTexture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
-        <span class="n">fontBig</span><span class="p">(</span><span class="n">country</span><span class="p">.</span><span class="n">name</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">170</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">textColor</span><span class="p">);</span>
-        <span class="n">fontMedium</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;native: &quot;</span><span class="p">,</span> <span class="n">country</span><span class="p">.</span><span class="n">native</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="n">textColor</span><span class="p">);</span>
-        <span class="n">fontMedium</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;phone: &quot;</span><span class="p">,</span> <span class="n">country</span><span class="p">.</span><span class="n">phone</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="n">textColor</span><span class="p">);</span>
-        <span class="n">fontMedium</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;continent: &quot;</span><span class="p">,</span> <span class="n">country</span><span class="p">.</span><span class="n">continent</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="n">textColor</span><span class="p">);</span>
-        <span class="n">fontMedium</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;capital: &quot;</span><span class="p">,</span> <span class="n">country</span><span class="p">.</span><span class="n">capital</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">260</span><span class="p">,</span> <span class="n">textColor</span><span class="p">);</span>
-        <span class="n">fontMedium</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;currency: &quot;</span><span class="p">,</span> <span class="n">country</span><span class="p">.</span><span class="n">currency</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="n">textColor</span><span class="p">);</span>
-        <span class="n">fontMedium</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;languages: &quot;</span><span class="p">,</span> <span class="n">country</span><span class="p">.</span><span class="n">languages</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">340</span><span class="p">,</span> <span class="n">textColor</span><span class="p">);</span>
+        <span class="c1">// 現在地を表示</span>
+        <span class="n">RectF</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span><span class="p">(</span><span class="n">pos</span><span class="p">),</span> <span class="mi">30</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">rotated</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">60</span><span class="n">_deg</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">draw</span><span class="p">((</span><span class="n">inputMode</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">.</span><span class="n">lerp</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">Periodic</span><span class="o">::</span><span class="n">Sine0_1</span><span class="p">(</span><span class="mi">1</span><span class="n">s</span><span class="p">))</span> <span class="o">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
+
+        <span class="c1">// 目的地を表示</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">destination</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">draw</span><span class="p">((</span><span class="n">inputMode</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="o">?</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">.</span><span class="n">lerp</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">Periodic</span><span class="o">::</span><span class="n">Sine0_1</span><span class="p">(</span><span class="mi">1</span><span class="n">s</span><span class="p">))</span> <span class="o">:</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
+</pre></div></p>
                 
                   
                 
@@ -992,7 +1025,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../fullscreen/" title="Fullscreen" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../2d-shadow/" title="2D shadow" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1001,19 +1034,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Fullscreen
+                2D shadow
               </span>
             </div>
           </a>
         
         
-          <a href="../2d-shadow/" title="2D shadow" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../nlp/" title="Natural language processing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                2D shadow
+                Natural language processing
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
