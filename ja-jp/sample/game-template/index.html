@@ -863,6 +863,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" title="タイピングゲームの基本" class="md-nav__link">
+    タイピングゲームの基本
+  </a>
+  
+</li>
+      
       
       
       
@@ -931,6 +938,13 @@
         <li class="md-nav__item">
   <a href="#_2" title="シーン遷移" class="md-nav__link">
     シーン遷移
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="タイピングゲームの基本" class="md-nav__link">
+    タイピングゲームの基本
   </a>
   
 </li>
@@ -1165,6 +1179,52 @@
         <span class="p">{</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="_3">タイピングゲームの基本<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../images/game-template-typing.gif" />
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+    <span class="c1">// 問題文のリスト</span>
+    <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">texts</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="sa">U</span><span class="s">&quot;Practice makes perfect.&quot;</span><span class="p">,</span>
+        <span class="sa">U</span><span class="s">&quot;Don&#39;t cry over spilt milk.&quot;</span><span class="p">,</span>
+        <span class="sa">U</span><span class="s">&quot;Faith will move mountains.&quot;</span><span class="p">,</span>
+        <span class="sa">U</span><span class="s">&quot;Nothing ventured, nothing gained.&quot;</span><span class="p">,</span>
+        <span class="sa">U</span><span class="s">&quot;Bad news travels fast.&quot;</span><span class="p">,</span>
+    <span class="p">};</span>
+
+    <span class="n">String</span> <span class="n">target</span> <span class="o">=</span> <span class="n">texts</span><span class="p">.</span><span class="n">choice</span><span class="p">(),</span> <span class="n">input</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// テキスト入力（TextInputMode::DenyControl: エンターやタブ、バックスペースは受け付けない）</span>
+        <span class="n">TextInput</span><span class="o">::</span><span class="n">UpdateText</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">TextInputMode</span><span class="o">::</span><span class="n">DenyControl</span><span class="p">);</span>
+
+        <span class="c1">// 誤った入力が含まれていたら削除</span>
+        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">target</span><span class="p">.</span><span class="n">starts_with</span><span class="p">(</span><span class="n">input</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">input</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 一致したら次の問題へ</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">input</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">texts</span><span class="p">.</span><span class="n">choice</span><span class="p">();</span>
+            <span class="n">input</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">font</span><span class="p">(</span><span class="n">target</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">270</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.75</span><span class="p">));</span>
+
+        <span class="n">font</span><span class="p">(</span><span class="n">input</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">270</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.1</span><span class="p">));</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div></p>
