@@ -76,6 +76,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://siv3d.github.io/sample/visual/</loc>
+     <lastmod>2019-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://siv3d.github.io/sample/game-template/</loc>
      <lastmod>2019-07-01</lastmod>
      <changefreq>daily</changefreq>
@@ -162,6 +167,11 @@
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/sample/app/</loc>
+     <lastmod>2019-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/sample/visual/</loc>
      <lastmod>2019-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
