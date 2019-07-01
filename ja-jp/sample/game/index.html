@@ -841,6 +841,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" title="シューティングゲーム" class="md-nav__link">
+    シューティングゲーム
+  </a>
+  
+</li>
+      
       
       
       
@@ -959,6 +966,13 @@
         <li class="md-nav__item">
   <a href="#_4" title="絵文字タワー" class="md-nav__link">
     絵文字タワー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="シューティングゲーム" class="md-nav__link">
+    シューティングゲーム
   </a>
   
 </li>
@@ -1264,7 +1278,7 @@
 <span class="p">}</span>
 </pre></div></p>
 <h2 id="_4">絵文字タワー<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p><video src="../images/game-emoji-tower.mp4" autoplay loop muted></video></p>
+<p><video src="../images/game-emoji-tower.mp4" autoplay loop muted></video>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -1345,7 +1359,258 @@
         <span class="n">camera</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
+</pre></div></p>
+<h2 id="_5">シューティングゲーム<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><video src="../images/game-shooter.mp4" autoplay loop muted></video>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="c1">// 敵の位置をランダムに作成する関数</span>
+<span class="n">Vec2</span> <span class="nf">GenerateEnemy</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">RandomVec2</span><span class="p">({</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">750</span> <span class="p">},</span> <span class="o">-</span><span class="mi">20</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">));</span>
+
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+
+    <span class="c1">// 自機テクスチャ</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">playerTexture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🤖&quot;</span><span class="p">));</span>
+    <span class="c1">// 敵テクスチャ</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">enemyTexture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;👾&quot;</span><span class="p">));</span>
+
+    <span class="c1">// 自機</span>
+    <span class="n">Vec2</span> <span class="n">playerPos</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+    <span class="c1">// 敵</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span> <span class="n">enemies</span> <span class="o">=</span> <span class="p">{</span> <span class="n">GenerateEnemy</span><span class="p">()</span> <span class="p">};</span>
+
+    <span class="c1">// 自機ショット</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span> <span class="n">playerBullets</span><span class="p">;</span>
+    <span class="c1">// 敵ショット</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span> <span class="n">enemyBullets</span><span class="p">;</span>
+
+    <span class="c1">// 自機のスピード</span>
+    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">playerSpeed</span> <span class="o">=</span> <span class="mf">550.0</span><span class="p">;</span>
+    <span class="c1">// 自機ショットのスピード</span>
+    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">playerBulletSpeed</span> <span class="o">=</span> <span class="mf">500.0</span><span class="p">;</span>
+    <span class="c1">// 敵のスピード</span>
+    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">enemySpeed</span> <span class="o">=</span> <span class="mf">100.0</span><span class="p">;</span>
+    <span class="c1">// 敵ショットのスピード</span>
+    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">enemyBulletSpeed</span> <span class="o">=</span> <span class="mf">300.0</span><span class="p">;</span>
+
+    <span class="c1">// 敵の発生間隔の初期値（秒）</span>
+    <span class="kt">double</span> <span class="n">initialEnemySpawnTime</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+    <span class="c1">// 敵の発生間隔（秒）</span>
+    <span class="kt">double</span> <span class="n">enemySpawnTime</span> <span class="o">=</span> <span class="n">initialEnemySpawnTime</span><span class="p">;</span>
+    <span class="c1">// 敵の発生間隔タイマー</span>
+    <span class="kt">double</span> <span class="n">enemySpawnTimer</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+    <span class="c1">// 自機ショットのクールダウン時間（秒）</span>
+    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">playerShotCooldownTime</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
+    <span class="c1">// 自機ショットのクールダウンタイマー</span>
+    <span class="kt">double</span> <span class="n">playerShotTimer</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+    <span class="c1">// 敵ショットのクールダウン時間（秒）</span>
+    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">enemyShotCooldownTime</span> <span class="o">=</span> <span class="mf">0.90</span><span class="p">;</span>
+    <span class="c1">// 敵ショットのクールダウンタイマー</span>
+    <span class="kt">double</span> <span class="n">enemyShotTimer</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+
+    <span class="c1">// ハイスコア</span>
+    <span class="n">int32</span> <span class="n">highScore</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// 現在のスコア</span>
+    <span class="n">int32</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// ゲームオーバー判定</span>
+        <span class="kt">bool</span> <span class="n">gameover</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">deltaTime</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">();</span>
+        <span class="n">enemySpawnTimer</span> <span class="o">+=</span> <span class="n">deltaTime</span><span class="p">;</span>
+        <span class="n">playerShotTimer</span> <span class="o">=</span> <span class="n">Min</span><span class="p">(</span><span class="n">playerShotTimer</span> <span class="o">+</span> <span class="n">deltaTime</span><span class="p">,</span> <span class="n">playerShotCooldownTime</span><span class="p">);</span>
+        <span class="n">enemyShotTimer</span> <span class="o">=</span> <span class="n">Min</span><span class="p">(</span><span class="n">enemyShotTimer</span> <span class="o">+</span> <span class="n">deltaTime</span><span class="p">,</span> <span class="n">enemyShotCooldownTime</span><span class="p">);</span>
+
+        <span class="c1">// 敵の発生</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">enemySpawnTimer</span> <span class="o">&gt;</span> <span class="n">enemySpawnTime</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">enemySpawnTimer</span> <span class="o">-=</span> <span class="n">enemySpawnTime</span><span class="p">;</span>
+            <span class="n">enemySpawnTime</span> <span class="o">=</span> <span class="n">Max</span><span class="p">(</span><span class="n">enemySpawnTime</span> <span class="o">*</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">);</span>
+            <span class="n">enemies</span> <span class="o">&lt;&lt;</span> <span class="n">GenerateEnemy</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">//-------------------</span>
+        <span class="c1">//</span>
+        <span class="c1">// 移動</span>
+        <span class="c1">//</span>
+
+        <span class="c1">// 自機の移動</span>
+        <span class="k">const</span> <span class="n">Vec2</span> <span class="n">move</span> <span class="o">=</span> <span class="n">Vec2</span><span class="p">(</span><span class="n">KeyRight</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">-</span> <span class="n">KeyLeft</span><span class="p">.</span><span class="n">pressed</span><span class="p">(),</span> <span class="n">KeyDown</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">-</span> <span class="n">KeyUp</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+            <span class="p">.</span><span class="n">setLength</span><span class="p">(</span><span class="n">deltaTime</span> <span class="o">*</span> <span class="n">playerSpeed</span> <span class="o">*</span> <span class="p">(</span><span class="n">KeyShift</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="mf">0.5</span> <span class="o">:</span> <span class="mf">1.0</span><span class="p">));</span>
+        <span class="n">playerPos</span><span class="p">.</span><span class="n">moveBy</span><span class="p">(</span><span class="n">move</span><span class="p">).</span><span class="n">clamp</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Rect</span><span class="p">());</span>
+
+        <span class="c1">// 自機ショットの発射</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">playerShotTimer</span> <span class="o">&gt;=</span> <span class="n">playerShotCooldownTime</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">playerShotTimer</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="n">playerBullets</span> <span class="o">&lt;&lt;</span> <span class="n">playerPos</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 自機ショットの移動</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">playerBullet</span> <span class="p">:</span> <span class="n">playerBullets</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">playerBullet</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">deltaTime</span> <span class="o">*</span> <span class="o">-</span><span class="n">playerBulletSpeed</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// 画面外に出た自機ショットは消滅</span>
+        <span class="n">playerBullets</span><span class="p">.</span><span class="n">remove_if</span><span class="p">([](</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">40</span><span class="p">;</span> <span class="p">});</span>
+
+        <span class="c1">// 敵の移動</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">enemy</span> <span class="p">:</span> <span class="n">enemies</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">enemy</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">deltaTime</span> <span class="o">*</span> <span class="n">enemySpeed</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// 画面外に出た敵は消滅</span>
+        <span class="n">enemies</span><span class="p">.</span><span class="n">remove_if</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">700</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// 敵が画面外に出たらゲームオーバー</span>
+                <span class="n">gameover</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+
+        <span class="c1">// 敵ショットの発射</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">enemyShotTimer</span> <span class="o">&gt;=</span> <span class="n">enemyShotCooldownTime</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">enemyShotTimer</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">enemy</span> <span class="p">:</span> <span class="n">enemies</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">enemyBullets</span> <span class="o">&lt;&lt;</span> <span class="n">enemy</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 敵ショットの移動</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">enemyBullet</span> <span class="p">:</span> <span class="n">enemyBullets</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">enemyBullet</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">deltaTime</span> <span class="o">*</span> <span class="n">enemyBulletSpeed</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// 画面外に出た自機ショットは消滅</span>
+        <span class="n">enemyBullets</span><span class="p">.</span><span class="n">remove_if</span><span class="p">([](</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">700</span><span class="p">;</span> <span class="p">});</span>
+
+        <span class="c1">//-------------------</span>
+        <span class="c1">//</span>
+        <span class="c1">// 攻撃判定</span>
+        <span class="c1">//</span>
+
+        <span class="c1">// 敵 vs 自機ショット</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">itEnemy</span> <span class="o">=</span> <span class="n">enemies</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">itEnemy</span> <span class="o">!=</span> <span class="n">enemies</span><span class="p">.</span><span class="n">end</span><span class="p">();)</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Circle</span> <span class="n">enemyCircle</span><span class="p">(</span><span class="o">*</span><span class="n">itEnemy</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+            <span class="kt">bool</span> <span class="n">skip</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">itBullet</span> <span class="o">=</span> <span class="n">playerBullets</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">itBullet</span> <span class="o">!=</span> <span class="n">playerBullets</span><span class="p">.</span><span class="n">end</span><span class="p">();)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">enemyCircle</span><span class="p">.</span><span class="n">intersects</span><span class="p">(</span><span class="o">*</span><span class="n">itBullet</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="c1">// 爆発エフェクトを追加</span>
+                    <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="p">([</span><span class="n">pos</span> <span class="o">=</span> <span class="o">*</span><span class="n">itEnemy</span><span class="p">](</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="k">const</span> <span class="kt">double</span> <span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">t</span><span class="p">);</span>
+                        <span class="n">Circle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">70</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">t2</span><span class="p">,</span> <span class="n">AlphaF</span><span class="p">(</span><span class="n">t2</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">));</span>
+                        <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
+                    <span class="p">});</span>
+
+                    <span class="n">itEnemy</span> <span class="o">=</span> <span class="n">enemies</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">itEnemy</span><span class="p">);</span>
+                    <span class="n">playerBullets</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">itBullet</span><span class="p">);</span>
+                    <span class="o">++</span><span class="n">score</span><span class="p">;</span>
+                    <span class="n">skip</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="o">++</span><span class="n">itBullet</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">skip</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="o">++</span><span class="n">itEnemy</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 敵ショット vs 自機</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">enemyBullet</span> <span class="p">:</span> <span class="n">enemyBullets</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// 敵ショットが playerPos に 30 ピクセルよりも近く接近したら</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">enemyBullet</span><span class="p">.</span><span class="n">distanceFrom</span><span class="p">(</span><span class="n">playerPos</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// ゲームオーバーにする</span>
+                <span class="n">gameover</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// ゲームオーバーならリセット</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">gameover</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">playerPos</span> <span class="o">=</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+            <span class="n">enemies</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+            <span class="n">playerBullets</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+            <span class="n">enemyBullets</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+            <span class="n">enemySpawnTime</span> <span class="o">=</span> <span class="n">initialEnemySpawnTime</span><span class="p">;</span>
+            <span class="n">highScore</span> <span class="o">=</span> <span class="n">Max</span><span class="p">(</span><span class="n">highScore</span><span class="p">,</span> <span class="n">score</span><span class="p">);</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">//-------------------</span>
+        <span class="c1">//</span>
+        <span class="c1">// 描画</span>
+        <span class="c1">//</span>
+
+        <span class="c1">// 背景のアニメーション</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Periodic</span><span class="o">::</span><span class="n">Sine0_1</span><span class="p">(</span><span class="mi">2</span><span class="n">s</span><span class="p">,</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span> <span class="o">-</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">/</span> <span class="mi">12</span> <span class="o">*</span> <span class="n">i</span><span class="p">));</span>
+            <span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 自機の描画</span>
+        <span class="n">playerTexture</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">80</span><span class="p">).</span><span class="n">flipped</span><span class="p">().</span><span class="n">drawAt</span><span class="p">(</span><span class="n">playerPos</span><span class="p">);</span>
+
+        <span class="c1">// 自機ショットの描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">playerBullet</span> <span class="p">:</span> <span class="n">playerBullets</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Circle</span><span class="p">(</span><span class="n">playerBullet</span><span class="p">,</span> <span class="mi">8</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 敵の描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">enemy</span> <span class="p">:</span> <span class="n">enemies</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">enemyTexture</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">60</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">enemy</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 敵ショットの描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">enemyBullet</span> <span class="p">:</span> <span class="n">enemyBullets</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Circle</span><span class="p">(</span><span class="n">enemyBullet</span><span class="p">,</span> <span class="mi">4</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+
+        <span class="c1">// スコアの描画</span>
+        <span class="n">font</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;{} [{}]&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">highScore</span><span class="p">)).</span><span class="n">draw</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">bottomRight</span><span class="p">(</span><span class="mi">780</span><span class="p">,</span> <span class="mi">580</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
                 
                   
                 
