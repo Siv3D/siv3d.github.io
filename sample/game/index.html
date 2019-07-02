@@ -1427,21 +1427,19 @@
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
-
         <span class="c1">// ゲームオーバー判定</span>
         <span class="kt">bool</span> <span class="n">gameover</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 
         <span class="k">const</span> <span class="kt">double</span> <span class="n">deltaTime</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">();</span>
         <span class="n">enemySpawnTimer</span> <span class="o">+=</span> <span class="n">deltaTime</span><span class="p">;</span>
         <span class="n">playerShotTimer</span> <span class="o">=</span> <span class="n">Min</span><span class="p">(</span><span class="n">playerShotTimer</span> <span class="o">+</span> <span class="n">deltaTime</span><span class="p">,</span> <span class="n">playerShotCoolTime</span><span class="p">);</span>
-        <span class="n">enemyShotTimer</span> <span class="o">=</span> <span class="n">Min</span><span class="p">(</span><span class="n">enemyShotTimer</span> <span class="o">+</span> <span class="n">deltaTime</span><span class="p">,</span> <span class="n">enemyShotCoolTime</span><span class="p">);</span>
+        <span class="n">enemyShotTimer</span> <span class="o">+=</span> <span class="n">deltaTime</span><span class="p">;</span>
 
         <span class="c1">// 敵の発生</span>
         <span class="k">while</span> <span class="p">(</span><span class="n">enemySpawnTimer</span> <span class="o">&gt;</span> <span class="n">enemySpawnTime</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="n">enemySpawnTimer</span> <span class="o">-=</span> <span class="n">enemySpawnTime</span><span class="p">;</span>
-            <span class="n">enemySpawnTime</span> <span class="o">=</span> <span class="n">Max</span><span class="p">(</span><span class="n">enemySpawnTime</span> <span class="o">*</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">);</span>
+            <span class="n">enemySpawnTime</span> <span class="o">=</span> <span class="n">Max</span><span class="p">(</span><span class="n">enemySpawnTime</span> <span class="o">*</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">);</span>
             <span class="n">enemies</span> <span class="o">&lt;&lt;</span> <span class="n">GenerateEnemy</span><span class="p">();</span>
         <span class="p">}</span>
 
@@ -1493,7 +1491,7 @@
         <span class="c1">// 敵ショットの発射</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">enemyShotTimer</span> <span class="o">&gt;=</span> <span class="n">enemyShotCoolTime</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">enemyShotTimer</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="n">enemyShotTimer</span> <span class="o">-=</span> <span class="n">enemyShotCoolTime</span><span class="p">;</span>
 
             <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">enemy</span> <span class="p">:</span> <span class="n">enemies</span><span class="p">)</span>
             <span class="p">{</span>
@@ -1553,8 +1551,8 @@
         <span class="c1">// 敵ショット vs 自機</span>
         <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">enemyBullet</span> <span class="p">:</span> <span class="n">enemyBullets</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="c1">// 敵ショットが playerPos に 30 ピクセルよりも近く接近したら</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">enemyBullet</span><span class="p">.</span><span class="n">distanceFrom</span><span class="p">(</span><span class="n">playerPos</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">)</span>
+            <span class="c1">// 敵ショットが playerPos の 20 ピクセル以内に接近したら</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">enemyBullet</span><span class="p">.</span><span class="n">distanceFrom</span><span class="p">(</span><span class="n">playerPos</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">)</span>
             <span class="p">{</span>
                 <span class="c1">// ゲームオーバーにする</span>
                 <span class="n">gameover</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
