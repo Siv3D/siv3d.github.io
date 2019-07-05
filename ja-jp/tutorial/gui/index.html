@@ -833,8 +833,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#91" title="9.1" class="md-nav__link">
-    9.1
+  <a href="#91" title="9.1 ボタン" class="md-nav__link">
+    9.1 ボタン
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92" title="9.2 スライダー" class="md-nav__link">
+    9.2 スライダー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93" title="9.3 チェックボックス" class="md-nav__link">
+    9.3 チェックボックス
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94" title="9.4 ラジオボタン" class="md-nav__link">
+    9.4 ラジオボタン
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95" title="9.5 テキストボックス" class="md-nav__link">
+    9.5 テキストボックス
   </a>
   
 </li>
@@ -1145,8 +1173,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#91" title="9.1" class="md-nav__link">
-    9.1
+  <a href="#91" title="9.1 ボタン" class="md-nav__link">
+    9.1 ボタン
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92" title="9.2 スライダー" class="md-nav__link">
+    9.2 スライダー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93" title="9.3 チェックボックス" class="md-nav__link">
+    9.3 チェックボックス
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94" title="9.4 ラジオボタン" class="md-nav__link">
+    9.4 ラジオボタン
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95" title="9.5 テキストボックス" class="md-nav__link">
+    9.5 テキストボックス
   </a>
   
 </li>
@@ -1169,8 +1225,220 @@
                 
                 
                 <h1 id="9-gui">9. GUI<a class="headerlink" href="#9-gui" title="Permanent link">&para;</a></h1>
-<p>この章では、簡単なボタンやスライダーなどの GUI を作成する方法を学びます。</p>
-<h2 id="91">9.1<a class="headerlink" href="#91" title="Permanent link">&para;</a></h2>
+<p>この章では、ボタンやスライダーなど簡単な GUI を作成する方法を学びます。</p>
+<h2 id="91">9.1 ボタン<a class="headerlink" href="#91" title="Permanent link">&para;</a></h2>
+<p>ボタンの表示と入力の取得を実装するときは <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">Button</span><span class="p">()</span></code> 関数を使うと便利です。ボタンのテキストや位置、幅、状態などを設定できます。<code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">Button</span><span class="p">()</span></code> は自身が押されたときに <code class="codehilite"><span class="k">true</span></code> を返します。</p>
+<p><img alt="" src="../images/9010.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Red&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Green&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Blue&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="c1">// ボタンの幅を 200px に指定</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;White&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span> <span class="mi">200</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.9</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Black&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="mi">200</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.1</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="c1">// ボタンを無効化</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Gray&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">350</span><span class="p">),</span> <span class="mi">200</span><span class="p">,</span> <span class="nb">false</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.5</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="c1">// ボタンを無効化、ボタンの幅はテキストに合わせる</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Yellow&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span> <span class="n">unspecified</span><span class="p">,</span> <span class="nb">false</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="92">9.2 スライダー<a class="headerlink" href="#92" title="Permanent link">&para;</a></h2>
+<p>スライダーの表示と値の取得を実装するときは <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">Slider</span><span class="p">()</span></code> 関数を使うと便利です。スライダーのテキストや位置、幅、値の範囲などを設定できます。縦方向のスライダーは <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">VerticalSlider</span><span class="p">()</span></code> を使います。<code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">Slider</span><span class="p">()</span></code> と <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">VerticalSlider</span><span class="p">()</span></code> は値が変更されたときに <code class="codehilite"><span class="k">true</span></code> を返します。</p>
+<p><img alt="" src="../images/9020.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+    <span class="n">ColorF</span> <span class="n">color1</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
+    <span class="n">ColorF</span> <span class="n">color2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">);</span>
+    <span class="n">ColorF</span> <span class="n">color3</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">);</span>
+
+    <span class="kt">double</span> <span class="n">value1</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">value2</span> <span class="o">=</span> <span class="mf">7.0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">value3</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">value4</span> <span class="o">=</span> <span class="mf">4.0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="n">color1</span><span class="p">.</span><span class="n">r</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">));</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="n">color1</span><span class="p">.</span><span class="n">g</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">));</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="n">color1</span><span class="p">.</span><span class="n">b</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">));</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">color1</span><span class="p">);</span>
+
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Red&quot;</span><span class="p">,</span> <span class="n">color2</span><span class="p">.</span><span class="n">r</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">));</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Green&quot;</span><span class="p">,</span> <span class="n">color2</span><span class="p">.</span><span class="n">g</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">240</span><span class="p">));</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Blue&quot;</span><span class="p">,</span> <span class="n">color2</span><span class="p">.</span><span class="n">b</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">280</span><span class="p">));</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">260</span><span class="p">,</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">color2</span><span class="p">);</span>
+
+        <span class="c1">// スライダーの値を表示、ラベルの幅 100px, スライダーの幅 200px</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;R {:.2f}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">color3</span><span class="p">.</span><span class="n">r</span><span class="p">),</span> <span class="n">color3</span><span class="p">.</span><span class="n">r</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">360</span><span class="p">),</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;G {:.2f}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">color3</span><span class="p">.</span><span class="n">g</span><span class="p">),</span> <span class="n">color3</span><span class="p">.</span><span class="n">g</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;B {:.2f}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">color3</span><span class="p">.</span><span class="n">b</span><span class="p">),</span> <span class="n">color3</span><span class="p">.</span><span class="n">b</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">440</span><span class="p">),</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">420</span><span class="p">,</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">color3</span><span class="p">);</span>
+
+        <span class="c1">// 値の範囲が 0.0～10.0</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;{:.2f}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">value1</span><span class="p">),</span> <span class="n">value1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span>
+
+        <span class="c1">// スライダーを無効化</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;{:.2f}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">value2</span><span class="p">),</span> <span class="n">value2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+
+        <span class="c1">// 縦のスライダー</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">VerticalSlider</span><span class="p">(</span><span class="n">value3</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">160</span><span class="p">),</span> <span class="mi">200</span><span class="p">);</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">VerticalSlider</span><span class="p">(</span><span class="n">value4</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">560</span><span class="p">,</span> <span class="mi">160</span><span class="p">),</span> <span class="mi">200</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="93">9.3 チェックボックス<a class="headerlink" href="#93" title="Permanent link">&para;</a></h2>
+<p>チェックボックスの表示と入力の取得を実装するときは <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">CheckBox</span><span class="p">()</span></code> 関数を使うと便利です。チェックボックスのテキストや位置、幅、状態などを設定できます。<code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">CheckBox</span><span class="p">()</span></code> は値が変更されたときに <code class="codehilite"><span class="k">true</span></code> を返します。</p>
+<p><img alt="" src="../images/9030.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+    <span class="kt">bool</span> <span class="n">checked1</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">checked2</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">checked3</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">checked4</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">checked5</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">checked6</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">CheckBox</span><span class="p">(</span><span class="n">checked1</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Label1&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">));</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">CheckBox</span><span class="p">(</span><span class="n">checked2</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Label2&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">));</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">CheckBox</span><span class="p">(</span><span class="n">checked3</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Label3&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">));</span>
+
+        <span class="c1">// 幅 200px</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">CheckBox</span><span class="p">(</span><span class="n">checked4</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Label4&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">180</span><span class="p">),</span> <span class="mi">200</span><span class="p">);</span>
+
+        <span class="c1">// 無効化</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">CheckBox</span><span class="p">(</span><span class="n">checked5</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Label5&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">220</span><span class="p">),</span> <span class="mi">200</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+
+        <span class="c1">// 幅はテキストに合わせる</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">CheckBox</span><span class="p">(</span><span class="n">checked6</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Label6&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">260</span><span class="p">),</span> <span class="n">unspecified</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="94">9.4 ラジオボタン<a class="headerlink" href="#94" title="Permanent link">&para;</a></h2>
+<p>ラジオボタンの表示と入力の取得を実装するときは <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">RadioButtons</span><span class="p">()</span></code> 関数を使うと便利です。ラジオボタンのテキストや位置、幅、状態などを設定できます。<code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">RadioButtons</span><span class="p">()</span></code> は値が変更されたときに <code class="codehilite"><span class="k">true</span></code> を返します。</p>
+<p><img alt="" src="../images/9040.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">size_t</span> <span class="n">index0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">index1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">index2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">index3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">index4</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">options</span> <span class="o">=</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;Red&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Green&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Blue&quot;</span> <span class="p">};</span>
+    <span class="k">constexpr</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">ColorF</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span> <span class="p">};</span>
+
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">index1</span><span class="p">]);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">index0</span><span class="p">,</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;Option1&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Option2&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Option3&quot;</span> <span class="p">},</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">));</span>
+
+        <span class="c1">// 選択肢を Array&lt;String&gt; で指定</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">index1</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">180</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">index1</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 幅 200px</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">index2</span><span class="p">,</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;B&quot;</span> <span class="p">},</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="mi">200</span><span class="p">);</span>
+
+        <span class="c1">// 無効化</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">index3</span><span class="p">,</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;B&quot;</span> <span class="p">},</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">140</span><span class="p">),</span> <span class="mi">200</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+
+        <span class="c1">// 幅はテキストに合わせる</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">index4</span><span class="p">,</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;B&quot;</span> <span class="p">},</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">240</span><span class="p">),</span> <span class="n">unspecified</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="95">9.5 テキストボックス<a class="headerlink" href="#95" title="Permanent link">&para;</a></h2>
+<p>テキストボックスを実装するときは <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">TextBox</span><span class="p">()</span></code> 関数を使うと便利です。テキストボックスの位置、幅、文字数の上限、状態などを設定できます。テキストは <code class="codehilite"><span class="n">TextEditState</span></code> 型のオブジェクトによって管理します。<code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">TextBox</span><span class="p">()</span></code> は値が変更されたときに <code class="codehilite"><span class="k">true</span></code> を返します。</p>
+<p><img alt="" src="../images/9050.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="n">TextEditState</span> <span class="n">tes1</span><span class="p">;</span>
+    <span class="n">TextEditState</span> <span class="n">tes2</span><span class="p">;</span>
+    <span class="n">tes2</span><span class="p">.</span><span class="n">text</span> <span class="o">=</span> <span class="sa">U</span><span class="s">&quot;Siv3D&quot;</span><span class="p">;</span> <span class="c1">// デフォルトの文字列</span>
+    <span class="n">TextEditState</span> <span class="n">tes3</span><span class="p">;</span>
+    <span class="n">TextEditState</span> <span class="n">tes4</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">TextBox</span><span class="p">(</span><span class="n">tes1</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">));</span>
+
+        <span class="c1">// .text でテキストにアクセス、.active でアクティブかどうかの状態にアクセス</span>
+        <span class="n">font</span><span class="p">(</span><span class="n">tes1</span><span class="p">.</span><span class="n">text</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">tes1</span><span class="p">.</span><span class="n">active</span> <span class="o">?</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">:</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">TextBox</span><span class="p">(</span><span class="n">tes2</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Clear&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">100</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="c1">// テキストを消去</span>
+            <span class="n">tes2</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 幅 100px, 文字数を 4 文字までに制限</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">TextBox</span><span class="p">(</span><span class="n">tes3</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">160</span><span class="p">),</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+
+        <span class="c1">// 無効化</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">TextBox</span><span class="p">(</span><span class="n">tes4</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">220</span><span class="p">),</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
