@@ -586,6 +586,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#polygon_2" title="Polygon の太らせ、細らせ" class="md-nav__link">
+    Polygon の太らせ、細らせ
+  </a>
+  
+</li>
+      
       
       
       
@@ -1221,6 +1228,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#polygon_2" title="Polygon の太らせ、細らせ" class="md-nav__link">
+    Polygon の太らせ、細らせ
+  </a>
+  
+</li>
+      
       
       
       
@@ -1410,6 +1424,39 @@
             <span class="p">.</span><span class="n">drawWireframe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
 
         <span class="n">rect</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="polygon_2">Polygon の太らせ、細らせ<a class="headerlink" href="#polygon_2" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../images/2d-geometry-buffer.gif" />
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.6</span><span class="p">));</span>
+
+    <span class="k">const</span> <span class="n">Polygon</span> <span class="n">starBase1</span><span class="p">(</span><span class="n">Shape2D</span><span class="o">::</span><span class="n">Star</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">().</span><span class="n">movedBy</span><span class="p">(</span><span class="o">-</span><span class="mi">160</span><span class="p">,</span> <span class="mi">0</span><span class="p">)));</span>
+    <span class="k">const</span> <span class="n">Polygon</span> <span class="n">starBase2</span><span class="p">(</span><span class="n">Shape2D</span><span class="o">::</span><span class="n">Star</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">().</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="mi">0</span><span class="p">)));</span>
+
+    <span class="n">Polygon</span> <span class="n">star1</span> <span class="o">=</span> <span class="n">starBase1</span><span class="p">;</span>
+    <span class="n">Polygon</span> <span class="n">star2</span> <span class="o">=</span> <span class="n">starBase2</span><span class="p">;</span>
+
+    <span class="kt">double</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;{:.1f}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">distance</span><span class="p">),</span> <span class="n">distance</span><span class="p">,</span> <span class="o">-</span><span class="mf">30.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="c1">// Polygon を太らせ / 細らせる</span>
+            <span class="n">star1</span> <span class="o">=</span> <span class="n">starBase1</span><span class="p">.</span><span class="n">calculateRoundBuffer</span><span class="p">(</span><span class="n">distance</span><span class="p">);</span>
+            <span class="n">star2</span> <span class="o">=</span> <span class="n">starBase2</span><span class="p">.</span><span class="n">calculateBuffer</span><span class="p">(</span><span class="n">distance</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">star1</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Darkblue</span><span class="p">);</span>
+        <span class="n">star2</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Darkblue</span><span class="p">);</span>
+
+        <span class="n">starBase1</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Yellow</span><span class="p">);</span>
+        <span class="n">starBase2</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Yellow</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div></p>

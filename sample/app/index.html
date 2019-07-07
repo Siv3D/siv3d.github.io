@@ -686,6 +686,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" title="ドットお絵かき" class="md-nav__link">
+    ドットお絵かき
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="時計" class="md-nav__link">
+    時計
+  </a>
+  
+</li>
+      
       
       
       
@@ -1273,6 +1287,20 @@
         <li class="md-nav__item">
   <a href="#qr" title="QR コード作成" class="md-nav__link">
     QR コード作成
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="ドットお絵かき" class="md-nav__link">
+    ドットお絵かき
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="時計" class="md-nav__link">
+    時計
   </a>
   
 </li>
@@ -2099,6 +2127,84 @@
         <span class="n">font</span><span class="p">(</span><span class="n">current</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
 
         <span class="n">texture</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="_3">ドットお絵かき<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../images/app-dot-sketch.gif" />
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">int32</span> <span class="n">cellSize</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+
+    <span class="c1">// シーンのサイズとセルの大きさから縦横のセルの個数を計算</span>
+    <span class="n">Grid</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span> <span class="n">cells</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Size</span><span class="p">()</span> <span class="o">/</span> <span class="n">cellSize</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// カーソルを手の形に</span>
+        <span class="n">Cursor</span><span class="o">::</span><span class="n">RequestStyle</span><span class="p">(</span><span class="n">CursorStyle</span><span class="o">::</span><span class="n">Hand</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">p</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">cells</span><span class="p">.</span><span class="n">size</span><span class="p">()))</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Rect</span> <span class="n">rect</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">cellSize</span><span class="p">,</span> <span class="n">cellSize</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">leftClicked</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="c1">// 0 → 1 → 2 →　3 → 0 → 1 → ... と遷移させる</span>
+                <span class="o">++</span><span class="n">cells</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">%=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="n">rect</span><span class="p">.</span><span class="n">stretched</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.95</span> <span class="o">-</span> <span class="n">cells</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.3</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="_4">時計<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../images/app-clock.gif" />
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">));</span>
+
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+    <span class="k">const</span> <span class="n">Vec2</span> <span class="n">center</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">();</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="mi">230</span><span class="p">).</span><span class="n">draw</span><span class="p">().</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">));</span>
+
+        <span class="c1">// 数字</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">Range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Vec2</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">OffsetCircular</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="mi">170</span><span class="p">,</span> <span class="mi">30</span><span class="n">_deg</span> <span class="o">*</span> <span class="n">i</span><span class="p">);</span>
+            <span class="n">font</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">Range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">59</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Vec2</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">OffsetCircular</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">6</span><span class="n">_deg</span><span class="p">);</span>
+            <span class="n">Circle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">?</span> <span class="mi">3</span> <span class="o">:</span> <span class="mi">6</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 現在時刻を取得</span>
+        <span class="k">const</span> <span class="n">DateTime</span> <span class="n">time</span> <span class="o">=</span> <span class="n">DateTime</span><span class="o">::</span><span class="n">Now</span><span class="p">();</span>
+
+        <span class="c1">// 時針</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">hour</span> <span class="o">=</span> <span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">hour</span> <span class="o">+</span> <span class="n">time</span><span class="p">.</span><span class="n">minute</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span> <span class="o">*</span> <span class="mi">30</span><span class="n">_deg</span><span class="p">;</span>
+        <span class="n">Line</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">center</span> <span class="o">+</span> <span class="n">Circular</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="n">hour</span><span class="p">)).</span><span class="n">draw</span><span class="p">(</span><span class="n">LineStyle</span><span class="o">::</span><span class="n">RoundCap</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.1</span><span class="p">));</span>
+
+        <span class="c1">// 分針</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">minute</span> <span class="o">=</span> <span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">minute</span> <span class="o">+</span> <span class="n">time</span><span class="p">.</span><span class="n">second</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span><span class="n">_deg</span><span class="p">;</span>
+        <span class="n">Line</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">center</span> <span class="o">+</span> <span class="n">Circular</span><span class="p">(</span><span class="mi">190</span><span class="p">,</span> <span class="n">minute</span><span class="p">)).</span><span class="n">draw</span><span class="p">(</span><span class="n">LineStyle</span><span class="o">::</span><span class="n">RoundCap</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.1</span><span class="p">));</span>
+
+        <span class="c1">// 秒針</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">second</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">second</span> <span class="o">*</span> <span class="mi">6</span><span class="n">_deg</span><span class="p">;</span>
+        <span class="n">Line</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">center</span> <span class="o">+</span> <span class="n">Circular</span><span class="p">(</span><span class="mi">190</span><span class="p">,</span> <span class="n">second</span><span class="p">)).</span><span class="n">draw</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.1</span><span class="p">));</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div></p>
