@@ -351,6 +351,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scenedeltatime" title="Scene::DeltaTime()" class="md-nav__link">
+    Scene::DeltaTime()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#step" title="step" class="md-nav__link">
     step
   </a>
@@ -601,8 +608,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../window/" title="10. Window" class="md-nav__link">
-      10. Window
+    <a href="../window/" title="10. Scene and window" class="md-nav__link">
+      10. Scene and window
     </a>
   </li>
 
@@ -1033,8 +1040,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ja-jp/tutorial/window/" title="10. 画面とウィンドウ" class="md-nav__link">
-      10. 画面とウィンドウ
+    <a href="../../ja-jp/tutorial/window/" title="10. シーンとウィンドウ" class="md-nav__link">
+      10. シーンとウィンドウ
     </a>
   </li>
 
@@ -1344,6 +1351,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scenedeltatime" title="Scene::DeltaTime()" class="md-nav__link">
+    Scene::DeltaTime()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#step" title="step" class="md-nav__link">
     step
   </a>
@@ -1547,6 +1561,25 @@
 <span class="p">}</span>
 </pre></div>
 
+<h3 id="scenedeltatime">Scene::DeltaTime()<a class="headerlink" href="#scenedeltatime" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">DeltaTime</span><span class="p">()</span></code> は、直前のフレームからの経過時間 (秒) を <code class="codehilite"><span class="n">double</span></code> 型の値で返します。<code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Time</span><span class="p">()</span></code> を使わずに、この値を加算していくことでアニメーションを作成することもできます。
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+
+    <span class="kt">double</span> <span class="n">r</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 経過時間分だけ大きくする</span>
+        <span class="n">r</span> <span class="o">+=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">()</span> <span class="o">*</span> <span class="mi">50</span><span class="p">;</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="n">r</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
 <h3 id="step">step<a class="headerlink" href="#step" title="Permanent link">&para;</a></h3>
 <p>Siv3D に用意されている、ループを短く書ける機能です。<code class="codehilite"><span class="k">for</span> <span class="ss">(</span><span class="nv">auto</span> <span class="nv">i</span> : <span class="nv">step</span><span class="ss">(</span><span class="nv">N</span><span class="ss">))</span></code> は <code class="codehilite"><span class="k">for</span> <span class="ss">(</span><span class="nv">int</span> <span class="nv">i</span> <span class="o">=</span> <span class="mi">0</span><span class="c1">; i &lt; N; ++n)</span></code>と同じ働きです。</p>
 <video src="../images/3011.mp4" autoplay loop muted></video>
@@ -1604,7 +1637,7 @@
 </pre></div>
 
 <h2 id="32">3.2 ストップウォッチ<a class="headerlink" href="#32" title="Permanent link">&para;</a></h2>
-<p><code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Time</span><span class="p">()</span></code> の欠点は、時間を止めることやリセットができないことです。好きなタイミングで経過時間を測定するには <code class="codehilite"><span class="n">Stopwatch</span></code> クラスを使います。</p>
+<p>経過時間の計測やリセットを便利に行える <code class="codehilite"><span class="n">Stopwatch</span></code> クラスがあります。</p>
 <h3 id="stopwatch">Stopwatch の経過時間とリスタート<a class="headerlink" href="#stopwatch" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="n">Stopwatch</span></code> のコンストラクタ引数に <code class="codehilite"><span class="k">true</span></code> を渡すと、作成と同時に計測を開始します。<code class="codehilite"><span class="n">Stopwatch</span><span class="p">::</span><span class="n">sF</span><span class="p">()</span></code> はその時点での経過時間（秒）を <code class="codehilite"><span class="n">double</span></code> 型で返します。<code class="codehilite"><span class="n">Stopwatch</span><span class="p">::</span><span class="k">restart</span><span class="p">()</span></code> すると、経過時間をリセットして再び 0 から計測を開始（リスタート）します。</p>
 <h3 id="mouseldown">MouseL.down()<a class="headerlink" href="#mouseldown" title="Permanent link">&para;</a></h3>
