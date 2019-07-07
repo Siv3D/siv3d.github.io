@@ -1273,7 +1273,7 @@
 <h2 id="101">10.1 シーンとウィンドウのサイズを変更する<a class="headerlink" href="#101" title="Permanent link">&para;</a></h2>
 <p>シーンの基本サイズとウィンドウの基本サイズは <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">DefaultSceneSize</span></code> と <code class="codehilite"><span class="n">Window</span><span class="p">::</span><span class="n">DefaultClientSize</span></code> でそれぞれ定義されており、どちらも幅 800 ピクセル、高さ 600 ピクセルです。シーンとウィンドウのサイズを変更するには、<code class="codehilite"><span class="n">Window</span><span class="p">::</span><span class="n">Resize</span><span class="p">()</span></code> で新しいサイズを指定します。</p>
 <p>シーンのサイズは <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="k">Size</span><span class="p">()</span></code>, シーンの幅は <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Width</span><span class="p">()</span></code>, シーンの高さは <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Height</span><span class="p">()</span></code>, ウィンドウのサイズは <code class="codehilite"><span class="n">Window</span><span class="p">::</span><span class="n">ClientSize</span><span class="p">()</span></code>, ウィンドウの幅は <code class="codehilite"><span class="n">Window</span><span class="p">::</span><span class="n">ClientWidth</span><span class="p">()</span></code>, ウィンドウの高さは <code class="codehilite"><span class="n">Window</span><span class="p">::</span><span class="n">Height</span><span class="p">()</span></code> で取得できます。</p>
-<p><img alt="" src="images/10-1-0.png" /></p>
+<p><img alt="" src="../images/10-1-0.png" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -1297,8 +1297,8 @@
         <span class="c1">// ラジオボタンが変更されたら</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;400x600&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;640x480&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;800x600&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;1280x640&quot;</span> <span class="p">},</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)))</span>
         <span class="p">{</span>
-            <span class="c1">// ウィンドウサイズを変更（シーンのサイズも同時に変更）</span>
-            <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">resolutions</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+<span class="hll">            <span class="c1">// ウィンドウサイズを変更（シーンのサイズも同時に変更）</span>
+</span>            <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">resolutions</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
         <span class="p">}</span>
 
         <span class="c1">// シーンのサイズとウィンドウのサイズを表示</span>
@@ -1309,7 +1309,7 @@
 
 <h2 id="102">10.2 ウィンドウのサイズだけを変更する<a class="headerlink" href="#102" title="Permanent link">&para;</a></h2>
 <p>ウィンドウのサイズが変更されても、シーンのサイズはそのままにしておきたいケースもあるでしょう。その場合は <code class="codehilite"><span class="n">Window</span><span class="p">::</span><span class="n">Resize</span><span class="p">()</span></code> に <code class="codehilite"><span class="n">WindowResizeOption</span><span class="p">::</span><span class="n">KeepSceneSize</span></code> パラメータを指定します。こうすると、<code class="codehilite"><span class="n">Window</span><span class="p">::</span><span class="n">Resize</span><span class="p">()</span></code> してもシーンのサイズは保持されます。シーンは必要に応じて縮小・拡大し、縦横比を保持したままウィンドウに転送され、余った領域（レターボックス）は黒く塗りつぶされます。</p>
-<p><img alt="" src="images/10-2-0.png" /></p>
+<p><img alt="" src="../images/10-2-0.png" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -1333,8 +1333,8 @@
         <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;400x600&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;640x480&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;800x600&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;1280x640&quot;</span> <span class="p">},</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)))</span>
         <span class="p">{</span>
             <span class="c1">// ウィンドウサイズを変更（シーンのサイズは保持）</span>
-            <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">resolutions</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">WindowResizeOption</span><span class="o">::</span><span class="n">KeepSceneSize</span><span class="p">);</span>
-        <span class="p">}</span>
+<span class="hll">            <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">resolutions</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">WindowResizeOption</span><span class="o">::</span><span class="n">KeepSceneSize</span><span class="p">);</span>
+</span>        <span class="p">}</span>
 
         <span class="c1">// シーンのサイズとウィンドウのサイズを表示</span>
         <span class="n">font</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Scene: {}</span><span class="se">\n</span><span class="s">Window: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Size</span><span class="p">(),</span> <span class="n">Window</span><span class="o">::</span><span class="n">ClientSize</span><span class="p">())).</span><span class="n">draw</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
@@ -1343,33 +1343,195 @@
 </pre></div>
 
 <h2 id="103">10.3 レターボックスの色を変更する<a class="headerlink" href="#103" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/10-3-0.png" /></p>
-<div class="codehilite"><pre><span></span>
+<p>シーンが縦横比を保持したままウィンドウに転送されるとき、ウィンドウ内の余った領域（レターボックス）を塗りつぶす色を変更するには、<code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">SetLetterbox</span><span class="p">()</span></code> で色を設定します。</p>
+<p><img alt="" src="../images/10-3-0.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// レターボックスの色を設定</span>
+<span class="hll">    <span class="n">Scene</span><span class="o">::</span><span class="n">SetLetterbox</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="p">));</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Size</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span> <span class="n">resolutions</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="n">Size</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">Size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">),</span> <span class="n">Size</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">Size</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">640</span><span class="p">)</span>
+    <span class="p">};</span>
+    <span class="kt">size_t</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Triangle</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Cornflowerblue</span><span class="p">);</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">80</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+        <span class="n">texture</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;400x600&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;640x480&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;800x600&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;1280x640&quot;</span> <span class="p">},</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="c1">// ウィンドウサイズを変更（シーンのサイズは保持）</span>
+            <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">resolutions</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">WindowResizeOption</span><span class="o">::</span><span class="n">KeepSceneSize</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">font</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Scene: {}</span><span class="se">\n</span><span class="s">Window: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Size</span><span class="p">(),</span> <span class="n">Window</span><span class="o">::</span><span class="n">ClientSize</span><span class="p">())).</span><span class="n">draw</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 <h2 id="104">10.4 シーンのサイズだけを変更する<a class="headerlink" href="#104" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/10-4-0.png" /></p>
-<div class="codehilite"><pre><span></span>
+<p><code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Resize</span><span class="p">()</span></code> でシーンのサイズだけを変更できます。例えば、シーンのサイズをウィンドウのサイズよりも小さくすると、画面が粗くなります。シーンをウィンドウに転送する際の拡大縮小フィルタは、デフォルトでは線形補間あり（なめらか）ですが、<code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">SetTextureFilter</span><span class="p">()</span></code> に <code class="codehilite"><span class="n">TextureFilter</span><span class="p">::</span><span class="n">Nearest</span></code> を指定することで、線形補間無しを選択できます。線形補間無しの設定は、ドット感を保ちたいときには有効ですが、それ以外のケースでは画質を低下させます。</p>
+<p><img alt="" src="../images/10-4-0.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+    <span class="c1">// シーンのサイズを 100x75 に</span>
+<span class="hll">    <span class="n">Scene</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">75</span><span class="p">);</span>
+</span>
+    <span class="c1">// シーンをウィンドウに転送する際の拡大縮小フィルタを「補間なし」に</span>
+<span class="hll">    <span class="n">Scene</span><span class="o">::</span><span class="n">SetTextureFilter</span><span class="p">(</span><span class="n">TextureFilter</span><span class="o">::</span><span class="n">Nearest</span><span class="p">);</span>
+</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="p">));</span>
+
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Triangle</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Cornflowerblue</span><span class="p">);</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">25</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+
+        <span class="n">texture</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">64</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">35</span><span class="p">);</span>
+
+        <span class="n">font</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Scene: {}</span><span class="se">\n</span><span class="s">Window: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Size</span><span class="p">(),</span> <span class="n">Window</span><span class="o">::</span><span class="n">ClientSize</span><span class="p">())).</span><span class="n">draw</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 <h2 id="105">10.5 ウィンドウを手動でリサイズできるようにする<a class="headerlink" href="#105" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/10-5-0.png" /></p>
-<div class="codehilite"><pre><span></span>
+<p><code class="codehilite"><span class="n">Window</span><span class="p">::</span><span class="n">SetStyle</span><span class="p">()</span></code> で <code class="codehilite"><span class="n">WindowStyle</span><span class="p">::</span><span class="n">Sizable</span></code> を設定すると、ウィンドウの境界をドラッグしてサイズを変更できるようになります。また、これによってウィンドウの最大化ボタンが使えるようになります。</p>
+<video src="../images/10-5-0.mp4" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// ウィンドウを手動リサイズ可能にする</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Sizable</span><span class="p">);</span>
+
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="p">));</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Triangle</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Cornflowerblue</span><span class="p">);</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">80</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+        <span class="n">texture</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+
+        <span class="c1">// シーンのサイズとウィンドウのサイズを表示</span>
+        <span class="n">font</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Scene: {}</span><span class="se">\n</span><span class="s">Window: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Size</span><span class="p">(),</span> <span class="n">Window</span><span class="o">::</span><span class="n">ClientSize</span><span class="p">())).</span><span class="n">draw</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>手動でリサイズしたときには、シーンのサイズは変更されないようになっていますが、<code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">SetScaleMode</span><span class="p">()</span></code> で <code class="codehilite"><span class="n">ScaleMode</span><span class="p">::</span><span class="n">ResizeFill</span></code> を設定することで、シーンのサイズもリサイズに追従するようになります。</p>
+<video src="../images/10-5-1.mp4" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// ウィンドウを手動リサイズ可能にする</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Sizable</span><span class="p">);</span>
+
+    <span class="c1">// 手動リサイズ時に、シーンのサイズも合わせて変更する</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetScaleMode</span><span class="p">(</span><span class="n">ScaleMode</span><span class="o">::</span><span class="n">ResizeFill</span><span class="p">);</span>
+
+<span class="hll">    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+</span>    <span class="k">const</span> <span class="n">Texture</span> <span class="n">texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="p">));</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Triangle</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Cornflowerblue</span><span class="p">);</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">80</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+        <span class="n">texture</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+
+        <span class="c1">// シーンのサイズとウィンドウのサイズを表示</span>
+        <span class="n">font</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Scene: {}</span><span class="se">\n</span><span class="s">Window: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Size</span><span class="p">(),</span> <span class="n">Window</span><span class="o">::</span><span class="n">ClientSize</span><span class="p">())).</span><span class="n">draw</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 <h2 id="106">10.6 ウィンドウのタイトルを変更する<a class="headerlink" href="#106" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/10-6-0.png" /></p>
-<div class="codehilite"><pre><span></span>
+<p>ウィンドウのタイトルを変更するには、<code class="codehilite"><span class="nv">Window</span>::<span class="k">SetTitle</span><span class="ss">()</span></code> に文字列や値を渡します。なお、デバッグビルド時には、タイトルのほかに、"(Debug Build)" という文字列と、フレームレート、ウィンドウのサイズ、シーンのサイズが合わせて表示されます。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>ウィンドウタイトルの変更は時間のかかる処理なので、毎フレーム <code class="codehilite"><span class="nv">Window</span>::<span class="k">SetTitle</span><span class="ss">()</span></code> に異なる文字列を設定することは避けてください。既に設定されているタイトルと同じ場合には何もしないので、コストは発生しません。</p>
+</div>
+<p><img alt="" src="../images/10-6-0.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Hello, Siv3D!&quot;</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 <h2 id="107">10.7 ウィンドウを最小化 / 最大化する<a class="headerlink" href="#107" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/10-7-0.png" /></p>
-<div class="codehilite"><pre><span></span>
+<p>プログラムによってウィンドウを最小化するには <code class="codehilite"><span class="n">Window</span><span class="p">::</span><span class="n">Minimize</span><span class="p">()</span></code> を、最大化するには <code class="codehilite"><span class="n">Window</span><span class="p">::</span><span class="n">Maximize</span><span class="p">()</span></code> を呼びます。最大化をするにはウィンドウが手動リサイズ可能になっている必要があります。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+    <span class="c1">// ウィンドウを手動リサイズ可能にする</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Sizable</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Minimize&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="c1">// ウィンドウを最小化</span>
+            <span class="n">Window</span><span class="o">::</span><span class="n">Minimize</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Maximize&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="c1">// ウィンドウを最大化</span>
+            <span class="n">Window</span><span class="o">::</span><span class="n">Maximize</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 <h2 id="108">10.8 ウィンドウの枠を非表示にする<a class="headerlink" href="#108" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/10-8-0.png" /></p>
-<div class="codehilite"><pre><span></span>
+<p>ウィンドウの枠を非表示にするには、<code class="codehilite"><span class="n">Window</span><span class="p">::</span><span class="n">SetStyle</span><span class="p">()</span></code> で <code class="codehilite"><span class="n">WindowStyle</span><span class="p">::</span><span class="n">Frameless</span></code> を設定します。</p>
+<p><img alt="" src="../images/10-8-0.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+
+    <span class="c1">// ウィンドウの枠を非表示にする</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Frameless</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span> <span class="mi">100</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
                 
                   
