@@ -556,6 +556,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/kd-tree/" title="kd-tree" class="md-nav__link">
+      kd-tree
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/objdetection/" title="Object detection" class="md-nav__link">
+      Object detection
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1002,6 +1026,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/kd-tree/" title="kd 木" class="md-nav__link">
+      kd 木
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/objdetection/" title="物体検出" class="md-nav__link">
+      物体検出
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1173,6 +1221,13 @@
         <li class="md-nav__item">
   <a href="#sketch-to-p2body" title="Sketch to P2Body" class="md-nav__link">
     Sketch to P2Body
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" title="画像ビューア" class="md-nav__link">
+    画像ビューア
   </a>
   
 </li>
@@ -1367,6 +1422,13 @@
         <li class="md-nav__item">
   <a href="#sketch-to-p2body" title="Sketch to P2Body" class="md-nav__link">
     Sketch to P2Body
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" title="画像ビューア" class="md-nav__link">
+    画像ビューア
   </a>
   
 </li>
@@ -2441,6 +2503,34 @@
         <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
 
         <span class="n">camera</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="_11">画像ビューア<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p><video src="../images/app-image-viewer.mp4" autoplay loop muted></video>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Texture</span> <span class="n">texture</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// ファイルがドロップされた</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">DragDrop</span><span class="o">::</span><span class="n">HasNewFilePaths</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// ファイルを画像として読み込めた</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="n">Image</span> <span class="n">image</span><span class="p">{</span> <span class="n">DragDrop</span><span class="o">::</span><span class="n">GetDroppedFilePaths</span><span class="p">().</span><span class="n">front</span><span class="p">().</span><span class="n">path</span> <span class="p">})</span>
+            <span class="p">{</span>
+                <span class="c1">// 画面のサイズに合うように画像を拡大縮小</span>
+                <span class="n">texture</span> <span class="o">=</span> <span class="n">Texture</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="n">fitted</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Size</span><span class="p">()));</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">texture</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">());</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div></p>

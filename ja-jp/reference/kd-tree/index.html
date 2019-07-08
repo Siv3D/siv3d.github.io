@@ -13,7 +13,7 @@
         <meta name="description" content="Siv3D: An open source C++17 library for creative coding">
       
       
-        <link rel="canonical" href="https://siv3d.github.io/ja-jp/tutorial/random/">
+        <link rel="canonical" href="https://siv3d.github.io/ja-jp/reference/kd-tree/">
       
       
         <meta name="author" content="Ryo Suzuki">
@@ -42,7 +42,7 @@
     
     
       
-        <title>14. ランダム - Siv3D</title>
+        <title>kd 木 - Siv3D</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#14" tabindex="1" class="md-skip">
+      <a href="#kd" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -118,7 +118,7 @@
               Siv3D
             </span>
             <span class="md-header-nav__topic">
-              14. ランダム
+              kd 木
             </span>
           
         </div>
@@ -723,12 +723,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
     
     <label class="md-nav__link" for="nav-2-2">
       チュートリアル
@@ -746,7 +744,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../basic/" title="1. Siv3D の基本" class="md-nav__link">
+    <a href="../../tutorial/basic/" title="1. Siv3D の基本" class="md-nav__link">
       1. Siv3D の基本
     </a>
   </li>
@@ -758,7 +756,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../shape/" title="2. 図形を描く" class="md-nav__link">
+    <a href="../../tutorial/shape/" title="2. 図形を描く" class="md-nav__link">
       2. 図形を描く
     </a>
   </li>
@@ -770,7 +768,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../animation/" title="3. 動きを作る" class="md-nav__link">
+    <a href="../../tutorial/animation/" title="3. 動きを作る" class="md-nav__link">
       3. 動きを作る
     </a>
   </li>
@@ -782,7 +780,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../2d-intersection/" title="4. あたり判定" class="md-nav__link">
+    <a href="../../tutorial/2d-intersection/" title="4. あたり判定" class="md-nav__link">
       4. あたり判定
     </a>
   </li>
@@ -794,7 +792,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../texture/" title="5. 画像を描く" class="md-nav__link">
+    <a href="../../tutorial/texture/" title="5. 画像を描く" class="md-nav__link">
       5. 画像を描く
     </a>
   </li>
@@ -806,7 +804,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../data-structures/" title="6. データ構造" class="md-nav__link">
+    <a href="../../tutorial/data-structures/" title="6. データ構造" class="md-nav__link">
       6. データ構造
     </a>
   </li>
@@ -818,7 +816,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../formatting/" title="7. 文字列と数値の変換" class="md-nav__link">
+    <a href="../../tutorial/formatting/" title="7. 文字列と数値の変換" class="md-nav__link">
       7. 文字列と数値の変換
     </a>
   </li>
@@ -830,7 +828,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../font/" title="8. フォントを使う" class="md-nav__link">
+    <a href="../../tutorial/font/" title="8. フォントを使う" class="md-nav__link">
       8. フォントを使う
     </a>
   </li>
@@ -842,7 +840,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../gui/" title="9. GUI" class="md-nav__link">
+    <a href="../../tutorial/gui/" title="9. GUI" class="md-nav__link">
       9. GUI
     </a>
   </li>
@@ -854,7 +852,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../window/" title="10. シーンとウィンドウ" class="md-nav__link">
+    <a href="../../tutorial/window/" title="10. シーンとウィンドウ" class="md-nav__link">
       10. シーンとウィンドウ
     </a>
   </li>
@@ -866,7 +864,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../keyboard/" title="11. キーボード入力" class="md-nav__link">
+    <a href="../../tutorial/keyboard/" title="11. キーボード入力" class="md-nav__link">
       11. キーボード入力
     </a>
   </li>
@@ -878,7 +876,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../mouse/" title="12. マウス入力" class="md-nav__link">
+    <a href="../../tutorial/mouse/" title="12. マウス入力" class="md-nav__link">
       12. マウス入力
     </a>
   </li>
@@ -890,8 +888,142 @@
 
 
   <li class="md-nav__item">
-    <a href="../audio/" title="13. オーディオ再生" class="md-nav__link">
+    <a href="../../tutorial/audio/" title="13. オーディオ再生" class="md-nav__link">
       13. オーディオ再生
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/random/" title="14. ランダム" class="md-nav__link">
+      14. ランダム
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/2d-renderstates/" title="15. 2D レンダーステート" class="md-nav__link">
+      15. 2D レンダーステート
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      リファレンス
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        リファレンス
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../fullscreen/" title="フルスクリーン" class="md-nav__link">
+      フルスクリーン
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../json/" title="JSON ファイル" class="md-nav__link">
+      JSON ファイル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2d-shadow/" title="2D 図形の影" class="md-nav__link">
+      2D 図形の影
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2d-geometry/" title="2D 計算幾何" class="md-nav__link">
+      2D 計算幾何
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../navmesh/" title="ナビメッシュ" class="md-nav__link">
+      ナビメッシュ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nlp/" title="自然言語処理" class="md-nav__link">
+      自然言語処理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../math-parser/" title="数式処理" class="md-nav__link">
+      数式処理
     </a>
   </li>
 
@@ -911,11 +1043,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        14. ランダム
+        kd 木
       </label>
     
-    <a href="./" title="14. ランダム" class="md-nav__link md-nav__link--active">
-      14. ランダム
+    <a href="./" title="kd 木" class="md-nav__link md-nav__link--active">
+      kd 木
     </a>
     
       
@@ -929,8 +1061,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#141" title="14.1" class="md-nav__link">
-    14.1
+  <a href="#k" title="半径による探索と k 近傍法による探索" class="md-nav__link">
+    半径による探索と k 近傍法による探索
   </a>
   
 </li>
@@ -952,139 +1084,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../2d-renderstates/" title="15. 2D レンダーステート" class="md-nav__link">
-      15. 2D レンダーステート
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
-    
-    <label class="md-nav__link" for="nav-2-3">
-      リファレンス
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-3">
-        リファレンス
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/fullscreen/" title="フルスクリーン" class="md-nav__link">
-      フルスクリーン
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/json/" title="JSON ファイル" class="md-nav__link">
-      JSON ファイル
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/2d-shadow/" title="2D 図形の影" class="md-nav__link">
-      2D 図形の影
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/2d-geometry/" title="2D 計算幾何" class="md-nav__link">
-      2D 計算幾何
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/navmesh/" title="ナビメッシュ" class="md-nav__link">
-      ナビメッシュ
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/nlp/" title="自然言語処理" class="md-nav__link">
-      自然言語処理
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/math-parser/" title="数式処理" class="md-nav__link">
-      数式処理
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/kd-tree/" title="kd 木" class="md-nav__link">
-      kd 木
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/objdetection/" title="物体検出" class="md-nav__link">
+    <a href="../objdetection/" title="物体検出" class="md-nav__link">
       物体検出
     </a>
   </li>
@@ -1217,8 +1217,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#141" title="14.1" class="md-nav__link">
-    14.1
+  <a href="#k" title="半径による探索と k 近傍法による探索" class="md-nav__link">
+    半径による探索と k 近傍法による探索
   </a>
   
 </li>
@@ -1240,8 +1240,132 @@
               
                 
                 
-                <h1 id="14">14. ランダム<a class="headerlink" href="#14" title="Permanent link">&para;</a></h1>
-<h2 id="141">14.1<a class="headerlink" href="#141" title="Permanent link">&para;</a></h2>
+                <h1 id="kd">kd 木<a class="headerlink" href="#kd" title="Permanent link">&para;</a></h1>
+<h2 id="k">半径による探索と k 近傍法による探索<a class="headerlink" href="#k" title="Permanent link">&para;</a></h2>
+<video src="../images/kd-tree-0.mp4" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="n">Unit</span>
+<span class="p">{</span>
+    <span class="n">Circle</span> <span class="n">circle</span><span class="p">;</span>
+
+    <span class="n">ColorF</span> <span class="n">color</span><span class="p">;</span>
+
+    <span class="kt">void</span> <span class="nf">draw</span><span class="p">()</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Unit を KDTree で扱えるようにするためのアダプタ</span>
+<span class="k">struct</span> <span class="nl">UnitAdpater</span> <span class="p">:</span> <span class="n">KDTreeAdapter</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Unit</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">,</span> <span class="kt">double</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="n">element_type</span><span class="o">*</span> <span class="n">GetPointer</span><span class="p">(</span><span class="k">const</span> <span class="n">point_type</span><span class="o">&amp;</span> <span class="n">point</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="o">&amp;</span><span class="n">point</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">static</span> <span class="n">element_type</span> <span class="n">GetElement</span><span class="p">(</span><span class="k">const</span> <span class="n">dataset_type</span><span class="o">&amp;</span> <span class="n">dataset</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">index</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">dim</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">dataset</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">circle</span><span class="p">.</span><span class="n">center</span><span class="p">.</span><span class="n">elem</span><span class="p">(</span><span class="n">dim</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">static</span> <span class="n">element_type</span> <span class="n">DistanceSq</span><span class="p">(</span><span class="k">const</span> <span class="n">dataset_type</span><span class="o">&amp;</span> <span class="n">dataset</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="n">element_type</span><span class="o">*</span> <span class="n">other</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">dataset</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">circle</span><span class="p">.</span><span class="n">center</span><span class="p">.</span><span class="n">distanceFromSq</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="n">other</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">other</span><span class="p">[</span><span class="mi">1</span><span class="p">]));</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 4000 個の Unit を生成</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Unit</span><span class="o">&gt;</span> <span class="n">units</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4000</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Unit</span> <span class="n">unit</span><span class="p">;</span>
+        <span class="n">unit</span><span class="p">.</span><span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">RandomVec2</span><span class="p">(</span><span class="n">Circle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)),</span> <span class="mf">0.25</span><span class="p">);</span>
+        <span class="n">unit</span><span class="p">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">RandomColorF</span><span class="p">();</span>
+        <span class="n">units</span> <span class="o">&lt;&lt;</span> <span class="n">unit</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// kd-tree を構築</span>
+    <span class="n">KDTree</span><span class="o">&lt;</span><span class="n">UnitAdpater</span><span class="o">&gt;</span> <span class="n">kdTree</span><span class="p">(</span><span class="n">units</span><span class="p">);</span>
+
+    <span class="c1">// 探索の種類（ラジオボタンのインデックス）</span>
+    <span class="kt">size_t</span> <span class="n">searchTypeIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// radius search する際の探索距離</span>
+    <span class="kt">double</span> <span class="n">searchDistance</span> <span class="o">=</span> <span class="mf">4.0</span><span class="p">;</span>
+
+    <span class="c1">// 2D カメラ</span>
+    <span class="n">Camera2D</span> <span class="n">camera</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">24</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 2D カメラの更新</span>
+        <span class="n">camera</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+
+        <span class="c1">// 画面内のユニットだけ処理するための基準の長方形</span>
+        <span class="k">const</span> <span class="n">RectF</span> <span class="n">viewRect</span> <span class="o">=</span> <span class="n">camera</span><span class="p">.</span><span class="n">getRegion</span><span class="p">();</span>
+        <span class="k">const</span> <span class="n">RectF</span> <span class="n">viewRectScaled</span> <span class="o">=</span> <span class="n">viewRect</span><span class="p">.</span><span class="n">scaledAt</span><span class="p">(</span><span class="n">viewRect</span><span class="p">.</span><span class="n">center</span><span class="p">(),</span> <span class="mf">1.2</span><span class="p">);</span>
+        <span class="p">{</span>
+            <span class="k">auto</span> <span class="n">t</span> <span class="o">=</span> <span class="n">camera</span><span class="p">.</span><span class="n">createTransformer</span><span class="p">();</span>
+
+            <span class="k">const</span> <span class="n">Vec2</span> <span class="n">cursorPos</span> <span class="o">=</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">PosF</span><span class="p">();</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">searchTypeIndex</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// radius search</span>
+            <span class="p">{</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">cursorPos</span><span class="p">,</span> <span class="n">searchDistance</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">));</span>
+
+                <span class="c1">// searchDistance 以内の距離にある Unit のインデックスを取得</span>
+                <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">index</span> <span class="p">:</span> <span class="n">kdTree</span><span class="p">.</span><span class="n">radiusSearch</span><span class="p">(</span><span class="n">cursorPos</span><span class="p">,</span> <span class="n">searchDistance</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="n">Line</span><span class="p">(</span><span class="n">cursorPos</span><span class="p">,</span> <span class="n">units</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">circle</span><span class="p">.</span><span class="n">center</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mf">0.1</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="c1">// k-NN search</span>
+            <span class="p">{</span>
+                <span class="k">const</span> <span class="kt">size_t</span> <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">searchTypeIndex</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">5</span><span class="p">;</span>
+
+                <span class="c1">// 最も近い k 個の Unit のインデックスを取得</span>
+                <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">index</span> <span class="p">:</span> <span class="n">kdTree</span><span class="p">.</span><span class="n">knnSearch</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">cursorPos</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="n">Line</span><span class="p">(</span><span class="n">cursorPos</span><span class="p">,</span> <span class="n">units</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">circle</span><span class="p">.</span><span class="n">center</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mf">0.1</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="c1">// ユニットを描画</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">unit</span> <span class="p">:</span> <span class="n">units</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// 描画負荷削減のため、画面内 (viewRectScaled) に無ければスキップ</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">unit</span><span class="p">.</span><span class="n">circle</span><span class="p">.</span><span class="n">center</span><span class="p">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">viewRectScaled</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="k">continue</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="n">unit</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">searchTypeIndex</span><span class="p">,</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;radius&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;k-NN (k=1)&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;k-NN (k=5)&quot;</span> <span class="p">},</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">));</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;searchDistance&quot;</span><span class="p">,</span> <span class="n">searchDistance</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="p">(</span><span class="n">searchTypeIndex</span> <span class="o">==</span> <span class="mi">0</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Move units&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">60</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="c1">// Unit をランダムに移動</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">unit</span> <span class="p">:</span> <span class="n">units</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">unit</span><span class="p">.</span><span class="n">circle</span><span class="p">.</span><span class="n">moveBy</span><span class="p">(</span><span class="n">RandomVec2</span><span class="p">(</span><span class="mf">0.5</span><span class="p">));</span>
+            <span class="p">}</span>
+
+            <span class="c1">// Unit の座標が更新されたので kd-tree を再構築</span>
+            <span class="n">kdTree</span><span class="p">.</span><span class="n">rebuildIndex</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">camera</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
@@ -1262,7 +1386,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../audio/" title="13. オーディオ再生" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../math-parser/" title="数式処理" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1271,19 +1395,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                13. オーディオ再生
+                数式処理
               </span>
             </div>
           </a>
         
         
-          <a href="../2d-renderstates/" title="15. 2D レンダーステート" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../objdetection/" title="物体検出" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                15. 2D レンダーステート
+                物体検出
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
