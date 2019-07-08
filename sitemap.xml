@@ -126,6 +126,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://siv3d.github.io/reference/gamepad/</loc>
+     <lastmod>2019-07-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://siv3d.github.io/sample/game/</loc>
      <lastmod>2019-07-08</lastmod>
      <changefreq>daily</changefreq>
@@ -277,6 +282,11 @@
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/reference/objdetection/</loc>
+     <lastmod>2019-07-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/reference/gamepad/</loc>
      <lastmod>2019-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
