@@ -1412,6 +1412,8 @@
 
 <h2 id="joy-con">Joy-Con<a class="headerlink" href="#joy-con" title="Permanent link">&para;</a></h2>
 <p>PC に接続されている Nintendo Switch の Joy-Con の情報は <code class="codehilite"><span class="n">JoyConL</span></code> または <code class="codehilite"><span class="n">JoyConR</span></code> を通して取得できます。</p>
+<video src="../images/gamepad-joycon.mp4" autoplay loop muted></video>
+
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -1427,11 +1429,6 @@
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">scale</span> <span class="o">+=</span> <span class="n">Mouse</span><span class="o">::</span><span class="n">Wheel</span><span class="p">()</span> <span class="o">*</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
-        <span class="n">angle</span> <span class="o">+=</span> <span class="mi">1</span><span class="n">_deg</span> <span class="o">*</span> <span class="n">MouseR</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="n">_deg</span> <span class="o">*</span> <span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">KeyC</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
-            <span class="n">covered</span> <span class="o">=</span> <span class="o">!</span><span class="n">covered</span><span class="p">;</span>
-
         <span class="n">Circle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">640</span> <span class="o">-</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">450</span><span class="p">),</span> <span class="n">scale</span> <span class="o">/</span> <span class="mi">2</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="n">scale</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">);</span>
         <span class="n">Circle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">640</span> <span class="o">+</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">450</span><span class="p">),</span> <span class="n">scale</span> <span class="o">/</span> <span class="mi">2</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="n">scale</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">);</span>
 
@@ -1476,12 +1473,17 @@
         <span class="n">Circle</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">));</span>
         <span class="n">Circle</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">));</span>
         <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Rotation: &quot;</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="o">-</span><span class="mi">180</span><span class="n">_deg</span><span class="p">,</span> <span class="mi">180</span><span class="n">_deg</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Scale: &quot;</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">600.0</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">CheckBox</span><span class="p">(</span><span class="n">covered</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;Covered&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
 <h2 id="pro">Pro コントローラー<a class="headerlink" href="#pro" title="Permanent link">&para;</a></h2>
 <p>PC に接続されている Nintendo Switch の Pro コントローラーの情報は <code class="codehilite"><span class="n">ProController</span></code> を通して取得できます。</p>
+<p><img alt="" src="../images/gamepad-procon.png" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
