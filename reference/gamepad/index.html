@@ -617,8 +617,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#xbox-360-controller" title="Xbox 360 Controller" class="md-nav__link">
-    Xbox 360 Controller
+  <a href="#xinput" title="XInput 対応コントローラ" class="md-nav__link">
+    XInput 対応コントローラ
   </a>
   
 </li>
@@ -626,6 +626,13 @@
         <li class="md-nav__item">
   <a href="#joy-con" title="Joy-Con" class="md-nav__link">
     Joy-Con
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pro" title="Pro コントローラー" class="md-nav__link">
+    Pro コントローラー
   </a>
   
 </li>
@@ -1248,8 +1255,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#xbox-360-controller" title="Xbox 360 Controller" class="md-nav__link">
-    Xbox 360 Controller
+  <a href="#xinput" title="XInput 対応コントローラ" class="md-nav__link">
+    XInput 対応コントローラ
   </a>
   
 </li>
@@ -1257,6 +1264,13 @@
         <li class="md-nav__item">
   <a href="#joy-con" title="Joy-Con" class="md-nav__link">
     Joy-Con
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pro" title="Pro コントローラー" class="md-nav__link">
+    Pro コントローラー
   </a>
   
 </li>
@@ -1279,12 +1293,231 @@
                 
                 
                 <h1 id="gamepad">Gamepad<a class="headerlink" href="#gamepad" title="Permanent link">&para;</a></h1>
-<h2 id="xbox-360-controller">Xbox 360 Controller<a class="headerlink" href="#xbox-360-controller" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
+<h2 id="xinput">XInput 対応コントローラ<a class="headerlink" href="#xinput" title="Permanent link">&para;</a></h2>
+<p>PC に接続されている XInput 対応コントローラには <code class="codehilite"><span class="n">XInput</span></code> を通してアクセスできます。</p>
+<video src="../images/gamepad-xbox.mp4" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">ColorF</span> <span class="n">background</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">);</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">background</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">Ellipse</span> <span class="n">buttonLB</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">Ellipse</span> <span class="n">buttonRB</span><span class="p">(</span><span class="mi">520</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">RectF</span> <span class="n">leftTrigger</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">RectF</span> <span class="n">rightTrigger</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">buttonLThumb</span><span class="p">(</span><span class="mi">170</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">35</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">buttonRThumb</span><span class="p">(</span><span class="mi">420</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">35</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">buttonDPad</span><span class="p">(</span><span class="mi">260</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">buttonA</span><span class="p">(</span><span class="mi">510</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">buttonB</span><span class="p">(</span><span class="mi">560</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">buttonX</span><span class="p">(</span><span class="mi">460</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">buttonY</span><span class="p">(</span><span class="mi">510</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">buttonBack</span><span class="p">(</span><span class="mi">270</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
+    <span class="k">constexpr</span> <span class="n">Circle</span> <span class="n">buttonStart</span><span class="p">(</span><span class="mi">410</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
+
+    <span class="c1">// ユーザインデックス (0 - 3)</span>
+    <span class="kt">size_t</span> <span class="n">userIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// デッドゾーンの有効無効</span>
+    <span class="kt">bool</span> <span class="n">deadZone</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="c1">// 振動 (0.0 - 1.0)</span>
+    <span class="kt">double</span> <span class="n">leftV</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">rightV</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 指定したユーザインデックスの XInput コントローラを取得</span>
+        <span class="k">auto</span> <span class="n">controller</span> <span class="o">=</span> <span class="n">XInput</span><span class="p">(</span><span class="n">userIndex</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">deadZone</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">setLeftTriggerDeadZone</span><span class="p">();</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">setRightTriggerDeadZone</span><span class="p">();</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">setLeftThumbDeadZone</span><span class="p">();</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">setRightThumbDeadZone</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">setLeftTriggerDeadZone</span><span class="p">(</span><span class="n">DeadZone</span><span class="o">::</span><span class="n">Disabled</span><span class="p">());</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">setRightTriggerDeadZone</span><span class="p">(</span><span class="n">DeadZone</span><span class="o">::</span><span class="n">Disabled</span><span class="p">());</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">setLeftThumbDeadZone</span><span class="p">(</span><span class="n">DeadZone</span><span class="o">::</span><span class="n">Disabled</span><span class="p">());</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">setRightThumbDeadZone</span><span class="p">(</span><span class="n">DeadZone</span><span class="o">::</span><span class="n">Disabled</span><span class="p">());</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 振動</span>
+        <span class="n">controller</span><span class="p">.</span><span class="n">setVibration</span><span class="p">(</span><span class="n">leftV</span><span class="p">,</span> <span class="n">rightV</span><span class="p">);</span>
+
+        <span class="n">buttonLB</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">buttonLB</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="mf">1.0</span> <span class="o">:</span> <span class="mf">0.7</span><span class="p">));</span>
+        <span class="n">buttonRB</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">buttonRB</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="mf">1.0</span> <span class="o">:</span> <span class="mf">0.7</span><span class="p">));</span>
+
+        <span class="n">Ellipse</span><span class="p">(</span><span class="mi">340</span> <span class="o">+</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="n">Random</span><span class="p">(</span><span class="n">leftV</span> <span class="o">+</span> <span class="n">rightV</span><span class="p">),</span> <span class="mi">480</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">440</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.9</span><span class="p">));</span>
+        <span class="n">Ellipse</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">120</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">background</span><span class="p">);</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">240</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">background</span><span class="p">);</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.6</span><span class="p">));</span>
+
+        <span class="c1">// コントローラの接続の有無</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">isConnected</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">Circle</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">32</span><span class="p">).</span><span class="n">drawPie</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="n">_pi</span> <span class="o">+</span> <span class="mf">0.5</span><span class="n">_pi</span> <span class="o">*</span> <span class="n">controller</span><span class="p">.</span><span class="n">userIndex</span><span class="p">,</span> <span class="mf">0.5</span><span class="n">_pi</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">25</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.6</span><span class="p">));</span>
+
+        <span class="n">leftTrigger</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">AlphaF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+        <span class="n">leftTrigger</span><span class="p">.</span><span class="n">stretched</span><span class="p">((</span><span class="n">controller</span><span class="p">.</span><span class="n">leftTrigger</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">leftTrigger</span><span class="p">.</span><span class="n">h</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+
+        <span class="n">rightTrigger</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">AlphaF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+        <span class="n">rightTrigger</span><span class="p">.</span><span class="n">stretched</span><span class="p">((</span><span class="n">controller</span><span class="p">.</span><span class="n">rightTrigger</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">rightTrigger</span><span class="p">.</span><span class="n">h</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+
+        <span class="n">buttonLThumb</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">buttonLThumb</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="mf">0.85</span> <span class="o">:</span> <span class="mf">0.5</span><span class="p">));</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">buttonLThumb</span><span class="p">.</span><span class="n">center</span> <span class="o">+</span> <span class="n">Vec2</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">leftThumbX</span><span class="p">,</span> <span class="o">-</span><span class="n">controller</span><span class="p">.</span><span class="n">leftThumbY</span><span class="p">)</span> <span class="o">*</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">20</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+
+        <span class="n">buttonRThumb</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">buttonRThumb</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="mf">0.85</span> <span class="o">:</span> <span class="mf">0.5</span><span class="p">));</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">buttonRThumb</span><span class="p">.</span><span class="n">center</span> <span class="o">+</span> <span class="n">Vec2</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">rightThumbX</span><span class="p">,</span> <span class="o">-</span><span class="n">controller</span><span class="p">.</span><span class="n">rightThumbY</span><span class="p">)</span> <span class="o">*</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">20</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+
+        <span class="n">buttonDPad</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.5</span><span class="p">));</span>
+
+        <span class="k">const</span> <span class="n">Vec2</span> <span class="n">direction</span><span class="p">(</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">buttonRight</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">-</span> <span class="n">controller</span><span class="p">.</span><span class="n">buttonLeft</span><span class="p">.</span><span class="n">pressed</span><span class="p">(),</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">buttonDown</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">-</span> <span class="n">controller</span><span class="p">.</span><span class="n">buttonUp</span><span class="p">.</span><span class="n">pressed</span><span class="p">());</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">direction</span><span class="p">.</span><span class="n">isZero</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">Circle</span><span class="p">(</span><span class="n">buttonDPad</span><span class="p">.</span><span class="n">center</span> <span class="o">+</span> <span class="n">direction</span><span class="p">.</span><span class="n">normalized</span><span class="p">()</span> <span class="o">*</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">15</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">buttonA</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">).</span><span class="n">setA</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">buttonA</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="mf">1.0</span> <span class="o">:</span> <span class="mf">0.3</span><span class="p">));</span>
+        <span class="n">buttonB</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">).</span><span class="n">setA</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">buttonB</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="mf">1.0</span> <span class="o">:</span> <span class="mf">0.3</span><span class="p">));</span>
+        <span class="n">buttonX</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">).</span><span class="n">setA</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">buttonX</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="mf">1.0</span> <span class="o">:</span> <span class="mf">0.3</span><span class="p">));</span>
+        <span class="n">buttonY</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">).</span><span class="n">setA</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">buttonY</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="mf">1.0</span> <span class="o">:</span> <span class="mf">0.3</span><span class="p">));</span>
+
+        <span class="n">buttonBack</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">buttonBack</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="mf">1.0</span> <span class="o">:</span> <span class="mf">0.7</span><span class="p">));</span>
+        <span class="n">buttonStart</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">buttonStart</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">?</span> <span class="mf">1.0</span> <span class="o">:</span> <span class="mf">0.7</span><span class="p">));</span>
+
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">userIndex</span><span class="p">,</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;1P&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;2P&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;3P&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;4P&quot;</span> <span class="p">},</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">CheckBox</span><span class="p">(</span><span class="n">deadZone</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;DeadZone&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;left&quot;</span><span class="p">,</span> <span class="n">leftV</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;right&quot;</span><span class="p">,</span> <span class="n">rightV</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">90</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 <h2 id="joy-con">Joy-Con<a class="headerlink" href="#joy-con" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
+<p>PC に接続されている Nintendo Switch の Joy-Con の情報は <code class="codehilite"><span class="n">JoyConL</span></code> または <code class="codehilite"><span class="n">JoyConR</span></code> を通して取得できます。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.9</span><span class="p">));</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">);</span>
+    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+
+    <span class="n">Vec2</span> <span class="n">left</span><span class="p">(</span><span class="mi">640</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">right</span><span class="p">(</span><span class="mi">640</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="n">angle</span> <span class="o">=</span> <span class="mi">0</span><span class="n">_deg</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">scale</span> <span class="o">=</span> <span class="mf">400.0</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">covered</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">scale</span> <span class="o">+=</span> <span class="n">Mouse</span><span class="o">::</span><span class="n">Wheel</span><span class="p">()</span> <span class="o">*</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
+        <span class="n">angle</span> <span class="o">+=</span> <span class="mi">1</span><span class="n">_deg</span> <span class="o">*</span> <span class="n">MouseR</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="n">_deg</span> <span class="o">*</span> <span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyC</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+            <span class="n">covered</span> <span class="o">=</span> <span class="o">!</span><span class="n">covered</span><span class="p">;</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">640</span> <span class="o">-</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">450</span><span class="p">),</span> <span class="n">scale</span> <span class="o">/</span> <span class="mi">2</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="n">scale</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">);</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">640</span> <span class="o">+</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">450</span><span class="p">),</span> <span class="n">scale</span> <span class="o">/</span> <span class="mi">2</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="n">scale</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">);</span>
+
+        <span class="c1">// Joy-Con (L) を取得</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="n">joy</span> <span class="o">=</span> <span class="n">JoyConL</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">joy</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">640</span> <span class="o">-</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">450</span><span class="p">),</span> <span class="n">scale</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="n">_deg</span> <span class="o">-</span> <span class="n">angle</span><span class="p">,</span> <span class="n">covered</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="n">joy</span><span class="p">.</span><span class="n">povD8</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">left</span> <span class="o">+=</span> <span class="n">Circular</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">*</span><span class="n">d</span> <span class="o">*</span> <span class="mi">45</span><span class="n">_deg</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">joy</span><span class="p">.</span><span class="n">button2</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="p">([</span><span class="n">center</span> <span class="o">=</span> <span class="n">left</span><span class="p">](</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">Circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="mi">20</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">200</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">AlphaF</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">t</span><span class="p">));</span>
+                    <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
+                    <span class="p">});</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Joy-Con (R) を取得</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="n">joy</span> <span class="o">=</span> <span class="n">JoyConR</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">joy</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">640</span> <span class="o">+</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">450</span><span class="p">),</span> <span class="n">scale</span><span class="p">,</span> <span class="mi">90</span><span class="n">_deg</span> <span class="o">+</span> <span class="n">angle</span><span class="p">,</span> <span class="n">covered</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="n">joy</span><span class="p">.</span><span class="n">povD8</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">right</span> <span class="o">+=</span> <span class="n">Circular</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">*</span><span class="n">d</span> <span class="o">*</span> <span class="mi">45</span><span class="n">_deg</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">joy</span><span class="p">.</span><span class="n">button2</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="p">([</span><span class="n">center</span> <span class="o">=</span> <span class="n">right</span><span class="p">](</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">Circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="mi">20</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">200</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">AlphaF</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">t</span><span class="p">));</span>
+                    <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
+                    <span class="p">});</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">));</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">));</span>
+        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="pro">Pro コントローラー<a class="headerlink" href="#pro" title="Permanent link">&para;</a></h2>
+<p>PC に接続されている Nintendo Switch の Pro コントローラーの情報は <code class="codehilite"><span class="n">ProController</span></code> を通して取得できます。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">ClearPrint</span><span class="p">();</span>
+
+        <span class="c1">// Pro コントローラを取得</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="n">pro</span> <span class="o">=</span> <span class="n">ProController</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="c1">// 各ボタンの状態を表示</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;A: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonA</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;B: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonB</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;X: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonX</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Y: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonY</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;L: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonL</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;R: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonR</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;ZL: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonZL</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;ZR: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonZR</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;-: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonMinus</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;+: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonPlus</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;LS: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonLStick</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;RS: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonRStick</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Screenshot: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonScreenshot</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Home: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">buttonHome</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;LStick: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">LStick</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;RStick: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">RStick</span><span class="p">();</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;POV: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pro</span><span class="p">.</span><span class="n">povD8</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;No Pro Controller found&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
                 
                   

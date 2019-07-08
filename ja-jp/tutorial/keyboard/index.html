@@ -905,50 +905,56 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#111" title="11.1" class="md-nav__link">
-    11.1
+  <a href="#111" title="11.1 キーの入力状態" class="md-nav__link">
+    11.1 キーの入力状態
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#112" title="11.2" class="md-nav__link">
-    11.2
+  <a href="#112" title="11.2 キーが押されている時間" class="md-nav__link">
+    11.2 キーが押されている時間
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#113" title="11.3" class="md-nav__link">
-    11.3
+  <a href="#113" title="11.3 キーの名前" class="md-nav__link">
+    11.3 キーの名前
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#114" title="11.4" class="md-nav__link">
-    11.4
+  <a href="#114" title="11.4 複数のキーの組み合わせ" class="md-nav__link">
+    11.4 複数のキーの組み合わせ
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-b" title="A または B" class="md-nav__link">
+    A または B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-b_1" title="A を押しながら B" class="md-nav__link">
+    A を押しながら B
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#115" title="11.5" class="md-nav__link">
-    11.5
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#116" title="11.6" class="md-nav__link">
-    11.6
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#117" title="11.7" class="md-nav__link">
-    11.7
+  <a href="#115" title="11.5 テキスト入力" class="md-nav__link">
+    11.5 テキスト入力
   </a>
   
 </li>
@@ -1283,50 +1289,56 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#111" title="11.1" class="md-nav__link">
-    11.1
+  <a href="#111" title="11.1 キーの入力状態" class="md-nav__link">
+    11.1 キーの入力状態
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#112" title="11.2" class="md-nav__link">
-    11.2
+  <a href="#112" title="11.2 キーが押されている時間" class="md-nav__link">
+    11.2 キーが押されている時間
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#113" title="11.3" class="md-nav__link">
-    11.3
+  <a href="#113" title="11.3 キーの名前" class="md-nav__link">
+    11.3 キーの名前
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#114" title="11.4" class="md-nav__link">
-    11.4
+  <a href="#114" title="11.4 複数のキーの組み合わせ" class="md-nav__link">
+    11.4 複数のキーの組み合わせ
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-b" title="A または B" class="md-nav__link">
+    A または B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-b_1" title="A を押しながら B" class="md-nav__link">
+    A を押しながら B
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#115" title="11.5" class="md-nav__link">
-    11.5
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#116" title="11.6" class="md-nav__link">
-    11.6
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#117" title="11.7" class="md-nav__link">
-    11.7
+  <a href="#115" title="11.5 テキスト入力" class="md-nav__link">
+    11.5 テキスト入力
   </a>
   
 </li>
@@ -1350,39 +1362,206 @@
                 
                 <h1 id="11">11. キーボード入力<a class="headerlink" href="#11" title="Permanent link">&para;</a></h1>
 <p>この章では、キーボードの入力を処理する方法を学びます。</p>
-<h2 id="111">11.1<a class="headerlink" href="#111" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/11-1-0.png" /></p>
-<div class="codehilite"><pre><span></span>
+<h2 id="111">11.1 キーの入力状態<a class="headerlink" href="#111" title="Permanent link">&para;</a></h2>
+<p>キーボードのキーには <code class="codehilite"><span class="k">Key</span></code> 型のオブジェクトが割り当てられています。</p>
+<ul>
+<li>A, B, C, ... は <code class="codehilite"><span class="n">KeyA</span></code>, <code class="codehilite"><span class="n">KeyB</span></code>, <code class="codehilite"><span class="n">KeyC</span></code> , ...</li>
+<li>1, 2, 3, ... は <code class="codehilite"><span class="n">Key1</span></code>, <code class="codehilite"><span class="n">Key2</span></code>, <code class="codehilite"><span class="n">Key3</span></code>, ...</li>
+<li>F1, F2, F3, ... は <code class="codehilite"><span class="n">KeyF1</span></code>, <code class="codehilite"><span class="n">KeyF2</span></code>, <code class="codehilite"><span class="n">KeyF3</span></code>, ...</li>
+<li>↑, ↓, ←, → は <code class="codehilite"><span class="n">KeyUp</span></code>, <code class="codehilite"><span class="n">KeyDown</span></code>, <code class="codehilite"><span class="n">KeyLeft</span></code>, <code class="codehilite"><span class="n">KeyRight</span></code></li>
+<li>スペースキーは <code class="codehilite"><span class="n">KeySpace</span></code></li>
+<li>エンターキーは <code class="codehilite"><span class="n">KeyEnter</span></code></li>
+<li>バックスペースキーは <code class="codehilite"><span class="n">KeyBackspace</span></code></li>
+<li>Tab キーは <code class="codehilite"><span class="n">KeyTab</span></code></li>
+<li>Esc キーは <code class="codehilite"><span class="n">KeyEscape</span></code></li>
+<li>PageUp, PageDown は <code class="codehilite"><span class="n">KeyPageUp</span></code>, <code class="codehilite"><span class="n">KeyPageDown</span></code></li>
+<li>Delete キーは <code class="codehilite"><span class="n">KeyDelete</span></code></li>
+<li>Numpad の 0, 1, 2, ... は <code class="codehilite"><span class="n">KeyNum0</span></code>, <code class="codehilite"><span class="n">KeyNum1</span></code>, <code class="codehilite"><span class="n">KeyNum2</span></code>, ...</li>
+<li>シフトキーは <code class="codehilite"><span class="n">KeyShift</span></code></li>
+<li>左シフトキー、右シフトキーは <code class="codehilite"><span class="n">KeyLShift</span></code>, <code class="codehilite"><span class="n">KeyRShift</span></code></li>
+<li>コントロールキーは <code class="codehilite"><span class="n">KeyControl</span></code></li>
+<li>(macOS) コマンドキーは <code class="codehilite"><span class="n">KeyCommand</span></code></li>
+<li>「,」「.」「/」キーは <code class="codehilite"><span class="n">KeyComma</span></code>, <code class="codehilite"><span class="n">KeyPeriod</span></code>, <code class="codehilite"><span class="n">KeySlash</span></code></li>
+<li>上記以外のキーは <code class="codehilite"><span class="o">&lt;</span><span class="n">Siv3D</span><span class="o">/</span><span class="n">Keyboard</span><span class="p">.</span><span class="n">hpp</span><span class="o">&gt;</span></code> を参照</li>
+</ul>
+<p>押された瞬間であるかを <code class="codehilite"><span class="na">.down</span><span class="p">()</span></code>, 押されているかを <code class="codehilite"><span class="na">.pressed</span><span class="p">()</span></code>, 離された瞬間であるかを <code class="codehilite"><span class="na">.up</span><span class="p">()</span></code> を使って <code class="codehilite"><span class="n">bool</span></code> 値で取得できます。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>down</th>
+<th>pressed</th>
+<th>up</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>押していない</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>押した瞬間</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>押され続けている</td>
+<td></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>離した瞬間</td>
+<td></td>
+<td></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>離され続けている</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../images/11-1-0.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Vec2</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">();</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">();</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">speed</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">delta</span><span class="p">;</span>
+
+        <span class="c1">// 上下左右キーで移動</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyLeft</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">-=</span> <span class="n">speed</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyRight</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">speed</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyUp</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">-=</span> <span class="n">speed</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyDown</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">speed</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// [C] キーが押されたら中央に戻る</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyC</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
-<h2 id="112">11.2<a class="headerlink" href="#112" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/11-2-0.png" /></p>
-<div class="codehilite"><pre><span></span>
+<h2 id="112">11.2 キーが押されている時間<a class="headerlink" href="#112" title="Permanent link">&para;</a></h2>
+<p><code class="codehilite"><span class="k">Key</span><span class="p">::</span><span class="n">pressedDuration</span><span class="p">()</span></code> は、そのキーが押され続けている時間を <code class="codehilite"><span class="n">Duration</span></code> 型の値で返します。</p>
+<p><img alt="" src="../images/11-2-0.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">ClearPrint</span><span class="p">();</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">KeyA</span><span class="p">.</span><span class="n">pressedDuration</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
-<h2 id="113">11.3<a class="headerlink" href="#113" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/11-3-0.png" /></p>
-<div class="codehilite"><pre><span></span>
+<h2 id="113">11.3 キーの名前<a class="headerlink" href="#113" title="Permanent link">&para;</a></h2>
+<p><code class="codehilite"><span class="k">Key</span><span class="p">::</span><span class="n">name</span><span class="p">()</span></code> は、そのキーの名前を <code class="codehilite"><span class="n">String</span></code> 型の値で返します。</p>
+<p><img alt="" src="../images/11-3-0.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">KeyA</span><span class="p">.</span><span class="n">name</span><span class="p">();</span>
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">KeySpace</span><span class="p">.</span><span class="n">name</span><span class="p">();</span>
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">KeyLeft</span><span class="p">.</span><span class="n">name</span><span class="p">();</span>
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">Key3</span><span class="p">.</span><span class="n">name</span><span class="p">();</span>
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">KeyF11</span><span class="p">.</span><span class="n">name</span><span class="p">();</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
-<h2 id="114">11.4<a class="headerlink" href="#114" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/11-4-0.png" /></p>
-<div class="codehilite"><pre><span></span>
-</pre></div>
+<h2 id="114">11.4 複数のキーの組み合わせ<a class="headerlink" href="#114" title="Permanent link">&para;</a></h2>
+<h3 id="a-b">A または B<a class="headerlink" href="#a-b" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="o">|</span></code> を使って複数のキーを組み合わせると、そのいずれかが押されているかどうかを判定できます。
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
-<h2 id="115">11.5<a class="headerlink" href="#115" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/11-5-0.png" /></p>
-<div class="codehilite"><pre><span></span>
-</pre></div>
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">ClearPrint</span><span class="p">();</span>
 
-<h2 id="116">11.6<a class="headerlink" href="#116" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/11-6-0.png" /></p>
-<div class="codehilite"><pre><span></span>
-</pre></div>
+        <span class="k">if</span> <span class="p">((</span><span class="n">KeySpace</span> <span class="o">|</span> <span class="n">KeyEnter</span><span class="p">).</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;KeySpace / KeyEnter&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h3 id="a-b_1">A を押しながら B<a class="headerlink" href="#a-b_1" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="o">+</span></code> を使って 2 つのキーを組み合わせると、左のキーが押されながら、右のキーが押されたかどうかを判定できます。
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
-<h2 id="117">11.7<a class="headerlink" href="#117" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="images/11-7-0.png" /></p>
-<div class="codehilite"><pre><span></span>
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">((</span><span class="n">KeyControl</span> <span class="o">+</span> <span class="n">KeyC</span><span class="p">).</span><span class="n">down</span><span class="p">()</span> <span class="o">||</span> <span class="p">(</span><span class="n">KeyCommand</span> <span class="o">+</span> <span class="n">KeyC</span><span class="p">).</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Ctrl + C / Command + C&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="115">11.5 テキスト入力<a class="headerlink" href="#115" title="Permanent link">&para;</a></h2>
+<p><code class="codehilite"><span class="n">TextInput</span><span class="p">::</span><span class="n">UpdateText</span><span class="p">()</span></code> に <code class="codehilite"><span class="n">String</span></code> 型の変数を渡すことで、テキスト入力を処理できます。</p>
+<p><img alt="" src="../images/11-5-0.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+
+    <span class="n">String</span> <span class="n">text</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="n">Rect</span> <span class="n">area</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// キーボードからテキストを入力</span>
+        <span class="n">TextInput</span><span class="o">::</span><span class="n">UpdateText</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+
+        <span class="n">area</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.3</span><span class="p">));</span>
+
+        <span class="n">font</span><span class="p">(</span><span class="n">text</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">area</span><span class="p">.</span><span class="n">stretched</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
                 
                   
