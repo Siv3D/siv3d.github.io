@@ -637,6 +637,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="ゲームパッド" class="md-nav__link">
+    ゲームパッド
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="接続されているゲームパッドの列挙" class="md-nav__link">
+    接続されているゲームパッドの列挙
+  </a>
+  
+</li>
+      
       
       
       
@@ -1275,6 +1289,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="ゲームパッド" class="md-nav__link">
+    ゲームパッド
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="接続されているゲームパッドの列挙" class="md-nav__link">
+    接続されているゲームパッドの列挙
+  </a>
+  
+</li>
+      
       
       
       
@@ -1492,7 +1520,7 @@
     <span class="p">{</span>
         <span class="n">ClearPrint</span><span class="p">();</span>
 
-        <span class="c1">// Pro コントローラを取得</span>
+        <span class="c1">// Pro コントローラーを取得</span>
         <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="n">pro</span> <span class="o">=</span> <span class="n">ProController</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
         <span class="p">{</span>
             <span class="c1">// 各ボタンの状態を表示</span>
@@ -1518,6 +1546,61 @@
         <span class="p">{</span>
             <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;No Pro Controller found&quot;</span><span class="p">;</span>
         <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="_1">ゲームパッド<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>あらゆる種類のゲームパッドの情報を取得できる汎用的なクラスが <code class="codehilite"><span class="n">Gamepad</span></code> です。ユーザインデックスは <code class="codehilite"><span class="n">Gamepad</span><span class="p">.</span><span class="n">MaxUserCount</span> <span class="o">-</span> <span class="mi">1</span></code> で定義される 15 が最大値です。</p>
+<p><img alt="" src="../images/gamepad-gamepad.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">680</span><span class="p">);</span>
+
+    <span class="kt">size_t</span> <span class="n">userIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">Iota</span><span class="p">(</span><span class="n">Gamepad</span><span class="p">.</span><span class="n">MaxUserCount</span><span class="p">).</span><span class="n">map</span><span class="p">(</span><span class="n">Format</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">ClearPrint</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="n">gamepad</span> <span class="o">=</span> <span class="n">Gamepad</span><span class="p">(</span><span class="n">userIndex</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[{}] {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">gamepad</span><span class="p">.</span><span class="n">getInfo</span><span class="p">().</span><span class="n">index</span><span class="p">,</span> <span class="n">gamepad</span><span class="p">.</span><span class="n">getInfo</span><span class="p">().</span><span class="n">name</span><span class="p">);</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">button</span><span class="p">]</span> <span class="o">:</span> <span class="n">Indexed</span><span class="p">(</span><span class="n">gamepad</span><span class="p">.</span><span class="n">buttons</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;button{}: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">button</span><span class="p">.</span><span class="n">pressed</span><span class="p">());</span>
+            <span class="p">}</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">axe</span><span class="p">]</span> <span class="o">:</span> <span class="n">Indexed</span><span class="p">(</span><span class="n">gamepad</span><span class="p">.</span><span class="n">axes</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;axe{}: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">axe</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;POV: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">gamepad</span><span class="p">.</span><span class="n">povD8</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">userIndex</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">20</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="_2">接続されているゲームパッドの列挙<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">info</span> <span class="p">:</span> <span class="n">System</span><span class="o">::</span><span class="n">EnumerateGamepads</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[{}] {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">index</span><span class="p">,</span> <span class="n">info</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
