@@ -917,50 +917,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#121" title="12.1" class="md-nav__link">
-    12.1
+  <a href="#121" title="12.1 マウスカーソルの座標" class="md-nav__link">
+    12.1 マウスカーソルの座標
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#122" title="12.2" class="md-nav__link">
-    12.2
+  <a href="#122" title="12.2 マウスカーソルの移動量" class="md-nav__link">
+    12.2 マウスカーソルの移動量
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#123" title="12.3" class="md-nav__link">
-    12.3
+  <a href="#123" title="12.3 マウスのボタンの入力状態" class="md-nav__link">
+    12.3 マウスのボタンの入力状態
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#124" title="12.4" class="md-nav__link">
-    12.4
+  <a href="#124" title="12.4 ボタンが押されていた時間" class="md-nav__link">
+    12.4 ボタンが押されていた時間
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#125" title="12.5" class="md-nav__link">
-    12.5
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#126" title="12.6" class="md-nav__link">
-    12.6
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#127" title="12.7" class="md-nav__link">
-    12.7
+  <a href="#125" title="12.5 マウスホイールの回転量" class="md-nav__link">
+    12.5 マウスホイールの回転量
   </a>
   
 </li>
@@ -1283,50 +1269,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#121" title="12.1" class="md-nav__link">
-    12.1
+  <a href="#121" title="12.1 マウスカーソルの座標" class="md-nav__link">
+    12.1 マウスカーソルの座標
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#122" title="12.2" class="md-nav__link">
-    12.2
+  <a href="#122" title="12.2 マウスカーソルの移動量" class="md-nav__link">
+    12.2 マウスカーソルの移動量
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#123" title="12.3" class="md-nav__link">
-    12.3
+  <a href="#123" title="12.3 マウスのボタンの入力状態" class="md-nav__link">
+    12.3 マウスのボタンの入力状態
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#124" title="12.4" class="md-nav__link">
-    12.4
+  <a href="#124" title="12.4 ボタンが押されていた時間" class="md-nav__link">
+    12.4 ボタンが押されていた時間
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#125" title="12.5" class="md-nav__link">
-    12.5
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#126" title="12.6" class="md-nav__link">
-    12.6
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#127" title="12.7" class="md-nav__link">
-    12.7
+  <a href="#125" title="12.5 マウスホイールの回転量" class="md-nav__link">
+    12.5 マウスホイールの回転量
   </a>
   
 </li>
@@ -1350,32 +1322,203 @@
                 
                 <h1 id="12">12. マウス入力<a class="headerlink" href="#12" title="Permanent link">&para;</a></h1>
 <p>この章では、マウスの入力を処理する方法を学びます。</p>
-<h2 id="121">12.1<a class="headerlink" href="#121" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
+<h2 id="121">12.1 マウスカーソルの座標<a class="headerlink" href="#121" title="Permanent link">&para;</a></h2>
+<p>マウスカーソルの座標は <code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">Pos</span><span class="p">()</span></code> を使うと <code class="codehilite"><span class="n">Point</span></code> 型で取得できます。シーンが拡大縮小されている場合には、<code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">PosF</span><span class="p">()</span></code> を使うと <code class="codehilite"><span class="n">Vec2</span></code> 型で取得できます。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">Pos</span><span class="p">()</span></code> で取得できるマウスカーソル座標は、直前の <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> の呼び出し時点での座標のため、実際画面に見えているマウスカーソルよりも古い座標を示す場合があります。</p>
+</div>
+<p><img alt="" src="../images/12-1-0.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
-<h2 id="122">12.2<a class="headerlink" href="#122" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
+<h2 id="122">12.2 マウスカーソルの移動量<a class="headerlink" href="#122" title="Permanent link">&para;</a></h2>
+<p>直前のフレームからのマウスカーソルの移動量は <code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">Delta</span><span class="p">()</span></code> を使うと <code class="codehilite"><span class="n">Point</span></code> 型で取得できます。シーンが拡大縮小されている場合には、<code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">DeltaF</span><span class="p">()</span></code> を使うと <code class="codehilite"><span class="n">Vec2</span></code> 型で取得できます。</p>
+<p><img alt="" src="../images/12-2-0.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 円をつかんでいるか</span>
+    <span class="kt">bool</span> <span class="n">grab</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="n">Circle</span> <span class="n">circle</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="mi">50</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">grab</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// 移動量分だけ円を移動</span>
+            <span class="n">circle</span><span class="p">.</span><span class="n">moveBy</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Delta</span><span class="p">());</span>
+        <span class="p">}</span>
+
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">circle</span><span class="p">.</span><span class="n">leftClicked</span><span class="p">())</span> <span class="c1">// 円を左クリックしたら</span>
+        <span class="p">{</span>
+            <span class="n">grab</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">up</span><span class="p">())</span> <span class="c1">// マウスの左ボタンが離されたら</span>
+        <span class="p">{</span>
+            <span class="n">grab</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">grab</span> <span class="o">||</span> <span class="n">circle</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">Cursor</span><span class="o">::</span><span class="n">RequestStyle</span><span class="p">(</span><span class="n">CursorStyle</span><span class="o">::</span><span class="n">Hand</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
-<h2 id="123">12.3<a class="headerlink" href="#123" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>図形の <code class="codehilite"><span class="na">.moveBy</span><span class="p">()</span></code> 関数は、与えられた x, y 成分だけ自身の座標を移動します。一方で似たような名前の <code class="codehilite"><span class="na">.movedBy</span><span class="p">()</span></code> 関数は、与えられた x, y 成分だけ座標を移動した新しい図形を返し、自身の座標は変更しません。</p>
+</div>
+<h2 id="123">12.3 マウスのボタンの入力状態<a class="headerlink" href="#123" title="Permanent link">&para;</a></h2>
+<p>マウスのボタンには、以下の <code class="codehilite"><span class="k">Key</span></code> 型のオブジェクトが割り当てられています。</p>
+<table>
+<thead>
+<tr>
+<th>定数</th>
+<th>対応するボタン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MouseL</td>
+<td>左ボタン</td>
+</tr>
+<tr>
+<td>MouseR</td>
+<td>右ボタン</td>
+</tr>
+<tr>
+<td>MouseM</td>
+<td>中央ボタン</td>
+</tr>
+<tr>
+<td>MouseX1</td>
+<td>拡張ボタン 1</td>
+</tr>
+<tr>
+<td>MouseX2</td>
+<td>拡張ボタン 2</td>
+</tr>
+<tr>
+<td>MouseX3</td>
+<td>拡張ボタン 3</td>
+</tr>
+<tr>
+<td>MouseX4</td>
+<td>拡張ボタン 4</td>
+</tr>
+<tr>
+<td>MouseX5</td>
+<td>拡張ボタン 5</td>
+</tr>
+</tbody>
+</table>
+<p>前章のキーボードのキーと同様に、押された瞬間であるかを <code class="codehilite"><span class="na">.down</span><span class="p">()</span></code>, 押されているかを <code class="codehilite"><span class="na">.pressed</span><span class="p">()</span></code>, 離された瞬間であるかを <code class="codehilite"><span class="na">.up</span><span class="p">()</span></code> を使って <code class="codehilite"><span class="n">bool</span></code> 値で取得できます。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>down</th>
+<th>pressed</th>
+<th>up</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>押していない</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>押した瞬間</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>押され続けている</td>
+<td></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>離した瞬間</td>
+<td></td>
+<td></td>
+<td>✔</td>
+</tr>
+<tr>
+<td>離され続けている</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../images/12-3-0.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">ClearPrint</span><span class="p">();</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">MouseM</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">MouseR</span><span class="p">.</span><span class="n">pressed</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
-<h2 id="124">12.4<a class="headerlink" href="#124" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
+<h2 id="124">12.4 ボタンが押されていた時間<a class="headerlink" href="#124" title="Permanent link">&para;</a></h2>
+<p><code class="codehilite"><span class="k">Key</span><span class="p">::</span><span class="n">pressedDuration</span><span class="p">()</span></code> は、そのボタンが押され続けている時間を <code class="codehilite"><span class="n">Duration</span></code> 型の値で返します。</p>
+<p><img alt="" src="../images/12-4-0.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">ClearPrint</span><span class="p">();</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">MouseL</span><span class="p">.</span><span class="n">pressedDuration</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
-<h2 id="125">12.5<a class="headerlink" href="#125" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
-</pre></div>
+<h2 id="125">12.5 マウスホイールの回転量<a class="headerlink" href="#125" title="Permanent link">&para;</a></h2>
+<p>直前のフレームからのマウスホイールのスクロール量は、<code class="codehilite"><span class="n">Mouse</span><span class="p">::</span><span class="n">Wheel</span><span class="p">()</span></code> によって <code class="codehilite"><span class="n">double</span></code> 型で取得できます。水平ホイールのスクロール量は、<code class="codehilite"><span class="n">Mouse</span><span class="p">::</span><span class="n">WheelH</span><span class="p">()</span></code> によって <code class="codehilite"><span class="n">double</span></code> 型で取得できます。</p>
+<p><img alt="" src="../images/12-5-0.gif" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
-<h2 id="126">12.6<a class="headerlink" href="#126" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
-</pre></div>
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Vec2</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">();</span>
 
-<h2 id="127">12.7<a class="headerlink" href="#127" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">-=</span> <span class="n">Mouse</span><span class="o">::</span><span class="n">Wheel</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10</span><span class="p">;</span>
+
+        <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">Mouse</span><span class="o">::</span><span class="n">WheelH</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10</span><span class="p">;</span>
+
+        <span class="n">RectF</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span> <span class="o">=</span> <span class="n">pos</span><span class="p">,</span> <span class="mi">200</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
                 
                   
