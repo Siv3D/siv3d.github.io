@@ -1865,7 +1865,7 @@
 
     <span class="c1">// 選択肢に対応する確率分布</span>
     <span class="c1">// （$0 は $2000 よりも 1000 倍出やすい）</span>
-    <span class="n">DiscreteDistribution</span> <span class="n">distribution</span> <span class="o">=</span>
+    <span class="n">DiscreteDistribution</span> <span class="n">distribution</span><span class="p">(</span>
     <span class="p">{</span>
         <span class="mi">1000</span><span class="p">,</span>
         <span class="mi">200</span><span class="p">,</span>
@@ -1874,7 +1874,7 @@
         <span class="mi">5</span><span class="p">,</span>
         <span class="mi">2</span><span class="p">,</span>
         <span class="mi">1</span><span class="p">,</span>
-    <span class="p">};</span>
+    <span class="p">});</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
