@@ -1965,7 +1965,7 @@
 
 <h2 id="_7">アセットデータ編<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="texture-static"><code class="codehilite"><span class="n">Texture</span></code> をグローバル変数や static 変数として使う<a class="headerlink" href="#texture-static" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="n">Texture</span></code>, <code class="codehilite"><span class="n">Font</span></code>, <code class="codehilite"><span class="n">Audio</span></code> は、Siv3D の初期化よりもあとに作成され、Siv3D の終了処理よりも前に破棄される必要があります。<code class="codehilite"><span class="n">Main</span><span class="p">()</span></code> 関数の中や、そこで使われるクラスのメンバであれば問題ありませんが、グローバル変数や static 変数としてこれらを使うとは Siv3D の初期化よりも前に作成されたり、終了処理後に破棄が行われます。前者は実行時エラーの原因になります。アセット管理機能を使うことで、グローバル変数や static 変数の使用を避けましょう。</p>
+<p><code class="codehilite"><span class="n">Texture</span></code>, <code class="codehilite"><span class="n">Font</span></code>, <code class="codehilite"><span class="n">Audio</span></code> は、Siv3D の初期化よりもあとに作成され、Siv3D の終了処理よりも前に破棄される必要があります。<code class="codehilite"><span class="n">Main</span><span class="p">()</span></code> 関数の中や、そこで使われるクラスのメンバであれば問題ありませんが、グローバル変数や static 変数としてこれらを使うとは Siv3D の初期化よりも前に作成されたり、終了処理後に破棄が行われます。前者は実行時エラーの原因になります。グローバル変数や static 変数の使用を避け、アセット管理機能を使いましょう。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="c1">// NG: Siv3D の初期化よりも前に作成されるので実行時エラー</span>

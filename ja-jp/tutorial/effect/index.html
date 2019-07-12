@@ -1061,8 +1061,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#161" title="16.1" class="md-nav__link">
-    16.1
+  <a href="#161-effect" title="16.1 Effect の基本" class="md-nav__link">
+    16.1 Effect の基本
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="ラムダ式での実装" class="md-nav__link">
+    ラムダ式での実装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#162" title="16.2 少しこだわったエフェクト" class="md-nav__link">
+    16.2 少しこだわったエフェクト
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#163" title="16.3 上昇する文字" class="md-nav__link">
+    16.3 上昇する文字
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#164" title="16.4 飛び散る破片" class="md-nav__link">
+    16.4 飛び散る破片
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#165" title="16.5 エフェクトの一時停止と消去" class="md-nav__link">
+    16.5 エフェクトの一時停止と消去
   </a>
   
 </li>
@@ -1433,8 +1474,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#161" title="16.1" class="md-nav__link">
-    16.1
+  <a href="#161-effect" title="16.1 Effect の基本" class="md-nav__link">
+    16.1 Effect の基本
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="ラムダ式での実装" class="md-nav__link">
+    ラムダ式での実装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#162" title="16.2 少しこだわったエフェクト" class="md-nav__link">
+    16.2 少しこだわったエフェクト
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#163" title="16.3 上昇する文字" class="md-nav__link">
+    16.3 上昇する文字
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#164" title="16.4 飛び散る破片" class="md-nav__link">
+    16.4 飛び散る破片
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#165" title="16.5 エフェクトの一時停止と消去" class="md-nav__link">
+    16.5 エフェクトの一時停止と消去
   </a>
   
 </li>
@@ -1457,9 +1539,326 @@
                 
                 
                 <h1 id="16">16. エフェクト<a class="headerlink" href="#16" title="Permanent link">&para;</a></h1>
-<h2 id="161">16.1<a class="headerlink" href="#161" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
+<p>この章では、ちょっとしたアニメーションやエフェクトの演出に便利な <code class="codehilite"><span class="n">Effect</span></code> クラスの使い方を学びます。</p>
+<h2 id="161-effect">16.1 Effect の基本<a class="headerlink" href="#161-effect" title="Permanent link">&para;</a></h2>
+<p>エフェクト機能を使うには、エフェクトを管理する <code class="codehilite"><span class="n">Effect</span></code> オブジェクトを作成し、<code class="codehilite"><span class="n">Effect</span><span class="p">::</span><span class="k">add</span><span class="o">&lt;</span><span class="n">EffectType</span><span class="o">&gt;</span><span class="p">()</span></code> で個々のエフェクトのパラメータを追加してエフェクトを発生させます。ここでいう <code class="codehilite"><span class="n">EffectType</span></code> は、<code class="codehilite"><span class="n">IEffect</span></code> を継承したクラスです。このクラスに必要な実装は <code class="codehilite"><span class="n">bool</span> <span class="k">update</span><span class="p">(</span><span class="n">double</span> <span class="n">t</span><span class="p">)</span> <span class="n">override</span></code> メンバ関数です。エフェクトが発生してからの経過時間 <code class="codehilite"><span class="n">t</span></code> を受け取り、そのエフェクトの描画を行い、最後にエフェクトを次のフレームも継続させるかを <code class="codehilite"><span class="n">bool</span></code> 値で返します。例えば <code class="codehilite"><span class="k">return</span> <span class="nv">t</span> <span class="o">&lt;</span> <span class="mi">3</span>.<span class="mi">0</span><span class="c1">;</span></code> とすれば、エフェクトは 3 秒間継続できます。</p>
+<p>次のプログラムは、クリックした場所に、時間とともに大きくなる輪を発生させるエフェクトを実装したものです。</p>
+<video src="../images/16-1-0.mp4" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="nl">RingEffect</span> <span class="p">:</span> <span class="n">IEffect</span>
+<span class="p">{</span>
+    <span class="n">Vec2</span> <span class="n">m_pos</span><span class="p">;</span>
+
+    <span class="c1">// このコンストラクタ引数が、Effect::add&lt;RingEffect&gt;() の引数になる</span>
+    <span class="n">RingEffect</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">pos</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">m_pos</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span> <span class="p">{}</span>
+
+    <span class="kt">bool</span> <span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="c1">// 時間に応じて大きくなる輪</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">m_pos</span><span class="p">,</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">();</span>
+
+        <span class="c1">// 1 秒以上経過したら消滅</span>
+        <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">ClearPrint</span><span class="p">();</span>
+
+        <span class="c1">// アクティブなエフェクトの数</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Active effects: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">num_effects</span><span class="p">());</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// エフェクトを発生</span>
+            <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">RingEffect</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">());</span>
+        <span class="p">}</span>
+
+        <span class="c1">// アクティブなエフェクトのプログラム IEffect::update() を実行</span>
+        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
+
+<h3 id="_1">ラムダ式での実装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="n">IEffect</span></code> 継承クラスの代わりに、引数が <code class="codehilite"><span class="n">double</span></code>, 戻り値が <code class="codehilite"><span class="n">bool</span></code> 型のラムダ式でエフェクトを記述することもできます。数行で書ける単純なエフェクトで、わざわざクラスを定義するのが面倒な場合はこの方法が便利です。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">ClearPrint</span><span class="p">();</span>
+
+        <span class="c1">// アクティブなエフェクトの数</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Active effects: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">num_effects</span><span class="p">());</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// エフェクトを発生</span>
+            <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="p">([</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">()](</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// 時間に応じて大きくなる輪</span>
+                <span class="n">Circle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">();</span>
+                <span class="c1">// 1 秒以上経過したら消滅</span>
+                <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+
+        <span class="c1">// アクティブなエフェクトのプログラム IEffect::update() を実行</span>
+        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="162">16.2 少しこだわったエフェクト<a class="headerlink" href="#162" title="Permanent link">&para;</a></h2>
+<p>イージングと組み合わせることもできます。</p>
+<video src="../images/16-2-0.mp4" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="nl">RingEffect</span> <span class="p">:</span> <span class="n">IEffect</span>
+<span class="p">{</span>
+    <span class="n">Vec2</span> <span class="n">m_pos</span><span class="p">;</span>
+
+    <span class="n">ColorF</span> <span class="n">m_color</span><span class="p">;</span>
+
+    <span class="n">RingEffect</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">pos</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">m_pos</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+        <span class="p">,</span> <span class="n">m_color</span><span class="p">(</span><span class="n">RandomColor</span><span class="p">())</span> <span class="p">{}</span>
+
+    <span class="kt">bool</span> <span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="c1">// イージング</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">e</span> <span class="o">=</span> <span class="n">EaseOutExpo</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">m_pos</span><span class="p">,</span> <span class="n">e</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="mf">20.0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">e</span><span class="p">),</span> <span class="n">m_color</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">ClearPrint</span><span class="p">();</span>
+
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Active effects: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">num_effects</span><span class="p">());</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">RingEffect</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">());</span>
+        <span class="p">}</span>
+
+        <span class="p">{</span>
+            <span class="c1">// 加算ブレンドを有効に</span>
+            <span class="k">const</span> <span class="n">ScopedRenderStates2D</span> <span class="n">additiveBlend</span><span class="p">(</span><span class="n">BlendState</span><span class="o">::</span><span class="n">Additive</span><span class="p">);</span>
+
+            <span class="c1">// アクティブなエフェクトのプログラム IEffect::update() を実行</span>
+            <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="163">16.3 上昇する文字<a class="headerlink" href="#163" title="Permanent link">&para;</a></h2>
+<p>フォントを使ったエフェクトの例です。</p>
+<video src="../images/16-3-0.mp4" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="nl">NumberEffect</span> <span class="p">:</span> <span class="n">IEffect</span>
+<span class="p">{</span>
+    <span class="n">Vec2</span> <span class="n">m_start</span><span class="p">;</span>
+
+    <span class="n">int32</span> <span class="n">m_number</span><span class="p">;</span>
+
+    <span class="n">Font</span> <span class="n">m_font</span><span class="p">;</span>
+
+    <span class="n">NumberEffect</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">start</span><span class="p">,</span> <span class="n">int32</span> <span class="n">num</span><span class="p">,</span> <span class="k">const</span> <span class="n">Font</span><span class="o">&amp;</span> <span class="n">font</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">m_start</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+        <span class="p">,</span> <span class="n">m_number</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+        <span class="p">,</span> <span class="n">m_font</span><span class="p">(</span><span class="n">font</span><span class="p">)</span> <span class="p">{}</span>
+
+    <span class="kt">bool</span> <span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="n">HSV</span> <span class="n">color</span><span class="p">(</span><span class="mi">180</span> <span class="o">-</span> <span class="n">m_number</span> <span class="o">*</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="mf">2.0</span><span class="p">));</span>
+
+        <span class="n">m_font</span><span class="p">(</span><span class="n">m_number</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">m_start</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span> <span class="o">*</span> <span class="o">-</span><span class="mi">120</span><span class="p">),</span> <span class="n">color</span><span class="p">);</span>
+
+        <span class="c1">// 0.5 秒以上経過で消滅</span>
+        <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Heavy</span><span class="p">);</span>
+
+    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">NumberEffect</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span> <span class="n">Random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">font</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="164">16.4 飛び散る破片<a class="headerlink" href="#164" title="Permanent link">&para;</a></h2>
+<p>一つのエフェクトで複数の図形を描く例です。</p>
+<video src="../images/16-4-0.mp4" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="n">Particle</span>
+<span class="p">{</span>
+    <span class="n">Vec2</span> <span class="n">start</span><span class="p">;</span>
+
+    <span class="n">Vec2</span> <span class="n">velocity</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="nl">Spark</span> <span class="p">:</span> <span class="n">IEffect</span>
+<span class="p">{</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Particle</span><span class="o">&gt;</span> <span class="n">m_particles</span><span class="p">;</span>
+
+    <span class="n">Spark</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">start</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">m_particles</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">particle</span> <span class="p">:</span> <span class="n">m_particles</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">particle</span><span class="p">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="n">RandomVec2</span><span class="p">(</span><span class="mf">10.0</span><span class="p">);</span>
+
+            <span class="n">particle</span><span class="p">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="n">RandomVec2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">Random</span><span class="p">(</span><span class="mf">80.0</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kt">bool</span> <span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">particle</span> <span class="p">:</span> <span class="n">m_particles</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Vec2</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">particle</span><span class="p">.</span><span class="n">start</span>
+                <span class="o">+</span> <span class="n">particle</span><span class="p">.</span><span class="n">velocity</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">240</span><span class="p">);</span>
+
+            <span class="n">Triangle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="mf">16.0</span><span class="p">,</span> <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="mi">5</span><span class="n">_deg</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">40</span><span class="p">).</span><span class="n">toColorF</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">t</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Spark</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">());</span>
+        <span class="p">}</span>
+
+        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="165">16.5 エフェクトの一時停止と消去<a class="headerlink" href="#165" title="Permanent link">&para;</a></h2>
+<p><code class="codehilite"><span class="nv">Effect</span>::<span class="k">pause</span><span class="ss">()</span></code> でエフェクトの更新を一時停止、<code class="codehilite"><span class="n">Effect</span><span class="p">::</span><span class="n">resume</span><span class="p">()</span></code> でエフェクトの更新を再開、<code class="codehilite"><span class="n">Effect</span><span class="p">::</span><span class="n">clear</span><span class="p">()</span></code> でエフェクトをすべて消去します。</p>
+<video src="../images/16-5-0.mp4" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="nl">RingEffect</span> <span class="p">:</span> <span class="n">IEffect</span>
+<span class="p">{</span>
+    <span class="n">Vec2</span> <span class="n">m_pos</span><span class="p">;</span>
+
+    <span class="n">RingEffect</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">pos</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">m_pos</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span> <span class="p">{}</span>
+
+    <span class="kt">bool</span> <span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">e</span> <span class="o">=</span> <span class="n">EaseOutExpo</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">m_pos</span><span class="p">,</span> <span class="n">e</span> <span class="o">*</span> <span class="mi">80</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="mf">20.0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">e</span><span class="p">));</span>
+
+        <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+
+    <span class="c1">// エフェクト発生させる間隔</span>
+    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">effectSpawnTime</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">time</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">effect</span><span class="p">.</span><span class="n">isPaused</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">time</span> <span class="o">+=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">ClearPrint</span><span class="p">();</span>
+
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Active effects: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">num_effects</span><span class="p">());</span>
+
+        <span class="c1">// effectSpawnTime が経過するたびにエフェクトが発生</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">time</span> <span class="o">&gt;=</span> <span class="n">effectSpawnTime</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">time</span> <span class="o">-=</span> <span class="n">effectSpawnTime</span><span class="p">;</span>
+
+            <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">RingEffect</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">());</span>
+        <span class="p">}</span>
+
+        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">isPaused</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Resume&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">100</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="c1">// エフェクトの更新を再開</span>
+                <span class="n">effect</span><span class="p">.</span><span class="n">resume</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Pause&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">100</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="c1">// エフェクトの更新を一時停止</span>
+                <span class="n">effect</span><span class="p">.</span><span class="n">pause</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Clear&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="mi">100</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="c1">// 発生中のエフェクトをすべて消去</span>
+            <span class="n">effect</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>この章では扱いませんが、より大量のパーティクルを効率的に制御したい場合は、<code class="codehilite"><span class="n">ParticleSystem2D</span></code> を使うと便利です。</p>
                 
                   
                 
