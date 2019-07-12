@@ -1323,6 +1323,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" title="数つなぎ" class="md-nav__link">
+    数つなぎ
+  </a>
+  
+</li>
+      
       
       
       
@@ -1491,6 +1498,13 @@
         <li class="md-nav__item">
   <a href="#15" title="15 パズル" class="md-nav__link">
     15 パズル
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="数つなぎ" class="md-nav__link">
+    数つなぎ
   </a>
   
 </li>
@@ -2220,6 +2234,188 @@
         <span class="n">texture</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
             <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">offset</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">cellSize</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">40</span><span class="p">,</span> <span class="n">offset</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
             <span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="_6">数つなぎ<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><video src="../images/game-number-chain.mp4" autoplay loop muted></video>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="n">Bubble</span>
+<span class="p">{</span>
+    <span class="c1">// バブルの円の半径</span>
+    <span class="k">static</span> <span class="k">constexpr</span> <span class="n">int32</span> <span class="n">CircleR</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+
+    <span class="c1">// バブルの円</span>
+    <span class="n">Circle</span> <span class="n">circle</span><span class="p">;</span>
+
+    <span class="c1">// バブルのインデックス</span>
+    <span class="n">int32</span> <span class="n">index</span><span class="p">;</span>
+
+    <span class="c1">// 接続済みなら true に</span>
+    <span class="kt">bool</span> <span class="n">connected</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="kt">void</span> <span class="nf">draw</span><span class="p">()</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">connected</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">circle</span><span class="p">.</span><span class="n">drawShadow</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span><span class="n">draw</span><span class="p">()</span>
+                <span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Bubble&quot;</span><span class="p">)(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">circle</span><span class="p">.</span><span class="n">center</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// バブルどうしが重なっていないかチェック</span>
+<span class="kt">bool</span> <span class="nf">CheckBubbles</span><span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">Bubble</span><span class="o">&gt;&amp;</span> <span class="n">bubbles</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">bubbles</span><span class="p">.</span><span class="n">size</span><span class="p">()))</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">k</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">bubbles</span><span class="p">.</span><span class="n">size</span><span class="p">()))</span>
+        <span class="p">{</span>
+            <span class="c1">// 重なっている</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">k</span> <span class="o">&amp;&amp;</span> <span class="n">bubbles</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">circle</span><span class="p">.</span><span class="n">stretched</span><span class="p">(</span><span class="mi">5</span><span class="p">).</span><span class="n">intersects</span><span class="p">(</span><span class="n">bubbles</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">circle</span><span class="p">.</span><span class="n">stretched</span><span class="p">(</span><span class="mi">5</span><span class="p">)))</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 指定した個数のバブルを重ならないように生成</span>
+<span class="n">Array</span><span class="o">&lt;</span><span class="n">Bubble</span><span class="o">&gt;</span> <span class="n">MakeBubbles</span><span class="p">(</span><span class="n">int32</span> <span class="n">count</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Bubble</span><span class="o">&gt;</span> <span class="n">bubbles</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
+
+    <span class="k">do</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="c1">// バブルのインデックス</span>
+            <span class="n">bubbles</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+
+            <span class="c1">// バブルの円</span>
+            <span class="n">bubbles</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">circle</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">RandomVec2</span><span class="p">(</span><span class="n">Circle</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Height</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">Bubble</span><span class="o">::</span><span class="n">CircleR</span><span class="p">)),</span> <span class="n">Bubble</span><span class="o">::</span><span class="n">CircleR</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">CheckBubbles</span><span class="p">(</span><span class="n">bubbles</span><span class="p">));</span>
+
+    <span class="k">return</span> <span class="n">bubbles</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 指定したレベルにおけるバブルの個数</span>
+<span class="k">constexpr</span> <span class="n">int32</span> <span class="n">GetBubbleCount</span><span class="p">(</span><span class="n">int32</span> <span class="n">level</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">Min</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 指定したレベルにおける制限時間</span>
+<span class="k">constexpr</span> <span class="kt">double</span> <span class="n">GetTime</span><span class="p">(</span><span class="n">int32</span> <span class="n">level</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">level</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">)</span> <span class="o">?</span> <span class="mf">8.0</span> <span class="o">:</span> <span class="mf">8.0</span> <span class="o">-</span> <span class="n">Min</span><span class="p">((</span><span class="n">level</span> <span class="o">-</span> <span class="mi">15</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+    <span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Bubble&quot;</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Medium</span><span class="p">);</span>
+    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+
+    <span class="c1">// 効果音を作成</span>
+    <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">PianoKey</span><span class="o">&gt;</span> <span class="n">keys</span> <span class="o">=</span> <span class="p">{</span> <span class="n">PianoKey</span><span class="o">::</span><span class="n">C5</span><span class="p">,</span>  <span class="n">PianoKey</span><span class="o">::</span><span class="n">D5</span><span class="p">,</span> <span class="n">PianoKey</span><span class="o">::</span><span class="n">E5</span><span class="p">,</span> <span class="n">PianoKey</span><span class="o">::</span><span class="n">F5</span><span class="p">,</span> <span class="n">PianoKey</span><span class="o">::</span><span class="n">G5</span><span class="p">,</span>
+        <span class="n">PianoKey</span><span class="o">::</span><span class="n">A5</span><span class="p">,</span> <span class="n">PianoKey</span><span class="o">::</span><span class="n">B5</span><span class="p">,</span> <span class="n">PianoKey</span><span class="o">::</span><span class="n">C6</span><span class="p">,</span> <span class="n">PianoKey</span><span class="o">::</span><span class="n">D6</span><span class="p">,</span> <span class="n">PianoKey</span><span class="o">::</span><span class="n">E6</span><span class="p">,</span>
+        <span class="n">PianoKey</span><span class="o">::</span><span class="n">F6</span><span class="p">,</span> <span class="n">PianoKey</span><span class="o">::</span><span class="n">G6</span><span class="p">,</span> <span class="n">PianoKey</span><span class="o">::</span><span class="n">A6</span><span class="p">,</span> <span class="n">PianoKey</span><span class="o">::</span><span class="n">B6</span><span class="p">,</span> <span class="n">PianoKey</span><span class="o">::</span><span class="n">C7</span> <span class="p">};</span>
+    <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">Audio</span><span class="o">&gt;</span> <span class="n">sounds</span> <span class="o">=</span> <span class="n">keys</span><span class="p">.</span><span class="n">map</span><span class="p">([](</span><span class="k">auto</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Audio</span><span class="p">(</span><span class="n">GMInstrument</span><span class="o">::</span><span class="n">Glockenspiel</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mf">0.3</span><span class="n">s</span><span class="p">);</span> <span class="p">});</span>
+
+    <span class="c1">// ハイスコア</span>
+    <span class="n">int32</span> <span class="n">highScore</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// 現在のレベル</span>
+    <span class="n">int32</span> <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>    
+
+    <span class="c1">// 接続数</span>
+    <span class="n">int32</span> <span class="n">connected</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// 残り時間のタイマー</span>
+    <span class="n">Timer</span> <span class="nf">timer</span><span class="p">(</span><span class="n">GetTime</span><span class="p">(</span><span class="n">level</span><span class="p">),</span> <span class="nb">true</span><span class="p">);</span>
+
+    <span class="c1">// バブル</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Bubble</span><span class="o">&gt;</span> <span class="n">bubbles</span> <span class="o">=</span> <span class="n">MakeBubbles</span><span class="p">(</span><span class="n">GetBubbleCount</span><span class="p">(</span><span class="n">level</span><span class="p">));</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">();</span>
+
+        <span class="c1">// 制限時間を表す背景</span>
+        <span class="n">RectF</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Size</span><span class="p">()</span> <span class="o">*</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">timer</span><span class="p">.</span><span class="n">progress0_1</span><span class="p">())).</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="n">level</span> <span class="o">*</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">));</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">bubble</span> <span class="p">:</span> <span class="n">bubbles</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">((</span><span class="n">bubble</span><span class="p">.</span><span class="n">index</span> <span class="o">==</span> <span class="n">connected</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">bubble</span><span class="p">.</span><span class="n">connected</span> <span class="o">&amp;&amp;</span> <span class="n">bubble</span><span class="p">.</span><span class="n">circle</span><span class="p">.</span><span class="n">stretched</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="n">mouseOver</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="c1">// 接続済みに</span>
+                <span class="n">bubble</span><span class="p">.</span><span class="n">connected</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+                <span class="c1">// 接続数を増やす</span>
+                <span class="o">++</span><span class="n">connected</span><span class="p">;</span>
+
+                <span class="c1">// エフェクトを追加</span>
+                <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="p">([</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">()](</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">Circle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">Bubble</span><span class="o">::</span><span class="n">CircleR</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">200</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">t</span> <span class="o">*</span> <span class="mf">2.5</span><span class="p">));</span>
+                    <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.4</span><span class="p">;</span>
+                <span class="p">});</span>
+
+                <span class="c1">// バブルの数字に応じて効果音を鳴らす</span>
+                <span class="n">sounds</span><span class="p">[</span><span class="n">bubble</span><span class="p">.</span><span class="n">index</span><span class="p">].</span><span class="n">playOneShot</span><span class="p">(</span><span class="mf">0.8</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="c1">// バブルを円周に沿って移動</span>
+            <span class="n">bubble</span><span class="p">.</span><span class="n">circle</span><span class="p">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">OffsetCircular</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="n">bubble</span><span class="p">.</span><span class="n">circle</span><span class="p">.</span><span class="n">center</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">rotate</span><span class="p">((</span><span class="n">IsEven</span><span class="p">(</span><span class="n">bubble</span><span class="p">.</span><span class="n">index</span><span class="p">)</span> <span class="o">?</span> <span class="mi">20</span><span class="nl">_deg</span> <span class="p">:</span> <span class="o">-</span><span class="mi">20</span><span class="n">_deg</span><span class="p">)</span> <span class="o">*</span> <span class="n">delta</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// バブルをすべてつなぐか、時間切れになったら</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="kt">bool</span> <span class="n">failed</span> <span class="o">=</span> <span class="n">timer</span><span class="p">.</span><span class="n">reachedZero</span><span class="p">();</span> <span class="p">(</span><span class="n">connected</span> <span class="o">==</span> <span class="n">GetBubbleCount</span><span class="p">(</span><span class="n">level</span><span class="p">))</span> <span class="o">||</span> <span class="n">failed</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// レベルを更新</span>
+            <span class="n">level</span> <span class="o">=</span> <span class="n">failed</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">++</span><span class="n">level</span><span class="p">;</span>
+
+            <span class="c1">// 接続数をリセット</span>
+            <span class="n">connected</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+            <span class="c1">// 制限時間をリセット</span>
+            <span class="n">timer</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="n">GetTime</span><span class="p">(</span><span class="n">level</span><span class="p">),</span> <span class="nb">true</span><span class="p">);</span>
+
+            <span class="c1">// バブルを再生成</span>
+            <span class="n">bubbles</span> <span class="o">=</span> <span class="n">MakeBubbles</span><span class="p">(</span><span class="n">GetBubbleCount</span><span class="p">(</span><span class="n">level</span><span class="p">));</span>
+
+            <span class="c1">// ハイスコアを更新</span>
+            <span class="n">highScore</span> <span class="o">=</span> <span class="n">Max</span><span class="p">(</span><span class="n">highScore</span><span class="p">,</span> <span class="n">level</span><span class="p">);</span>
+
+            <span class="c1">// タイトルを更新</span>
+            <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Level {} (High score: {})&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">highScore</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="c1">// バブルをつなぐ線</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">int32</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">connected</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Line</span><span class="p">(</span><span class="n">bubbles</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">circle</span><span class="p">.</span><span class="n">center</span><span class="p">,</span> <span class="n">bubbles</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">].</span><span class="n">circle</span><span class="p">.</span><span class="n">center</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// バブルを描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">bubble</span> <span class="p">:</span> <span class="n">bubbles</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">bubble</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div></p>
