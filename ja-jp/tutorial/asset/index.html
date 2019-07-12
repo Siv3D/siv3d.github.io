@@ -1742,7 +1742,10 @@
 
 <h2 id="176">17.6 アセットの非同期ロード<a class="headerlink" href="#176" title="Permanent link">&para;</a></h2>
 <p>アセットの登録時に <code class="codehilite"><span class="n">AssetParameter</span><span class="p">::</span><span class="n">LoadAsync</span><span class="p">()</span></code> をパラメータとして渡すと、登録後に別スレッドを使ったアセットの非同期ロードが行われます。複数のアセットを同時に読み込んで、ロード時間を減らしたいときに、このパラメータを使います。非同期ロードが完了すると <code class="codehilite"><span class="n">TextureAsset</span><span class="p">::</span><span class="n">IsReady</span><span class="p">()</span></code> が <code class="codehilite"><span class="k">true</span></code> を返します。それより前にアセットを使用しようとすると、空の <code class="codehilite"><span class="n">Texture</span></code> や <code class="codehilite"><span class="n">Audio</span></code> が返されます。このパラメータは <code class="codehilite"><span class="n">TextureAsset</span></code> と <code class="codehilite"><span class="n">AudioAsset</span></code> にのみ有効です。</p>
-<p>次のプログラムでは、非同期ロードが完了するまでループで待機していますが、メインループ内でロードの進捗を可視化しながら待機するといった実装も可能です。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>macOS と Linux では、<code class="codehilite"><span class="n">Texture</span></code> の非同期ロードが <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> で実行されます。非同期ロードを実行中は <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> の呼び出しを通常通り行ってください。</p>
+</div>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Draw</span><span class="p">()</span>
@@ -1758,22 +1761,31 @@
     <span class="n">TextureAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Windmill&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">,</span> <span class="n">AssetParameter</span><span class="o">::</span><span class="n">LoadAsync</span><span class="p">());</span>
     <span class="n">TextureAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Siv3D-kun&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;example/siv3d-kun.png&quot;</span><span class="p">,</span> <span class="n">TextureDesc</span><span class="o">::</span><span class="n">Mipped</span><span class="p">,</span> <span class="n">AssetParameter</span><span class="o">::</span><span class="n">LoadAsync</span><span class="p">());</span>
 
-    <span class="c1">// 両方ロードされるまで待機</span>
-    <span class="k">for</span> <span class="p">(;;)</span>
-    <span class="p">{</span>
-        <span class="k">const</span> <span class="kt">bool</span> <span class="n">r1</span> <span class="o">=</span> <span class="n">TextureAsset</span><span class="o">::</span><span class="n">IsReady</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Windmill&quot;</span><span class="p">);</span>
-        <span class="k">const</span> <span class="kt">bool</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">TextureAsset</span><span class="o">::</span><span class="n">IsReady</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Siv3D-kun&quot;</span><span class="p">);</span>
-        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">r1</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">r2</span><span class="p">;</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">r1</span> <span class="o">&amp;&amp;</span> <span class="n">r2</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">loaded</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">Draw</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">loaded</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// 非同期ロードが完了したかチェック</span>
+            <span class="k">const</span> <span class="kt">bool</span> <span class="n">r1</span> <span class="o">=</span> <span class="n">TextureAsset</span><span class="o">::</span><span class="n">IsReady</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Windmill&quot;</span><span class="p">);</span>
+            <span class="k">const</span> <span class="kt">bool</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">TextureAsset</span><span class="o">::</span><span class="n">IsReady</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Siv3D-kun&quot;</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">r1</span> <span class="o">&amp;&amp;</span> <span class="n">r2</span><span class="p">)</span> <span class="c1">// 両方ともロード完了</span>
+            <span class="p">{</span>
+                <span class="n">loaded</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">loaded</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Draw</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="c1">// ロード中は円を表示</span>
+            <span class="n">Circle</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="mi">100</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
