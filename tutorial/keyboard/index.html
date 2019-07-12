@@ -764,6 +764,42 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-5" type="checkbox" id="nav-1-5">
+    
+    <label class="md-nav__link" for="nav-1-5">
+      Articles
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-5">
+        Articles
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../articles/mistakes/" title="Mistakes made by new users" class="md-nav__link">
+      Mistakes made by new users
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../community/community/" title="Community" class="md-nav__link">
       Community
@@ -1244,6 +1280,42 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      記事
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        記事
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ja-jp/articles/mistakes/" title="よくある間違い" class="md-nav__link">
+      よくある間違い
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../ja-jp/community/community/" title="コミュニティ" class="md-nav__link">
       コミュニティ
@@ -1436,28 +1508,27 @@
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="k">const</span> <span class="kt">double</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">();</span>
-        <span class="k">const</span> <span class="kt">double</span> <span class="n">speed</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">delta</span><span class="p">;</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">delta</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">();</span>
 
         <span class="c1">// 上下左右キーで移動</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">KeyLeft</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">-=</span> <span class="n">speed</span><span class="p">;</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">-=</span> <span class="n">delta</span><span class="p">;</span>
         <span class="p">}</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="n">KeyRight</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">speed</span><span class="p">;</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">delta</span><span class="p">;</span>
         <span class="p">}</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="n">KeyUp</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">-=</span> <span class="n">speed</span><span class="p">;</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">-=</span> <span class="n">delta</span><span class="p">;</span>
         <span class="p">}</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="n">KeyDown</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
         <span class="p">{</span>
-            <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">speed</span><span class="p">;</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">delta</span><span class="p">;</span>
         <span class="p">}</span>
 
         <span class="c1">// [C] キーが押されたら中央に戻る</span>

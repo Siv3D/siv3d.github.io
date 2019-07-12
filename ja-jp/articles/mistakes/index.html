@@ -1,0 +1,2014 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Siv3D: An open source C++17 library for creative coding">
+      
+      
+        <link rel="canonical" href="https://siv3d.github.io/ja-jp/articles/mistakes/">
+      
+      
+        <meta name="author" content="Ryo Suzuki">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
+    
+    
+      
+        <title>よくある間違い - Siv3D</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.750b69bd.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../../siv3d_styles.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://siv3d.github.io/" title="Siv3D" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">code</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Siv3D
+            </span>
+            <span class="md-header-nav__topic">
+              よくある間違い
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../.." title="English" class="md-tabs__link">
+          English
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" title="日本語" class="md-tabs__link md-tabs__link--active">
+          日本語
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://siv3d.github.io/" title="Siv3D" class="md-nav__button md-logo">
+      
+        <i class="md-icon">code</i>
+      
+    </a>
+    Siv3D
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      English
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        English
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Getting started with Siv3D" class="md-nav__link">
+      Getting started with Siv3D
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2">
+    
+    <label class="md-nav__link" for="nav-1-2">
+      Tutorial
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-2">
+        Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/basic/" title="1. First steps" class="md-nav__link">
+      1. First steps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/shape/" title="2. Drawing shapes" class="md-nav__link">
+      2. Drawing shapes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/animation/" title="3. Animation" class="md-nav__link">
+      3. Animation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/2d-intersection/" title="4. 2D intersection" class="md-nav__link">
+      4. 2D intersection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/texture/" title="5. Drawing images" class="md-nav__link">
+      5. Drawing images
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/data-structures/" title="6. Data structures" class="md-nav__link">
+      6. Data structures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/formatting/" title="7. Formatting and parsing" class="md-nav__link">
+      7. Formatting and parsing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/font/" title="8. Using fonts" class="md-nav__link">
+      8. Using fonts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/gui/" title="9. GUI" class="md-nav__link">
+      9. GUI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/window/" title="10. Scene and window" class="md-nav__link">
+      10. Scene and window
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/keyboard/" title="11. Keyboard" class="md-nav__link">
+      11. Keyboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/mouse/" title="12. Mouse" class="md-nav__link">
+      12. Mouse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/audio/" title="13. Audio" class="md-nav__link">
+      13. Audio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/random/" title="14. Random" class="md-nav__link">
+      14. Random
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/2d-renderstates/" title="15. 2D render states" class="md-nav__link">
+      15. 2D render states
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3">
+    
+    <label class="md-nav__link" for="nav-1-3">
+      Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-3">
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/fullscreen/" title="Fullscreen" class="md-nav__link">
+      Fullscreen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/json/" title="JSON file" class="md-nav__link">
+      JSON file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/2d-shadow/" title="2D shadow" class="md-nav__link">
+      2D shadow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/2d-geometry/" title="2D geometry" class="md-nav__link">
+      2D geometry
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/navmesh/" title="NavMesh" class="md-nav__link">
+      NavMesh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/nlp/" title="Natural language processing" class="md-nav__link">
+      Natural language processing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/math-parser/" title="Math parser" class="md-nav__link">
+      Math parser
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/kd-tree/" title="kd-tree" class="md-nav__link">
+      kd-tree
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/objdetection/" title="Object detection" class="md-nav__link">
+      Object detection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/gamepad/" title="Gamepad" class="md-nav__link">
+      Gamepad
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-4" type="checkbox" id="nav-1-4">
+    
+    <label class="md-nav__link" for="nav-1-4">
+      Sample
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-4">
+        Sample
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../sample/game/" title="Game" class="md-nav__link">
+      Game
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../sample/app/" title="Application" class="md-nav__link">
+      Application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../sample/visual/" title="Visual effect" class="md-nav__link">
+      Visual effect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../sample/game-template/" title="Geme template" class="md-nav__link">
+      Geme template
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-5" type="checkbox" id="nav-1-5">
+    
+    <label class="md-nav__link" for="nav-1-5">
+      Articles
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-5">
+        Articles
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../articles/mistakes/" title="Mistakes made by new users" class="md-nav__link">
+      Mistakes made by new users
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../community/community/" title="Community" class="md-nav__link">
+      Community
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../store/store/" title="Siv3D Store" class="md-nav__link">
+      Siv3D Store
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      日本語
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        日本語
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Siv3D をはじめよう" class="md-nav__link">
+      Siv3D をはじめよう
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      チュートリアル
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        チュートリアル
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/basic/" title="1. Siv3D の基本" class="md-nav__link">
+      1. Siv3D の基本
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/shape/" title="2. 図形を描く" class="md-nav__link">
+      2. 図形を描く
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/animation/" title="3. 動きを作る" class="md-nav__link">
+      3. 動きを作る
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/2d-intersection/" title="4. あたり判定" class="md-nav__link">
+      4. あたり判定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/texture/" title="5. 画像を描く" class="md-nav__link">
+      5. 画像を描く
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/data-structures/" title="6. データ構造" class="md-nav__link">
+      6. データ構造
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/formatting/" title="7. 文字列と数値の変換" class="md-nav__link">
+      7. 文字列と数値の変換
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/font/" title="8. フォントを使う" class="md-nav__link">
+      8. フォントを使う
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/gui/" title="9. GUI" class="md-nav__link">
+      9. GUI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/window/" title="10. シーンとウィンドウ" class="md-nav__link">
+      10. シーンとウィンドウ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/keyboard/" title="11. キーボード入力" class="md-nav__link">
+      11. キーボード入力
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/mouse/" title="12. マウス入力" class="md-nav__link">
+      12. マウス入力
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/audio/" title="13. オーディオ再生" class="md-nav__link">
+      13. オーディオ再生
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/random/" title="14. ランダム" class="md-nav__link">
+      14. ランダム
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/2d-renderstates/" title="15. 2D レンダーステート" class="md-nav__link">
+      15. 2D レンダーステート
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      リファレンス
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        リファレンス
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/fullscreen/" title="フルスクリーン" class="md-nav__link">
+      フルスクリーン
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/json/" title="JSON ファイル" class="md-nav__link">
+      JSON ファイル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/2d-shadow/" title="2D 図形の影" class="md-nav__link">
+      2D 図形の影
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/2d-geometry/" title="2D 計算幾何" class="md-nav__link">
+      2D 計算幾何
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/navmesh/" title="ナビメッシュ" class="md-nav__link">
+      ナビメッシュ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/nlp/" title="自然言語処理" class="md-nav__link">
+      自然言語処理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/math-parser/" title="数式処理" class="md-nav__link">
+      数式処理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/kd-tree/" title="kd 木" class="md-nav__link">
+      kd 木
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/objdetection/" title="物体検出" class="md-nav__link">
+      物体検出
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/gamepad/" title="ゲームパッド" class="md-nav__link">
+      ゲームパッド
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      サンプル
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        サンプル
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sample/game/" title="ゲーム" class="md-nav__link">
+      ゲーム
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sample/app/" title="アプリ" class="md-nav__link">
+      アプリ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sample/visual/" title="ビジュアル表現" class="md-nav__link">
+      ビジュアル表現
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sample/game-template/" title="ゲーム開発のテンプレート" class="md-nav__link">
+      ゲーム開発のテンプレート
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" checked>
+    
+    <label class="md-nav__link" for="nav-2-5">
+      記事
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        記事
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        よくある間違い
+      </label>
+    
+    <a href="./" title="よくある間違い" class="md-nav__link md-nav__link--active">
+      よくある間違い
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="初心者編" class="md-nav__link">
+    初心者編
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texture" title="Texture をポインタで管理する" class="md-nav__link">
+    Texture をポインタで管理する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="メインループ内で重いオブジェクトを作成する" class="md-nav__link">
+    メインループ内で重いオブジェクトを作成する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="フレームレートに依存するアニメーションを作る" class="md-nav__link">
+    フレームレートに依存するアニメーションを作る
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="コンパイラの警告を無視する" class="md-nav__link">
+    コンパイラの警告を無視する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="読み込みたいファイルを適切なディレクトリに配置しない" class="md-nav__link">
+    読み込みたいファイルを適切なディレクトリに配置しない
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="アセットデータ編" class="md-nav__link">
+    アセットデータ編
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texture-static" title="Texture をグローバル変数や static 変数として使う" class="md-nav__link">
+    Texture をグローバル変数や static 変数として使う
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texturedescmipped" title="縮小表示する画像ファイルを TextureDesc::Mipped 指定しない" class="md-nav__link">
+    縮小表示する画像ファイルを TextureDesc::Mipped 指定しない
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="コード全般編" class="md-nav__link">
+    コード全般編
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c" title="不必要な C++ 標準ライブラリヘッダをインクルードする" class="md-nav__link">
+    不必要な C++ 標準ライブラリヘッダをインクルードする
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdvector-stdstring" title="std::vector や std::string を使う" class="md-nav__link">
+    std::vector や std::string を使う
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="円周率を新しく定義する" class="md-nav__link">
+    円周率を新しく定義する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="パフォーマンス編" class="md-nav__link">
+    パフォーマンス編
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#siv3d" title="Siv3D の関数を頻繁に呼び出す" class="md-nav__link">
+    Siv3D の関数を頻繁に呼び出す
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" title="その他編" class="md-nav__link">
+    その他編
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unicode" title="プログラムで読み込むテキストファイルを Unicode 以外の形式で保存する" class="md-nav__link">
+    プログラムで読み込むテキストファイルを Unicode 以外の形式で保存する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../community/community/" title="コミュニティ" class="md-nav__link">
+      コミュニティ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../store/store/" title="Siv3D ストア" class="md-nav__link">
+      Siv3D ストア
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="初心者編" class="md-nav__link">
+    初心者編
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texture" title="Texture をポインタで管理する" class="md-nav__link">
+    Texture をポインタで管理する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="メインループ内で重いオブジェクトを作成する" class="md-nav__link">
+    メインループ内で重いオブジェクトを作成する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="フレームレートに依存するアニメーションを作る" class="md-nav__link">
+    フレームレートに依存するアニメーションを作る
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="コンパイラの警告を無視する" class="md-nav__link">
+    コンパイラの警告を無視する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="読み込みたいファイルを適切なディレクトリに配置しない" class="md-nav__link">
+    読み込みたいファイルを適切なディレクトリに配置しない
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="アセットデータ編" class="md-nav__link">
+    アセットデータ編
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texture-static" title="Texture をグローバル変数や static 変数として使う" class="md-nav__link">
+    Texture をグローバル変数や static 変数として使う
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texturedescmipped" title="縮小表示する画像ファイルを TextureDesc::Mipped 指定しない" class="md-nav__link">
+    縮小表示する画像ファイルを TextureDesc::Mipped 指定しない
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="コード全般編" class="md-nav__link">
+    コード全般編
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c" title="不必要な C++ 標準ライブラリヘッダをインクルードする" class="md-nav__link">
+    不必要な C++ 標準ライブラリヘッダをインクルードする
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdvector-stdstring" title="std::vector や std::string を使う" class="md-nav__link">
+    std::vector や std::string を使う
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="円周率を新しく定義する" class="md-nav__link">
+    円周率を新しく定義する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="パフォーマンス編" class="md-nav__link">
+    パフォーマンス編
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#siv3d" title="Siv3D の関数を頻繁に呼び出す" class="md-nav__link">
+    Siv3D の関数を頻繁に呼び出す
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" title="その他編" class="md-nav__link">
+    その他編
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unicode" title="プログラムで読み込むテキストファイルを Unicode 以外の形式で保存する" class="md-nav__link">
+    プログラムで読み込むテキストファイルを Unicode 以外の形式で保存する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">よくある間違い<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">初心者編<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="texture">Texture をポインタで管理する<a class="headerlink" href="#texture" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="n">Texture</span></code>, <code class="codehilite"><span class="n">Font</span></code>, <code class="codehilite"><span class="n">Audio</span></code> クラスは、参照カウント方式でアセットデータを管理します。そのため、一度作成したオブジェクトのコピーは軽量です。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">texture</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">);</span>
+
+    <span class="c1">// OK: コスト無しでコピー</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">texture2</span> <span class="o">=</span> <span class="n">texture</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">texture2</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>また、デストラクタによって参照カウンタが 0 になった時点で、画像や音声などのアセットデータを自動的にメモリから解放するので、次のプログラムのように破棄の処理を明示的に記述する必要もありません。Siv3D のクラスは、ポインタを使わずにそのまま扱うのが作法です。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// NG: わざわざポインタで管理するのは無駄</span>
+    <span class="n">Texture</span><span class="o">*</span> <span class="n">pTexture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Texture</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// NG: わざわざポインタで管理するのは無駄</span>
+        <span class="n">pTexture</span><span class="o">-&gt;</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// NG: わざわざポインタで管理するのは無駄</span>
+    <span class="k">delete</span> <span class="n">pTexture</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="_3">メインループ内で重いオブジェクトを作成する<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="n">Texture</span></code>, <code class="codehilite"><span class="n">Font</span></code>, <code class="codehilite"><span class="n">Audio</span></code> といったアセットデータクラスの作成は、ファイルからの読み込みやメモリの確保に非常に大きな負荷がかかります。メインフレームの中で繰り返しこれらを作成することのないようにする必要があります。</p>
+<p>次のようなプログラムを書くと、Siv3D は実行中に警告のメッセージを表示してアプリケーションを終了させます。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 誤り</span>
+        <span class="n">Texture</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>次のようにメインループの前に 1 度だけ作成するようにします。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// メインループの前に 1 度だけ作成</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">texture</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>アセット管理を利用するのも OK です。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// アセット管理を利用</span>
+    <span class="n">TextureAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Windmill&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">TextureAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Windmill&quot;</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="_4">フレームレートに依存するアニメーションを作る<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>最近は 120Hz や 144Hz など、高リフレッシュレートのモニターが増えています。「毎フレーム 3 ピクセル移動」のようなプログラムは、60Hz のモニターでは毎秒 180 ピクセル、120Hz のモニターでは毎秒 360 ピクセルと、速度が大きく変わってしまうので、フレームレートに依存する書き方は避けなければいけません。</p>
+<p><code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Delta</span><span class="p">()</span></code> や <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Time</span><span class="p">()</span></code>, <code class="codehilite"><span class="n">Stopwatch</span></code> を使って、時間ベースのアニメーションを実装するか、<code class="codehilite"><span class="n">Effect</span></code>, <code class="codehilite"><span class="n">Transition</span></code>, <code class="codehilite"><span class="n">Periodic</span></code> のように時間ベースで設計されているクラスや関数を使ってアニメーションを実装します。</p>
+<p>次のプログラムはフレームレートに依存するコードになっているので、フレームレートが変化すると円の移動速度が変わってしまいます。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">constexpr</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">int32</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span> <span class="n">framerates</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">240</span> <span class="p">};</span>
+    <span class="kt">size_t</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">Graphics</span><span class="o">::</span><span class="n">SetTargetFrameRateHz</span><span class="p">(</span><span class="n">framerates</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+
+    <span class="n">Vec2</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">();</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// NG: フレームレートに依存する移動量</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">speed</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+        <span class="c1">// 上下左右キーで移動</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyLeft</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">-=</span> <span class="n">speed</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyRight</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">speed</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyUp</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">-=</span> <span class="n">speed</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyDown</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">speed</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+
+        <span class="c1">// フレームレートを変更</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;15FPS&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;30FPS&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;60FPS&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;120FPS&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;240FPS&quot;</span> <span class="p">},</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">20</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">Graphics</span><span class="o">::</span><span class="n">SetTargetFrameRateHz</span><span class="p">(</span><span class="n">framerates</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>次のプログラムでは <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Delta</span><span class="p">()</span></code> に応じて移動量を調整しているため、あらゆるフレームレートでも一定の速度を維持しています。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">constexpr</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">int32</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span> <span class="n">framerates</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">240</span> <span class="p">};</span>
+    <span class="kt">size_t</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">Graphics</span><span class="o">::</span><span class="n">SetTargetFrameRateHz</span><span class="p">(</span><span class="n">framerates</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+
+    <span class="n">Vec2</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">();</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 毎秒 180 ピクセル</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">speed</span> <span class="o">=</span> <span class="mf">180.0</span><span class="p">;</span>
+        <span class="c1">// ok: フレームの経過時間に応じた移動量</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">speed</span> <span class="o">*</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">();</span>
+
+        <span class="c1">// 上下左右キーで移動</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyLeft</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">-=</span> <span class="n">delta</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyRight</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">delta</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyUp</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">-=</span> <span class="n">delta</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyDown</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">delta</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+
+        <span class="c1">// フレームレートを変更</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">RadioButtons</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;15FPS&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;30FPS&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;60FPS&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;120FPS&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;240FPS&quot;</span> <span class="p">},</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">20</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">Graphics</span><span class="o">::</span><span class="n">SetTargetFrameRateHz</span><span class="p">(</span><span class="n">framerates</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="_5">コンパイラの警告を無視する<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Siv3D の関数やクラスのいくつかは、間違った使い方をしたときにコンパイラが警告を発するように設計されています。些細な警告の無視を続けていると、こうした警告によって発見できるバグを見過ごしやすくなります。Siv3D では、ユーザのコードに由来する警告を一切出さずに、非常に大きなアプリケーションを開発できます。警告なしを目指してコードを書きましょう。</p>
+<p>次のプログラムには誤りがありますが、コンパイラが警告を発するので容易に発見できます。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Circle</span> <span class="n">circle</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// moveBy と間違えて movedBy を使っている</span>
+            <span class="n">circle</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="_6">読み込みたいファイルを適切なディレクトリに配置しない<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>プログラムを実行しているときのカレントディレクトリは、実行ファイルが存在するフォルダで、プロジェクトの中では <code class="codehilite"><span class="n">App</span></code> フォルダです。サンプルで使われている <code class="codehilite"><span class="n">example</span><span class="o">/</span><span class="n">windmill</span><span class="p">.</span><span class="n">png</span></code> もここに用意されています。自分で用意した画像ファイルをプログラムで読み込ませたいときは、<code class="codehilite"><span class="n">App</span></code> フォルダに配置すると、ファイル名だけで読み込めます。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// App フォルダにmy-picture.png を配置した場合</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">texture</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;my-picture.png&quot;</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="_7">アセットデータ編<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="texture-static"><code class="codehilite"><span class="n">Texture</span></code> をグローバル変数や static 変数として使う<a class="headerlink" href="#texture-static" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="n">Texture</span></code>, <code class="codehilite"><span class="n">Font</span></code>, <code class="codehilite"><span class="n">Audio</span></code> は、Siv3D の初期化よりもあとに作成され、Siv3D の終了処理よりも前に破棄される必要があります。<code class="codehilite"><span class="n">Main</span><span class="p">()</span></code> 関数の中や、そこで使われるクラスのメンバであれば問題ありませんが、グローバル変数や static 変数としてこれらを使うとは Siv3D の初期化よりも前に作成されたり、終了処理後に破棄が行われます。前者は実行時エラーの原因になります。アセット管理機能を使うことで、グローバル変数や static 変数の使用を避けましょう。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="c1">// NG: Siv3D の初期化よりも前に作成されるので実行時エラー</span>
+<span class="n">Texture</span> <span class="nf">global_texture</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">Draw</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 非推奨: Siv3D の終了処理よりもあとに破棄される</span>
+    <span class="k">static</span> <span class="n">Texture</span> <span class="n">static_texture</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">);</span>
+
+    <span class="n">static_texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="texturedescmipped">縮小表示する画像ファイルを <code class="codehilite"><span class="n">TextureDesc</span><span class="p">::</span><span class="n">Mipped</span></code> 指定しない<a class="headerlink" href="#texturedescmipped" title="Permanent link">&para;</a></h3>
+<p>画像ファイルから <code class="codehilite"><span class="n">Texture</span></code> を作成した場合、デフォルトでは <code class="codehilite"><span class="n">TextureDesc</span><span class="p">::</span><span class="n">Mipped</span></code> が指定されていません。<code class="codehilite"><span class="n">TextureDesc</span><span class="p">::</span><span class="n">Mipped</span></code> を指定しないと、縮小描画したときに画質が低下します。なお、絵文字やアイコンから <code class="codehilite"><span class="n">Texture</span></code> を作る際にはデフォルトで <code class="codehilite"><span class="n">TextureDesc</span><span class="p">::</span><span class="n">Mipped</span></code> が設定されているので、記述は不要です。</p>
+<h2 id="_8">コード全般編<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="c">不必要な C++ 標準ライブラリヘッダをインクルードする<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="o">&lt;</span><span class="n">Siv3D</span><span class="p">.</span><span class="n">hpp</span><span class="o">&gt;</span></code> は <code class="codehilite"><span class="o">&lt;</span><span class="n">cmath</span><span class="o">&gt;</span></code> や <code class="codehilite"><span class="o">&lt;</span><span class="nb">array</span><span class="o">&gt;</span></code>, <code class="codehilite"><span class="o">&lt;</span><span class="n">algorithm</span><span class="o">&gt;</span></code> など、よく使われる C++ 標準ライブラリをすでに内部でインクルードしています。C++ 標準の関数を使って、コンパイルエラーになった時にだけ、対応する追加のインクルードを記述すれば OK です。例として <code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="k">any</span></code> を使うには <code class="codehilite"><span class="o">&lt;</span><span class="k">any</span><span class="o">&gt;</span></code>, <code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="n">variant</span></code> を使うには <code class="codehilite"><span class="o">&lt;</span><span class="n">variant</span><span class="o">&gt;</span></code> を追加でインクルードします。</p>
+<h3 id="stdvector-stdstring"><code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="n">vector</span></code> や <code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="n">string</span></code> を使う<a class="headerlink" href="#stdvector-stdstring" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="n">vector</span></code> や <code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="n">string</span></code> を使うと、Siv3D の関数やクラスと連係するときに変換が必要だったり、データの処理が簡単な関数で実現できないため非効率です。Siv3D のプログラムでは、動的配列に <code class="codehilite"><span class="nb">Array</span></code>, 文字列には <code class="codehilite"><span class="n">String</span></code> を使いましょう。静的な配列には <code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="nb">array</span></code> を使います。</p>
+<h3 id="_9">円周率を新しく定義する<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>Siv3D では、円周率は <code class="codehilite"><span class="n">Math</span><span class="p">::</span><span class="n">Pi</span></code>, 2π は <code class="codehilite"><span class="n">Math</span><span class="p">::</span><span class="n">TwoPi</span></code> で定義されています。<code class="codehilite"><span class="mi">1</span><span class="n">_pi</span></code> や <code class="codehilite"><span class="mi">2</span><span class="n">_pi</span></code>, <code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="n">_pi</span></code> のように <code class="codehilite"><span class="n">_pi</span></code> リテラルを使うのもよいでしょう。</p>
+<h2 id="_10">パフォーマンス編<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="siv3d">Siv3D の関数を頻繁に呼び出す<a class="headerlink" href="#siv3d" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Delta</span><span class="p">()</span></code> や <code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">Pos</span><span class="p">()</span></code> は同一フレーム内ではつねに同じ値を返します。軽量な関数なので、パフォーマンスに与える影響は大きくはありませんが、頻繁に呼び出すのは無駄です。こうした関数を複数回呼んでいる場合、メインループの先頭で値を変数に代入し、それを再利用するようにしましょう。関数の呼び出しを減らし、最大限の実行時性能を実現できます。</p>
+<p>次のプログラムでは、<code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Time</span><span class="p">()</span></code> の呼び出しが不必要に行われています。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">int32</span> <span class="nl">y</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">int32</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="c1">// Scene::Time() が毎フレーム 100 回実行される</span>
+                <span class="n">Triangle</span><span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">30</span><span class="n">_deg</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>次のように、変数に代入しておくと呼び出しの回数を減らせます。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// Scene::Time() の呼び出しは毎フレーム 1 回</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">();</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">int32</span> <span class="nl">y</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">int32</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">Triangle</span><span class="p">(</span><span class="mi">50</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">30</span><span class="n">_deg</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="_11">その他編<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="unicode">プログラムで読み込むテキストファイルを Unicode 以外の形式で保存する<a class="headerlink" href="#unicode" title="Permanent link">&para;</a></h3>
+<p>Unicode 形式以外の文字コードで保存すると、ユーザの環境によっては正しく内容が読み込めない場合があります。また Unicode への変換で実行時コストもかかります。UTF-8 など、Unicode 形式の文字コードで保存するようにしましょう。なお、Siv3D では BOM 無しの UTF-8 よりも BOM 付きの UTF-8 形式のほうが、読み込みの速度が早くなります。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../sample/game-template/" title="ゲーム開発のテンプレート" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                ゲーム開発のテンプレート
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../community/community/" title="コミュニティ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                コミュニティ
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) 2018 - present, Ryo Suzuki<br>Copyright (c) 2018 - present, OpenSiv3D Project
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/Siv3D/OpenSiv3D" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/Siv3D" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.39abc4af.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
