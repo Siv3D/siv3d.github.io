@@ -642,6 +642,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/twitter/" title="Twitter" class="md-nav__link">
+      Twitter
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -727,6 +739,13 @@
         <li class="md-nav__item">
   <a href="#_1" title="紙から切り抜いたような描画" class="md-nav__link">
     紙から切り抜いたような描画
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="付箋" class="md-nav__link">
+    付箋
   </a>
   
 </li>
@@ -1246,6 +1265,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ja-jp/reference/twitter/" title="Twitter" class="md-nav__link">
+      Twitter
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1415,6 +1446,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" title="付箋" class="md-nav__link">
+    付箋
+  </a>
+  
+</li>
+      
       
       
       
@@ -1472,6 +1510,41 @@
         <span class="n">largeConvex</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
 
         <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="_2">付箋<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../images/visual-sticky-note.png" />
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">DrawStickyNote</span><span class="p">(</span><span class="k">const</span> <span class="n">RectF</span><span class="o">&amp;</span> <span class="n">rect</span><span class="p">,</span> <span class="k">const</span> <span class="n">ColorF</span><span class="o">&amp;</span> <span class="n">noteColor</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 少しだけ回転させて影を描く</span>
+    <span class="p">{</span>
+        <span class="n">Transformer2D</span> <span class="n">t</span><span class="p">(</span><span class="n">Mat3x2</span><span class="o">::</span><span class="n">Rotate</span><span class="p">(</span><span class="mi">2</span><span class="n">_deg</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">pos</span><span class="p">));</span>
+
+        <span class="n">rect</span><span class="p">.</span><span class="n">stretched</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">).</span><span class="n">drawShadow</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">noteColor</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">));</span>
+
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">RectF</span> <span class="n">rect</span><span class="p">(</span><span class="mi">60</span> <span class="o">+</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">280</span><span class="p">,</span> <span class="mi">20</span> <span class="o">+</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">70</span><span class="p">);</span>
+
+            <span class="n">DrawStickyNote</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span> <span class="n">HSV</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">36</span><span class="p">,</span> <span class="mf">0.46</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+            <span class="n">font</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Text&quot;</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">pos</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">));</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div></p>

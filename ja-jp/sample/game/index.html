@@ -640,6 +640,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/twitter/" title="Twitter" class="md-nav__link">
+      Twitter
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1206,6 +1218,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/twitter/" title="Twitter" class="md-nav__link">
+      Twitter
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1288,6 +1312,13 @@
         <li class="md-nav__item">
   <a href="#_5" title="シューティングゲーム" class="md-nav__link">
     シューティングゲーム
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" title="15 パズル" class="md-nav__link">
+    15 パズル
   </a>
   
 </li>
@@ -1453,6 +1484,13 @@
         <li class="md-nav__item">
   <a href="#_5" title="シューティングゲーム" class="md-nav__link">
     シューティングゲーム
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" title="15 パズル" class="md-nav__link">
+    15 パズル
   </a>
   
 </li>
@@ -2091,6 +2129,100 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div></p>
+<h2 id="15">15 パズル<a class="headerlink" href="#15" title="Permanent link">&para;</a></h2>
+<p><video src="../images/game-15puzzle.mp4" autoplay loop muted></video>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">bool</span> <span class="nf">Swappable</span><span class="p">(</span><span class="n">int32</span> <span class="n">a</span><span class="p">,</span> <span class="n">int32</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">==</span> <span class="n">b</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="n">Abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="n">b</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="n">Abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+    <span class="k">constexpr</span> <span class="n">int32</span> <span class="n">cellSize</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">Point</span> <span class="n">offset</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+
+    <span class="c1">// ダイアログから画像を選択</span>
+    <span class="k">const</span> <span class="n">Image</span> <span class="n">image</span> <span class="o">=</span> <span class="n">Dialog</span><span class="o">::</span><span class="n">OpenImage</span><span class="p">();</span>
+
+    <span class="c1">// 正方形に切り抜く</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">texture</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="n">squareClipped</span><span class="p">(),</span> <span class="n">TextureDesc</span><span class="o">::</span><span class="n">Mipped</span><span class="p">);</span>
+
+    <span class="n">Optional</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span> <span class="n">grabbed</span><span class="p">;</span>
+
+    <span class="c1">// ランダムな操作でパズルをシャッフル</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span> <span class="n">pieces</span> <span class="o">=</span> <span class="n">Range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
+    <span class="p">{</span>
+        <span class="n">int32</span> <span class="n">pos15</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">int32</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">int32</span> <span class="n">to</span> <span class="o">=</span> <span class="n">pos15</span> <span class="o">+</span> <span class="n">Sample</span><span class="p">({</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span> <span class="p">});</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">InRange</span><span class="p">(</span><span class="n">to</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">Swappable</span><span class="p">(</span><span class="n">pos15</span><span class="p">,</span> <span class="n">to</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">pieces</span><span class="p">[</span><span class="n">pos15</span><span class="p">],</span> <span class="n">pieces</span><span class="p">[</span><span class="n">to</span><span class="p">]);</span>
+                <span class="n">pos15</span> <span class="o">=</span> <span class="n">to</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Rect</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">cellSize</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">drawShadow</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">))</span>
+            <span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">));</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">grabbed</span> <span class="o">=</span> <span class="n">none</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">int32</span> <span class="n">pieceID</span> <span class="o">=</span> <span class="n">pieces</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="k">const</span> <span class="n">Rect</span> <span class="n">rect</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">cellSize</span><span class="p">,</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">cellSize</span><span class="p">,</span> <span class="n">cellSize</span><span class="p">).</span><span class="n">movedBy</span><span class="p">(</span><span class="n">offset</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">pieceID</span> <span class="o">==</span> <span class="mi">15</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">grabbed</span> <span class="o">&amp;&amp;</span> <span class="n">rect</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">Swappable</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">grabbed</span><span class="p">.</span><span class="n">value</span><span class="p">()))</span>
+                <span class="p">{</span>
+                    <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">pieces</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pieces</span><span class="p">[</span><span class="n">grabbed</span><span class="p">.</span><span class="n">value</span><span class="p">()]);</span>
+                    <span class="n">grabbed</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">leftClicked</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">grabbed</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="n">rect</span><span class="p">(</span><span class="n">texture</span><span class="p">.</span><span class="n">uv</span><span class="p">(</span><span class="n">pieceID</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">pieceID</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">))</span>
+                <span class="p">.</span><span class="n">draw</span><span class="p">()</span>
+                <span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">));</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">grabbed</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">));</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">Cursor</span><span class="o">::</span><span class="n">RequestStyle</span><span class="p">(</span><span class="n">CursorStyle</span><span class="o">::</span><span class="n">Hand</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">texture</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">offset</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">cellSize</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">40</span><span class="p">,</span> <span class="n">offset</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
                 
                   
                 
@@ -2111,7 +2243,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../reference/network/" title="ネットワーク" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../reference/twitter/" title="Twitter" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2120,7 +2252,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                ネットワーク
+                Twitter
               </span>
             </div>
           </a>

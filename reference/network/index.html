@@ -646,10 +646,71 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Network
+      </label>
+    
     <a href="./" title="Network" class="md-nav__link md-nav__link--active">
       Network
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-1-tcp" title="1 対 1 の TCP 通信" class="md-nav__link">
+    1 対 1 の TCP 通信
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="サーバ側" class="md-nav__link">
+    サーバ側
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="クライアント側" class="md-nav__link">
+    クライアント側
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../twitter/" title="Twitter" class="md-nav__link">
+      Twitter
+    </a>
   </li>
 
         
@@ -1217,6 +1278,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ja-jp/reference/twitter/" title="Twitter" class="md-nav__link">
+      Twitter
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1376,6 +1449,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-1-tcp" title="1 対 1 の TCP 通信" class="md-nav__link">
+    1 対 1 の TCP 通信
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="サーバ側" class="md-nav__link">
+    サーバ側
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="クライアント側" class="md-nav__link">
+    クライアント側
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1388,8 +1497,112 @@
                 
                 
                 <h1 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h1>
-<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
+<h2 id="1-1-tcp">1 対 1 の TCP 通信<a class="headerlink" href="#1-1-tcp" title="Permanent link">&para;</a></h2>
+<h3 id="_1">サーバ側<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">constexpr</span> <span class="n">uint16</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">50000</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">connected</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="n">TCPServer</span> <span class="n">server</span><span class="p">;</span>
+    <span class="n">server</span><span class="p">.</span><span class="n">startAccept</span><span class="p">(</span><span class="n">port</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TCPServer: Waiting for connection...&quot;</span><span class="p">);</span>
+
+    <span class="n">Point</span> <span class="n">clientPlayerPos</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="n">Point</span> <span class="n">serverPlayerPos</span> <span class="o">=</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">server</span><span class="p">.</span><span class="n">hasSession</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">connected</span><span class="p">)</span> <span class="c1">// クライアントが接続</span>
+            <span class="p">{</span>
+                <span class="n">connected</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+                <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TCPServer: Connection established!&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 送信</span>
+            <span class="n">server</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">serverPlayerPos</span><span class="p">);</span>
+
+            <span class="c1">// 受信</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">server</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">clientPlayerPos</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="c1">// クライアントが切断</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">connected</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">server</span><span class="p">.</span><span class="n">hasSession</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// 切断</span>
+            <span class="n">server</span><span class="p">.</span><span class="n">disconnect</span><span class="p">();</span>
+
+            <span class="n">connected</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+            <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TCPServer: Waiting for connection...&quot;</span><span class="p">);</span>
+
+            <span class="n">server</span><span class="p">.</span><span class="n">startAccept</span><span class="p">(</span><span class="n">port</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">serverPlayerPos</span><span class="p">,</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">clientPlayerPos</span><span class="p">,</span> <span class="mi">10</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="_2">クライアント側<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="n">IPv4</span> <span class="n">ip</span> <span class="o">=</span> <span class="n">IPv4</span><span class="o">::</span><span class="n">Localhost</span><span class="p">();</span>
+    <span class="k">constexpr</span> <span class="n">uint16</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">50000</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">connected</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="n">TCPClient</span> <span class="n">client</span><span class="p">;</span>
+    <span class="n">client</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">port</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TCPServer: Waiting for connection...&quot;</span><span class="p">);</span>
+
+    <span class="n">Point</span> <span class="n">serverPlayerPos</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="n">Point</span> <span class="n">clientPlayerPos</span> <span class="o">=</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="n">isConnected</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">connected</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">connected</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+                <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TCPClient: Connection established!&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 送信</span>
+            <span class="n">client</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">clientPlayerPos</span><span class="p">);</span>
+
+            <span class="c1">// 受信</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">serverPlayerPos</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="n">hasError</span><span class="p">())</span> <span class="c1">// 切断/接続エラー</span>
+        <span class="p">{</span>
+            <span class="n">client</span><span class="p">.</span><span class="n">disconnect</span><span class="p">();</span>
+
+            <span class="n">connected</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+            <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TCPClient: Waiting for connection...&quot;</span><span class="p">);</span>
+
+            <span class="n">client</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">port</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">clientPlayerPos</span><span class="p">,</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">serverPlayerPos</span><span class="p">,</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
                 
                   
@@ -1426,13 +1639,13 @@
           </a>
         
         
-          <a href="../../sample/game/" title="Game" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../twitter/" title="Twitter" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Game
+                Twitter
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

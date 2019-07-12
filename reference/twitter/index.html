@@ -13,7 +13,7 @@
         <meta name="description" content="Siv3D: An open source C++17 library for creative coding">
       
       
-        <link rel="canonical" href="https://siv3d.github.io/reference/nlp/">
+        <link rel="canonical" href="https://siv3d.github.io/reference/twitter/">
       
       
         <meta name="author" content="Ryo Suzuki">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Natural language processing - Siv3D</title>
+        <title>Twitter - Siv3D</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#natural-language-processing" tabindex="1" class="md-skip">
+      <a href="#twitter" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -118,7 +118,7 @@
               Siv3D
             </span>
             <span class="md-header-nav__topic">
-              Natural language processing
+              Twitter
             </span>
           
         </div>
@@ -576,49 +576,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Natural language processing
-      </label>
-    
-    <a href="./" title="Natural language processing" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../nlp/" title="Natural language processing" class="md-nav__link">
       Natural language processing
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="日本語の形態素解析" class="md-nav__link">
-    日本語の形態素解析
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -686,11 +648,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../twitter/" title="Twitter" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Twitter
+      </label>
+    
+    <a href="./" title="Twitter" class="md-nav__link md-nav__link--active">
       Twitter
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="ツイートの投稿画面を表示" class="md-nav__link">
+    ツイートの投稿画面を表示
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1433,8 +1433,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="日本語の形態素解析" class="md-nav__link">
-    日本語の形態素解析
+  <a href="#_1" title="ツイートの投稿画面を表示" class="md-nav__link">
+    ツイートの投稿画面を表示
   </a>
   
 </li>
@@ -1456,66 +1456,24 @@
               
                 
                 
-                <h1 id="natural-language-processing">Natural language processing<a class="headerlink" href="#natural-language-processing" title="Permanent link">&para;</a></h1>
-<h2 id="_1">日本語の形態素解析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>プログラムを実行する前に、モデルデータが含まれる <code class="codehilite"><span class="n">jumanpp</span><span class="o">-</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="o">-</span><span class="n">rc2</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">xz</span></code> を <a href="https://github.com/ku-nlp/jumanpp/releases">https://github.com/ku-nlp/jumanpp/releases</a> からダウンロード・解凍し、<code class="codehilite"><span class="n">model</span></code> フォルダにある <code class="codehilite"><span class="n">jumandic</span><span class="p">.</span><span class="n">jppmdl</span></code> (約 450MB) を、プロジェクトの <code class="codehilite"><span class="n">nlp</span><span class="o">/</span><span class="n">japanese</span><span class="o">/</span><span class="n">jumanpp</span></code> フォルダ（<code class="codehilite"><span class="n">README</span><span class="p">.</span><span class="n">md</span></code> と <code class="codehilite"><span class="n">LICENSE</span></code> が入っているフォルダ）にコピーしておく必要があります。</p>
-<p><img alt="" src="../images/nlp-japanese.gif" />
+                <h1 id="twitter">Twitter<a class="headerlink" href="#twitter" title="Permanent link">&para;</a></h1>
+<h2 id="_1">ツイートの投稿画面を表示<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// テキスト表示用のフォント</span>
-    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Medium</span><span class="p">);</span>
-
-    <span class="c1">// 解析対象のテキスト</span>
-    <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="sa">U</span><span class="s">&quot;今日は良い天気ですね。&quot;</span><span class="p">;</span>
-
-    <span class="c1">// 入力テキストが更新されているか確認するためのデータ</span>
-    <span class="n">String</span> <span class="n">previous</span><span class="p">;</span>
-
-    <span class="c1">// 形態素解析の結果をまとめたテキスト</span>
-    <span class="n">String</span> <span class="n">result</span><span class="p">;</span>
+    <span class="k">const</span> <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="sa">U</span><span class="s">&quot;Hello, Siv3D! #Siv3D&quot;</span><span class="p">;</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="c1">// キーボードからテキストを入力</span>
-        <span class="n">TextInput</span><span class="o">::</span><span class="n">UpdateText</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
-
-        <span class="c1">// 未変換の入力も取得</span>
-        <span class="k">const</span> <span class="n">String</span> <span class="n">current</span> <span class="o">=</span> <span class="n">text</span> <span class="o">+</span> <span class="n">TextInput</span><span class="o">::</span><span class="n">GetEditingText</span><span class="p">();</span>
-
-        <span class="c1">// 入力が更新されたら形態素解析を再実行</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">current</span> <span class="o">!=</span> <span class="n">previous</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Tweet&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)))</span>
         <span class="p">{</span>
-            <span class="c1">// 形態素解析</span>
-            <span class="k">const</span> <span class="k">auto</span> <span class="n">morphemes</span> <span class="o">=</span> <span class="n">NLP</span><span class="o">::</span><span class="n">Japanese</span><span class="o">::</span><span class="n">AnalyzeMorphology</span><span class="p">(</span><span class="n">current</span><span class="p">);</span>
-
-            <span class="n">result</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-
-            <span class="c1">// 形態素の情報を取得</span>
-            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">morpheme</span> <span class="p">:</span> <span class="n">morphemes</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="c1">// 空の形態素はスキップ</span>
-                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">morpheme</span><span class="p">)</span>
-                <span class="p">{</span>
-                    <span class="k">continue</span><span class="p">;</span>
-                <span class="p">}</span>
-
-                <span class="c1">// 表層形、見出し語、品詞分類</span>
-                <span class="n">result</span> <span class="o">+=</span> <span class="sa">U</span><span class="s">&quot;{}({}/{}) &quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">morpheme</span><span class="p">.</span><span class="n">surface</span><span class="p">,</span> <span class="n">morpheme</span><span class="p">.</span><span class="n">surfaceBase</span><span class="p">,</span> <span class="n">morpheme</span><span class="p">.</span><span class="n">wordSubClassID</span> <span class="o">?</span> <span class="n">morpheme</span><span class="p">.</span><span class="nl">wordSubClass</span> <span class="p">:</span> <span class="n">morpheme</span><span class="p">.</span><span class="n">wordClass</span><span class="p">);</span>
-            <span class="p">}</span>
+            <span class="c1">// text をつぶやくツイート投稿画面を開く</span>
+            <span class="n">Twitter</span><span class="o">::</span><span class="n">OpenTweetWindow</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
         <span class="p">}</span>
-
-        <span class="n">previous</span> <span class="o">=</span> <span class="n">current</span><span class="p">;</span>
-
-        <span class="c1">// テキストを表示</span>
-        <span class="n">font</span><span class="p">(</span><span class="n">current</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Rect</span><span class="p">().</span><span class="n">stretched</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">));</span>
-
-        <span class="c1">// 形態素解析の結果を表示</span>
-        <span class="n">font</span><span class="p">(</span><span class="n">result</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Rect</span><span class="p">().</span><span class="n">stretched</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">).</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Yellow</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></div></p>
+</pre></div>
                 
                   
                 
@@ -1536,7 +1494,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../navmesh/" title="NavMesh" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../network/" title="Network" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1545,19 +1503,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                NavMesh
+                Network
               </span>
             </div>
           </a>
         
         
-          <a href="../math-parser/" title="Math parser" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../sample/game/" title="Game" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Math parser
+                Game
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

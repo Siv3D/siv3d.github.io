@@ -640,6 +640,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/twitter/" title="Twitter" class="md-nav__link">
+      Twitter
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1206,6 +1218,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/twitter/" title="Twitter" class="md-nav__link">
+      Twitter
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1454,8 +1478,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#siv3d" title="Siv3D の関数を頻繁に呼び出す" class="md-nav__link">
-    Siv3D の関数を頻繁に呼び出す
+  <a href="#siv3d" title="Siv3D の関数を不必要に頻繁に呼び出す" class="md-nav__link">
+    Siv3D の関数を不必要に頻繁に呼び出す
   </a>
   
 </li>
@@ -1668,8 +1692,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#siv3d" title="Siv3D の関数を頻繁に呼び出す" class="md-nav__link">
-    Siv3D の関数を頻繁に呼び出す
+  <a href="#siv3d" title="Siv3D の関数を不必要に頻繁に呼び出す" class="md-nav__link">
+    Siv3D の関数を不必要に頻繁に呼び出す
   </a>
   
 </li>
@@ -1741,16 +1765,16 @@
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// NG: わざわざポインタで管理するのは無駄</span>
+    <span class="c1">// 非推奨: わざわざポインタで管理する必要はない</span>
     <span class="n">Texture</span><span class="o">*</span> <span class="n">pTexture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Texture</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">);</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="c1">// NG: わざわざポインタで管理するのは無駄</span>
+        <span class="c1">// 非推奨: わざわざポインタで管理する必要はない</span>
         <span class="n">pTexture</span><span class="o">-&gt;</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="c1">// NG: わざわざポインタで管理するのは無駄</span>
+    <span class="c1">// 非推奨: わざわざポインタで管理する必要はない</span>
     <span class="k">delete</span> <span class="n">pTexture</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -1974,7 +1998,7 @@
 <h3 id="_9">円周率を新しく定義する<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>Siv3D では、円周率は <code class="codehilite"><span class="n">Math</span><span class="p">::</span><span class="n">Pi</span></code>, 2π は <code class="codehilite"><span class="n">Math</span><span class="p">::</span><span class="n">TwoPi</span></code> で定義されています。<code class="codehilite"><span class="mi">1</span><span class="n">_pi</span></code> や <code class="codehilite"><span class="mi">2</span><span class="n">_pi</span></code>, <code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="n">_pi</span></code> のように <code class="codehilite"><span class="n">_pi</span></code> リテラルを使うのもよいでしょう。</p>
 <h2 id="_10">パフォーマンス編<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<h3 id="siv3d">Siv3D の関数を頻繁に呼び出す<a class="headerlink" href="#siv3d" title="Permanent link">&para;</a></h3>
+<h3 id="siv3d">Siv3D の関数を不必要に頻繁に呼び出す<a class="headerlink" href="#siv3d" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Delta</span><span class="p">()</span></code> や <code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">Pos</span><span class="p">()</span></code> は同一フレーム内ではつねに同じ値を返します。軽量な関数なので、パフォーマンスに与える影響は大きくはありませんが、頻繁に呼び出すのは無駄です。こうした関数を複数回呼んでいる場合、メインループの先頭で値を変数に代入し、それを再利用するようにしましょう。関数の呼び出しを減らし、最大限の実行時性能を実現できます。</p>
 <p>次のプログラムでは、<code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Time</span><span class="p">()</span></code> の呼び出しが不必要に行われています。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>

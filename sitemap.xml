@@ -151,6 +151,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://siv3d.github.io/reference/twitter/</loc>
+     <lastmod>2019-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://siv3d.github.io/sample/game/</loc>
      <lastmod>2019-07-12</lastmod>
      <changefreq>daily</changefreq>
@@ -332,6 +337,11 @@
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/reference/network/</loc>
+     <lastmod>2019-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/reference/twitter/</loc>
      <lastmod>2019-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
