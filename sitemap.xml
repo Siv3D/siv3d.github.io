@@ -81,6 +81,21 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://siv3d.github.io/tutorial/effect/</loc>
+     <lastmod>2019-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/tutorial/asset/</loc>
+     <lastmod>2019-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/tutorial/release/</loc>
+     <lastmod>2019-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://siv3d.github.io/reference/fullscreen/</loc>
      <lastmod>2019-07-12</lastmod>
      <changefreq>daily</changefreq>
@@ -127,6 +142,11 @@
     </url>
     <url>
      <loc>https://siv3d.github.io/reference/gamepad/</loc>
+     <lastmod>2019-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/reference/network/</loc>
      <lastmod>2019-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -246,6 +266,21 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://siv3d.github.io/ja-jp/tutorial/effect/</loc>
+     <lastmod>2019-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/tutorial/asset/</loc>
+     <lastmod>2019-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/tutorial/release/</loc>
+     <lastmod>2019-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://siv3d.github.io/ja-jp/reference/fullscreen/</loc>
      <lastmod>2019-07-12</lastmod>
      <changefreq>daily</changefreq>
@@ -292,6 +327,11 @@
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/reference/gamepad/</loc>
+     <lastmod>2019-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/reference/network/</loc>
      <lastmod>2019-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
