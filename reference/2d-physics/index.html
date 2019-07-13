@@ -1551,6 +1551,9 @@
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
+        <span class="n">ClearPrint</span><span class="p">();</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Balls: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">bodies</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+
         <span class="c1">// 2D カメラを更新</span>
         <span class="n">camera</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
         <span class="p">{</span>
