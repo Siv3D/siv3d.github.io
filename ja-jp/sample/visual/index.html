@@ -1381,6 +1381,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" title="テキストの登場" class="md-nav__link">
+    テキストの登場
+  </a>
+  
+</li>
+      
       
       
       
@@ -1515,6 +1522,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" title="テキストの登場" class="md-nav__link">
+    テキストの登場
+  </a>
+  
+</li>
+      
       
       
       
@@ -1640,6 +1654,87 @@
                 <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">imageSize</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
                     <span class="n">Arg</span><span class="o">::</span><span class="n">top</span> <span class="o">=</span> <span class="n">AlphaF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">),</span> <span class="n">Arg</span><span class="o">::</span><span class="n">bottom</span> <span class="o">=</span> <span class="n">AlphaF</span><span class="p">(</span><span class="mf">0.0</span><span class="p">));</span>
         <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="_5">テキストの登場<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><video src="../images/visual-text-floatin.mp4" autoplay loop muted></video>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="c1">// Glyph とエフェクトの関数を組み合わせてテキストを描画</span>
+<span class="kt">void</span> <span class="nf">DrawText</span><span class="p">(</span><span class="k">const</span> <span class="n">DrawableText</span><span class="o">&amp;</span> <span class="n">fontText</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">pos</span><span class="p">,</span> <span class="k">const</span> <span class="n">ColorF</span><span class="o">&amp;</span> <span class="n">color</span><span class="p">,</span> <span class="kt">double</span> <span class="n">t</span><span class="p">,</span>
+    <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">penPos</span><span class="p">,</span> <span class="k">const</span> <span class="n">Glyph</span><span class="o">&amp;</span> <span class="n">glyph</span><span class="p">,</span> <span class="k">const</span> <span class="n">ColorF</span><span class="o">&amp;</span> <span class="n">color</span><span class="p">,</span> <span class="kt">double</span> <span class="n">t</span><span class="p">),</span> <span class="kt">double</span> <span class="n">characterdPerSec</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Vec2</span> <span class="n">penPos</span> <span class="o">=</span> <span class="n">pos</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">glyph</span> <span class="p">:</span> <span class="n">fontText</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">glyph</span><span class="p">.</span><span class="n">codePoint</span> <span class="o">==</span> <span class="n">U</span><span class="sc">&#39;\n&#39;</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">penPos</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">pos</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+            <span class="n">penPos</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">fontText</span><span class="p">.</span><span class="n">font</span><span class="p">.</span><span class="n">height</span><span class="p">();</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">targetTime</span> <span class="o">=</span> <span class="n">glyph</span><span class="p">.</span><span class="n">index</span> <span class="o">*</span> <span class="n">characterdPerSec</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">targetTime</span> <span class="o">&gt;</span> <span class="n">t</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">f</span><span class="p">(</span><span class="n">penPos</span><span class="p">,</span> <span class="n">glyph</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">targetTime</span><span class="p">);</span>
+
+        <span class="n">penPos</span><span class="p">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">glyph</span><span class="p">.</span><span class="n">xAdvance</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 文字が上からゆっくり降ってくる表現</span>
+<span class="kt">void</span> <span class="nf">TextEffect1</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">penPos</span><span class="p">,</span> <span class="k">const</span> <span class="n">Glyph</span><span class="o">&amp;</span> <span class="n">glyph</span><span class="p">,</span> <span class="k">const</span> <span class="n">ColorF</span><span class="o">&amp;</span> <span class="n">color</span><span class="p">,</span> <span class="kt">double</span> <span class="n">t</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="n">EaseInQuad</span><span class="p">(</span><span class="n">Saturate</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span> <span class="o">/</span> <span class="mf">0.3</span><span class="p">))</span> <span class="o">*</span> <span class="o">-</span><span class="mf">20.0</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Min</span><span class="p">(</span><span class="n">t</span> <span class="o">/</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
+    <span class="n">glyph</span><span class="p">.</span><span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">penPos</span> <span class="o">+</span> <span class="n">glyph</span><span class="p">.</span><span class="n">offset</span> <span class="o">+</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">ColorF</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">a</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="c1">// 文字が勢いよく現れる表現</span>
+<span class="kt">void</span> <span class="nf">TextEffect2</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">penPos</span><span class="p">,</span> <span class="k">const</span> <span class="n">Glyph</span><span class="o">&amp;</span> <span class="n">glyph</span><span class="p">,</span> <span class="k">const</span> <span class="n">ColorF</span><span class="o">&amp;</span> <span class="n">color</span><span class="p">,</span> <span class="kt">double</span> <span class="n">t</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="kt">double</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Min</span><span class="p">(</span><span class="n">t</span> <span class="o">/</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
+    <span class="k">const</span> <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Min</span><span class="p">(</span><span class="n">t</span> <span class="o">/</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
+    <span class="n">glyph</span><span class="p">.</span><span class="n">texture</span><span class="p">.</span><span class="n">scaled</span><span class="p">(</span><span class="mf">3.0</span> <span class="o">-</span> <span class="n">s</span> <span class="o">*</span> <span class="mi">2</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">penPos</span> <span class="o">+</span> <span class="n">glyph</span><span class="p">.</span><span class="n">offset</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">a</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="c1">// 落ちてきた文字がしばらく揺れる表現</span>
+<span class="kt">void</span> <span class="nf">TextEffect3</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">penPos</span><span class="p">,</span> <span class="k">const</span> <span class="n">Glyph</span><span class="o">&amp;</span> <span class="n">glyph</span><span class="p">,</span> <span class="k">const</span> <span class="n">ColorF</span><span class="o">&amp;</span> <span class="n">color</span><span class="p">,</span> <span class="kt">double</span> <span class="n">t</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="kt">double</span> <span class="n">angle</span> <span class="o">=</span> <span class="n">Sin</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="mi">1440</span><span class="n">_deg</span><span class="p">)</span> <span class="o">*</span> <span class="mi">25</span><span class="n">_deg</span> <span class="o">*</span> <span class="n">Saturate</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">t</span> <span class="o">/</span> <span class="mf">0.6</span><span class="p">);</span>
+    <span class="k">const</span> <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Saturate</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span> <span class="o">/</span> <span class="mf">0.05</span><span class="p">)</span> <span class="o">*</span> <span class="o">-</span><span class="mf">20.0</span><span class="p">;</span>
+    <span class="n">glyph</span><span class="p">.</span><span class="n">texture</span><span class="p">.</span><span class="n">rotated</span><span class="p">(</span><span class="n">angle</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">penPos</span> <span class="o">+</span> <span class="n">glyph</span><span class="p">.</span><span class="n">offset</span> <span class="o">+</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">color</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">const</span> <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="sa">U</span><span class="s">&quot;Lorem ipsum dolor sit amet, consectetur</span><span class="se">\n</span><span class="s">&quot;</span>
+                        <span class="sa">U</span><span class="s">&quot;adipiscing elit, sed do eiusmod tempor</span><span class="se">\n</span><span class="s">&quot;</span>
+                        <span class="sa">U</span><span class="s">&quot;incididunt ut labore et dolore magna aliqua.&quot;</span><span class="p">;</span>
+
+    <span class="n">Stopwatch</span> <span class="n">stopwatch</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Reset&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">620</span><span class="p">,</span> <span class="mi">520</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">stopwatch</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">DrawText</span><span class="p">(</span><span class="n">font</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">,</span> <span class="n">stopwatch</span><span class="p">.</span><span class="n">sF</span><span class="p">(),</span> <span class="n">TextEffect1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+
+        <span class="n">DrawText</span><span class="p">(</span><span class="n">font</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">,</span> <span class="n">stopwatch</span><span class="p">.</span><span class="n">sF</span><span class="p">(),</span> <span class="n">TextEffect2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+
+        <span class="n">DrawText</span><span class="p">(</span><span class="n">font</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">360</span><span class="p">),</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">,</span> <span class="n">stopwatch</span><span class="p">.</span><span class="n">sF</span><span class="p">(),</span> <span class="n">TextEffect3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div></p>
