@@ -1563,11 +1563,11 @@
                 <span class="n">bodies</span> <span class="o">&lt;&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">createCircle</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">PosF</span><span class="p">(),</span> <span class="mf">0.5</span><span class="p">);</span>
             <span class="p">}</span>
 
-            <span class="c1">// 物理演算のワールドを更新</span>
-            <span class="n">world</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">useConstantDeltaTime</span> <span class="o">?</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span> <span class="o">:</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">(),</span> <span class="n">velocityIterations</span><span class="p">,</span> <span class="n">positionIterations</span><span class="p">);</span>
-
             <span class="c1">// (y &gt; 10) まで落下した P2Body は削除</span>
             <span class="n">bodies</span><span class="p">.</span><span class="n">remove_if</span><span class="p">([](</span><span class="k">const</span> <span class="n">P2Body</span><span class="o">&amp;</span> <span class="n">body</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">body</span><span class="p">.</span><span class="n">getPos</span><span class="p">().</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">;</span> <span class="p">});</span>
+
+            <span class="c1">// 物理演算のワールドを更新</span>
+            <span class="n">world</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">useConstantDeltaTime</span> <span class="o">?</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span> <span class="o">:</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">(),</span> <span class="n">velocityIterations</span><span class="p">,</span> <span class="n">positionIterations</span><span class="p">);</span>
 
             <span class="c1">// 床を描画</span>
             <span class="n">line</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
@@ -1650,10 +1650,10 @@
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">world</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">useConstantDeltaTime</span> <span class="o">?</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span> <span class="o">:</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">(),</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-
         <span class="c1">// 落下した P2Body は削除</span>
         <span class="n">bodies</span><span class="p">.</span><span class="n">remove_if</span><span class="p">([](</span><span class="k">const</span> <span class="n">P2Body</span><span class="o">&amp;</span> <span class="n">body</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">body</span><span class="p">.</span><span class="n">getPos</span><span class="p">().</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">;</span> <span class="p">});</span>
+
+        <span class="n">world</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">useConstantDeltaTime</span> <span class="o">?</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span> <span class="o">:</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">(),</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 
         <span class="n">camera</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
         <span class="p">{</span>
