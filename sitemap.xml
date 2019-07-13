@@ -161,6 +161,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://siv3d.github.io/reference/2d-physics/</loc>
+     <lastmod>2019-07-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://siv3d.github.io/sample/game/</loc>
      <lastmod>2019-07-13</lastmod>
      <changefreq>daily</changefreq>
@@ -352,6 +357,11 @@
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/reference/2d-particle/</loc>
+     <lastmod>2019-07-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/reference/2d-physics/</loc>
      <lastmod>2019-07-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
