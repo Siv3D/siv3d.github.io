@@ -701,6 +701,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1" title="ワールドテンプレート 1" class="md-nav__link">
+    ワールドテンプレート 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" title="鉄球による破壊" class="md-nav__link">
     鉄球による破壊
   </a>
@@ -1481,6 +1488,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1" title="ワールドテンプレート 1" class="md-nav__link">
+    ワールドテンプレート 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" title="鉄球による破壊" class="md-nav__link">
     鉄球による破壊
   </a>
@@ -1505,6 +1519,72 @@
                 
                 
                 <h1 id="2d-physics">2D physics<a class="headerlink" href="#2d-physics" title="Permanent link">&para;</a></h1>
+<h2 id="1">ワールドテンプレート 1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>クリックしたところにボールが発生するシンプルな物理演算ワールドです。</p>
+<video src="../images/2d-physics-template1.mp4" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 物理演算のワールド更新に 60FPS の定数時間を使う場合は true, 実時間を使う場合 false</span>
+    <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">useConstantDeltaTime</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">useConstantDeltaTime</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// フレームレート上限を 60 FPS に </span>
+        <span class="n">Graphics</span><span class="o">::</span><span class="n">SetTargetFrameRateHz</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 2D カメラ</span>
+    <span class="n">Camera2D</span> <span class="n">camera</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">),</span> <span class="mf">20.0</span><span class="p">);</span>
+
+    <span class="c1">// 物理演算の精度</span>
+    <span class="k">constexpr</span> <span class="n">int32</span> <span class="n">velocityIterations</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="n">int32</span> <span class="n">positionIterations</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+    <span class="c1">// 物理演算用のワールド</span>
+    <span class="n">P2World</span> <span class="n">world</span><span class="p">(</span><span class="mf">9.8</span><span class="p">);</span>
+    <span class="c1">// 床</span>
+    <span class="k">const</span> <span class="n">P2Body</span> <span class="n">line</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">createStaticLine</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Line</span><span class="p">(</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+    <span class="c1">// 物体</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">P2Body</span><span class="o">&gt;</span> <span class="n">bodies</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 2D カメラを更新</span>
+        <span class="n">camera</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+        <span class="p">{</span>
+            <span class="c1">// 2D カメラの設定から Transformer2D を作成・適用</span>
+            <span class="k">const</span> <span class="k">auto</span> <span class="n">t</span> <span class="o">=</span> <span class="n">camera</span><span class="p">.</span><span class="n">createTransformer</span><span class="p">();</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="c1">// クリックした場所にボールを作成</span>
+                <span class="n">bodies</span> <span class="o">&lt;&lt;</span> <span class="n">world</span><span class="p">.</span><span class="n">createCircle</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">PosF</span><span class="p">(),</span> <span class="mf">0.5</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 物理演算のワールドを更新</span>
+            <span class="n">world</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">useConstantDeltaTime</span> <span class="o">?</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span> <span class="o">:</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">(),</span> <span class="n">velocityIterations</span><span class="p">,</span> <span class="n">positionIterations</span><span class="p">);</span>
+
+            <span class="c1">// (y &gt; 10) まで落下した P2Body は削除</span>
+            <span class="n">bodies</span><span class="p">.</span><span class="n">remove_if</span><span class="p">([](</span><span class="k">const</span> <span class="n">P2Body</span><span class="o">&amp;</span> <span class="n">body</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">body</span><span class="p">.</span><span class="n">getPos</span><span class="p">().</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">;</span> <span class="p">});</span>
+
+            <span class="c1">// 床を描画</span>
+            <span class="n">line</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+
+            <span class="c1">// 物体を描画</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">body</span> <span class="p">:</span> <span class="n">bodies</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">body</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="n">body</span><span class="p">.</span><span class="n">id</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">));</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 2D カメラ操作の UI を表示</span>
+        <span class="n">camera</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="_1">鉄球による破壊<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><video src="../images/2d-physics-0.mp4" autoplay loop muted></video>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
