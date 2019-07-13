@@ -1514,8 +1514,8 @@
     <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">);</span>
     <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
 
-    <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">useContantDeltaTime</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">useContantDeltaTime</span><span class="p">)</span>
+    <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">useConstantDeltaTime</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">useConstantDeltaTime</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">Graphics</span><span class="o">::</span><span class="n">SetTargetFrameRateHz</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
     <span class="p">}</span>
@@ -1570,7 +1570,7 @@
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">world</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">useContantDeltaTime</span> <span class="o">?</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span> <span class="o">:</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">(),</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+        <span class="n">world</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">useConstantDeltaTime</span> <span class="o">?</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span> <span class="o">:</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">(),</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 
         <span class="c1">// 落下した P2Body は削除</span>
         <span class="n">bodies</span><span class="p">.</span><span class="n">remove_if</span><span class="p">([](</span><span class="k">const</span> <span class="n">P2Body</span><span class="o">&amp;</span> <span class="n">body</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">body</span><span class="p">.</span><span class="n">getPos</span><span class="p">().</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">;</span> <span class="p">});</span>
@@ -1589,7 +1589,6 @@
             <span class="n">ball</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
         <span class="p">}</span>
 
-        <span class="c1">// ストッパーを外す</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Go&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">1100</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="n">hasStopper</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="n">bodies</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
@@ -1599,7 +1598,7 @@
         <span class="n">camera</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="c1">// ジョイント（関連する Body より先に破棄されなければならない）</span>
+    <span class="c1">// ジョイント（joints は 関連する Body より先に破棄されなければならない）</span>
     <span class="n">joints</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div></p>
