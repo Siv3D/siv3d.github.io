@@ -13,7 +13,7 @@
         <meta name="description" content="Siv3D: An open source C++17 library for creative coding">
       
       
-        <link rel="canonical" href="https://siv3d.github.io/tutorial/effect/">
+        <link rel="canonical" href="https://siv3d.github.io/tutorial/text-file/">
       
       
         <meta name="author" content="Ryo Suzuki">
@@ -42,7 +42,7 @@
     
     
       
-        <title>16. Effect - Siv3D</title>
+        <title>18. Text file - Siv3D</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#16-effect" tabindex="1" class="md-skip">
+      <a href="#18-text-file" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -118,7 +118,7 @@
               Siv3D
             </span>
             <span class="md-header-nav__topic">
-              16. Effect
+              18. Text file
             </span>
           
         </div>
@@ -456,90 +456,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        16. Effect
-      </label>
-    
-    <a href="./" title="16. Effect" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../effect/" title="16. Effect" class="md-nav__link">
       16. Effect
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#161-effect" title="16.1 Effect の基本" class="md-nav__link">
-    16.1 Effect の基本
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" title="ラムダ式での実装" class="md-nav__link">
-    ラムダ式での実装
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#162" title="16.2 少しこだわったエフェクト" class="md-nav__link">
-    16.2 少しこだわったエフェクト
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#163" title="16.3 上昇する文字" class="md-nav__link">
-    16.3 上昇する文字
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#164" title="16.4 飛び散る破片" class="md-nav__link">
-    16.4 飛び散る破片
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#165" title="16.5 エフェクトの一時停止と消去" class="md-nav__link">
-    16.5 エフェクトの一時停止と消去
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -559,11 +480,103 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../text-file/" title="18. Text file" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        18. Text file
+      </label>
+    
+    <a href="./" title="18. Text file" class="md-nav__link md-nav__link--active">
       18. Text file
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#181-1" title="18.1 テキストファイルから 1 行ずつ読み込む" class="md-nav__link">
+    18.1 テキストファイルから 1 行ずつ読み込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#182" title="18.2 ファイルをオープン・クローズするタイミングを制御する" class="md-nav__link">
+    18.2 ファイルをオープン・クローズするタイミングを制御する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#183" title="18.3 ファイルにテキストを書き込む" class="md-nav__link">
+    18.3 ファイルにテキストを書き込む
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="オープンとクローズのタイミングの制御" class="md-nav__link">
+    オープンとクローズのタイミングの制御
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#184" title="18.4 既存のテキストファイルにテキストを追加で書きこむ" class="md-nav__link">
+    18.4 既存のテキストファイルにテキストを追加で書きこむ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#185" title="18.5 テキストファイルのプログラムあれこれ" class="md-nav__link">
+    18.5 テキストファイルのプログラムあれこれ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="スコープによる制御" class="md-nav__link">
+    スコープによる制御
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1570,16 +1583,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#161-effect" title="16.1 Effect の基本" class="md-nav__link">
-    16.1 Effect の基本
+  <a href="#181-1" title="18.1 テキストファイルから 1 行ずつ読み込む" class="md-nav__link">
+    18.1 テキストファイルから 1 行ずつ読み込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#182" title="18.2 ファイルをオープン・クローズするタイミングを制御する" class="md-nav__link">
+    18.2 ファイルをオープン・クローズするタイミングを制御する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#183" title="18.3 ファイルにテキストを書き込む" class="md-nav__link">
+    18.3 ファイルにテキストを書き込む
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="ラムダ式での実装" class="md-nav__link">
-    ラムダ式での実装
+  <a href="#_1" title="オープンとクローズのタイミングの制御" class="md-nav__link">
+    オープンとクローズのタイミングの制御
   </a>
   
 </li>
@@ -1590,30 +1617,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#162" title="16.2 少しこだわったエフェクト" class="md-nav__link">
-    16.2 少しこだわったエフェクト
+  <a href="#184" title="18.4 既存のテキストファイルにテキストを追加で書きこむ" class="md-nav__link">
+    18.4 既存のテキストファイルにテキストを追加で書きこむ
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#163" title="16.3 上昇する文字" class="md-nav__link">
-    16.3 上昇する文字
+  <a href="#185" title="18.5 テキストファイルのプログラムあれこれ" class="md-nav__link">
+    18.5 テキストファイルのプログラムあれこれ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="スコープによる制御" class="md-nav__link">
+    スコープによる制御
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#164" title="16.4 飛び散る破片" class="md-nav__link">
-    16.4 飛び散る破片
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#165" title="16.5 エフェクトの一時停止と消去" class="md-nav__link">
-    16.5 エフェクトの一時停止と消去
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1634,327 +1660,243 @@
               
                 
                 
-                <h1 id="16-effect">16. Effect<a class="headerlink" href="#16-effect" title="Permanent link">&para;</a></h1>
-<p>この章では、ちょっとしたアニメーションやエフェクトの演出に便利な <code class="codehilite"><span class="n">Effect</span></code> クラスの使い方を学びます。</p>
-<h2 id="161-effect">16.1 Effect の基本<a class="headerlink" href="#161-effect" title="Permanent link">&para;</a></h2>
-<p>エフェクト機能を使うには、エフェクトを管理する <code class="codehilite"><span class="n">Effect</span></code> オブジェクトを作成し、<code class="codehilite"><span class="n">Effect</span><span class="p">::</span><span class="k">add</span><span class="o">&lt;</span><span class="n">EffectType</span><span class="o">&gt;</span><span class="p">()</span></code> で個々のエフェクトのパラメータを追加してエフェクトを発生させます。ここでいう <code class="codehilite"><span class="n">EffectType</span></code> は、<code class="codehilite"><span class="n">IEffect</span></code> を継承したクラスです。このクラスに必要な実装は <code class="codehilite"><span class="n">bool</span> <span class="k">update</span><span class="p">(</span><span class="n">double</span> <span class="n">t</span><span class="p">)</span> <span class="n">override</span></code> メンバ関数です。エフェクトが発生してからの経過時間 <code class="codehilite"><span class="n">t</span></code> を受け取り、そのエフェクトの描画を行い、最後にエフェクトを次のフレームも継続させるかを <code class="codehilite"><span class="n">bool</span></code> 値で返します。例えば <code class="codehilite"><span class="k">return</span> <span class="nv">t</span> <span class="o">&lt;</span> <span class="mi">3</span>.<span class="mi">0</span><span class="c1">;</span></code> とすれば、エフェクトは 3 秒間継続できます。</p>
-<p>次のプログラムは、クリックした場所に、時間とともに大きくなる輪を発生させるエフェクトを実装したものです。</p>
-<video src="../images/16-1-0.mp4" autoplay loop muted></video>
-
-<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-
-<span class="k">struct</span> <span class="nl">RingEffect</span> <span class="p">:</span> <span class="n">IEffect</span>
-<span class="p">{</span>
-    <span class="n">Vec2</span> <span class="n">m_pos</span><span class="p">;</span>
-
-    <span class="c1">// このコンストラクタ引数が、Effect::add&lt;RingEffect&gt;() の引数になる</span>
-    <span class="n">RingEffect</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">pos</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">m_pos</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span> <span class="p">{}</span>
-
-    <span class="kt">bool</span> <span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="k">override</span>
-    <span class="p">{</span>
-        <span class="c1">// 時間に応じて大きくなる輪</span>
-        <span class="n">Circle</span><span class="p">(</span><span class="n">m_pos</span><span class="p">,</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">();</span>
-
-        <span class="c1">// 1 秒以上経過したら消滅</span>
-        <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
-
-    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="n">ClearPrint</span><span class="p">();</span>
-
-        <span class="c1">// アクティブなエフェクトの数</span>
-        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Active effects: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">num_effects</span><span class="p">());</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="c1">// エフェクトを発生</span>
-            <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">RingEffect</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">());</span>
-        <span class="p">}</span>
-
-        <span class="c1">// アクティブなエフェクトのプログラム IEffect::update() を実行</span>
-        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-<h3 id="_1">ラムダ式での実装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="n">IEffect</span></code> 継承クラスの代わりに、引数が <code class="codehilite"><span class="n">double</span></code>, 戻り値が <code class="codehilite"><span class="n">bool</span></code> 型のラムダ式でエフェクトを記述することもできます。数行で書ける単純なエフェクトで、わざわざクラスを定義するのが面倒な場合はこの方法が便利です。</p>
+                <h1 id="18-text-file">18. Text file<a class="headerlink" href="#18-text-file" title="Permanent link">&para;</a></h1>
+<p>この章では、テキストファイルの内容を読み込んだり、テキストファイルに文字を書き込んだりする方法を学びます。</p>
+<h2 id="181-1">18.1 テキストファイルから 1 行ずつ読み込む<a class="headerlink" href="#181-1" title="Permanent link">&para;</a></h2>
+<p>テキストファイルからテキストを読み込むには <code class="codehilite"><span class="n">TextReader</span></code> の機能を使います。<code class="codehilite"><span class="n">TextReader</span></code> のコンストラクタ引数に、読み込みたいテキストファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。リリース用のアプリを作るときには、のちの章で説明する「リソース」パスの使用を推奨します。ファイルが存在しない場合など、オープンに失敗したかどうかは <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">reader</span><span class="ss">)</span></code> で調べられます。</p>
+<p>オープン直後は、読み込み位置はファイルの先頭にセットされています。<code class="codehilite"><span class="n">TextReader</span><span class="p">::</span><span class="n">readLine</span><span class="p">()</span></code> に <code class="codehilite"><span class="n">String</span></code> 型の変数を参照で渡すと、読み込み位置を始点とし、次に見つかった改行またはファイル終端までの 1 行分を読み込んだ内容をその変数に格納し、読み込み位置をそこまで進めて <code class="codehilite"><span class="k">true</span></code> を返します。読み込み位置がすでにファイルの終端にあって、これ以上読み込めないときには <code class="codehilite"><span class="k">false</span></code> を返します。次のプログラムのように <code class="codehilite"><span class="k">while</span></code> ループと組み合わせると便利です。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+    <span class="c1">// ファイルをオープンする</span>
+    <span class="n">TextReader</span> <span class="n">reader</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/test.txt&quot;</span><span class="p">);</span>
+
+    <span class="c1">// オープンに失敗</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">reader</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Failed to open `test.txt`&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 行の内容を読み込む変数</span>
+    <span class="n">String</span> <span class="n">line</span><span class="p">;</span>
+
+    <span class="c1">// 行数の表示用のカウント</span>
+    <span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// 終端に達するまで 1 行ずつ読み込む</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">readLine</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;{}: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="p">,</span> <span class="n">line</span><span class="p">);</span>
+    <span class="p">}</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">ClearPrint</span><span class="p">();</span>
 
-        <span class="c1">// アクティブなエフェクトの数</span>
-        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Active effects: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">num_effects</span><span class="p">());</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="c1">// エフェクトを発生</span>
-            <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="p">([</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">()](</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="c1">// 時間に応じて大きくなる輪</span>
-                <span class="n">Circle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">();</span>
-                <span class="c1">// 1 秒以上経過したら消滅</span>
-                <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
-            <span class="p">});</span>
-        <span class="p">}</span>
-
-        <span class="c1">// アクティブなエフェクトのプログラム IEffect::update() を実行</span>
-        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
     <span class="p">}</span>
+
+    <span class="c1">// reader のデストラクタで自動的にファイルがクローズされる</span>
 <span class="p">}</span>
 </pre></div>
 
-<h2 id="162">16.2 少しこだわったエフェクト<a class="headerlink" href="#162" title="Permanent link">&para;</a></h2>
-<p>イージングと組み合わせることもできます。</p>
-<video src="../images/16-2-0.mp4" autoplay loop muted></video>
-
+<h2 id="182">18.2 ファイルをオープン・クローズするタイミングを制御する<a class="headerlink" href="#182" title="Permanent link">&para;</a></h2>
+<p><code class="codehilite"><span class="n">TextReader</span></code> のコンストラクタでファイルをオープンせずに、<code class="codehilite"><span class="n">TextReader</span><span class="p">::</span><span class="k">open</span><span class="p">()</span></code> でファイルをオープンすることもできます。オープンに成功した場合は <code class="codehilite"><span class="k">true</span></code>, 失敗した場合は <code class="codehilite"><span class="k">false</span></code> を返します。</p>
+<p>また通常は <code class="codehilite"><span class="n">TextReader</span></code> のデストラクタが実行されるタイミングでファイルがクローズされますが、例えば内容を読み込んだあとにテキストファイルを削除したり、別の内容を書き込みたい場合には、ファイルがオープンされたままだと操作ができないため、すぐにクローズしたいというケースがあるでしょう。そうしたときには <code class="codehilite"><span class="n">TextReader</span><span class="p">::</span><span class="k">close</span><span class="p">()</span></code> でファイルを明示的にクローズします。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-
-<span class="k">struct</span> <span class="nl">RingEffect</span> <span class="p">:</span> <span class="n">IEffect</span>
-<span class="p">{</span>
-    <span class="n">Vec2</span> <span class="n">m_pos</span><span class="p">;</span>
-
-    <span class="n">ColorF</span> <span class="n">m_color</span><span class="p">;</span>
-
-    <span class="n">RingEffect</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">pos</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">m_pos</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
-        <span class="p">,</span> <span class="n">m_color</span><span class="p">(</span><span class="n">RandomColor</span><span class="p">())</span> <span class="p">{}</span>
-
-    <span class="kt">bool</span> <span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="k">override</span>
-    <span class="p">{</span>
-        <span class="c1">// イージング</span>
-        <span class="k">const</span> <span class="kt">double</span> <span class="n">e</span> <span class="o">=</span> <span class="n">EaseOutExpo</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
-
-        <span class="n">Circle</span><span class="p">(</span><span class="n">m_pos</span><span class="p">,</span> <span class="n">e</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="mf">20.0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">e</span><span class="p">),</span> <span class="n">m_color</span><span class="p">);</span>
-
-        <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+    <span class="n">TextReader</span> <span class="n">reader</span><span class="p">;</span>
+
+    <span class="c1">// オープンに失敗</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">reader</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/test.txt&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Failed to open `test.txt`&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 行の内容を読み込む変数</span>
+    <span class="n">String</span> <span class="n">line</span><span class="p">;</span>
+
+    <span class="c1">// 行数の表示用のカウント</span>
+    <span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// 1 行ずつ読み込む</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">readLine</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;{}: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="p">,</span> <span class="n">line</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ファイルを明示的にクローズ</span>
+    <span class="n">reader</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="n">ClearPrint</span><span class="p">();</span>
 
-        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Active effects: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">num_effects</span><span class="p">());</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">RingEffect</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">());</span>
-        <span class="p">}</span>
-
-        <span class="p">{</span>
-            <span class="c1">// 加算ブレンドを有効に</span>
-            <span class="k">const</span> <span class="n">ScopedRenderStates2D</span> <span class="n">additiveBlend</span><span class="p">(</span><span class="n">BlendState</span><span class="o">::</span><span class="n">Additive</span><span class="p">);</span>
-
-            <span class="c1">// アクティブなエフェクトのプログラム IEffect::update() を実行</span>
-            <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
-        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
-<h2 id="163">16.3 上昇する文字<a class="headerlink" href="#163" title="Permanent link">&para;</a></h2>
-<p>フォントを使ったエフェクトの例です。</p>
-<video src="../images/16-3-0.mp4" autoplay loop muted></video>
+<h2 id="183">18.3 ファイルにテキストを書き込む<a class="headerlink" href="#183" title="Permanent link">&para;</a></h2>
+<p>ファイルにテキストを書き込むには <code class="codehilite"><span class="n">TextWriter</span></code> の機能を使います。<code class="codehilite"><span class="n">TextWriter</span></code> のコンストラクタ引数に、書き込み先のファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。ファイルが使用中だったり、ファイル名が不正なものだったりしてオープンに失敗したかどうかは <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">writer</span><span class="ss">)</span></code> で調べられます。</p>
+<p>同名のファイルがすでに存在する場合はそれを破棄してからオープンし、存在しない場合は新しい空のファイルを作成してオープンします。</p>
+<p>書き込み方法は <code class="codehilite"><span class="n">Print</span></code> と似ていて、オープン済みの <code class="codehilite"><span class="n">TextWriter</span></code> の変数に向かって <code class="codehilite"><span class="o">&lt;&lt;</span></code> で書き込みたい 1 行分の文字列や値を送ります。書き込みの最後には改行が自動で挿入されます。これを避けたい場合はメンバ関数 <code class="codehilite"><span class="na">.write</span><span class="p">()</span></code> を使って書き込みたい内容を送ります。<code class="codehilite"><span class="na">.writeln</span><span class="p">()</span></code> は改行が挿入されます。</p>
+<div class="codehilite"><pre><span></span># <span class="k">include</span> <span class="o">&lt;</span><span class="nv">Siv3D</span>.<span class="nv">hpp</span><span class="o">&gt;</span>
 
+<span class="nv">void</span> <span class="nv">Main</span><span class="ss">()</span>
+{
+    <span class="o">//</span> 書き込み用のファイルをオープンする
+    <span class="o">//</span> （同名のファイルがすでに存在する場合はそれを破棄してからオープン）
+    <span class="nv">TextWriter</span> <span class="nv">writer</span><span class="ss">(</span><span class="nv">U</span><span class="s2">&quot;</span><span class="s">tutorial.txt</span><span class="s2">&quot;</span><span class="ss">)</span><span class="c1">;</span>
+
+    <span class="o">//</span> オープンに失敗
+    <span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">writer</span><span class="ss">)</span>
+    {
+        <span class="nv">throw</span> <span class="nv">Error</span><span class="ss">(</span><span class="nv">U</span><span class="s2">&quot;</span><span class="s">Failed to open `tutorial.txt`</span><span class="s2">&quot;</span><span class="ss">)</span><span class="c1">;</span>
+    }
+
+    <span class="o">//</span> 文章を <span class="mi">1</span> 行書き込む
+    <span class="nv">writer</span> <span class="o">&lt;&lt;</span> <span class="nv">U</span><span class="s2">&quot;</span><span class="s">Hello, Siv3D!</span><span class="s2">&quot;</span><span class="c1">;</span>
+
+    <span class="o">//</span> 値や文字を　<span class="mi">1</span> 行書き込む
+    <span class="nv">writer</span> <span class="o">&lt;&lt;</span> <span class="mi">123</span> <span class="o">&lt;&lt;</span> <span class="nv">U</span><span class="s1">&#39;</span><span class="s">,</span><span class="s1">&#39;</span> <span class="o">&lt;&lt;</span> <span class="mi">456</span> <span class="o">&lt;&lt;</span> <span class="nv">Point</span><span class="ss">(</span><span class="mi">10</span>, <span class="mi">20</span><span class="ss">)</span><span class="c1">;</span>
+
+    <span class="o">//</span> <span class="mi">1</span> 文字ずつ書き込む（改行無し）
+    <span class="nv">writer</span>.<span class="nv">write</span><span class="ss">(</span><span class="nv">U</span><span class="s1">&#39;</span><span class="s">A</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">;</span>
+    <span class="nv">writer</span>.<span class="nv">write</span><span class="ss">(</span><span class="nv">U</span><span class="s1">&#39;</span><span class="s">B</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">;</span>
+
+    <span class="o">//</span> <span class="mi">1</span> 文字書き込んで改行も書き込む
+    <span class="nv">writer</span>.<span class="nv">writeln</span><span class="ss">(</span><span class="nv">U</span><span class="s1">&#39;</span><span class="s">C</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">;</span>
+
+    <span class="o">//</span> 値を書き込む（改行無し）
+    <span class="nv">writer</span>.<span class="nv">write</span><span class="ss">(</span><span class="mi">777</span><span class="ss">)</span><span class="c1">;</span>
+    <span class="nv">writer</span>.<span class="nv">write</span><span class="ss">(</span><span class="nv">U</span><span class="s1">&#39;</span><span class="s">,</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">;</span>
+    <span class="nv">writer</span>.<span class="nv">write</span><span class="ss">(</span><span class="mi">888</span><span class="ss">)</span><span class="c1">;</span>
+
+    <span class="k">while</span> <span class="ss">(</span><span class="nv">System</span>::<span class="nv">Update</span><span class="ss">())</span>
+    {
+
+    }
+
+    <span class="o">//</span> <span class="nv">writer</span> のデストラクタで自動的にファイルがクローズされる
+}
+</pre></div>
+
+<p>出力結果 (tutorial.txt)
+<div class="codehilite"><pre><span></span><span class="n">Hello</span><span class="p">,</span> <span class="n">Siv3D</span><span class="o">!</span>
+<span class="mi">123</span><span class="p">,</span><span class="mi">456</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">ABC</span>
+<span class="mi">777</span><span class="p">,</span><span class="mi">888</span>
+</pre></div></p>
+<h3 id="_1">オープンとクローズのタイミングの制御<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="n">TextWriter</span></code> は <code class="codehilite"><span class="n">TextReader</span></code> と同じように、<code class="codehilite"><span class="na">.open</span><span class="p">()</span></code> を使ってファイルをオープン, <code class="codehilite"><span class="na">.close</span><span class="p">()</span></code> を使ってファイルをクローズできます。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-
-<span class="k">struct</span> <span class="nl">NumberEffect</span> <span class="p">:</span> <span class="n">IEffect</span>
-<span class="p">{</span>
-    <span class="n">Vec2</span> <span class="n">m_start</span><span class="p">;</span>
-
-    <span class="n">int32</span> <span class="n">m_number</span><span class="p">;</span>
-
-    <span class="n">Font</span> <span class="n">m_font</span><span class="p">;</span>
-
-    <span class="n">NumberEffect</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">start</span><span class="p">,</span> <span class="n">int32</span> <span class="n">num</span><span class="p">,</span> <span class="k">const</span> <span class="n">Font</span><span class="o">&amp;</span> <span class="n">font</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">m_start</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
-        <span class="p">,</span> <span class="n">m_number</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-        <span class="p">,</span> <span class="n">m_font</span><span class="p">(</span><span class="n">font</span><span class="p">)</span> <span class="p">{}</span>
-
-    <span class="kt">bool</span> <span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="k">override</span>
-    <span class="p">{</span>
-        <span class="k">const</span> <span class="n">HSV</span> <span class="n">color</span><span class="p">(</span><span class="mi">180</span> <span class="o">-</span> <span class="n">m_number</span> <span class="o">*</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="mf">2.0</span><span class="p">));</span>
-
-        <span class="n">m_font</span><span class="p">(</span><span class="n">m_number</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">m_start</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span> <span class="o">*</span> <span class="o">-</span><span class="mi">120</span><span class="p">),</span> <span class="n">color</span><span class="p">);</span>
-
-        <span class="c1">// 0.5 秒以上経過で消滅</span>
-        <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Heavy</span><span class="p">);</span>
+    <span class="n">TextWriter</span> <span class="n">writer</span><span class="p">;</span>
 
-    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+    <span class="c1">// オープンに失敗</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">writer</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;tutorial.txt&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Failed to open `tutorial.txt`&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 文章を 1 行書き込む</span>
+    <span class="n">writer</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Hello, Siv3D!&quot;</span><span class="p">;</span>
+
+    <span class="c1">// 値や文字を　1 行書き込む</span>
+    <span class="n">writer</span> <span class="o">&lt;&lt;</span> <span class="mi">123</span> <span class="o">&lt;&lt;</span> <span class="n">U</span><span class="sc">&#39;,&#39;</span> <span class="o">&lt;&lt;</span> <span class="mi">456</span> <span class="o">&lt;&lt;</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+
+    <span class="c1">// 1 文字ずつ書き込む（改行無し）</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">U</span><span class="sc">&#39;A&#39;</span><span class="p">);</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">U</span><span class="sc">&#39;B&#39;</span><span class="p">);</span>
+
+    <span class="c1">// 1 文字書き込んで改行も書き込む</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">writeln</span><span class="p">(</span><span class="n">U</span><span class="sc">&#39;C&#39;</span><span class="p">);</span>
+
+    <span class="c1">// 値を書き込む（改行無し）</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">777</span><span class="p">);</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">U</span><span class="sc">&#39;,&#39;</span><span class="p">);</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">888</span><span class="p">);</span>
+
+    <span class="c1">// ファイルを明示的にクローズ</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">NumberEffect</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span> <span class="n">Random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">font</span><span class="p">);</span>
-        <span class="p">}</span>
 
-        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
-<h2 id="164">16.4 飛び散る破片<a class="headerlink" href="#164" title="Permanent link">&para;</a></h2>
-<p>一つのエフェクトで複数の図形を描く例です。</p>
-<video src="../images/16-4-0.mp4" autoplay loop muted></video>
-
+<h2 id="184">18.4 既存のテキストファイルにテキストを追加で書きこむ<a class="headerlink" href="#184" title="Permanent link">&para;</a></h2>
+<p>テキストを既存のテキストファイルの末尾から追加で書き込みたい場合は、<code class="codehilite"><span class="n">TextWriter</span></code> でのオープン時にファイルオープンモードとして <code class="codehilite"><span class="n">OpenMode</span><span class="p">::</span><span class="n">Append</span></code> (追加モード) を指定します。同名のテキストファイルが存在しなかった時は、通常どおり新しいファイルを作成します。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-
-<span class="k">struct</span> <span class="n">Particle</span>
-<span class="p">{</span>
-    <span class="n">Vec2</span> <span class="n">start</span><span class="p">;</span>
-
-    <span class="n">Vec2</span> <span class="n">velocity</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="k">struct</span> <span class="nl">Spark</span> <span class="p">:</span> <span class="n">IEffect</span>
-<span class="p">{</span>
-    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Particle</span><span class="o">&gt;</span> <span class="n">m_particles</span><span class="p">;</span>
-
-    <span class="n">Spark</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">start</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">m_particles</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">particle</span> <span class="p">:</span> <span class="n">m_particles</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">particle</span><span class="p">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="n">RandomVec2</span><span class="p">(</span><span class="mf">10.0</span><span class="p">);</span>
-
-            <span class="n">particle</span><span class="p">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="n">RandomVec2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">Random</span><span class="p">(</span><span class="mf">80.0</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="kt">bool</span> <span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="k">override</span>
-    <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">particle</span> <span class="p">:</span> <span class="n">m_particles</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">const</span> <span class="n">Vec2</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">particle</span><span class="p">.</span><span class="n">start</span>
-                <span class="o">+</span> <span class="n">particle</span><span class="p">.</span><span class="n">velocity</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">240</span><span class="p">);</span>
-
-            <span class="n">Triangle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="mf">16.0</span><span class="p">,</span> <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="mi">5</span><span class="n">_deg</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="mi">40</span><span class="p">).</span><span class="n">toColorF</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">t</span><span class="p">));</span>
-        <span class="p">}</span>
-
-        <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+    <span class="c1">// 追加モードでテキストファイルをオープン</span>
+    <span class="n">TextWriter</span> <span class="n">writer</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;tutorial.txt&quot;</span><span class="p">,</span> <span class="n">OpenMode</span><span class="o">::</span><span class="n">Append</span><span class="p">);</span>
+
+    <span class="c1">// オープンに失敗</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">writer</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Failed to open `tutorial.txt`&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 文章を追加する</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">------&quot;</span><span class="p">);</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Spark</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">());</span>
-        <span class="p">}</span>
 
-        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
-<h2 id="165">16.5 エフェクトの一時停止と消去<a class="headerlink" href="#165" title="Permanent link">&para;</a></h2>
-<p><code class="codehilite"><span class="nv">Effect</span>::<span class="k">pause</span><span class="ss">()</span></code> でエフェクトの更新を一時停止、<code class="codehilite"><span class="n">Effect</span><span class="p">::</span><span class="n">resume</span><span class="p">()</span></code> でエフェクトの更新を再開、<code class="codehilite"><span class="n">Effect</span><span class="p">::</span><span class="n">clear</span><span class="p">()</span></code> でエフェクトをすべて消去します。</p>
-<video src="../images/16-5-0.mp4" autoplay loop muted></video>
-
+<p>18.3 で作った tutorial.txt に追加した結果
+<div class="codehilite"><pre><span></span><span class="n">Hello</span><span class="p">,</span> <span class="n">Siv3D</span><span class="o">!</span>
+<span class="mi">123</span><span class="p">,</span><span class="mi">456</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">ABC</span>
+<span class="mi">777</span><span class="p">,</span><span class="mi">888</span>
+<span class="c1">------</span>
+</pre></div></p>
+<h2 id="185">18.5 テキストファイルのプログラムあれこれ<a class="headerlink" href="#185" title="Permanent link">&para;</a></h2>
+<h3 id="_2">スコープによる制御<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>ファイルのオープン・クローズのタイミングの制御は、<code class="codehilite"><span class="err">{</span> <span class="err">}</span></code> でスコープを作り、スコープの終了時にデストラクタで自動的にクローズされるようにするのも良い方法です。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
-
-<span class="k">struct</span> <span class="nl">RingEffect</span> <span class="p">:</span> <span class="n">IEffect</span>
-<span class="p">{</span>
-    <span class="n">Vec2</span> <span class="n">m_pos</span><span class="p">;</span>
-
-    <span class="n">RingEffect</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">pos</span><span class="p">)</span>
-        <span class="o">:</span> <span class="n">m_pos</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span> <span class="p">{}</span>
-
-    <span class="kt">bool</span> <span class="n">update</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="k">override</span>
-    <span class="p">{</span>
-        <span class="k">const</span> <span class="kt">double</span> <span class="n">e</span> <span class="o">=</span> <span class="n">EaseOutExpo</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
-
-        <span class="n">Circle</span><span class="p">(</span><span class="n">m_pos</span><span class="p">,</span> <span class="n">e</span> <span class="o">*</span> <span class="mi">80</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="mf">20.0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">e</span><span class="p">));</span>
-
-        <span class="k">return</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">Effect</span> <span class="n">effect</span><span class="p">;</span>
+    <span class="p">{</span>
+        <span class="n">TextWriter</span> <span class="n">writer</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;tutorial.txt&quot;</span><span class="p">);</span>
 
-    <span class="c1">// エフェクト発生させる間隔</span>
-    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">effectSpawnTime</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">time</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="c1">// 1 行書き込む</span>
+        <span class="n">writer</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Hello, Siv3D!&quot;</span><span class="p">);</span>
+
+        <span class="c1">// ここで自動的にクローズ</span>
+    <span class="p">}</span>
+
+    <span class="n">String</span> <span class="n">text</span><span class="p">;</span>
+
+    <span class="p">{</span>
+        <span class="c1">// TextWriter でオープンしたままだと、ここでオープンに失敗する</span>
+        <span class="n">TextReader</span> <span class="n">reader</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;tutorial.txt&quot;</span><span class="p">);</span>
+
+        <span class="c1">// 1 行読み込む</span>
+        <span class="n">reader</span><span class="p">.</span><span class="n">readLine</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+
+        <span class="c1">// ここで自動的にクローズ</span>
+    <span class="p">}</span>
+
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">text</span><span class="p">;</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">effect</span><span class="p">.</span><span class="n">isPaused</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="n">time</span> <span class="o">+=</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">();</span>
-        <span class="p">}</span>
 
-        <span class="n">ClearPrint</span><span class="p">();</span>
-
-        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Active effects: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">num_effects</span><span class="p">());</span>
-
-        <span class="c1">// effectSpawnTime が経過するたびにエフェクトが発生</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">time</span> <span class="o">&gt;=</span> <span class="n">effectSpawnTime</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">time</span> <span class="o">-=</span> <span class="n">effectSpawnTime</span><span class="p">;</span>
-
-            <span class="n">effect</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">RingEffect</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">());</span>
-        <span class="p">}</span>
-
-        <span class="n">effect</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">isPaused</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Resume&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">100</span><span class="p">))</span>
-            <span class="p">{</span>
-                <span class="c1">// エフェクトの更新を再開</span>
-                <span class="n">effect</span><span class="p">.</span><span class="n">resume</span><span class="p">();</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">else</span>
-        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Pause&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">100</span><span class="p">))</span>
-            <span class="p">{</span>
-                <span class="c1">// エフェクトの更新を一時停止</span>
-                <span class="n">effect</span><span class="p">.</span><span class="n">pause</span><span class="p">();</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Clear&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="mi">100</span><span class="p">))</span>
-        <span class="p">{</span>
-            <span class="c1">// 発生中のエフェクトをすべて消去</span>
-            <span class="n">effect</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-
-<p>この章では扱いませんが、より大量のパーティクルを効率的に制御したい場合は、<code class="codehilite"><span class="n">ParticleSystem2D</span></code> を使うと便利です。</p>
                 
                   
                 
@@ -1975,7 +1917,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../2d-renderstates/" title="15. 2D render states" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../asset/" title="17. Asset management" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1984,19 +1926,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                15. 2D render states
+                17. Asset management
               </span>
             </div>
           </a>
         
         
-          <a href="../asset/" title="17. Asset management" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../config-file/" title="19. Configuration file" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                17. Asset management
+                19. Configuration file
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
