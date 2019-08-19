@@ -2349,7 +2349,7 @@
 </pre></div>
 
 <h2 id="815-1">8.15 テキストを 1 文字ずつ表示する<a class="headerlink" href="#815-1" title="Permanent link">&para;</a></h2>
-<p><code class="codehilite"><span class="n">String</span><span class="p">::</span><span class="n">substr</span><span class="p">()</span></code></p>
+<p><code class="codehilite"><span class="n">String</span><span class="p">::</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span></code> で、0 文字目から N 文字分の文字列を取得できます。N を時間に応じて増やすことで 1 文字ずつテキストを表示できます。N が文字列の長さよりも大きくなっても、その分は単に無視されます。 </p>
 <p><img alt="" src="../images/8150.gif" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
