@@ -1,0 +1,2420 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Siv3D: An open source C++17 library for creative coding">
+      
+      
+        <link rel="canonical" href="https://siv3d.github.io/ja-jp/api/api/">
+      
+      
+        <meta name="author" content="Ryo Suzuki">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
+    
+    
+      
+        <title>API 一覧 - Siv3D</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.750b69bd.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../../siv3d_styles.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#scene" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://siv3d.github.io/" title="Siv3D" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">code</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Siv3D
+            </span>
+            <span class="md-header-nav__topic">
+              API 一覧
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../.." title="English" class="md-tabs__link">
+          English
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" title="日本語" class="md-tabs__link md-tabs__link--active">
+          日本語
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://siv3d.github.io/" title="Siv3D" class="md-nav__button md-logo">
+      
+        <i class="md-icon">code</i>
+      
+    </a>
+    Siv3D
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      English
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        English
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Getting started with Siv3D" class="md-nav__link">
+      Getting started with Siv3D
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2">
+    
+    <label class="md-nav__link" for="nav-1-2">
+      Tutorial
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-2">
+        Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/basic/" title="1. First steps" class="md-nav__link">
+      1. First steps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/shape/" title="2. Drawing shapes" class="md-nav__link">
+      2. Drawing shapes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/animation/" title="3. Animation" class="md-nav__link">
+      3. Animation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/2d-intersection/" title="4. 2D intersection" class="md-nav__link">
+      4. 2D intersection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/texture/" title="5. Drawing images" class="md-nav__link">
+      5. Drawing images
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/data-structures/" title="6. Data structures" class="md-nav__link">
+      6. Data structures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/formatting/" title="7. Formatting and parsing" class="md-nav__link">
+      7. Formatting and parsing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/font/" title="8. Using fonts" class="md-nav__link">
+      8. Using fonts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/gui/" title="9. GUI" class="md-nav__link">
+      9. GUI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/window/" title="10. Scene and window" class="md-nav__link">
+      10. Scene and window
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/keyboard/" title="11. Keyboard" class="md-nav__link">
+      11. Keyboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/mouse/" title="12. Mouse" class="md-nav__link">
+      12. Mouse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/audio/" title="13. Audio" class="md-nav__link">
+      13. Audio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/random/" title="14. Random" class="md-nav__link">
+      14. Random
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/2d-renderstates/" title="15. 2D render states" class="md-nav__link">
+      15. 2D render states
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/effect/" title="16. Effect" class="md-nav__link">
+      16. Effect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/asset/" title="17. Asset management" class="md-nav__link">
+      17. Asset management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/text-file/" title="18. Text file" class="md-nav__link">
+      18. Text file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/config-file/" title="19. Configuration file" class="md-nav__link">
+      19. Configuration file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/release/" title="99. Releasing your application" class="md-nav__link">
+      99. Releasing your application
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3">
+    
+    <label class="md-nav__link" for="nav-1-3">
+      Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-3">
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/fullscreen/" title="Fullscreen" class="md-nav__link">
+      Fullscreen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/json/" title="JSON file" class="md-nav__link">
+      JSON file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/2d-shadow/" title="2D shadow" class="md-nav__link">
+      2D shadow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/2d-geometry/" title="2D geometry" class="md-nav__link">
+      2D geometry
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/navmesh/" title="NavMesh" class="md-nav__link">
+      NavMesh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/nlp/" title="Natural language processing" class="md-nav__link">
+      Natural language processing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/math-parser/" title="Math parser" class="md-nav__link">
+      Math parser
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/kd-tree/" title="kd-tree" class="md-nav__link">
+      kd-tree
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/objdetection/" title="Object detection" class="md-nav__link">
+      Object detection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/gamepad/" title="Gamepad" class="md-nav__link">
+      Gamepad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/network/" title="Network" class="md-nav__link">
+      Network
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/twitter/" title="Twitter" class="md-nav__link">
+      Twitter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/2d-particle/" title="2D particle system" class="md-nav__link">
+      2D particle system
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/2d-physics/" title="2D physics" class="md-nav__link">
+      2D physics
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-4" type="checkbox" id="nav-1-4">
+    
+    <label class="md-nav__link" for="nav-1-4">
+      Sample
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-4">
+        Sample
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../sample/game/" title="Game" class="md-nav__link">
+      Game
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../sample/app/" title="Application" class="md-nav__link">
+      Application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../sample/visual/" title="Visual effect" class="md-nav__link">
+      Visual effect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../sample/game-template/" title="Geme template" class="md-nav__link">
+      Geme template
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-5" type="checkbox" id="nav-1-5">
+    
+    <label class="md-nav__link" for="nav-1-5">
+      Articles
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-5">
+        Articles
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../articles/mistakes/" title="Mistakes made by new users" class="md-nav__link">
+      Mistakes made by new users
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../community/community/" title="Community" class="md-nav__link">
+      Community
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../store/store/" title="Siv3D Store" class="md-nav__link">
+      Siv3D Store
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      日本語
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        日本語
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Siv3D をはじめよう" class="md-nav__link">
+      Siv3D をはじめよう
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      チュートリアル
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        チュートリアル
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/basic/" title="1. Siv3D の基本" class="md-nav__link">
+      1. Siv3D の基本
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/shape/" title="2. 図形を描く" class="md-nav__link">
+      2. 図形を描く
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/animation/" title="3. 動きを作る" class="md-nav__link">
+      3. 動きを作る
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/2d-intersection/" title="4. あたり判定" class="md-nav__link">
+      4. あたり判定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/texture/" title="5. 画像を描く" class="md-nav__link">
+      5. 画像を描く
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/data-structures/" title="6. データ構造" class="md-nav__link">
+      6. データ構造
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/formatting/" title="7. 文字列と数値の変換" class="md-nav__link">
+      7. 文字列と数値の変換
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/font/" title="8. フォントを使う" class="md-nav__link">
+      8. フォントを使う
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/gui/" title="9. GUI" class="md-nav__link">
+      9. GUI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/window/" title="10. シーンとウィンドウ" class="md-nav__link">
+      10. シーンとウィンドウ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/keyboard/" title="11. キーボード入力" class="md-nav__link">
+      11. キーボード入力
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/mouse/" title="12. マウス入力" class="md-nav__link">
+      12. マウス入力
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/audio/" title="13. オーディオ再生" class="md-nav__link">
+      13. オーディオ再生
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/random/" title="14. ランダム" class="md-nav__link">
+      14. ランダム
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/2d-renderstates/" title="15. 2D レンダーステート" class="md-nav__link">
+      15. 2D レンダーステート
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/effect/" title="16. エフェクト" class="md-nav__link">
+      16. エフェクト
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/asset/" title="17. アセット管理" class="md-nav__link">
+      17. アセット管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/text-file/" title="18. テキストファイル" class="md-nav__link">
+      18. テキストファイル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/config-file/" title="19. 設定ファイル" class="md-nav__link">
+      19. 設定ファイル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/release/" title="99. アプリのリリース" class="md-nav__link">
+      99. アプリのリリース
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        API 一覧
+      </label>
+    
+    <a href="./" title="API 一覧" class="md-nav__link md-nav__link--active">
+      API 一覧
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scene" title="Scene 名前空間" class="md-nav__link">
+    Scene 名前空間
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="定数" class="md-nav__link">
+    定数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enum-class-scalemode" title="enum class ScaleMode" class="md-nav__link">
+    enum class ScaleMode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-size-scenedefaultscenesizewindowdefaultclientsize" title="constexpr Size Scene::DefaultSceneSize(Window::DefaultClientSize);" class="md-nav__link">
+    constexpr Size Scene::DefaultSceneSize(Window::DefaultClientSize);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-scalemode-scenedefaultscalemode-scalemodeaspectfit" title="constexpr ScaleMode Scene::DefaultScaleMode = ScaleMode::AspectFit;" class="md-nav__link">
+    constexpr ScaleMode Scene::DefaultScaleMode = ScaleMode::AspectFit;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-texturefilter-scenedefaultfilter-texturefilterlinear" title="constexpr TextureFilter Scene::DefaultFilter = TextureFilter::Linear;" class="md-nav__link">
+    constexpr TextureFilter Scene::DefaultFilter = TextureFilter::Linear;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-colorf-scenedefaultbackgroundcolorpalettedefaultbackground" title="constexpr ColorF Scene::DefaultBackgroundColor(Palette::DefaultBackground);" class="md-nav__link">
+    constexpr ColorF Scene::DefaultBackgroundColor(Palette::DefaultBackground);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-colorf-scenedefaultletterboxcolorpalettedefaultletterbox" title="constexpr ColorF Scene::DefaultLetterBoxColor(Palette::DefaultLetterbox);" class="md-nav__link">
+    constexpr ColorF Scene::DefaultLetterBoxColor(Palette::DefaultLetterbox);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-double-scenedefaultmaxdeltatime-01" title="constexpr double Scene::DefaultMaxDeltaTime = 0.1;" class="md-nav__link">
+    constexpr double Scene::DefaultMaxDeltaTime = 0.1;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="関数" class="md-nav__link">
+    関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#void-sceneresizeconst-s3dsize-size" title="void Scene::Resize(const s3d::Size&amp; size);" class="md-nav__link">
+    void Scene::Resize(const s3d::Size&amp; size);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-sceneresizeint32-width-int32-height" title="void Scene::Resize(int32 width, int32 height);" class="md-nav__link">
+    void Scene::Resize(int32 width, int32 height);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size-scenesize" title="Size Scene::Size();" class="md-nav__link">
+    Size Scene::Size();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-scenewidth" title="int32 Scene::Width();" class="md-nav__link">
+    int32 Scene::Width();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-sceneheight" title="int32 Scene::Height();" class="md-nav__link">
+    int32 Scene::Height();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#point-scenecenter" title="Point Scene::Center();" class="md-nav__link">
+    Point Scene::Center();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vec2-scenecenterf" title="Vec2 Scene::CenterF();" class="md-nav__link">
+    Vec2 Scene::CenterF();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rect-scenerect" title="Rect Scene::Rect();" class="md-nav__link">
+    Rect Scene::Rect();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-scenesetscalemodescalemode-scalemode" title="void Scene::SetScaleMode(ScaleMode scaleMode);" class="md-nav__link">
+    void Scene::SetScaleMode(ScaleMode scaleMode);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalemode-scenegetscalemode" title="ScaleMode Scene::GetScaleMode();" class="md-nav__link">
+    ScaleMode Scene::GetScaleMode();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-scenesettexturefiltertexturefilter-texturefilter" title="void Scene::SetTextureFilter(TextureFilter textureFilter);" class="md-nav__link">
+    void Scene::SetTextureFilter(TextureFilter textureFilter);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texturefilter-scenegettexturefilter" title="TextureFilter Scene::GetTextureFilter();" class="md-nav__link">
+    TextureFilter Scene::GetTextureFilter();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-scenesetbackgroundconst-colorf-color" title="void Scene::SetBackground(const ColorF&amp; color);" class="md-nav__link">
+    void Scene::SetBackground(const ColorF&amp; color);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-scenesetletterboxconst-colorf-color" title="void Scene::SetLetterbox(const ColorF&amp; color);" class="md-nav__link">
+    void Scene::SetLetterbox(const ColorF&amp; color);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-scenesetmaxdeltatimedouble-timesec" title="void Scene::SetMaxDeltaTime(double timeSec);" class="md-nav__link">
+    void Scene::SetMaxDeltaTime(double timeSec);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-scenegetmaxdeltatime" title="double Scene::GetMaxDeltaTime();" class="md-nav__link">
+    double Scene::GetMaxDeltaTime();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-scenedeltatime" title="double Scene::DeltaTime();" class="md-nav__link">
+    double Scene::DeltaTime();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-scenetime" title="double Scene::Time();" class="md-nav__link">
+    double Scene::Time();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-sceneframecount" title="int32 Scene::FrameCount();" class="md-nav__link">
+    int32 Scene::FrameCount();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vec2-sceneclienttosceneconst-vec2-pos" title="Vec2 Scene::ClientToScene(const Vec2&amp; pos);" class="md-nav__link">
+    Vec2 Scene::ClientToScene(const Vec2&amp; pos);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system" title="System 名前空間" class="md-nav__link">
+    System 名前空間
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="関数" class="md-nav__link">
+    関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bool-systemupdate" title="bool System::Update();" class="md-nav__link">
+    bool System::Update();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-systemexit" title="void System::Exit();" class="md-nav__link">
+    void System::Exit();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-setterminationtriggersuint32-useractionflags" title="void SetTerminationTriggers(uint32 userActionFlags);" class="md-nav__link">
+    void SetTerminationTriggers(uint32 userActionFlags);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uint32-getterminationtriggers" title="uint32 GetTerminationTriggers();" class="md-nav__link">
+    uint32 GetTerminationTriggers();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uint32-getuseractions" title="uint32 GetUserActions();" class="md-nav__link">
+    uint32 GetUserActions();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-sleepint32-milliseconds" title="void Sleep(int32 milliseconds);" class="md-nav__link">
+    void Sleep(int32 milliseconds);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-sleepconst-duration-duration" title="void Sleep(const Duration&amp; duration);" class="md-nav__link">
+    void Sleep(const Duration&amp; duration);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-launchbrowserconst-filepath-url" title="bool LaunchBrowser(const FilePath&amp; url);" class="md-nav__link">
+    bool LaunchBrowser(const FilePath&amp; url);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      リファレンス
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        リファレンス
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/fullscreen/" title="フルスクリーン" class="md-nav__link">
+      フルスクリーン
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/json/" title="JSON ファイル" class="md-nav__link">
+      JSON ファイル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/2d-shadow/" title="2D 図形の影" class="md-nav__link">
+      2D 図形の影
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/2d-geometry/" title="2D 計算幾何" class="md-nav__link">
+      2D 計算幾何
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/navmesh/" title="ナビメッシュ" class="md-nav__link">
+      ナビメッシュ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/nlp/" title="自然言語処理" class="md-nav__link">
+      自然言語処理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/math-parser/" title="数式処理" class="md-nav__link">
+      数式処理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/kd-tree/" title="kd 木" class="md-nav__link">
+      kd 木
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/objdetection/" title="物体検出" class="md-nav__link">
+      物体検出
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/gamepad/" title="ゲームパッド" class="md-nav__link">
+      ゲームパッド
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/network/" title="ネットワーク" class="md-nav__link">
+      ネットワーク
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/twitter/" title="Twitter" class="md-nav__link">
+      Twitter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/2d-particle/" title="2D パーティクルシステム" class="md-nav__link">
+      2D パーティクルシステム
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/2d-physics/" title="2D 物理演算" class="md-nav__link">
+      2D 物理演算
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      サンプル
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        サンプル
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sample/game/" title="ゲーム" class="md-nav__link">
+      ゲーム
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sample/app/" title="アプリ" class="md-nav__link">
+      アプリ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sample/visual/" title="ビジュアル表現" class="md-nav__link">
+      ビジュアル表現
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sample/game-template/" title="ゲーム開発のテンプレート" class="md-nav__link">
+      ゲーム開発のテンプレート
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sample/game-launcher/" title="ゲームランチャー" class="md-nav__link">
+      ゲームランチャー
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      記事
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        記事
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../articles/mistakes/" title="よくある間違い" class="md-nav__link">
+      よくある間違い
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../community/community/" title="コミュニティ" class="md-nav__link">
+      コミュニティ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../store/store/" title="Siv3D ストア" class="md-nav__link">
+      Siv3D ストア
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scene" title="Scene 名前空間" class="md-nav__link">
+    Scene 名前空間
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="定数" class="md-nav__link">
+    定数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enum-class-scalemode" title="enum class ScaleMode" class="md-nav__link">
+    enum class ScaleMode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-size-scenedefaultscenesizewindowdefaultclientsize" title="constexpr Size Scene::DefaultSceneSize(Window::DefaultClientSize);" class="md-nav__link">
+    constexpr Size Scene::DefaultSceneSize(Window::DefaultClientSize);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-scalemode-scenedefaultscalemode-scalemodeaspectfit" title="constexpr ScaleMode Scene::DefaultScaleMode = ScaleMode::AspectFit;" class="md-nav__link">
+    constexpr ScaleMode Scene::DefaultScaleMode = ScaleMode::AspectFit;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-texturefilter-scenedefaultfilter-texturefilterlinear" title="constexpr TextureFilter Scene::DefaultFilter = TextureFilter::Linear;" class="md-nav__link">
+    constexpr TextureFilter Scene::DefaultFilter = TextureFilter::Linear;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-colorf-scenedefaultbackgroundcolorpalettedefaultbackground" title="constexpr ColorF Scene::DefaultBackgroundColor(Palette::DefaultBackground);" class="md-nav__link">
+    constexpr ColorF Scene::DefaultBackgroundColor(Palette::DefaultBackground);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-colorf-scenedefaultletterboxcolorpalettedefaultletterbox" title="constexpr ColorF Scene::DefaultLetterBoxColor(Palette::DefaultLetterbox);" class="md-nav__link">
+    constexpr ColorF Scene::DefaultLetterBoxColor(Palette::DefaultLetterbox);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-double-scenedefaultmaxdeltatime-01" title="constexpr double Scene::DefaultMaxDeltaTime = 0.1;" class="md-nav__link">
+    constexpr double Scene::DefaultMaxDeltaTime = 0.1;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="関数" class="md-nav__link">
+    関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#void-sceneresizeconst-s3dsize-size" title="void Scene::Resize(const s3d::Size&amp; size);" class="md-nav__link">
+    void Scene::Resize(const s3d::Size&amp; size);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-sceneresizeint32-width-int32-height" title="void Scene::Resize(int32 width, int32 height);" class="md-nav__link">
+    void Scene::Resize(int32 width, int32 height);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size-scenesize" title="Size Scene::Size();" class="md-nav__link">
+    Size Scene::Size();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-scenewidth" title="int32 Scene::Width();" class="md-nav__link">
+    int32 Scene::Width();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-sceneheight" title="int32 Scene::Height();" class="md-nav__link">
+    int32 Scene::Height();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#point-scenecenter" title="Point Scene::Center();" class="md-nav__link">
+    Point Scene::Center();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vec2-scenecenterf" title="Vec2 Scene::CenterF();" class="md-nav__link">
+    Vec2 Scene::CenterF();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rect-scenerect" title="Rect Scene::Rect();" class="md-nav__link">
+    Rect Scene::Rect();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-scenesetscalemodescalemode-scalemode" title="void Scene::SetScaleMode(ScaleMode scaleMode);" class="md-nav__link">
+    void Scene::SetScaleMode(ScaleMode scaleMode);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalemode-scenegetscalemode" title="ScaleMode Scene::GetScaleMode();" class="md-nav__link">
+    ScaleMode Scene::GetScaleMode();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-scenesettexturefiltertexturefilter-texturefilter" title="void Scene::SetTextureFilter(TextureFilter textureFilter);" class="md-nav__link">
+    void Scene::SetTextureFilter(TextureFilter textureFilter);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texturefilter-scenegettexturefilter" title="TextureFilter Scene::GetTextureFilter();" class="md-nav__link">
+    TextureFilter Scene::GetTextureFilter();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-scenesetbackgroundconst-colorf-color" title="void Scene::SetBackground(const ColorF&amp; color);" class="md-nav__link">
+    void Scene::SetBackground(const ColorF&amp; color);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-scenesetletterboxconst-colorf-color" title="void Scene::SetLetterbox(const ColorF&amp; color);" class="md-nav__link">
+    void Scene::SetLetterbox(const ColorF&amp; color);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-scenesetmaxdeltatimedouble-timesec" title="void Scene::SetMaxDeltaTime(double timeSec);" class="md-nav__link">
+    void Scene::SetMaxDeltaTime(double timeSec);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-scenegetmaxdeltatime" title="double Scene::GetMaxDeltaTime();" class="md-nav__link">
+    double Scene::GetMaxDeltaTime();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-scenedeltatime" title="double Scene::DeltaTime();" class="md-nav__link">
+    double Scene::DeltaTime();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-scenetime" title="double Scene::Time();" class="md-nav__link">
+    double Scene::Time();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-sceneframecount" title="int32 Scene::FrameCount();" class="md-nav__link">
+    int32 Scene::FrameCount();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vec2-sceneclienttosceneconst-vec2-pos" title="Vec2 Scene::ClientToScene(const Vec2&amp; pos);" class="md-nav__link">
+    Vec2 Scene::ClientToScene(const Vec2&amp; pos);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system" title="System 名前空間" class="md-nav__link">
+    System 名前空間
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="関数" class="md-nav__link">
+    関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bool-systemupdate" title="bool System::Update();" class="md-nav__link">
+    bool System::Update();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-systemexit" title="void System::Exit();" class="md-nav__link">
+    void System::Exit();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-setterminationtriggersuint32-useractionflags" title="void SetTerminationTriggers(uint32 userActionFlags);" class="md-nav__link">
+    void SetTerminationTriggers(uint32 userActionFlags);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uint32-getterminationtriggers" title="uint32 GetTerminationTriggers();" class="md-nav__link">
+    uint32 GetTerminationTriggers();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uint32-getuseractions" title="uint32 GetUserActions();" class="md-nav__link">
+    uint32 GetUserActions();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-sleepint32-milliseconds" title="void Sleep(int32 milliseconds);" class="md-nav__link">
+    void Sleep(int32 milliseconds);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-sleepconst-duration-duration" title="void Sleep(const Duration&amp; duration);" class="md-nav__link">
+    void Sleep(const Duration&amp; duration);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-launchbrowserconst-filepath-url" title="bool LaunchBrowser(const FilePath&amp; url);" class="md-nav__link">
+    bool LaunchBrowser(const FilePath&amp; url);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>API 一覧</h1>
+                
+                <h2 id="scene">Scene 名前空間<a class="headerlink" href="#scene" title="Permanent link">&para;</a></h2>
+<h3 id="_1">定数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="enum-class-scalemode"><code class="codehilite"><span class="k">enum</span> <span class="k">class</span> <span class="n">ScaleMode</span></code><a class="headerlink" href="#enum-class-scalemode" title="Permanent link">&para;</a></h4>
+<ul>
+<li>ResizeFill: ウィンドウのクライアント領域のサイズに合わせてシーンをリサイズする</li>
+<li>AspectFit: シーンのサイズはそのままで、アスペクト比を維持して拡大縮小してクライアント領域にフィットするように描画する</li>
+</ul>
+<p>ウィンドウを手動でリサイズしたときのシーンのサイズの扱いです。ウィンドウをリサイズする関数で <code class="codehilite"><span class="n">WindowResizeOption</span><span class="p">::</span><span class="n">UseDefaultScaleMode</span></code> が指定されたときにも参照されます。 </p>
+<h4 id="constexpr-size-scenedefaultscenesizewindowdefaultclientsize"><code class="codehilite"><span class="nt">constexpr</span> <span class="nt">Size</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">DefaultSceneSize</span><span class="o">(</span><span class="nt">Window</span><span class="p">::</span><span class="nd">DefaultClientSize</span><span class="o">);</span></code><a class="headerlink" href="#constexpr-size-scenedefaultscenesizewindowdefaultclientsize" title="Permanent link">&para;</a></h4>
+<p>シーンの幅と高さ（ピクセル）のデフォルト値です。</p>
+<h4 id="constexpr-scalemode-scenedefaultscalemode-scalemodeaspectfit"><code class="codehilite"><span class="nt">constexpr</span> <span class="nt">ScaleMode</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">DefaultScaleMode</span> <span class="o">=</span> <span class="nt">ScaleMode</span><span class="p">::</span><span class="nd">AspectFit</span><span class="o">;</span></code><a class="headerlink" href="#constexpr-scalemode-scenedefaultscalemode-scalemodeaspectfit" title="Permanent link">&para;</a></h4>
+<p>ウィンドウを手動でリサイズしたときのシーンのサイズの扱いのデフォルト値です。</p>
+<h4 id="constexpr-texturefilter-scenedefaultfilter-texturefilterlinear"><code class="codehilite"><span class="nt">constexpr</span> <span class="nt">TextureFilter</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">DefaultFilter</span> <span class="o">=</span> <span class="nt">TextureFilter</span><span class="p">::</span><span class="nd">Linear</span><span class="o">;</span></code><a class="headerlink" href="#constexpr-texturefilter-scenedefaultfilter-texturefilterlinear" title="Permanent link">&para;</a></h4>
+<p>ウィンドウのクライアント領域がシーンのサイズと異なる場合、シーンを拡大縮小描画するために使うテクスチャフィルタのデフォルト値です。</p>
+<h4 id="constexpr-colorf-scenedefaultbackgroundcolorpalettedefaultbackground"><code class="codehilite"><span class="nt">constexpr</span> <span class="nt">ColorF</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">DefaultBackgroundColor</span><span class="o">(</span><span class="nt">Palette</span><span class="p">::</span><span class="nd">DefaultBackground</span><span class="o">);</span></code><a class="headerlink" href="#constexpr-colorf-scenedefaultbackgroundcolorpalettedefaultbackground" title="Permanent link">&para;</a></h4>
+<p>シーンの背景色のデフォルト色です。</p>
+<h4 id="constexpr-colorf-scenedefaultletterboxcolorpalettedefaultletterbox"><code class="codehilite"><span class="nt">constexpr</span> <span class="nt">ColorF</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">DefaultLetterBoxColor</span><span class="o">(</span><span class="nt">Palette</span><span class="p">::</span><span class="nd">DefaultLetterbox</span><span class="o">);</span></code><a class="headerlink" href="#constexpr-colorf-scenedefaultletterboxcolorpalettedefaultletterbox" title="Permanent link">&para;</a></h4>
+<p>ウィンドウのクライアント領域がシーンよりも大きい場合余白となるスペース「レターボックス」のデフォルト色です。</p>
+<h4 id="constexpr-double-scenedefaultmaxdeltatime-01"><code class="codehilite"><span class="nt">constexpr</span> <span class="nt">double</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">DefaultMaxDeltaTime</span> <span class="o">=</span> <span class="nt">0</span><span class="p">.</span><span class="nc">1</span><span class="o">;</span></code><a class="headerlink" href="#constexpr-double-scenedefaultmaxdeltatime-01" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">DeltaTime</span><span class="p">()</span></code> が返す最大の時間（秒）のデフォルト値です。</p>
+<h3 id="_2">関数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="void-sceneresizeconst-s3dsize-size"><code class="codehilite"><span class="nt">void</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">Resize</span><span class="o">(</span><span class="nt">const</span> <span class="nt">s3d</span><span class="p">::</span><span class="nd">Size</span><span class="o">&amp;</span> <span class="nt">size</span><span class="o">);</span></code><a class="headerlink" href="#void-sceneresizeconst-s3dsize-size" title="Permanent link">&para;</a></h4>
+<h4 id="void-sceneresizeint32-width-int32-height"><code class="codehilite"><span class="nt">void</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">Resize</span><span class="o">(</span><span class="nt">int32</span> <span class="nt">width</span><span class="o">,</span> <span class="nt">int32</span> <span class="nt">height</span><span class="o">);</span></code><a class="headerlink" href="#void-sceneresizeint32-width-int32-height" title="Permanent link">&para;</a></h4>
+<ul>
+<li>size: 新しいシーンの幅と高さ</li>
+<li>width, height: 新しいシーンの幅と高さ</li>
+</ul>
+<p>シーンの幅と高さを変更します。デフォルト値は <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">DefaultSceneSize</span></code> です。両方またはどちらかの値を 0 以下にすること、8192 より大きい値を設定することはできません。</p>
+<h4 id="size-scenesize"><code class="codehilite"><span class="nt">Size</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">Size</span><span class="o">();</span></code><a class="headerlink" href="#size-scenesize" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: シーンの幅と高さ（ピクセル）</li>
+</ul>
+<p>シーンの幅と高さ（ピクセル）の現在の設定を返します。</p>
+<h4 id="int32-scenewidth"><code class="codehilite"><span class="nt">int32</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">Width</span><span class="o">();</span></code><a class="headerlink" href="#int32-scenewidth" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: シーンの幅（ピクセル）</li>
+</ul>
+<p>シーンの幅（ピクセル）の現在の設定を返します。</p>
+<h4 id="int32-sceneheight"><code class="codehilite"><span class="nt">int32</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">Height</span><span class="o">();</span></code><a class="headerlink" href="#int32-sceneheight" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: シーンの高さ（ピクセル）</li>
+</ul>
+<p>シーンの高さ（ピクセル）の現在の設定を返します。</p>
+<h4 id="point-scenecenter"><code class="codehilite"><span class="nt">Point</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">Center</span><span class="o">();</span></code><a class="headerlink" href="#point-scenecenter" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: シーンの中心座標</li>
+</ul>
+<p>シーンの中心の座標を <code class="codehilite"><span class="n">Point</span></code> 型で返します。シーンのサイズが (333, 444) の場合、(116, 222) を返します。</p>
+<h4 id="vec2-scenecenterf"><code class="codehilite"><span class="nt">Vec2</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">CenterF</span><span class="o">();</span></code><a class="headerlink" href="#vec2-scenecenterf" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: シーンの中心座標</li>
+</ul>
+<p>シーンの中心の座標を <code class="codehilite"><span class="n">Vec2</span></code> 型で返します。シーンのサイズが (333, 444) の場合、(116.5, 222) を返します。</p>
+<h4 id="rect-scenerect"><code class="codehilite"><span class="nt">Rect</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">Rect</span><span class="o">();</span></code><a class="headerlink" href="#rect-scenerect" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: シーンの <code class="codehilite"><span class="n">Rect</span></code></li>
+</ul>
+<p>左上が (0, 0) で現在のシーンと同じ大きさの <code class="codehilite"><span class="n">Rect</span></code> を返します。</p>
+<h4 id="void-scenesetscalemodescalemode-scalemode"><code class="codehilite"><span class="nt">void</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">SetScaleMode</span><span class="o">(</span><span class="nt">ScaleMode</span> <span class="nt">scaleMode</span><span class="o">);</span></code><a class="headerlink" href="#void-scenesetscalemodescalemode-scalemode" title="Permanent link">&para;</a></h4>
+<ul>
+<li>scaleMode: ウィンドウを手動でリサイズしたときのシーンのサイズの扱い</li>
+</ul>
+<p>ウィンドウを手動でリサイズしたときのシーンのサイズの扱いを設定します。デフォルトは <code class="codehilite"><span class="n">ScaleMode</span><span class="p">::</span><span class="n">AspectFit</span></code> です。</p>
+<h4 id="scalemode-scenegetscalemode"><code class="codehilite"><span class="nt">ScaleMode</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">GetScaleMode</span><span class="o">();</span></code><a class="headerlink" href="#scalemode-scenegetscalemode" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: ウィンドウを手動でリサイズしたときのシーンのサイズの扱い</li>
+</ul>
+<p>ウィンドウを手動でリサイズしたときのシーンのサイズの扱いの現在の設定を返します。</p>
+<h4 id="void-scenesettexturefiltertexturefilter-texturefilter"><code class="codehilite"><span class="nt">void</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">SetTextureFilter</span><span class="o">(</span><span class="nt">TextureFilter</span> <span class="nt">textureFilter</span><span class="o">);</span></code><a class="headerlink" href="#void-scenesettexturefiltertexturefilter-texturefilter" title="Permanent link">&para;</a></h4>
+<ul>
+<li>textureFilter: シーンを拡大縮小描画する際に使うテクスチャフィルタ</li>
+</ul>
+<p>ウィンドウのクライアント領域がシーンのサイズと異なる場合、シーンを拡大縮小描画するために使うテクスチャフィルタを設定します。デフォルトは <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">DefaultFilter</span></code> です。ドット絵感を維持したい場合などには <code class="codehilite"><span class="n">TextureFilter</span><span class="p">::</span><span class="n">Nearest</span></code> を設定します。</p>
+<h4 id="texturefilter-scenegettexturefilter"><code class="codehilite"><span class="nt">TextureFilter</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">GetTextureFilter</span><span class="o">();</span></code><a class="headerlink" href="#texturefilter-scenegettexturefilter" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: シーンを拡大縮小描画する際に使うテクスチャフィルタ</li>
+</ul>
+<p>ウィンドウのクライアント領域がシーンのサイズと異なる場合、シーンを拡大縮小描画するために使うテクスチャフィルタの現在の設定を返します。<code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">SetTextureFilter</span><span class="p">()</span></code> で変更できます。</p>
+<h4 id="void-scenesetbackgroundconst-colorf-color"><code class="codehilite"><span class="nt">void</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">SetBackground</span><span class="o">(</span><span class="nt">const</span> <span class="nt">ColorF</span><span class="o">&amp;</span> <span class="nt">color</span><span class="o">);</span></code><a class="headerlink" href="#void-scenesetbackgroundconst-colorf-color" title="Permanent link">&para;</a></h4>
+<ul>
+<li>color: シーンの背景色</li>
+</ul>
+<p>シーンの背景色を設定します。色のアルファ成分は無視されます。デフォルトは <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">DefaultBackgroundColor</span></code> です。</p>
+<h4 id="void-scenesetletterboxconst-colorf-color"><code class="codehilite"><span class="nt">void</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">SetLetterbox</span><span class="o">(</span><span class="nt">const</span> <span class="nt">ColorF</span><span class="o">&amp;</span> <span class="nt">color</span><span class="o">);</span></code><a class="headerlink" href="#void-scenesetletterboxconst-colorf-color" title="Permanent link">&para;</a></h4>
+<ul>
+<li>color: レターボックスの色</li>
+</ul>
+<p>ウィンドウのクライアント領域がシーンよりも大きい場合余白となるスペース「レターボックス」の色を設定します。色のアルファ成分は無視されます。デフォルトは <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">DefaultLetterBoxColor</span></code> です。</p>
+<h4 id="void-scenesetmaxdeltatimedouble-timesec"><code class="codehilite"><span class="nt">void</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">SetMaxDeltaTime</span><span class="o">(</span><span class="nt">double</span> <span class="nt">timeSec</span><span class="o">);</span></code><a class="headerlink" href="#void-scenesetmaxdeltatimedouble-timesec" title="Permanent link">&para;</a></h4>
+<ul>
+<li>timeSec: 最大の時間（秒）</li>
+</ul>
+<p><code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">DeltaTime</span><span class="p">()</span></code> が返す最大の時間（秒）を設定します。デフォルトは <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">DefaultMaxDeltaTime</span></code> です。<code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">DeltaTime</span><span class="p">()</span></code> が大きな値を返して物理演算などの経過時間処理に負荷がかかるのを防ぐ役割があります。</p>
+<h4 id="double-scenegetmaxdeltatime"><code class="codehilite"><span class="nt">double</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">GetMaxDeltaTime</span><span class="o">();</span></code><a class="headerlink" href="#double-scenegetmaxdeltatime" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">DeltaTime</span><span class="p">()</span></code> が返す最大の時間（秒）</li>
+</ul>
+<p><code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">DeltaTime</span><span class="p">()</span></code> が返す最大の時間（秒）の現在の設定を返します。<code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">SetMaxDeltaTime</span><span class="p">()</span></code> で変更できます。</p>
+<h4 id="double-scenedeltatime"><code class="codehilite"><span class="nt">double</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">DeltaTime</span><span class="o">();</span></code><a class="headerlink" href="#double-scenedeltatime" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: 前回のフレームからの経過時間（秒）と <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">SetMaxDeltaTime</span><span class="p">()</span></code> の小さいほうの値</li>
+</ul>
+<p>前回の <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> からの経過時間を返します。この値をもとにアニメーションやイベントの処理などを行うことで、フレームレートが上下しても対応できます。<code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> によって値が更新されます。</p>
+<h4 id="double-scenetime"><code class="codehilite"><span class="nt">double</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">Time</span><span class="o">();</span></code><a class="headerlink" href="#double-scenetime" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: アプリケーションが起動してからの経過時間（秒）</li>
+</ul>
+<p>アプリケーションが起動してからの経過時間（秒）を返します。<code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> によって値が更新されます。</p>
+<h4 id="int32-sceneframecount"><code class="codehilite"><span class="nt">int32</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">FrameCount</span><span class="o">();</span></code><a class="headerlink" href="#int32-sceneframecount" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> が呼ばれた回数</li>
+</ul>
+<p><code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> が呼ばれた回数（= フレームカウント）を返します。ユーザの環境によってフレームレートが変わるため、この値をアニメーション等の制御に使ってはいけません。</p>
+<h4 id="vec2-sceneclienttosceneconst-vec2-pos"><code class="codehilite"><span class="nt">Vec2</span> <span class="nt">Scene</span><span class="p">::</span><span class="nd">ClientToScene</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">);</span></code><a class="headerlink" href="#vec2-sceneclienttosceneconst-vec2-pos" title="Permanent link">&para;</a></h4>
+<ul>
+<li>pos: ウィンドウのクライアント領域上の座標</li>
+<li>戻り値: シーン上の座標</li>
+</ul>
+<p>ウィンドウのクライアント領域上の座標をシーン上の座標に変換します。シーンの範囲外の座標になることもあります。</p>
+<h2 id="system">System 名前空間<a class="headerlink" href="#system" title="Permanent link">&para;</a></h2>
+<h3 id="_3">関数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="bool-systemupdate"><code class="codehilite"><span class="nt">bool</span> <span class="nt">System</span><span class="p">::</span><span class="nd">Update</span><span class="o">();</span></code><a class="headerlink" href="#bool-systemupdate" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: プログラムの続行の可否</li>
+</ul>
+<p>描画や入力情報など、フレームを更新します。フレームレートを調整する働きもあります。アプリケーション終了トリガーが発生するか、内部で回復不能なエラーが発生した場合に <code class="codehilite"><span class="k">false</span></code> を返します。この関数が <code class="codehilite"><span class="k">false</span></code> を返したらプログラムを終了させるべきです。</p>
+<h4 id="void-systemexit"><code class="codehilite"><span class="nv">void</span> <span class="nv">System</span>::<span class="k">Exit</span><span class="ss">()</span><span class="c1">;</span></code><a class="headerlink" href="#void-systemexit" title="Permanent link">&para;</a></h4>
+<p>プログラムの終了のために、この直後の <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> が <code class="codehilite"><span class="k">false</span></code> を返すように設定します。この関数自体が終了処理を行うわけではないので、この関数の呼び出しは必須ではありません。</p>
+<h4 id="void-setterminationtriggersuint32-useractionflags"><code class="codehilite"><span class="n">void</span> <span class="n">SetTerminationTriggers</span><span class="p">(</span><span class="n">uint32</span> <span class="n">userActionFlags</span><span class="p">);</span></code><a class="headerlink" href="#void-setterminationtriggersuint32-useractionflags" title="Permanent link">&para;</a></h4>
+<ul>
+<li>userActionFlags: アプリケーション終了トリガーに設定するユーザアクションのフラグ</li>
+</ul>
+<p>アプリケーション終了トリガーに設定するユーザアクションを設定します。</p>
+<h4 id="uint32-getterminationtriggers"><code class="codehilite"><span class="n">uint32</span> <span class="n">GetTerminationTriggers</span><span class="p">();</span></code><a class="headerlink" href="#uint32-getterminationtriggers" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: 前のフレームで発生したアプリケーション終了トリガーのフラグ</li>
+</ul>
+<h4 id="uint32-getuseractions"><code class="codehilite"><span class="n">uint32</span> <span class="n">GetUserActions</span><span class="p">();</span></code><a class="headerlink" href="#uint32-getuseractions" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: 前のフレームで発生したユーザアクションのフラグ</li>
+</ul>
+<h4 id="void-sleepint32-milliseconds"><code class="codehilite"><span class="n">void</span> <span class="n">Sleep</span><span class="p">(</span><span class="n">int32</span> <span class="n">milliseconds</span><span class="p">);</span></code><a class="headerlink" href="#void-sleepint32-milliseconds" title="Permanent link">&para;</a></h4>
+<h4 id="void-sleepconst-duration-duration"><code class="codehilite"><span class="n">void</span> <span class="n">Sleep</span><span class="p">(</span><span class="n">const</span> <span class="n">Duration</span><span class="o">&amp;</span> <span class="n">duration</span><span class="p">);</span></code><a class="headerlink" href="#void-sleepconst-duration-duration" title="Permanent link">&para;</a></h4>
+<ul>
+<li>milliseconds: スリープする時間（ミリ秒）</li>
+<li>duration: スリープする時間</li>
+</ul>
+<h4 id="bool-launchbrowserconst-filepath-url"><code class="codehilite"><span class="n">bool</span> <span class="n">LaunchBrowser</span><span class="p">(</span><span class="n">const</span> <span class="n">FilePath</span><span class="o">&amp;</span> <span class="n">url</span><span class="p">);</span></code><a class="headerlink" href="#bool-launchbrowserconst-filepath-url" title="Permanent link">&para;</a></h4>
+<ul>
+<li>url: オープンする URL</li>
+<li>戻り値: オープンの成功の可否</li>
+</ul>
+<p>指定された URL をデフォルトの Web ブラウザでオープンします。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../tutorial/release/" title="99. アプリのリリース" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                99. アプリのリリース
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../reference/fullscreen/" title="フルスクリーン" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                フルスクリーン
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) 2018 - present, Ryo Suzuki<br>Copyright (c) 2018 - present, OpenSiv3D Project
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/Siv3D/OpenSiv3D" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/Siv3D" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.39abc4af.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
