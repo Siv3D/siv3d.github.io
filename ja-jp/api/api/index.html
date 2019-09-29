@@ -1458,43 +1458,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#void-setterminationtriggersuint32-useractionflags" title="void SetTerminationTriggers(uint32 userActionFlags);" class="md-nav__link">
-    void SetTerminationTriggers(uint32 userActionFlags);
+  <a href="#void-systemsetterminationtriggersuint32-useractionflags" title="void System::SetTerminationTriggers(uint32 userActionFlags);" class="md-nav__link">
+    void System::SetTerminationTriggers(uint32 userActionFlags);
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#uint32-getterminationtriggers" title="uint32 GetTerminationTriggers();" class="md-nav__link">
-    uint32 GetTerminationTriggers();
+  <a href="#uint32-systemgetterminationtriggers" title="uint32 System::GetTerminationTriggers();" class="md-nav__link">
+    uint32 System::GetTerminationTriggers();
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#uint32-getuseractions" title="uint32 GetUserActions();" class="md-nav__link">
-    uint32 GetUserActions();
+  <a href="#uint32-systemgetuseractions" title="uint32 System::GetUserActions();" class="md-nav__link">
+    uint32 System::GetUserActions();
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#void-sleepint32-milliseconds" title="void Sleep(int32 milliseconds);" class="md-nav__link">
-    void Sleep(int32 milliseconds);
+  <a href="#void-systemsleepint32-milliseconds" title="void System::Sleep(int32 milliseconds);" class="md-nav__link">
+    void System::Sleep(int32 milliseconds);
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#void-sleepconst-duration-duration" title="void Sleep(const Duration&amp; duration);" class="md-nav__link">
-    void Sleep(const Duration&amp; duration);
+  <a href="#void-systemsleepconst-duration-duration" title="void System::Sleep(const Duration&amp; duration);" class="md-nav__link">
+    void System::Sleep(const Duration&amp; duration);
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#bool-launchbrowserconst-filepath-url" title="bool LaunchBrowser(const FilePath&amp; url);" class="md-nav__link">
-    bool LaunchBrowser(const FilePath&amp; url);
+  <a href="#bool-systemlaunchbrowserconst-filepath-url" title="bool System::LaunchBrowser(const FilePath&amp; url);" class="md-nav__link">
+    bool System::LaunchBrowser(const FilePath&amp; url);
   </a>
   
 </li>
@@ -2170,43 +2170,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#void-setterminationtriggersuint32-useractionflags" title="void SetTerminationTriggers(uint32 userActionFlags);" class="md-nav__link">
-    void SetTerminationTriggers(uint32 userActionFlags);
+  <a href="#void-systemsetterminationtriggersuint32-useractionflags" title="void System::SetTerminationTriggers(uint32 userActionFlags);" class="md-nav__link">
+    void System::SetTerminationTriggers(uint32 userActionFlags);
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#uint32-getterminationtriggers" title="uint32 GetTerminationTriggers();" class="md-nav__link">
-    uint32 GetTerminationTriggers();
+  <a href="#uint32-systemgetterminationtriggers" title="uint32 System::GetTerminationTriggers();" class="md-nav__link">
+    uint32 System::GetTerminationTriggers();
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#uint32-getuseractions" title="uint32 GetUserActions();" class="md-nav__link">
-    uint32 GetUserActions();
+  <a href="#uint32-systemgetuseractions" title="uint32 System::GetUserActions();" class="md-nav__link">
+    uint32 System::GetUserActions();
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#void-sleepint32-milliseconds" title="void Sleep(int32 milliseconds);" class="md-nav__link">
-    void Sleep(int32 milliseconds);
+  <a href="#void-systemsleepint32-milliseconds" title="void System::Sleep(int32 milliseconds);" class="md-nav__link">
+    void System::Sleep(int32 milliseconds);
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#void-sleepconst-duration-duration" title="void Sleep(const Duration&amp; duration);" class="md-nav__link">
-    void Sleep(const Duration&amp; duration);
+  <a href="#void-systemsleepconst-duration-duration" title="void System::Sleep(const Duration&amp; duration);" class="md-nav__link">
+    void System::Sleep(const Duration&amp; duration);
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#bool-launchbrowserconst-filepath-url" title="bool LaunchBrowser(const FilePath&amp; url);" class="md-nav__link">
-    bool LaunchBrowser(const FilePath&amp; url);
+  <a href="#bool-systemlaunchbrowserconst-filepath-url" title="bool System::LaunchBrowser(const FilePath&amp; url);" class="md-nav__link">
+    bool System::LaunchBrowser(const FilePath&amp; url);
   </a>
   
 </li>
@@ -2368,26 +2368,26 @@
 <p>描画や入力情報など、フレームを更新します。フレームレートを調整する働きもあります。アプリケーション終了トリガーが発生するか、内部で回復不能なエラーが発生した場合に <code class="codehilite"><span class="k">false</span></code> を返します。この関数が <code class="codehilite"><span class="k">false</span></code> を返したらプログラムを終了させるべきです。</p>
 <h4 id="void-systemexit"><code class="codehilite"><span class="nv">void</span> <span class="nv">System</span>::<span class="k">Exit</span><span class="ss">()</span><span class="c1">;</span></code><a class="headerlink" href="#void-systemexit" title="Permanent link">&para;</a></h4>
 <p>プログラムの終了のために、この直後の <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> が <code class="codehilite"><span class="k">false</span></code> を返すように設定します。この関数自体が終了処理を行うわけではないので、この関数の呼び出しは必須ではありません。</p>
-<h4 id="void-setterminationtriggersuint32-useractionflags"><code class="codehilite"><span class="n">void</span> <span class="n">SetTerminationTriggers</span><span class="p">(</span><span class="n">uint32</span> <span class="n">userActionFlags</span><span class="p">);</span></code><a class="headerlink" href="#void-setterminationtriggersuint32-useractionflags" title="Permanent link">&para;</a></h4>
+<h4 id="void-systemsetterminationtriggersuint32-useractionflags"><code class="codehilite"><span class="nt">void</span> <span class="nt">System</span><span class="p">::</span><span class="nd">SetTerminationTriggers</span><span class="o">(</span><span class="nt">uint32</span> <span class="nt">userActionFlags</span><span class="o">);</span></code><a class="headerlink" href="#void-systemsetterminationtriggersuint32-useractionflags" title="Permanent link">&para;</a></h4>
 <ul>
 <li>userActionFlags: アプリケーション終了トリガーに設定するユーザアクションのフラグ</li>
 </ul>
 <p>アプリケーション終了トリガーに設定するユーザアクションを設定します。</p>
-<h4 id="uint32-getterminationtriggers"><code class="codehilite"><span class="n">uint32</span> <span class="n">GetTerminationTriggers</span><span class="p">();</span></code><a class="headerlink" href="#uint32-getterminationtriggers" title="Permanent link">&para;</a></h4>
+<h4 id="uint32-systemgetterminationtriggers"><code class="codehilite"><span class="nt">uint32</span> <span class="nt">System</span><span class="p">::</span><span class="nd">GetTerminationTriggers</span><span class="o">();</span></code><a class="headerlink" href="#uint32-systemgetterminationtriggers" title="Permanent link">&para;</a></h4>
 <ul>
 <li>戻り値: 前のフレームで発生したアプリケーション終了トリガーのフラグ</li>
 </ul>
-<h4 id="uint32-getuseractions"><code class="codehilite"><span class="n">uint32</span> <span class="n">GetUserActions</span><span class="p">();</span></code><a class="headerlink" href="#uint32-getuseractions" title="Permanent link">&para;</a></h4>
+<h4 id="uint32-systemgetuseractions"><code class="codehilite"><span class="nt">uint32</span> <span class="nt">System</span><span class="p">::</span><span class="nd">GetUserActions</span><span class="o">();</span></code><a class="headerlink" href="#uint32-systemgetuseractions" title="Permanent link">&para;</a></h4>
 <ul>
 <li>戻り値: 前のフレームで発生したユーザアクションのフラグ</li>
 </ul>
-<h4 id="void-sleepint32-milliseconds"><code class="codehilite"><span class="n">void</span> <span class="n">Sleep</span><span class="p">(</span><span class="n">int32</span> <span class="n">milliseconds</span><span class="p">);</span></code><a class="headerlink" href="#void-sleepint32-milliseconds" title="Permanent link">&para;</a></h4>
-<h4 id="void-sleepconst-duration-duration"><code class="codehilite"><span class="n">void</span> <span class="n">Sleep</span><span class="p">(</span><span class="n">const</span> <span class="n">Duration</span><span class="o">&amp;</span> <span class="n">duration</span><span class="p">);</span></code><a class="headerlink" href="#void-sleepconst-duration-duration" title="Permanent link">&para;</a></h4>
+<h4 id="void-systemsleepint32-milliseconds"><code class="codehilite"><span class="nt">void</span> <span class="nt">System</span><span class="p">::</span><span class="nd">Sleep</span><span class="o">(</span><span class="nt">int32</span> <span class="nt">milliseconds</span><span class="o">);</span></code><a class="headerlink" href="#void-systemsleepint32-milliseconds" title="Permanent link">&para;</a></h4>
+<h4 id="void-systemsleepconst-duration-duration"><code class="codehilite"><span class="nt">void</span> <span class="nt">System</span><span class="p">::</span><span class="nd">Sleep</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Duration</span><span class="o">&amp;</span> <span class="nt">duration</span><span class="o">);</span></code><a class="headerlink" href="#void-systemsleepconst-duration-duration" title="Permanent link">&para;</a></h4>
 <ul>
 <li>milliseconds: スリープする時間（ミリ秒）</li>
 <li>duration: スリープする時間</li>
 </ul>
-<h4 id="bool-launchbrowserconst-filepath-url"><code class="codehilite"><span class="n">bool</span> <span class="n">LaunchBrowser</span><span class="p">(</span><span class="n">const</span> <span class="n">FilePath</span><span class="o">&amp;</span> <span class="n">url</span><span class="p">);</span></code><a class="headerlink" href="#bool-launchbrowserconst-filepath-url" title="Permanent link">&para;</a></h4>
+<h4 id="bool-systemlaunchbrowserconst-filepath-url"><code class="codehilite"><span class="nt">bool</span> <span class="nt">System</span><span class="p">::</span><span class="nd">LaunchBrowser</span><span class="o">(</span><span class="nt">const</span> <span class="nt">FilePath</span><span class="o">&amp;</span> <span class="nt">url</span><span class="o">);</span></code><a class="headerlink" href="#bool-systemlaunchbrowserconst-filepath-url" title="Permanent link">&para;</a></h4>
 <ul>
 <li>url: オープンする URL</li>
 <li>戻り値: オープンの成功の可否</li>
