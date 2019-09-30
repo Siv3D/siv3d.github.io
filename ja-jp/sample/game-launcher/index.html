@@ -502,6 +502,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../tutorial/resource/" title="20. Embedded resource" class="md-nav__link">
+      20. Embedded resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../tutorial/release/" title="99. Releasing your application" class="md-nav__link">
       99. Releasing your application
     </a>
@@ -1140,6 +1152,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../tutorial/resource/" title="20. リソースの埋め込み" class="md-nav__link">
+      20. リソースの埋め込み
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../tutorial/release/" title="99. アプリのリリース" class="md-nav__link">
       99. アプリのリリース
     </a>
@@ -1471,8 +1495,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="ランチャーのプログラム" class="md-nav__link">
-    ランチャーのプログラム
+  <a href="#opensiv3d-v041" title="ランチャーのプログラム (OpenSiv3D v0.4.1 以降)" class="md-nav__link">
+    ランチャーのプログラム (OpenSiv3D v0.4.1 以降)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opensiv3d-v040" title="(参考) ランチャーのプログラム (OpenSiv3D v0.4.0)" class="md-nav__link">
+    (参考) ランチャーのプログラム (OpenSiv3D v0.4.0)
   </a>
   
 </li>
@@ -1605,8 +1636,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="ランチャーのプログラム" class="md-nav__link">
-    ランチャーのプログラム
+  <a href="#opensiv3d-v041" title="ランチャーのプログラム (OpenSiv3D v0.4.1 以降)" class="md-nav__link">
+    ランチャーのプログラム (OpenSiv3D v0.4.1 以降)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opensiv3d-v040" title="(参考) ランチャーのプログラム (OpenSiv3D v0.4.0)" class="md-nav__link">
+    (参考) ランチャーのプログラム (OpenSiv3D v0.4.0)
   </a>
   
 </li>
@@ -1660,8 +1698,12 @@
 </pre></div>
 
 <h2 id="launcher_infoini"><code class="codehilite"><span class="n">launcher_info</span><span class="p">.</span><span class="n">ini</span></code> の書式<a class="headerlink" href="#launcher_infoini" title="Permanent link">&para;</a></h2>
-<p>ゲームの情報や操作に使うデバイスを記述します。
-<div class="codehilite"><pre><span></span><span class="k">[Game]</span>
+<p>ゲームの情報や操作に使うデバイスを記述します。  </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>macOS の場合、実行ファイルのパスはアプリフォルダ <code class="codehilite"><span class="n">Game</span><span class="p">.</span><span class="n">app</span></code> ではなく <code class="codehilite"><span class="n">Game</span><span class="p">.</span><span class="n">app</span><span class="o">/</span><span class="n">Contents</span><span class="o">/</span><span class="n">MacOS</span><span class="o">/</span><span class="n">Game</span></code> のように実際の実行ファイルの場所を指定します。</p>
+</div>
+<p><div class="codehilite"><pre><span></span><span class="k">[Game]</span>
 <span class="na">title</span> <span class="o">=</span> <span class="s">タイトル</span>
 <span class="na">path</span> <span class="o">=</span> <span class="s">実行ファイルまたはページのパス（Game.exe, Geme.html, https://example.com/）</span>
 <span class="na">image</span> <span class="o">=</span> <span class="s">ランチャーのタイルに表示する画像のパス（相対パス）</span>
@@ -1686,8 +1728,340 @@
 <span class="na">gamepad</span> <span class="o">=</span> <span class="s">true</span>
 <span class="na">priority</span> <span class="o">=</span> <span class="s">100</span>
 </pre></div></p>
-<h2 id="_3">ランチャーのプログラム<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>プロジェクトに追加するファイル</p>
+<h2 id="opensiv3d-v041">ランチャーのプログラム (OpenSiv3D v0.4.1 以降)<a class="headerlink" href="#opensiv3d-v041" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt; </span><span class="c1">// OpenSiv3D v0.4.1</span>
+
+<span class="c1">// ゲームの情報</span>
+<span class="k">struct</span> <span class="n">Game</span>
+<span class="p">{</span>
+    <span class="c1">// ゲームのタイトル</span>
+    <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
+
+    <span class="c1">// ゲーム実行ファイル または URL</span>
+    <span class="n">FilePath</span> <span class="n">path</span><span class="p">;</span>
+
+    <span class="c1">// Web ブラウザで起動</span>
+    <span class="kt">bool</span> <span class="n">isWebApp</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="c1">// ゲームの画像</span>
+    <span class="n">Texture</span> <span class="n">texture</span><span class="p">;</span>
+
+    <span class="c1">// ゲームの説明文</span>
+    <span class="n">String</span> <span class="n">desc</span><span class="p">;</span>
+
+    <span class="c1">// ゲームの開発スタッフ</span>
+    <span class="n">String</span> <span class="n">staff</span><span class="p">;</span>
+
+    <span class="c1">// ゲームの開発ツール</span>
+    <span class="n">String</span> <span class="n">tools</span><span class="p">;</span>
+
+    <span class="c1">// マウスを使用するか</span>
+    <span class="kt">bool</span> <span class="n">useMouse</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="c1">// キーボードを使用するか</span>
+    <span class="kt">bool</span> <span class="n">useKeyboard</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="c1">// ゲームパッドを使用するか</span>
+    <span class="kt">bool</span> <span class="n">useGamepad</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="c1">// ランチャー表示優先度（大きいほど優先）</span>
+    <span class="n">int32</span> <span class="n">priority</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// ゲームのパスが Web ページかどうかを調べる関数</span>
+<span class="kt">bool</span> <span class="nf">IsURL</span><span class="p">(</span><span class="k">const</span> <span class="n">String</span><span class="o">&amp;</span> <span class="n">path</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">path</span><span class="p">.</span><span class="n">starts_with</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;http://&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="n">path</span><span class="p">.</span><span class="n">starts_with</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;https://&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// ゲームの情報をロードする関数</span>
+<span class="n">Array</span><span class="o">&lt;</span><span class="n">Game</span><span class="o">&gt;</span> <span class="n">LoadGames</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// ゲームのリスト</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Game</span><span class="o">&gt;</span> <span class="n">games</span><span class="p">;</span>
+
+    <span class="c1">// ホームディレクトリ</span>
+    <span class="k">const</span> <span class="n">FilePath</span> <span class="n">homeDirectory</span> <span class="o">=</span> <span class="n">FileSystem</span><span class="o">::</span><span class="n">CurrentDirectory</span><span class="p">();</span>
+
+    <span class="c1">// ホームディレクトリにあるアイテムを検索</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">FilePath</span><span class="o">&amp;</span> <span class="nl">gameDirectory</span> <span class="p">:</span> <span class="n">FileSystem</span><span class="o">::</span><span class="n">DirectoryContents</span><span class="p">(</span><span class="n">homeDirectory</span><span class="p">,</span> <span class="nb">false</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="c1">// フォルダでない場合はスキップ</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">FileSystem</span><span class="o">::</span><span class="n">IsDirectory</span><span class="p">(</span><span class="n">gameDirectory</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// launcher_info.ini を読み込む</span>
+        <span class="k">const</span> <span class="n">INIData</span> <span class="n">ini</span><span class="p">(</span><span class="n">gameDirectory</span> <span class="o">+</span> <span class="sa">U</span><span class="s">&quot;launcher_info.ini&quot;</span><span class="p">);</span>
+
+        <span class="c1">// 読み込みに失敗</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ini</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// ゲームの情報を読み込む</span>
+        <span class="n">Game</span> <span class="n">game</span><span class="p">;</span>
+        <span class="n">game</span><span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Game.title&quot;</span><span class="p">];</span>
+        <span class="n">game</span><span class="p">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">Texture</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">gameDirectory</span> <span class="o">+</span> <span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Game.image&quot;</span><span class="p">]).</span><span class="n">squareClipped</span><span class="p">(),</span> <span class="n">TextureDesc</span><span class="o">::</span><span class="n">Mipped</span><span class="p">);</span>
+        <span class="n">game</span><span class="p">.</span><span class="n">desc</span> <span class="o">=</span> <span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Game.desc&quot;</span><span class="p">].</span><span class="n">replaced</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">n&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">game</span><span class="p">.</span><span class="n">staff</span> <span class="o">=</span> <span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Game.staff&quot;</span><span class="p">];</span>
+        <span class="n">game</span><span class="p">.</span><span class="n">tools</span> <span class="o">=</span> <span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Game.tools&quot;</span><span class="p">];</span>
+        <span class="n">game</span><span class="p">.</span><span class="n">useMouse</span> <span class="o">=</span> <span class="n">ini</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.mouse&quot;</span><span class="p">);</span>
+        <span class="n">game</span><span class="p">.</span><span class="n">useKeyboard</span> <span class="o">=</span> <span class="n">ini</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.keyboard&quot;</span><span class="p">);</span>
+        <span class="n">game</span><span class="p">.</span><span class="n">useGamepad</span> <span class="o">=</span> <span class="n">ini</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.gamepad&quot;</span><span class="p">);</span>
+        <span class="n">game</span><span class="p">.</span><span class="n">priority</span> <span class="o">=</span> <span class="n">ini</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.priority&quot;</span><span class="p">);</span>
+
+        <span class="k">const</span> <span class="n">String</span> <span class="n">path</span> <span class="o">=</span> <span class="n">game</span><span class="p">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Game.path&quot;</span><span class="p">];</span>
+        <span class="n">game</span><span class="p">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">IsURL</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">?</span> <span class="nl">path</span> <span class="p">:</span> <span class="p">(</span><span class="n">gameDirectory</span> <span class="o">+</span> <span class="n">path</span><span class="p">);</span>
+        <span class="n">game</span><span class="p">.</span><span class="n">isWebApp</span> <span class="o">=</span> <span class="o">!</span><span class="n">path</span><span class="p">.</span><span class="n">ends_with</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;.exe&quot;</span><span class="p">);</span>
+
+        <span class="c1">// ゲームのリストに追加</span>
+        <span class="n">games</span> <span class="o">&lt;&lt;</span> <span class="n">game</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// プライオリティに基づいてゲームをソート</span>
+    <span class="k">return</span> <span class="n">games</span><span class="p">.</span><span class="n">sort_by</span><span class="p">([](</span><span class="k">const</span> <span class="n">Game</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Game</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">priority</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">.</span><span class="n">priority</span><span class="p">;</span> <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">namespace</span> <span class="n">Config</span>
+<span class="p">{</span>
+    <span class="c1">// Web アプリを起動する際に使用する Web ブラウザのパス</span>
+    <span class="k">const</span> <span class="n">FilePath</span> <span class="n">BrowserPath</span> <span class="o">=</span> <span class="sa">U</span><span class="s">&quot;C:/Program Files (x86)/Google/Chrome/Application/chrome.exe&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">namespace</span> <span class="n">UI</span>
+<span class="p">{</span>
+    <span class="c1">// ウィンドウのサイズ</span>
+    <span class="k">constexpr</span> <span class="n">Size</span> <span class="n">WindowSize</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">640</span><span class="p">);</span>
+
+    <span class="c1">// ウィンドウのフレームを表示するか</span>
+    <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">Frameless</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="c1">// タイルの基本サイズ</span>
+    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">TileSize</span> <span class="o">=</span> <span class="mi">250</span><span class="p">;</span>
+
+    <span class="c1">// 背景色</span>
+    <span class="k">constexpr</span> <span class="n">ColorF</span> <span class="nf">BackgroundColor</span><span class="p">(</span><span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">);</span>
+
+    <span class="c1">// タイル選択の色</span>
+    <span class="k">constexpr</span> <span class="n">ColorF</span> <span class="nf">TileFrmaeColor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">Vec2</span> <span class="nf">BaseTilePos</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">RectF</span> <span class="nf">InfoArea</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">340</span><span class="p">,</span> <span class="mi">715</span><span class="p">,</span> <span class="mi">185</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">RectF</span> <span class="nf">StaffArea</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">530</span><span class="p">,</span> <span class="mi">715</span><span class="p">,</span> <span class="mi">70</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">RectF</span> <span class="nf">PlayButton</span><span class="p">(</span><span class="mi">900</span><span class="p">,</span> <span class="mi">340</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">85</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">ColorF</span> <span class="nf">PlayButtonColor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.67</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">RectF</span> <span class="nf">ControlArea</span><span class="p">(</span><span class="mi">900</span><span class="p">,</span> <span class="mi">430</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">170</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">ColorF</span> <span class="nf">InfoAreaMouseOverColor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="n">ColorF</span> <span class="nf">TextColor</span><span class="p">(</span><span class="mf">0.2</span><span class="p">);</span>
+
+    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">InfoAreaRound</span> <span class="o">=</span> <span class="mf">8.0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// ウィンドウと背景色</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game Launcher&quot;</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">WindowSize</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">Frameless</span> <span class="o">?</span> <span class="n">WindowStyle</span><span class="o">::</span><span class="nl">Frameless</span> <span class="p">:</span> <span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">BackgroundColor</span><span class="p">);</span>
+
+    <span class="c1">// フォント</span>
+    <span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.Title&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Heavy</span><span class="p">);</span>
+    <span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.Desc&quot;</span><span class="p">,</span> <span class="mi">26</span><span class="p">);</span>
+    <span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.Small&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
+    <span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.Play&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Heavy</span><span class="p">);</span>
+
+    <span class="c1">// 再生マーク</span>
+    <span class="n">TextureAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Icon.Play&quot;</span><span class="p">,</span> <span class="n">Icon</span><span class="p">(</span><span class="mh">0xf144</span><span class="p">,</span> <span class="mi">48</span><span class="p">));</span>
+
+    <span class="c1">// ゲーム情報</span>
+    <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">Game</span><span class="o">&gt;</span> <span class="n">games</span> <span class="o">=</span> <span class="n">LoadGames</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">games</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="o">::</span><span class="n">ShowMessageBox</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;ゲームがありません。&quot;</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 実行中のゲームのプロセス</span>
+    <span class="n">Optional</span><span class="o">&lt;</span><span class="n">ChildProcess</span><span class="o">&gt;</span> <span class="n">process</span><span class="p">;</span>
+
+    <span class="c1">// 選択しているタイルのインデックス [0, games.size()-1]</span>
+    <span class="kt">size_t</span> <span class="n">activeGameIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// タイルのスクロール用の変数</span>
+    <span class="kt">double</span> <span class="n">tileOffsetX</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">targetTileOffsetX</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tileOffsetXVelocity</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 現在選択されているゲーム</span>
+        <span class="k">const</span> <span class="n">Game</span><span class="o">&amp;</span> <span class="n">game</span> <span class="o">=</span> <span class="n">games</span><span class="p">[</span><span class="n">activeGameIndex</span><span class="p">];</span>
+
+        <span class="c1">///////////////////////////////////////////////</span>
+        <span class="c1">//</span>
+        <span class="c1">// ウィンドウの最小化・復帰</span>
+        <span class="c1">//</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">process</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// プロセスが実行中なら</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">process</span><span class="o">-&gt;</span><span class="n">isRunning</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="c1">// ウィンドウを最小化</span>
+                <span class="n">Window</span><span class="o">::</span><span class="n">Minimize</span><span class="p">();</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="c1">// プロセスが終了したら</span>
+            <span class="p">{</span>
+                <span class="c1">// ウィンドウを復帰</span>
+                <span class="n">Window</span><span class="o">::</span><span class="n">Restore</span><span class="p">();</span>
+                <span class="n">process</span> <span class="o">=</span> <span class="n">none</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">///////////////////////////////////////////////</span>
+        <span class="c1">//</span>
+        <span class="c1">// ゲームの起動</span>
+        <span class="c1">//</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">PlayButton</span><span class="p">.</span><span class="n">leftClicked</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">isWebApp</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// Web ブラウザを起動</span>
+                <span class="n">process</span> <span class="o">=</span> <span class="n">Process</span><span class="o">::</span><span class="n">Spawn</span><span class="p">(</span><span class="n">Config</span><span class="o">::</span><span class="n">BrowserPath</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;-- {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">path</span><span class="p">));</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="c1">// 実行ファイルを起動</span>
+                <span class="n">process</span> <span class="o">=</span> <span class="n">Process</span><span class="o">::</span><span class="n">Spawn</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">path</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">///////////////////////////////////////////////</span>
+        <span class="c1">//</span>
+        <span class="c1">// 選択しているタイルの変更</span>
+        <span class="c1">//</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">games</span><span class="p">.</span><span class="n">size</span><span class="p">()))</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Vec2</span> <span class="n">center</span> <span class="o">=</span> <span class="n">UI</span><span class="o">::</span><span class="n">BaseTilePos</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="n">tileOffsetX</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">UI</span><span class="o">::</span><span class="n">TileSize</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="k">const</span> <span class="n">RectF</span> <span class="nf">tile</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span> <span class="o">=</span> <span class="n">center</span><span class="p">,</span> <span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">TileSize</span> <span class="o">-</span> <span class="mi">20</span><span class="p">));</span>
+
+            <span class="c1">// タイルがクリックされたら選択</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">tile</span><span class="p">.</span><span class="n">leftClicked</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">activeGameIndex</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// [←][→] キーを押して選択の移動</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyLeft</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">activeGameIndex</span> <span class="o">=</span> <span class="p">(</span><span class="n">activeGameIndex</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="p">(</span><span class="n">activeGameIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyRight</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">activeGameIndex</span> <span class="o">=</span> <span class="n">Min</span><span class="p">(</span><span class="n">activeGameIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">games</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">///////////////////////////////////////////////</span>
+        <span class="c1">//</span>
+        <span class="c1">// タイル表示のスクロール更新</span>
+        <span class="c1">//</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Vec2</span> <span class="n">center</span> <span class="o">=</span> <span class="n">UI</span><span class="o">::</span><span class="n">BaseTilePos</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="n">targetTileOffsetX</span> <span class="o">+</span> <span class="n">activeGameIndex</span> <span class="o">*</span> <span class="n">UI</span><span class="o">::</span><span class="n">TileSize</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="k">const</span> <span class="n">RectF</span> <span class="nf">tile</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span> <span class="o">=</span> <span class="n">center</span><span class="p">,</span> <span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">TileSize</span> <span class="o">-</span> <span class="mi">20</span><span class="p">));</span>
+
+            <span class="c1">// 左端、右端のタイルが画面外ならスクロール</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">tile</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">targetTileOffsetX</span> <span class="o">+=</span> <span class="n">UI</span><span class="o">::</span><span class="n">TileSize</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Width</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">tile</span><span class="p">.</span><span class="n">tr</span><span class="p">().</span><span class="n">x</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">targetTileOffsetX</span> <span class="o">-=</span> <span class="n">UI</span><span class="o">::</span><span class="n">TileSize</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="c1">// スムーズスクロール</span>
+            <span class="n">tileOffsetX</span> <span class="o">=</span> <span class="n">Math</span><span class="o">::</span><span class="n">SmoothDamp</span><span class="p">(</span><span class="n">tileOffsetX</span><span class="p">,</span> <span class="n">targetTileOffsetX</span><span class="p">,</span> <span class="n">tileOffsetXVelocity</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">());</span>
+        <span class="p">}</span>
+
+        <span class="c1">///////////////////////////////////////////////</span>
+        <span class="c1">//</span>
+        <span class="c1">// 描画</span>
+        <span class="c1">//</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">g</span><span class="p">]</span> <span class="o">:</span> <span class="n">Indexed</span><span class="p">(</span><span class="n">games</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Vec2</span> <span class="n">center</span> <span class="o">=</span> <span class="n">UI</span><span class="o">::</span><span class="n">BaseTilePos</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="n">tileOffsetX</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">UI</span><span class="o">::</span><span class="n">TileSize</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="k">const</span> <span class="n">RectF</span> <span class="nf">tile</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span> <span class="o">=</span> <span class="n">center</span><span class="p">,</span> <span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">TileSize</span> <span class="o">-</span> <span class="mi">20</span><span class="p">));</span>
+
+            <span class="c1">// 選択されていたら、タイルの枠を描画</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">activeGameIndex</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">tile</span><span class="p">.</span><span class="n">stretched</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+                    <span class="p">.</span><span class="n">drawShadow</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                    <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">BackgroundColor</span><span class="p">)</span>
+                    <span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">TileFrmaeColor</span><span class="p">,</span> <span class="mf">0.6</span> <span class="o">+</span> <span class="n">Periodic</span><span class="o">::</span><span class="n">Sine0_1</span><span class="p">(</span><span class="mi">1</span><span class="n">s</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.4</span><span class="p">));</span>
+            <span class="p">}</span>
+
+            <span class="c1">// ゲーム画像を描画</span>
+            <span class="n">tile</span><span class="p">(</span><span class="n">g</span><span class="p">.</span><span class="n">texture</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">center</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">tile</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">Cursor</span><span class="o">::</span><span class="n">RequestStyle</span><span class="p">(</span><span class="n">CursorStyle</span><span class="o">::</span><span class="n">Hand</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// タイトルと説明</span>
+        <span class="p">{</span>
+            <span class="n">UI</span><span class="o">::</span><span class="n">InfoArea</span><span class="p">.</span><span class="n">rounded</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">InfoAreaRound</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">InfoArea</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">()</span> <span class="o">?</span> <span class="n">UI</span><span class="o">::</span><span class="nl">InfoAreaMouseOverColor</span> <span class="p">:</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">));</span>
+            <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.Title&quot;</span><span class="p">)(</span><span class="n">game</span><span class="p">.</span><span class="n">title</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">InfoArea</span><span class="p">.</span><span class="n">pos</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">UI</span><span class="o">::</span><span class="n">TextColor</span><span class="p">);</span>
+            <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.Desc&quot;</span><span class="p">)(</span><span class="n">game</span><span class="p">.</span><span class="n">desc</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">InfoArea</span><span class="p">.</span><span class="n">stretched</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">),</span> <span class="n">UI</span><span class="o">::</span><span class="n">TextColor</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// スタッフと開発ツール</span>
+        <span class="p">{</span>
+            <span class="n">UI</span><span class="o">::</span><span class="n">StaffArea</span><span class="p">.</span><span class="n">rounded</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">InfoAreaRound</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">StaffArea</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">()</span> <span class="o">?</span> <span class="n">UI</span><span class="o">::</span><span class="nl">InfoAreaMouseOverColor</span> <span class="p">:</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">));</span>
+            <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.Small&quot;</span><span class="p">)(</span><span class="n">game</span><span class="p">.</span><span class="n">staff</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">StaffArea</span><span class="p">.</span><span class="n">pos</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">UI</span><span class="o">::</span><span class="n">TextColor</span><span class="p">);</span>
+            <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.Small&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;開発ツール: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">tools</span><span class="p">)).</span><span class="n">draw</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">StaffArea</span><span class="p">.</span><span class="n">pos</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">),</span> <span class="n">UI</span><span class="o">::</span><span class="n">TextColor</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// プレイボタン</span>
+        <span class="p">{</span>
+            <span class="n">UI</span><span class="o">::</span><span class="n">PlayButton</span><span class="p">.</span><span class="n">rounded</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">InfoAreaRound</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">PlayButton</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">()</span> <span class="o">?</span> <span class="n">ColorF</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">PlayButtonColor</span><span class="p">)</span> <span class="o">+</span> <span class="n">HSV</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span> <span class="o">:</span> <span class="n">UI</span><span class="o">::</span><span class="n">PlayButtonColor</span><span class="p">);</span>
+            <span class="n">Transformer2D</span> <span class="nf">t</span><span class="p">(</span><span class="n">Mat3x2</span><span class="o">::</span><span class="n">Scale</span><span class="p">(</span><span class="mf">0.95</span> <span class="o">+</span> <span class="n">Periodic</span><span class="o">::</span><span class="n">Sine0_1</span><span class="p">(</span><span class="mf">1.2</span><span class="n">s</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">UI</span><span class="o">::</span><span class="n">PlayButton</span><span class="p">.</span><span class="n">center</span><span class="p">()));</span>
+            <span class="n">TextureAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Icon.Play&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">PlayButton</span><span class="p">.</span><span class="n">center</span><span class="p">().</span><span class="n">movedBy</span><span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+            <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.Play&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;あそぶ&quot;</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">leftCenter</span> <span class="o">=</span> <span class="n">UI</span><span class="o">::</span><span class="n">PlayButton</span><span class="p">.</span><span class="n">center</span><span class="p">().</span><span class="n">movedBy</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">PlayButton</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">Cursor</span><span class="o">::</span><span class="n">RequestStyle</span><span class="p">(</span><span class="n">CursorStyle</span><span class="o">::</span><span class="n">Hand</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 操作方法</span>
+        <span class="p">{</span>
+            <span class="n">UI</span><span class="o">::</span><span class="n">ControlArea</span><span class="p">.</span><span class="n">rounded</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">InfoAreaRound</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">ControlArea</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">()</span> <span class="o">?</span> <span class="n">UI</span><span class="o">::</span><span class="nl">InfoAreaMouseOverColor</span> <span class="p">:</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">));</span>
+            <span class="n">String</span> <span class="n">control</span> <span class="o">=</span> <span class="sa">U</span><span class="s">&quot;操作</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+            <span class="n">control</span> <span class="o">+=</span> <span class="n">game</span><span class="p">.</span><span class="n">useMouse</span> <span class="o">?</span> <span class="sa">U</span><span class="s">&quot;・マウス</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">:</span> <span class="sa">U</span><span class="s">&quot;&quot;</span><span class="p">;</span>
+            <span class="n">control</span> <span class="o">+=</span> <span class="n">game</span><span class="p">.</span><span class="n">useKeyboard</span> <span class="o">?</span> <span class="sa">U</span><span class="s">&quot;・キーボード</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">:</span> <span class="sa">U</span><span class="s">&quot;&quot;</span><span class="p">;</span>
+            <span class="n">control</span> <span class="o">+=</span> <span class="n">game</span><span class="p">.</span><span class="n">useGamepad</span> <span class="o">?</span> <span class="sa">U</span><span class="s">&quot;・ゲームパッド</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">:</span> <span class="sa">U</span><span class="s">&quot;&quot;</span><span class="p">;</span>
+            <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game.Small&quot;</span><span class="p">)(</span><span class="n">control</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">UI</span><span class="o">::</span><span class="n">ControlArea</span><span class="p">.</span><span class="n">pos</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">UI</span><span class="o">::</span><span class="n">TextColor</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="opensiv3d-v040">(参考) ランチャーのプログラム (OpenSiv3D v0.4.0)<a class="headerlink" href="#opensiv3d-v040" title="Permanent link">&para;</a></h2>
+<p>OpenSiv3D v0.4.0 には Process 機能がないため、Windows では以下のプログラムを追加します。  </p>
 <ul>
 <li><a href="https://gist.github.com/Reputeless/066cccd8ac790bbbd421cab4ed28e4fb">CreateProcess.hpp および CreateProcess.cpp</a></li>
 </ul>

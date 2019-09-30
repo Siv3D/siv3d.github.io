@@ -502,6 +502,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../tutorial/resource/" title="20. Embedded resource" class="md-nav__link">
+      20. Embedded resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../tutorial/release/" title="99. Releasing your application" class="md-nav__link">
       99. Releasing your application
     </a>
@@ -1157,8 +1169,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#191" title="19.1" class="md-nav__link">
-    19.1
+  <a href="#191-csv" title="19.1 CSV ファイルからデータを読み込む" class="md-nav__link">
+    19.1 CSV ファイルからデータを読み込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#192-ini" title="19.2 INI ファイルからデータを読み込む" class="md-nav__link">
+    19.2 INI ファイルからデータを読み込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#193-json" title="19.3 JSON ファイルからデータを読み込む" class="md-nav__link">
+    19.3 JSON ファイルからデータを読み込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#194-toml" title="19.4 TOML ファイルからデータを読み込む" class="md-nav__link">
+    19.4 TOML ファイルからデータを読み込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#195-xml" title="19.5 XML ファイルからデータを読み込む" class="md-nav__link">
+    19.5 XML ファイルからデータを読み込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#196" title="19.6 ファイルの更新を検知してリロードする" class="md-nav__link">
+    19.6 ファイルの更新を検知してリロードする
   </a>
   
 </li>
@@ -1171,6 +1218,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../resource/" title="20. リソースの埋め込み" class="md-nav__link">
+      20. リソースの埋め込み
+    </a>
   </li>
 
         
@@ -1577,8 +1636,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#191" title="19.1" class="md-nav__link">
-    19.1
+  <a href="#191-csv" title="19.1 CSV ファイルからデータを読み込む" class="md-nav__link">
+    19.1 CSV ファイルからデータを読み込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#192-ini" title="19.2 INI ファイルからデータを読み込む" class="md-nav__link">
+    19.2 INI ファイルからデータを読み込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#193-json" title="19.3 JSON ファイルからデータを読み込む" class="md-nav__link">
+    19.3 JSON ファイルからデータを読み込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#194-toml" title="19.4 TOML ファイルからデータを読み込む" class="md-nav__link">
+    19.4 TOML ファイルからデータを読み込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#195-xml" title="19.5 XML ファイルからデータを読み込む" class="md-nav__link">
+    19.5 XML ファイルからデータを読み込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#196" title="19.6 ファイルの更新を検知してリロードする" class="md-nav__link">
+    19.6 ファイルの更新を検知してリロードする
   </a>
   
 </li>
@@ -1601,9 +1695,726 @@
                 
                 
                 <h1 id="19">19. 設定ファイル<a class="headerlink" href="#19" title="Permanent link">&para;</a></h1>
-<p>この章では、CSV, INI, JSON, TOML, XML などの設定ファイルを読み書きする方法を学びます。</p>
-<h2 id="191">19.1<a class="headerlink" href="#191" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
+<p>この章では、CSV, INI, JSON, TOML, XML などの設定ファイルを読み書きする方法を学びます。<br />
+OpenSiv3D での設定の記述には、読みやすさと書きやすさに優れた TOML の使用を推奨します。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>OpenSiv3D v0.4.1 よりも古いバージョンには <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">ini</span><span class="ss">)</span></code> と <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">csv</span><span class="ss">)</span></code> が反対の結果を返すバグがあります。代わりに <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">ini</span>.<span class="nv">isOpened</span><span class="ss">())</span></code> <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">csv</span>.<span class="nv">isOpened</span><span class="ss">())</span></code> を使ってください。OpenSiv3D v0.4.1 で修正されました。</p>
+</div>
+<h2 id="191-csv">19.1 CSV ファイルからデータを読み込む<a class="headerlink" href="#191-csv" title="Permanent link">&para;</a></h2>
+<p>CSV ファイルをパースしてデータを読み込むには <code class="codehilite"><span class="n">CSVData</span></code> を使います。<code class="codehilite"><span class="n">CSVData</span></code> のコンストラクタ引数に、読み込みたいテキストファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。リリース用のアプリを作るときには、のちの章で説明する「リソース」パスの使用を推奨します。ファイルが存在しない場合やパースに失敗した場合など、ロードに失敗したかどうかは <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">csv</span><span class="ss">)</span></code> で調べられます。</p>
+<p>CSV データは <code class="codehilite"><span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Array</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span></code> の形式で読み込まれ、添え字演算子 <code class="codehilite"><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span><span class="w"></span></code> によって row 行 col 列目のテキストを取得できます。row, col は 0 からカウントすることに注意しましょう。</p>
+<p><img alt="" src="../images/19-1-0.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="n">Item</span>
+<span class="p">{</span>
+    <span class="c1">// アイテムのラベル</span>
+    <span class="n">String</span> <span class="n">label</span><span class="p">;</span>
+
+    <span class="c1">// アイテムの左上座標</span>
+    <span class="n">Point</span> <span class="n">pos</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// CSV ファイルからデータを読み込む</span>
+    <span class="k">const</span> <span class="n">CSVData</span> <span class="n">csv</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/config/config.csv&quot;</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">csv</span><span class="p">)</span> <span class="c1">// もし読み込みに失敗したら</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Failed to load `config.csv`&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 全ての行を列挙</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">csv</span><span class="p">.</span><span class="n">rows</span><span class="p">();</span> <span class="o">++</span><span class="n">row</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// 行 (Array&lt;String&gt;) の要素を表示</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">csv</span><span class="p">[</span><span class="n">row</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;-----&quot;</span><span class="p">;</span>
+
+    <span class="c1">// 1 行 1 列目のテキストを取得 (0 行, 0 列からカウント）</span>
+    <span class="k">const</span> <span class="n">String</span> <span class="n">windowTitle</span> <span class="o">=</span> <span class="n">csv</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+
+    <span class="c1">// 2 行 1 列目のテキストを int32 型の値に変換</span>
+    <span class="k">const</span> <span class="n">int32</span> <span class="n">windowWidth</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">csv</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+
+    <span class="c1">// 3 行 1 列目のテキストを int32 型の値に変換</span>
+    <span class="k">const</span> <span class="n">int32</span> <span class="n">windowHeight</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">csv</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+
+    <span class="c1">// 4 行 1 列目のテキストを bool 型の値に変換</span>
+    <span class="k">const</span> <span class="kt">bool</span> <span class="n">windowSizable</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">csv</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+
+    <span class="c1">// 5 行 1 列目のテキストを ColorF 型の値に変換</span>
+    <span class="k">const</span> <span class="n">ColorF</span> <span class="n">sceneBackground</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">ColorF</span><span class="o">&gt;</span><span class="p">(</span><span class="n">csv</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">windowTitle</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">windowWidth</span><span class="p">,</span> <span class="n">windowHeight</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span> <span class="o">?</span> <span class="n">WindowStyle</span><span class="o">::</span><span class="nl">Sizable</span> <span class="p">:</span> <span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">sceneBackground</span><span class="p">);</span>
+
+    <span class="c1">// 6 行 1 列目のテキストを &#39;,&#39; で区切って配列にし、それぞれの要素を int32 型の値に変換</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="n">csv</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="mi">1</span><span class="p">].</span><span class="n">split</span><span class="p">(</span><span class="n">U</span><span class="sc">&#39;,&#39;</span><span class="p">).</span><span class="n">map</span><span class="p">(</span><span class="n">Parse</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">);</span>
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">values</span><span class="p">;</span>
+
+    <span class="c1">// アイテムの配列を CSV データから作成</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="p">;</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="kt">size_t</span> <span class="n">itemsCount</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">csv</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="k">const</span> <span class="kt">size_t</span> <span class="n">baseLine</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">itemsCount</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">Item</span> <span class="n">item</span><span class="p">;</span>
+            <span class="n">item</span><span class="p">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">csv</span><span class="p">[</span><span class="n">baseLine</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+            <span class="n">item</span><span class="p">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span><span class="p">(</span><span class="n">csv</span><span class="p">[</span><span class="n">baseLine</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+            <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// アイテム描画用のフォント</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// アイテムを描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Rect</span> <span class="n">rect</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">pos</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">80</span><span class="p">);</span>
+
+            <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+
+            <span class="n">font</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">label</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">center</span><span class="p">(),</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="192-ini">19.2 INI ファイルからデータを読み込む<a class="headerlink" href="#192-ini" title="Permanent link">&para;</a></h2>
+<p>INI ファイルをパースしてデータを読み込むには <code class="codehilite"><span class="n">INIData</span></code> を使います。<code class="codehilite"><span class="n">INIData</span></code> のコンストラクタ引数に、読み込みたいテキストファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。リリース用のアプリを作るときには、のちの章で説明する「リソース」パスの使用を推奨します。ファイルが存在しない場合やパースに失敗した場合など、ロードに失敗したかどうかは <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">ini</span><span class="ss">)</span></code> で調べられます。</p>
+<p>INI データはセクションごとに <code class="codehilite"><span class="n">HashTable</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span></code> の形式で読み込まれ、添え字演算子 <code class="codehilite"><span class="p">[</span><span class="n">U</span><span class="ss">&quot;SECTION.NAME&quot;</span><span class="p">]</span></code> によってセクション SECTION にある名前 NAME のテキストを取得できます。</p>
+<p><img alt="" src="../images/19-2-0.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="n">Item</span>
+<span class="p">{</span>
+    <span class="c1">// アイテムのラベル</span>
+    <span class="n">String</span> <span class="n">label</span><span class="p">;</span>
+
+    <span class="c1">// アイテムの左上座標</span>
+    <span class="n">Point</span> <span class="n">pos</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// INI ファイルからデータを読み込む</span>
+    <span class="k">const</span> <span class="n">INIData</span> <span class="n">ini</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/config/config.ini&quot;</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ini</span><span class="p">)</span> <span class="c1">// もし読み込みに失敗したら</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Failed to load `config.ini`&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 全てのセクションを列挙</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">section</span> <span class="p">:</span> <span class="n">ini</span><span class="p">.</span><span class="n">sections</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// セクション名</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[{}]&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">section</span><span class="p">.</span><span class="n">section</span><span class="p">);</span>
+
+        <span class="c1">// セクション内のすべてのキーを列挙</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">key</span> <span class="p">:</span> <span class="n">section</span><span class="p">.</span><span class="n">keys</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// キーの名前と値</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;{} = {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">key</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;-----&quot;</span><span class="p">;</span>
+
+    <span class="c1">// Windows セクションの title キーの値（テキスト）を取得</span>
+    <span class="k">const</span> <span class="n">String</span> <span class="n">windowTitle</span> <span class="o">=</span> <span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Window.title&quot;</span><span class="p">];</span>
+
+    <span class="c1">// Windows セクションの width キーの値（テキスト）を int32 型の値に変換</span>
+    <span class="k">const</span> <span class="n">int32</span> <span class="n">windowWidth</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Window.width&quot;</span><span class="p">]);</span>
+
+    <span class="c1">// Windows セクションの height キーの値（テキスト）を int32 型の値に変換</span>
+    <span class="k">const</span> <span class="n">int32</span> <span class="n">windowHeight</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Window.height&quot;</span><span class="p">]);</span>
+
+    <span class="c1">// Windows セクションの sizable キーの値（テキスト）を bool 型の値に変換</span>
+    <span class="k">const</span> <span class="kt">bool</span> <span class="n">windowSizable</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Window.sizable&quot;</span><span class="p">]);</span>
+
+    <span class="c1">// Scene セクションの background キーの値（テキスト）を ColorF 型の値に変換</span>
+    <span class="k">const</span> <span class="n">ColorF</span> <span class="n">sceneBackground</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">ColorF</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Scene.background&quot;</span><span class="p">]);</span>
+
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">windowTitle</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">windowWidth</span><span class="p">,</span> <span class="n">windowHeight</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span> <span class="o">?</span> <span class="n">WindowStyle</span><span class="o">::</span><span class="nl">Sizable</span> <span class="p">:</span> <span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">sceneBackground</span><span class="p">);</span>
+
+    <span class="c1">// Array セクションの values キーの値（テキスト）を &#39;,&#39; で区切って配列にし、それぞれの要素を int32 型の値に変換</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Array.values&quot;</span><span class="p">].</span><span class="n">split</span><span class="p">(</span><span class="n">U</span><span class="sc">&#39;,&#39;</span><span class="p">).</span><span class="n">map</span><span class="p">(</span><span class="n">Parse</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">);</span>
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">values</span><span class="p">;</span>
+
+    <span class="c1">// アイテムの配列を INI データから作成</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="p">;</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="kt">size_t</span> <span class="n">itemsCount</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Items.count&quot;</span><span class="p">]);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">itemsCount</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">Item</span> <span class="n">item</span><span class="p">;</span>
+            <span class="n">item</span><span class="p">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Item{}.label&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">i</span><span class="p">)];</span>
+            <span class="n">item</span><span class="p">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Item{}.pos&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">i</span><span class="p">)]);</span>
+            <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// アイテム描画用のフォント</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// アイテムを描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Rect</span> <span class="n">rect</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">pos</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">80</span><span class="p">);</span>
+
+            <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+
+            <span class="n">font</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">label</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">center</span><span class="p">(),</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="193-json">19.3 JSON ファイルからデータを読み込む<a class="headerlink" href="#193-json" title="Permanent link">&para;</a></h2>
+<p>JSON ファイルをパースしてデータを読み込むには <code class="codehilite"><span class="n">JSONReader</span></code> を使います。<code class="codehilite"><span class="n">JSONReader</span></code> のコンストラクタ引数に、読み込みたいテキストファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。リリース用のアプリを作るときには、のちの章で説明する「リソース」パスの使用を推奨します。ファイルが存在しない場合やパースに失敗した場合など、ロードに失敗したかどうかは <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">json</span><span class="ss">)</span></code> で調べられます。</p>
+<p>JSON データは次のサンプルの <code class="codehilite"><span class="n">ShowObject</span><span class="p">()</span></code> 関数のようにして再帰的に全要素を走査できます。また、添え字演算子 <code class="codehilite"><span class="p">[</span><span class="n">U</span><span class="ss">&quot;NAME1.NAME2.NAME3...&quot;</span><span class="p">]</span></code> によってパスを指定して目的の値を直接得ることもできます。</p>
+<p><img alt="" src="../images/19-3-0.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="n">Item</span>
+<span class="p">{</span>
+    <span class="c1">// アイテムのラベル</span>
+    <span class="n">String</span> <span class="n">label</span><span class="p">;</span>
+
+    <span class="c1">// アイテムの左上座標</span>
+    <span class="n">Point</span> <span class="n">pos</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// 再帰的に JSON の要素を表示</span>
+<span class="kt">void</span> <span class="nf">ShowObject</span><span class="p">(</span><span class="k">const</span> <span class="n">JSONValue</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">object</span> <span class="p">:</span> <span class="n">value</span><span class="p">.</span><span class="n">objectView</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">getType</span><span class="p">())</span>
+        <span class="p">{</span>
+        <span class="k">case</span> <span class="n">JSONValueType</span><span class="o">::</span><span class="nl">Empty</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Empty]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">JSONValueType</span><span class="o">::</span><span class="nl">Null</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Null]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">JSONValueType</span><span class="o">::</span><span class="nl">Object</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Object]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="n">ShowObject</span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">JSONValueType</span><span class="o">::</span><span class="nl">Array</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Array]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">element</span> <span class="p">:</span> <span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">arrayView</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">ShowObject</span><span class="p">(</span><span class="n">element</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">JSONValueType</span><span class="o">::</span><span class="nl">String</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[String]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">getString</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">JSONValueType</span><span class="o">::</span><span class="nl">Number</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Number]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">JSONValueType</span><span class="o">::</span><span class="nl">Bool</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Bool]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// JSON ファイルからデータを読み込む</span>
+    <span class="k">const</span> <span class="n">JSONReader</span> <span class="n">json</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/config/config.json&quot;</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">json</span><span class="p">)</span> <span class="c1">// もし読み込みに失敗したら</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Failed to load `config.json`&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// JSON データをすべて表示</span>
+    <span class="n">ShowObject</span><span class="p">(</span><span class="n">json</span><span class="p">);</span>
+
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;-----&quot;</span><span class="p">;</span>
+
+    <span class="c1">// 要素のパスで値を取得</span>
+    <span class="k">const</span> <span class="n">String</span> <span class="n">windowTitle</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Window.title&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span>
+    <span class="k">const</span> <span class="n">int32</span> <span class="n">windowWidth</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Window.width&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">const</span> <span class="n">int32</span> <span class="n">windowHeight</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Window.height&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">const</span> <span class="kt">bool</span> <span class="n">windowSizable</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Window.sizable&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">const</span> <span class="n">ColorF</span> <span class="n">sceneBackground</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Scene.background&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">ColorF</span><span class="o">&gt;</span><span class="p">();</span>
+
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">windowTitle</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">windowWidth</span><span class="p">,</span> <span class="n">windowHeight</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span> <span class="o">?</span> <span class="n">WindowStyle</span><span class="o">::</span><span class="nl">Sizable</span> <span class="p">:</span> <span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">sceneBackground</span><span class="p">);</span>
+
+    <span class="c1">// 数値の配列を JSON データから作成</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">object</span> <span class="p">:</span> <span class="n">json</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Array.values&quot;</span><span class="p">].</span><span class="n">arrayView</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">values</span> <span class="o">&lt;&lt;</span> <span class="n">object</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">values</span><span class="p">;</span>
+
+    <span class="c1">// アイテムの配列を JSON データから作成</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="p">;</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">object</span> <span class="p">:</span> <span class="n">json</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Items&quot;</span><span class="p">].</span><span class="n">arrayView</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">Item</span> <span class="n">item</span><span class="p">;</span>
+            <span class="n">item</span><span class="p">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">object</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;label&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span>
+            <span class="n">item</span><span class="p">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">object</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;pos.x&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">object</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;pos.y&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">());</span>
+            <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// アイテム描画用のフォント</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// アイテムを描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Rect</span> <span class="n">rect</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">pos</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">80</span><span class="p">);</span>
+
+            <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+
+            <span class="n">font</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">label</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">center</span><span class="p">(),</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="194-toml">19.4 TOML ファイルからデータを読み込む<a class="headerlink" href="#194-toml" title="Permanent link">&para;</a></h2>
+<p>TOML ファイルをパースしてデータを読み込むには <code class="codehilite"><span class="n">TOMLReader</span></code> を使います。<code class="codehilite"><span class="n">TOMLReader</span></code> のコンストラクタ引数に、読み込みたいテキストファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。リリース用のアプリを作るときには、のちの章で説明する「リソース」パスの使用を推奨します。ファイルが存在しない場合やパースに失敗した場合など、ロードに失敗したかどうかは <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">toml</span><span class="ss">)</span></code> で調べられます。</p>
+<p>TOML データは次のサンプルの <code class="codehilite"><span class="n">ShowObject</span><span class="p">()</span></code> 関数のようにして再帰的に全要素を走査できます。また、添え字演算子 <code class="codehilite"><span class="p">[</span><span class="n">U</span><span class="ss">&quot;NAME1.NAME2.NAME3...&quot;</span><span class="p">]</span></code> によってパスを指定して目的の値を直接得ることもできます。</p>
+<p><img alt="" src="../images/19-4-0.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="n">Item</span>
+<span class="p">{</span>
+    <span class="c1">// アイテムのラベル</span>
+    <span class="n">String</span> <span class="n">label</span><span class="p">;</span>
+
+    <span class="c1">// アイテムの左上座標</span>
+    <span class="n">Point</span> <span class="n">pos</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// 再帰的に TOML の要素を表示</span>
+<span class="kt">void</span> <span class="nf">ShowTable</span><span class="p">(</span><span class="k">const</span> <span class="n">TOMLValue</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">table</span> <span class="p">:</span> <span class="n">value</span><span class="p">.</span><span class="n">tableView</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">getType</span><span class="p">())</span>
+        <span class="p">{</span>
+        <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Empty</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Empty]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Table</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Table]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="n">ShowTable</span><span class="p">(</span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Array</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Array]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">element</span> <span class="p">:</span> <span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">arrayView</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="k">switch</span> <span class="p">(</span><span class="n">element</span><span class="p">.</span><span class="n">getType</span><span class="p">())</span>
+                <span class="p">{</span>
+                <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">String</span><span class="p">:</span>
+                    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">element</span><span class="p">.</span><span class="n">getString</span><span class="p">();</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Number</span><span class="p">:</span>
+                    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">element</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Bool</span><span class="p">:</span>
+                    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">element</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">();</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Date</span><span class="p">:</span>
+                    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">element</span><span class="p">.</span><span class="n">getDate</span><span class="p">();</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">DateTime</span><span class="p">:</span>
+                    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">element</span><span class="p">.</span><span class="n">getDateTime</span><span class="p">();</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">default</span><span class="o">:</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">TableArray</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[TableArray]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">table2</span> <span class="p">:</span> <span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">tableArrayView</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">ShowTable</span><span class="p">(</span><span class="n">table2</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">String</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[String]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">getString</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Number</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Number]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Bool</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Bool]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Date</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Date]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">getDate</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">DateTime</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[DateTime]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">getDateTime</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Unknown</span><span class="p">:</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;[Unknown]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// TOML ファイルからデータを読み込む</span>
+    <span class="k">const</span> <span class="n">TOMLReader</span> <span class="n">toml</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/config/config.toml&quot;</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">toml</span><span class="p">)</span> <span class="c1">// もし読み込みに失敗したら</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Failed to load `config.toml`&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// TOML データをすべて表示</span>
+    <span class="n">ShowTable</span><span class="p">(</span><span class="n">toml</span><span class="p">);</span>
+
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;-----&quot;</span><span class="p">;</span>
+
+    <span class="c1">// 要素のパスで値を取得</span>
+    <span class="k">const</span> <span class="n">String</span> <span class="n">windowTitle</span> <span class="o">=</span> <span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Window.title&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span>
+    <span class="k">const</span> <span class="n">int32</span> <span class="n">windowWidth</span> <span class="o">=</span> <span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Window.width&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">const</span> <span class="n">int32</span> <span class="n">windowHeight</span> <span class="o">=</span> <span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Window.height&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">const</span> <span class="kt">bool</span> <span class="n">windowSizable</span> <span class="o">=</span> <span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Window.sizable&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">const</span> <span class="n">ColorF</span> <span class="n">sceneBackground</span> <span class="o">=</span> <span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Scene.background&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">ColorF</span><span class="o">&gt;</span><span class="p">();</span>
+
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">windowTitle</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">windowWidth</span><span class="p">,</span> <span class="n">windowHeight</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span> <span class="o">?</span> <span class="n">WindowStyle</span><span class="o">::</span><span class="nl">Sizable</span> <span class="p">:</span> <span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">sceneBackground</span><span class="p">);</span>
+
+    <span class="c1">// 数値の配列を TOML データから作成</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">object</span> <span class="p">:</span> <span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Array.values&quot;</span><span class="p">].</span><span class="n">arrayView</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">values</span> <span class="o">&lt;&lt;</span> <span class="n">object</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">values</span><span class="p">;</span>
+
+    <span class="c1">// アイテムの配列を TOML データから作成</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="p">;</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">object</span> <span class="p">:</span> <span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Items&quot;</span><span class="p">].</span><span class="n">tableArrayView</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">Item</span> <span class="n">item</span><span class="p">;</span>
+            <span class="n">item</span><span class="p">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">object</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;label&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span>
+            <span class="n">item</span><span class="p">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">object</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;pos.x&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">object</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;pos.y&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">());</span>
+            <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// アイテム描画用のフォント</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// アイテムを描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Rect</span> <span class="n">rect</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">pos</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">80</span><span class="p">);</span>
+
+            <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+
+            <span class="n">font</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">label</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">center</span><span class="p">(),</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="195-xml">19.5 XML ファイルからデータを読み込む<a class="headerlink" href="#195-xml" title="Permanent link">&para;</a></h2>
+<p>XML ファイルをパースしてデータを読み込むには <code class="codehilite"><span class="n">XMLReader</span></code> を使います。<code class="codehilite"><span class="n">XMLReader</span></code> のコンストラクタ引数に、読み込みたいテキストファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。リリース用のアプリを作るときには、のちの章で説明する「リソース」パスの使用を推奨します。ファイルが存在しない場合やパースに失敗した場合など、ロードに失敗したかどうかは <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">xml</span><span class="ss">)</span></code> で調べられます。</p>
+<p>XML データは次のサンプルの <code class="codehilite"><span class="n">ShowElements</span><span class="p">()</span></code> 関数のようにして再帰的に全要素を走査できます。</p>
+<p><img alt="" src="../images/19-5-0.png" /></p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="n">Item</span>
+<span class="p">{</span>
+    <span class="c1">// アイテムのラベル</span>
+    <span class="n">String</span> <span class="n">label</span><span class="p">;</span>
+
+    <span class="c1">// アイテムの左上座標</span>
+    <span class="n">Point</span> <span class="n">pos</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// 再帰的に XML の要素を表示</span>
+<span class="kt">void</span> <span class="nf">ShowElements</span><span class="p">(</span><span class="k">const</span> <span class="n">XMLElement</span><span class="o">&amp;</span> <span class="n">element</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">e</span> <span class="o">=</span> <span class="n">element</span><span class="p">.</span><span class="n">firstChild</span><span class="p">();</span> <span class="n">e</span><span class="p">;</span> <span class="n">e</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="n">nextSibling</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;&lt;{}&gt;&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">());</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="n">attributes</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="n">attributes</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">attributes</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="n">text</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="n">text</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">text</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">ShowElements</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+
+        <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;&lt;/{}&gt;&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// XML ファイルからデータを読み込む</span>
+    <span class="k">const</span> <span class="n">XMLReader</span> <span class="n">xml</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/config/config.xml&quot;</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">xml</span><span class="p">)</span> <span class="c1">// もし読み込みに失敗したら</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Failed to load `config.xml`&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// XML データをすべて表示</span>
+    <span class="n">ShowElements</span><span class="p">(</span><span class="n">xml</span><span class="p">);</span>
+
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;-----&quot;</span><span class="p">;</span>
+
+    <span class="n">String</span> <span class="n">windowTitle</span><span class="p">;</span>
+    <span class="n">int32</span> <span class="n">windowWidth</span> <span class="o">=</span> <span class="n">Window</span><span class="o">::</span><span class="n">DefaultClientSize</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+    <span class="n">int32</span> <span class="n">windowHeight</span> <span class="o">=</span> <span class="n">Window</span><span class="o">::</span><span class="n">DefaultClientSize</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">windowSizable</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">ColorF</span> <span class="n">sceneBackground</span> <span class="o">=</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="p">;</span>
+
+    <span class="c1">// 要素を走査して目的の値を取得</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">elem</span> <span class="o">=</span> <span class="n">xml</span><span class="p">.</span><span class="n">firstChild</span><span class="p">();</span> <span class="n">elem</span><span class="p">;</span> <span class="n">elem</span> <span class="o">=</span> <span class="n">elem</span><span class="p">.</span><span class="n">nextSibling</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">elem</span><span class="p">.</span><span class="n">name</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;Window&quot;</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">elem2</span> <span class="o">=</span> <span class="n">elem</span><span class="p">.</span><span class="n">firstChild</span><span class="p">();</span> <span class="n">elem2</span><span class="p">;</span> <span class="n">elem2</span> <span class="o">=</span> <span class="n">elem2</span><span class="p">.</span><span class="n">nextSibling</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="k">const</span> <span class="n">String</span> <span class="n">name2</span> <span class="o">=</span> <span class="n">elem2</span><span class="p">.</span><span class="n">name</span><span class="p">();</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">name2</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;title&quot;</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">windowTitle</span> <span class="o">=</span> <span class="n">elem2</span><span class="p">.</span><span class="n">text</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">name2</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;width&quot;</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">windowWidth</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">elem2</span><span class="p">.</span><span class="n">text</span><span class="p">());</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">name2</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;height&quot;</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">windowHeight</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">elem2</span><span class="p">.</span><span class="n">text</span><span class="p">());</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">name2</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;sizable&quot;</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">windowSizable</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">elem2</span><span class="p">.</span><span class="n">text</span><span class="p">());</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;Scene&quot;</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">elem2</span> <span class="o">=</span> <span class="n">elem</span><span class="p">.</span><span class="n">firstChild</span><span class="p">();</span> <span class="n">elem2</span><span class="p">;</span> <span class="n">elem2</span> <span class="o">=</span> <span class="n">elem2</span><span class="p">.</span><span class="n">nextSibling</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="k">const</span> <span class="n">String</span> <span class="n">name2</span> <span class="o">=</span> <span class="n">elem2</span><span class="p">.</span><span class="n">name</span><span class="p">();</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">name2</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;background&quot;</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">sceneBackground</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">ColorF</span><span class="o">&gt;</span><span class="p">(</span><span class="n">elem2</span><span class="p">.</span><span class="n">text</span><span class="p">());</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;Array&quot;</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">elem2</span> <span class="o">=</span> <span class="n">elem</span><span class="p">.</span><span class="n">firstChild</span><span class="p">();</span> <span class="n">elem2</span><span class="p">;</span> <span class="n">elem2</span> <span class="o">=</span> <span class="n">elem2</span><span class="p">.</span><span class="n">nextSibling</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="n">values</span> <span class="o">&lt;&lt;</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">elem2</span><span class="p">.</span><span class="n">text</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;Items&quot;</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Item</span> <span class="n">item</span><span class="p">;</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">elem2</span> <span class="o">=</span> <span class="n">elem</span><span class="p">.</span><span class="n">firstChild</span><span class="p">();</span> <span class="n">elem2</span><span class="p">;</span> <span class="n">elem2</span> <span class="o">=</span> <span class="n">elem2</span><span class="p">.</span><span class="n">nextSibling</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="k">const</span> <span class="n">String</span> <span class="n">name2</span> <span class="o">=</span> <span class="n">elem2</span><span class="p">.</span><span class="n">name</span><span class="p">();</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">name2</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;label&quot;</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">item</span><span class="p">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">elem2</span><span class="p">.</span><span class="n">text</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">name2</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;pos&quot;</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">Point</span> <span class="n">pos</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+                    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">elem3</span> <span class="o">=</span> <span class="n">elem2</span><span class="p">.</span><span class="n">firstChild</span><span class="p">();</span> <span class="n">elem3</span><span class="p">;</span> <span class="n">elem3</span> <span class="o">=</span> <span class="n">elem3</span><span class="p">.</span><span class="n">nextSibling</span><span class="p">())</span>
+                    <span class="p">{</span>
+                        <span class="k">const</span> <span class="n">String</span> <span class="n">name3</span> <span class="o">=</span> <span class="n">elem3</span><span class="p">.</span><span class="n">name</span><span class="p">();</span>
+
+                        <span class="k">if</span> <span class="p">(</span><span class="n">name3</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+                        <span class="p">{</span>
+                            <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">elem3</span><span class="p">.</span><span class="n">text</span><span class="p">());</span>
+                        <span class="p">}</span>
+                        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">name3</span> <span class="o">==</span> <span class="sa">U</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+                        <span class="p">{</span>
+                            <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">Parse</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">elem3</span><span class="p">.</span><span class="n">text</span><span class="p">());</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+
+                    <span class="n">item</span><span class="p">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">windowTitle</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">windowWidth</span><span class="p">,</span> <span class="n">windowHeight</span><span class="p">);</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span> <span class="o">?</span> <span class="n">WindowStyle</span><span class="o">::</span><span class="nl">Sizable</span> <span class="p">:</span> <span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">sceneBackground</span><span class="p">);</span>
+
+    <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="n">values</span><span class="p">;</span>
+
+    <span class="c1">// アイテム描画用のフォント</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// アイテムを描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Rect</span> <span class="n">rect</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">pos</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">80</span><span class="p">);</span>
+
+            <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+
+            <span class="n">font</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">label</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">center</span><span class="p">(),</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="196">19.6 ファイルの更新を検知してリロードする<a class="headerlink" href="#196" title="Permanent link">&para;</a></h2>
+<p><code class="codehilite"><span class="n">DirectoryWatcher</span></code> を使うと、指定したディレクトリ内でのファイルの変更イベントを検知できます。設定ファイルを <code class="codehilite"><span class="n">DirectoryWatcher</span></code> で監視し、ファイルが更新されたときに読み込みなおす仕組みを導入することで、プログラムを実行しながら設定ファイルの変更を反映させることができます。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="n">Item</span>
+<span class="p">{</span>
+    <span class="c1">// アイテムのラベル</span>
+    <span class="n">String</span> <span class="n">label</span><span class="p">;</span>
+
+    <span class="c1">// アイテムの左上座標</span>
+    <span class="n">Point</span> <span class="n">pos</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// アイテム情報を読み込む関数</span>
+<span class="n">Array</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">LoadItems</span><span class="p">(</span><span class="k">const</span> <span class="n">FilePath</span><span class="o">&amp;</span> <span class="n">tomlPath</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="n">TOMLReader</span> <span class="n">toml</span><span class="p">(</span><span class="n">tomlPath</span><span class="p">);</span>
+
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">toml</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">items</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">object</span> <span class="p">:</span> <span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Items&quot;</span><span class="p">].</span><span class="n">tableArrayView</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Item</span> <span class="n">item</span><span class="p">;</span>
+        <span class="n">item</span><span class="p">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">object</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;label&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span>
+        <span class="n">item</span><span class="p">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">object</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;pos.x&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">object</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;pos.y&quot;</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">());</span>
+        <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">items</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+    <span class="c1">// DirectoryWatcher でのチェックのためにフルパスが必要</span>
+    <span class="k">const</span> <span class="n">FilePath</span> <span class="n">tomlPath</span> <span class="o">=</span> <span class="n">FileSystem</span><span class="o">::</span><span class="n">FullPath</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/config/config.toml&quot;</span><span class="p">);</span>
+
+    <span class="c1">// `config.toml` が存在するディレクトリの変更の監視</span>
+    <span class="n">DirectoryWatcher</span> <span class="nf">watcher</span><span class="p">(</span><span class="n">FileSystem</span><span class="o">::</span><span class="n">ParentPath</span><span class="p">(</span><span class="n">tomlPath</span><span class="p">));</span>
+
+    <span class="c1">// アイテム情報をロード</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">items</span> <span class="o">=</span> <span class="n">LoadItems</span><span class="p">(</span><span class="n">tomlPath</span><span class="p">);</span>
+
+    <span class="c1">// アイテム描画用のフォント</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="nf">font</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// ディレクトリ内の変更イベントをチェック</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">change</span> <span class="p">:</span> <span class="n">watcher</span><span class="p">.</span><span class="n">retrieveChanges</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">change</span><span class="p">.</span><span class="n">first</span> <span class="o">==</span> <span class="n">tomlPath</span>
+                <span class="o">&amp;&amp;</span> <span class="n">change</span><span class="p">.</span><span class="n">second</span> <span class="o">==</span> <span class="n">FileAction</span><span class="o">::</span><span class="n">Modified</span><span class="p">)</span> <span class="c1">// TOML ファイルが更新されたら</span>
+            <span class="p">{</span>
+                <span class="n">Print</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;reload&quot;</span><span class="p">;</span>
+
+                <span class="c1">// アイテム情報を再読み込み</span>
+                <span class="n">items</span> <span class="o">=</span> <span class="n">LoadItems</span><span class="p">(</span><span class="n">tomlPath</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// アイテムを描画</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">item</span> <span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">Rect</span> <span class="n">rect</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">pos</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">80</span><span class="p">);</span>
+
+            <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+
+            <span class="n">font</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">label</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">center</span><span class="p">(),</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
                 
                   
@@ -1640,13 +2451,13 @@
           </a>
         
         
-          <a href="../release/" title="99. アプリのリリース" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../resource/" title="20. リソースの埋め込み" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                99. アプリのリリース
+                20. リソースの埋め込み
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

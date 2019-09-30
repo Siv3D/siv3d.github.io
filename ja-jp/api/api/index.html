@@ -502,6 +502,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../tutorial/resource/" title="20. Embedded resource" class="md-nav__link">
+      20. Embedded resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../tutorial/release/" title="99. Releasing your application" class="md-nav__link">
       99. Releasing your application
     </a>
@@ -1130,6 +1142,18 @@
   <li class="md-nav__item">
     <a href="../../tutorial/config-file/" title="19. 設定ファイル" class="md-nav__link">
       19. 設定ファイル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/resource/" title="20. リソースの埋め込み" class="md-nav__link">
+      20. リソースの埋め込み
     </a>
   </li>
 
@@ -2367,7 +2391,7 @@
 </ul>
 <p>描画や入力情報など、フレームを更新します。フレームレートを調整する働きもあります。アプリケーション終了トリガーが発生するか、内部で回復不能なエラーが発生した場合に <code class="codehilite"><span class="k">false</span></code> を返します。この関数が <code class="codehilite"><span class="k">false</span></code> を返したらプログラムを終了させるべきです。</p>
 <h4 id="void-systemexit"><code class="codehilite"><span class="nv">void</span> <span class="nv">System</span>::<span class="k">Exit</span><span class="ss">()</span><span class="c1">;</span></code><a class="headerlink" href="#void-systemexit" title="Permanent link">&para;</a></h4>
-<p>プログラムの終了のために、この直後の <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> が <code class="codehilite"><span class="k">false</span></code> を返すように設定します。この関数自体が終了処理を行うわけではないので、この関数の呼び出しは必須ではありません。</p>
+<p>プログラムを終了するために、この直後の <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> が <code class="codehilite"><span class="k">false</span></code> を返すように設定します。この関数自体が終了処理を行うわけではないので、この関数の呼び出しは必須ではありません。</p>
 <h4 id="void-systemsetterminationtriggersuint32-useractionflags"><code class="codehilite"><span class="nt">void</span> <span class="nt">System</span><span class="p">::</span><span class="nd">SetTerminationTriggers</span><span class="o">(</span><span class="nt">uint32</span> <span class="nt">userActionFlags</span><span class="o">);</span></code><a class="headerlink" href="#void-systemsetterminationtriggersuint32-useractionflags" title="Permanent link">&para;</a></h4>
 <ul>
 <li>userActionFlags: アプリケーション終了トリガーに設定するユーザアクションのフラグ</li>
@@ -2375,24 +2399,27 @@
 <p>アプリケーション終了トリガーに設定するユーザアクションを設定します。</p>
 <h4 id="uint32-systemgetterminationtriggers"><code class="codehilite"><span class="nt">uint32</span> <span class="nt">System</span><span class="p">::</span><span class="nd">GetTerminationTriggers</span><span class="o">();</span></code><a class="headerlink" href="#uint32-systemgetterminationtriggers" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: 前のフレームで発生したアプリケーション終了トリガーのフラグ</li>
+<li>戻り値: アプリケーション終了トリガーに設定したユーザアクションのフラグ</li>
 </ul>
+<p>アプリケーション終了トリガーに設定したユーザアクションのフラグの現在の設定を返します。</p>
 <h4 id="uint32-systemgetuseractions"><code class="codehilite"><span class="nt">uint32</span> <span class="nt">System</span><span class="p">::</span><span class="nd">GetUserActions</span><span class="o">();</span></code><a class="headerlink" href="#uint32-systemgetuseractions" title="Permanent link">&para;</a></h4>
 <ul>
 <li>戻り値: 前のフレームで発生したユーザアクションのフラグ</li>
 </ul>
+<p>前回のフレームで発生したユーザアクションのフラグを返します。</p>
 <h4 id="void-systemsleepint32-milliseconds"><code class="codehilite"><span class="nt">void</span> <span class="nt">System</span><span class="p">::</span><span class="nd">Sleep</span><span class="o">(</span><span class="nt">int32</span> <span class="nt">milliseconds</span><span class="o">);</span></code><a class="headerlink" href="#void-systemsleepint32-milliseconds" title="Permanent link">&para;</a></h4>
 <h4 id="void-systemsleepconst-duration-duration"><code class="codehilite"><span class="nt">void</span> <span class="nt">System</span><span class="p">::</span><span class="nd">Sleep</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Duration</span><span class="o">&amp;</span> <span class="nt">duration</span><span class="o">);</span></code><a class="headerlink" href="#void-systemsleepconst-duration-duration" title="Permanent link">&para;</a></h4>
 <ul>
 <li>milliseconds: スリープする時間（ミリ秒）</li>
 <li>duration: スリープする時間</li>
 </ul>
+<p>現在のスレッドの実行を指定した時間だけ停止します。</p>
 <h4 id="bool-systemlaunchbrowserconst-filepath-url"><code class="codehilite"><span class="nt">bool</span> <span class="nt">System</span><span class="p">::</span><span class="nd">LaunchBrowser</span><span class="o">(</span><span class="nt">const</span> <span class="nt">FilePath</span><span class="o">&amp;</span> <span class="nt">url</span><span class="o">);</span></code><a class="headerlink" href="#bool-systemlaunchbrowserconst-filepath-url" title="Permanent link">&para;</a></h4>
 <ul>
 <li>url: オープンする URL</li>
 <li>戻り値: オープンの成功の可否</li>
 </ul>
-<p>指定された URL をデフォルトの Web ブラウザでオープンします。</p>
+<p>指定した URL をデフォルトの Web ブラウザでオープンします。</p>
                 
                   
                 
