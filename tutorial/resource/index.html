@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#20" tabindex="1" class="md-skip">
+      <a href="#20-embedded-resource" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -533,8 +533,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#201" title="20.1" class="md-nav__link">
-    20.1
+  <a href="#201" title="20.1 リソースの埋め込みの基本" class="md-nav__link">
+    20.1 リソースの埋め込みの基本
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" title="Windows の場合" class="md-nav__link">
+    Windows の場合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" title="macOS の場合" class="md-nav__link">
+    macOS の場合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" title="Linux の場合" class="md-nav__link">
+    Linux の場合
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#202" title="20.2 埋め込まれたリソースを読み込む" class="md-nav__link">
+    20.2 埋め込まれたリソースを読み込む
   </a>
   
 </li>
@@ -1601,8 +1635,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#201" title="20.1" class="md-nav__link">
-    20.1
+  <a href="#201" title="20.1 リソースの埋め込みの基本" class="md-nav__link">
+    20.1 リソースの埋め込みの基本
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" title="Windows の場合" class="md-nav__link">
+    Windows の場合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" title="macOS の場合" class="md-nav__link">
+    macOS の場合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" title="Linux の場合" class="md-nav__link">
+    Linux の場合
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#202" title="20.2 埋め込まれたリソースを読み込む" class="md-nav__link">
+    20.2 埋め込まれたリソースを読み込む
   </a>
   
 </li>
@@ -1624,9 +1692,41 @@
               
                 
                 
-                <h1 id="20">20. リソースの埋め込み<a class="headerlink" href="#20" title="Permanent link">&para;</a></h1>
-<h2 id="201">20.1<a class="headerlink" href="#201" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
+                <h1 id="20-embedded-resource">20. Embedded resource<a class="headerlink" href="#20-embedded-resource" title="Permanent link">&para;</a></h1>
+<p>この章では、アプリケーションの実行ファイルに画像や音声などのファイルを埋め込んで、それをプログラムで読み込む方法を学びます。</p>
+<h2 id="201">20.1 リソースの埋め込みの基本<a class="headerlink" href="#201" title="Permanent link">&para;</a></h2>
+<p>Siv3D では、プログラムで使う画像や音声、テキストなどのリソースファイルを .exe や .app に埋め込み、ユーザから見て単一のファイルになるようにまとめることができます。リソースファイルを実行ファイルに埋め込むと、配布が簡単になるだけでなく、ファイルがユーザによって削除されたり、変更されたりすることを防げます。<br />
+埋め込みファイルを変更するとプロジェクトの再ビルドが必要になるため、ファイルを頻繁に更新する開発中はリソースの埋め込みはせず、リリースが近くなってから埋め込みに変更すると効率が良いです。</p>
+<p>アプリケーションにファイルを埋め込む手順は以下のとおりです。</p>
+<h3 id="windows">Windows の場合<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="n">App</span><span class="o">/</span><span class="n">Resource</span><span class="p">.</span><span class="n">rc</span></code> に、埋め込みファイルのパスを記述します。<code class="codehilite"><span class="n">App</span><span class="o">/</span><span class="n">Resource</span><span class="p">.</span><span class="n">rc</span></code> をメモ帳など（Visual Studio は不可）の外部のテキストエディタで開き、<code class="codehilite"><span class="n">Resource</span><span class="p">(</span><span class="n">example</span><span class="o">/</span><span class="n">windmill</span><span class="p">.</span><span class="n">png</span><span class="p">)</span></code> のように、埋め込みたいファイルのパスを、埋め込むファイルごとに追記します。デフォルトでは Siv3D の内部処理に必要な <code class="codehilite"><span class="n">engine</span><span class="o">/</span></code> フォルダの各種ファイルが記述されています。プロジェクトを再ビルドすると .exe にファイルが埋め込まれます。</p>
+<p><img alt="" src="../images/20-1-0.png" /></p>
+<h3 id="macos">macOS の場合<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
+<p>プロジェクトナビゲータにフォルダをドラッグし「Create folder references」を選択すると、プロジェクトナビゲータ上で青いフォルダアイコンになって表示されます。このフォルダ内のファイルはすべて .app に埋め込まれます。デフォルトでは Siv3D の内部処理に必要な <code class="codehilite"><span class="n">engine</span><span class="o">/</span></code> フォルダが青いアイコンで表示されています。</p>
+<p><img alt="" src="../images/20-1-1.png" /></p>
+<p><img alt="" src="../images/20-1-2.png" /></p>
+<h3 id="linux">Linux の場合<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
+<p>Linux 版ではファイルの埋め込みは実装されていません。代わりに、<code class="codehilite"><span class="n">resources</span><span class="o">/</span></code> フォルダに必要なリソースファイルを格納し、アプリケーションに同梱します。デフォルトでは Siv3D の内部処理に必要な <code class="codehilite"><span class="n">engine</span><span class="o">/</span></code> フォルダが <code class="codehilite"><span class="n">resources</span><span class="o">/</span></code> フォルダに格納されています。</p>
+<h2 id="202">20.2 埋め込まれたリソースを読み込む<a class="headerlink" href="#202" title="Permanent link">&para;</a></h2>
+<p>埋め込まれたファイルをプログラムで読み込むには、これまで <code class="codehilite"><span class="n">U</span><span class="ss">&quot;example/windmill.png&quot;</span></code> と指定していたファイルパスを <code class="codehilite"><span class="n">Resource</span><span class="p">()</span></code> で囲んで <code class="codehilite"><span class="n">Resource</span><span class="p">(</span><span class="n">U</span><span class="ss">&quot;example/windmill.png&quot;</span><span class="p">)</span></code> に変更します（Windows, macOS, Linux 共通）。</p>
+<p>ビルドされた実行ファイルを異なるフォルダに移動させてから実行し、埋め込みリソースの画像が表示されれば、埋め込みが成功したことの確認になります。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt; </span><span class="c1">// OpenSiv3D v0.4.1</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// ファイルから読み込み</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">textureFile</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">);</span>
+
+    <span class="c1">// 埋め込みリソースから読み込み</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">textureResource</span><span class="p">(</span><span class="n">Resource</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">));</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">textureFile</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+        <span class="n">textureResource</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">320</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
                 
                   
