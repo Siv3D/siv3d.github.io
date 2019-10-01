@@ -2258,8 +2258,8 @@
                 
                 <h2 id="1">1. レンダーテクスチャ<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>これまで、図形やテクスチャはシーンにしか描画できませんでしたが、プログラムで用意した別のレンダーテクスチャにも描画できるようになりました。<code class="codehilite"><span class="n">RenderTexture</span></code> を作成し、<code class="codehilite"><span class="n">ScopedRenderTarget2D</span></code> オブジェクトのコンストラクタにレンダーテクスチャを渡すと、<code class="codehilite"><span class="n">ScopedRenderTarget2D</span></code> オブジェクトのスコープが有効な間、図形やテクスチャがそのレンダーテクスチャに描画されます（レンダーターゲットの変更）。描画されたレンダーテクスチャは、レンダーターゲットから解除されたあとにテクスチャとして描画に転用できます。</p>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>レンダーターゲットとして設定されている最中のレンダーテクスチャを、描画に使用することはできません。</p>
 </div>
 <p><img alt="" src="../images/041-1.png" /></p>
