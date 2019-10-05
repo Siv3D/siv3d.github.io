@@ -1484,6 +1484,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rendertexture" title="RenderTexture を使って図形や文字の影を描く" class="md-nav__link">
+    RenderTexture を使って図形や文字の影を描く
+  </a>
+  
+</li>
+      
       
       
       
@@ -1681,6 +1688,13 @@
         <li class="md-nav__item">
   <a href="#_5" title="テキストの登場" class="md-nav__link">
     テキストの登場
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rendertexture" title="RenderTexture を使って図形や文字の影を描く" class="md-nav__link">
+    RenderTexture を使って図形や文字の影を描く
   </a>
   
 </li>
@@ -1889,6 +1903,59 @@
         <span class="n">DrawText</span><span class="p">(</span><span class="n">font</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">TextEffect1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
         <span class="n">DrawText</span><span class="p">(</span><span class="n">font</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">TextEffect2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
         <span class="n">DrawText</span><span class="p">(</span><span class="n">font</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">360</span><span class="p">),</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">TextEffect3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="rendertexture">RenderTexture を使って図形や文字の影を描く<a class="headerlink" href="#rendertexture" title="Permanent link">&para;</a></h2>
+<p><video src="../images/visual-2d-shadow.mp4" autoplay loop muted></video>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Heavy</span><span class="p">);</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">emoji</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🐧&quot;</span><span class="p">));</span>
+
+    <span class="c1">// 影の形状を書き込むレンダーテクスチャ</span>
+    <span class="n">RenderTexture</span> <span class="n">shadow</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+    <span class="n">RenderTexture</span> <span class="n">shadowInternal</span><span class="p">(</span><span class="n">shadow</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+
+    <span class="c1">// 影の形状を書き込むためのブレンドステート</span>
+    <span class="n">BlendState</span> <span class="n">bs</span> <span class="o">=</span> <span class="n">BlendState</span><span class="o">::</span><span class="n">Default</span><span class="p">;</span>
+    <span class="n">bs</span><span class="p">.</span><span class="n">op</span> <span class="o">=</span> <span class="n">BlendOp</span><span class="o">::</span><span class="n">Max</span><span class="p">;</span>
+    <span class="n">bs</span><span class="p">.</span><span class="n">srcAlpha</span> <span class="o">=</span> <span class="n">Blend</span><span class="o">::</span><span class="n">SrcAlpha</span><span class="p">;</span>
+    <span class="n">bs</span><span class="p">.</span><span class="n">dstAlpha</span> <span class="o">=</span> <span class="n">Blend</span><span class="o">::</span><span class="n">DestAlpha</span><span class="p">;</span>
+    <span class="n">bs</span><span class="p">.</span><span class="n">opAlpha</span> <span class="o">=</span> <span class="n">BlendOp</span><span class="o">::</span><span class="n">Max</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="n">RectF</span> <span class="n">rect</span><span class="p">(</span><span class="mi">100</span> <span class="o">+</span> <span class="n">Periodic</span><span class="o">::</span><span class="n">Sine0_1</span><span class="p">(</span><span class="mi">4</span><span class="n">s</span><span class="p">)</span> <span class="o">*</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+        <span class="k">const</span> <span class="n">Line</span> <span class="n">line</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+
+        <span class="n">shadow</span><span class="p">.</span><span class="n">clear</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">));</span>
+        <span class="p">{</span>
+            <span class="c1">// 影の形状を書き込む</span>
+            <span class="n">ScopedRenderTarget2D</span> <span class="n">target</span><span class="p">(</span><span class="n">shadow</span><span class="p">);</span>
+            <span class="n">ScopedRenderStates2D</span> <span class="n">blend</span><span class="p">(</span><span class="n">bs</span><span class="p">);</span>
+
+            <span class="n">font</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Siv3D&quot;</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+            <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+            <span class="n">line</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">LineStyle</span><span class="o">::</span><span class="n">RoundCap</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+            <span class="n">emoji</span><span class="p">.</span><span class="n">rotated</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">30</span><span class="n">_deg</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 書き込まれた影をガウスぼかしして灰色で描画</span>
+        <span class="n">Shader</span><span class="o">::</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">shadow</span><span class="p">,</span> <span class="n">shadowInternal</span><span class="p">,</span> <span class="n">shadow</span><span class="p">);</span>
+        <span class="k">const</span> <span class="n">Vec2</span> <span class="n">shadowDirection</span> <span class="o">=</span> <span class="n">Circular</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">50</span><span class="n">_deg</span><span class="p">);</span>
+        <span class="n">shadow</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">shadowDirection</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.5</span><span class="p">));</span>
+
+        <span class="p">{</span>
+            <span class="c1">// 本来の色で描画する</span>
+            <span class="n">font</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Siv3D&quot;</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+            <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+            <span class="n">line</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">LineStyle</span><span class="o">::</span><span class="n">RoundCap</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+            <span class="n">emoji</span><span class="p">.</span><span class="n">rotated</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">30</span><span class="n">_deg</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div></p>
