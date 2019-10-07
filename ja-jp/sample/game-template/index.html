@@ -1517,14 +1517,41 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="シーン遷移" class="md-nav__link">
-    シーン遷移
+  <a href="#_2" title="ゲーム開発プロジェクト・テンプレート" class="md-nav__link">
+    ゲーム開発プロジェクト・テンプレート
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="機能" class="md-nav__link">
+    機能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="使用手順" class="md-nav__link">
+    使用手順
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="シーン遷移（1 ファイル版）" class="md-nav__link">
+    シーン遷移（1 ファイル版）
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="タイピングゲームの基本" class="md-nav__link">
+  <a href="#_5" title="タイピングゲームの基本" class="md-nav__link">
     タイピングゲームの基本
   </a>
   
@@ -1692,14 +1719,41 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="シーン遷移" class="md-nav__link">
-    シーン遷移
+  <a href="#_2" title="ゲーム開発プロジェクト・テンプレート" class="md-nav__link">
+    ゲーム開発プロジェクト・テンプレート
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="機能" class="md-nav__link">
+    機能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="使用手順" class="md-nav__link">
+    使用手順
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="シーン遷移（1 ファイル版）" class="md-nav__link">
+    シーン遷移（1 ファイル版）
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="タイピングゲームの基本" class="md-nav__link">
+  <a href="#_5" title="タイピングゲームの基本" class="md-nav__link">
     タイピングゲームの基本
   </a>
   
@@ -1723,8 +1777,30 @@
                 
                 
                 <h1 id="_1">ゲーム開発のテンプレート<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">シーン遷移<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><video src="../images/game-template-scene.mp4" autoplay loop muted></video>
+<h2 id="_2">ゲーム開発プロジェクト・テンプレート<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>本格的なゲーム開発をすぐに始められるプロジェクトテンプレートです。<br />
+リポジトリをダウンロードして使用します。</p>
+<ul>
+<li><a href="https://github.com/Siv3D/GameTemplate">https://github.com/Siv3D/GameTemplate</a></li>
+</ul>
+<h3 id="_3">機能<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>基本的なファイル分割と SceneManager 対応済み</li>
+<li>OpenSiv3D 用の <code class="codehilite"><span class="na">.gitignore</span></code> が付属</li>
+<li>Visual Studio 用のソリューションファイルと、Xcode 用のプロジェクトファイルを同梱し、どちらからでも開発可能</li>
+</ul>
+<h3 id="_4">使用手順<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>最新の OpenSiv3D SDK をインストールします</li>
+<li>ゲーム開発プロジェクト・テンプレートをダウンロードします</li>
+<li>macOS の場合、ゲーム開発プロジェクト・テンプレートの <code class="codehilite"><span class="n">README</span><span class="p">.</span><span class="n">md</span></code> と同じフォルダに、SDK の <code class="codehilite"><span class="k">include</span></code> と <code class="codehilite"><span class="n">lib</span></code> フォルダをコピーします</li>
+<li>Visual Studio の場合はソリューションファイル、Xcode の場合はプロジェクトファイルを開きます</li>
+</ul>
+<h2 id="1">シーン遷移（1 ファイル版）<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>開発初期には開発速度が重要です。<br />
+次のように Main.cpp にすべてのシーンを実装するのもよいでしょう。</p>
+<video src="../images/game-template-scene.mp4" autoplay loop muted></video>
+
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="c1">// シーンの名前</span>
@@ -1937,8 +2013,9 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</pre></div></p>
-<h2 id="_3">タイピングゲームの基本<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+</pre></div>
+
+<h2 id="_5">タイピングゲームの基本<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../images/game-template-typing.gif" />
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
