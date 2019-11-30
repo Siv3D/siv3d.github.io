@@ -426,8 +426,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#periodictringle0_1" title="Periodic::Tringle0_1()" class="md-nav__link">
-    Periodic::Tringle0_1()
+  <a href="#periodictriangle0_1" title="Periodic::Triangle0_1()" class="md-nav__link">
+    Periodic::Triangle0_1()
   </a>
   
 </li>
@@ -1090,6 +1090,18 @@
   <li class="md-nav__item">
     <a href="../../news/v041/" title="What's new in v0.4.1" class="md-nav__link">
       What's new in v0.4.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../news/v042/" title="What's new in v0.4.2" class="md-nav__link">
+      What's new in v0.4.2
     </a>
   </li>
 
@@ -1850,6 +1862,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ja-jp/news/v042/" title="v0.4.2 の新機能" class="md-nav__link">
+      v0.4.2 の新機能
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2062,8 +2086,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#periodictringle0_1" title="Periodic::Tringle0_1()" class="md-nav__link">
-    Periodic::Tringle0_1()
+  <a href="#periodictriangle0_1" title="Periodic::Triangle0_1()" class="md-nav__link">
+    Periodic::Triangle0_1()
   </a>
   
 </li>
@@ -2376,7 +2400,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<h3 id="periodictringle0_1">Periodic::Tringle0_1()<a class="headerlink" href="#periodictringle0_1" title="Permanent link">&para;</a></h3>
+<h3 id="periodictriangle0_1">Periodic::Triangle0_1()<a class="headerlink" href="#periodictriangle0_1" title="Permanent link">&para;</a></h3>
 <p>0.0 から一定の速度で値が大きくなって 1.0 に、そして一定の速度で小さくなって 0.0 に、という変化を指定した周期で繰り返す関数です。</p>
 <p><img alt="" src="../images/3031.gif" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
@@ -2388,7 +2412,7 @@
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
         <span class="c1">// 2 秒周期で、一定速度での左右移動を繰り返す</span>
-        <span class="k">const</span> <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">700</span> <span class="o">*</span> <span class="n">Periodic</span><span class="o">::</span><span class="n">Tringle0_1</span><span class="p">(</span><span class="mi">2</span><span class="n">s</span><span class="p">);</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">700</span> <span class="o">*</span> <span class="n">Periodic</span><span class="o">::</span><span class="n">Triangle0_1</span><span class="p">(</span><span class="mi">2</span><span class="n">s</span><span class="p">);</span>
 
         <span class="n">Circle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
     <span class="p">}</span>
