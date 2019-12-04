@@ -951,6 +951,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../logo/logo/" title="Logo" class="md-nav__link">
+      Logo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../mascot/mascot/" title="Mascot" class="md-nav__link">
+      Mascot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../support/support/" title="Support" class="md-nav__link">
       Support
     </a>
@@ -1942,6 +1966,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../logo/logo/" title="ロゴ画像" class="md-nav__link">
+      ロゴ画像
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mascot/mascot/" title="マスコット" class="md-nav__link">
+      マスコット
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../support/support/" title="サポート" class="md-nav__link">
       サポート
     </a>
@@ -2201,7 +2249,7 @@
 ただし、<code class="codehilite"><span class="n">SDFFont</span></code> の生成や描画のコストは <code class="codehilite"><span class="n">Font</span></code> に比べて大きいため、<code class="codehilite"><span class="n">Font</span></code> で十分なケースでは従来通り <code class="codehilite"><span class="n">Font</span></code> を使うべきです。<br />
 <code class="codehilite"><span class="n">SDFFont</span></code> の品質は、コンストラクタで指定するグリフの Distance Field のサイズと、描画する字形の複雑さに影響されます。画数の少ない数字やアルファベット、曲線的でシンプルな字形であれば、40 ピクセル以下の Distance Field でもきれいなテキストをレンダリングできますが、複雑な字形になるほど、小さな Distance Field では描画結果が乱れたり、ノイズが目立つことがあります。文字の太らせについても、大きい値ではノイズが目立つことがあります。<code class="codehilite"><span class="n">SDFFont</span></code> をアプリケーションで使用する際は、テキストの描画結果をチェックし、適切な Distance Field サイズを設定しましょう。</p>
 <h3 id="sdffont">SDFFont の基本<a class="headerlink" href="#sdffont" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../images/042-01.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/01.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2237,7 +2285,7 @@
 
 <h3 id="sdffont_1">SDFFont の事前生成<a class="headerlink" href="#sdffont_1" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="n">SDFFont</span></code> の各グリフの Distance field は、生成に時間がかかるため、使用するグリフをあらかじめ生成して保存しておくとアプリケーションの速度低下が防げます。<code class="codehilite"><span class="n">SDFFont</span><span class="p">::</span><span class="n">preload</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></code> で、文字列 <code class="codehilite"><span class="n">s</span></code> 含まれるグリフの Distance field を生成、<code class="codehilite"><span class="n">SDFFont</span><span class="p">::</span><span class="n">preload</span><span class="p">(</span><span class="n">imagePath</span><span class="p">,</span> <span class="n">jsonPath</span><span class="p">)</span></code> で 2 つのファイルに生成結果を保存し、<code class="codehilite"><span class="n">SDFFont</span></code> のコンストラクタでこれらのファイルをロードします。事前生成されていなかったグリフは実行時に生成されます。</p>
-<p><img alt="" src="../images/042-02.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/02.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2289,7 +2337,7 @@
 </pre></div>
 
 <h3 id="_1">比較用サンプル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../images/042-03.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/03.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2385,7 +2433,7 @@
 
 <h2 id="2">2. 集中線描画<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>実験的ライブラリ群 HamFramework に追加された <code class="codehilite"><span class="n">SaturatedLinework</span></code> クラスによって、コミカルな効果や疾走感を演出するための集中線を簡単に描画できるようになりました。設定するパラメータは、ターゲットの図形、外周の長方形、線の本数、線の太さ、長さのばらつき、乱数シードなどがあり、<code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> の引数で色を指定できます。多数の三角形を生成して描画する方法で表現されています。パラメータを変更しなければ、生成した三角形は再利用されます。</p>
-<p><img alt="" src="../images/042-04.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/04.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 <span class="cp"># include &lt;HamFramework.hpp&gt;</span>
 
@@ -2569,7 +2617,7 @@
 
 <h2 id="4-poissondisk2d">4. PoissonDisk2D<a class="headerlink" href="#4-poissondisk2d" title="Permanent link">&para;</a></h2>
 <p>ほどよい距離で重ならない点群を生成する <code class="codehilite"><span class="n">PoissonDisk2D</span></code> クラスが追加されました。</p>
-<p><img alt="" src="../images/042-05.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/05.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2733,7 +2781,7 @@
 </pre></div></p>
 <h2 id="6-geometry2disclockwise">6. Geometry2D::IsClockwise()<a class="headerlink" href="#6-geometry2disclockwise" title="Permanent link">&para;</a></h2>
 <p>頂点の配列が時計回りかどうかを判定する関数が追加されました。</p>
-<p><img alt="" src="../images/042-06.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/06.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2793,7 +2841,7 @@
 
 <h2 id="7-circledrawinnercolor-outercolor">7. Circle::draw(innerColor, outerColor)<a class="headerlink" href="#7-circledrawinnercolor-outercolor" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Circle</span></code> や <code class="codehilite"><span class="n">Ellipse</span></code> で中心の色と外周の色を指定し、グラデーションで描画できるようになりました。</p>
-<p><img alt="" src="../images/042-07.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/07.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2808,7 +2856,7 @@
 
 <h2 id="8-simpleguiheadline-colorpicker">8. SimpleGUI::Headline / ColorPicker<a class="headerlink" href="#8-simpleguiheadline-colorpicker" title="Permanent link">&para;</a></h2>
 <p>SimpleGUI に、見出しを付けるヘッドラインと、色を選択するカラーピッカーが追加されました。</p>
-<p><img alt="" src="../images/042-08.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/08.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2845,7 +2893,7 @@
 
 <h2 id="9-toastnotification">9. ToastNotification<a class="headerlink" href="#9-toastnotification" title="Permanent link">&para;</a></h2>
 <p>Windows でトースト通知を出せるようになりました。</p>
-<p><img alt="" src="../images/042-09.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/09.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2886,7 +2934,7 @@
 
 <h2 id="10-simpleguimanager">10. SimpleGUIManager<a class="headerlink" href="#10-simpleguimanager" title="Permanent link">&para;</a></h2>
 <p>TOML ファイルに SimpleGUI の各ウィジェットを記述し、プログラムでロードできるようになります。実行中に操作した値を保存することもできます。</p>
-<p><img alt="" src="../images/042-10.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/10.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2935,7 +2983,7 @@
 
 <h2 id="11-print">11. Print の排他制御<a class="headerlink" href="#11-print" title="Permanent link">&para;</a></h2>
 <p>デバッグなどの用途のために、<code class="codehilite"><span class="n">Print</span></code> を複数スレッドから同時に呼び出し可能になりました。</p>
-<p><img alt="" src="../images/042-11.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/11.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Siv3D の並列処理関数を有効化するマクロ</span>
 <span class="c1">// ヘッダが増えるためコンパイル時間が少し長くなる</span>
 <span class="cp"># define SIV3D_CONCURRENT</span>
@@ -2964,7 +3012,7 @@
 <li>深度バッファが無いので前後判定ができない</li>
 <li>遠近クリップが無いのでカメラに近すぎるオブジェクトが正しく表示されない</li>
 </ul>
-<p><img alt="" src="../images/042-12.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/12.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -3034,7 +3082,7 @@
 <h3 id="v041">v0.4.1 サンプルアップデート<a class="headerlink" href="#v041" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="n">AABB</span></code>, <code class="codehilite"><span class="n">Triangle3D</span></code>, <code class="codehilite"><span class="n">Line3D</span></code> などが、<code class="codehilite"><span class="n">s3d</span><span class="p">::</span><span class="n">experimental</span></code> 名前空間から <code class="codehilite"><span class="n">s3d</span></code> 名前空間に移動しました。</p>
 <h4 id="3d-triangles">3D Triangles<a class="headerlink" href="#3d-triangles" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../images/041-17.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/17.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -3089,7 +3137,7 @@
 </pre></div>
 
 <h4 id="3d-aabb">3D AABB<a class="headerlink" href="#3d-aabb" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../images/041-18.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/18.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -3125,7 +3173,7 @@
 </pre></div>
 
 <h4 id="3d-terrain">3D Terrain<a class="headerlink" href="#3d-terrain" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../images/041-19.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/19.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -3202,7 +3250,7 @@
 
 <h2 id="13-microphone">13. Microphone 不具合修正<a class="headerlink" href="#13-microphone" title="Permanent link">&para;</a></h2>
 <p>macOS など一部の環境でマイクが使えなかった不具合を修正しました。</p>
-<p><img alt="" src="../images/042-13.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v042/13.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>

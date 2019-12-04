@@ -1289,6 +1289,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../logo/logo/" title="Logo" class="md-nav__link">
+      Logo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mascot/mascot/" title="Mascot" class="md-nav__link">
+      Mascot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../support/support/" title="Support" class="md-nav__link">
       Support
     </a>
@@ -2057,6 +2081,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../ja-jp/logo/logo/" title="ロゴ画像" class="md-nav__link">
+      ロゴ画像
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ja-jp/mascot/mascot/" title="マスコット" class="md-nav__link">
+      マスコット
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../ja-jp/support/support/" title="サポート" class="md-nav__link">
       サポート
     </a>
@@ -2430,7 +2478,7 @@
 <p class="admonition-title">Warning</p>
 <p>レンダーターゲットとして設定されている最中のレンダーテクスチャを、描画に使用することはできません。</p>
 </div>
-<p><img alt="" src="../images/041-1.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/1.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2469,7 +2517,7 @@
 
 <h2 id="2">2. マルチサンプル・レンダーテクスチャ<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>通常の <code class="codehilite"><span class="n">RenderTexture</span></code> への描画ではマルチサンプル・アンチエイリアシングが有効にならないので、図形を描画した際にジャギーが生じます。<code class="codehilite"><span class="n">MSRenderTexture</span></code> を使うと、通常のシーンへの描画と同じように、マルチサンプル・アンチエイリアシングを有効にして描画できます。ただし、<code class="codehilite"><span class="n">MSRenderTexture</span></code> に描画された結果を、別の描画で使う際には、<code class="codehilite"><span class="n">Graphics2D</span><span class="p">::</span><span class="n">Flush</span><span class="p">()</span></code> によってその時点までの描画処理をすべて実行（フラッシュ）して <code class="codehilite"><span class="n">MSRenderTexture</span></code> に確実に描画したあとに、<code class="codehilite"><span class="n">MSRenderTexture</span><span class="p">::</span><span class="n">resolve</span><span class="p">()</span></code> を行い、<code class="codehilite"><span class="n">MSRenderTexture</span></code> 内のマルチサンプル・テクスチャを、描画で使用可能な通常のテクスチャに変換しておく必要があります。</p>
-<p><img alt="" src="../images/041-2.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/2.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2557,7 +2605,7 @@
 <p><code class="codehilite"><span class="k">from</span></code> のテクスチャの内容をに縦方向と横方向のガウスブラーをかけて <code class="codehilite"><span class="k">to</span></code> に描画します。<code class="codehilite"><span class="k">from</span></code>, <code class="codehilite"><span class="n">internalBuffer</span></code>, <code class="codehilite"><span class="k">to</span></code> はいずれも有効なテクスチャで、隣り合うもの同士は異なり、領域のサイズが同じでなければなりません。<br />
 <code class="codehilite"><span class="n">GaussianBlurH</span><span class="p">(</span><span class="k">from</span><span class="p">,</span> <span class="n">internalBuffer</span><span class="p">);</span> <span class="n">GaussianBlurV</span><span class="p">(</span><span class="n">internalBuffer</span><span class="p">,</span> <span class="k">to</span><span class="p">);</span></code> と等価です。</p>
 <h3 id="_1">ダウンサンプリング<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../images/041-3.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/3.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2578,7 +2626,7 @@
 </pre></div>
 
 <h4 id="_2">ガウスぼかし<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../images/041-4.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/4.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2756,7 +2804,7 @@
 <p>シェーダファイルからシェーダプログラムを読み込むには <code class="codehilite"><span class="n">PixelShader</span></code> クラスを使います。<code class="codehilite"><span class="n">PixelShader</span></code> のコンストラクタ引数に、読み込みたいシェーダファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。リリース用のアプリを作るときには、のちの章で説明する「リソース」パスの使用を推奨します。クロスプラットフォーム開発では、プラットフォームによって異なるシェーダファイルの拡張子を使い分けるために <code class="codehilite"><span class="n">SIV3D_SELECT_SHADER</span></code> マクロを使います。
 <code class="codehilite"><span class="n">PixelShader</span></code> のコンストラクタの第二引数には、定数バッファの名前と定数インデックスの対応付けのために <code class="codehilite"><span class="err">{</span> <span class="err">{</span> <span class="n">U</span><span class="ss">&quot;PSConstants2D&quot;</span><span class="p">,</span> <span class="mi">0</span> <span class="err">}</span> <span class="err">}</span></code> を記述します。2D 描画のピクセルシェーダにおいては、Siv3D 内部の処理のために、<code class="codehilite"><span class="n">U</span><span class="ss">&quot;PSConstants2D&quot;</span></code> という名前の定数バッファをインデックス 0 に常に設定しておく必要があります。ロードに失敗したかどうかは if (!ps) で調べられます。</p>
 <p><code class="codehilite"><span class="n">ScopedCustomShader2D</span></code> オブジェクトのコンストラクタに、ロードしたピクセルシェーダを渡すと、そのオブジェクトのスコープが有効な間、図形やテクスチャがそのカスタムピクセルシェーダによって描画されます。次のサンプルプログラムでは、テクスチャの R 成分と B 成分を入れ替えて描画するカスタムピクセルシェーダを使用します。</p>
-<p><img alt="" src="../images/041-5.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/5.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2827,7 +2875,7 @@
 
 <h3 id="_6">カスタムピクセルシェーダのサンプル<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <h4 id="rgb">RGB シフト<a class="headerlink" href="#rgb" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../images/041-6.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/6.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2857,7 +2905,7 @@
 </pre></div>
 
 <h4 id="_7">グレースケール化<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../images/041-7.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/7.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2887,7 +2935,7 @@
 </pre></div>
 
 <h4 id="_8">ポスタライズ<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../images/041-8.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/8.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2920,7 +2968,7 @@
 <p>定数バッファを使うと、C++ プログラムからシェーダプログラムに値を渡せます。定数バッファにする構造体は 16 の倍数のサイズで用意します。1 つの定数バッファの最大サイズは 64KB です。</p>
 <p>カスタムピクセルシェーダで新しい定数バッファを使うには、シェーダプログラムに定数バッファを追加し、<code class="codehilite"><span class="n">PixelShader</span></code> のコンストラクタの第二引数に、対応する追加の定数バッファの名前とインデックスを追加します。なお、デフォルトで存在する <code class="codehilite"><span class="n">PSConstants2D</span></code> 定数バッファを変更することはできません。</p>
 <p>C++ プログラムでは、<code class="codehilite"><span class="n">ConstantBuffer</span><span class="o">&lt;&gt;</span></code> クラステンプレートで定数バッファにする構造体のラッパーを作り、このクラス経由で値を操作します。描画前に、<code class="codehilite"><span class="n">Graphics2D</span><span class="p">::</span><span class="n">SetConstantBuffer</span><span class="p">()</span></code> によって、適切な定数バッファのインデックスにデータを転送します。</p>
-<p><img alt="" src="../images/041-9.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/9.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="c1">// 定数バッファ (PS_1)</span>
@@ -2979,7 +3027,7 @@
 </pre></div>
 
 <h4 id="_9">渦巻き効果<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../images/041-10.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/10.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="c1">// 定数バッファ (PS_1)</span>
@@ -3029,7 +3077,7 @@
 
 <h4 id="_10">テクスチャのブレンド<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <p>通常のテクスチャ描画のピクセルシェーダプログラムでは、描画で使うテクスチャがテクスチャインデックス 0 にセットされています。<code class="codehilite"><span class="n">Graphics2D</span><span class="p">::</span><span class="n">SetTexture</span><span class="p">()</span></code> を使うと、それ以外のスロットに追加のテクスチャをセットして、シェーダプログラムで複数のテクスチャを参照できるようになります。<code class="codehilite"><span class="n">Graphics2D</span><span class="p">::</span><span class="n">SetTexture</span><span class="p">()</span></code> に <code class="codehilite"><span class="k">none</span></code> を渡すことでスロットにセットしたテクスチャを解除できます。</p>
-<p><img alt="" src="../images/041-11.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/11.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -3063,7 +3111,7 @@
 </pre></div>
 
 <h4 id="_11">テクスチャのマスク<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../images/041-12.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/12.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -3120,7 +3168,7 @@
 
 <h4 id="gpu">GPU 上でのライフゲームシミュレーション<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h4>
 <p>ライフゲームをピクセルシェーダで実行するプログラムです。</p>
-<p><img alt="" src="../images/041-13.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/13.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="c1">// 定数バッファ (PS_1)</span>
@@ -3184,7 +3232,7 @@
 
 <h4 id="gpu-2d">GPU 上でのライフゲームシミュレーション（2D カメラ操作対応版）<a class="headerlink" href="#gpu-2d" title="Permanent link">&para;</a></h4>
 <p>マウスやキーを使った 2D カメラ操作で拡大縮小や移動ができます。</p>
-<p><img alt="" src="../images/041-14.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/14.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="c1">// 定数バッファ (PS_1)</span>
@@ -3264,7 +3312,7 @@
 
 <h4 id="_12">ゲーム画面に後処理としてシェーダを適用<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <p>レンダーテクスチャにゲームのグラフィックスを描画し、そのテクスチャをシーンに描画する際にシェーダを適用することで、ゲーム画面全体に後処理としてカスタムピクセルシェーダを適用できます。</p>
-<p><img alt="" src="../images/041-15.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/15.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="c1">// 渦巻き効果のピクセルシェーダ用の</span>
@@ -3518,7 +3566,7 @@
 
 <h3 id="_13">子プロセスとの標準入出力のパイプライン処理<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p>子プロセスとのパイプライン処理によって、一方の標準出力を他方の標準入力とすることができます。次のサンプルでは、"Console" は通常の C++ コンソールプロジェクトとしてビルドします。</p>
-<p><img alt="" src="../images/041-16.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/16.png?raw=true" /></p>
 <div class="superfences-tabs">
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
 <label for="__tab_1_0">Console</label>
@@ -3578,7 +3626,7 @@
 <li>遠近クリップが無いのでカメラに近すぎるオブジェクトが正しく表示されない</li>
 </ul>
 <h3 id="3d-triangles">3D Triangles<a class="headerlink" href="#3d-triangles" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../images/041-17.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/17.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -3633,7 +3681,7 @@
 </pre></div>
 
 <h3 id="3d-aabb">3D AABB<a class="headerlink" href="#3d-aabb" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../images/041-18.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/18.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -3670,7 +3718,7 @@
 
 <h3 id="3d-terrain">3D Terrain<a class="headerlink" href="#3d-terrain" title="Permanent link">&para;</a></h3>
 <p>マウスクリックで、左上の高さマップに山を描きます。</p>
-<p><img alt="" src="../images/041-19.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/news/v041/19.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
