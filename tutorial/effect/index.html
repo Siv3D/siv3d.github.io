@@ -1975,7 +1975,7 @@
 <h2 id="161-effect">16.1 Effect の基本<a class="headerlink" href="#161-effect" title="Permanent link">&para;</a></h2>
 <p>エフェクト機能を使うには、エフェクトを管理する <code class="codehilite"><span class="n">Effect</span></code> オブジェクトを作成し、<code class="codehilite"><span class="n">Effect</span><span class="p">::</span><span class="k">add</span><span class="o">&lt;</span><span class="n">EffectType</span><span class="o">&gt;</span><span class="p">()</span></code> で個々のエフェクトのパラメータを追加してエフェクトを発生させます。ここでいう <code class="codehilite"><span class="n">EffectType</span></code> は、<code class="codehilite"><span class="n">IEffect</span></code> を継承したクラスです。このクラスに必要な実装は <code class="codehilite"><span class="n">bool</span> <span class="k">update</span><span class="p">(</span><span class="n">double</span> <span class="n">t</span><span class="p">)</span> <span class="n">override</span></code> メンバ関数です。エフェクトが発生してからの経過時間 <code class="codehilite"><span class="n">t</span></code> を受け取り、そのエフェクトの描画を行い、最後にエフェクトを次のフレームも継続させるかを <code class="codehilite"><span class="n">bool</span></code> 値で返します。例えば <code class="codehilite"><span class="k">return</span> <span class="nv">t</span> <span class="o">&lt;</span> <span class="mi">3</span>.<span class="mi">0</span><span class="c1">;</span></code> とすれば、エフェクトは 3 秒間継続できます。</p>
 <p>次のプログラムは、クリックした場所に、時間とともに大きくなる輪を発生させるエフェクトを実装したものです。</p>
-<video src="../images/16-1-0.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/16/1-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2055,7 +2055,7 @@
 
 <h2 id="162">16.2 少しこだわったエフェクト<a class="headerlink" href="#162" title="Permanent link">&para;</a></h2>
 <p>イージングと組み合わせることもできます。</p>
-<video src="../images/16-2-0.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/16/2-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2108,7 +2108,7 @@
 
 <h2 id="163">16.3 上昇する文字<a class="headerlink" href="#163" title="Permanent link">&para;</a></h2>
 <p>フォントを使ったエフェクトの例です。</p>
-<video src="../images/16-3-0.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/16/3-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2156,7 +2156,7 @@
 
 <h2 id="164">16.4 飛び散る破片<a class="headerlink" href="#164" title="Permanent link">&para;</a></h2>
 <p>一つのエフェクトで複数の図形を描く例です。</p>
-<video src="../images/16-4-0.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/16/4-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2214,7 +2214,7 @@
 
 <h2 id="165">16.5 エフェクトの一時停止と消去<a class="headerlink" href="#165" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="nv">Effect</span>::<span class="k">pause</span><span class="ss">()</span></code> でエフェクトの更新を一時停止、<code class="codehilite"><span class="n">Effect</span><span class="p">::</span><span class="n">resume</span><span class="p">()</span></code> でエフェクトの更新を再開、<code class="codehilite"><span class="n">Effect</span><span class="p">::</span><span class="n">clear</span><span class="p">()</span></code> でエフェクトをすべて消去します。</p>
-<video src="../images/16-5-0.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/16/5-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 

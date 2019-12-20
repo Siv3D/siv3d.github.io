@@ -2086,7 +2086,7 @@
 <p>この章では、数や色、座標をランダムに生成したり、配列から無作為に要素を選択したりする方法を学びます。</p>
 <h2 id="141">14.1 半々の確率<a class="headerlink" href="#141" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">RandomBool</span><span class="p">()</span></code> は 50% の確率で <code class="codehilite"><span class="k">true</span></code>, 50% の確率で <code class="codehilite"><span class="k">false</span></code> を返します。</p>
-<p><img alt="" src="../images/14-1-0.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/1-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2109,7 +2109,7 @@
 
 <h2 id="142">14.2 確率を指定<a class="headerlink" href="#142" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">RandomBool</span><span class="p">()</span></code> には 0.0 ～ 1.0 の範囲で <code class="codehilite"><span class="k">true</span></code> になる確率を指定できます。10% の確率で <code class="codehilite"><span class="k">true</span></code> を返してほしい場合は <code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">1</span></code> を、25% の確率で <code class="codehilite"><span class="k">true</span></code> を返してほしい場合は <code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">25</span></code> を渡します。</p>
-<p><img alt="" src="../images/14-2-0.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/2-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2132,7 +2132,7 @@
 
 <h2 id="143">14.3 ランダムな数<a class="headerlink" href="#143" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="k">Random</span><span class="o">&lt;</span><span class="nv">Type</span><span class="o">&gt;</span><span class="ss">(</span><span class="nv">max</span><span class="ss">)</span></code> は 0 から max までのランダムな数を、<code class="codehilite"><span class="k">Random</span><span class="o">&lt;</span><span class="nv">Type</span><span class="o">&gt;</span><span class="ss">(</span><span class="nv">min</span>, <span class="nv">max</span><span class="ss">)</span></code> は min から　max の範囲でランダムな数を返します。</p>
-<p><img alt="" src="../images/14-3-0.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/3-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2177,7 +2177,7 @@
 
 <h2 id="144">14.4 ランダムな色<a class="headerlink" href="#144" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">RandomColorF</span><span class="p">()</span></code> はランダムな色を <code class="codehilite"><span class="nv">HSV</span><span class="ss">(</span><span class="k">Random</span><span class="ss">(</span><span class="mi">360</span>.<span class="mi">0</span><span class="ss">)</span>, <span class="mi">1</span>.<span class="mi">0</span>, <span class="mi">1</span>.<span class="mi">0</span><span class="ss">)</span></code> という式で生成して <code class="codehilite"><span class="n">ColorF</span></code> 型で返します。</p>
-<p><img alt="" src="../images/14-4-0.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/4-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2211,7 +2211,7 @@
 <h2 id="145">14.5 ランダムな座標<a class="headerlink" href="#145" title="Permanent link">&para;</a></h2>
 <h3 id="randomvec2double">RandomVec2(double)<a class="headerlink" href="#randomvec2double" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="n">RandomVec2</span><span class="p">(</span><span class="n">double</span><span class="p">)</span></code> は、指定した長さを持つランダムなベクトルを <code class="codehilite"><span class="n">Vec2</span></code> 型で返します。</p>
-<p><img alt="" src="../images/14-5-0.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/5-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2240,7 +2240,7 @@
 
 <h3 id="randomvec2rectf">RandomVec2(RectF)<a class="headerlink" href="#randomvec2rectf" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="n">RandomVec2</span><span class="p">(</span><span class="n">RectF</span><span class="p">)</span></code> は、指定した長方形の内部のランダムな位置を <code class="codehilite"><span class="n">Vec2</span></code> 型で返します。</p>
-<p><img alt="" src="../images/14-5-1.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/5-1.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2278,7 +2278,7 @@
 
 <h3 id="randomvec2circle">RandomVec2(Circle)<a class="headerlink" href="#randomvec2circle" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="n">RandomVec2</span><span class="p">(</span><span class="n">Circle</span><span class="p">)</span></code> は、指定した円の内部のランダムな位置を <code class="codehilite"><span class="n">Vec2</span></code> 型で返します。</p>
-<p><img alt="" src="../images/14-5-2.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/5-2.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2316,7 +2316,7 @@
 
 <h3 id="randomvec2triangle">RandomVec2(Triangle)<a class="headerlink" href="#randomvec2triangle" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="n">RandomVec2</span><span class="p">(</span><span class="n">Triangle</span><span class="p">)</span></code>  は、指定した三角形の内部のランダムな位置を <code class="codehilite"><span class="n">Vec2</span></code> 型で返します。</p>
-<p><img alt="" src="../images/14-5-3.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/5-3.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2354,7 +2354,7 @@
 
 <h2 id="146">14.6 配列中のランダムな要素<a class="headerlink" href="#146" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="nb">Array</span><span class="p">::</span><span class="n">choice</span><span class="p">()</span></code> は、配列の中のランダムな要素を返します。</p>
-<p><img alt="" src="../images/14-6-0.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/6-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2379,7 +2379,7 @@
 
 <h2 id="147">14.7 配列中のランダムな複数の要素<a class="headerlink" href="#147" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="nb">Array</span><span class="p">::</span><span class="n">choice</span><span class="p">()</span></code> に個数を渡すと、配列の中から、重複なくその個数だけランダムな要素を選択し、配列で返します。要素の順番は配列内での順序と同じです。</p>
-<p><img alt="" src="../images/14-7-0.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/7-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2404,7 +2404,7 @@
 
 <h2 id="148">14.8 配列のシャッフル<a class="headerlink" href="#148" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="nb">Array</span><span class="p">::</span><span class="n">shuffle</span><span class="p">()</span></code> は配列の要素の順番をランダムにシャッフルします。<code class="codehilite"><span class="nb">Array</span><span class="p">::</span><span class="n">shuffled</span><span class="p">()</span></code> を使うと、自身は変更せずに、シャッフルした新しい配列を作成して返します。 </p>
-<p><img alt="" src="../images/14-8-0.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/8-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2431,7 +2431,7 @@
 
 <h2 id="149">14.9 ランダムに選択<a class="headerlink" href="#149" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Sample</span><span class="p">()</span></code> を使うと、<code class="codehilite"><span class="err">{}</span></code> で渡した複数の選択肢から要素をランダムに選択できます。</p>
-<p><img alt="" src="../images/14-9-0.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/9-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2450,7 +2450,7 @@
 </pre></div>
 
 <p>第 1 引数に個数、第 2 引数に選択肢を渡すこともできます。<code class="codehilite"><span class="n">Arrai</span><span class="p">::</span><span class="n">choice</span><span class="p">()</span></code> の時と同様に、要素の順番は最初に渡された順序と同じです。</p>
-<p><img alt="" src="../images/14-9-1.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/9-1.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2470,7 +2470,7 @@
 
 <h2 id="1410">14.10 出現確率<a class="headerlink" href="#1410" title="Permanent link">&para;</a></h2>
 <p>確率にバイアスがある複数の選択肢からランダムな結果を選択するときは <code class="codehilite"><span class="n">DiscreteSample</span></code> を使います。選択肢を配列で、選択肢の確率分布を <code class="codehilite"><span class="n">DiscreteDistribution</span></code> で準備しておく必要があります。確率分布は <code class="codehilite"><span class="n">double</span></code> 型の値で指定し、合計が特定の数になる必要はありません。{1, 6, 3} なら 10%, 60%, 30% と割り振られます。</p>
-<p><img alt="" src="../images/14-10-0.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/14/10-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>

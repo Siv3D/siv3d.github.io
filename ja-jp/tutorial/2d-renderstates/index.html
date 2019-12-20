@@ -2098,7 +2098,7 @@
 <p>この章では、2D 描画の設定をカスタマイズして、表現の幅を広げる方法を学びます。</p>
 <h2 id="151">15.1 加算ブレンド<a class="headerlink" href="#151" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">ScopedRenderStates2D</span></code> オブジェクトのコンストラクタに <code class="codehilite"><span class="n">BlendState</span><span class="p">::</span><span class="n">Additive</span></code> を渡すと、そのオブジェクトのスコープが有効な間、図形や画像が加算ブレンドで描画されます。加算ブレンドでは、背景色に RGB 成分を加算するように描画されるので、重ねて描画した部分が明るくなります。</p>
-<video src="../images/15-1-0.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/15/1-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2142,7 +2142,7 @@
 
 <h2 id="152">15.2 描画時に色を加算<a class="headerlink" href="#152" title="Permanent link">&para;</a></h2>
 <p>画像や図形を描くときに、本来の色に RGBA 成分を加算して描画するには、<code class="codehilite"><span class="n">ScopedColorAdd2D</span></code> オブジェクトのコンストラクタに、加算したい値を設定します。そのオブジェクトのスコープが有効な間、描画の RGBA 値が加算されます。</p>
-<video src="../images/15-2-0.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/15/2-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2172,7 +2172,7 @@
 <h2 id="153">15.3 描画時に色を乗算<a class="headerlink" href="#153" title="Permanent link">&para;</a></h2>
 <p>画像や図形を描くときに、本来の色に RGBA 成分を乗算して描画するには、<code class="codehilite"><span class="n">ScopedColorMul2D</span></code> オブジェクトのコンストラクタに、乗算したい値を設定します。そのオブジェクトのスコープが有効な間、描画の RGBA 値が乗算されます。</p>
 <p>なお、<code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> に色を渡すことで、個別に乗算の色を設定することもできます（チュートリアル 5.10 参照）。<code class="codehilite"><span class="n">ScopedColorMul2D</span></code> はその設定を一括して適用できるものです。</p>
-<video src="../images/15-3-0.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/15/3-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2201,7 +2201,7 @@
 
 <h2 id="154">15.4 テクスチャサンプリングのフィルタ<a class="headerlink" href="#154" title="Permanent link">&para;</a></h2>
 <p>テクスチャを拡大縮小して描画する際に、デフォルトでは線形補間によって色が滑らかに補間されます。ドット感を保ったまま拡大したいときにはサンプラーステート <code class="codehilite"><span class="n">SamplerState</span><span class="p">::</span><span class="n">ClampNearest</span></code> を <code class="codehilite"><span class="n">ScopedRenderStates2D</span></code> で設定します。</p>
-<p><img alt="" src="../images/15-4-0.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/15/4-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2232,7 +2232,7 @@
 
 <h2 id="155">15.5 ビューポート<a class="headerlink" href="#155" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">ScopedViewport2D</span></code> オブジェクトを作成すると、シーン内に仮想のシーンを作り、新しい長方形の描画領域を定義できます。描画時にはビューポートの長方形の左上が (0, 0) の描画座標になり、長方形の範囲外にはみ出たものは描画されなくなります。ビューポートは描画の座標にしか影響を及ぼさないので、マウスカーソルの座標も同様に移動させたい場合には、後述する <code class="codehilite"><span class="n">Transformer2D</span></code> と組み合わせます。</p>
-<p><img alt="" src="../images/15-5-0.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/15/5-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2283,7 +2283,7 @@
 <h2 id="156">15.6 座標変換<a class="headerlink" href="#156" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Transformer2D</span></code> は、描画やマウスカーソル座標に対して、一括で回転・拡大縮小、座標移動などの座標変換を適用できる、非常に強力な機能です。</p>
 <p>座標変換行列を <code class="codehilite"><span class="n">Mat3x2</span></code> によって定義し、<code class="codehilite"><span class="n">Transformer2D</span></code> オブジェクトのコンストラクタに値を設定します。オブジェクトのスコープが有効な間、その行列による座標変換が描画やマウスカーソルに適用されます。</p>
-<video src="../images/15-6-0.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/15/6-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2405,7 +2405,7 @@
 
 <h3 id="transformer2d">Transformer2D の効果の乗算<a class="headerlink" href="#transformer2d" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="n">Transformer2D</span></code> の効果が適用されているときに新しい <code class="codehilite"><span class="n">Transformer2D</span></code> を作成すると、座標変換の効果が乗算されます。次のプログラムでは、重ねがけによって複雑な動きを実現しています。</p>
-<p><img alt="" src="../images/15-6-1.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/15/6-1.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2437,7 +2437,7 @@
 <p><code class="codehilite"><span class="n">Camera2D</span></code> を使うと、マウスやキーボードを使った直感的な操作で <code class="codehilite"><span class="n">Transformer2D</span></code> を作成、更新できるようになります。</p>
 <p><code class="codehilite"><span class="n">Camera2D</span><span class="p">::</span><span class="k">update</span><span class="p">()</span></code> では W/A/S/D キーで上下左右移動、↑/↓ キーで拡大縮小、マウス右クリックで自由移動、マウスホイールで拡大縮小の操作を行います。キー操作を無効にしたい場合は <code class="codehilite"><span class="n">Camera2D</span></code> コンストラクタに <code class="codehilite"><span class="n">Camera2DParameters</span><span class="p">::</span><span class="n">MouseOnly</span><span class="p">()</span></code> を渡します。カメラの挙動は <code class="codehilite"><span class="n">Camera2DParameters</span></code> によってカスタマイズできます。</p>
 <p><code class="codehilite"><span class="n">Camera2D</span><span class="p">::</span><span class="n">draw</span><span class="p">()</span></code> ではマウスでのカメラ操作を補助する矢印 UI を表示します。</p>
-<video src="../images/15-7-0.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/15/7-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2486,7 +2486,7 @@
 
 <h2 id="158">15.8 ワイヤフレームモードで描画<a class="headerlink" href="#158" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">ScopedRenderStates2D</span></code> オブジェクトのコンストラクタに <code class="codehilite"><span class="n">RasterizerState</span><span class="p">::</span><span class="n">WireframeCullNone</span></code> を渡すと、図形や画像を構成するポリゴンのワイヤフレームのみが描画されるようになります。</p>
-<p><img alt="" src="../images/15-8-0.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/15/8-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2510,7 +2510,7 @@
 <h2 id="159">15.9 テクスチャのくり返し<a class="headerlink" href="#159" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">ScopedRenderStates2D</span></code> オブジェクトのコンストラクタにサンプラーステートを渡すことで、テクスチャ描画時に UV 座標が 0.0～1.0 の範囲を超えたときの処理の方法をカスタマイズできます。</p>
 <p><code class="codehilite"><span class="n">Texture</span><span class="p">::</span><span class="n">mapped</span><span class="p">()</span></code> によって、指定したサイズだけテクスチャをくり返しマッピングするような <code class="codehilite"><span class="n">TextureRegion</span></code> を作成できます。それをサンプラーステート <code class="codehilite"><span class="n">SamplerState</span><span class="p">::</span><span class="n">RepeatLinear</span></code> が適用されている状態で <code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> すると、テクスチャの内容がくり返しマッピングされて描画されます。</p>
-<p><img alt="" src="../images/15-9-0.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/15/9-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2535,7 +2535,7 @@
 <p><code class="codehilite"><span class="n">ScopedRenderStates2D</span></code> は、コンストラクタの引数に <code class="codehilite"><span class="n">BlendState</span></code>, <code class="codehilite"><span class="n">SamplerState</span></code>, <code class="codehilite"><span class="n">RasterizerState</span></code> の 3 つを一度に設定できます。<code class="codehilite"><span class="n">BlendState</span></code>, <code class="codehilite"><span class="n">SamplerState</span></code>, <code class="codehilite"><span class="n">RasterizerState</span></code> は、この章で紹介した以外にも多くのパラメータを持ち、様々なカスタマイズが可能です。2D 描画におけるデフォルト値は <code class="codehilite"><span class="n">BlendState</span><span class="p">::</span><span class="k">Default</span></code>, <code class="codehilite"><span class="n">SamplerState</span><span class="p">::</span><span class="n">Default2D</span></code>, <code class="codehilite"><span class="n">RasterizerState</span><span class="p">::</span><span class="n">Default2D</span></code> で定義されています。</p>
 <h3 id="scoped">Scoped～ のはたらき<a class="headerlink" href="#scoped" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="n">Scoped</span><span class="err">～</span></code> 系のオブジェクトや <code class="codehilite"><span class="n">Transformer2D</span></code> は、ソースコード上では何も働いていないように見えます。しかし、実際はコンストラクタでレンダーステートを設定し、自身が破棄されるとき（スコープが終了するとき）デストラクタでレンダーステートを最初の状態に戻す処理を行っています。</p>
-<p><img alt="" src="../images/15-10-1.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/15/10-1.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
