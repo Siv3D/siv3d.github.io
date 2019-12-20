@@ -2171,7 +2171,7 @@
 <h2 id="81-font">8.1 Font<a class="headerlink" href="#81-font" title="Permanent link">&para;</a></h2>
 <p>前章までテキストの表示に使ってきた <code class="codehilite"><span class="n">Print</span></code> は、フォントのサイズや種類、描画位置に自由度がありませんでした。自由にカスタマイズしたフォントを使ってテキストを描きたいときは <code class="codehilite"><span class="n">Font</span></code> を作成し、描画したい内容を <code class="codehilite"><span class="p">()</span></code> でつなげたあと、<code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> または <code class="codehilite"><span class="na">.drawAt</span><span class="p">()</span></code> します。</p>
 <p><code class="codehilite"><span class="n">Texture</span></code> と同じように、<code class="codehilite"><span class="n">Font</span></code> の作成にはメモリ確保などの実行時負荷がかかります。メインループの中で毎フレーム新しい <code class="codehilite"><span class="n">Font</span></code> を作成するのは避け、作成が 1 回だけで済むようにしましょう。</p>
-<p><img alt="" src="../images/8010.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/1-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2200,7 +2200,7 @@
 
 <h2 id="82">8.2 改行する<a class="headerlink" href="#82" title="Permanent link">&para;</a></h2>
 <p>テキストの中に改行文字 <code class="codehilite"><span class="err">\</span><span class="n">n</span></code> が含まれていると、そこで改行されます。</p>
-<p><img alt="" src="../images/8020.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/2-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2216,7 +2216,7 @@
 
 <h2 id="83">8.3 フォントのサイズ<a class="headerlink" href="#83" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Font</span></code> のコンストラクタの第一引数にはフォントのサイズを指定します。単位はピクセルです。</p>
-<p><img alt="" src="../images/8030.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/3-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2254,7 +2254,7 @@
 <p class="admonition-title">Info</p>
 <p>Siv3D には「M+ 1p」という書体の 7 種類のウエイトのフォントファイルが同梱されています。</p>
 </div>
-<p><img alt="" src="../images/8040.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/4-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2297,7 +2297,7 @@
 
 <h2 id="85">8.5 フォントファイルからフォントを読み込んで使う<a class="headerlink" href="#85" title="Permanent link">&para;</a></h2>
 <p>PC 上にあるフォントファイルから <code class="codehilite"><span class="n">Font</span></code> を作成するには、<code class="codehilite"><span class="n">Font</span></code> のコンストラクタの第二引数に、読み込みたいフォントファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。リリース用のアプリを作るときには、のちの章で説明する「リソース」パスの使用を推奨します。</p>
-<p><img alt="" src="../images/8050.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/5-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2354,7 +2354,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="../images/8060.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/6-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2390,7 +2390,7 @@
 </div>
 <h2 id="87">8.7 テキストが表示される領域を調べる<a class="headerlink" href="#87" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Font</span></code> の <code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> や <code class="codehilite"><span class="na">.drawAt</span><span class="p">()</span></code> は、描画された領域を <code class="codehilite"><span class="n">Rect</span></code> または <code class="codehilite"><span class="n">RectF</span></code> 型で返します。また、<code class="codehilite"><span class="na">.region</span><span class="p">()</span></code> や <code class="codehilite"><span class="na">.regionAt</span><span class="p">()</span></code> を使うと、描画することなくその領域を取得できます。</p>
-<p><img alt="" src="../images/8070.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/7-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2417,7 +2417,7 @@
 
 <h2 id="88">8.8 フォントのスタイルを変える<a class="headerlink" href="#88" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Font</span></code> のコンストラクタの第三引数に <code class="codehilite"><span class="n">FontStyle</span></code> を指定することで、イタリックやボールドなどのスタイルをフォントに適用できます。</p>
-<p><img alt="" src="../images/8080.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/8-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2450,7 +2450,7 @@
 
 <h2 id="89">8.9 異なるフォントでベースラインをそろえる<a class="headerlink" href="#89" title="Permanent link">&para;</a></h2>
 <p>文字のベースラインの開始位置を指定して描画したい場合は <code class="codehilite"><span class="na">.drawBase</span><span class="p">()</span></code> を使います。異なるサイズや種類のフォントを、ベースラインをそろえて描画できます。</p>
-<p><img alt="" src="../images/8090.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/9-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2486,7 +2486,7 @@
 
 <h2 id="810">8.10 テキスト描画の基準位置をカスタマイズする<a class="headerlink" href="#810" title="Permanent link">&para;</a></h2>
 <p>左上や中心以外にも、描画座標の基準点を設定できます。</p>
-<p><img alt="" src="../images/8100.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/10-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2522,7 +2522,7 @@
 
 <h2 id="811">8.11 文字に影の効果を付ける<a class="headerlink" href="#811" title="Permanent link">&para;</a></h2>
 <p>座標をずらして 2回 テキストを描くと、影の効果を簡単に作成できます。<code class="codehilite"><span class="n">Vec2</span><span class="p">::</span><span class="n">movedBy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></code> を使うと、指定した値だけ要素を加算した <code class="codehilite"><span class="n">Vec2</span></code> を作成できます。</p>
-<p><img alt="" src="../images/8110.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/11-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2548,7 +2548,7 @@
 
 <h2 id="812">8.12 文字単位で描画を制御する<a class="headerlink" href="#812" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">font</span><span class="p">(</span><span class="nb">text</span><span class="p">)</span></code> を <code class="codehilite"><span class="k">for</span></code> ループで次のように使用すると、文字を自由に制御して描画するために必要な <code class="codehilite"><span class="n">Glyph</span></code> 型のオブジェクトを文字ごとに取得できます。<code class="codehilite"><span class="na">.codePoint</span></code> はその文字の UTF-32 コードポイントを、<code class="codehilite"><span class="na">.index</span></code> はテキスト内の文字の位置インデックスを、<code class="codehilite"><span class="na">.offset</span></code> はペンの位置からさらに必要なオフセットを、<code class="codehilite"><span class="na">.xAdvance</span></code> は次の文字への X 座標の距離を表します。</p>
-<p><img alt="" src="../images/8120.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/12-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2593,7 +2593,7 @@
 
 <h2 id="813">8.13 縦書きでテキストを描画する<a class="headerlink" href="#813" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Font</span><span class="p">::</span><span class="n">getVerticalGlyphs</span><span class="p">()</span></code> で縦書き用のグリフを取得できるので、それを使うってテキストの縦書きを実現できます。</p>
-<p><img alt="" src="../images/8130.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/13-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2629,7 +2629,7 @@
 
 <h2 id="814">8.14 指定した長方形の中にテキストを描く<a class="headerlink" href="#814" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Font</span><span class="p">::</span><span class="n">draw</span><span class="p">()</span></code> に <code class="codehilite"><span class="n">Rect</span></code> または <code class="codehilite"><span class="n">RectF</span></code> を渡すと、テキストをその長方形の内部に収まるように描画します。文字があふれる場合、最後の文字が <code class="codehilite"><span class="err">…</span></code> に置き換えられ、関数は <code class="codehilite"><span class="k">false</span></code> を返します。</p>
-<p><img alt="" src="../images/8140.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/14-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2674,7 +2674,7 @@
 
 <h2 id="815-1">8.15 テキストを 1 文字ずつ表示する<a class="headerlink" href="#815-1" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">String</span><span class="p">::</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span></code> で、0 文字目から N 文字分の文字列を取得できます。N を時間に応じて増やすことで 1 文字ずつテキストを表示できます。N が文字列の長さよりも大きくなっても、その分は単に無視されます。 </p>
-<p><img alt="" src="../images/8150.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/8/15-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
