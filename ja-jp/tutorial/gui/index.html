@@ -1948,7 +1948,7 @@
 <p>この章では、ボタンやスライダーなど簡単な GUI を作成する方法を学びます。</p>
 <h2 id="91">9.1 ボタン<a class="headerlink" href="#91" title="Permanent link">&para;</a></h2>
 <p>ボタンの表示と入力の取得を実装するときは <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">Button</span><span class="p">()</span></code> 関数を使うと便利です。ボタンのテキストや位置、幅、状態などを設定できます。<code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">Button</span><span class="p">()</span></code> は自身が押されたときに <code class="codehilite"><span class="k">true</span></code> を返します。</p>
-<p><img alt="" src="../images/9010.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/9/1-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -1998,7 +1998,7 @@
 
 <h2 id="92">9.2 スライダー<a class="headerlink" href="#92" title="Permanent link">&para;</a></h2>
 <p>スライダーの表示と値の取得を実装するときは <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">Slider</span><span class="p">()</span></code> 関数を使うと便利です。スライダーのテキストや位置、幅、値の範囲などを設定できます。縦方向のスライダーは <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">VerticalSlider</span><span class="p">()</span></code> を使います。<code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">Slider</span><span class="p">()</span></code> と <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">VerticalSlider</span><span class="p">()</span></code> は値が変更されたときに <code class="codehilite"><span class="k">true</span></code> を返します。</p>
-<p><img alt="" src="../images/9020.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/9/2-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2047,7 +2047,7 @@
 
 <h2 id="93">9.3 チェックボックス<a class="headerlink" href="#93" title="Permanent link">&para;</a></h2>
 <p>チェックボックスの表示と入力の取得を実装するときは <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">CheckBox</span><span class="p">()</span></code> 関数を使うと便利です。チェックボックスのテキストや位置、幅、状態などを設定できます。<code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">CheckBox</span><span class="p">()</span></code> は値が変更されたときに <code class="codehilite"><span class="k">true</span></code> を返します。</p>
-<p><img alt="" src="../images/9030.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/9/3-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2081,7 +2081,7 @@
 
 <h2 id="94">9.4 ラジオボタン<a class="headerlink" href="#94" title="Permanent link">&para;</a></h2>
 <p>ラジオボタンの表示と入力の取得を実装するときは <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">RadioButtons</span><span class="p">()</span></code> 関数を使うと便利です。ラジオボタンのテキストや位置、幅、状態などを設定できます。<code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">RadioButtons</span><span class="p">()</span></code> は値が変更されたときに <code class="codehilite"><span class="k">true</span></code> を返します。</p>
-<p><img alt="" src="../images/9040.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/9/4-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2121,7 +2121,7 @@
 
 <h2 id="95">9.5 テキストボックス<a class="headerlink" href="#95" title="Permanent link">&para;</a></h2>
 <p>テキストボックスを実装するときは <code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">TextBox</span><span class="p">()</span></code> 関数を使うと便利です。テキストボックスの位置、幅、文字数の上限、状態などを設定できます。テキストは <code class="codehilite"><span class="n">TextEditState</span></code> 型のオブジェクトによって管理します。<code class="codehilite"><span class="n">SimpleGUI</span><span class="p">::</span><span class="n">TextBox</span><span class="p">()</span></code> は値が変更されたときに <code class="codehilite"><span class="k">true</span></code> を返します。</p>
-<p><img alt="" src="../images/9050.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/9/5-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
