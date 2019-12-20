@@ -2068,7 +2068,7 @@
 <span class="p">}</span>
 </pre></div>
 <code class="codehilite"><span class="n">Print</span></code> に向かって、出力の記号 <code class="codehilite"><span class="o">&lt;&lt;</span></code> でテキストを送ると、そのテキストが画面に表示されます。</p>
-<p><img alt="" src="../images/1050.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/1/5-0.png?raw=true" /></p>
 <div class="admonition 文法">
 <p class="admonition-title">文法</p>
 <p>テキストをプログラムに登場させるときは <code class="codehilite"><span class="ss">&quot; &quot;</span></code> で囲みます。Siv3D ではさらに、日本語を扱いやすい UTF-32 という形式でテキストデータを扱うため、<code class="codehilite"><span class="err">&quot;</span></code> の先頭には <code class="codehilite"><span class="n">U</span></code> というプレフィックスを付けます。</p>
@@ -2098,7 +2098,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><img alt="" src="../images/1060.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/1/6-0.png?raw=true" /></p>
 <h2 id="17-print">1.7 Print したものを消す<a class="headerlink" href="#17-print" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Print</span></code> した内容は蓄積されるので、次のように <code class="codehilite"><span class="n">Print</span></code> をメインループの中で使うと、毎フレーム新しいメッセージが追加されて、古いメッセージを画面の外に追いやります。画面からあふれたメッセージは自動的に消えるので、<code class="codehilite"><span class="n">Print</span></code> のし過ぎを心配する必要はありません。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
@@ -2116,7 +2116,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><img alt="" src="../images/1070.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/1/7-0.png?raw=true" /></p>
 <p>メッセージが画面外に消えるのを待たずに、プログラムを使って消去したいときには <code class="codehilite"><span class="n">ClearPrint</span></code> 関数を使います。プログラムのメインループの先頭で <code class="codehilite"><span class="n">ClearPrint</span></code> すると、その時点で蓄積されていたメッセージが全部消去され、つねに最新の <code class="codehilite"><span class="n">Print</span></code> した内容だけが表示されるようになります。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2160,7 +2160,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><img alt="" src="../images/1080.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/1/8-0.gif?raw=true" /></p>
                 
                   
                 

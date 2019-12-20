@@ -2184,7 +2184,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><img alt="" src="../images/2010.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/1-0.png?raw=true" /></p>
 <p><code class="codehilite"><span class="n">Circle</span><span class="p">()</span></code> の最後に指定するパラメータは円の半径です。この値を大きくすれば、描画される円も大きくなります。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2198,7 +2198,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><img alt="" src="../images/2011.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/1-1.png?raw=true" /></p>
 <p>円がマウスカーソルの座標に連動して動くようにしてみましょう。<code class="codehilite"><span class="n">Circle</span><span class="p">()</span></code> の最初に指定するパラメータは円の中心の X 座標です。この値をマウスカーソルの X 座標にしてみます。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2211,7 +2211,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><img alt="" src="../images/2012.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/1-2.gif?raw=true" /></p>
 <p>マウスカーソルに追従して、円が左右に動くようになりました。</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -2229,7 +2229,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><img alt="" src="../images/2013.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/1-3.gif?raw=true" /></p>
 <p>Siv3D で X 座標、Y 座標 2 つの値を受け取る関数は、多くの場合、1 つの Point 型を受け取る別バージョンの関数（オーバーロード）を提供しているケースがよくあります。<code class="codehilite"><span class="n">Circle</span></code> も、「X 座標」「Y 座標」「半径」の 3 つの引数ではなく、「中心座標 (<code class="codehilite"><span class="n">Point</span></code> 型)」「半径」の 2 つの引数を受け取るオーバーロードがあります。これを使うと、先ほど同じはたらきをするコードを短く書けます。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2350,7 +2350,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><img alt="" src="../images/2020.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/2-0.gif?raw=true" /></p>
 <h2 id="23">2.3 背景の色を変える<a class="headerlink" href="#23" title="Permanent link">&para;</a></h2>
 <p>背景の色を変えるには <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">SetBackground</span><span class="p">()</span></code> 関数に色を渡します。新しい背景色は、次の <code class="codehilite"><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">()</span></code> で画面の描画内容をリセットするときから反映されます。背景色は一度設定すると、再度変更されるまで同じ設定が使われます。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
@@ -2366,7 +2366,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><img alt="" src="../images/2030.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/3-0.gif?raw=true" /></p>
 <p>背景色の変更にコストはかからないので、背景色は毎フレーム変更しても大丈夫です。プログラムの経過時間（秒）を <code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Time</span><span class="p">()</span></code> で取得して、時間に応じて背景色の色相を変化させてみましょう。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2381,7 +2381,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><img alt="" src="../images/2031.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/3-1.gif?raw=true" /></p>
 <h2 id="24">2.4 長方形を描く<a class="headerlink" href="#24" title="Permanent link">&para;</a></h2>
 <p>長方形を描くときは <code class="codehilite"><span class="n">Rect</span></code> を作成して <code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> します。</p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
@@ -2408,12 +2408,12 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><img alt="" src="../images/2040.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/4-0.gif?raw=true" /></p>
 <p>図形は <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> した順番に描画されます。このプログラムでは、マウスカーソルに追従する赤い正方形よりも、画面の下にある水色の大きな長方形が上に来ます。</p>
 <p><code class="codehilite"><span class="n">Rect</span></code> 型は左上の座標と幅、高さをそれぞれ <code class="codehilite"><span class="n">int32</span> <span class="n">x</span></code>, <code class="codehilite"><span class="n">int32</span> <span class="n">y</span></code>, <code class="codehilite"><span class="n">int32</span> <span class="n">w</span></code>, <code class="codehilite"><span class="n">int32</span> <span class="n">h</span></code> というメンバ変数で表します。整数ではなく浮動小数点数で扱いたい場合は、すべての要素が <code class="codehilite"><span class="n">double</span></code> 型である <code class="codehilite"><span class="n">RectF</span></code> を使います。</p>
 <h2 id="25">2.5 枠を描く<a class="headerlink" href="#25" title="Permanent link">&para;</a></h2>
 <p>図形は、<code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> の代わりに <code class="codehilite"><span class="na">.drawFrame</span><span class="p">()</span></code> することで、枠だけを描けます。<code class="codehilite"><span class="na">.drawFrame</span><span class="p">()</span></code> の第 1 引数には図形の内側方向への太さを、第 2 引数には外側方向への太さを指定します。図形の <code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> や <code class="codehilite"><span class="na">.drawFrame</span><span class="p">()</span></code> の戻り値はその図形自身なので、<code class="codehilite"><span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">().</span><span class="n">drawFrame</span><span class="p">()</span></code> のように関数を続けて書くこともできます。</p>
-<p><img alt="" src="../images/2050.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/5-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2473,7 +2473,7 @@
 </div>
 <h2 id="26">2.6 線分を描く<a class="headerlink" href="#26" title="Permanent link">&para;</a></h2>
 <p>始点と終点を指定して線分を描くときは <code class="codehilite"><span class="n">Line</span></code> を作成して <code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> します。<code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> のパラメータには描画する線分の太さと色を指定します。線分の両端を丸くしたり、点線にしたりするなど、スタイルの変更もできます。</p>
-<p><img alt="" src="../images/2060.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/6-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2505,7 +2505,7 @@
 <p>三角形を描くには、<code class="codehilite"><span class="n">Triangle</span></code> を作成して <code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> します。<code class="codehilite"><span class="n">Triangle</span></code> を作成するには、3 つの頂点座標を時計回りに指定する方法と、正三角形の重心座標と辺の長さ、回転角度を指定する方法があります。</p>
 <p>Siv3D における角度は、<code class="codehilite"><span class="mi">2</span><span class="err">π</span> <span class="o">=</span> <span class="mi">360</span><span class="err">°</span></code> のラジアン角で表現します。<code class="codehilite"><span class="n">ToRadians</span><span class="p">()</span></code> 関数で度数法からラジアン角へ変換できるほか、<code class="codehilite"><span class="n">_deg</span></code> サフィックスを使うことでリテラルで記述することもできます。</p>
 <p>X 座標と Y 座標の組は <code class="codehilite"><span class="n">Point</span></code> 型や <code class="codehilite"><span class="n">Vec2</span></code> 型で表現できます。<code class="codehilite"><span class="n">Point</span></code> 型は各成分が <code class="codehilite"><span class="n">int32</span></code> 型で、<code class="codehilite"><span class="n">Vec2</span></code> 型は <code class="codehilite"><span class="n">double</span></code> 型です。</p>
-<p><img alt="" src="../images/2070.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/7-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2532,8 +2532,8 @@
 
 <h2 id="28">2.8 凸な四角形を描く<a class="headerlink" href="#28" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Rect</span></code> や <code class="codehilite"><span class="n">RectF</span></code> では、各辺が水平垂直な長方形しか定義できませんでしたが、<code class="codehilite"><span class="n">Quad</span></code> を使うと 4 つの頂点座標を時計回りに指定して四角形を定義できます。ただし、<code class="codehilite"><span class="n">Quad</span></code> で定義される四角形は 180° 以上の内角を含まない形状（すべての角が凸）である必要があります。凹角を含む四角形を定義したい場合は 2.12 で出てくる <code class="codehilite"><span class="n">Polygon</span></code> 型を使います。</p>
-<p><img alt="" src="../images/2080.png" /></p>
-<p><img alt="" src="../images/2081.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/8-0.png?raw=true" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/8-1.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2549,7 +2549,7 @@
 </pre></div>
 
 <p><code class="codehilite"><span class="n">Rect</span></code> や <code class="codehilite"><span class="n">RectF</span></code> を作成し、<code class="codehilite"><span class="na">.rotated</span><span class="p">()</span></code> または <code class="codehilite"><span class="na">.rotatedAt</span><span class="p">()</span></code> を使うと、回転した長方形を <code class="codehilite"><span class="n">Quad</span></code> 型として作成できます。その <code class="codehilite"><span class="n">Quad</span></code> を <code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> する一連の操作を次のように 1 行で書けます。また、<code class="codehilite"><span class="n">Rect</span><span class="p">::</span><span class="n">pos</span></code> は <code class="codehilite"><span class="n">Rect</span></code> の左上の座標を <code class="codehilite"><span class="n">Point</span></code> 型で、<code class="codehilite"><span class="n">RectF</span><span class="p">::</span><span class="n">pos</span></code> は <code class="codehilite"><span class="n">RectF</span></code> の左上の座標を <code class="codehilite"><span class="n">Vec2</span></code> 型で表すメンバ変数です。</p>
-<p><img alt="" src="../images/2082.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/8-2.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2570,7 +2570,7 @@
 </pre></div>
 
 <p><code class="codehilite"><span class="n">Rect</span></code> や <code class="codehilite"><span class="n">RectF</span></code> を作成し、<code class="codehilite"><span class="na">.shearedX</span><span class="p">()</span></code> または <code class="codehilite"><span class="na">.shearedY</span><span class="p">()</span></code> を使うと、辺をスライドさせた平行四辺形を <code class="codehilite"><span class="n">Quad</span></code> 型として作成できます。</p>
-<p><img alt="" src="../images/2083.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/8-3.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2590,7 +2590,7 @@
 
 <h2 id="29">2.9 楕円を描く<a class="headerlink" href="#29" title="Permanent link">&para;</a></h2>
 <p>楕円を描くときは <code class="codehilite"><span class="n">Ellipse</span></code> を作成して <code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> します。中心の座標と X 軸方向の半径、Y 軸方向の半径を指定して <code class="codehilite"><span class="n">Ellipse</span></code> を作成します。</p>
-<p><img alt="" src="../images/2090.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/9-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2608,7 +2608,7 @@
 
 <h2 id="210">2.10 角丸長方形を描く<a class="headerlink" href="#210" title="Permanent link">&para;</a></h2>
 <p>角が丸い長方形を描くには、<code class="codehilite"><span class="n">RoundRect</span></code> を作成して <code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> します。<code class="codehilite"><span class="n">RectF</span></code> と同じパラメータに加えて、最後に角の曲線の半径を指定します。<code class="codehilite"><span class="n">Rect</span></code> や <code class="codehilite"><span class="n">RectF</span></code> の <code class="codehilite"><span class="na">.rounded</span><span class="p">()</span></code> メンバ関数を使って、<code class="codehilite"><span class="n">Rect</span></code> や <code class="codehilite"><span class="n">RectF</span></code> から <code class="codehilite"><span class="n">RoundRect</span></code> を作成することもできます。</p>
-<p><img alt="" src="../images/2100.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/10-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2702,7 +2702,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="../images/2110.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/11-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2746,7 +2746,7 @@
 
 <h2 id="212">2.12 自由に多角形を描く<a class="headerlink" href="#212" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Shape2D</span></code> では表現できない多角形を描くには <code class="codehilite"><span class="n">Polygon</span></code> を作成して <code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> します。<code class="codehilite"><span class="n">Polygon</span></code> オブジェクトの作成には、メモリの確保や三角形分割の計算に少しだけ実行時コストがかかるため、ループの内側で作成するのは避けるべきです。<code class="codehilite"><span class="n">Polygon</span></code> を作成するときは、各頂点の座標を時計回りに指定します。</p>
-<p><img alt="" src="../images/2120.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/12-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2764,7 +2764,7 @@
 </pre></div>
 
 <p>穴の開いた <code class="codehilite"><span class="n">Polygon</span></code> を作るには、外周の時計回りの頂点座標リスト (<code class="codehilite"><span class="nb">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span></code> 型) と、穴の形状の「反時計回り」の頂点座標リストの配列 (<code class="codehilite"><span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;&gt;</span></code> 型) から <code class="codehilite"><span class="n">Polygon</span></code> を作成します。</p>
-<p><img alt="" src="../images/2121.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/12-1.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2784,7 +2784,7 @@
 <p><code class="codehilite"><span class="n">Polygon</span></code> よりも少ない実行時コストで図形を描きたい場合は、より低レベルの操作で形状を定義する <code class="codehilite"><span class="n">Sprite</span></code> クラスが使えます。<code class="codehilite"><span class="n">Sprite</span></code> では、頂点配列のほかにインデックス配列を自前で用意する必要があり、少しプログラムが複雑になります。チュートリアルでは説明しません。</p>
 <h2 id="213">2.13 連続した線分を描く<a class="headerlink" href="#213" title="Permanent link">&para;</a></h2>
 <p>連続した線分を描くには、<code class="codehilite"><span class="n">Vec2</span></code> 型の頂点の配列から <code class="codehilite"><span class="n">LineString</span></code> を作成して <code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> します。<code class="codehilite"><span class="na">.drawClosed</span><span class="p">()</span></code> では終点と始点を結んだ線も描画されます。</p>
-<p><img alt="" src="../images/2130.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/13-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2816,7 +2816,7 @@
 
 <h2 id="214-catmull-rom">2.14 Catmull-Rom スプライン曲線を描く<a class="headerlink" href="#214-catmull-rom" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">LineString</span></code> を描く際、<code class="codehilite"><span class="na">.drawCatmullRom</span><span class="p">()</span></code> または <code class="codehilite"><span class="na">.drawCatmullRomClosed</span><span class="p">()</span></code> することで、各頂点を必ず通る Catmull-Rom スプライン曲線を描けます。サンプルプログラムでは示していませんが、曲線計算時の品質（分割数）を指定する引数も用意されていて、デフォルトでは <code class="codehilite"><span class="mi">24</span></code> になっています。</p>
-<p><img alt="" src="../images/2140.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/14-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2848,7 +2848,7 @@
 
 <h2 id="215">2.15 ベジェ曲線を描く<a class="headerlink" href="#215" title="Permanent link">&para;</a></h2>
 <p>2 次ベジェ曲線を描きたいときは <code class="codehilite"><span class="n">Bezier2</span></code>, 3 次ベジェ曲線を描きたいときは <code class="codehilite"><span class="n">Bezier3</span></code> を作成して <code class="codehilite"><span class="na">.draw</span><span class="p">()</span></code> します。サンプルプログラムでは示していませんが、曲線計算時の品質（分割数）を指定する引数も用意されていて、デフォルトでは <code class="codehilite"><span class="mi">24</span></code> になっています。</p>
-<p><img alt="" src="../images/2150.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/15-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2867,7 +2867,7 @@
 </pre></div>
 
 <h2 id="216">2.16 矢印を描く<a class="headerlink" href="#216" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../images/2160.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/16-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2887,7 +2887,7 @@
 
 <h2 id="217">2.17 扇形を描く<a class="headerlink" href="#217" title="Permanent link">&para;</a></h2>
 <p>扇形を描くには、扇形をつくる円 <code class="codehilite"><span class="n">Circle</span></code> を作成し、<code class="codehilite"><span class="na">.drawPie</span><span class="p">()</span></code> の引数に、12 時の方向を 0° とした時計回りの開始角度と、扇の角の大きさを指定します。<code class="codehilite"><span class="na">.drawPie</span><span class="p">()</span></code> が元の図形を返すことを利用して、<code class="codehilite"><span class="n">drawPie</span><span class="p">().</span><span class="n">drawPie</span><span class="p">()</span></code> のようにつなげて書くこともできます。</p>
-<p><img alt="" src="../images/2170.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/17-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2906,7 +2906,7 @@
 
 <h2 id="218">2.18 円弧を描く<a class="headerlink" href="#218" title="Permanent link">&para;</a></h2>
 <p>円弧を描くには、円弧をつくる円 <code class="codehilite"><span class="n">Circle</span></code> を作成し、<code class="codehilite"><span class="na">.drawArc</span><span class="p">()</span></code> の引数に、12 時の方向を 0° とした時計回りの開始角度と、扇の角の大きさ、弧の内側方向の太さ、外側方向の太さを指定します。</p>
-<p><img alt="" src="../images/2180.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/18-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2926,7 +2926,7 @@
 <h2 id="219">2.19 図形の操作<a class="headerlink" href="#219" title="Permanent link">&para;</a></h2>
 <p>基準になる図形から、少しだけ変化させた形状を描きたいときに便利な機能を紹介します。</p>
 <p>多くの図形クラスが <code class="codehilite"><span class="na">.movedBy</span><span class="p">()</span></code> メンバ関数を持ち、自身の座標を指定したベクトルで平行移動した図形を作成して返します。また、<code class="codehilite"><span class="n">Rect</span></code> や <code class="codehilite"><span class="n">Circle</span></code>, <code class="codehilite"><span class="n">Line</span></code> など一部の図形クラスは <code class="codehilite"><span class="na">.stretched</span><span class="p">()</span></code> メンバ関数を持ち、自身の幅や高さを変更した図形を作成して返します。</p>
-<p><img alt="" src="../images/2190.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/19-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2958,7 +2958,7 @@
 </pre></div>
 
 <p><code class="codehilite"><span class="n">Polygon</span></code> は自身を拡大縮小した新しい <code class="codehilite"><span class="n">Polygon</span></code> を返す <code class="codehilite"><span class="na">.scaled</span><span class="p">()</span></code> や、回転した <code class="codehilite"><span class="n">Polygon</span></code> を返す <code class="codehilite"><span class="na">.rotated</span><span class="p">()</span></code>, <code class="codehilite"><span class="na">.rotatedAt</span><span class="p">()</span></code> などのメンバ関数を持ちます。また、<code class="codehilite"><span class="n">Shape2D</span></code> は <code class="codehilite"><span class="n">Polygon</span></code> に変換可能です。</p>
-<p><img alt="" src="../images/2191.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/19-1.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2985,7 +2985,7 @@
 
 <h2 id="220">2.20 円/長方形/角丸長方形の影<a class="headerlink" href="#220" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Rect</span></code>, <code class="codehilite"><span class="n">RectF</span></code>, <code class="codehilite"><span class="n">Circle</span></code>, <code class="codehilite"><span class="n">RoundRect</span></code> は、影を描画する <code class="codehilite"><span class="na">.drawShadow</span><span class="p">()</span></code> メンバ関数を持っています。第 1 引数で影の位置のオフセット、第 2 引数でぼかしの大きさ、第 3 引数で影の大きさのオフセット、第 4 引数で影の色を指定できます。影は塗りつぶしで描かれるため、影のあとに図形を描く必要があります。</p>
-<p><img alt="" src="../images/2200.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/20-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -3028,7 +3028,7 @@
 <p>これら以外の形状の影を作りたい場合は <a href="../../reference/2d-shadow">リファレンス/2D 図形の影</a> が参考になります。</p>
 <h2 id="221">2.21 グラデーション<a class="headerlink" href="#221" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite"><span class="n">Line</span></code> や <code class="codehilite"><span class="n">Triangle</span></code>, <code class="codehilite"><span class="n">Rect</span></code>, <code class="codehilite"><span class="n">RectF</span></code>, <code class="codehilite"><span class="n">Quad</span></code> には、頂点ごとに色を指定し、グラデーションで塗りつぶすオプションがあります。</p>
-<p><img alt="" src="../images/2210.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/2/21-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
