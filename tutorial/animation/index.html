@@ -2263,7 +2263,7 @@
 <p><code class="codehilite"><span class="n">Scene</span><span class="p">::</span><span class="n">Time</span><span class="p">()</span></code> はプログラムが起動されてからの経過時間（秒）を <code class="codehilite"><span class="n">double</span></code> 型の値で返します。この値を使って簡単なアニメーションを作成できます。</p>
 <h3 id="scenecenter">Scene::Center()<a class="headerlink" href="#scenecenter" title="Permanent link">&para;</a></h3>
 <p>画面の中心座標を返す関数です。画面のサイズが 800x600 のときには <code class="codehilite"><span class="n">Point</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span></code> を返します。</p>
-<video src="../images/3010.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/1-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2302,7 +2302,7 @@
 </pre></div></p>
 <h3 id="step">step<a class="headerlink" href="#step" title="Permanent link">&para;</a></h3>
 <p>Siv3D に用意されている、ループを短く書ける機能です。<code class="codehilite"><span class="k">for</span> <span class="ss">(</span><span class="nv">auto</span> <span class="nv">i</span> : <span class="nv">step</span><span class="ss">(</span><span class="nv">N</span><span class="ss">))</span></code> は <code class="codehilite"><span class="k">for</span> <span class="ss">(</span><span class="nv">int</span> <span class="nv">i</span> <span class="o">=</span> <span class="mi">0</span><span class="c1">; i &lt; N; ++n)</span></code>と同じ働きです。</p>
-<video src="../images/3011.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/1-1.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2325,8 +2325,8 @@
 
 <h3 id="offsetcircular">OffsetCircular<a class="headerlink" href="#offsetcircular" title="Permanent link">&para;</a></h3>
 <p>円周に沿った動きをつくるのに最適な円座標クラスです。オフセット <code class="codehilite"><span class="k">offset</span></code> と円座標系の動径座標 <code class="codehilite"><span class="n">r</span></code>, 角度座標 θ (<code class="codehilite"><span class="n">theta</span></code>) の 3 つの要素で位置を表現します。シーン上の座標 <code class="codehilite"><span class="k">offset</span></code> を中心とする半径 <code class="codehilite"><span class="n">r</span></code> の円を考え、その円周上で 12 時の方向を 0° として時計回りに <code class="codehilite"><span class="n">theta</span></code> の位置が <code class="codehilite"><span class="n">OffsetCircular</span><span class="p">(</span><span class="k">offset</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span></code> です。</p>
-<p><img alt="" src="../images/3012.png" /></p>
-<p><img alt="" src="../images/3013.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/1-2.png?raw=true" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/1-3.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2362,7 +2362,7 @@
 <p><code class="codehilite"><span class="n">Stopwatch</span></code> のコンストラクタ引数に <code class="codehilite"><span class="k">true</span></code> を渡すと、作成と同時に計測を開始します。<code class="codehilite"><span class="n">Stopwatch</span><span class="p">::</span><span class="n">sF</span><span class="p">()</span></code> はその時点での経過時間（秒）を <code class="codehilite"><span class="n">double</span></code> 型で返します。<code class="codehilite"><span class="n">Stopwatch</span><span class="p">::</span><span class="k">restart</span><span class="p">()</span></code> すると、経過時間をリセットして再び 0 から計測を開始（リスタート）します。</p>
 <h3 id="mouseldown">MouseL.down()<a class="headerlink" href="#mouseldown" title="Permanent link">&para;</a></h3>
 <p>マウスの左ボタンがクリック（タッチディスプレイの場合は画面がタッチ）されたかを、<code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="nv">MouseL</span>.<span class="nv">down</span><span class="ss">())</span></code> で調べられます。次のサンプルでは、画面上をマウスでクリックするたびに <code class="codehilite"><span class="n">Stopwatch</span></code> をリスタートします。</p>
-<video src="../images/3020.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/2-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2395,7 +2395,7 @@
 
 <h3 id="stopwatch_1">Stopwatch の一時停止と再開<a class="headerlink" href="#stopwatch_1" title="Permanent link">&para;</a></h3>
 <p>ストップウォッチが計測中かどうかは <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="nv">Stopwatch</span>::<span class="nv">isRunning</span><span class="ss">())</span></code> で調べられます。ストップウォッチの計測を一時停止するには <code class="codehilite"><span class="nv">Stopwatch</span>::<span class="k">pause</span><span class="ss">()</span></code>, 一時停止を解除して計測を再開するには <code class="codehilite"><span class="n">Stopwatch</span><span class="p">::</span><span class="n">resume</span><span class="p">()</span></code> します。</p>
-<video src="../images/3021.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/2-1.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2441,7 +2441,7 @@
 <p>Siv3D で周期的に移動・点滅・拡大縮小するようなアニメーションを作るときには、<code class="codehilite"><span class="n">Periodic</span><span class="p">::</span></code> 名前空間に用意されている関数群を使うと便利です。</p>
 <h3 id="periodicsquare0_1">Periodic::Square0_1()<a class="headerlink" href="#periodicsquare0_1" title="Permanent link">&para;</a></h3>
 <p>指定した周期で 0.0 か 1.0 を交互に返す関数です。周期は <code class="codehilite"><span class="mi">2</span><span class="n">s</span></code> (2 秒) や <code class="codehilite"><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="n">s</span></code> (0.5 秒) のように時間リテラルを使って記述します。周期の前半では 1.0 を、残りの半分では 0.0 を返します。</p>
-<video src="../images/3030.mp4" autoplay loop muted></video>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/3-0.mp4?raw=true" autoplay loop muted></video>
 
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
@@ -2462,7 +2462,7 @@
 
 <h3 id="periodictriangle0_1">Periodic::Triangle0_1()<a class="headerlink" href="#periodictriangle0_1" title="Permanent link">&para;</a></h3>
 <p>0.0 から一定の速度で値が大きくなって 1.0 に、そして一定の速度で小さくなって 0.0 に、という変化を指定した周期で繰り返す関数です。</p>
-<p><img alt="" src="../images/3031.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/3-1.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2481,7 +2481,7 @@
 
 <h3 id="periodicsine0_1">Periodic::Sine0_1()<a class="headerlink" href="#periodicsine0_1" title="Permanent link">&para;</a></h3>
 <p>指定した周期で、0.0～1.0 の範囲で正弦波（サインカーブ）を描く数値の変化を返す関数です。</p>
-<p><img alt="" src="../images/3032.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/3-2.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2500,7 +2500,7 @@
 
 <h3 id="periodicsawtooth0_1">Periodic::Sawtooth0_1()<a class="headerlink" href="#periodicsawtooth0_1" title="Permanent link">&para;</a></h3>
 <p>指定した周期で、0.0 → 1.0 への変化を繰り返す関数です。</p>
-<p><img alt="" src="../images/3033.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/3-3.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2519,7 +2519,7 @@
 
 <h3 id="periodicjump0_1">Periodic::Jump0_1()<a class="headerlink" href="#periodicjump0_1" title="Permanent link">&para;</a></h3>
 <p>指定した周期で、地面からジャンプしたときの速度のような数値変化を繰り返す関数です。</p>
-<p><img alt="" src="../images/3034.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/3-4.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2541,7 +2541,7 @@
 <p>値が少しずつ大きくなって最大値に到達する。そこから徐々に小さくなって最小値に戻る、といった挙動をプログラムするときには <code class="codehilite"><span class="n">Transition</span></code> を使うと便利です。<code class="codehilite"><span class="n">Transition</span></code> のコンストラクタには、最小値から最大値に増加する所要時間と、最大値から最小値に減少する所要時間を設定します。あとは毎フレーム、<code class="codehilite"><span class="n">Transition</span><span class="p">::</span><span class="k">update</span><span class="p">()</span></code> に、増加の場合は <code class="codehilite"><span class="k">true</span></code> を、減少の場合は <code class="codehilite"><span class="k">false</span></code> を渡せば、設定された速度で値が変化します。<code class="codehilite"><span class="n">Transitgion</span><span class="p">::</span><span class="n">value</span><span class="p">()</span></code> で現在の値を取得できます。</p>
 <h3 id="mouselpressed">MouseL.pressed()<a class="headerlink" href="#mouselpressed" title="Permanent link">&para;</a></h3>
 <p>マウスの左ボタンが押されている（タッチディスプレイの場合は画面がタッチされている）かを、<code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="nv">MouseL</span>.<span class="nv">pressed</span><span class="ss">())</span></code> で調べられます。次のサンプルでは、左ボタンが押されていると扇形が大きくなり、離されていると小さくなります。</p>
-<p><img alt="" src="../images/3040.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/4-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2600,7 +2600,7 @@
 <p><code class="codehilite"><span class="k">Min</span><span class="p">()</span></code> 関数は、与えられた引数の中の最小値を返します。<code class="codehilite"><span class="k">Max</span><span class="p">()</span></code> 関数は最大値を返します。</p>
 <h3 id="_1">線形補間<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>あるベクトル A から別のベクトル B への線形補間は <code class="codehilite"><span class="n">A</span><span class="p">.</span><span class="n">lerp</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span></code> で計算できます。A と B の中間のベクトルは <code class="codehilite"><span class="n">A</span><span class="p">.</span><span class="n">lerp</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span></code> で計算します。</p>
-<p><img alt="" src="../images/3050.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/5-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2632,7 +2632,7 @@
 
 <h3 id="_2">イージング<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>0.0 から 1.0 に一定の割合で値を増加させるだけでは単調な動きになってしまいます。はじめは少しずつ加速し、ゴールに近づくとゆっくりになるといったように、速度に変化を与えると、より洗練された視覚効果を実現できます。0.0 → 1.0 の単調増加を、特徴的なカーブに変換できる <strong>イージング関数</strong> を取り入れて、アニメーションの印象を改善しましょう。</p>
-<p><img alt="" src="../images/3051.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/3/5-1.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>

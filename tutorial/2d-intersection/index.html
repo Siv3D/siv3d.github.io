@@ -2002,7 +2002,7 @@
 <p>この章では、マウスカーソル vs 図形や、図形 vs 図形の交差判定を処理する方法を学びます。</p>
 <h2 id="41">4.1 マウスオーバー<a class="headerlink" href="#41" title="Permanent link">&para;</a></h2>
 <p>ある図形 g の領域にマウスカーソルが重なっているかを、<code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">()</span></code> で調べられます。</p>
-<p><img alt="" src="../images/4010.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/4/1-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2047,7 +2047,7 @@
 <h2 id="42">4.2 図形のクリック<a class="headerlink" href="#42" title="Permanent link">&para;</a></h2>
 <h3 id="_1">クリック<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>ある図形 g が左クリック（またはタッチ）されたかを、<code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="n">leftClicked</span><span class="p">()</span></code> で調べられます。<code class="codehilite"><span class="n">leftClicked</span><span class="p">()</span></code> は、接触のアクションのうち、最初に接触した瞬間のみを「クリックされた」と判定します。図形を押し続けていても反応はありません。</p>
-<p><img alt="" src="../images/4020.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/4/2-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2077,7 +2077,7 @@
 
 <h3 id="_2">押されている<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>ある図形 g が左クリック（またはタッチ）で押されているかを、<code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="n">leftPressed</span><span class="p">()</span></code> で調べられます。<code class="codehilite"><span class="n">leftClicked</span><span class="p">()</span></code> と異なり、押され続けていれば、最初の接触以降もつねに「押されている」と判定されます。</p>
-<p><img alt="" src="../images/4021.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/4/2-1.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2096,7 +2096,7 @@
 
 <h2 id="43">4.3 図形の交差<a class="headerlink" href="#43" title="Permanent link">&para;</a></h2>
 <p>2 つの図形 g と h が交差しているかは、<code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">h</span><span class="p">)</span></code> で調べられます。</p>
-<p><img alt="" src="../images/4030.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/4/3-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2130,7 +2130,7 @@
 </div>
 <h2 id="44">4.4 図形を内側に含む<a class="headerlink" href="#44" title="Permanent link">&para;</a></h2>
 <p>ある図形 <code class="codehilite"><span class="k">g</span></code> が別の図形 <code class="codehilite"><span class="n">h</span></code> を完全に内側に含んでいるかは、<code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="k">contains</span><span class="p">(</span><span class="n">h</span><span class="p">)</span></code> で調べられます。次のサンプルでは、マウスカーソルに追従する円が長方形や星などの図形の内部に完全に含まれているときに、その図形の色を変更します。</p>
-<p><img alt="" src="../images/4040.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/4/4-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2160,7 +2160,7 @@
 
 <h2 id="45">4.5 線分と交差する点<a class="headerlink" href="#45" title="Permanent link">&para;</a></h2>
 <p>ある図形 <code class="codehilite"><span class="k">g</span></code> と <code class="codehilite"><span class="n">h</span></code> の詳細な交差情報を <code class="codehilite"><span class="k">g</span><span class="p">.</span><span class="n">intersectsAt</span><span class="p">(</span><span class="n">h</span><span class="p">)</span></code> で取得できます。次のようなプログラムで、図形が交差する座標を取得できます。</p>
-<p><img alt="" src="../images/4050.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/4/5-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2282,7 +2282,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="../images/4060.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/4/6-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>

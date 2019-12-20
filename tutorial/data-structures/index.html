@@ -2194,7 +2194,7 @@
 <p>Siv3D で動的配列を扱うときは <code class="codehilite"><span class="nb">Array</span><span class="o">&lt;</span><span class="k">Type</span><span class="o">&gt;</span></code> クラステンプレートを使います。<code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="n">vector</span></code> よりも多くの便利なメンバ関数を提供し、Siv3D のクラスや関数とも連係しやすいため、優れた実行時性能と、コードの短縮につながります。<code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="n">vector</span></code> と同様にメモリの連続性が保証されています。</p>
 <h3 id="_1">要素の追加<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="nb">Array</span></code> には <code class="codehilite"><span class="o">&lt;&lt;</span></code> 演算子で要素を追加できます。</p>
-<p><img alt="" src="../images/6010.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/6/1-0.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2219,7 +2219,7 @@
 
 <h3 id="_2">特定の要素にアクセス<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="p">[]</span></code> を使って 0 から始まるインデックスを指定することで、配列の要素にアクセスできます。インデックスを指定する代わりに、<code class="codehilite"><span class="na">.front</span><span class="p">()</span></code> で先頭の要素に、<code class="codehilite"><span class="na">.back</span><span class="p">()</span></code> で末尾の要素にアクセスすることもできます。</p>
-<p><img alt="" src="../images/6011.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/6/1-1.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2251,7 +2251,7 @@
 
 <h3 id="_3">要素の数、要素の削除<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>配列の要素数を調べるには <code class="codehilite"><span class="na">.size</span><span class="p">()</span></code>, 配列の要素をすべて削除するには <code class="codehilite"><span class="na">.clear</span><span class="p">()</span></code> を使います。</p>
-<p><img alt="" src="../images/6012.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/6/1-2.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2283,7 +2283,7 @@
 
 <h3 id="_4">配列が空かを調べる<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>配列 <code class="codehilite"><span class="n">a</span></code> が要素を持たない（空）であるかは <code class="codehilite"><span class="na">.isEmpty</span><span class="p">()</span></code> または <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">a</span><span class="ss">)</span></code> で調べられます。要素を持つかは <code class="codehilite"><span class="k">if</span> <span class="ss">(</span><span class="nv">a</span><span class="ss">)</span></code> で調べられます。</p>
-<p><img alt="" src="../images/6013.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/6/1-3.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2314,7 +2314,7 @@
 
 <h3 id="_5">末尾の要素の削除<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>配列の末尾の要素を削除するには <code class="codehilite"><span class="na">.pop_back</span><span class="p">()</span></code> を使います。空の配列に <code class="codehilite"><span class="na">.pop_back</span><span class="p">()</span></code> を使うとエラーになるので、空かどうかのチェックを忘れないでください。</p>
-<p><img alt="" src="../images/6014.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/6/1-4.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2346,7 +2346,7 @@
 
 <h3 id="_6">特定の条件を満たす要素の削除<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>配列から特定の条件を満たす要素を削除するには、<code class="codehilite"><span class="na">.remove_if</span><span class="p">()</span></code> に、要素を引数にとり、削除の可否を <code class="codehilite"><span class="n">bool</span></code> 型で返すラムダ式、または関数オブジェクトを渡します。</p>
-<p><img alt="" src="../images/6015.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/6/1-5.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2379,7 +2379,7 @@
 
 <h3 id="_7">イテレータを使った要素の削除<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="na">.erase</span><span class="p">()</span></code> に特定の要素を指すイテレータを渡すことで、その要素を配列から削除できます。</p>
-<p><img alt="" src="../images/6016.gif" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/6/1-6.gif?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2418,7 +2418,7 @@
 
 <h3 id="_8">要素数を指定した初期化<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="nb">Array</span></code> のコンストラクタ引数に、要素の個数と初期化する値を渡すことができます。</p>
-<p><img alt="" src="../images/6017.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/6/1-7.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2443,7 +2443,7 @@
 <h2 id="62">6.2 二次元配列<a class="headerlink" href="#62" title="Permanent link">&para;</a></h2>
 <p>方眼紙のように区切ったマップの情報や、スプレッドシートのように、二次元の情報を扱うときには <code class="codehilite"><span class="n">Grid</span><span class="o">&lt;</span><span class="k">Type</span><span class="o">&gt;</span></code> クラステンプレートを使います。<code class="codehilite"><span class="n">Grid</span></code> を使うことで、特に、動的な二次元配列を扱う際に、面倒なコードを書く必要がなくなります。<code class="codehilite"><span class="nb">Array</span></code> と同様にメモリの連続性が保証されています。</p>
 <h3 id="grid">Grid の基本<a class="headerlink" href="#grid" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../images/6020.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/6/2-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2487,7 +2487,7 @@
 
 <h3 id="_9">要素数を指定した初期化<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="nb">Array</span></code> のコンストラクタ引数に、グリッドのサイズと初期化する値を渡すことができます。</p>
-<p><img alt="" src="../images/6021.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/6/2-1.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2514,7 +2514,7 @@
 <h2 id="63">6.3 文字列<a class="headerlink" href="#63" title="Permanent link">&para;</a></h2>
 <p>Siv3D では <code class="codehilite"><span class="n">String</span></code> 型を使って文字列を表現します。<code class="codehilite"><span class="n">String</span></code> は、UTF-32 方式に従う <code class="codehilite"><span class="n">char32</span></code> 型の文字の集合です。C++ 標準では <code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="n">u32string</span></code> と同じデータ構造で、多くの共通のメンバ関数を持ちます。<code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="n">string</span></code> と同様にメモリの連続性が保証されています。文字や文字列リテラルには <code class="codehilite"><span class="n">U</span><span class="s1">&#39;あ&#39;</span></code>, <code class="codehilite"><span class="n">U</span><span class="ss">&quot;Hello&quot;</span></code> のように <code class="codehilite"><span class="n">U</span></code> プレフィックスを付けます。</p>
 <h3 id="string">String の基本<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../images/6030.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/6/3-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
@@ -2598,7 +2598,7 @@
 <h2 id="64">6.4 ハッシュテーブル<a class="headerlink" href="#64" title="Permanent link">&para;</a></h2>
 <p>キーと値の組（エントリ）を格納し、高速に検索できるデータ構造（ハッシュテーブル）として、Siv3D は <code class="codehilite"><span class="n">HashTable</span><span class="o">&lt;</span><span class="k">Key</span><span class="p">,</span> <span class="n">Value</span><span class="o">&gt;</span></code> クラステンプレートを提供しています。<code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="n">unordered_map</span></code> よりも便利で高速なメンバ関数を持ち、Siv3D のクラスや関数とも連係が容易です。<code class="codehilite"><span class="n">std</span><span class="p">::</span><span class="n">unordered_map</span></code> と同様に、各エントリは追加した順番とは異なる順序で格納されます。</p>
 <h3 id="hashtable">HashTable の基本<a class="headerlink" href="#hashtable" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../images/6040.png" /></p>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/6/4-0.png?raw=true" /></p>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
