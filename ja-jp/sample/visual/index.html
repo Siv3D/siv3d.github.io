@@ -1659,6 +1659,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2d" title="2D ライトプルーム" class="md-nav__link">
+    2D ライトプルーム
+  </a>
+  
+</li>
+      
       
       
       
@@ -1927,6 +1934,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2d" title="2D ライトプルーム" class="md-nav__link">
+    2D ライトプルーム
+  </a>
+  
+</li>
+      
       
       
       
@@ -2183,6 +2197,111 @@
             <span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
             <span class="n">line</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">LineStyle</span><span class="o">::</span><span class="n">RoundCap</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
             <span class="n">emoji</span><span class="p">.</span><span class="n">rotated</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">30</span><span class="n">_deg</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="2d">2D ライトプルーム<a class="headerlink" href="#2d" title="Permanent link">&para;</a></h2>
+<p><video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/sample/visual/2d-light-bloom.mp4?raw=true" autoplay loop muted></video>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">DrawScene</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Circle</span><span class="p">(</span><span class="mi">680</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+    <span class="n">Rect</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span><span class="p">(</span><span class="mi">680</span><span class="p">,</span> <span class="mi">110</span><span class="p">),</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+    <span class="n">Triangle</span><span class="p">(</span><span class="mi">680</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">40</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+
+    <span class="n">Circle</span><span class="p">(</span><span class="mi">740</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+    <span class="n">Rect</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span><span class="p">(</span><span class="mi">740</span><span class="p">,</span> <span class="mi">110</span><span class="p">),</span> <span class="mi">30</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="mi">120</span><span class="p">));</span>
+    <span class="n">Triangle</span><span class="p">(</span><span class="mi">740</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">40</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="mi">240</span><span class="p">));</span>
+
+    <span class="n">Circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+    <span class="n">Circle</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">200</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="kt">double</span> <span class="n">angle</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">30</span><span class="n">_deg</span> <span class="o">+</span> <span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">5</span><span class="n">_deg</span><span class="p">;</span>
+        <span class="k">const</span> <span class="n">Vec2</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">OffsetCircular</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span> <span class="mi">200</span><span class="p">,</span> <span class="n">angle</span><span class="p">);</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="mi">8</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">30</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">constexpr</span> <span class="n">Size</span> <span class="n">sceneSize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+    <span class="n">RenderTexture</span> <span class="n">gaussianA1</span><span class="p">(</span><span class="n">sceneSize</span><span class="p">),</span> <span class="n">gaussianB1</span><span class="p">(</span><span class="n">sceneSize</span><span class="p">);</span>
+    <span class="n">RenderTexture</span> <span class="n">gaussianA4</span><span class="p">(</span><span class="n">sceneSize</span> <span class="o">/</span> <span class="mi">4</span><span class="p">),</span> <span class="n">gaussianB4</span><span class="p">(</span><span class="n">sceneSize</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span>
+    <span class="n">RenderTexture</span> <span class="n">gaussianA8</span><span class="p">(</span><span class="n">sceneSize</span> <span class="o">/</span> <span class="mi">8</span><span class="p">),</span> <span class="n">gaussianB8</span><span class="p">(</span><span class="n">sceneSize</span> <span class="o">/</span> <span class="mi">8</span><span class="p">);</span>
+
+    <span class="kt">double</span> <span class="n">a8</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">a4</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">a1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 通常のシーン描画</span>
+        <span class="n">DrawScene</span><span class="p">();</span>
+
+        <span class="p">{</span>
+            <span class="c1">// ガウスぼかし用テクスチャにもう一度シーンを描く</span>
+            <span class="n">gaussianA1</span><span class="p">.</span><span class="n">clear</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.0</span><span class="p">));</span>
+            <span class="p">{</span>
+                <span class="n">ScopedRenderTarget2D</span> <span class="n">target</span><span class="p">(</span><span class="n">gaussianA1</span><span class="p">);</span>
+                <span class="n">ScopedRenderStates2D</span> <span class="n">blend</span><span class="p">(</span><span class="n">BlendState</span><span class="o">::</span><span class="n">Additive</span><span class="p">);</span>
+                <span class="n">DrawScene</span><span class="p">();</span>
+            <span class="p">}</span>
+
+            <span class="c1">// オリジナルサイズのガウスぼかし (A1)</span>
+            <span class="c1">// A1 を 1/4 サイズにしてガウスぼかし (A4)</span>
+            <span class="c1">// A4 を 1/2 サイズにしてガウスぼかし (A8)</span>
+            <span class="n">Shader</span><span class="o">::</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">gaussianA1</span><span class="p">,</span> <span class="n">gaussianB1</span><span class="p">,</span> <span class="n">gaussianA1</span><span class="p">);</span>
+            <span class="n">Shader</span><span class="o">::</span><span class="n">Downsample</span><span class="p">(</span><span class="n">gaussianA1</span><span class="p">,</span> <span class="n">gaussianA4</span><span class="p">);</span>
+            <span class="n">Shader</span><span class="o">::</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">gaussianA4</span><span class="p">,</span> <span class="n">gaussianB4</span><span class="p">,</span> <span class="n">gaussianA4</span><span class="p">);</span>
+            <span class="n">Shader</span><span class="o">::</span><span class="n">Downsample</span><span class="p">(</span><span class="n">gaussianA4</span><span class="p">,</span> <span class="n">gaussianA8</span><span class="p">);</span>
+            <span class="n">Shader</span><span class="o">::</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">gaussianA8</span><span class="p">,</span> <span class="n">gaussianB8</span><span class="p">,</span> <span class="n">gaussianA8</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="p">{</span>
+            <span class="n">ScopedRenderStates2D</span> <span class="n">blend</span><span class="p">(</span><span class="n">BlendState</span><span class="o">::</span><span class="n">Additive</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">gaussianA1</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="n">sceneSize</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="n">a1</span><span class="p">));</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">a4</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">gaussianA4</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="n">sceneSize</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="n">a4</span><span class="p">));</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">a8</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">gaussianA8</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="n">sceneSize</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="n">a8</span><span class="p">));</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;a8: {:.1f}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">a8</span><span class="p">),</span> <span class="n">a8</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">));</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;a4: {:.1f}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">a4</span><span class="p">),</span> <span class="n">a4</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">));</span>
+        <span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Slider</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;a1: {:.1f}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="n">a1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">));</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;0, 0, 0&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">140</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">a1</span> <span class="o">=</span> <span class="n">a4</span> <span class="o">=</span> <span class="n">a8</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;1, 0, 0&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">180</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">a8</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+            <span class="n">a4</span> <span class="o">=</span> <span class="n">a1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;1, 1, 0&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">220</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">a8</span> <span class="o">=</span> <span class="n">a4</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+            <span class="n">a1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;1, 1, 1&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">260</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">a8</span> <span class="o">=</span> <span class="n">a4</span> <span class="o">=</span> <span class="n">a1</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
