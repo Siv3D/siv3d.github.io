@@ -3944,131 +3944,159 @@
 <h3 id="_7">関数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <h4 id="point-cursorpos"><code class="codehilite"><span class="nt">Point</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">Pos</span><span class="o">();</span></code><a class="headerlink" href="#point-cursorpos" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: 現在のフレームのマウスカーソルの座標 (ピクセル)</li>
+<li>戻り値: 現在のフレームにおける、マウスカーソルの座標 (ピクセル)</li>
 </ul>
+<p>現在のフレームにおける、マウスカーソルのクライアント座標（ピクセル）を返します。</p>
 <h4 id="point-cursorpreviouspos"><code class="codehilite"><span class="nt">Point</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">PreviousPos</span><span class="o">();</span></code><a class="headerlink" href="#point-cursorpreviouspos" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: 直前のフレームのマウスカーソルの座標 (ピクセル)</li>
+<li>戻り値: 直前のフレームおける、マウスカーソルの座標 (ピクセル)</li>
 </ul>
+<p>直前のフレームにおける、マウスカーソルのクライアント座標（ピクセル）を返します。</p>
 <h4 id="point-cursordelta"><code class="codehilite"><span class="nt">Point</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">Delta</span><span class="o">();</span></code><a class="headerlink" href="#point-cursordelta" title="Permanent link">&para;</a></h4>
 <ul>
 <li>戻り値: 直前のフレームから現在のフレームまでのマウスカーソルの移動量 (ピクセル)</li>
 </ul>
+<p>直前のフレームから現在のフレームまでのマウスカーソルの移動量（ピクセル）を返します。<code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">Pos</span><span class="p">()</span> <span class="o">-</span> <span class="k">Cursor</span><span class="p">::</span><span class="n">PreviousPos</span><span class="p">()</span></code> と同値です。</p>
 <h4 id="vec2-cursorposf"><code class="codehilite"><span class="nt">Vec2</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">PosF</span><span class="o">();</span></code><a class="headerlink" href="#vec2-cursorposf" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 現在のフレームおける、マウスカーソルの座標 (ピクセル)</li>
 </ul>
+<p>現在のフレームにおける、マウスカーソルのクライアント座標（ピクセル）を返します。マウスカーソル座標にカスタムの変換行列が適用されている場合、座標が小数値を含む場合があります。</p>
 <h4 id="vec2-cursorpreviousposf"><code class="codehilite"><span class="nt">Vec2</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">PreviousPosF</span><span class="o">();</span></code><a class="headerlink" href="#vec2-cursorpreviousposf" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 直前のフレームおける、マウスカーソルの座標 (ピクセル)</li>
 </ul>
+<p>直前のフレームにおける、マウスカーソルのクライアント座標（ピクセル）を返します。マウスカーソル座標にカスタムの変換行列が適用されている場合、座標が小数値を含む場合があります。</p>
 <h4 id="vec2-cursordeltaf"><code class="codehilite"><span class="nt">Vec2</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">DeltaF</span><span class="o">();</span></code><a class="headerlink" href="#vec2-cursordeltaf" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 直前のフレームから現在のフレームまでのマウスカーソルの移動量 (ピクセル)</li>
 </ul>
+<p>直前のフレームから現在のフレームまでのマウスカーソルの移動量（ピクセル）を返します。<code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">PosF</span><span class="p">()</span> <span class="o">-</span> <span class="k">Cursor</span><span class="p">::</span><span class="n">PreviousPosF</span><span class="p">()</span></code> と同値です。</p>
 <h4 id="point-cursorposraw"><code class="codehilite"><span class="nt">Point</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">PosRaw</span><span class="o">();</span></code><a class="headerlink" href="#point-cursorposraw" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 現在のフレームおける、マウスカーソルの座標 (ピクセル)</li>
 </ul>
+<p>現在のフレームにおける、カスタムの変換行列を適用しない状態でのマウスカーソルのクライアント座標（ピクセル）を返します。</p>
 <h4 id="point-cursorpreviousposraw"><code class="codehilite"><span class="nt">Point</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">PreviousPosRaw</span><span class="o">();</span></code><a class="headerlink" href="#point-cursorpreviousposraw" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 直前のフレームおける、マウスカーソルの座標 (ピクセル)</li>
 </ul>
+<p>直前のフレームにおける、カスタムの変換行列を適用しない状態でのマウスカーソルのクライアント座標（ピクセル）を返します。</p>
 <h4 id="point-cursordeltaraw"><code class="codehilite"><span class="nt">Point</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">DeltaRaw</span><span class="o">();</span></code><a class="headerlink" href="#point-cursordeltaraw" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 直前のフレームから現在のフレームまでのマウスカーソルの移動量 (ピクセル)</li>
 </ul>
+<p>直前のフレームから現在のフレームまでの、カスタムの変換行列を適用しない状態でのマウスカーソルの移動量（ピクセル）を返します。<code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">PosRaw</span><span class="p">()</span> <span class="o">-</span> <span class="k">Cursor</span><span class="p">::</span><span class="n">PreviousPosRaw</span><span class="p">()</span></code> と同値です。</p>
 <h4 id="point-cursorscreenpos"><code class="codehilite"><span class="nt">Point</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">ScreenPos</span><span class="o">();</span></code><a class="headerlink" href="#point-cursorscreenpos" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 現在のフレームおける、マウスカーソルのスクリーン座標 (ピクセル)</li>
 </ul>
+<p>現在のフレームにおける、マウスカーソルのスクリーン座標（ピクセル）を返します。</p>
 <h4 id="point-cursorpreviousscreenpos"><code class="codehilite"><span class="nt">Point</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">PreviousScreenPos</span><span class="o">();</span></code><a class="headerlink" href="#point-cursorpreviousscreenpos" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 直前のフレームおける、マウスカーソルのスクリーン座標 (ピクセル)</li>
 </ul>
+<p>直前のフレームにおける、マウスカーソルのスクリーン座標（ピクセル）を返します。</p>
 <h4 id="point-cursorscreendelta"><code class="codehilite"><span class="nt">Point</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">ScreenDelta</span><span class="o">();</span></code><a class="headerlink" href="#point-cursorscreendelta" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 戻り値: 直前のフレームから現在のフレームまでのスクリーン上でのマウスカーソルの移動量 (ピクセル)</li>
 </ul>
+<p>直前のフレームから現在のフレームまでの、スクリーン上でのマウスカーソルの移動量（ピクセル）を返します。<code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">ScreenPos</span><span class="p">()</span> <span class="o">-</span> <span class="k">Cursor</span><span class="p">::</span><span class="n">PreviousScreenPos</span><span class="p">()</span></code> と同値です。</p>
 <h4 id="arraystdpairpoint-uint64-cursorgetbuffer"><code class="codehilite"><span class="nt">Array</span><span class="o">&lt;</span><span class="nt">std</span><span class="p">::</span><span class="nd">pair</span><span class="o">&lt;</span><span class="nt">Point</span><span class="o">,</span> <span class="nt">uint64</span><span class="o">&gt;&gt;</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">GetBuffer</span><span class="o">();</span></code><a class="headerlink" href="#arraystdpairpoint-uint64-cursorgetbuffer" title="Permanent link">&para;</a></h4>
 <ul>
 <li>戻り値: 直近 1 秒間のマウスカーソル座標を古い順に並べた配列</li>
 </ul>
+<p>現在のフレームから過去 1 秒間のマウスカーソルの座標とタイムスタンプの配列を返します。Windows 版に限り、フレームレート以上の情報を取得できます。</p>
 <h4 id="void-cursorsetposint32-x-int32-y"><code class="codehilite"><span class="nt">void</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">SetPos</span><span class="o">(</span><span class="nt">int32</span> <span class="nt">x</span><span class="o">,</span> <span class="nt">int32</span> <span class="nt">y</span><span class="o">);</span></code><a class="headerlink" href="#void-cursorsetposint32-x-int32-y" title="Permanent link">&para;</a></h4>
-<ul>
-<li>x: </li>
-<li>y: </li>
-</ul>
 <h4 id="void-cursorsetposconst-point-pos"><code class="codehilite"><span class="nt">void</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">SetPos</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Point</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">);</span></code><a class="headerlink" href="#void-cursorsetposconst-point-pos" title="Permanent link">&para;</a></h4>
 <ul>
-<li>pos: </li>
+<li>x: 移動先のクライアント X 座標 (ピクセル)</li>
+<li>y: 移動先のクライアント Y 座標 (ピクセル)</li>
+<li>pos: 移動先のクライアント座標 (ピクセル)</li>
 </ul>
+<p>マウスカーソルを指定したクライアント座標に移動させます。</p>
 <h4 id="bool-cursoronclientrect"><code class="codehilite"><span class="nt">bool</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">OnClientRect</span><span class="o">();</span></code><a class="headerlink" href="#bool-cursoronclientrect" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: マウスカーソルがウィンドウクライアント上にある場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
+<li>戻り値: マウスカーソルがクライアント画面上にある場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>現在のフレームで、マウスカーソルがクライアント画面上にあるかどうかを返します。</p>
 <h4 id="const-mat3x2-cursorgetlocaltransform"><code class="codehilite"><span class="nt">const</span> <span class="nt">Mat3x2</span><span class="o">&amp;</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">GetLocalTransform</span><span class="o">();</span></code><a class="headerlink" href="#const-mat3x2-cursorgetlocaltransform" title="Permanent link">&para;</a></h4>
 <ul>
 <li>戻り値: マウスカーソル座標を変換するために <code class="codehilite"><span class="n">Transformer2D</span></code> によって設定されている行列</li>
 </ul>
+<p>マウスカーソル座標に適用されている、ローカルな変換行列を返します。</p>
 <h4 id="const-mat3x2-cursorgetcameratransform"><code class="codehilite"><span class="nt">const</span> <span class="nt">Mat3x2</span><span class="o">&amp;</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">GetCameraTransform</span><span class="o">();</span></code><a class="headerlink" href="#const-mat3x2-cursorgetcameratransform" title="Permanent link">&para;</a></h4>
 <ul>
 <li>戻り値: マウスカーソル座標を変換するために <code class="codehilite"><span class="n">BasicCamera2D</span></code> によって設定されている行列</li>
 </ul>
+<p>マウスカーソル座標に適用されている、2D カメラによる変換行列を返します。</p>
 <h4 id="void-cursorcliptowindowbool-clip"><code class="codehilite"><span class="nt">void</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">ClipToWindow</span><span class="o">(</span><span class="nt">bool</span> <span class="nt">clip</span><span class="o">);</span></code><a class="headerlink" href="#void-cursorcliptowindowbool-clip" title="Permanent link">&para;</a></h4>
 <ul>
-<li>clip: </li>
+<li>clip: クリッピングを有向にする場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>マウスカーソルをクライアント画面上にクリッピングするかどうかを設定します。デフォルトでは <code class="codehilite"><span class="k">false</span></code> です。マウスカーソルをクリッピングしている間は、ウィンドウの閉じるボタンをクリックできないので注意してください。</p>
 <h4 id="void-cursorrequeststylecursorstyle-style"><code class="codehilite"><span class="nt">void</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">RequestStyle</span><span class="o">(</span><span class="nt">CursorStyle</span> <span class="nt">style</span><span class="o">);</span></code><a class="headerlink" href="#void-cursorrequeststylecursorstyle-style" title="Permanent link">&para;</a></h4>
 <ul>
-<li>style:</li>
+<li>style: 変更後のカーソルスタイル</li>
 </ul>
+<p>現在のフレームについて、カーソルスタイルの変更をリクエストします。</p>
 <h4 id="void-cursorsetdefaultstylecursorstyle-style"><code class="codehilite"><span class="nt">void</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">SetDefaultStyle</span><span class="o">(</span><span class="nt">CursorStyle</span> <span class="nt">style</span><span class="o">);</span></code><a class="headerlink" href="#void-cursorsetdefaultstylecursorstyle-style" title="Permanent link">&para;</a></h4>
 <ul>
-<li>style:</li>
+<li>style: デフォルトに設定するカーソルスタイル</li>
 </ul>
+<p><code class="codehilite"><span class="k">Cursor</span><span class="p">::</span><span class="n">RequestStyle</span><span class="p">()</span></code> を呼ばなかった場合に適用される、デフォルトのカーソルスタイルを設定します。デフォルトでは <code class="codehilite"><span class="n">CursorStyle</span><span class="p">::</span><span class="k">Default</span></code> です。</p>
 <h4 id="cursorstyle-cursorgetrequestedstyle"><code class="codehilite"><span class="nt">CursorStyle</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">GetRequestedStyle</span><span class="o">();</span></code><a class="headerlink" href="#cursorstyle-cursorgetrequestedstyle" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: 現在のフレームに対してリクエストされたカーソルスタイル</li>
+<li>戻り値: 現在のフレームについてリクエストされたカーソルスタイル</li>
 </ul>
+<p>現在のフレームについて、リクエストされているカーソルスタイルを返します。リクエストが無い場合はデフォルトのカーソルスタイルを返します。</p>
 <h4 id="cursorstyle-cursorgetdefaultstyle"><code class="codehilite"><span class="nt">CursorStyle</span> <span class="nt">Cursor</span><span class="p">::</span><span class="nd">GetDefaultStyle</span><span class="o">();</span></code><a class="headerlink" href="#cursorstyle-cursorgetdefaultstyle" title="Permanent link">&para;</a></h4>
 <ul>
 <li>戻り値: デフォルトのカーソルスタイル</li>
 </ul>
+<p>デフォルトのカーソルスタイルを返します。</p>
 <h2 id="time">時間 (Time)<a class="headerlink" href="#time" title="Permanent link">&para;</a></h2>
 <h3 id="_8">関数<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <h4 id="uint64-timegetsec"><code class="codehilite"><span class="nt">uint64</span> <span class="nt">Time</span><span class="p">::</span><span class="nd">GetSec</span><span class="o">();</span></code><a class="headerlink" href="#uint64-timegetsec" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値:</li>
+<li>戻り値: コンピューターが起動してからの経過時間（秒）</li>
 </ul>
+<p>コンピューターが起動してからの経過時間を秒で返します。</p>
 <h4 id="uint64-timegetmillisec"><code class="codehilite"><span class="nt">uint64</span> <span class="nt">Time</span><span class="p">::</span><span class="nd">GetMillisec</span><span class="o">();</span></code><a class="headerlink" href="#uint64-timegetmillisec" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値:</li>
+<li>戻り値: コンピューターが起動してからの経過時間（ミリ秒）</li>
 </ul>
+<p>コンピューターが起動してからの経過時間をミリ秒で返します。</p>
 <h4 id="uint64-timegetmicrosec"><code class="codehilite"><span class="nt">uint64</span> <span class="nt">Time</span><span class="p">::</span><span class="nd">GetMicrosec</span><span class="o">();</span></code><a class="headerlink" href="#uint64-timegetmicrosec" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値:</li>
+<li>戻り値: コンピューターが起動してからの経過時間（マイクロ秒）</li>
 </ul>
+<p>コンピューターが起動してからの経過時間をマイクロ秒で返します。</p>
 <h4 id="uint64-timegetnanosec"><code class="codehilite"><span class="nt">uint64</span> <span class="nt">Time</span><span class="p">::</span><span class="nd">GetNanosec</span><span class="o">();</span></code><a class="headerlink" href="#uint64-timegetnanosec" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値:</li>
+<li>戻り値: コンピューターが起動してからの経過時間（ナノ秒）</li>
 </ul>
+<p>コンピューターが起動してからの経過時間をナノ秒で返します。</p>
 <h4 id="uint64-timegetsecsinceepoch"><code class="codehilite"><span class="nt">uint64</span> <span class="nt">Time</span><span class="p">::</span><span class="nd">GetSecSinceEpoch</span><span class="o">();</span></code><a class="headerlink" href="#uint64-timegetsecsinceepoch" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値:</li>
+<li>戻り値: 1970 年 1 月 1 日午前 0 時からの経過秒数</li>
 </ul>
+<p>協定世界時 (UTC) における、1970 年 1 月 1 日午前 0 時からの経過時間を秒で返します。</p>
 <h4 id="uint64-timegetmillisecsinceepoch"><code class="codehilite"><span class="nt">uint64</span> <span class="nt">Time</span><span class="p">::</span><span class="nd">GetMillisecSinceEpoch</span><span class="o">();</span></code><a class="headerlink" href="#uint64-timegetmillisecsinceepoch" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値:</li>
+<li>戻り値: 1970 年 1 月 1 日午前 0 時からの経過時間（ミリ秒）</li>
 </ul>
+<p>協定世界時 (UTC) における、1970 年 1 月 1 日午前 0 時からの経過時間をミリ秒で返します。</p>
 <h4 id="uint64-timegetmicrosecsinceepoch"><code class="codehilite"><span class="nt">uint64</span> <span class="nt">Time</span><span class="p">::</span><span class="nd">GetMicrosecSinceEpoch</span><span class="o">();</span></code><a class="headerlink" href="#uint64-timegetmicrosecsinceepoch" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値:</li>
+<li>戻り値: 1970 年 1 月 1 日午前 0 時からの経過時間（マイクロ秒）</li>
 </ul>
+<p>協定世界時 (UTC) における、1970 年 1 月 1 日午前 0 時からの経過時間をマイクロ秒で返します。</p>
 <h4 id="int32-timeutcoffsetminutes"><code class="codehilite"><span class="nt">int32</span> <span class="nt">Time</span><span class="p">::</span><span class="nd">UTCOffsetMinutes</span><span class="o">();</span></code><a class="headerlink" href="#int32-timeutcoffsetminutes" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値:</li>
+<li>戻り値: 現在の協定世界時 (UTC) との時差（分）</li>
 </ul>
+<p>現在の協定世界時 (UTC) との時差を分で返します。</p>
                 
                   
                 
