@@ -1666,6 +1666,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" title="パターンブラシ" class="md-nav__link">
+    パターンブラシ
+  </a>
+  
+</li>
+      
       
       
       
@@ -1937,6 +1944,13 @@
         <li class="md-nav__item">
   <a href="#2d" title="2D ライトブルーム" class="md-nav__link">
     2D ライトブルーム
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="パターンブラシ" class="md-nav__link">
+    パターンブラシ
   </a>
   
 </li>
@@ -2306,6 +2320,195 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div></p>
+<h2 id="_6">パターンブラシ<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/sample/visual/pattern-brush.gif?raw=true" />
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="c1">// パターン画像を作る</span>
+<span class="n">Image</span> <span class="nf">CreatePattern</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Image</span> <span class="n">image</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+    <span class="n">Circle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="n">paint</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Black</span><span class="p">);</span>
+    <span class="n">Circle</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="n">paint</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Black</span><span class="p">);</span>
+    <span class="n">Circle</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="n">paint</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Black</span><span class="p">);</span>
+    <span class="n">Circle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="n">paint</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Black</span><span class="p">);</span>
+    <span class="n">Circle</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="n">paint</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Black</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">image</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 定数バッファ (PS_1)</span>
+<span class="k">struct</span> <span class="n">PatternBrush</span>
+<span class="p">{</span>
+    <span class="c1">// パターンの UV のスケール</span>
+    <span class="n">Float2</span> <span class="n">uvScale</span><span class="p">;</span>
+    <span class="n">Float2</span> <span class="n">_unused</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">constexpr</span> <span class="n">Size</span> <span class="n">sceneSize</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+
+    <span class="c1">// パターン画像のテクスチャ</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">patternTexture</span><span class="p">(</span><span class="n">CreatePattern</span><span class="p">(),</span> <span class="n">TextureDesc</span><span class="o">::</span><span class="n">Mipped</span><span class="p">);</span>
+
+    <span class="c1">// パターンブラシ用のピクセルシェーダ</span>
+    <span class="c1">// シェーダファイルの拡張子は、Windows では hlsl, macOS/Linux では frag を選択</span>
+    <span class="c1">// {} 内は定数バッファの名前と、対応する定数インデックス</span>
+    <span class="k">const</span> <span class="n">PixelShader</span> <span class="n">ps</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;pattern_brush&quot;</span> <span class="n">SIV3D_SELECT_SHADER</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;.hlsl&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;.frag&quot;</span><span class="p">),</span>
+        <span class="p">{</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;PSConstants2D&quot;</span><span class="p">,</span> <span class="mi">0</span> <span class="p">},</span> <span class="p">{</span> <span class="sa">U</span><span class="s">&quot;PatternBrush&quot;</span><span class="p">,</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">});</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ps</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Failed to load a shader file&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 定数バッファ</span>
+    <span class="n">ConstantBuffer</span><span class="o">&lt;</span><span class="n">PatternBrush</span><span class="o">&gt;</span> <span class="n">cb</span><span class="p">;</span>
+    <span class="n">cb</span><span class="o">-&gt;</span><span class="n">uvScale</span> <span class="o">=</span> <span class="n">Float2</span><span class="p">(</span><span class="n">sceneSize</span><span class="p">)</span> <span class="o">/</span> <span class="n">patternTexture</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+
+    <span class="c1">// ペンで書き込むレンダーテクスチャ</span>
+    <span class="n">MSRenderTexture</span> <span class="n">renderTexture</span><span class="p">(</span><span class="n">sceneSize</span><span class="p">,</span> <span class="n">Palette</span><span class="o">::</span><span class="n">Black</span><span class="p">);</span>
+
+    <span class="c1">// ペンの太さ</span>
+    <span class="kt">double</span> <span class="n">thickness</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="p">{</span>
+                <span class="n">ScopedRenderTarget2D</span> <span class="n">rt</span><span class="p">(</span><span class="n">renderTexture</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+                <span class="p">{</span>
+                    <span class="n">Circle</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">PosF</span><span class="p">(),</span> <span class="n">thickness</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Delta</span><span class="p">().</span><span class="n">isZero</span><span class="p">())</span>
+                <span class="p">{</span>
+                    <span class="n">Line</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">PreviousPosF</span><span class="p">(),</span> <span class="n">Cursor</span><span class="o">::</span><span class="n">PosF</span><span class="p">())</span>
+                        <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">LineStyle</span><span class="o">::</span><span class="n">RoundCap</span><span class="p">,</span> <span class="n">thickness</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="n">Graphics2D</span><span class="o">::</span><span class="n">Flush</span><span class="p">();</span>
+            <span class="n">renderTexture</span><span class="p">.</span><span class="n">resolve</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">Rect</span><span class="p">(</span><span class="n">sceneSize</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+        <span class="p">{</span>
+            <span class="c1">// パターン画像をインデックス [1] のテクスチャスロットにセット </span>
+            <span class="n">Graphics2D</span><span class="o">::</span><span class="n">SetTexture</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">patternTexture</span><span class="p">);</span>
+
+            <span class="c1">// パターンをくり返しマッピングできるようにする</span>
+            <span class="n">Graphics2D</span><span class="o">::</span><span class="n">SetSamplerState</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">SamplerState</span><span class="o">::</span><span class="n">RepeatLinear</span><span class="p">);</span>
+
+            <span class="p">{</span>
+                <span class="n">Graphics2D</span><span class="o">::</span><span class="n">SetConstantBuffer</span><span class="p">(</span><span class="n">ShaderStage</span><span class="o">::</span><span class="n">Pixel</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cb</span><span class="p">);</span>
+                <span class="n">ScopedCustomShader2D</span> <span class="n">shader</span><span class="p">(</span><span class="n">ps</span><span class="p">);</span>
+                <span class="n">renderTexture</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// パターン画像を右上に表示</span>
+        <span class="n">patternTexture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">620</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></p>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">pattern_brush.hlsl</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">Texture2D</span>       <span class="nl">g_texture0</span> <span class="p">:</span> <span class="k">register</span><span class="p">(</span><span class="n">t0</span><span class="p">);</span>
+<span class="n">Texture2D</span>       <span class="nl">g_texture1</span> <span class="p">:</span> <span class="k">register</span><span class="p">(</span><span class="n">t1</span><span class="p">);</span>
+<span class="n">SamplerState</span>    <span class="nl">g_sampler0</span> <span class="p">:</span> <span class="k">register</span><span class="p">(</span><span class="n">s0</span><span class="p">);</span>
+<span class="n">SamplerState</span>    <span class="nl">g_sampler1</span> <span class="p">:</span> <span class="k">register</span><span class="p">(</span><span class="n">s1</span><span class="p">);</span>
+
+<span class="n">cbuffer</span> <span class="nl">PSConstants2D</span> <span class="p">:</span> <span class="k">register</span><span class="p">(</span><span class="n">b0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">float4</span> <span class="n">g_colorAdd</span><span class="p">;</span>
+    <span class="n">float4</span> <span class="n">g_sdfParam</span><span class="p">;</span>
+    <span class="n">float4</span> <span class="n">g_internal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 定数バッファ (PS_1)</span>
+<span class="n">cbuffer</span> <span class="nl">PatternBrush</span> <span class="p">:</span> <span class="k">register</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">float2</span> <span class="n">g_uvScale</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// [C++]</span>
+<span class="c1">//struct PatternBrush</span>
+<span class="c1">//{</span>
+<span class="c1">//  Float2 uvScale;</span>
+<span class="c1">//  Float2 _unused = {};</span>
+<span class="c1">//};</span>
+
+<span class="k">struct</span> <span class="n">PSInput</span>
+<span class="p">{</span>
+    <span class="n">float4</span> <span class="nl">position</span> <span class="p">:</span> <span class="n">SV_POSITION</span><span class="p">;</span>
+    <span class="n">float4</span> <span class="nl">color</span>    <span class="p">:</span> <span class="n">COLOR0</span><span class="p">;</span>
+    <span class="n">float2</span> <span class="nl">uv</span>       <span class="p">:</span> <span class="n">TEXCOORD0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">float4</span> <span class="nf">PS</span><span class="p">(</span><span class="n">PSInput</span> <span class="n">input</span><span class="p">)</span> <span class="o">:</span> <span class="n">SV_TARGET</span>
+<span class="p">{</span>
+    <span class="kt">float</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">g_texture0</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">g_sampler0</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">uv</span><span class="p">).</span><span class="n">r</span><span class="p">;</span>
+
+    <span class="n">float4</span> <span class="n">texColor</span> <span class="o">=</span> <span class="n">g_texture1</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">g_sampler1</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">uv</span> <span class="o">*</span> <span class="n">g_uvScale</span><span class="p">);</span>
+
+    <span class="n">texColor</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">texColor</span> <span class="o">*</span> <span class="n">input</span><span class="p">.</span><span class="n">color</span><span class="p">)</span> <span class="o">+</span> <span class="n">g_colorAdd</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">pattern_brush.frag</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#version 410        </span>
+
+<span class="n">uniform</span> <span class="n">sampler2D</span> <span class="n">Texture0</span><span class="p">;</span>
+<span class="n">uniform</span> <span class="n">sampler2D</span> <span class="n">Texture1</span><span class="p">;</span>
+
+<span class="c1">// PS_0</span>
+<span class="n">layout</span><span class="p">(</span><span class="n">std140</span><span class="p">)</span> <span class="n">uniform</span> <span class="n">PSConstants2D</span>
+<span class="p">{</span>
+    <span class="n">vec4</span> <span class="n">g_colorAdd</span><span class="p">;</span>
+    <span class="n">vec4</span> <span class="n">g_sdfParam</span><span class="p">;</span>
+    <span class="n">vec4</span> <span class="n">g_internal</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// PS_1</span>
+<span class="n">layout</span><span class="p">(</span><span class="n">std140</span><span class="p">)</span> <span class="n">uniform</span> <span class="n">PatternBrush</span>
+<span class="p">{</span>
+    <span class="n">vec2</span>  <span class="n">g_uvScale</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="c1">// [C++]</span>
+<span class="c1">//struct PatternBrush</span>
+<span class="c1">//{</span>
+<span class="c1">//  Float2 uvScale;</span>
+<span class="c1">//  Float2 _unused = {};</span>
+<span class="c1">//};</span>
+
+<span class="c1">//</span>
+<span class="c1">// PSInput</span>
+<span class="c1">//</span>
+<span class="n">layout</span><span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">in</span> <span class="n">vec4</span> <span class="n">Color</span><span class="p">;</span>
+<span class="n">layout</span><span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="n">in</span> <span class="n">vec2</span> <span class="n">UV</span><span class="p">;</span>
+
+<span class="c1">//</span>
+<span class="c1">// PSOutput</span>
+<span class="c1">//</span>
+<span class="n">layout</span><span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">out</span> <span class="n">vec4</span> <span class="n">FragColor</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">float</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">texture</span><span class="p">(</span><span class="n">Texture0</span><span class="p">,</span> <span class="n">UV</span><span class="p">).</span><span class="n">r</span><span class="p">;</span>
+
+    <span class="n">vec4</span> <span class="n">texColor</span> <span class="o">=</span> <span class="n">texture</span><span class="p">(</span><span class="n">Texture1</span><span class="p">,</span> <span class="n">UV</span> <span class="o">*</span> <span class="n">g_uvScale</span><span class="p">);</span>
+
+    <span class="n">texColor</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">;</span>
+
+    <span class="n">FragColor</span> <span class="o">=</span> <span class="p">(</span><span class="n">texColor</span> <span class="o">*</span> <span class="n">Color</span><span class="p">)</span> <span class="o">+</span> <span class="n">g_colorAdd</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div></div>
+</div>
                 
                   
                 
