@@ -6885,260 +6885,299 @@
 <h3 id="_15">関数<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <h4 id="rectf-simpleguiheadlineregionconst-string-text-const-vec2-pos-const-optionaldouble-width-unspecified"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">HeadlineRegion</span><span class="o">(</span><span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">text</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguiheadlineregionconst-string-text-const-vec2-pos-const-optionaldouble-width-unspecified" title="Permanent link">&para;</a></h4>
 <ul>
-<li>text: </li>
-<li>pos: </li>
-<li>width: </li>
-<li>戻り値: </li>
+<li>text: 見出しのテキスト</li>
+<li>pos: 見出しの左上の座標（ピクセル）</li>
+<li>width: 見出しの幅（ピクセル）</li>
+<li>戻り値: 見出しの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルで見出しを表示したときの領域を返します。<code class="codehilite"><span class="n">width</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、見出しのテキストに合わせた幅になります。</p>
 <h4 id="void-simpleguiheadlineconst-string-text-const-vec2-pos-const-optionaldouble-width-unspecified-bool-enabled-true"><code class="codehilite"><span class="nt">void</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">Headline</span><span class="o">(</span><span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">text</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#void-simpleguiheadlineconst-string-text-const-vec2-pos-const-optionaldouble-width-unspecified-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>text: </li>
-<li>pos: </li>
-<li>width: </li>
-<li>enabled: </li>
+<li>text: 見出しのテキスト</li>
+<li>pos: 見出しの左上の座標（ピクセル）</li>
+<li>width: 見出しの幅（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
 </ul>
+<p>SimpleGUI スタイルで見出しを描画します。<code class="codehilite"><span class="n">width</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、見出しのテキストに合わせた幅になります。</p>
 <h4 id="rectf-simpleguibuttonregionconst-string-label-const-vec2-pos-const-optionaldouble-width-unspecified"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">ButtonRegion</span><span class="o">(</span><span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguibuttonregionconst-string-label-const-vec2-pos-const-optionaldouble-width-unspecified" title="Permanent link">&para;</a></h4>
 <ul>
-<li>label: </li>
-<li>pos: </li>
-<li>width: </li>
-<li>戻り値: </li>
+<li>label: ボタンのラベル</li>
+<li>pos: ボタンの左上の座標（ピクセル）</li>
+<li>width: ボタンの幅（ピクセル）</li>
+<li>戻り値: ボタンの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルでボタンを表示したときの領域を返します。<code class="codehilite"><span class="n">width</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、ラベルに合わせた幅になります。</p>
 <h4 id="rectf-simpleguibuttonregionatconst-string-label-const-vec2-center-const-optionaldouble-width-unspecified"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">ButtonRegionAt</span><span class="o">(</span><span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguibuttonregionatconst-string-label-const-vec2-center-const-optionaldouble-width-unspecified" title="Permanent link">&para;</a></h4>
 <ul>
-<li>label: </li>
-<li>center: </li>
-<li>width: </li>
-<li>戻り値: </li>
+<li>label: ボタンのラベル</li>
+<li>center: ボタンの中心の座標（ピクセル）</li>
+<li>width: ボタンの幅（ピクセル）</li>
+<li>戻り値: ボタンの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルでボタンを表示したときの領域を返します。<code class="codehilite"><span class="n">width</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、ラベルに合わせた幅になります。</p>
 <h4 id="bool-simpleguibuttonconst-string-label-const-vec2-pos-const-optionaldouble-width-unspecified-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">Button</span><span class="o">(</span><span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguibuttonconst-string-label-const-vec2-pos-const-optionaldouble-width-unspecified-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>label: </li>
-<li>pos: </li>
-<li>widht: </li>
-<li>enabled: </li>
-<li>戻り値: </li>
+<li>label: ボタンのラベル</li>
+<li>pos: ボタンの左上の座標（ピクセル）</li>
+<li>widht: ボタンの幅（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
+<li>戻り値: ボタンがクリックされた場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルでボタンを表示します。ボタンがクリックされた場合 <code class="codehilite"><span class="k">true</span></code> を返します。</p>
 <h4 id="bool-simpleguibuttonatconst-string-label-const-vec2-center-const-optionaldouble-width-unspecified-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">ButtonAt</span><span class="o">(</span><span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguibuttonatconst-string-label-const-vec2-center-const-optionaldouble-width-unspecified-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>label: </li>
-<li>center: </li>
-<li>width: </li>
-<li>enabled: </li>
-<li>戻り値: </li>
+<li>label: ボタンのラベル</li>
+<li>center: ボタンの中心の座標（ピクセル）</li>
+<li>width: ボタンの幅（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
+<li>戻り値: ボタンがクリックされた場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルでボタンを表示します。ボタンがクリックされた場合 <code class="codehilite"><span class="k">true</span></code> を返します。</p>
 <h4 id="rectf-simpleguisliderregionconst-vec2-pos-double-labelwidth-800-double-sliderwidth-1200"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">SliderRegion</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">labelWidth</span> <span class="o">=</span> <span class="nt">80</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderWidth</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguisliderregionconst-vec2-pos-double-labelwidth-800-double-sliderwidth-1200" title="Permanent link">&para;</a></h4>
 <ul>
-<li>pos: </li>
-<li>labelWidth: </li>
-<li>sliderWidth: </li>
-<li>戻り値: </li>
+<li>pos: スライダーの左上の座標（ピクセル）</li>
+<li>labelWidth: ラベルの幅（ピクセル）</li>
+<li>sliderWidth: スライド部分の長さ（ピクセル）</li>
+<li>戻り値: スライダーの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルで水平スライダーを表示したときの領域を返します。</p>
 <h4 id="rectf-simpleguisliderregionatconst-vec2-center-double-labelwidth-800-double-sliderwidth-1200"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">SliderRegionAt</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">labelWidth</span> <span class="o">=</span> <span class="nt">80</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderWidth</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguisliderregionatconst-vec2-center-double-labelwidth-800-double-sliderwidth-1200" title="Permanent link">&para;</a></h4>
 <ul>
-<li>center: </li>
-<li>labelWidth: </li>
-<li>sliderWidth: </li>
-<li>戻り値: </li>
+<li>center: スライダーの中心の座標（ピクセル）</li>
+<li>labelWidth: ラベルの幅（ピクセル）</li>
+<li>sliderWidth: スライド部分の長さ（ピクセル）</li>
+<li>戻り値: スライダーの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルで水平スライダーを表示したときの領域を返します。</p>
 <h4 id="bool-simpleguisliderdouble-value-const-vec2-pos-double-sliderwidth-1200-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">Slider</span><span class="o">(</span><span class="nt">double</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderWidth</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguisliderdouble-value-const-vec2-pos-double-sliderwidth-1200-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <h4 id="bool-simpleguisliderdouble-value-double-min-double-max-const-vec2-pos-double-sliderwidth-1200-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">Slider</span><span class="o">(</span><span class="nt">double</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">min</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">max</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderWidth</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguisliderdouble-value-double-min-double-max-const-vec2-pos-double-sliderwidth-1200-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <h4 id="bool-simpleguisliderconst-string-label-double-value-const-vec2-pos-double-labelwidth-800-double-sliderwidth-1200-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">Slider</span><span class="o">(</span><span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">double</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">labelWidth</span> <span class="o">=</span> <span class="nt">80</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderWidth</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguisliderconst-string-label-double-value-const-vec2-pos-double-labelwidth-800-double-sliderwidth-1200-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <h4 id="bool-simpleguisliderconst-string-label-double-value-double-min-double-max-const-vec2-pos-double-labelwidth-800-double-sliderwidth-1200-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">Slider</span><span class="o">(</span><span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">double</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">min</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">max</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">labelWidth</span> <span class="o">=</span> <span class="nt">80</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderWidth</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguisliderconst-string-label-double-value-double-min-double-max-const-vec2-pos-double-labelwidth-800-double-sliderwidth-1200-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>value: </li>
-<li>pos: </li>
-<li>sliderWidth: </li>
-<li>enabled: </li>
-<li>min: </li>
-<li>max: </li>
-<li>label: </li>
-<li>labelWidth: </li>
-<li>戻り値: </li>
+<li>value: 操作する値</li>
+<li>pos: スライダーの左上の座標（ピクセル）</li>
+<li>sliderWidth: スライド部分の長さ（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
+<li>min: 値の最小値</li>
+<li>max: 値の最大値</li>
+<li>label: ラベルのテキスト</li>
+<li>labelWidth: ラベルの幅（ピクセル）</li>
+<li>戻り値: ユーザのスライダー操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルで水平スライダーを表示します。ユーザのスライダー操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code> を返します。</p>
 <h4 id="bool-simpleguislideratdouble-value-const-vec2-center-double-sliderwidth-1200-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">SliderAt</span><span class="o">(</span><span class="nt">double</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderWidth</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguislideratdouble-value-const-vec2-center-double-sliderwidth-1200-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <h4 id="bool-simpleguislideratdouble-value-double-min-double-max-const-vec2-center-double-sliderwidth-1200-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">SliderAt</span><span class="o">(</span><span class="nt">double</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">min</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">max</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderWidth</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguislideratdouble-value-double-min-double-max-const-vec2-center-double-sliderwidth-1200-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <h4 id="bool-simpleguislideratconst-string-label-double-value-const-vec2-center-double-labelwidth-800-double-sliderwidth-1200-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">SliderAt</span><span class="o">(</span><span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">double</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">labelWidth</span> <span class="o">=</span> <span class="nt">80</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderWidth</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguislideratconst-string-label-double-value-const-vec2-center-double-labelwidth-800-double-sliderwidth-1200-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <h4 id="bool-simpleguislideratconst-string-label-double-value-double-min-double-max-const-vec2-center-double-labelwidth-800-double-sliderwidth-1200-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">SliderAt</span><span class="o">(</span><span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">double</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">min</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">max</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">labelWidth</span> <span class="o">=</span> <span class="nt">80</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderWidth</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguislideratconst-string-label-double-value-double-min-double-max-const-vec2-center-double-labelwidth-800-double-sliderwidth-1200-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>value: </li>
-<li>center: </li>
-<li>sliderWidth: </li>
-<li>enabled: </li>
-<li>min: </li>
-<li>max: </li>
-<li>label: </li>
-<li>labelWidth: </li>
-<li>戻り値: </li>
+<li>value: 操作する値</li>
+<li>center: スライダーの中心の座標（ピクセル）</li>
+<li>sliderWidth: スライド部分の長さ（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
+<li>min: 値の最小値</li>
+<li>max: 値の最大値</li>
+<li>label: ラベルのテキスト</li>
+<li>labelWidth: ラベルの幅（ピクセル）</li>
+<li>戻り値: ユーザのスライダー操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルで水平スライダーを表示します。ユーザのスライダー操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code> を返します。</p>
 <h4 id="rectf-simpleguiverticalsliderregionconst-vec2-pos-double-sliderheight-1200"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">VerticalSliderRegion</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderHeight</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguiverticalsliderregionconst-vec2-pos-double-sliderheight-1200" title="Permanent link">&para;</a></h4>
 <ul>
-<li>pos: </li>
-<li>sliderHeight: </li>
-<li>戻り値: </li>
+<li>pos: スライダーの左上の座標（ピクセル）</li>
+<li>sliderHeight: スライド部分の高さ（ピクセル）</li>
+<li>戻り値: スライダーの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルで垂直スライダーを表示したときの領域を返します。</p>
 <h4 id="rectf-simpleguiverticalsliderregionatconst-vec2-center-double-sliderheight-1200"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">VerticalSliderRegionAt</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderHeight</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguiverticalsliderregionatconst-vec2-center-double-sliderheight-1200" title="Permanent link">&para;</a></h4>
 <ul>
-<li>center: </li>
-<li>sliderHeight: </li>
-<li>戻り値: </li>
+<li>center: スライダーの中心の座標（ピクセル）</li>
+<li>sliderHeight: スライド部分の高さ（ピクセル）</li>
+<li>戻り値: スライダーの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルで垂直スライダーを表示したときの領域を返します。</p>
 <h4 id="bool-simpleguiverticalsliderdouble-value-const-vec2-pos-double-sliderheight-1200-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">VerticalSlider</span><span class="o">(</span><span class="nt">double</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderHeight</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguiverticalsliderdouble-value-const-vec2-pos-double-sliderheight-1200-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <h4 id="bool-simpleguiverticalsliderdouble-value-double-min-double-max-const-vec2-pos-double-sliderheight-1200-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">VerticalSlider</span><span class="o">(</span><span class="nt">double</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">min</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">max</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderHeight</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguiverticalsliderdouble-value-double-min-double-max-const-vec2-pos-double-sliderheight-1200-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>value: </li>
-<li>pos: </li>
-<li>sliderHeight: </li>
-<li>enabled: </li>
-<li>min: </li>
-<li>max: </li>
-<li>戻り値: </li>
+<li>value: 操作する値</li>
+<li>pos: スライダーの左上の座標（ピクセル）</li>
+<li>sliderHeight: スライド部分の高さ（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
+<li>min: 値の最小値</li>
+<li>max: 値の最大値</li>
+<li>戻り値: ユーザのスライダー操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルで垂直スライダーを表示します。ユーザのスライダー操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code> を返します。</p>
 <h4 id="bool-simpleguiverticalslideratdouble-value-const-vec2-center-double-sliderheight-1200-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">VerticalSliderAt</span><span class="o">(</span><span class="nt">double</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderHeight</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguiverticalslideratdouble-value-const-vec2-center-double-sliderheight-1200-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <h4 id="bool-simpleguiverticalslideratdouble-value-double-min-double-max-const-vec2-center-double-sliderheight-1200-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">VerticalSliderAt</span><span class="o">(</span><span class="nt">double</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">min</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">max</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">sliderHeight</span> <span class="o">=</span> <span class="nt">120</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguiverticalslideratdouble-value-double-min-double-max-const-vec2-center-double-sliderheight-1200-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>value: </li>
-<li>center: </li>
-<li>sliderHeight: </li>
-<li>enabled: </li>
-<li>min: </li>
-<li>max: </li>
-<li>戻り値: </li>
+<li>value: 操作する値</li>
+<li>center: スライダーの中心の座標（ピクセル）</li>
+<li>sliderHeight: スライド部分の高さ（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
+<li>min: 値の最小値</li>
+<li>max: 値の最大値</li>
+<li>戻り値: ユーザのスライダー操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルで垂直スライダーを表示します。ユーザのスライダー操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code> を返します。</p>
 <h4 id="rectf-simpleguicheckboxregionconst-string-label-const-vec2-pos-const-optionaldouble-width-unspecified"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">CheckBoxRegion</span><span class="o">(</span><span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguicheckboxregionconst-string-label-const-vec2-pos-const-optionaldouble-width-unspecified" title="Permanent link">&para;</a></h4>
 <ul>
-<li>label: </li>
-<li>pos: </li>
-<li>width: </li>
-<li>戻り値: </li>
+<li>label: ラベル</li>
+<li>pos: チェックボックスの左上の座標（ピクセル）</li>
+<li>width: チェックボックスの幅（ピクセル）</li>
+<li>戻り値: チェックボックスの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルでチェックボックスを表示したときの領域を返します。<code class="codehilite"><span class="n">width</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、見出しのテキストに合わせた幅になります。</p>
 <h4 id="rectf-simpleguicheckboxregionatconst-string-label-const-vec2-center-const-optionaldouble-width-unspecified"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">CheckBoxRegionAt</span><span class="o">(</span><span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguicheckboxregionatconst-string-label-const-vec2-center-const-optionaldouble-width-unspecified" title="Permanent link">&para;</a></h4>
 <ul>
-<li>label: </li>
-<li>center: </li>
-<li>width: </li>
-<li>戻り値: </li>
+<li>label: ラベル</li>
+<li>center: チェックボックスの中心の座標（ピクセル）</li>
+<li>width: チェックボックスの幅（ピクセル）</li>
+<li>戻り値: チェックボックスの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルでチェックボックスを表示したときの領域を返します。<code class="codehilite"><span class="n">width</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、見出しのテキストに合わせた幅になります。</p>
 <h4 id="bool-checkboxbool-checked-const-string-label-const-vec2-pos-const-optionaldouble-width-unspecified-bool-enabled-true"><code class="codehilite"><span class="n">bool</span> <span class="n">CheckBox</span><span class="p">(</span><span class="n">bool</span><span class="o">&amp;</span> <span class="k">checked</span><span class="p">,</span> <span class="n">const</span> <span class="n">String</span><span class="o">&amp;</span> <span class="n">label</span><span class="p">,</span> <span class="n">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">pos</span><span class="p">,</span> <span class="n">const</span> <span class="n">Optional</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;&amp;</span> <span class="n">width</span> <span class="o">=</span> <span class="n">unspecified</span><span class="p">,</span> <span class="n">bool</span> <span class="n">enabled</span> <span class="o">=</span> <span class="k">true</span><span class="p">);</span></code><a class="headerlink" href="#bool-checkboxbool-checked-const-string-label-const-vec2-pos-const-optionaldouble-width-unspecified-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>checked: </li>
-<li>label: </li>
-<li>pos: </li>
-<li>width: </li>
-<li>enabled: </li>
-<li>戻り値: </li>
+<li>checked: チェック状態</li>
+<li>label: ラベル</li>
+<li>pos: チェックボックスの左上の座標（ピクセル）</li>
+<li>width: チェックボックスの幅（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
+<li>戻り値: ユーザの操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルでチェックボックスを表示します。ユーザの操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code> を返します。<code class="codehilite"><span class="n">width</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、見出しのテキストに合わせた幅になります。</p>
 <h4 id="bool-simpleguicheckboxatbool-checked-const-string-label-const-vec2-center-const-optionaldouble-width-unspecified-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">CheckBoxAt</span><span class="o">(</span><span class="nt">bool</span><span class="o">&amp;</span> <span class="nt">checked</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">String</span><span class="o">&amp;</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguicheckboxatbool-checked-const-string-label-const-vec2-center-const-optionaldouble-width-unspecified-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>checked: </li>
-<li>label: </li>
-<li>center: </li>
-<li>width: </li>
-<li>enabled: </li>
-<li>戻り値: </li>
+<li>checked: チェック状態</li>
+<li>label: ラベル</li>
+<li>center: チェックボックスの中心の座標（ピクセル）</li>
+<li>width: チェックボックスの幅（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
+<li>戻り値: ユーザの操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルでチェックボックスを表示します。ユーザの操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code> を返します。<code class="codehilite"><span class="n">width</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、見出しのテキストに合わせた幅になります。</p>
 <h4 id="rectf-simpleguiradiobuttonsregionconst-arraystring-options-const-vec2-pos-const-optionaldouble-width-unspecified"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">RadioButtonsRegion</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Array</span><span class="o">&lt;</span><span class="nt">String</span><span class="o">&gt;&amp;</span> <span class="nt">options</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguiradiobuttonsregionconst-arraystring-options-const-vec2-pos-const-optionaldouble-width-unspecified" title="Permanent link">&para;</a></h4>
 <ul>
-<li>options: </li>
-<li>pos: </li>
-<li>width: </li>
-<li>戻り値: </li>
+<li>options: ラジオボタンの選択肢</li>
+<li>pos: ラジオボタンの左上の座標（ピクセル）</li>
+<li>width: ラジオボタンの幅（ピクセル）</li>
+<li>戻り値: ラジオボタンの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルでラジオボタンを表示したときの領域を返します。<code class="codehilite"><span class="n">width</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、見出しのテキストに合わせた幅になります。</p>
 <h4 id="rectf-simpleguiradiobuttonsregionatconst-arraystring-options-const-vec2-center-const-optionaldouble-width-unspecified"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">RadioButtonsRegionAt</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Array</span><span class="o">&lt;</span><span class="nt">String</span><span class="o">&gt;&amp;</span> <span class="nt">options</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguiradiobuttonsregionatconst-arraystring-options-const-vec2-center-const-optionaldouble-width-unspecified" title="Permanent link">&para;</a></h4>
 <ul>
-<li>options: </li>
-<li>center: </li>
-<li>width: </li>
-<li>戻り値: </li>
+<li>options: ラジオボタンの選択肢</li>
+<li>center: ラジオボタンの中心の座標（ピクセル）</li>
+<li>width: ラジオボタンの幅（ピクセル）</li>
+<li>戻り値: ラジオボタンの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルでラジオボタンを表示したときの領域を返します。<code class="codehilite"><span class="n">width</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、見出しのテキストに合わせた幅になります。</p>
 <h4 id="bool-simpleguiradiobuttonssize_t-index-const-arraystring-options-const-vec2-pos-const-optionaldouble-width-unspecified-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">RadioButtons</span><span class="o">(</span><span class="nt">size_t</span><span class="o">&amp;</span> <span class="nt">index</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Array</span><span class="o">&lt;</span><span class="nt">String</span><span class="o">&gt;&amp;</span> <span class="nt">options</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguiradiobuttonssize_t-index-const-arraystring-options-const-vec2-pos-const-optionaldouble-width-unspecified-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>index: </li>
-<li>options: </li>
-<li>pos: </li>
-<li>width: </li>
-<li>enabled: </li>
-<li>戻り値: </li>
+<li>index: 選択されている選択肢のインデックス</li>
+<li>options: ラジオボタンの選択肢</li>
+<li>pos: ラジオボタンの左上の座標（ピクセル）</li>
+<li>width: ラジオボタンの幅（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
+<li>戻り値: ユーザの操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルでラジオボタンを表示します。ユーザの操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code> を返します。<code class="codehilite"><span class="n">width</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、見出しのテキストに合わせた幅になります。</p>
 <h4 id="bool-simpleguiradiobuttonsatsize_t-index-const-arraystring-options-const-vec2-center-const-optionaldouble-width-unspecified-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">RadioButtonsAt</span><span class="o">(</span><span class="nt">size_t</span><span class="o">&amp;</span> <span class="nt">index</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Array</span><span class="o">&lt;</span><span class="nt">String</span><span class="o">&gt;&amp;</span> <span class="nt">options</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;&amp;</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguiradiobuttonsatsize_t-index-const-arraystring-options-const-vec2-center-const-optionaldouble-width-unspecified-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>index: </li>
-<li>options: </li>
-<li>center: </li>
-<li>width: </li>
-<li>enabled: </li>
-<li>戻り値: </li>
+<li>index: 選択されている選択肢のインデックス</li>
+<li>options: ラジオボタンの選択肢</li>
+<li>center: ラジオボタンの中心の座標（ピクセル）</li>
+<li>width: ラジオボタンの幅（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
+<li>戻り値: ユーザの操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルでラジオボタンを表示します。ユーザの操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code> を返します。<code class="codehilite"><span class="n">width</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、見出しのテキストに合わせた幅になります。</p>
 <h4 id="rectf-simpleguitextboxregionconst-vec2-pos-double-width-2000"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">TextBoxRegion</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">200</span><span class="p">.</span><span class="nc">0</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguitextboxregionconst-vec2-pos-double-width-2000" title="Permanent link">&para;</a></h4>
 <ul>
-<li>pos: </li>
-<li>width: </li>
-<li>戻り値: </li>
+<li>pos: テキストボックスの左上の座標（ピクセル）</li>
+<li>width: テキストボックスの幅（ピクセル）</li>
+<li>戻り値: テキストボックスの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルでテキストボックスを表示したときの領域を返します。</p>
 <h4 id="rectf-simpleguitextboxregionatconst-vec2-center-double-width-2000"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">TextBoxRegionAt</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">200</span><span class="p">.</span><span class="nc">0</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguitextboxregionatconst-vec2-center-double-width-2000" title="Permanent link">&para;</a></h4>
 <ul>
-<li>center: </li>
-<li>width: </li>
-<li>戻り値: </li>
+<li>center: テキストボックスの中心の座標（ピクセル）</li>
+<li>width: テキストボックスの幅（ピクセル）</li>
+<li>戻り値: テキストボックスの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルでテキストボックスを表示したときの領域を返します。</p>
 <h4 id="bool-simpleguitextboxtexteditstate-text-const-vec2-pos-double-width-2000-const-optionalsize_t-maxchars-unspecified-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">TextBox</span><span class="o">(</span><span class="nt">TextEditState</span><span class="o">&amp;</span> <span class="nt">text</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">200</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">size_t</span><span class="o">&gt;&amp;</span> <span class="nt">maxChars</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguitextboxtexteditstate-text-const-vec2-pos-double-width-2000-const-optionalsize_t-maxchars-unspecified-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>text: </li>
-<li>pos: </li>
-<li>width: </li>
-<li>maxChars: </li>
-<li>enabled: </li>
-<li>戻り値: </li>
+<li>text: テキスト編集情報</li>
+<li>pos: テキストボックスの左上の座標（ピクセル）</li>
+<li>width: テキストボックスの幅（ピクセル）</li>
+<li>maxChars: 入力文字数の上限、設定しない場合は <code class="codehilite"><span class="n">unspecified</span></code></li>
+<li>enabled: アクティブ状態</li>
+<li>戻り値: ユーザの操作によってテキストが変更された場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルでテキストボックスを表示します。ユーザの操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code> を返します。<code class="codehilite"><span class="n">maxChars</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、入力文字数の上限はありません。</p>
 <h4 id="bool-simpleguitextboxattexteditstate-text-const-vec2-center-double-width-2000-const-optionalsize_t-maxchars-unspecified-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">TextBoxAt</span><span class="o">(</span><span class="nt">TextEditState</span><span class="o">&amp;</span> <span class="nt">text</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">,</span> <span class="nt">double</span> <span class="nt">width</span> <span class="o">=</span> <span class="nt">200</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Optional</span><span class="o">&lt;</span><span class="nt">size_t</span><span class="o">&gt;&amp;</span> <span class="nt">maxChars</span> <span class="o">=</span> <span class="nt">unspecified</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguitextboxattexteditstate-text-const-vec2-center-double-width-2000-const-optionalsize_t-maxchars-unspecified-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>text: </li>
-<li>center: </li>
-<li>width: </li>
-<li>maxChars: </li>
-<li>enabled: </li>
-<li>戻り値: </li>
+<li>text: テキスト編集情報</li>
+<li>center: テキストボックスの中心の座標（ピクセル）</li>
+<li>width: テキストボックスの幅（ピクセル）</li>
+<li>maxChars: 入力文字数の上限、設定しない場合は <code class="codehilite"><span class="n">unspecified</span></code></li>
+<li>enabled: アクティブ状態</li>
+<li>戻り値: ユーザの操作によってテキストが変更された場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルでテキストボックスを表示します。ユーザの操作によって値が変更された場合 <code class="codehilite"><span class="k">true</span></code> を返します。<code class="codehilite"><span class="n">maxChars</span></code> が <code class="codehilite"><span class="n">unspecified</span></code> の場合、入力文字数の上限はありません。</p>
 <h4 id="rectf-simpleguicolorpickerregionconst-vec2-pos"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">ColorPickerRegion</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguicolorpickerregionconst-vec2-pos" title="Permanent link">&para;</a></h4>
 <ul>
-<li>pos: </li>
-<li>戻り値: </li>
+<li>pos: カラーピッカーの左上の座標（ピクセル）</li>
+<li>戻り値: カラーピッカーの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルでカラーピッカーを表示したときの領域を返します。</p>
 <h4 id="rectf-simpleguicolorpickerregionatconst-vec2-center"><code class="codehilite"><span class="nt">RectF</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">ColorPickerRegionAt</span><span class="o">(</span><span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">center</span><span class="o">);</span></code><a class="headerlink" href="#rectf-simpleguicolorpickerregionatconst-vec2-center" title="Permanent link">&para;</a></h4>
 <ul>
-<li>center: </li>
-<li>戻り値: </li>
+<li>center: カラーピッカーの中心の座標（ピクセル）</li>
+<li>戻り値: カラーピッカーの領域（ピクセル）</li>
 </ul>
+<p>SimpleGUI スタイルでカラーピッカーを表示したときの領域を返します。</p>
 <h4 id="bool-simpleguicolorpickerhsv-hsv-const-vec2-pos-bool-enabled-true"><code class="codehilite"><span class="nt">bool</span> <span class="nt">SimpleGUI</span><span class="p">::</span><span class="nd">ColorPicker</span><span class="o">(</span><span class="nt">HSV</span><span class="o">&amp;</span> <span class="nt">hsv</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Vec2</span><span class="o">&amp;</span> <span class="nt">pos</span><span class="o">,</span> <span class="nt">bool</span> <span class="nt">enabled</span> <span class="o">=</span> <span class="nt">true</span><span class="o">);</span></code><a class="headerlink" href="#bool-simpleguicolorpickerhsv-hsv-const-vec2-pos-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>hsv: </li>
-<li>pos: </li>
-<li>enabled: </li>
-<li>戻り値: </li>
+<li>hsv: 操作する色</li>
+<li>pos: カラーピッカーの左上の座標（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
+<li>戻り値: ユーザの操作によって色が変更された場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルでカラーピッカーを表示します。ユーザの操作によって色が変更された場合 <code class="codehilite"><span class="k">true</span></code> を返します。</p>
 <h4 id="bool-colorpickerathsv-hsv-const-vec2-center-bool-enabled-true"><code class="codehilite"><span class="n">bool</span> <span class="n">ColorPickerAt</span><span class="p">(</span><span class="n">HSV</span><span class="o">&amp;</span> <span class="n">hsv</span><span class="p">,</span> <span class="n">const</span> <span class="n">Vec2</span><span class="o">&amp;</span> <span class="n">center</span><span class="p">,</span> <span class="n">bool</span> <span class="n">enabled</span> <span class="o">=</span> <span class="k">true</span><span class="p">);</span></code><a class="headerlink" href="#bool-colorpickerathsv-hsv-const-vec2-center-bool-enabled-true" title="Permanent link">&para;</a></h4>
 <ul>
-<li>hsv: </li>
-<li>center: </li>
-<li>enabled: </li>
-<li>戻り値: </li>
+<li>hsv: 操作する色</li>
+<li>center: カラーピッカーの中心の座標（ピクセル）</li>
+<li>enabled: アクティブ状態</li>
+<li>戻り値: ユーザの操作によって色が変更された場合 <code class="codehilite"><span class="k">true</span></code>, それ以外の場合 <code class="codehilite"><span class="k">false</span></code></li>
 </ul>
+<p>SimpleGUI スタイルでカラーピッカーを表示します。ユーザの操作によって色が変更された場合 <code class="codehilite"><span class="k">true</span></code> を返します。</p>
 <h2 id="struct-texteditstate">テキスト編集構造体 (struct TextEditState)<a class="headerlink" href="#struct-texteditstate" title="Permanent link">&para;</a></h2>
+<p>テキストボックスなどでテキストを編集する際に使う情報です。</p>
 <h3 id="_16">メンバ変数<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <h4 id="string-text"><code class="codehilite"><span class="n">String</span> <span class="nb">text</span><span class="p">;</span></code><a class="headerlink" href="#string-text" title="Permanent link">&para;</a></h4>
+<p>入力されたテキスト</p>
 <h4 id="size_t-cursorpos-0"><code class="codehilite"><span class="n">size_t</span> <span class="n">cursorPos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span></code><a class="headerlink" href="#size_t-cursorpos-0" title="Permanent link">&para;</a></h4>
+<p>入力カーソル位置</p>
 <h4 id="bool-active-false"><code class="codehilite"><span class="n">bool</span> <span class="n">active</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span></code><a class="headerlink" href="#bool-active-false" title="Permanent link">&para;</a></h4>
+<p>アクティブ状態</p>
 <h4 id="stopwatch-leftpressstopwatch"><code class="codehilite"><span class="n">Stopwatch</span> <span class="n">leftPressStopwatch</span><span class="p">;</span></code><a class="headerlink" href="#stopwatch-leftpressstopwatch" title="Permanent link">&para;</a></h4>
+<p>カーソルの左移動タイミング用のストップウォッチ（内部処理用）</p>
 <h4 id="stopwatch-rightpressstopwatch"><code class="codehilite"><span class="n">Stopwatch</span> <span class="n">rightPressStopwatch</span><span class="p">;</span></code><a class="headerlink" href="#stopwatch-rightpressstopwatch" title="Permanent link">&para;</a></h4>
+<p>カーソルの右移動タイミング用のストップウォッチ（内部処理用）</p>
 <h4 id="stopwatch-cursorstopwatch"><code class="codehilite"><span class="n">Stopwatch</span> <span class="n">cursorStopwatch</span><span class="p">;</span></code><a class="headerlink" href="#stopwatch-cursorstopwatch" title="Permanent link">&para;</a></h4>
+<p>入力カーソルの点滅タイミング用のストップウォッチ（内部処理用）</p>
 <h3 id="_17">コンストラクタ<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <h4 id="texteditstate-default"><code class="codehilite"><span class="n">TextEditState</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">();</span></code><a class="headerlink" href="#texteditstate-default" title="Permanent link">&para;</a></h4>
 <h4 id="texteditstateconst-string-defaulttext"><code class="codehilite"><span class="n">TextEditState</span><span class="p">(</span><span class="n">const</span> <span class="n">String</span><span class="o">&amp;</span> <span class="n">defaultText</span><span class="p">);</span></code><a class="headerlink" href="#texteditstateconst-string-defaulttext" title="Permanent link">&para;</a></h4>
 <ul>
-<li>defaultText: </li>
+<li>defaultText: 初期テキスト</li>
 </ul>
+<p>テキスト編集構造体を初期化します。</p>
 <h3 id="_18">メンバ関数<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <h4 id="void-clear"><code class="codehilite"><span class="n">void</span> <span class="n">clear</span><span class="p">();</span></code><a class="headerlink" href="#void-clear" title="Permanent link">&para;</a></h4>
+<p>テキスト編集情報をすべてクリアし、入力テキストを空にします。</p>
 <h2 id="class-stopwatch">ストップウォッチクラス (class Stopwatch)<a class="headerlink" href="#class-stopwatch" title="Permanent link">&para;</a></h2>
 <h3 id="_19">コンストラクタ<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <h4 id="stopwatchbool-startimmediately-false"><code class="codehilite"><span class="n">Stopwatch</span><span class="p">(</span><span class="n">bool</span> <span class="n">startImmediately</span> <span class="o">=</span> <span class="k">false</span><span class="p">);</span></code><a class="headerlink" href="#stopwatchbool-startimmediately-false" title="Permanent link">&para;</a></h4>
