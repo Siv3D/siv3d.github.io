@@ -2614,8 +2614,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#string-formatstringview-format-uhmmssxx_sv" title="String format(stringView format = U&quot;H:mm:ss.xx&quot;_sv);" class="md-nav__link">
-    String format(stringView format = U&quot;H:mm:ss.xx&quot;_sv);
+  <a href="#string-formatstringview-format-uhmmssxx_sv" title="String format(StringView format = U&quot;H:mm:ss.xx&quot;_sv);" class="md-nav__link">
+    String format(StringView format = U&quot;H:mm:ss.xx&quot;_sv);
   </a>
   
 </li>
@@ -2697,8 +2697,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#template-class-chartype-stdbasic_ostreamchartype-operator-stdbasic_ostreamchartype-output-const-stopwatch-value" title="template &lt;class CharType&gt; std::basic_ostream&lt;CharType&gt; &amp; operator &lt;&lt;(std::basic_ostream&lt;CharType&gt; output, const Stopwatch&amp; value);" class="md-nav__link">
-    template &lt;class CharType&gt; std::basic_ostream&lt;CharType&gt; &amp; operator &lt;&lt;(std::basic_ostream&lt;CharType&gt; output, const Stopwatch&amp; value);
+  <a href="#template-class-chartype-stdbasic_ostreamchartype-operator-stdbasic_ostreamchartype-output-const-stopwatch-value" title="template &lt;class CharType&gt; std::basic_ostream&lt;CharType&gt;&amp; operator &lt;&lt;(std::basic_ostream&lt;CharType&gt; output, const Stopwatch&amp; value);" class="md-nav__link">
+    template &lt;class CharType&gt; std::basic_ostream&lt;CharType&gt;&amp; operator &lt;&lt;(std::basic_ostream&lt;CharType&gt; output, const Stopwatch&amp; value);
   </a>
   
 </li>
@@ -6090,8 +6090,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#string-formatstringview-format-uhmmssxx_sv" title="String format(stringView format = U&quot;H:mm:ss.xx&quot;_sv);" class="md-nav__link">
-    String format(stringView format = U&quot;H:mm:ss.xx&quot;_sv);
+  <a href="#string-formatstringview-format-uhmmssxx_sv" title="String format(StringView format = U&quot;H:mm:ss.xx&quot;_sv);" class="md-nav__link">
+    String format(StringView format = U&quot;H:mm:ss.xx&quot;_sv);
   </a>
   
 </li>
@@ -6173,8 +6173,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#template-class-chartype-stdbasic_ostreamchartype-operator-stdbasic_ostreamchartype-output-const-stopwatch-value" title="template &lt;class CharType&gt; std::basic_ostream&lt;CharType&gt; &amp; operator &lt;&lt;(std::basic_ostream&lt;CharType&gt; output, const Stopwatch&amp; value);" class="md-nav__link">
-    template &lt;class CharType&gt; std::basic_ostream&lt;CharType&gt; &amp; operator &lt;&lt;(std::basic_ostream&lt;CharType&gt; output, const Stopwatch&amp; value);
+  <a href="#template-class-chartype-stdbasic_ostreamchartype-operator-stdbasic_ostreamchartype-output-const-stopwatch-value" title="template &lt;class CharType&gt; std::basic_ostream&lt;CharType&gt;&amp; operator &lt;&lt;(std::basic_ostream&lt;CharType&gt; output, const Stopwatch&amp; value);" class="md-nav__link">
+    template &lt;class CharType&gt; std::basic_ostream&lt;CharType&gt;&amp; operator &lt;&lt;(std::basic_ostream&lt;CharType&gt; output, const Stopwatch&amp; value);
   </a>
   
 </li>
@@ -7206,116 +7206,144 @@
 <h4 id="void-clear"><code class="codehilite"><span class="n">void</span> <span class="n">clear</span><span class="p">();</span></code><a class="headerlink" href="#void-clear" title="Permanent link">&para;</a></h4>
 <p>テキスト編集情報をすべてクリアし、入力テキストを空にします。</p>
 <h2 id="class-stopwatch">ストップウォッチクラス (class Stopwatch)<a class="headerlink" href="#class-stopwatch" title="Permanent link">&para;</a></h2>
+<p>経過時間を計測するためのクラスです。</p>
 <h3 id="_20">コンストラクタ<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <h4 id="stopwatchbool-startimmediately-false"><code class="codehilite"><span class="n">Stopwatch</span><span class="p">(</span><span class="n">bool</span> <span class="n">startImmediately</span> <span class="o">=</span> <span class="k">false</span><span class="p">);</span></code><a class="headerlink" href="#stopwatchbool-startimmediately-false" title="Permanent link">&para;</a></h4>
 <h4 id="stopwatchconst-duration-time-bool-startimmediately-false"><code class="codehilite"><span class="n">Stopwatch</span><span class="p">(</span><span class="n">const</span> <span class="n">Duration</span><span class="o">&amp;</span> <span class="n">time</span><span class="p">,</span> <span class="n">bool</span> <span class="n">startImmediately</span> <span class="o">=</span> <span class="k">false</span><span class="p">);</span></code><a class="headerlink" href="#stopwatchconst-duration-time-bool-startimmediately-false" title="Permanent link">&para;</a></h4>
 <ul>
-<li>startImmediately: </li>
-<li>time: </li>
+<li>startImmediately: 時間の計測を直ちに開始するかのフラグ</li>
+<li>time: 最初に進めておく時間</li>
 </ul>
+<p>ストップウォッチを作成します。<code class="codehilite"><span class="n">startImmediately</span></code> が <code class="codehilite"><span class="k">true</span></code> の場合は作成と同時に時間の計測が開始されます。</p>
 <h3 id="_21">メンバ関数<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
 <h4 id="void-start"><code class="codehilite"><span class="n">void</span> <span class="k">start</span><span class="p">();</span></code><a class="headerlink" href="#void-start" title="Permanent link">&para;</a></h4>
+<p>時間の計測を開始または再開します。すでに計測中の場合は何もしません。</p>
 <h4 id="int32-d"><code class="codehilite"><span class="n">int32</span> <span class="n">d</span><span class="p">();</span></code><a class="headerlink" href="#int32-d" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（日）</li>
 </ul>
+<p>計測された経過時間（日）を返します。小数点以下は切り捨てられ、51 時間の場合は <code class="codehilite"><span class="mi">2</span></code> を返します。</p>
 <h4 id="int64-d64"><code class="codehilite"><span class="n">int64</span> <span class="n">d64</span><span class="p">();</span></code><a class="headerlink" href="#int64-d64" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（日）</li>
 </ul>
+<p>計測された経過時間（日）を返します。小数点以下は切り捨てられ、51 時間の場合は <code class="codehilite"><span class="mi">2</span></code> を返します。</p>
 <h4 id="double-df"><code class="codehilite"><span class="n">double</span> <span class="n">dF</span><span class="p">();</span></code><a class="headerlink" href="#double-df" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（日）</li>
 </ul>
+<p>計測された経過時間（日）を浮動小数点数の値で返します。51 時間の場合は <code class="codehilite"><span class="mi">2</span><span class="p">.</span><span class="mi">125</span></code> を返します。</p>
 <h4 id="int32-h"><code class="codehilite"><span class="n">int32</span> <span class="n">h</span><span class="p">();</span></code><a class="headerlink" href="#int32-h" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（時）</li>
 </ul>
+<p>計測された経過時間（時）を返します。小数点以下は切り捨てられ、40 時間半の場合は <code class="codehilite"><span class="mi">40</span></code> を返します。</p>
 <h4 id="int64-h64"><code class="codehilite"><span class="n">int64</span> <span class="n">h64</span><span class="p">();</span></code><a class="headerlink" href="#int64-h64" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（時）</li>
 </ul>
+<p>計測された経過時間（時）を返します。小数点以下は切り捨てられ、40 時間半の場合は <code class="codehilite"><span class="mi">40</span></code> を返します。</p>
 <h4 id="double-hf"><code class="codehilite"><span class="n">double</span> <span class="n">hF</span><span class="p">();</span></code><a class="headerlink" href="#double-hf" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（時）</li>
 </ul>
+<p>計測された経過時間（時）を浮動小数点数の値で返します。40 時間半の場合は <code class="codehilite"><span class="mi">40</span><span class="p">.</span><span class="mi">5</span></code> を返します。</p>
 <h4 id="int32-min"><code class="codehilite"><span class="n">int32</span> <span class="k">min</span><span class="p">();</span></code><a class="headerlink" href="#int32-min" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（分）</li>
 </ul>
+<p>計測された経過時間（分）を返します。小数点以下は切り捨てられ、2 時間 3 分 6 秒の場合は <code class="codehilite"><span class="mi">123</span></code> を返します。</p>
 <h4 id="int64-min64"><code class="codehilite"><span class="n">int64</span> <span class="n">min64</span><span class="p">();</span></code><a class="headerlink" href="#int64-min64" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（分）</li>
 </ul>
+<p>計測された経過時間（分）を返します。小数点以下は切り捨てられ、2 時間 3 分 6 秒の場合は <code class="codehilite"><span class="mi">123</span></code> を返します。</p>
 <h4 id="double-minf"><code class="codehilite"><span class="n">double</span> <span class="n">minF</span><span class="p">();</span></code><a class="headerlink" href="#double-minf" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（分）</li>
 </ul>
+<p>計測された経過時間（分）を浮動小数点数の値で返します。2 時間 3 分 6 秒の場合は <code class="codehilite"><span class="mi">123</span><span class="p">.</span><span class="mi">1</span></code> を返します。</p>
 <h4 id="int32-s"><code class="codehilite"><span class="n">int32</span> <span class="n">s</span><span class="p">();</span></code><a class="headerlink" href="#int32-s" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（秒）</li>
 </ul>
+<p>計測された経過時間（秒）を返します。小数点以下は切り捨てられ、3 分 15 秒 10 の場合は <code class="codehilite"><span class="mi">195</span></code> を返します。</p>
 <h4 id="int64-s64"><code class="codehilite"><span class="n">int64</span> <span class="n">s64</span><span class="p">();</span></code><a class="headerlink" href="#int64-s64" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（秒）</li>
 </ul>
+<p>計測された経過時間（秒）を返します。小数点以下は切り捨てられ、3 分 15 秒 10 の場合は <code class="codehilite"><span class="mi">195</span></code> を返します。</p>
 <h4 id="double-sf"><code class="codehilite"><span class="n">double</span> <span class="n">sF</span><span class="p">();</span></code><a class="headerlink" href="#double-sf" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（秒）</li>
 </ul>
+<p>計測された経過時間（秒）を浮動小数点数の値で返します。3 分 15 秒 10 の場合は <code class="codehilite"><span class="mi">195</span><span class="p">.</span><span class="mi">1</span></code> を返します。</p>
 <h4 id="int32-ms"><code class="codehilite"><span class="n">int32</span> <span class="n">ms</span><span class="p">();</span></code><a class="headerlink" href="#int32-ms" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（ミリ秒）</li>
 </ul>
+<p>計測された経過時間（ミリ秒）を返します。小数点以下は切り捨てられ、9123.4 ミリ秒 の場合は <code class="codehilite"><span class="mi">9123</span></code> を返します。</p>
 <h4 id="int64-ms64"><code class="codehilite"><span class="n">int64</span> <span class="n">ms64</span><span class="p">();</span></code><a class="headerlink" href="#int64-ms64" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（ミリ秒）</li>
 </ul>
+<p>計測された経過時間（ミリ秒）を返します。小数点以下は切り捨てられ、9123.4 ミリ秒 の場合は <code class="codehilite"><span class="mi">9123</span></code> を返します。</p>
 <h4 id="double-msf"><code class="codehilite"><span class="n">double</span> <span class="n">msF</span><span class="p">();</span></code><a class="headerlink" href="#double-msf" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（ミリ秒）</li>
 </ul>
+<p>計測された経過時間（ミリ秒）を浮動小数点数の値で返します。9123.4 ミリ秒 の場合は <code class="codehilite"><span class="mi">9123</span><span class="p">.</span><span class="mi">4</span></code> を返します。</p>
 <h4 id="int64-us"><code class="codehilite"><span class="n">int64</span> <span class="n">us</span><span class="p">();</span></code><a class="headerlink" href="#int64-us" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（マイクロ秒）</li>
 </ul>
+<p>計測された経過時間（マイクロ秒）を返します。小数点以下は切り捨てられ、5678.9 マイクロ秒 の場合は <code class="codehilite"><span class="mi">5678</span></code> を返します。</p>
 <h4 id="int64-us64"><code class="codehilite"><span class="n">int64</span> <span class="n">us64</span><span class="p">();</span></code><a class="headerlink" href="#int64-us64" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（マイクロ秒）</li>
 </ul>
+<p>計測された経過時間（マイクロ秒）を返します。小数点以下は切り捨てられ、5678.9 マイクロ秒 の場合は <code class="codehilite"><span class="mi">5678</span></code> を返します。</p>
 <h4 id="double-usf"><code class="codehilite"><span class="n">double</span> <span class="n">usF</span><span class="p">();</span></code><a class="headerlink" href="#double-usf" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: ストップウォッチの経過時間（マイクロ秒）</li>
 </ul>
+<p>計測された経過時間（マイクロ秒）を浮動小数点数の値で返します。5678.9 ミリ秒 の場合は <code class="codehilite"><span class="mi">5678</span><span class="p">.</span><span class="mi">9</span></code> を返します。</p>
 <h4 id="duration-elapsed"><code class="codehilite"><span class="n">Duration</span> <span class="n">elapsed</span><span class="p">();</span></code><a class="headerlink" href="#duration-elapsed" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 経過時間 (<code class="codehilite"><span class="n">Duration</span></code> 型)</li>
 </ul>
+<p>計測された経過時間を <code class="codehilite"><span class="n">Duration</span></code> 型で返します。</p>
 <h4 id="bool-isstarted"><code class="codehilite"><span class="n">bool</span> <span class="n">isStarted</span><span class="p">();</span></code><a class="headerlink" href="#bool-isstarted" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 計測開始済みの場合 <code class="codehilite"><span class="k">true</span></code></li>
 </ul>
 <h4 id="bool-ispaused"><code class="codehilite"><span class="n">bool</span> <span class="n">isPaused</span><span class="p">();</span></code><a class="headerlink" href="#bool-ispaused" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 計測開始済みで、一時停止中の場合 <code class="codehilite"><span class="k">true</span></code></li>
 </ul>
 <h4 id="bool-isrunning"><code class="codehilite"><span class="n">bool</span> <span class="n">isRunning</span><span class="p">();</span></code><a class="headerlink" href="#bool-isrunning" title="Permanent link">&para;</a></h4>
 <ul>
-<li>戻り値: </li>
+<li>戻り値: 計測開始済みで、なおかつ一時停止中でない場合 <code class="codehilite"><span class="k">true</span></code></li>
 </ul>
 <h4 id="void-pause"><code class="codehilite"><span class="nv">void</span> <span class="k">pause</span><span class="ss">()</span><span class="c1">;</span></code><a class="headerlink" href="#void-pause" title="Permanent link">&para;</a></h4>
+<p>時間の計測を一時停止します。計測開始済みでない場合や、すでに一時停止中の場合は何もしません。</p>
 <h4 id="void-resume"><code class="codehilite"><span class="n">void</span> <span class="n">resume</span><span class="p">();</span></code><a class="headerlink" href="#void-resume" title="Permanent link">&para;</a></h4>
+<p>一時停止中の時間の計測を再びスタートさせます。一時停止中出ない場合は何もしません。</p>
 <h4 id="void-reset"><code class="codehilite"><span class="n">void</span> <span class="k">reset</span><span class="p">();</span></code><a class="headerlink" href="#void-reset" title="Permanent link">&para;</a></h4>
+<p>計測された時間の記録を消去してストップウォッチを計測未開始の状態に戻します。</p>
 <h4 id="void-restart"><code class="codehilite"><span class="n">void</span> <span class="k">restart</span><span class="p">();</span></code><a class="headerlink" href="#void-restart" title="Permanent link">&para;</a></h4>
+<p>計測された時間の記録を消去してストップウォッチを計測未開始の状態に戻し、再度計測を開始します。</p>
 <h4 id="void-setconst-duration-time"><code class="codehilite"><span class="n">void</span> <span class="k">set</span><span class="p">(</span><span class="n">const</span> <span class="n">Duration</span><span class="o">&amp;</span> <span class="n">time</span><span class="p">);</span></code><a class="headerlink" href="#void-setconst-duration-time" title="Permanent link">&para;</a></h4>
 <ul>
-<li>time: </li>
+<li>time: 設定する時間</li>
 </ul>
-<h4 id="string-formatstringview-format-uhmmssxx_sv"><code class="codehilite"><span class="nt">String</span> <span class="nt">format</span><span class="o">(</span><span class="nt">stringView</span> <span class="nt">format</span> <span class="o">=</span> <span class="nt">U</span><span class="s2">&quot;H:mm:ss.xx&quot;</span><span class="nt">_sv</span><span class="o">);</span></code><a class="headerlink" href="#string-formatstringview-format-uhmmssxx_sv" title="Permanent link">&para;</a></h4>
+<p>計測された経過時間を変更します。</p>
+<h4 id="string-formatstringview-format-uhmmssxx_sv"><code class="codehilite"><span class="nt">String</span> <span class="nt">format</span><span class="o">(</span><span class="nt">StringView</span> <span class="nt">format</span> <span class="o">=</span> <span class="nt">U</span><span class="s2">&quot;H:mm:ss.xx&quot;</span><span class="nt">_sv</span><span class="o">);</span></code><a class="headerlink" href="#string-formatstringview-format-uhmmssxx_sv" title="Permanent link">&para;</a></h4>
 <ul>
-<li>format: </li>
-<li>戻り値: </li>
+<li>format: 時刻の表現方法</li>
+<li>戻り値: 文字列に変換した時刻</li>
 </ul>
+<p>計測された経過時間を文字列に変換します。</p>
 <h3 id="_22">非メンバ関数<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
 <h4 id="bool-operator-const-stopwatch-s-const-microsecondsf-time"><code class="codehilite"><span class="n">bool</span> <span class="k">operator</span> <span class="o">&lt;</span><span class="p">(</span><span class="n">const</span> <span class="n">Stopwatch</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="n">const</span> <span class="n">MicrosecondsF</span><span class="o">&amp;</span> <span class="n">time</span><span class="p">);</span></code><a class="headerlink" href="#bool-operator-const-stopwatch-s-const-microsecondsf-time" title="Permanent link">&para;</a></h4>
 <h4 id="bool-operator-const-stopwatch-s-const-microsecondsf-time_1"><code class="codehilite"><span class="n">bool</span> <span class="k">operator</span> <span class="o">&lt;=</span><span class="p">(</span><span class="n">const</span> <span class="n">Stopwatch</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="n">const</span> <span class="n">MicrosecondsF</span><span class="o">&amp;</span> <span class="n">time</span><span class="p">);</span></code><a class="headerlink" href="#bool-operator-const-stopwatch-s-const-microsecondsf-time_1" title="Permanent link">&para;</a></h4>
@@ -7326,21 +7354,24 @@
 <h4 id="bool-operator-const-microsecondsf-time-const-stopwatch-s_2"><code class="codehilite"><span class="n">bool</span> <span class="k">operator</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">const</span> <span class="n">MicrosecondsF</span><span class="o">&amp;</span> <span class="n">time</span><span class="p">,</span> <span class="n">const</span> <span class="n">Stopwatch</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span></code><a class="headerlink" href="#bool-operator-const-microsecondsf-time-const-stopwatch-s_2" title="Permanent link">&para;</a></h4>
 <h4 id="bool-operator-const-microsecondsf-time-const-stopwatch-s_3"><code class="codehilite"><span class="n">bool</span> <span class="k">operator</span> <span class="o">&gt;=</span><span class="p">(</span><span class="n">const</span> <span class="n">MicrosecondsF</span><span class="o">&amp;</span> <span class="n">time</span><span class="p">,</span> <span class="n">const</span> <span class="n">Stopwatch</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span></code><a class="headerlink" href="#bool-operator-const-microsecondsf-time-const-stopwatch-s_3" title="Permanent link">&para;</a></h4>
 <ul>
-<li>s: </li>
-<li>time: </li>
-<li>戻り値: </li>
+<li>s: ストップウォッチ</li>
+<li>time: 比較する時間</li>
+<li>戻り値: 比較の結果</li>
 </ul>
+<p>ストップウォッチで計測された経過時間を、別の時間と比較します。</p>
 <h4 id="void-formatterformatdata-formatdata-const-stopwatch-value"><code class="codehilite"><span class="n">void</span> <span class="n">Formatter</span><span class="p">(</span><span class="n">FormatData</span><span class="o">&amp;</span> <span class="n">formatData</span><span class="p">,</span> <span class="n">const</span> <span class="n">Stopwatch</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">);</span></code><a class="headerlink" href="#void-formatterformatdata-formatdata-const-stopwatch-value" title="Permanent link">&para;</a></h4>
 <ul>
-<li>formatData: </li>
-<li>value: </li>
+<li>formatData: フォーマットデータ（内部処理用）</li>
+<li>value: ストップウォッチ</li>
 </ul>
-<h4 id="template-class-chartype-stdbasic_ostreamchartype-operator-stdbasic_ostreamchartype-output-const-stopwatch-value"><code class="codehilite"><span class="nt">template</span> <span class="o">&lt;</span><span class="nt">class</span> <span class="nt">CharType</span><span class="o">&gt;</span> <span class="nt">std</span><span class="p">::</span><span class="nd">basic_ostream</span><span class="o">&lt;</span><span class="nt">CharType</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="nt">operator</span> <span class="o">&lt;&lt;(</span><span class="nt">std</span><span class="p">::</span><span class="nd">basic_ostream</span><span class="o">&lt;</span><span class="nt">CharType</span><span class="o">&gt;</span> <span class="nt">output</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Stopwatch</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">);</span></code><a class="headerlink" href="#template-class-chartype-stdbasic_ostreamchartype-operator-stdbasic_ostreamchartype-output-const-stopwatch-value" title="Permanent link">&para;</a></h4>
+<p>計測された経過時間を文字列にフォーマットします。変換には <code class="codehilite"><span class="n">Stopwatch</span><span class="p">::</span><span class="n">format</span><span class="p">()</span></code> が使われます。</p>
+<h4 id="template-class-chartype-stdbasic_ostreamchartype-operator-stdbasic_ostreamchartype-output-const-stopwatch-value"><code class="codehilite"><span class="nt">template</span> <span class="o">&lt;</span><span class="nt">class</span> <span class="nt">CharType</span><span class="o">&gt;</span> <span class="nt">std</span><span class="p">::</span><span class="nd">basic_ostream</span><span class="o">&lt;</span><span class="nt">CharType</span><span class="o">&gt;&amp;</span> <span class="nt">operator</span> <span class="o">&lt;&lt;(</span><span class="nt">std</span><span class="p">::</span><span class="nd">basic_ostream</span><span class="o">&lt;</span><span class="nt">CharType</span><span class="o">&gt;</span> <span class="nt">output</span><span class="o">,</span> <span class="nt">const</span> <span class="nt">Stopwatch</span><span class="o">&amp;</span> <span class="nt">value</span><span class="o">);</span></code><a class="headerlink" href="#template-class-chartype-stdbasic_ostreamchartype-operator-stdbasic_ostreamchartype-output-const-stopwatch-value" title="Permanent link">&para;</a></h4>
 <ul>
-<li>output: </li>
-<li>value: </li>
-<li>戻り値: </li>
+<li>output: 出力ストリーム</li>
+<li>value: ストップウォッチ</li>
+<li>戻り値: 出力ストリーム</li>
 </ul>
+<p>計測された経過時間を出力ストリームに出力します。</p>
                 
                   
                 
