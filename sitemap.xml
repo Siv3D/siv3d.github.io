@@ -276,6 +276,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://siv3d.github.io/external/external/</loc>
+     <lastmod>2019-12-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://siv3d.github.io/sponsors/sponsors/</loc>
      <lastmod>2019-12-31</lastmod>
      <changefreq>daily</changefreq>
@@ -557,6 +562,11 @@
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/support/support/</loc>
+     <lastmod>2019-12-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/external/external/</loc>
      <lastmod>2019-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
