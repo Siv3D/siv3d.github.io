@@ -1414,9 +1414,66 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        22. シーン管理
+      </label>
+    
     <a href="./" title="22. シーン管理" class="md-nav__link md-nav__link--active">
       22. シーン管理
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#221" title="22.1 シーンの基本" class="md-nav__link">
+    22.1 シーンの基本
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#222" title="22.2 シーン遷移" class="md-nav__link">
+    22.2 シーン遷移
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#223" title="22.3 シーン間でデータを共有" class="md-nav__link">
+    22.3 シーン間でデータを共有
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#224" title="22.4 フェードイン・フェードアウトをカスタマイズする" class="md-nav__link">
+    22.4 フェードイン・フェードアウトをカスタマイズする
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#225" title="22.5 さらにシーン管理を学ぶ" class="md-nav__link">
+    22.5 さらにシーン管理を学ぶ
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -2024,6 +2081,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#221" title="22.1 シーンの基本" class="md-nav__link">
+    22.1 シーンの基本
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#222" title="22.2 シーン遷移" class="md-nav__link">
+    22.2 シーン遷移
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#223" title="22.3 シーン間でデータを共有" class="md-nav__link">
+    22.3 シーン間でデータを共有
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#224" title="22.4 フェードイン・フェードアウトをカスタマイズする" class="md-nav__link">
+    22.4 フェードイン・フェードアウトをカスタマイズする
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#225" title="22.5 さらにシーン管理を学ぶ" class="md-nav__link">
+    22.5 さらにシーン管理を学ぶ
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2036,6 +2137,409 @@
                 
                 
                 <h1 id="22">22. シーン管理<a class="headerlink" href="#22" title="Permanent link">&para;</a></h1>
+<p>シーン管理（または <strong>シーン遷移</strong>）を使うと、複雑なアプリ（とくにゲーム）を効率よく開発できます。シーン管理では、ゲームのタイトル、ゲームプレイ、リザルトなど、個々の場面（シーン）を個別のクラスに実装し、それらを行き来することで全体の流れを設計します。Siv3D の <code class="codehilite"><span class="n">SceneManager</span></code> クラスを使うと、ある場面のクラスから別の場面のクラスにデータを引き継いだり、フェードイン・フェードアウトで滑らかに画面を切り替えたりする処理が自動的に提供されます。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>シーン管理における「シーン」とは、個々の場面や、その実装クラスを指します。10 章で説明したシーンや <code class="codehilite"><span class="n">Scene</span><span class="p">::</span></code> 名前空間の機能とは別の概念です。</p>
+</div>
+<h2 id="221">22.1 シーンの基本<a class="headerlink" href="#221" title="Permanent link">&para;</a></h2>
+<p>個々のシーンを区別する値（ステート）の型を決めます。例えば <code class="codehilite"><span class="n">String</span></code> 型を使うと、タイトルシーンは <code class="codehilite"><span class="n">U</span><span class="ss">&quot;Title&quot;</span></code>, ゲームシーンは <code class="codehilite"><span class="n">U</span><span class="ss">&quot;Game&quot;</span></code> といった名前を付けて区別できます。以下のサンプルではクラス名と名前を一致させていますが、必ずしも従う必要はありません。</p>
+<p>まず、ステートの型を使い <code class="codehilite"><span class="k">using</span> <span class="n">App</span> <span class="o">=</span> <span class="n">SceneManager</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">;</span></code> のようにしてシーンマネージャークラスの型を決定します。次に、シーンを <code class="codehilite"><span class="n">App</span><span class="p">::</span><span class="n">Scene</span></code> を継承して実装します。通常はコンストラクタ、<code class="codehilite"><span class="k">update</span><span class="p">()</span></code>, <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> の 3 つのメンバ関数をオーバーライドします。</p>
+<p><code class="codehilite"><span class="n">Main</span><span class="p">()</span></code> 関数には <code class="codehilite"><span class="n">App</span></code> 型の変数を作り、用意したシーンクラスを <code class="codehilite"><span class="na">.add</span><span class="p">()</span></code> で登録します。あとはメインループの中で <code class="codehilite"><span class="n">App</span><span class="p">::</span><span class="k">update</span><span class="p">()</span></code> を毎フレーム呼び出せば、最初に登録したシーンが自動的に実行されます。シーンでは毎フレーム <code class="codehilite"><span class="k">update</span><span class="p">()</span></code> 関数が先に呼ばれ、その次に <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> 関数が呼ばれます。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="hll"><span class="k">using</span> <span class="n">App</span> <span class="o">=</span> <span class="n">SceneManager</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">;</span>
+</span>
+<span class="c1">// タイトルシーン</span>
+<span class="hll"><span class="k">class</span> <span class="nc">Title</span> <span class="o">:</span> <span class="k">public</span> <span class="n">App</span><span class="o">::</span><span class="n">Scene</span>
+</span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+
+    <span class="c1">// コンストラクタ（必ず実装）</span>
+<span class="hll">    <span class="n">Title</span><span class="p">(</span><span class="k">const</span> <span class="n">InitData</span><span class="o">&amp;</span> <span class="n">init</span><span class="p">)</span>
+</span>        <span class="o">:</span> <span class="n">IScene</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">// 更新関数</span>
+<span class="hll">    <span class="kt">void</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span>
+</span>    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">// 描画関数 (const 修飾)</span>
+<span class="hll">    <span class="kt">void</span> <span class="n">draw</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+</span>    <span class="p">{</span>
+        <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+
+        <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TitleFont&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;My Game&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TitleFont&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Heavy</span><span class="p">);</span>
+
+    <span class="c1">// シーンマネージャーを作成</span>
+<span class="hll">    <span class="n">App</span> <span class="n">manager</span><span class="p">;</span>
+</span>
+    <span class="c1">// タイトルシーン（名前は U&quot;Title&quot;）を登録</span>
+<span class="hll">    <span class="n">manager</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Title</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Title&quot;</span><span class="p">);</span>
+</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 現在のシーンを実行</span>
+<span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">manager</span><span class="p">.</span><span class="n">update</span><span class="p">())</span>
+</span>        <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="222">22.2 シーン遷移<a class="headerlink" href="#222" title="Permanent link">&para;</a></h2>
+<p>先ほどのサンプルに新しいシーンを追加します。あるシーンの実行中に、別のシーンに遷移したい場合は、シーンの <code class="codehilite"><span class="k">update</span><span class="p">()</span></code> 関数内で <code class="codehilite"><span class="n">changeScene</span><span class="p">()</span></code> を呼び、行きたい先のシーン名を指定します。プログラムの実行中は、シーンを遷移するたび、古いシーンのクラスは破棄され、新しいシーンのクラスが作成されます。</p>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/22/s1.mp4?raw=true" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">using</span> <span class="n">App</span> <span class="o">=</span> <span class="n">SceneManager</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="c1">// タイトルシーン</span>
+<span class="k">class</span> <span class="nc">Title</span> <span class="o">:</span> <span class="k">public</span> <span class="n">App</span><span class="o">::</span><span class="n">Scene</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+
+    <span class="c1">// コンストラクタ（必ず実装）</span>
+    <span class="n">Title</span><span class="p">(</span><span class="k">const</span> <span class="n">InitData</span><span class="o">&amp;</span> <span class="n">init</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">IScene</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">// 更新関数</span>
+    <span class="kt">void</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="c1">// 左クリックで</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// ゲームシーンに遷移</span>
+<span class="hll">            <span class="n">changeScene</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game&quot;</span><span class="p">);</span>
+</span>        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 描画関数 (const 修飾)</span>
+    <span class="kt">void</span> <span class="n">draw</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+
+        <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TitleFont&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;My Game&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// ゲームシーン</span>
+<span class="hll"><span class="k">class</span> <span class="nc">Game</span> <span class="o">:</span> <span class="k">public</span> <span class="n">App</span><span class="o">::</span><span class="n">Scene</span>
+</span><span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+
+    <span class="n">Texture</span> <span class="n">m_texture</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+
+    <span class="n">Game</span><span class="p">(</span><span class="k">const</span> <span class="n">InitData</span><span class="o">&amp;</span> <span class="n">init</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">IScene</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
+        <span class="p">,</span> <span class="n">m_texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="c1">// 左クリックで</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// タイトルシーンに遷移</span>
+<span class="hll">            <span class="n">changeScene</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Title&quot;</span><span class="p">);</span>
+</span>        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">draw</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">));</span>
+
+        <span class="n">m_texture</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TitleFont&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Heavy</span><span class="p">);</span>
+
+    <span class="c1">// シーンマネージャーを作成</span>
+    <span class="n">App</span> <span class="n">manager</span><span class="p">;</span>
+
+    <span class="c1">// タイトルシーン（名前は U&quot;Title&quot;）を登録</span>
+    <span class="n">manager</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Title</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Title&quot;</span><span class="p">);</span>
+
+    <span class="c1">// ゲームシーン（名前は U&quot;Game&quot;）を登録</span>
+<span class="hll">    <span class="n">manager</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Game</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game&quot;</span><span class="p">);</span>
+</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 現在のシーンを実行</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">manager</span><span class="p">.</span><span class="n">update</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="223">22.3 シーン間でデータを共有<a class="headerlink" href="#223" title="Permanent link">&para;</a></h2>
+<p>ゲームのスコアの情報など、シーンをまたいで共有したいデータがある場合、そのデータ型を <code class="codehilite"><span class="n">SceneManager</span><span class="o">&lt;&gt;</span></code> の 2 つ目のテンプレート引数に追加します。そうすることで、各シーンの関数から <code class="codehilite"><span class="n">geteData</span><span class="p">()</span></code> を通してそのデータにアクセスできるようになります。このデータはシーンマネージャーの作成時に 1 度だけ初期化されます。</p>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/22/s2.mp4?raw=true" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="hll"><span class="k">struct</span> <span class="n">GameData</span>
+</span><span class="p">{</span>
+    <span class="n">int32</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="hll"><span class="k">using</span> <span class="n">App</span> <span class="o">=</span> <span class="n">SceneManager</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">GameData</span><span class="o">&gt;</span><span class="p">;</span>
+</span>
+<span class="c1">// タイトルシーン</span>
+<span class="k">class</span> <span class="nc">Title</span> <span class="o">:</span> <span class="k">public</span> <span class="n">App</span><span class="o">::</span><span class="n">Scene</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+
+    <span class="c1">// コンストラクタ（必ず実装）</span>
+    <span class="n">Title</span><span class="p">(</span><span class="k">const</span> <span class="n">InitData</span><span class="o">&amp;</span> <span class="n">init</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">IScene</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">// 更新関数</span>
+    <span class="kt">void</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="c1">// 左クリックで</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// ゲームシーンに遷移</span>
+            <span class="n">changeScene</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 描画関数 (const 修飾)</span>
+    <span class="kt">void</span> <span class="n">draw</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+
+        <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TitleFont&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;My Game&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+        <span class="c1">// 現在のスコアを表示</span>
+<span class="hll">        <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;ScoreFont&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;Score: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">getData</span><span class="p">().</span><span class="n">score</span><span class="p">)).</span><span class="n">draw</span><span class="p">(</span><span class="mi">520</span><span class="p">,</span> <span class="mi">540</span><span class="p">);</span>
+</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// ゲームシーン</span>
+<span class="k">class</span> <span class="nc">Game</span> <span class="o">:</span> <span class="k">public</span> <span class="n">App</span><span class="o">::</span><span class="n">Scene</span>
+<span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+
+    <span class="n">Texture</span> <span class="n">m_texture</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+
+    <span class="n">Game</span><span class="p">(</span><span class="k">const</span> <span class="n">InitData</span><span class="o">&amp;</span> <span class="n">init</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">IScene</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
+        <span class="p">,</span> <span class="n">m_texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="c1">// 左クリックで</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// タイトルシーンに遷移</span>
+            <span class="n">changeScene</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Title&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// マウスカーソルの移動でスコアが増加</span>
+<span class="hll">        <span class="n">getData</span><span class="p">().</span><span class="n">score</span> <span class="o">+=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Delta</span><span class="p">().</span><span class="n">length</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">draw</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">));</span>
+
+        <span class="n">m_texture</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">());</span>
+
+        <span class="c1">// 現在のスコアを表示</span>
+<span class="hll">        <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;ScoreFont&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;Score: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">getData</span><span class="p">().</span><span class="n">score</span><span class="p">)).</span><span class="n">draw</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TitleFont&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Heavy</span><span class="p">);</span>
+    <span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;ScoreFont&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="c1">// シーンマネージャーを作成</span>
+    <span class="c1">// ここで GameData も初期化される</span>
+    <span class="n">App</span> <span class="n">manager</span><span class="p">;</span>
+
+    <span class="c1">// タイトルシーン（名前は U&quot;Title&quot;）を登録</span>
+    <span class="n">manager</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Title</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Title&quot;</span><span class="p">);</span>
+
+    <span class="c1">// ゲームシーン（名前は U&quot;Game&quot;）を登録</span>
+    <span class="n">manager</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Game</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game&quot;</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 現在のシーンを実行</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">manager</span><span class="p">.</span><span class="n">update</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="224">22.4 フェードイン・フェードアウトをカスタマイズする<a class="headerlink" href="#224" title="Permanent link">&para;</a></h2>
+<p>フェードイン・フェードアウト時の画面の色を変更する場合は <code class="codehilite"><span class="n">SceneManager</span><span class="p">::</span><span class="n">setFadeColor</span><span class="p">()</span></code> で色を設定します。シーンの切り替えの時間をカスタマイズするには、<code class="codehilite"><span class="n">changeScene</span><span class="p">()</span></code> の第 2 引数に時間を指定します（デフォルトでは 1 秒）。</p>
+<video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/22/s3.mp4?raw=true" autoplay loop muted></video>
+
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="n">GameData</span>
+<span class="p">{</span>
+    <span class="n">int32</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">using</span> <span class="n">App</span> <span class="o">=</span> <span class="n">SceneManager</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">GameData</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="c1">// タイトルシーン</span>
+<span class="k">class</span> <span class="nc">Title</span> <span class="o">:</span> <span class="k">public</span> <span class="n">App</span><span class="o">::</span><span class="n">Scene</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+
+    <span class="c1">// コンストラクタ（必ず実装）</span>
+    <span class="n">Title</span><span class="p">(</span><span class="k">const</span> <span class="n">InitData</span><span class="o">&amp;</span> <span class="n">init</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">IScene</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">// 更新関数</span>
+    <span class="kt">void</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="c1">// 左クリックで</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// ゲームシーンに 0.3 秒かけて遷移</span>
+<span class="hll">            <span class="n">changeScene</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game&quot;</span><span class="p">,</span> <span class="mf">0.3</span><span class="n">s</span><span class="p">);</span>
+</span>        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 描画関数 (const 修飾)</span>
+    <span class="kt">void</span> <span class="n">draw</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span>
+
+        <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TitleFont&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;My Game&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+        <span class="c1">// 現在のスコアを表示</span>
+        <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;ScoreFont&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;Score: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">getData</span><span class="p">().</span><span class="n">score</span><span class="p">)).</span><span class="n">draw</span><span class="p">(</span><span class="mi">520</span><span class="p">,</span> <span class="mi">540</span><span class="p">);</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span> <span class="mi">50</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// ゲームシーン</span>
+<span class="k">class</span> <span class="nc">Game</span> <span class="o">:</span> <span class="k">public</span> <span class="n">App</span><span class="o">::</span><span class="n">Scene</span>
+<span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+
+    <span class="n">Texture</span> <span class="n">m_texture</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+
+    <span class="n">Game</span><span class="p">(</span><span class="k">const</span> <span class="n">InitData</span><span class="o">&amp;</span> <span class="n">init</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">IScene</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
+        <span class="p">,</span> <span class="n">m_texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="c1">// 左クリックで</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="c1">// タイトルシーンに 2 秒かけて遷移</span>
+<span class="hll">            <span class="n">changeScene</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Title&quot;</span><span class="p">,</span> <span class="mf">2.0</span><span class="n">s</span><span class="p">);</span>
+</span>        <span class="p">}</span>
+
+        <span class="c1">// マウスカーソルの移動でスコアが増加</span>
+        <span class="n">getData</span><span class="p">().</span><span class="n">score</span> <span class="o">+=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Delta</span><span class="p">().</span><span class="n">length</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">draw</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">));</span>
+
+        <span class="n">m_texture</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">());</span>
+
+        <span class="c1">// 現在のスコアを表示</span>
+        <span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;ScoreFont&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;Score: {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">getData</span><span class="p">().</span><span class="n">score</span><span class="p">)).</span><span class="n">draw</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;TitleFont&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Heavy</span><span class="p">);</span>
+    <span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;ScoreFont&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
+
+    <span class="c1">// シーンマネージャーを作成</span>
+    <span class="n">App</span> <span class="n">manager</span><span class="p">;</span>
+
+    <span class="c1">// タイトルシーン（名前は U&quot;Title&quot;）を登録</span>
+    <span class="n">manager</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Title</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Title&quot;</span><span class="p">);</span>
+
+    <span class="c1">// ゲームシーン（名前は U&quot;Game&quot;）を登録</span>
+    <span class="n">manager</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Game</span><span class="o">&gt;</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Game&quot;</span><span class="p">);</span>
+
+    <span class="c1">// フェードイン・フェードアウト時の画面の色</span>
+<span class="hll">    <span class="n">manager</span><span class="p">.</span><span class="n">setFadeColor</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 現在のシーンを実行</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">manager</span><span class="p">.</span><span class="n">update</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="225">22.5 さらにシーン管理を学ぶ<a class="headerlink" href="#225" title="Permanent link">&para;</a></h2>
+<p>より本格的なゲームをシーン管理で実装する方法は <a href="https://siv3d.github.io/ja-jp/sample/game-template/#1">Siv3Dゲーム開発のテンプレート/シーン遷移（1 ファイル版）</a> を参照してください。また、シーンごとにソースファイルの分割をする場合は <a href="https://siv3d.github.io/ja-jp/sample/game-template/#_2">ゲーム開発プロジェクト・テンプレート</a> の構造が参考になります。</p>
+<p><code class="codehilite"><span class="k">update</span><span class="p">()</span></code> や <code class="codehilite"><span class="n">draw</span><span class="p">()</span></code> のほかに、<code class="codehilite"><span class="n">updateFadeIn</span><span class="p">()</span></code>, <code class="codehilite"><span class="n">updateFadeOut</span><span class="p">()</span></code>, <code class="codehilite"><span class="n">drawFadeIn</span><span class="p">()</span></code>, <code class="codehilite"><span class="n">drawFadeOut</span><span class="p">()</span></code> メンバ関数をオーバーライドすることで、フェードイン・フェードアウトの最中の挙動をカスタマイズすることもできます。</p>
+<ul>
+<li>参考: <a href="https://qiita.com/Reputeless/items/f5d48a152414356528dd">シーン切り替え時のエフェクトをカスタマイズする</a></li>
+</ul>
                 
                   
                 
