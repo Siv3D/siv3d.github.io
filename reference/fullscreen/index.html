@@ -617,6 +617,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#fundamental-fullscreen-mode" title="Fundamental fullscreen mode" class="md-nav__link">
+    Fundamental fullscreen mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#selecting-a-native-fullscreen-resolution" title="Selecting a native fullscreen resolution" class="md-nav__link">
     Selecting a native fullscreen resolution
   </a>
@@ -2057,6 +2064,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#fundamental-fullscreen-mode" title="Fundamental fullscreen mode" class="md-nav__link">
+    Fundamental fullscreen mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#selecting-a-native-fullscreen-resolution" title="Selecting a native fullscreen resolution" class="md-nav__link">
     Selecting a native fullscreen resolution
   </a>
@@ -2081,7 +2095,47 @@
                 
                 
                 <h1 id="fullscreen">Fullscreen<a class="headerlink" href="#fullscreen" title="Permanent link">&para;</a></h1>
+<h2 id="fundamental-fullscreen-mode">Fundamental fullscreen mode<a class="headerlink" href="#fundamental-fullscreen-mode" title="Permanent link">&para;</a></h2>
+<p>アプリケーションをフルスクリーンで実行したい場合、</p>
+<ol>
+<li>シーンのサイズを決定</li>
+<li>ウィンドウをリサイズ</li>
+<li>フルスクリーン化</li>
+</ol>
+<p>という手順を踏むのが基本的な方法です。3. では <code class="codehilite"><span class="nt">Window</span><span class="p">::</span><span class="nd">SetFullscreen</span><span class="o">(</span><span class="nt">true</span><span class="o">,</span> <span class="nt">unspecified</span><span class="o">,</span> <span class="nt">WindowResizeOption</span><span class="p">::</span><span class="nd">KeepSceneSize</span><span class="o">);</span></code> を呼び出して、シーンのサイズはそのままに、枠無しのウィンドウを最大化します。2. をはさむのは、フルスクリーンモードが解除された際に、適切なサイズのウィンドウモードに復帰するためです。</p>
+<div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">constexpr</span> <span class="n">Size</span> <span class="n">sceneSize</span> <span class="o">=</span> <span class="n">DisplayResolution</span><span class="o">::</span><span class="n">HD_1366x768</span><span class="p">;</span>
+
+    <span class="c1">// シーンのサイズを 1366x768 に</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">sceneSize</span><span class="p">);</span>
+
+    <span class="c1">// ウィンドウのサイズを 1366x768 に</span>
+    <span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">sceneSize</span><span class="p">,</span> <span class="n">WindowResizeOption</span><span class="o">::</span><span class="n">KeepSceneSize</span><span class="p">);</span>
+
+    <span class="c1">// ウィンドウを枠無しで最大化</span>
+    <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">Window</span><span class="o">::</span><span class="n">SetFullscreen</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="n">unspecified</span><span class="p">,</span> <span class="n">WindowResizeOption</span><span class="o">::</span><span class="n">KeepSceneSize</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// 100px 四方の正方形で画面を埋める</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">p</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">IsOdd</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">Rect</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">Circle</span><span class="p">(</span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span> <span class="mi">20</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="selecting-a-native-fullscreen-resolution">Selecting a native fullscreen resolution<a class="headerlink" href="#selecting-a-native-fullscreen-resolution" title="Permanent link">&para;</a></h2>
+<p>ユーザのディスプレイ設定を変更し、ネイティブ解像度でフルスクリーンモードを実行したい場合は次のようにします。</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Windows かつ高 DPI に設定されたディスプレイでは、高 DPI 対応のウィンドウを作成しないと、最大解像度のフルスクリーンを正しく表示できません。<code class="codehilite"><span class="o">&lt;</span><span class="n">Siv3D</span><span class="p">.</span><span class="n">hpp</span><span class="o">&gt;</span></code> のインクルード前に <code class="codehilite"><span class="n">SIV3D_WINDOWS_HIGH_DPI</span></code> マクロを定義することで高 DPI 対応ウィンドウを作成できます。高 DPI ディスプレイにおいて、高 DPI 対応ウィンドウはドットバイドットで表示されるため、ウィンドウの見た目が小さくなります。</p>
