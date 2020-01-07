@@ -2102,7 +2102,18 @@
 <li>ウィンドウをリサイズ</li>
 <li>フルスクリーン化</li>
 </ol>
-<p>という手順を踏むのが基本的な方法です。3. では <code class="codehilite"><span class="nt">Window</span><span class="p">::</span><span class="nd">SetFullscreen</span><span class="o">(</span><span class="nt">true</span><span class="o">,</span> <span class="nt">unspecified</span><span class="o">,</span> <span class="nt">WindowResizeOption</span><span class="p">::</span><span class="nd">KeepSceneSize</span><span class="o">);</span></code> を呼び出して、シーンのサイズはそのままに、枠無しのウィンドウを最大化します。2. をはさむのは、フルスクリーンモードが解除された際に、適切なサイズのウィンドウモードに復帰するためです。</p>
+<p>という手順を踏むのが基本的な方法です。</p>
+<ol>
+<li>
+<p>では任意のシーンサイズを指定できます。普及率の高い 16:9 のモニタに合わせ、1280x720 や 1366x768, 1920x1080 などを選ぶと画面を有効に使えます。400x400 など変則的な解像度も選択可能です</p>
+</li>
+<li>
+<p>は必ずしも必要ではありませんが、あらかじめウィンドウの基本サイズを変更しておくと、フルスクリーンモードが解除された際に、そのサイズのウィンドウモードに復帰できるため、ユーザの混乱を減らせます</p>
+</li>
+<li>
+<p>では <code class="codehilite"><span class="nt">Window</span><span class="p">::</span><span class="nd">SetFullscreen</span><span class="o">(</span><span class="nt">true</span><span class="o">,</span> <span class="nt">unspecified</span><span class="o">,</span> <span class="nt">WindowResizeOption</span><span class="p">::</span><span class="nd">KeepSceneSize</span><span class="o">);</span></code> を呼び出して、シーンのサイズはそのままに、枠無しのウィンドウを最大化してフルスクリーンを実現します</p>
+</li>
+</ol>
 <div class="codehilite"><pre><span></span><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
