@@ -11458,7 +11458,7 @@
 <ul>
 <li>from: 変更前のパス</li>
 <li>to: 変更後のパス</li>
-<li>戻り値: </li>
+<li>戻り値: 成功した場合  <code class="codehilite"><span class="err">true</span></code>, それ以外の場合 <code class="codehilite"><span class="err">false</span></code></li>
 </ul>
 <p>ファイルまたはディレクトリの名前を変更します。</p>
 <h4 id="bool-filesystemissandboxed"><code class="codehilite"><span class="err">bool FileSystem::IsSandBoxed();</span></code><a class="headerlink" href="#bool-filesystemissandboxed" title="Permanent link">&para;</a></h4>
@@ -11486,23 +11486,35 @@
 <p>マウスの拡張ボタン 5 です。マウスによっては存在しません。</p>
 <h3 id="_27">キーボード<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
 <h4 id="constexpr-key-keycancel"><code class="codehilite"><span class="err">constexpr Key KeyCancel;</span></code><a class="headerlink" href="#constexpr-key-keycancel" title="Permanent link">&para;</a></h4>
+<p>Cancel キーです。</p>
 <h4 id="constexpr-key-keybackspace"><code class="codehilite"><span class="err">constexpr Key KeyBackSpace;</span></code><a class="headerlink" href="#constexpr-key-keybackspace" title="Permanent link">&para;</a></h4>
+<p>BackSpace キーです。</p>
 <h4 id="constexpr-key-keytab"><code class="codehilite"><span class="err">constexpr Key KeyTab;</span></code><a class="headerlink" href="#constexpr-key-keytab" title="Permanent link">&para;</a></h4>
+<p>Tab キーです。</p>
 <h4 id="constexpr-key-keyclear"><code class="codehilite"><span class="err">constexpr key KeyClear;</span></code><a class="headerlink" href="#constexpr-key-keyclear" title="Permanent link">&para;</a></h4>
+<p>Clear キーです。</p>
 <h4 id="constexpr-key-keyenter"><code class="codehilite"><span class="err">constexpr Key KeyEnter;</span></code><a class="headerlink" href="#constexpr-key-keyenter" title="Permanent link">&para;</a></h4>
 <p>エンターキーです。</p>
 <h4 id="constexpr-key-keyshift"><code class="codehilite"><span class="err">constexpr Key KeyShift;</span></code><a class="headerlink" href="#constexpr-key-keyshift" title="Permanent link">&para;</a></h4>
+<p>左右いずれかのシフトキーです。</p>
 <h4 id="constexpr-key-keycontrol"><code class="codehilite"><span class="err">constexpr Key KeyControl;</span></code><a class="headerlink" href="#constexpr-key-keycontrol" title="Permanent link">&para;</a></h4>
+<p>左右いずれかのコントロールキーです。</p>
 <h4 id="constexpr-key-keyalt"><code class="codehilite"><span class="err">constexpr Key KeyAlt;</span></code><a class="headerlink" href="#constexpr-key-keyalt" title="Permanent link">&para;</a></h4>
+<p>左右いずれかの Alt キーです。</p>
 <h4 id="constexpr-key-keypause"><code class="codehilite"><span class="err">constexpr Key KeyPause;</span></code><a class="headerlink" href="#constexpr-key-keypause" title="Permanent link">&para;</a></h4>
+<p>Pause キーです。</p>
 <h4 id="constexpr-key-keyescape"><code class="codehilite"><span class="err">constexpr Key KeyEscape;</span></code><a class="headerlink" href="#constexpr-key-keyescape" title="Permanent link">&para;</a></h4>
 <p>エスケープキーです。エスケープキーの入力はデフォルトではアプリケーション終了トリガーに設定されているため、アプリケーション内の操作で使用したい場合は <code class="codehilite"><span class="c">System::SetTerminationTriggers()</span></code> を使って、エスケープキーによる終了トリガーを解除する必要があります。</p>
 <h4 id="constexpr-key-keyspace"><code class="codehilite"><span class="err">constexpr Key KeySpace;</span></code><a class="headerlink" href="#constexpr-key-keyspace" title="Permanent link">&para;</a></h4>
 <p>スペースキーです。</p>
 <h4 id="constexpr-key-keypageup"><code class="codehilite"><span class="err">constexpr Key KeyPageUp;</span></code><a class="headerlink" href="#constexpr-key-keypageup" title="Permanent link">&para;</a></h4>
+<p>PageUp キーです。</p>
 <h4 id="constexpr-key-keypagedown"><code class="codehilite"><span class="err">constexpr Key KeyPageDown;</span></code><a class="headerlink" href="#constexpr-key-keypagedown" title="Permanent link">&para;</a></h4>
+<p>PageDown キーです。</p>
 <h4 id="constexpr-key-keyend"><code class="codehilite"><span class="err">constexpr key KeyEnd;</span></code><a class="headerlink" href="#constexpr-key-keyend" title="Permanent link">&para;</a></h4>
+<p>End キーです。</p>
 <h4 id="constexpr-key-keyhome"><code class="codehilite"><span class="err">constexpr Key KeyHome;</span></code><a class="headerlink" href="#constexpr-key-keyhome" title="Permanent link">&para;</a></h4>
+<p>Home キーです。</p>
 <h4 id="constexpr-key-keyleft"><code class="codehilite"><span class="err">constexpr Key KeyLeft;</span></code><a class="headerlink" href="#constexpr-key-keyleft" title="Permanent link">&para;</a></h4>
 <p>左矢印（←）キーです。</p>
 <h4 id="constexpr-key-keyup"><code class="codehilite"><span class="err">constexpr key KeyUp;</span></code><a class="headerlink" href="#constexpr-key-keyup" title="Permanent link">&para;</a></h4>
@@ -11512,8 +11524,11 @@
 <h4 id="constexpr-key-keydown"><code class="codehilite"><span class="err">constexpr Key KeyDown;</span></code><a class="headerlink" href="#constexpr-key-keydown" title="Permanent link">&para;</a></h4>
 <p>下矢印（↓）キーです。</p>
 <h4 id="constexpr-key-keyprintscreen"><code class="codehilite"><span class="err">constexpr Key KeyPrintScreen;</span></code><a class="headerlink" href="#constexpr-key-keyprintscreen" title="Permanent link">&para;</a></h4>
+<p>PrintScreen キーです。</p>
 <h4 id="constexpr-key-keyinsert"><code class="codehilite"><span class="err">constexpr Key KeyInsert;</span></code><a class="headerlink" href="#constexpr-key-keyinsert" title="Permanent link">&para;</a></h4>
+<p>Insert キーです。</p>
 <h4 id="constexpr-key-keydelete"><code class="codehilite"><span class="err">constexpr Key KeyDelete;</span></code><a class="headerlink" href="#constexpr-key-keydelete" title="Permanent link">&para;</a></h4>
+<p>Delete キーです。</p>
 <h4 id="constexpr-key-key0"><code class="codehilite"><span class="err">constexpr Key Key0;</span></code><a class="headerlink" href="#constexpr-key-key0" title="Permanent link">&para;</a></h4>
 <p>0 キーです。</p>
 <h4 id="constexpr-key-key1"><code class="codehilite"><span class="err">constexpr Key Key1;</span></code><a class="headerlink" href="#constexpr-key-key1" title="Permanent link">&para;</a></h4>
@@ -11613,36 +11628,67 @@
 <h4 id="constexpr-key-keynumdecimal"><code class="codehilite"><span class="err">constexpr Key KeyNumDecimal;</span></code><a class="headerlink" href="#constexpr-key-keynumdecimal" title="Permanent link">&para;</a></h4>
 <h4 id="constexpr-key-keynumdivide"><code class="codehilite"><span class="err">constexpr Key KeyNumDivide;</span></code><a class="headerlink" href="#constexpr-key-keynumdivide" title="Permanent link">&para;</a></h4>
 <h4 id="constexpr-key-keyf1"><code class="codehilite"><span class="err">constexpr Key KeyF1;</span></code><a class="headerlink" href="#constexpr-key-keyf1" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F1 です。</p>
 <h4 id="constexpr-key-keyf2"><code class="codehilite"><span class="err">constexpr Key KeyF2;</span></code><a class="headerlink" href="#constexpr-key-keyf2" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F2 です。</p>
 <h4 id="constexpr-key-keyf3"><code class="codehilite"><span class="err">constexpr Key KeyF3;</span></code><a class="headerlink" href="#constexpr-key-keyf3" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F3 です。</p>
 <h4 id="constexpr-key-keyf4"><code class="codehilite"><span class="err">constexpr Key KeyF4;</span></code><a class="headerlink" href="#constexpr-key-keyf4" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F4 です。</p>
 <h4 id="constexpr-key-keyf5"><code class="codehilite"><span class="err">constexpr Key KeyF5;</span></code><a class="headerlink" href="#constexpr-key-keyf5" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F5 です。</p>
 <h4 id="constexpr-key-keyf6"><code class="codehilite"><span class="err">constexpr Key KeyF6;</span></code><a class="headerlink" href="#constexpr-key-keyf6" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F6 です。</p>
 <h4 id="constexpr-key-keyf7"><code class="codehilite"><span class="err">constexpr Key KeyF7;</span></code><a class="headerlink" href="#constexpr-key-keyf7" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F7 です。</p>
 <h4 id="constexpr-key-keyf8"><code class="codehilite"><span class="err">constexpr Key KeyF8;</span></code><a class="headerlink" href="#constexpr-key-keyf8" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F8 です。</p>
 <h4 id="constexpr-key-keyf9"><code class="codehilite"><span class="err">constexpr Key KeyF9;</span></code><a class="headerlink" href="#constexpr-key-keyf9" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F9 です。</p>
 <h4 id="constexpr-key-keyf10"><code class="codehilite"><span class="err">constexpr Key KeyF10;</span></code><a class="headerlink" href="#constexpr-key-keyf10" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F10 です。</p>
 <h4 id="constexpr-key-keyf11"><code class="codehilite"><span class="err">constexpr Key KeyF11;</span></code><a class="headerlink" href="#constexpr-key-keyf11" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F11 です。</p>
 <h4 id="constexpr-key-keyf12"><code class="codehilite"><span class="err">constexpr Key KeyF12;</span></code><a class="headerlink" href="#constexpr-key-keyf12" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F12 です。</p>
 <h4 id="constexpr-key-keyf13"><code class="codehilite"><span class="err">constexpr Key KeyF13;</span></code><a class="headerlink" href="#constexpr-key-keyf13" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F13 です。</p>
 <h4 id="constexpr-key-keyf14"><code class="codehilite"><span class="err">constexpr Key KeyF14;</span></code><a class="headerlink" href="#constexpr-key-keyf14" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F14 です。</p>
 <h4 id="constexpr-key-keyf15"><code class="codehilite"><span class="err">constexpr Key KeyF15;</span></code><a class="headerlink" href="#constexpr-key-keyf15" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F15 です。</p>
 <h4 id="constexpr-key-keyf16"><code class="codehilite"><span class="err">constexpr Key KeyF16;</span></code><a class="headerlink" href="#constexpr-key-keyf16" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F16 です。</p>
 <h4 id="constexpr-key-keyf17"><code class="codehilite"><span class="err">constexpr Key KeyF17;</span></code><a class="headerlink" href="#constexpr-key-keyf17" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F17 です。</p>
 <h4 id="constexpr-key-keyf18"><code class="codehilite"><span class="err">constexpr Key KeyF18;</span></code><a class="headerlink" href="#constexpr-key-keyf18" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F18 です。</p>
 <h4 id="constexpr-key-keyf19"><code class="codehilite"><span class="err">constexpr Key KeyF19;</span></code><a class="headerlink" href="#constexpr-key-keyf19" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F19 です。</p>
 <h4 id="constexpr-key-keyf20"><code class="codehilite"><span class="err">constexpr Key KeyF20;</span></code><a class="headerlink" href="#constexpr-key-keyf20" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F20 です。</p>
 <h4 id="constexpr-key-keyf21"><code class="codehilite"><span class="err">constexpr Key KeyF21;</span></code><a class="headerlink" href="#constexpr-key-keyf21" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F21 です。</p>
 <h4 id="constexpr-key-keyf22"><code class="codehilite"><span class="err">constexpr Key KeyF22;</span></code><a class="headerlink" href="#constexpr-key-keyf22" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F22 です。</p>
 <h4 id="constexpr-key-keyf23"><code class="codehilite"><span class="err">constexpr Key KeyF23;</span></code><a class="headerlink" href="#constexpr-key-keyf23" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F23 です。</p>
 <h4 id="constexpr-key-keyf24"><code class="codehilite"><span class="err">constexpr Key KeyF24;</span></code><a class="headerlink" href="#constexpr-key-keyf24" title="Permanent link">&para;</a></h4>
+<p>ファンクションキーの F24 です。</p>
 <h4 id="constexpr-key-keynumlock"><code class="codehilite"><span class="err">constexpr Key KeyNumLock;</span></code><a class="headerlink" href="#constexpr-key-keynumlock" title="Permanent link">&para;</a></h4>
+<p>NumLock キーです。</p>
 <h4 id="constexpr-key-keylshift"><code class="codehilite"><span class="err">constexpr Key KeyLShift;</span></code><a class="headerlink" href="#constexpr-key-keylshift" title="Permanent link">&para;</a></h4>
+<p>左シフトキーです。左右を問わない場合は <code class="codehilite"><span class="err">KeyShift</span></code> を使います。</p>
 <h4 id="constexpr-key-keyrshift"><code class="codehilite"><span class="err">constexpr Key KeyRShift;</span></code><a class="headerlink" href="#constexpr-key-keyrshift" title="Permanent link">&para;</a></h4>
+<p>右シフトキーです。左右を問わない場合は <code class="codehilite"><span class="err">KeyShift</span></code> を使います。</p>
 <h4 id="constexpr-key-keylcontrol"><code class="codehilite"><span class="err">constexpr Key KeyLControl;</span></code><a class="headerlink" href="#constexpr-key-keylcontrol" title="Permanent link">&para;</a></h4>
+<p>左コントロールキーです。左右を問わない場合は <code class="codehilite"><span class="err">KeyControl</span></code> を使います。</p>
 <h4 id="constexpr-key-keyrcontrol"><code class="codehilite"><span class="err">constexpr Key KeyRControl;</span></code><a class="headerlink" href="#constexpr-key-keyrcontrol" title="Permanent link">&para;</a></h4>
+<p>右コントロールキーです。左右を問わない場合は <code class="codehilite"><span class="err">KeyControl</span></code> を使います。</p>
 <h4 id="constexpr-key-keylalt"><code class="codehilite"><span class="err">constexpr Key KeyLAlt;</span></code><a class="headerlink" href="#constexpr-key-keylalt" title="Permanent link">&para;</a></h4>
+<p>左 Alt キーです。左右を問わない場合は <code class="codehilite"><span class="err">KeyAlt</span></code> を使います。</p>
 <h4 id="constexpr-key-keyralt"><code class="codehilite"><span class="err">constexpr Key KeyRAlt;</span></code><a class="headerlink" href="#constexpr-key-keyralt" title="Permanent link">&para;</a></h4>
+<p>右 Alt キーです。左右を問わない場合は <code class="codehilite"><span class="err">KeyAlt</span></code> を使います。</p>
 <h4 id="constexpr-key-keynexttrack"><code class="codehilite"><span class="err">constexpr Key KeyNextTrack;</span></code><a class="headerlink" href="#constexpr-key-keynexttrack" title="Permanent link">&para;</a></h4>
 <h4 id="constexpr-key-keypreioustrack"><code class="codehilite"><span class="err">constexpr Key KeyPreiousTrack;</span></code><a class="headerlink" href="#constexpr-key-keypreioustrack" title="Permanent link">&para;</a></h4>
 <h4 id="constexpr-key-keystopmedia"><code class="codehilite"><span class="err">constexpr Key KeyStopMedia;</span></code><a class="headerlink" href="#constexpr-key-keystopmedia" title="Permanent link">&para;</a></h4>
@@ -11747,12 +11793,14 @@
 <li>title: </li>
 <li>戻り値: </li>
 </ul>
+<p>フォルダ選択ダイアログを開き、ユーザが入力したフォルダパスを返します。キャンセルされた場合は <code class="codehilite"><span class="err">none</span></code> を返します。</p>
 <h4 id="image-openimageconst-filepath-defaultpath-u-const-string-title-u"><code class="codehilite"><span class="err">Image OpenImage(const FilePath&amp; defaultPath = U&quot;&quot;, const String&amp; title = U&quot;&quot;);</span></code><a class="headerlink" href="#image-openimageconst-filepath-defaultpath-u-const-string-title-u" title="Permanent link">&para;</a></h4>
 <ul>
 <li>defaultPath: </li>
 <li>title: </li>
 <li>戻り値: </li>
 </ul>
+<p>ファイルオープンダイアログを開き、ユーザが選択したファイルパスの画像ファイルを <code class="codehilite"><span class="err">Image</span></code> で開いた結果を返します。失敗した場合は空の <code class="codehilite"><span class="err">Image</span></code> を返します。</p>
 <h4 id="texture-opentextureconst-filepath-defaultpath-u-const-string-title-u"><code class="codehilite"><span class="err">Texture OpenTexture(const FilePath&amp; defaultPath = U&quot;&quot;, const String&amp; title = U&quot;&quot;);</span></code><a class="headerlink" href="#texture-opentextureconst-filepath-defaultpath-u-const-string-title-u" title="Permanent link">&para;</a></h4>
 <h4 id="texture-opentexturetexturedesc-desc-const-filepath-defaultpath-u-const-string-title-u"><code class="codehilite"><span class="err">Texture OpenTexture(TextureDesc desc, const FilePath&amp; defaultPath = U&quot;&quot;, const String&amp; title = U&quot;&quot;);</span></code><a class="headerlink" href="#texture-opentexturetexturedesc-desc-const-filepath-defaultpath-u-const-string-title-u" title="Permanent link">&para;</a></h4>
 <ul>
@@ -11767,6 +11815,7 @@
 <li>title: </li>
 <li>戻り値: </li>
 </ul>
+<p>ファイルオープンダイアログを開き、ユーザが選択したファイルパスの音声ファイルを <code class="codehilite"><span class="err">Image</span></code> で開いた結果を返します。失敗した場合は空の <code class="codehilite"><span class="err">Wave</span></code> を返します。</p>
 <h4 id="audio-openaudioconst-filepath-defaultpath-u-const-string-title-u"><code class="codehilite"><span class="err">Audio OpenAudio(const FilePath&amp; defaultPath = U&quot;&quot;, const String&amp; title = U&quot;&quot;);</span></code><a class="headerlink" href="#audio-openaudioconst-filepath-defaultpath-u-const-string-title-u" title="Permanent link">&para;</a></h4>
 <h4 id="audio-openaudioargloop_bool-loop-const-filepath-defaultpath-u-const-string-title-u"><code class="codehilite"><span class="err">Audio OpenAudio(Arg::loop_&lt;bool&gt; loop, const FilePath&amp; defaultPath = U&quot;&quot;, const String&amp; title = U&quot;&quot;);</span></code><a class="headerlink" href="#audio-openaudioargloop_bool-loop-const-filepath-defaultpath-u-const-string-title-u" title="Permanent link">&para;</a></h4>
 <ul>
@@ -11789,22 +11838,38 @@
 </ul>
 <h2 id="_31">ユーザーアクション関連の定数<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
 <h3 id="enum-useraction"><code class="codehilite"><span class="err">enum UserAction</span></code><a class="headerlink" href="#enum-useraction" title="Permanent link">&para;</a></h3>
+<p>アプリケーションを終了させるためのユーザアクションを表します。<code class="codehilite"><span class="err">|</span></code> 演算子で複数の値を組み合わせることができます。</p>
 <h4 id="useractionclosebuttonclicked"><code class="codehilite"><span class="c">UserAction::CloseButtonClicked</span></code><a class="headerlink" href="#useractionclosebuttonclicked" title="Permanent link">&para;</a></h4>
+<p>アプリケーションウィドウの閉じるボタンを押す操作です。</p>
 <h4 id="useractionescapekeydown"><code class="codehilite"><span class="c">UserAction::EscapeKeyDown</span></code><a class="headerlink" href="#useractionescapekeydown" title="Permanent link">&para;</a></h4>
+<p>エスケープキーを押す操作です。</p>
 <h4 id="useractionwindowdeactivated"><code class="codehilite"><span class="c">UserAction::WindowDeactivated</span></code><a class="headerlink" href="#useractionwindowdeactivated" title="Permanent link">&para;</a></h4>
+<p>ウィンドウを非アクティブにする操作です。</p>
 <h4 id="useractionanykeydown"><code class="codehilite"><span class="c">UserAction::AnyKeyDown</span></code><a class="headerlink" href="#useractionanykeydown" title="Permanent link">&para;</a></h4>
+<p>何らかのキーを押す操作です。</p>
 <h4 id="useractionmousebuttondown"><code class="codehilite"><span class="c">UserAction::MouseButtonDown</span></code><a class="headerlink" href="#useractionmousebuttondown" title="Permanent link">&para;</a></h4>
+<p>何らかのマウスのボタンを押す操作です。</p>
 <h4 id="useractionanykeyormousedown-anykeydown-mousebuttondown"><code class="codehilite"><span class="c">UserAction::AnyKeyOrMouseDown = (AnyKeyDown | MouseButtonDown)</span></code><a class="headerlink" href="#useractionanykeyormousedown-anykeydown-mousebuttondown" title="Permanent link">&para;</a></h4>
+<p>何らかのキー、または何らかのマウスのボタンを押す操作です。</p>
 <h4 id="useractiondefault-closebuttonclicked-escapekeydown"><code class="codehilite"><span class="c">UserAction::Default = (CloseButtonClicked | EscapeKeyDown)</span></code><a class="headerlink" href="#useractiondefault-closebuttonclicked-escapekeydown" title="Permanent link">&para;</a></h4>
+<p>アプリケーションウィドウの閉じるボタンを押すか、エスケープキーを押す操作です。アプリケーションを終了させるためのユーザアクションのデフォルト値です。</p>
 <h4 id="useractionnone"><code class="codehilite"><span class="c">UserAction::None</span></code><a class="headerlink" href="#useractionnone" title="Permanent link">&para;</a></h4>
+<p>アプリケーションを終了させるためのユーザアクションを設定しないことを示します。<code class="codehilite"><span class="c">System::SetTerminationTriggers()</span></code> にこの定数のみを渡した場合、メインループから抜けるには <code class="codehilite"><span class="err">break</span></code> や <code class="codehilite"><span class="err">return</span></code> を使うか、<code class="codehilite"><span class="c">System::Exit()</span></code> を呼ぶ必要があります。</p>
 <h2 id="_32">テキストエンコーディングの定数<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
 <h3 id="enum-class-textencoding"><code class="codehilite"><span class="err">enum class TextEncoding</span></code><a class="headerlink" href="#enum-class-textencoding" title="Permanent link">&para;</a></h3>
+<p>テキストファイルのエンコーディング形式を表します。</p>
 <h4 id="textencodingunknown"><code class="codehilite"><span class="c">TextEncoding::Unknown</span></code><a class="headerlink" href="#textencodingunknown" title="Permanent link">&para;</a></h4>
+<p>不明なエンコーディングです。</p>
 <h4 id="textencodingutf8_no_bom"><code class="codehilite"><span class="c">TextEncoding::UTF8_NO_BOM</span></code><a class="headerlink" href="#textencodingutf8_no_bom" title="Permanent link">&para;</a></h4>
+<p>BOM 無しの UTF-8 です。</p>
 <h4 id="textencodingutf8"><code class="codehilite"><span class="c">TextEncoding::UTF8</span></code><a class="headerlink" href="#textencodingutf8" title="Permanent link">&para;</a></h4>
+<p>BOM 付きの UTF-8 です。</p>
 <h4 id="textencodingutf16le"><code class="codehilite"><span class="c">TextEncoding::UTF16LE</span></code><a class="headerlink" href="#textencodingutf16le" title="Permanent link">&para;</a></h4>
+<p>UTF-16 (リトルエンディアン) です。</p>
 <h4 id="textencodingutf16be"><code class="codehilite"><span class="c">TextEncoding::UTF16BE</span></code><a class="headerlink" href="#textencodingutf16be" title="Permanent link">&para;</a></h4>
+<p>UTF-16 (ビッグエンディアン) です。</p>
 <h4 id="textencodingdefault-utf8"><code class="codehilite"><span class="c">TextEncoding::Default = UTF8</span></code><a class="headerlink" href="#textencodingdefault-utf8" title="Permanent link">&para;</a></h4>
+<p>テキストファイルのエンコーディング形式のデフォルト値、BOM 付きの UTF-8 です。</p>
                 
                   
                 
