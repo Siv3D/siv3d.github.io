@@ -2361,10 +2361,11 @@
                 <h1 id="_1">トラブルシューティング<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h3 id="_2">インストール編<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <h4 id="visual-studio-opensiv3d">Visual Studio のプロジェクトテンプレート一覧に OpenSiv3D が表示されない<a class="headerlink" href="#visual-studio-opensiv3d" title="Permanent link">&para;</a></h4>
-<p>原因 1: ユーザプロジェクト テンプレートの場所の設定が正しくありません</p>
+<p><strong>原因 1: ユーザプロジェクト テンプレートの場所の設定が正しくありません</strong></p>
 <p>Visual Studio のメニューで、「ツール」→「オプション」→「プロジェクトおよびソリューション」→「全般」→「場所」→「<strong>ユーザプロジェクトテンプレートの場所</strong>」が <code class="codehilite"><span class="err">~\Documents\Visual Studio 2019\Templates\ProjectTemplates</span></code> のように、ドキュメントフォルダ内の ProjectTemplates フォルダに設定されているかを確認してください。</p>
-<p>原因 2: Visual Studio が新しいプロジェクトテンプレートを認識していません</p>
-<p>Visual Studio のプロジェクト一覧を、再スキャンによって更新する必要があります。コマンドプロンプトを起動して <code class="codehilite"><span class="err">Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE</span></code> へ移動し、<code class="codehilite"><span class="err">devenv /InstallVSTemplates</span></code> コマンドを実行すると、プロジェクトテンプレート一覧が更新されます。</p>
+<p><strong>原因 2: Visual Studio が新しいプロジェクトテンプレートを認識していません</strong></p>
+<p>Visual Studio のプロジェクト一覧を、再スキャンによって更新する必要があります。コマンドプロンプトを起動して <code class="codehilite"><span class="err">Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE</span></code> へ移動し、<code class="codehilite"><span class="err">devenv /InstallVSTemplates</span></code> コマンドを実行すると、プロジェクトテンプレート一覧が更新されます。  </p>
+<p><img src="https://github.com/Siv3D/siv3d.docs.images/blob/master/article/devenv.png?raw=true" style="display: inline; margin:none;" width="400"></p>
 <h4 id="linux">Linux にうまく導入できない<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h4>
 <p>Siv3D ユーザコミュニティ Slack の <code class="codehilite"><span class="err">#linux</span></code> チャンネルでご相談ください。</p>
 <h3 id="_3">ビルド編<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
