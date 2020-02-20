@@ -379,6 +379,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    平行四辺形を使った背景描画
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    文章中に画像を入れる
+  </a>
+  
+</li>
+      
       
       
       
@@ -2305,6 +2319,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    平行四辺形を使った背景描画
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    文章中に画像を入れる
+  </a>
+  
+</li>
+      
       
       
       
@@ -2859,6 +2887,111 @@
 <span class="p">}</span>
 </code></pre></div></div>
 </div>
+<h2 id="_6">平行四辺形を使った背景描画<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/sample/visual/ui-1.png?raw=true" />
+<div class="codehilite"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Rect</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">shearedX</span><span class="p">(</span><span class="mi">150</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+        <span class="n">Rect</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">shearedX</span><span class="p">(</span><span class="mi">150</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">step</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">const</span> <span class="n">RoundRect</span> <span class="n">rr</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+            <span class="n">rr</span><span class="p">.</span><span class="n">drawShadow</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+
+            <span class="n">Circle</span><span class="p">(</span><span class="n">rr</span><span class="p">.</span><span class="n">rect</span><span class="p">.</span><span class="n">pos</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="n">rr</span><span class="p">.</span><span class="n">r</span><span class="p">,</span> <span class="n">rr</span><span class="p">.</span><span class="n">r</span><span class="p">),</span> <span class="n">rr</span><span class="p">.</span><span class="n">r</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">stretched</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="_7">文章中に画像を入れる<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/sample/visual/glyph-1.png?raw=true" />
+<div class="codehilite"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+
+<span class="k">struct</span> <span class="n">Building</span>
+<span class="p">{</span>
+    <span class="n">Texture</span> <span class="n">icon</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">desc</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">));</span>
+    <span class="k">const</span> <span class="n">Font</span> <span class="n">font1</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Heavy</span><span class="p">),</span> <span class="n">font2</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">Typeface</span><span class="o">::</span><span class="n">Medium</span><span class="p">);</span>
+    <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;</span> <span class="n">emojis</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">Texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;⚙️&quot;</span><span class="p">)),</span> <span class="n">Texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;⚡&quot;</span><span class="p">)),</span> <span class="n">Texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;♥&quot;</span><span class="p">))</span> <span class="p">};</span>
+    <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">Building</span><span class="o">&gt;</span> <span class="n">buildings</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="p">{</span> <span class="n">Texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🏭&quot;</span><span class="p">)),</span> <span class="sa">U</span><span class="s">&quot;工場&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;毎ターン 6$0 を生産する</span><span class="se">\n</span><span class="s">電力 3$1 が必要&quot;</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="n">Texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🏟&quot;</span><span class="p">)),</span> <span class="sa">U</span><span class="s">&quot;スタジアム&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;毎ターン 4$2 を供給する</span><span class="se">\n</span><span class="s">電力 2$1 が必要&quot;</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="n">Texture</span><span class="p">(</span><span class="n">Emoji</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;🏖&quot;</span><span class="p">)),</span> <span class="sa">U</span><span class="s">&quot;ビーチ&quot;</span><span class="p">,</span> <span class="sa">U</span><span class="s">&quot;毎ターン 2$2 を供給する</span><span class="se">\n</span><span class="s">砂浜にしか建設できない&quot;</span> <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="k">const</span> <span class="n">RoundRect</span> <span class="n">r0</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+    <span class="k">const</span> <span class="n">RoundRect</span> <span class="n">r1</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">building</span><span class="p">]</span> <span class="o">:</span> <span class="n">Indexed</span><span class="p">(</span><span class="n">buildings</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">Transformer2D</span> <span class="n">t</span><span class="p">(</span><span class="n">Mat3x2</span><span class="o">::</span><span class="n">Translate</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">110</span><span class="p">));</span>
+
+            <span class="n">r0</span><span class="p">.</span><span class="n">drawShadow</span><span class="p">(</span><span class="n">Vec2</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">))</span>
+                <span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">));</span>
+            <span class="n">r1</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">));</span>
+            <span class="n">building</span><span class="p">.</span><span class="n">icon</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">80</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">r1</span><span class="p">.</span><span class="n">center</span><span class="p">());</span>
+            <span class="n">font1</span><span class="p">(</span><span class="n">building</span><span class="p">.</span><span class="n">name</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">r1</span><span class="p">.</span><span class="n">rect</span><span class="p">.</span><span class="n">pos</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+
+            <span class="k">const</span> <span class="n">Vec2</span> <span class="n">penPos0</span> <span class="o">=</span> <span class="n">r1</span><span class="p">.</span><span class="n">rect</span><span class="p">.</span><span class="n">pos</span><span class="p">.</span><span class="n">movedBy</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
+            <span class="n">Vec2</span> <span class="n">penPos</span> <span class="o">=</span> <span class="n">penPos0</span><span class="p">;</span>
+            <span class="kt">bool</span> <span class="n">onTag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">glyph</span> <span class="p">:</span> <span class="n">font2</span><span class="p">(</span><span class="n">building</span><span class="p">.</span><span class="n">desc</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">onTag</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">emojis</span><span class="p">[(</span><span class="n">glyph</span><span class="p">.</span><span class="n">codePoint</span> <span class="o">-</span> <span class="n">U</span><span class="sc">&#39;0&#39;</span><span class="p">)].</span><span class="n">resized</span><span class="p">(</span><span class="mi">25</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">penPos</span><span class="p">);</span>
+                    <span class="n">penPos</span><span class="p">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">25</span><span class="p">;</span>
+                    <span class="n">onTag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                    <span class="k">continue</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">glyph</span><span class="p">.</span><span class="n">codePoint</span> <span class="o">==</span> <span class="n">U</span><span class="sc">&#39;$&#39;</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">onTag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                    <span class="k">continue</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="n">onTag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">glyph</span><span class="p">.</span><span class="n">codePoint</span> <span class="o">==</span> <span class="n">U</span><span class="sc">&#39;\n&#39;</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">penPos</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">penPos0</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+                    <span class="n">penPos</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">font2</span><span class="p">.</span><span class="n">height</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="n">glyph</span><span class="p">.</span><span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">penPos</span> <span class="o">+</span> <span class="n">glyph</span><span class="p">.</span><span class="n">offset</span><span class="p">);</span>
+                    <span class="n">penPos</span><span class="p">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">glyph</span><span class="p">.</span><span class="n">xAdvance</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
                 
                   
                 
