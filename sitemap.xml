@@ -141,6 +141,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://siv3d.github.io/reference/emojis/</loc>
+     <lastmod>2020-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://siv3d.github.io/reference/fullscreen/</loc>
      <lastmod>2020-02-20</lastmod>
      <changefreq>daily</changefreq>
@@ -446,6 +451,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://siv3d.github.io/ja-jp/reference/emojis/</loc>
+     <lastmod>2020-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://siv3d.github.io/ja-jp/reference/fullscreen/</loc>
      <lastmod>2020-02-20</lastmod>
      <changefreq>daily</changefreq>
@@ -561,12 +571,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://siv3d.github.io/ja-jp/articles/event/sendai-2020/</loc>
+     <loc>https://siv3d.github.io/ja-jp/articles/event/chiba-2020/</loc>
      <lastmod>2020-02-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://siv3d.github.io/ja-jp/articles/event/ishikawa-2020/</loc>
+     <lastmod>2020-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://siv3d.github.io/ja-jp/articles/event/sendai-2020/</loc>
      <lastmod>2020-02-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
