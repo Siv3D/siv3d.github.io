@@ -5788,6 +5788,1289 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#class-textwriter" class="md-nav__link">
+    テキストファイル書き込みクラス (class TextWriter)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textwriter" class="md-nav__link">
+    TextWriter();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwriterfilepathview-path-textencoding-encoding" class="md-nav__link">
+    TextWriter(FilePathView path, TextEncoding encoding);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwriterfilepathview-path-openmode-openmode-openmodetrunc-textencoding-encoding-textencodingdefault" class="md-nav__link">
+    TextWriter(FilePathView path, OpenMode openMode = OpenMode::Trunc, TextEncoding encoding = TextEncoding::Default);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    デストラクタ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textwriter_1" class="md-nav__link">
+    ~TextWriter();
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bool-openfilepathview-path-textencoding-encoding" class="md-nav__link">
+    bool open(FilePathView path, TextEncoding encoding);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-openfilepathview-path-openmode-openmode-openmodetrunc-textencoding-encoding-textencodingdefault" class="md-nav__link">
+    bool open(FilePathView path, OpenMode openMode = OpenMode::Trunc, TextEncoding encoding = TextEncoding::Default);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-close" class="md-nav__link">
+    void close();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-isopened-const" class="md-nav__link">
+    bool isOpened() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-clear_1" class="md-nav__link">
+    void clear();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writestringview-str" class="md-nav__link">
+    void write(StringView str);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writechar32-ch" class="md-nav__link">
+    void write(char32 ch);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writeconst-string-str" class="md-nav__link">
+    void write(const String&amp; str);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writeconst-char32-const-str" class="md-nav__link">
+    void write(const char32* const str);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writeconst-args-args" class="md-nav__link">
+    void write(const Args&amp; ... args);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writelnstringview-view" class="md-nav__link">
+    void writeln(StringView view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writelnchar32-ch" class="md-nav__link">
+    void writeln(char32 ch);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writelnconst-string-str" class="md-nav__link">
+    void writeln(const String&amp; str);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writelnconst-char32-const-str" class="md-nav__link">
+    void writeln(const char32* const str);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writelnconst-args-args" class="md-nav__link">
+    void writeln(const Args&amp; ... args);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writeutf8stdstring_view-view" class="md-nav__link">
+    void writeUTF8(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writelnutf8stdstring_view-view" class="md-nav__link">
+    void writelnUTF8(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-filepath-path-const" class="md-nav__link">
+    const FilePath&amp; path() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operator-bool-const" class="md-nav__link">
+    operator bool() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-class-type-detailtextwriterbuffer-operator-const-type-value" class="md-nav__link">
+    template &lt;class Type&gt; detail::TextWriterBuffer operator &lt;&lt;(const Type&amp; value);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unicode-namespace-unicode" class="md-nav__link">
+    Unicode 名前空間 (namespace Unicode)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textencoding-gettextencodingconst-ireader-reader" class="md-nav__link">
+    TextEncoding GetTextEncoding(const IReader&amp; reader);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textencoding-gettextencodingconst-filepathview-path" class="md-nav__link">
+    TextEncoding GetTextEncoding(const FilePathView path);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-getbomsizetextencoding-encoding" class="md-nav__link">
+    int32 GetBOMSize(TextEncoding encoding);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-ishighsurrogateconst-char16-ch" class="md-nav__link">
+    bool IsHighSurrogate(const char16 ch);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-islowsurrogateconst-char16-ch" class="md-nav__link">
+    bool IsLowSurrogate(const char16 ch);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-widenasciistdstring_view-asciitext" class="md-nav__link">
+    String WidenAscii(std::string_view asciiText);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-widenstdstring_view-view" class="md-nav__link">
+    String Widen(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdstring-narrowasciistringview-asciitext" class="md-nav__link">
+    std::string NarrowAscii(StringView asciiText);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdstring-narrowstringview-view" class="md-nav__link">
+    std::string Narrow(StringView view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdwstring-towstringstringview-view" class="md-nav__link">
+    std:wstring ToWString(StringView view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-fromwstringstdwstring_view-view" class="md-nav__link">
+    String FromWString(std::wstring_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-fromutf8stdstring_view-view" class="md-nav__link">
+    String FromUTF8(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-fromutf16stdu16string_view-view" class="md-nav__link">
+    String FromUTF16(std::u16string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-fromutf32stdu32string_view-view" class="md-nav__link">
+    String FromUTF32(std::u32string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdstring-toutf8stringview-view" class="md-nav__link">
+    std::string ToUTF8(StringView view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdu16string-toutf16stringview-view" class="md-nav__link">
+    std::u16string ToUTF16(StringView view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdu32string-toutf32stringview-view" class="md-nav__link">
+    std::u32string ToUTF32(StringView view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdu16string-utf8toutf16stdstring_view-view" class="md-nav__link">
+    std::u16string UTF8ToUTF16(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdu32string-utf8toutf32stdstring_view-view" class="md-nav__link">
+    std::u32string UTF8ToUTF32(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdstring-utf16toutf8stdu16string_view-view" class="md-nav__link">
+    std::string UTF16ToUTF8(std::u16string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdu32string-utf16toutf32stdu16string_view-view" class="md-nav__link">
+    std::u32string UTF16ToUTF32(std::u16string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdstring-utf32toutf8stdu32string_view-view" class="md-nav__link">
+    std::string UTF32ToUTF8(std::u32string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdu16string-utf32toutf16stdu32string_view-view" class="md-nav__link">
+    std::u16string UTF32ToUTF16(std::u32string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size_t-countcodepointsstdstring_view-view" class="md-nav__link">
+    size_t CountCodePoints(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size_t-countcodepointsstdu16string_view-view" class="md-nav__link">
+    size_t CountCodePoints(std::u16string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size_t-countcodepointsstringview-view" class="md-nav__link">
+    size_t CountCodePoints(StringView view);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utf8-utf32-struct-translator_utf8toutf32" class="md-nav__link">
+    UTF8 → UTF32変換クラス (struct Translator_UTF8toUTF32)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bool-putchar8-code" class="md-nav__link">
+    bool put(char8 code);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#char32-get-const" class="md-nav__link">
+    char32 get() const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utf16-utf32-struct-translator_utf16toutf32" class="md-nav__link">
+    UTF16 → UTF32変換クラス (struct Translator_UTF16toUTF32)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bool-putchar16-code" class="md-nav__link">
+    bool put(char16 code);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#char32-get-const_1" class="md-nav__link">
+    char32 get() const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utf32-utf8-struct-translator_utf32toutf8" class="md-nav__link">
+    UTF32 → UTF8変換クラス (struct Translator_UTF32toUTF8)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#size_t-putchar32-code" class="md-nav__link">
+    size_t put(char32 code);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-stdarraychar8-4-get-const" class="md-nav__link">
+    const std::array&lt;char8, 4&gt;&amp; get() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdarraychar8-4const_iterator-begin-const" class="md-nav__link">
+    std::array&lt;char8, 4&gt;::const_iterator begin() const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utf32-utf16-struct-translator_utf32toutf16" class="md-nav__link">
+    UTF32 → UTF16変換クラス (struct Translator_UTF32toUTF16)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#size_t-putchar32-code_1" class="md-nav__link">
+    size_t put(char32 code);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-stdarraychar16-2-get-const" class="md-nav__link">
+    const std::array&lt;char16, 2&gt;&amp; get() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdarraychar16-2const_iterator-begin-const" class="md-nav__link">
+    std::array&lt;char16, 2&gt;::const_iterator begin() const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-date" class="md-nav__link">
+    日付クラス (struct Date)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    メンバ変数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#int32-year" class="md-nav__link">
+    int32 year;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-month" class="md-nav__link">
+    int32 month;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-day" class="md-nav__link">
+    int32 day;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-default" class="md-nav__link">
+    Date() = default;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dateint32-_year-int32-_month-1-int32-_day-1" class="md-nav__link">
+    Date(int32 _year, int32 _month = 1, int32 _day = 1);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dayofweek-dayofweek-const" class="md-nav__link">
+    DayOfWeek dayOfWeek() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-dayofweekjp-const" class="md-nav__link">
+    String dayOfWeekJP() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-dayofweeken-const" class="md-nav__link">
+    String dayOfWeekEN() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-istoday-const" class="md-nav__link">
+    bool isToday() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-isleapyear-const" class="md-nav__link">
+    bool isLeapYear() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-daysinmonth-const" class="md-nav__link">
+    int32 daysInMonth() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-daysinyear-const" class="md-nav__link">
+    int32 daysInYear() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-isvalid-const" class="md-nav__link">
+    bool isValid() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-formatstringview-format-uyyyymd_sv-const" class="md-nav__link">
+    String format(StringView format = U&quot;yyyy/M/d&quot;_sv) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-operator-const-days-days" class="md-nav__link">
+    Date&amp; operator +=(const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-operator-const-days-days_1" class="md-nav__link">
+    Date&amp; operator -=(const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-date-other-const" class="md-nav__link">
+    bool operator ==(const Date&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-date-other-const_1" class="md-nav__link">
+    bool operator !=(const Date&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-date-other-const_2" class="md-nav__link">
+    bool operator &lt;(const Date&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-date-other-const_3" class="md-nav__link">
+    bool operator &gt;(const Date&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-date-other-const_4" class="md-nav__link">
+    bool operator &lt;=(const Date&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-date-other-const_5" class="md-nav__link">
+    bool operator &gt;=(const Date&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size_t-hash-const" class="md-nav__link">
+    size_t hash() const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    静的メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-yesterday" class="md-nav__link">
+    Date Yesterday();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-today" class="md-nav__link">
+    Date Today();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-tomorrow" class="md-nav__link">
+    Date Tomorrow();
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    非メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-operator-const-date-date-const-days-days" class="md-nav__link">
+    Date operator +(const Date&amp; date, const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-operator-const-date-date-const-days-days_1" class="md-nav__link">
+    Date operator -(const Date&amp; date, const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#days-operator-const-date-to-const-date-from" class="md-nav__link">
+    Days operator -(const Date&amp; to, const Date&amp; from);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-formatterformatdata-formatdata-const-date-value" class="md-nav__link">
+    void Formatter(FormatData&amp; formatData, const Date&amp; value);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-class-chartype-stdbasic_ostreamchartype-operator-stdbasic_ostreamchartype-output-const-date-value" class="md-nav__link">
+    template &lt;class CharType&gt; std::basic_ostream&lt;CharType&gt; &amp; operator &lt;&lt;(std::basic_ostream&lt;CharType&gt; output, const Date&amp; value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-size_t-stdhashs3ddateoperatorconst-s3ddate-value-const" class="md-nav__link">
+    template&lt;&gt; size_t std::hash&lt;s3d::Date&gt;::operator()(const s3d::Date &amp;value) const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-datetime" class="md-nav__link">
+    日付と時刻クラス (struct DateTime)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    メンバ変数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#int32-year_1" class="md-nav__link">
+    int32 year;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-month_1" class="md-nav__link">
+    int32 month;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-day_1" class="md-nav__link">
+    int32 day;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-hour" class="md-nav__link">
+    int32 hour;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-minute" class="md-nav__link">
+    int32 minute;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-second" class="md-nav__link">
+    int32 second;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-milliseconds" class="md-nav__link">
+    int32 milliseconds;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datetime-default" class="md-nav__link">
+    DateTime() = default;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-datetimeint32-_yearint32-_monthint32-_dayint32-_hour-0int32-_minute-0int32-_second-0int32-_milliseconds-0" class="md-nav__link">
+    constexpr DateTime(int32 _year,int32 _month,int32 _day,int32 _hour = 0,int32 _minute = 0,int32 _second = 0,int32 _milliseconds = 0);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-datetimeconst-date-dateint32-_hour-0int32-_minute-0int32-_second-0int32-_milliseconds-0" class="md-nav__link">
+    constexpr DateTime(const Date&amp; date,int32 _hour = 0,int32 _minute = 0,int32 _second = 0,int32 _milliseconds = 0);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dayofweek-dayofweek-const_1" class="md-nav__link">
+    DayOfWeek dayOfWeek() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dayofweek-dayofweekjp-const" class="md-nav__link">
+    DayOfWeek dayOfWeekJP() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dayofweek-dayofweeken-const" class="md-nav__link">
+    DayOfWeek dayOfWeekEN() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-istoday-const_1" class="md-nav__link">
+    bool isToday() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-isleapyear-const_1" class="md-nav__link">
+    bool isLeapYear() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-daysinmonth-const_1" class="md-nav__link">
+    int32 daysInMonth() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-daysinyear-const_1" class="md-nav__link">
+    int32 daysInYear() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-bool-isvalid-const" class="md-nav__link">
+    constexpr bool isValid() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-formatstringview-format-uyyyymd-hhmmss_sv-const" class="md-nav__link">
+    String format(StringView format = U&quot;yyyy/M/d HH:mm:ss&quot;_sv) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-days-days" class="md-nav__link">
+    DateTime&amp; operator +=(const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-days-days_1" class="md-nav__link">
+    DateTime&amp; operator -=(const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-milliseconds-_milliseconds" class="md-nav__link">
+    DateTime&amp; operator +=(const Milliseconds&amp; _milliseconds);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-milliseconds-_milliseconds_1" class="md-nav__link">
+    DateTime&amp; operator -=(const Milliseconds&amp; _milliseconds);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-datetime-other-const" class="md-nav__link">
+    bool operator ==(const DateTime&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-datetime-other-const_1" class="md-nav__link">
+    bool operator !=(const DateTime&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-datetime-other-const_2" class="md-nav__link">
+    bool operator &lt;(const DateTime&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-datetime-other-const_3" class="md-nav__link">
+    bool operator &gt;(const DateTime&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-datetime-other-const_4" class="md-nav__link">
+    bool operator &lt;=(const DateTime&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-datetime-other-const_5" class="md-nav__link">
+    bool operator &gt;=(const DateTime&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size_t-hash-const_1" class="md-nav__link">
+    size_t hash() const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    静的メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datetime-yesterday" class="md-nav__link">
+    DateTime Yesterday();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-today" class="md-nav__link">
+    DateTime Today();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-tomorrow" class="md-nav__link">
+    DateTime Tomorrow();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-now" class="md-nav__link">
+    DateTime Now();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-nowutc" class="md-nav__link">
+    DateTime NowUTC();
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    非メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-datetime-datetime-const-days-days" class="md-nav__link">
+    DateTime operator +(const DateTime&amp; dateTime, const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-datetime-datetime-const-days-days_1" class="md-nav__link">
+    DateTime operator -(const DateTime&amp; dateTime, const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-datetime-datetime-const-milliseconds-milliseconds" class="md-nav__link">
+    DateTime operator +(const DateTime&amp; dateTime, const Milliseconds&amp; milliseconds);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-datetime-datetime-const-milliseconds-milliseconds_1" class="md-nav__link">
+    DateTime operator -(const DateTime&amp; dateTime, const Milliseconds&amp; milliseconds);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration-operator-const-datetime-a-const-datetime-b" class="md-nav__link">
+    Duration operator -(const DateTime&amp; a, const DateTime&amp; b);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-formatterformatdata-formatdata-const-datetime-value" class="md-nav__link">
+    void Formatter(FormatData&amp; formatData, const DateTime&amp; value);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templateclass-chartype-basic_ostreamchartype-operatorbasic_ostreamchartype-output-const-datetime-value" class="md-nav__link">
+    template&lt;class CharType&gt; basic_ostream&lt;CharType&gt; &amp;operator&lt;&lt;(basic_ostream&lt;CharType&gt; output, const DateTime &amp;value);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-size_t-hashdatetimeoperatorconst-datetime-value-const" class="md-nav__link">
+    template&lt;&gt; size_t hash&lt;DateTime&gt;::operator()(const DateTime &amp;value) const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -10069,6 +11352,1289 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#class-textwriter" class="md-nav__link">
+    テキストファイル書き込みクラス (class TextWriter)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textwriter" class="md-nav__link">
+    TextWriter();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwriterfilepathview-path-textencoding-encoding" class="md-nav__link">
+    TextWriter(FilePathView path, TextEncoding encoding);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textwriterfilepathview-path-openmode-openmode-openmodetrunc-textencoding-encoding-textencodingdefault" class="md-nav__link">
+    TextWriter(FilePathView path, OpenMode openMode = OpenMode::Trunc, TextEncoding encoding = TextEncoding::Default);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    デストラクタ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textwriter_1" class="md-nav__link">
+    ~TextWriter();
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bool-openfilepathview-path-textencoding-encoding" class="md-nav__link">
+    bool open(FilePathView path, TextEncoding encoding);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-openfilepathview-path-openmode-openmode-openmodetrunc-textencoding-encoding-textencodingdefault" class="md-nav__link">
+    bool open(FilePathView path, OpenMode openMode = OpenMode::Trunc, TextEncoding encoding = TextEncoding::Default);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-close" class="md-nav__link">
+    void close();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-isopened-const" class="md-nav__link">
+    bool isOpened() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-clear_1" class="md-nav__link">
+    void clear();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writestringview-str" class="md-nav__link">
+    void write(StringView str);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writechar32-ch" class="md-nav__link">
+    void write(char32 ch);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writeconst-string-str" class="md-nav__link">
+    void write(const String&amp; str);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writeconst-char32-const-str" class="md-nav__link">
+    void write(const char32* const str);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writeconst-args-args" class="md-nav__link">
+    void write(const Args&amp; ... args);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writelnstringview-view" class="md-nav__link">
+    void writeln(StringView view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writelnchar32-ch" class="md-nav__link">
+    void writeln(char32 ch);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writelnconst-string-str" class="md-nav__link">
+    void writeln(const String&amp; str);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writelnconst-char32-const-str" class="md-nav__link">
+    void writeln(const char32* const str);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writelnconst-args-args" class="md-nav__link">
+    void writeln(const Args&amp; ... args);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writeutf8stdstring_view-view" class="md-nav__link">
+    void writeUTF8(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-writelnutf8stdstring_view-view" class="md-nav__link">
+    void writelnUTF8(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-filepath-path-const" class="md-nav__link">
+    const FilePath&amp; path() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operator-bool-const" class="md-nav__link">
+    operator bool() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-class-type-detailtextwriterbuffer-operator-const-type-value" class="md-nav__link">
+    template &lt;class Type&gt; detail::TextWriterBuffer operator &lt;&lt;(const Type&amp; value);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unicode-namespace-unicode" class="md-nav__link">
+    Unicode 名前空間 (namespace Unicode)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textencoding-gettextencodingconst-ireader-reader" class="md-nav__link">
+    TextEncoding GetTextEncoding(const IReader&amp; reader);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textencoding-gettextencodingconst-filepathview-path" class="md-nav__link">
+    TextEncoding GetTextEncoding(const FilePathView path);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-getbomsizetextencoding-encoding" class="md-nav__link">
+    int32 GetBOMSize(TextEncoding encoding);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-ishighsurrogateconst-char16-ch" class="md-nav__link">
+    bool IsHighSurrogate(const char16 ch);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-islowsurrogateconst-char16-ch" class="md-nav__link">
+    bool IsLowSurrogate(const char16 ch);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-widenasciistdstring_view-asciitext" class="md-nav__link">
+    String WidenAscii(std::string_view asciiText);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-widenstdstring_view-view" class="md-nav__link">
+    String Widen(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdstring-narrowasciistringview-asciitext" class="md-nav__link">
+    std::string NarrowAscii(StringView asciiText);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdstring-narrowstringview-view" class="md-nav__link">
+    std::string Narrow(StringView view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdwstring-towstringstringview-view" class="md-nav__link">
+    std:wstring ToWString(StringView view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-fromwstringstdwstring_view-view" class="md-nav__link">
+    String FromWString(std::wstring_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-fromutf8stdstring_view-view" class="md-nav__link">
+    String FromUTF8(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-fromutf16stdu16string_view-view" class="md-nav__link">
+    String FromUTF16(std::u16string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-fromutf32stdu32string_view-view" class="md-nav__link">
+    String FromUTF32(std::u32string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdstring-toutf8stringview-view" class="md-nav__link">
+    std::string ToUTF8(StringView view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdu16string-toutf16stringview-view" class="md-nav__link">
+    std::u16string ToUTF16(StringView view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdu32string-toutf32stringview-view" class="md-nav__link">
+    std::u32string ToUTF32(StringView view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdu16string-utf8toutf16stdstring_view-view" class="md-nav__link">
+    std::u16string UTF8ToUTF16(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdu32string-utf8toutf32stdstring_view-view" class="md-nav__link">
+    std::u32string UTF8ToUTF32(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdstring-utf16toutf8stdu16string_view-view" class="md-nav__link">
+    std::string UTF16ToUTF8(std::u16string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdu32string-utf16toutf32stdu16string_view-view" class="md-nav__link">
+    std::u32string UTF16ToUTF32(std::u16string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdstring-utf32toutf8stdu32string_view-view" class="md-nav__link">
+    std::string UTF32ToUTF8(std::u32string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdu16string-utf32toutf16stdu32string_view-view" class="md-nav__link">
+    std::u16string UTF32ToUTF16(std::u32string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size_t-countcodepointsstdstring_view-view" class="md-nav__link">
+    size_t CountCodePoints(std::string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size_t-countcodepointsstdu16string_view-view" class="md-nav__link">
+    size_t CountCodePoints(std::u16string_view view);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size_t-countcodepointsstringview-view" class="md-nav__link">
+    size_t CountCodePoints(StringView view);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utf8-utf32-struct-translator_utf8toutf32" class="md-nav__link">
+    UTF8 → UTF32変換クラス (struct Translator_UTF8toUTF32)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bool-putchar8-code" class="md-nav__link">
+    bool put(char8 code);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#char32-get-const" class="md-nav__link">
+    char32 get() const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utf16-utf32-struct-translator_utf16toutf32" class="md-nav__link">
+    UTF16 → UTF32変換クラス (struct Translator_UTF16toUTF32)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bool-putchar16-code" class="md-nav__link">
+    bool put(char16 code);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#char32-get-const_1" class="md-nav__link">
+    char32 get() const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utf32-utf8-struct-translator_utf32toutf8" class="md-nav__link">
+    UTF32 → UTF8変換クラス (struct Translator_UTF32toUTF8)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#size_t-putchar32-code" class="md-nav__link">
+    size_t put(char32 code);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-stdarraychar8-4-get-const" class="md-nav__link">
+    const std::array&lt;char8, 4&gt;&amp; get() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdarraychar8-4const_iterator-begin-const" class="md-nav__link">
+    std::array&lt;char8, 4&gt;::const_iterator begin() const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utf32-utf16-struct-translator_utf32toutf16" class="md-nav__link">
+    UTF32 → UTF16変換クラス (struct Translator_UTF32toUTF16)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#size_t-putchar32-code_1" class="md-nav__link">
+    size_t put(char32 code);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-stdarraychar16-2-get-const" class="md-nav__link">
+    const std::array&lt;char16, 2&gt;&amp; get() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdarraychar16-2const_iterator-begin-const" class="md-nav__link">
+    std::array&lt;char16, 2&gt;::const_iterator begin() const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-date" class="md-nav__link">
+    日付クラス (struct Date)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    メンバ変数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#int32-year" class="md-nav__link">
+    int32 year;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-month" class="md-nav__link">
+    int32 month;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-day" class="md-nav__link">
+    int32 day;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-default" class="md-nav__link">
+    Date() = default;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dateint32-_year-int32-_month-1-int32-_day-1" class="md-nav__link">
+    Date(int32 _year, int32 _month = 1, int32 _day = 1);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dayofweek-dayofweek-const" class="md-nav__link">
+    DayOfWeek dayOfWeek() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-dayofweekjp-const" class="md-nav__link">
+    String dayOfWeekJP() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-dayofweeken-const" class="md-nav__link">
+    String dayOfWeekEN() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-istoday-const" class="md-nav__link">
+    bool isToday() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-isleapyear-const" class="md-nav__link">
+    bool isLeapYear() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-daysinmonth-const" class="md-nav__link">
+    int32 daysInMonth() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-daysinyear-const" class="md-nav__link">
+    int32 daysInYear() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-isvalid-const" class="md-nav__link">
+    bool isValid() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-formatstringview-format-uyyyymd_sv-const" class="md-nav__link">
+    String format(StringView format = U&quot;yyyy/M/d&quot;_sv) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-operator-const-days-days" class="md-nav__link">
+    Date&amp; operator +=(const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-operator-const-days-days_1" class="md-nav__link">
+    Date&amp; operator -=(const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-date-other-const" class="md-nav__link">
+    bool operator ==(const Date&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-date-other-const_1" class="md-nav__link">
+    bool operator !=(const Date&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-date-other-const_2" class="md-nav__link">
+    bool operator &lt;(const Date&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-date-other-const_3" class="md-nav__link">
+    bool operator &gt;(const Date&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-date-other-const_4" class="md-nav__link">
+    bool operator &lt;=(const Date&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-date-other-const_5" class="md-nav__link">
+    bool operator &gt;=(const Date&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size_t-hash-const" class="md-nav__link">
+    size_t hash() const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    静的メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-yesterday" class="md-nav__link">
+    Date Yesterday();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-today" class="md-nav__link">
+    Date Today();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-tomorrow" class="md-nav__link">
+    Date Tomorrow();
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    非メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-operator-const-date-date-const-days-days" class="md-nav__link">
+    Date operator +(const Date&amp; date, const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-operator-const-date-date-const-days-days_1" class="md-nav__link">
+    Date operator -(const Date&amp; date, const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#days-operator-const-date-to-const-date-from" class="md-nav__link">
+    Days operator -(const Date&amp; to, const Date&amp; from);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-formatterformatdata-formatdata-const-date-value" class="md-nav__link">
+    void Formatter(FormatData&amp; formatData, const Date&amp; value);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-class-chartype-stdbasic_ostreamchartype-operator-stdbasic_ostreamchartype-output-const-date-value" class="md-nav__link">
+    template &lt;class CharType&gt; std::basic_ostream&lt;CharType&gt; &amp; operator &lt;&lt;(std::basic_ostream&lt;CharType&gt; output, const Date&amp; value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-size_t-stdhashs3ddateoperatorconst-s3ddate-value-const" class="md-nav__link">
+    template&lt;&gt; size_t std::hash&lt;s3d::Date&gt;::operator()(const s3d::Date &amp;value) const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-datetime" class="md-nav__link">
+    日付と時刻クラス (struct DateTime)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    メンバ変数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#int32-year_1" class="md-nav__link">
+    int32 year;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-month_1" class="md-nav__link">
+    int32 month;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-day_1" class="md-nav__link">
+    int32 day;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-hour" class="md-nav__link">
+    int32 hour;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-minute" class="md-nav__link">
+    int32 minute;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-second" class="md-nav__link">
+    int32 second;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-milliseconds" class="md-nav__link">
+    int32 milliseconds;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    コンストラクタ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datetime-default" class="md-nav__link">
+    DateTime() = default;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-datetimeint32-_yearint32-_monthint32-_dayint32-_hour-0int32-_minute-0int32-_second-0int32-_milliseconds-0" class="md-nav__link">
+    constexpr DateTime(int32 _year,int32 _month,int32 _day,int32 _hour = 0,int32 _minute = 0,int32 _second = 0,int32 _milliseconds = 0);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-datetimeconst-date-dateint32-_hour-0int32-_minute-0int32-_second-0int32-_milliseconds-0" class="md-nav__link">
+    constexpr DateTime(const Date&amp; date,int32 _hour = 0,int32 _minute = 0,int32 _second = 0,int32 _milliseconds = 0);
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dayofweek-dayofweek-const_1" class="md-nav__link">
+    DayOfWeek dayOfWeek() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dayofweek-dayofweekjp-const" class="md-nav__link">
+    DayOfWeek dayOfWeekJP() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dayofweek-dayofweeken-const" class="md-nav__link">
+    DayOfWeek dayOfWeekEN() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-istoday-const_1" class="md-nav__link">
+    bool isToday() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-isleapyear-const_1" class="md-nav__link">
+    bool isLeapYear() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-daysinmonth-const_1" class="md-nav__link">
+    int32 daysInMonth() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#int32-daysinyear-const_1" class="md-nav__link">
+    int32 daysInYear() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constexpr-bool-isvalid-const" class="md-nav__link">
+    constexpr bool isValid() const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-formatstringview-format-uyyyymd-hhmmss_sv-const" class="md-nav__link">
+    String format(StringView format = U&quot;yyyy/M/d HH:mm:ss&quot;_sv) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-days-days" class="md-nav__link">
+    DateTime&amp; operator +=(const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-days-days_1" class="md-nav__link">
+    DateTime&amp; operator -=(const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-milliseconds-_milliseconds" class="md-nav__link">
+    DateTime&amp; operator +=(const Milliseconds&amp; _milliseconds);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-milliseconds-_milliseconds_1" class="md-nav__link">
+    DateTime&amp; operator -=(const Milliseconds&amp; _milliseconds);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-datetime-other-const" class="md-nav__link">
+    bool operator ==(const DateTime&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-datetime-other-const_1" class="md-nav__link">
+    bool operator !=(const DateTime&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-datetime-other-const_2" class="md-nav__link">
+    bool operator &lt;(const DateTime&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-datetime-other-const_3" class="md-nav__link">
+    bool operator &gt;(const DateTime&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-datetime-other-const_4" class="md-nav__link">
+    bool operator &lt;=(const DateTime&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-operator-const-datetime-other-const_5" class="md-nav__link">
+    bool operator &gt;=(const DateTime&amp; other) const;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size_t-hash-const_1" class="md-nav__link">
+    size_t hash() const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    静的メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datetime-yesterday" class="md-nav__link">
+    DateTime Yesterday();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-today" class="md-nav__link">
+    DateTime Today();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-tomorrow" class="md-nav__link">
+    DateTime Tomorrow();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-now" class="md-nav__link">
+    DateTime Now();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-nowutc" class="md-nav__link">
+    DateTime NowUTC();
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    非メンバ関数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-datetime-datetime-const-days-days" class="md-nav__link">
+    DateTime operator +(const DateTime&amp; dateTime, const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-datetime-datetime-const-days-days_1" class="md-nav__link">
+    DateTime operator -(const DateTime&amp; dateTime, const Days&amp; days);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-datetime-datetime-const-milliseconds-milliseconds" class="md-nav__link">
+    DateTime operator +(const DateTime&amp; dateTime, const Milliseconds&amp; milliseconds);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-operator-const-datetime-datetime-const-milliseconds-milliseconds_1" class="md-nav__link">
+    DateTime operator -(const DateTime&amp; dateTime, const Milliseconds&amp; milliseconds);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration-operator-const-datetime-a-const-datetime-b" class="md-nav__link">
+    Duration operator -(const DateTime&amp; a, const DateTime&amp; b);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-formatterformatdata-formatdata-const-datetime-value" class="md-nav__link">
+    void Formatter(FormatData&amp; formatData, const DateTime&amp; value);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templateclass-chartype-basic_ostreamchartype-operatorbasic_ostreamchartype-output-const-datetime-value" class="md-nav__link">
+    template&lt;class CharType&gt; basic_ostream&lt;CharType&gt; &amp;operator&lt;&lt;(basic_ostream&lt;CharType&gt; output, const DateTime &amp;value);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-size_t-hashdatetimeoperatorconst-datetime-value-const" class="md-nav__link">
+    template&lt;&gt; size_t hash&lt;DateTime&gt;::operator()(const DateTime &amp;value) const;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -11906,6 +14472,460 @@
 <p>UTF-16 (ビッグエンディアン) です。</p>
 <h4 id="textencodingdefault-utf8"><code class="codehilite"><span class="c">TextEncoding::Default = UTF8</span></code><a class="headerlink" href="#textencodingdefault-utf8" title="Permanent link">&para;</a></h4>
 <p>テキストファイルのエンコーディング形式のデフォルト値、BOM 付きの UTF-8 です。</p>
+<h2 id="class-textwriter">テキストファイル書き込みクラス (class TextWriter)<a class="headerlink" href="#class-textwriter" title="Permanent link">&para;</a></h2>
+<h3 id="_33">コンストラクタ<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<h4 id="textwriter"><code class="codehilite"><span class="err">TextWriter();</span></code><a class="headerlink" href="#textwriter" title="Permanent link">&para;</a></h4>
+<h4 id="textwriterfilepathview-path-textencoding-encoding"><code class="codehilite"><span class="err">TextWriter(FilePathView path, TextEncoding encoding);</span></code><a class="headerlink" href="#textwriterfilepathview-path-textencoding-encoding" title="Permanent link">&para;</a></h4>
+<h4 id="textwriterfilepathview-path-openmode-openmode-openmodetrunc-textencoding-encoding-textencodingdefault"><code class="codehilite"><span class="err">TextWriter(FilePathView path, OpenMode openMode = OpenMode::Trunc, TextEncoding encoding = TextEncoding::Default);</span></code><a class="headerlink" href="#textwriterfilepathview-path-openmode-openmode-openmodetrunc-textencoding-encoding-textencodingdefault" title="Permanent link">&para;</a></h4>
+<ul>
+<li>path: </li>
+<li>encoding: </li>
+<li>openMode: </li>
+</ul>
+<h3 id="_34">デストラクタ<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<h4 id="textwriter_1"><code class="codehilite"><span class="err">~TextWriter();</span></code><a class="headerlink" href="#textwriter_1" title="Permanent link">&para;</a></h4>
+<h3 id="_35">メンバ関数<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
+<h4 id="bool-openfilepathview-path-textencoding-encoding"><code class="codehilite"><span class="err">bool open(FilePathView path, TextEncoding encoding);</span></code><a class="headerlink" href="#bool-openfilepathview-path-textencoding-encoding" title="Permanent link">&para;</a></h4>
+<h4 id="bool-openfilepathview-path-openmode-openmode-openmodetrunc-textencoding-encoding-textencodingdefault"><code class="codehilite"><span class="err">bool open(FilePathView path, OpenMode openMode = OpenMode::Trunc, TextEncoding encoding = TextEncoding::Default);</span></code><a class="headerlink" href="#bool-openfilepathview-path-openmode-openmode-openmodetrunc-textencoding-encoding-textencodingdefault" title="Permanent link">&para;</a></h4>
+<ul>
+<li>path: </li>
+<li>encoding: </li>
+<li>openMode: </li>
+</ul>
+<h4 id="void-close"><code class="codehilite"><span class="err">void close();</span></code><a class="headerlink" href="#void-close" title="Permanent link">&para;</a></h4>
+<h4 id="bool-isopened-const"><code class="codehilite"><span class="err">bool isOpened() const;</span></code><a class="headerlink" href="#bool-isopened-const" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: </li>
+</ul>
+<h4 id="void-clear_1"><code class="codehilite"><span class="err">void clear();</span></code><a class="headerlink" href="#void-clear_1" title="Permanent link">&para;</a></h4>
+<h4 id="void-writestringview-str"><code class="codehilite"><span class="err">void write(StringView str);</span></code><a class="headerlink" href="#void-writestringview-str" title="Permanent link">&para;</a></h4>
+<h4 id="void-writechar32-ch"><code class="codehilite"><span class="err">void write(char32 ch);</span></code><a class="headerlink" href="#void-writechar32-ch" title="Permanent link">&para;</a></h4>
+<h4 id="void-writeconst-string-str"><code class="codehilite"><span class="err">void write(const String&amp; str);</span></code><a class="headerlink" href="#void-writeconst-string-str" title="Permanent link">&para;</a></h4>
+<h4 id="void-writeconst-char32-const-str"><code class="codehilite"><span class="err">void write(const char32* const str);</span></code><a class="headerlink" href="#void-writeconst-char32-const-str" title="Permanent link">&para;</a></h4>
+<h4 id="void-writeconst-args-args"><code class="codehilite"><span class="err">void write(const Args&amp; ... args);</span></code><a class="headerlink" href="#void-writeconst-args-args" title="Permanent link">&para;</a></h4>
+<ul>
+<li>str: </li>
+<li>ch: </li>
+<li>args: </li>
+</ul>
+<h4 id="void-writelnstringview-view"><code class="codehilite"><span class="err">void writeln(StringView view);</span></code><a class="headerlink" href="#void-writelnstringview-view" title="Permanent link">&para;</a></h4>
+<h4 id="void-writelnchar32-ch"><code class="codehilite"><span class="err">void writeln(char32 ch);</span></code><a class="headerlink" href="#void-writelnchar32-ch" title="Permanent link">&para;</a></h4>
+<h4 id="void-writelnconst-string-str"><code class="codehilite"><span class="err">void writeln(const String&amp; str);</span></code><a class="headerlink" href="#void-writelnconst-string-str" title="Permanent link">&para;</a></h4>
+<h4 id="void-writelnconst-char32-const-str"><code class="codehilite"><span class="err">void writeln(const char32* const str);</span></code><a class="headerlink" href="#void-writelnconst-char32-const-str" title="Permanent link">&para;</a></h4>
+<h4 id="void-writelnconst-args-args"><code class="codehilite"><span class="err">void writeln(const Args&amp; ... args);</span></code><a class="headerlink" href="#void-writelnconst-args-args" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>ch: </li>
+<li>str: </li>
+<li>args: </li>
+</ul>
+<h4 id="void-writeutf8stdstring_view-view"><code class="codehilite"><span class="err">void writeUTF8(std::string_view view);</span></code><a class="headerlink" href="#void-writeutf8stdstring_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+</ul>
+<h4 id="void-writelnutf8stdstring_view-view"><code class="codehilite"><span class="err">void writelnUTF8(std::string_view view);</span></code><a class="headerlink" href="#void-writelnutf8stdstring_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+</ul>
+<h4 id="const-filepath-path-const"><code class="codehilite"><span class="err">const FilePath&amp; path() const;</span></code><a class="headerlink" href="#const-filepath-path-const" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: </li>
+</ul>
+<h4 id="operator-bool-const"><code class="codehilite"><span class="err">operator bool() const;</span></code><a class="headerlink" href="#operator-bool-const" title="Permanent link">&para;</a></h4>
+<ul>
+<li>戻り値: </li>
+</ul>
+<h4 id="template-class-type-detailtextwriterbuffer-operator-const-type-value"><code class="codehilite"><span class="err">template &lt;class Type&gt; detail::TextWriterBuffer operator &lt;&lt;(const Type&amp; value);</span></code><a class="headerlink" href="#template-class-type-detailtextwriterbuffer-operator-const-type-value" title="Permanent link">&para;</a></h4>
+<ul>
+<li>value: </li>
+<li>戻り値: </li>
+</ul>
+<h2 id="unicode-namespace-unicode">Unicode 名前空間 (namespace Unicode)<a class="headerlink" href="#unicode-namespace-unicode" title="Permanent link">&para;</a></h2>
+<h3 id="_36">関数<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
+<h4 id="textencoding-gettextencodingconst-ireader-reader"><code class="codehilite"><span class="err">TextEncoding GetTextEncoding(const IReader&amp; reader);</span></code><a class="headerlink" href="#textencoding-gettextencodingconst-ireader-reader" title="Permanent link">&para;</a></h4>
+<h4 id="textencoding-gettextencodingconst-filepathview-path"><code class="codehilite"><span class="err">TextEncoding GetTextEncoding(const FilePathView path);</span></code><a class="headerlink" href="#textencoding-gettextencodingconst-filepathview-path" title="Permanent link">&para;</a></h4>
+<ul>
+<li>reader: </li>
+<li>path: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="int32-getbomsizetextencoding-encoding"><code class="codehilite"><span class="err">int32 GetBOMSize(TextEncoding encoding);</span></code><a class="headerlink" href="#int32-getbomsizetextencoding-encoding" title="Permanent link">&para;</a></h4>
+<ul>
+<li>encoding: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="bool-ishighsurrogateconst-char16-ch"><code class="codehilite"><span class="err">bool IsHighSurrogate(const char16 ch);</span></code><a class="headerlink" href="#bool-ishighsurrogateconst-char16-ch" title="Permanent link">&para;</a></h4>
+<ul>
+<li>ch: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="bool-islowsurrogateconst-char16-ch"><code class="codehilite"><span class="err">bool IsLowSurrogate(const char16 ch);</span></code><a class="headerlink" href="#bool-islowsurrogateconst-char16-ch" title="Permanent link">&para;</a></h4>
+<ul>
+<li>ch: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="string-widenasciistdstring_view-asciitext"><code class="codehilite"><span class="err">String WidenAscii(std::string_view asciiText);</span></code><a class="headerlink" href="#string-widenasciistdstring_view-asciitext" title="Permanent link">&para;</a></h4>
+<ul>
+<li>asciiText: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="string-widenstdstring_view-view"><code class="codehilite"><span class="err">String Widen(std::string_view view);</span></code><a class="headerlink" href="#string-widenstdstring_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="stdstring-narrowasciistringview-asciitext"><code class="codehilite"><span class="c">std::string NarrowAscii(StringView asciiText);</span></code><a class="headerlink" href="#stdstring-narrowasciistringview-asciitext" title="Permanent link">&para;</a></h4>
+<ul>
+<li>asciiText: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="stdstring-narrowstringview-view"><code class="codehilite"><span class="c">std::string Narrow(StringView view);</span></code><a class="headerlink" href="#stdstring-narrowstringview-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="stdwstring-towstringstringview-view"><code class="codehilite"><span class="n">std</span><span class="o">:</span><span class="n">wstring</span> <span class="n">ToWString</span><span class="o">(</span><span class="n">StringView</span> <span class="n">view</span><span class="o">);</span></code><a class="headerlink" href="#stdwstring-towstringstringview-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="string-fromwstringstdwstring_view-view"><code class="codehilite"><span class="err">String FromWString(std::wstring_view view);</span></code><a class="headerlink" href="#string-fromwstringstdwstring_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="string-fromutf8stdstring_view-view"><code class="codehilite"><span class="err">String FromUTF8(std::string_view view);</span></code><a class="headerlink" href="#string-fromutf8stdstring_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="string-fromutf16stdu16string_view-view"><code class="codehilite"><span class="err">String FromUTF16(std::u16string_view view);</span></code><a class="headerlink" href="#string-fromutf16stdu16string_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="string-fromutf32stdu32string_view-view"><code class="codehilite"><span class="err">String FromUTF32(std::u32string_view view);</span></code><a class="headerlink" href="#string-fromutf32stdu32string_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="stdstring-toutf8stringview-view"><code class="codehilite"><span class="c">std::string ToUTF8(StringView view);</span></code><a class="headerlink" href="#stdstring-toutf8stringview-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="stdu16string-toutf16stringview-view"><code class="codehilite"><span class="c">std::u16string ToUTF16(StringView view);</span></code><a class="headerlink" href="#stdu16string-toutf16stringview-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="stdu32string-toutf32stringview-view"><code class="codehilite"><span class="c">std::u32string ToUTF32(StringView view);</span></code><a class="headerlink" href="#stdu32string-toutf32stringview-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="stdu16string-utf8toutf16stdstring_view-view"><code class="codehilite"><span class="c">std::u16string UTF8ToUTF16(std::string_view view);</span></code><a class="headerlink" href="#stdu16string-utf8toutf16stdstring_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="stdu32string-utf8toutf32stdstring_view-view"><code class="codehilite"><span class="c">std::u32string UTF8ToUTF32(std::string_view view);</span></code><a class="headerlink" href="#stdu32string-utf8toutf32stdstring_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="stdstring-utf16toutf8stdu16string_view-view"><code class="codehilite"><span class="c">std::string UTF16ToUTF8(std::u16string_view view);</span></code><a class="headerlink" href="#stdstring-utf16toutf8stdu16string_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="stdu32string-utf16toutf32stdu16string_view-view"><code class="codehilite"><span class="c">std::u32string UTF16ToUTF32(std::u16string_view view);</span></code><a class="headerlink" href="#stdu32string-utf16toutf32stdu16string_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="stdstring-utf32toutf8stdu32string_view-view"><code class="codehilite"><span class="c">std::string UTF32ToUTF8(std::u32string_view view);</span></code><a class="headerlink" href="#stdstring-utf32toutf8stdu32string_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="stdu16string-utf32toutf16stdu32string_view-view"><code class="codehilite"><span class="c">std::u16string UTF32ToUTF16(std::u32string_view view);</span></code><a class="headerlink" href="#stdu16string-utf32toutf16stdu32string_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="size_t-countcodepointsstdstring_view-view"><code class="codehilite"><span class="err">size_t CountCodePoints(std::string_view view);</span></code><a class="headerlink" href="#size_t-countcodepointsstdstring_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="size_t-countcodepointsstdu16string_view-view"><code class="codehilite"><span class="err">size_t CountCodePoints(std::u16string_view view);</span></code><a class="headerlink" href="#size_t-countcodepointsstdu16string_view-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h4 id="size_t-countcodepointsstringview-view"><code class="codehilite"><span class="err">size_t CountCodePoints(StringView view);</span></code><a class="headerlink" href="#size_t-countcodepointsstringview-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>view: </li>
+<li>戻り値: </li>
+</ul>
+<h3 id="utf8-utf32-struct-translator_utf8toutf32">UTF8 → UTF32変換クラス (struct Translator_UTF8toUTF32)<a class="headerlink" href="#utf8-utf32-struct-translator_utf8toutf32" title="Permanent link">&para;</a></h3>
+<h4 id="_37">メンバ関数<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h4>
+<h5 id="bool-putchar8-code"><code class="codehilite"><span class="err">bool put(char8 code);</span></code><a class="headerlink" href="#bool-putchar8-code" title="Permanent link">&para;</a></h5>
+<ul>
+<li>code: </li>
+<li>戻り値: </li>
+</ul>
+<h5 id="char32-get-const"><code class="codehilite"><span class="err">char32 get() const;</span></code><a class="headerlink" href="#char32-get-const" title="Permanent link">&para;</a></h5>
+<ul>
+<li>戻り値: </li>
+</ul>
+<h3 id="utf16-utf32-struct-translator_utf16toutf32">UTF16 → UTF32変換クラス (struct Translator_UTF16toUTF32)<a class="headerlink" href="#utf16-utf32-struct-translator_utf16toutf32" title="Permanent link">&para;</a></h3>
+<h4 id="_38">メンバ関数<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h4>
+<h5 id="bool-putchar16-code"><code class="codehilite"><span class="err">bool put(char16 code);</span></code><a class="headerlink" href="#bool-putchar16-code" title="Permanent link">&para;</a></h5>
+<ul>
+<li>code: </li>
+<li>戻り値: </li>
+</ul>
+<h5 id="char32-get-const_1"><code class="codehilite"><span class="err">char32 get() const;</span></code><a class="headerlink" href="#char32-get-const_1" title="Permanent link">&para;</a></h5>
+<ul>
+<li>戻り値: </li>
+</ul>
+<h3 id="utf32-utf8-struct-translator_utf32toutf8">UTF32 → UTF8変換クラス (struct Translator_UTF32toUTF8)<a class="headerlink" href="#utf32-utf8-struct-translator_utf32toutf8" title="Permanent link">&para;</a></h3>
+<h4 id="_39">メンバ関数<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h4>
+<h5 id="size_t-putchar32-code"><code class="codehilite"><span class="err">size_t put(char32 code);</span></code><a class="headerlink" href="#size_t-putchar32-code" title="Permanent link">&para;</a></h5>
+<ul>
+<li>code: </li>
+<li>戻り値: </li>
+</ul>
+<h5 id="const-stdarraychar8-4-get-const"><code class="codehilite"><span class="err">const std::array&lt;char8, 4&gt;&amp; get() const;</span></code><a class="headerlink" href="#const-stdarraychar8-4-get-const" title="Permanent link">&para;</a></h5>
+<ul>
+<li>戻り値: </li>
+</ul>
+<h5 id="stdarraychar8-4const_iterator-begin-const"><code class="codehilite"><span class="c">std::array&lt;char8, 4&gt;::const_iterator begin() const;</span></code><a class="headerlink" href="#stdarraychar8-4const_iterator-begin-const" title="Permanent link">&para;</a></h5>
+<ul>
+<li>戻り値: </li>
+</ul>
+<h3 id="utf32-utf16-struct-translator_utf32toutf16">UTF32 → UTF16変換クラス (struct Translator_UTF32toUTF16)<a class="headerlink" href="#utf32-utf16-struct-translator_utf32toutf16" title="Permanent link">&para;</a></h3>
+<h4 id="_40">メンバ関数<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h4>
+<h5 id="size_t-putchar32-code_1"><code class="codehilite"><span class="err">size_t put(char32 code);</span></code><a class="headerlink" href="#size_t-putchar32-code_1" title="Permanent link">&para;</a></h5>
+<ul>
+<li>code: </li>
+<li>戻り値: </li>
+</ul>
+<h5 id="const-stdarraychar16-2-get-const"><code class="codehilite"><span class="err">const std::array&lt;char16, 2&gt;&amp; get() const;</span></code><a class="headerlink" href="#const-stdarraychar16-2-get-const" title="Permanent link">&para;</a></h5>
+<ul>
+<li>戻り値: </li>
+</ul>
+<h5 id="stdarraychar16-2const_iterator-begin-const"><code class="codehilite"><span class="c">std::array&lt;char16, 2&gt;::const_iterator begin() const;</span></code><a class="headerlink" href="#stdarraychar16-2const_iterator-begin-const" title="Permanent link">&para;</a></h5>
+<ul>
+<li>戻り値: </li>
+</ul>
+<h2 id="struct-date">日付クラス (struct Date)<a class="headerlink" href="#struct-date" title="Permanent link">&para;</a></h2>
+<h3 id="_41">メンバ変数<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
+<h4 id="int32-year"><code class="codehilite"><span class="err">int32 year;</span></code><a class="headerlink" href="#int32-year" title="Permanent link">&para;</a></h4>
+<h4 id="int32-month"><code class="codehilite"><span class="err">int32 month;</span></code><a class="headerlink" href="#int32-month" title="Permanent link">&para;</a></h4>
+<h4 id="int32-day"><code class="codehilite"><span class="err">int32 day;</span></code><a class="headerlink" href="#int32-day" title="Permanent link">&para;</a></h4>
+<h3 id="_42">コンストラクタ<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
+<h4 id="date-default"><code class="codehilite"><span class="err">Date() = default;</span></code><a class="headerlink" href="#date-default" title="Permanent link">&para;</a></h4>
+<h4 id="dateint32-_year-int32-_month-1-int32-_day-1"><code class="codehilite"><span class="err">Date(int32 _year, int32 _month = 1, int32 _day = 1);</span></code><a class="headerlink" href="#dateint32-_year-int32-_month-1-int32-_day-1" title="Permanent link">&para;</a></h4>
+<p>_year: 
+_month: 
+_day: </p>
+<h3 id="_43">メンバ関数<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h3>
+<h4 id="dayofweek-dayofweek-const"><code class="codehilite"><span class="err">DayOfWeek dayOfWeek() const;</span></code><a class="headerlink" href="#dayofweek-dayofweek-const" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="string-dayofweekjp-const"><code class="codehilite"><span class="err">String dayOfWeekJP() const;</span></code><a class="headerlink" href="#string-dayofweekjp-const" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="string-dayofweeken-const"><code class="codehilite"><span class="err">String dayOfWeekEN() const;</span></code><a class="headerlink" href="#string-dayofweeken-const" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="bool-istoday-const"><code class="codehilite"><span class="err">bool isToday() const;</span></code><a class="headerlink" href="#bool-istoday-const" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="bool-isleapyear-const"><code class="codehilite"><span class="err">bool isLeapYear() const;</span></code><a class="headerlink" href="#bool-isleapyear-const" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="int32-daysinmonth-const"><code class="codehilite"><span class="err">int32 daysInMonth() const;</span></code><a class="headerlink" href="#int32-daysinmonth-const" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="int32-daysinyear-const"><code class="codehilite"><span class="err">int32 daysInYear() const;</span></code><a class="headerlink" href="#int32-daysinyear-const" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="bool-isvalid-const"><code class="codehilite"><span class="err">bool isValid() const;</span></code><a class="headerlink" href="#bool-isvalid-const" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="string-formatstringview-format-uyyyymd_sv-const"><code class="codehilite"><span class="err">String format(StringView format = U&quot;yyyy/M/d&quot;_sv) const;</span></code><a class="headerlink" href="#string-formatstringview-format-uyyyymd_sv-const" title="Permanent link">&para;</a></h4>
+<p>format: 
+戻り値: </p>
+<h4 id="date-operator-const-days-days"><code class="codehilite"><span class="err">Date&amp; operator +=(const Days&amp; days);</span></code><a class="headerlink" href="#date-operator-const-days-days" title="Permanent link">&para;</a></h4>
+<p>days: 
+戻り値: </p>
+<h4 id="date-operator-const-days-days_1"><code class="codehilite"><span class="err">Date&amp; operator -=(const Days&amp; days);</span></code><a class="headerlink" href="#date-operator-const-days-days_1" title="Permanent link">&para;</a></h4>
+<p>days: 
+戻り値: </p>
+<h4 id="bool-operator-const-date-other-const"><code class="codehilite"><span class="err">bool operator ==(const Date&amp; other) const;</span></code><a class="headerlink" href="#bool-operator-const-date-other-const" title="Permanent link">&para;</a></h4>
+<p>other: 
+戻り値: </p>
+<h4 id="bool-operator-const-date-other-const_1"><code class="codehilite"><span class="err">bool operator !=(const Date&amp; other) const;</span></code><a class="headerlink" href="#bool-operator-const-date-other-const_1" title="Permanent link">&para;</a></h4>
+<p>other: 
+戻り値: </p>
+<h4 id="bool-operator-const-date-other-const_2"><code class="codehilite"><span class="err">bool operator &lt;(const Date&amp; other) const;</span></code><a class="headerlink" href="#bool-operator-const-date-other-const_2" title="Permanent link">&para;</a></h4>
+<p>other: 
+戻り値: </p>
+<h4 id="bool-operator-const-date-other-const_3"><code class="codehilite"><span class="err">bool operator &gt;(const Date&amp; other) const;</span></code><a class="headerlink" href="#bool-operator-const-date-other-const_3" title="Permanent link">&para;</a></h4>
+<p>other: 
+戻り値: </p>
+<h4 id="bool-operator-const-date-other-const_4"><code class="codehilite"><span class="err">bool operator &lt;=(const Date&amp; other) const;</span></code><a class="headerlink" href="#bool-operator-const-date-other-const_4" title="Permanent link">&para;</a></h4>
+<p>other: 
+戻り値: </p>
+<h4 id="bool-operator-const-date-other-const_5"><code class="codehilite"><span class="err">bool operator &gt;=(const Date&amp; other) const;</span></code><a class="headerlink" href="#bool-operator-const-date-other-const_5" title="Permanent link">&para;</a></h4>
+<p>other: 
+戻り値: </p>
+<h4 id="size_t-hash-const"><code class="codehilite"><span class="err">size_t hash() const;</span></code><a class="headerlink" href="#size_t-hash-const" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h3 id="_44"><code class="codehilite"><span class="err">静的メンバ関数</span></code><a class="headerlink" href="#_44" title="Permanent link">&para;</a></h3>
+<h4 id="date-yesterday"><code class="codehilite"><span class="err">Date Yesterday();</span></code><a class="headerlink" href="#date-yesterday" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="date-today"><code class="codehilite"><span class="err">Date Today();</span></code><a class="headerlink" href="#date-today" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="date-tomorrow"><code class="codehilite"><span class="err">Date Tomorrow();</span></code><a class="headerlink" href="#date-tomorrow" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h3 id="_45"><code class="codehilite"><span class="err">非メンバ関数</span></code><a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
+<h4 id="date-operator-const-date-date-const-days-days"><code class="codehilite"><span class="err">Date operator +(const Date&amp; date, const Days&amp; days);</span></code><a class="headerlink" href="#date-operator-const-date-date-const-days-days" title="Permanent link">&para;</a></h4>
+<p>date: 
+days: 
+戻り値: </p>
+<h4 id="date-operator-const-date-date-const-days-days_1"><code class="codehilite"><span class="err">Date operator -(const Date&amp; date, const Days&amp; days);</span></code><a class="headerlink" href="#date-operator-const-date-date-const-days-days_1" title="Permanent link">&para;</a></h4>
+<p>date: 
+days: 
+戻り値: </p>
+<h4 id="days-operator-const-date-to-const-date-from"><code class="codehilite"><span class="err">Days operator -(const Date&amp; to, const Date&amp; from);</span></code><a class="headerlink" href="#days-operator-const-date-to-const-date-from" title="Permanent link">&para;</a></h4>
+<p>to: 
+from: 
+戻り値: </p>
+<h4 id="void-formatterformatdata-formatdata-const-date-value"><code class="codehilite"><span class="err">void Formatter(FormatData&amp; formatData, const Date&amp; value);</span></code><a class="headerlink" href="#void-formatterformatdata-formatdata-const-date-value" title="Permanent link">&para;</a></h4>
+<p>formatData: 
+value: </p>
+<h4 id="template-class-chartype-stdbasic_ostreamchartype-operator-stdbasic_ostreamchartype-output-const-date-value"><code class="codehilite"><span class="err">template &lt;class CharType&gt; std::basic_ostream&lt;CharType&gt; &amp; operator &lt;&lt;(std::basic_ostream&lt;CharType&gt; output, const Date&amp; value)</span></code><a class="headerlink" href="#template-class-chartype-stdbasic_ostreamchartype-operator-stdbasic_ostreamchartype-output-const-date-value" title="Permanent link">&para;</a></h4>
+<p>output: 
+value: 
+戻り値: </p>
+<h4 id="template-size_t-stdhashs3ddateoperatorconst-s3ddate-value-const"><code class="codehilite"><span class="err">template&lt;&gt; size_t std::hash&lt;s3d::Date&gt;::operator()(const s3d::Date &amp;value) const;</span></code><a class="headerlink" href="#template-size_t-stdhashs3ddateoperatorconst-s3ddate-value-const" title="Permanent link">&para;</a></h4>
+<p>value: 
+戻り値: </p>
+<h2 id="struct-datetime">日付と時刻クラス (struct DateTime)<a class="headerlink" href="#struct-datetime" title="Permanent link">&para;</a></h2>
+<h3 id="_46">メンバ変数<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h3>
+<h4 id="int32-year_1"><code class="codehilite"><span class="err">int32 year;</span></code><a class="headerlink" href="#int32-year_1" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite"><span class="c">Date::year</span></code> を参照</p>
+<h4 id="int32-month_1"><code class="codehilite"><span class="err">int32 month;</span></code><a class="headerlink" href="#int32-month_1" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite"><span class="c">Date::month</span></code> を参照</p>
+<h4 id="int32-day_1"><code class="codehilite"><span class="err">int32 day;</span></code><a class="headerlink" href="#int32-day_1" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite"><span class="c">Date::day</span></code> を参照</p>
+<h4 id="int32-hour"><code class="codehilite"><span class="err">int32 hour;</span></code><a class="headerlink" href="#int32-hour" title="Permanent link">&para;</a></h4>
+<h4 id="int32-minute"><code class="codehilite"><span class="err">int32 minute;</span></code><a class="headerlink" href="#int32-minute" title="Permanent link">&para;</a></h4>
+<h4 id="int32-second"><code class="codehilite"><span class="err">int32 second;</span></code><a class="headerlink" href="#int32-second" title="Permanent link">&para;</a></h4>
+<h4 id="int32-milliseconds"><code class="codehilite"><span class="err">int32 milliseconds;</span></code><a class="headerlink" href="#int32-milliseconds" title="Permanent link">&para;</a></h4>
+<h3 id="_47">コンストラクタ<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h3>
+<h4 id="datetime-default"><code class="codehilite"><span class="err">DateTime() = default;</span></code><a class="headerlink" href="#datetime-default" title="Permanent link">&para;</a></h4>
+<h4 id="constexpr-datetimeint32-_yearint32-_monthint32-_dayint32-_hour-0int32-_minute-0int32-_second-0int32-_milliseconds-0"><code class="codehilite"><span class="err">constexpr DateTime(int32 _year,int32 _month,int32 _day,int32 _hour = 0,int32 _minute = 0,int32 _second = 0,int32 _milliseconds = 0);</span></code><a class="headerlink" href="#constexpr-datetimeint32-_yearint32-_monthint32-_dayint32-_hour-0int32-_minute-0int32-_second-0int32-_milliseconds-0" title="Permanent link">&para;</a></h4>
+<h4 id="constexpr-datetimeconst-date-dateint32-_hour-0int32-_minute-0int32-_second-0int32-_milliseconds-0"><code class="codehilite"><span class="err">constexpr DateTime(const Date&amp; date,int32 _hour = 0,int32 _minute = 0,int32 _second = 0,int32 _milliseconds = 0);</span></code><a class="headerlink" href="#constexpr-datetimeconst-date-dateint32-_hour-0int32-_minute-0int32-_second-0int32-_milliseconds-0" title="Permanent link">&para;</a></h4>
+<p>_year: 
+_month: 
+_day: 
+_hour: 
+_minute: 
+_second: 
+_milliseconds: 
+date: 
+戻り値: </p>
+<h3 id="_48">メンバ関数<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h3>
+<h4 id="dayofweek-dayofweek-const_1"><code class="codehilite"><span class="err">DayOfWeek dayOfWeek() const;</span></code><a class="headerlink" href="#dayofweek-dayofweek-const_1" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite"><span class="c">Date::dayOfWeek</span></code> を参照</p>
+<h4 id="dayofweek-dayofweekjp-const"><code class="codehilite"><span class="err">DayOfWeek dayOfWeekJP() const;</span></code><a class="headerlink" href="#dayofweek-dayofweekjp-const" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite"><span class="c">Date::dayOfWeekJP</span></code> を参照</p>
+<h4 id="dayofweek-dayofweeken-const"><code class="codehilite"><span class="err">DayOfWeek dayOfWeekEN() const;</span></code><a class="headerlink" href="#dayofweek-dayofweeken-const" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite"><span class="c">Date::dayOfWeekEN</span></code> を参照</p>
+<h4 id="bool-istoday-const_1"><code class="codehilite"><span class="err">bool isToday() const;</span></code><a class="headerlink" href="#bool-istoday-const_1" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite"><span class="c">Date::isToday</span></code> を参照</p>
+<h4 id="bool-isleapyear-const_1"><code class="codehilite"><span class="err">bool isLeapYear() const;</span></code><a class="headerlink" href="#bool-isleapyear-const_1" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite"><span class="c">Date::isLeapYear</span></code> を参照</p>
+<h4 id="int32-daysinmonth-const_1"><code class="codehilite"><span class="err">int32 daysInMonth() const;</span></code><a class="headerlink" href="#int32-daysinmonth-const_1" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite"><span class="c">Date::daysInMonth</span></code> を参照</p>
+<h4 id="int32-daysinyear-const_1"><code class="codehilite"><span class="err">int32 daysInYear() const;</span></code><a class="headerlink" href="#int32-daysinyear-const_1" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite"><span class="c">Date::daysInYear</span></code> を参照</p>
+<h4 id="constexpr-bool-isvalid-const"><code class="codehilite"><span class="err">constexpr bool isValid() const;</span></code><a class="headerlink" href="#constexpr-bool-isvalid-const" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="string-formatstringview-format-uyyyymd-hhmmss_sv-const"><code class="codehilite"><span class="err">String format(StringView format = U&quot;yyyy/M/d HH:mm:ss&quot;_sv) const;</span></code><a class="headerlink" href="#string-formatstringview-format-uyyyymd-hhmmss_sv-const" title="Permanent link">&para;</a></h4>
+<p>format: 
+戻り値: </p>
+<h4 id="datetime-operator-const-days-days"><code class="codehilite"><span class="err">DateTime&amp; operator +=(const Days&amp; days);</span></code><a class="headerlink" href="#datetime-operator-const-days-days" title="Permanent link">&para;</a></h4>
+<p>days: 
+戻り値: </p>
+<h4 id="datetime-operator-const-days-days_1"><code class="codehilite"><span class="err">DateTime&amp; operator -=(const Days&amp; days);</span></code><a class="headerlink" href="#datetime-operator-const-days-days_1" title="Permanent link">&para;</a></h4>
+<p>days: 
+戻り値: </p>
+<h4 id="datetime-operator-const-milliseconds-_milliseconds"><code class="codehilite"><span class="err">DateTime&amp; operator +=(const Milliseconds&amp; _milliseconds);</span></code><a class="headerlink" href="#datetime-operator-const-milliseconds-_milliseconds" title="Permanent link">&para;</a></h4>
+<p>_milliseconds: 
+戻り値: </p>
+<h4 id="datetime-operator-const-milliseconds-_milliseconds_1"><code class="codehilite"><span class="err">DateTime&amp; operator -=(const Milliseconds&amp; _milliseconds);</span></code><a class="headerlink" href="#datetime-operator-const-milliseconds-_milliseconds_1" title="Permanent link">&para;</a></h4>
+<p>_milliseconds: 
+戻り値: </p>
+<h4 id="bool-operator-const-datetime-other-const"><code class="codehilite"><span class="err">bool operator ==(const DateTime&amp; other) const;</span></code><a class="headerlink" href="#bool-operator-const-datetime-other-const" title="Permanent link">&para;</a></h4>
+<p>other: 
+戻り値: </p>
+<h4 id="bool-operator-const-datetime-other-const_1"><code class="codehilite"><span class="err">bool operator !=(const DateTime&amp; other) const;</span></code><a class="headerlink" href="#bool-operator-const-datetime-other-const_1" title="Permanent link">&para;</a></h4>
+<p>other: 
+戻り値: </p>
+<h4 id="bool-operator-const-datetime-other-const_2"><code class="codehilite"><span class="err">bool operator &lt;(const DateTime&amp; other) const;</span></code><a class="headerlink" href="#bool-operator-const-datetime-other-const_2" title="Permanent link">&para;</a></h4>
+<p>other: 
+戻り値: </p>
+<h4 id="bool-operator-const-datetime-other-const_3"><code class="codehilite"><span class="err">bool operator &gt;(const DateTime&amp; other) const;</span></code><a class="headerlink" href="#bool-operator-const-datetime-other-const_3" title="Permanent link">&para;</a></h4>
+<p>other: 
+戻り値: </p>
+<h4 id="bool-operator-const-datetime-other-const_4"><code class="codehilite"><span class="err">bool operator &lt;=(const DateTime&amp; other) const;</span></code><a class="headerlink" href="#bool-operator-const-datetime-other-const_4" title="Permanent link">&para;</a></h4>
+<p>other: 
+戻り値: </p>
+<h4 id="bool-operator-const-datetime-other-const_5"><code class="codehilite"><span class="err">bool operator &gt;=(const DateTime&amp; other) const;</span></code><a class="headerlink" href="#bool-operator-const-datetime-other-const_5" title="Permanent link">&para;</a></h4>
+<p>other: 
+戻り値: </p>
+<h4 id="size_t-hash-const_1"><code class="codehilite"><span class="err">size_t hash() const;</span></code><a class="headerlink" href="#size_t-hash-const_1" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h3 id="_49">静的メンバ関数<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h3>
+<h4 id="datetime-yesterday"><code class="codehilite"><span class="err">DateTime Yesterday();</span></code><a class="headerlink" href="#datetime-yesterday" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="datetime-today"><code class="codehilite"><span class="err">DateTime Today();</span></code><a class="headerlink" href="#datetime-today" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="datetime-tomorrow"><code class="codehilite"><span class="err">DateTime Tomorrow();</span></code><a class="headerlink" href="#datetime-tomorrow" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="datetime-now"><code class="codehilite"><span class="err">DateTime Now();</span></code><a class="headerlink" href="#datetime-now" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h4 id="datetime-nowutc"><code class="codehilite"><span class="err">DateTime NowUTC();</span></code><a class="headerlink" href="#datetime-nowutc" title="Permanent link">&para;</a></h4>
+<p>戻り値: </p>
+<h3 id="_50">非メンバ関数<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h3>
+<h4 id="datetime-operator-const-datetime-datetime-const-days-days"><code class="codehilite"><span class="err">DateTime operator +(const DateTime&amp; dateTime, const Days&amp; days);</span></code><a class="headerlink" href="#datetime-operator-const-datetime-datetime-const-days-days" title="Permanent link">&para;</a></h4>
+<p>dateTime: 
+days: 
+戻り値: </p>
+<h4 id="datetime-operator-const-datetime-datetime-const-days-days_1"><code class="codehilite"><span class="err">DateTime operator -(const DateTime&amp; dateTime, const Days&amp; days);</span></code><a class="headerlink" href="#datetime-operator-const-datetime-datetime-const-days-days_1" title="Permanent link">&para;</a></h4>
+<p>dateTime: 
+days: 
+戻り値: </p>
+<h4 id="datetime-operator-const-datetime-datetime-const-milliseconds-milliseconds"><code class="codehilite"><span class="err">DateTime operator +(const DateTime&amp; dateTime, const Milliseconds&amp; milliseconds);</span></code><a class="headerlink" href="#datetime-operator-const-datetime-datetime-const-milliseconds-milliseconds" title="Permanent link">&para;</a></h4>
+<p>dateTime: 
+milliseconds: 
+戻り値: </p>
+<h4 id="datetime-operator-const-datetime-datetime-const-milliseconds-milliseconds_1"><code class="codehilite"><span class="err">DateTime operator -(const DateTime&amp; dateTime, const Milliseconds&amp; milliseconds);</span></code><a class="headerlink" href="#datetime-operator-const-datetime-datetime-const-milliseconds-milliseconds_1" title="Permanent link">&para;</a></h4>
+<p>dateTime: 
+milliseconds: 
+戻り値: </p>
+<h4 id="duration-operator-const-datetime-a-const-datetime-b"><code class="codehilite"><span class="err">Duration operator -(const DateTime&amp; a, const DateTime&amp; b);</span></code><a class="headerlink" href="#duration-operator-const-datetime-a-const-datetime-b" title="Permanent link">&para;</a></h4>
+<p>a: 
+b: 
+戻り値: </p>
+<h4 id="void-formatterformatdata-formatdata-const-datetime-value"><code class="codehilite"><span class="err">void Formatter(FormatData&amp; formatData, const DateTime&amp; value);</span></code><a class="headerlink" href="#void-formatterformatdata-formatdata-const-datetime-value" title="Permanent link">&para;</a></h4>
+<p>value: 
+戻り値: </p>
+<h4 id="templateclass-chartype-basic_ostreamchartype-operatorbasic_ostreamchartype-output-const-datetime-value"><code class="codehilite"><span class="err">template&lt;class CharType&gt; basic_ostream&lt;CharType&gt; &amp;operator&lt;&lt;(basic_ostream&lt;CharType&gt; output, const DateTime &amp;value);</span></code><a class="headerlink" href="#templateclass-chartype-basic_ostreamchartype-operatorbasic_ostreamchartype-output-const-datetime-value" title="Permanent link">&para;</a></h4>
+<p>value: 
+戻り値: </p>
+<h4 id="template-size_t-hashdatetimeoperatorconst-datetime-value-const"><code class="codehilite"><span class="err">template&lt;&gt; size_t hash&lt;DateTime&gt;::operator()(const DateTime &amp;value) const;</span></code><a class="headerlink" href="#template-size_t-hashdatetimeoperatorconst-datetime-value-const" title="Permanent link">&para;</a></h4>
+<p>value: 
+戻り値: </p>
                 
                   
                 
