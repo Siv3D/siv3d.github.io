@@ -1165,6 +1165,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../v043/" title="What's new in v0.4.3" class="md-nav__link">
+      What's new in v0.4.3
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2101,6 +2113,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ja-jp/news/v043/" title="v0.4.3 の新機能" class="md-nav__link">
+      v0.4.3 の新機能
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2924,21 +2948,21 @@
 
     <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
     <span class="p">{</span>
-        <span class="k">const</span> <span class="kt">bool</span> <span class="n">isOpened</span> <span class="o">=</span> <span class="n">serial</span><span class="p">.</span><span class="n">isOpened</span><span class="p">();</span>
+        <span class="k">const</span> <span class="kt">bool</span> <span class="n">isOpen</span> <span class="o">=</span> <span class="n">serial</span><span class="p">.</span><span class="n">isOpen</span><span class="p">();</span> <span class="c1">// OpenSiv3D v0.4.2 以前は serial.isOpened()</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Write 0&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">120</span><span class="p">,</span> <span class="n">isOpened</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Write 0&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">120</span><span class="p">,</span> <span class="n">isOpen</span><span class="p">))</span>
         <span class="p">{</span>
             <span class="c1">// 1 バイトのデータ (0) を書き込む</span>
             <span class="n">serial</span><span class="p">.</span><span class="n">writeByte</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Write 1&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">120</span><span class="p">,</span> <span class="n">isOpened</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Write 1&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">120</span><span class="p">,</span> <span class="n">isOpen</span><span class="p">))</span>
         <span class="p">{</span>
             <span class="c1">// 1 バイトのデータ (1) を書き込む</span>
             <span class="n">serial</span><span class="p">.</span><span class="n">writeByte</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Write 2&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">120</span><span class="p">,</span> <span class="n">isOpened</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Write 2&quot;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="mi">120</span><span class="p">,</span> <span class="n">isOpen</span><span class="p">))</span>
         <span class="p">{</span>
             <span class="c1">// 1 バイトのデータ (2) を書き込む</span>
             <span class="n">serial</span><span class="p">.</span><span class="n">writeByte</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
@@ -3769,13 +3793,13 @@
           </a>
         
         
-          <a href="../../articles/mistakes/" title="Mistakes made by new users" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../v043/" title="What's new in v0.4.3" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Mistakes made by new users
+                What's new in v0.4.3
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
