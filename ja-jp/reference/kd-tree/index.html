@@ -2281,7 +2281,7 @@
 <span class="p">};</span>
 
 <span class="c1">// Unit を KDTree で扱えるようにするためのアダプタ</span>
-<span class="k">struct</span> <span class="nl">UnitAdpater</span> <span class="p">:</span> <span class="n">KDTreeAdapter</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Unit</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">,</span> <span class="kt">double</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="nl">UnitAdapter</span> <span class="p">:</span> <span class="n">KDTreeAdapter</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Unit</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">,</span> <span class="kt">double</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span>
 <span class="p">{</span>
     <span class="k">static</span> <span class="k">const</span> <span class="n">element_type</span><span class="o">*</span> <span class="n">GetPointer</span><span class="p">(</span><span class="k">const</span> <span class="n">point_type</span><span class="o">&amp;</span> <span class="n">point</span><span class="p">)</span>
     <span class="p">{</span>
@@ -2312,7 +2312,7 @@
     <span class="p">}</span>
 
     <span class="c1">// kd-tree を構築</span>
-    <span class="n">KDTree</span><span class="o">&lt;</span><span class="n">UnitAdpater</span><span class="o">&gt;</span> <span class="n">kdTree</span><span class="p">(</span><span class="n">units</span><span class="p">);</span>
+    <span class="n">KDTree</span><span class="o">&lt;</span><span class="n">UnitAdapter</span><span class="o">&gt;</span> <span class="n">kdTree</span><span class="p">(</span><span class="n">units</span><span class="p">);</span>
 
     <span class="c1">// 探索の種類（ラジオボタンのインデックス）</span>
     <span class="kt">size_t</span> <span class="n">searchTypeIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
