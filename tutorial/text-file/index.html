@@ -1,14 +1,12 @@
 
 
 
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="Siv3D: An open source C++17 library for creative coding">
       
@@ -18,27 +16,8 @@
       
         <meta name="author" content="Ryo Suzuki">
       
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -46,9 +25,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
       
       
         
@@ -57,16 +36,13 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
-    
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
@@ -79,71 +55,75 @@
     
   </head>
   
-    
-    
-    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-      </defs>
-    </svg>
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#18-text-file" tabindex="0" class="md-skip">
-        Skip to content
-      </a>
-    
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#18-text-file" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
     
       <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://siv3d.github.io/" title="Siv3D" aria-label="Siv3D" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon">code</i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Siv3D
-            </span>
-            <span class="md-header-nav__topic">
-              
-                18. Text file
-              
-            </span>
-          
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://siv3d.github.io/" title="Siv3D" class="md-header-nav__button md-logo" aria-label="Siv3D">
+      
+  <img src="../../assets/images/code-white-48dp.svg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Siv3D
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              18. Text file
+            
+          </span>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-          
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -151,23 +131,22 @@
     </div>
   </div>
 </div>
-        
-      </div>
-      
-    </div>
+    
+    
   </nav>
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
       
         
       
       
         
+          
 
   
 
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -200,20 +179,21 @@
     </ul>
   </div>
 </nav>
+        
       
-      <main class="md-main" role="main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://siv3d.github.io/" title="Siv3D" class="md-nav__button md-logo">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://siv3d.github.io/" title="Siv3D" class="md-nav__button md-logo" aria-label="Siv3D">
       
-        <i class="md-icon">code</i>
-      
+  <img src="../../assets/images/code-white-48dp.svg" alt="logo">
+
     </a>
     Siv3D
   </label>
@@ -229,13 +209,19 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
     
     <label class="md-nav__link" for="nav-1">
       English
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="English" data-md-level="1">
       <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         English
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -260,13 +246,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2">
     
     <label class="md-nav__link" for="nav-1-2">
       Sample
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="Sample" data-md-level="2">
       <label class="md-nav__title" for="nav-1-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Sample
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -334,13 +326,19 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3" checked>
     
     <label class="md-nav__link" for="nav-1-3">
       Tutorial
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
       <label class="md-nav__title" for="nav-1-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Tutorial
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -559,13 +557,16 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         18. Text file
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
       </label>
     
     <a href="./" title="18. Text file" class="md-nav__link md-nav__link--active">
@@ -573,13 +574,18 @@
     </a>
     
       
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -601,7 +607,7 @@
     18.3 ファイルにテキストを書き込む
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="18.3 ファイルにテキストを書き込む">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -628,7 +634,7 @@
     18.5 テキストファイルのプログラムあれこれ
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="18.5 テキストファイルのプログラムあれこれ">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -642,10 +648,6 @@
     </nav>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -726,13 +728,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-4" type="checkbox" id="nav-1-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-4" type="checkbox" id="nav-1-4">
     
     <label class="md-nav__link" for="nav-1-4">
       Reference
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="Reference" data-md-level="2">
       <label class="md-nav__title" for="nav-1-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Reference
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -942,13 +950,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-5" type="checkbox" id="nav-1-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-5" type="checkbox" id="nav-1-5">
     
     <label class="md-nav__link" for="nav-1-5">
       Training
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="Training" data-md-level="2">
       <label class="md-nav__title" for="nav-1-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Training
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1002,13 +1016,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-7" type="checkbox" id="nav-1-7">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-7" type="checkbox" id="nav-1-7">
     
     <label class="md-nav__link" for="nav-1-7">
       News
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="News" data-md-level="2">
       <label class="md-nav__title" for="nav-1-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         News
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1062,13 +1082,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-8" type="checkbox" id="nav-1-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-8" type="checkbox" id="nav-1-8">
     
     <label class="md-nav__link" for="nav-1-8">
       Articles
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="Articles" data-md-level="2">
       <label class="md-nav__title" for="nav-1-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Articles
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1134,13 +1160,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-10" type="checkbox" id="nav-1-10">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-10" type="checkbox" id="nav-1-10">
     
     <label class="md-nav__link" for="nav-1-10">
       Community
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="Community" data-md-level="2">
       <label class="md-nav__title" for="nav-1-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Community
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1259,13 +1291,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       日本語
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="日本語" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         日本語
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1290,13 +1328,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
     
     <label class="md-nav__link" for="nav-2-2">
       サンプル
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="サンプル" data-md-level="2">
       <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         サンプル
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1374,13 +1418,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
     
     <label class="md-nav__link" for="nav-2-3">
       チュートリアル
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="チュートリアル" data-md-level="2">
       <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         チュートリアル
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1674,13 +1724,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
     
     <label class="md-nav__link" for="nav-2-4">
       リファレンス
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="リファレンス" data-md-level="2">
       <label class="md-nav__title" for="nav-2-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         リファレンス
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1890,13 +1946,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
     
     <label class="md-nav__link" for="nav-2-5">
       トレーニング
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="トレーニング" data-md-level="2">
       <label class="md-nav__title" for="nav-2-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         トレーニング
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1950,13 +2012,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
     
     <label class="md-nav__link" for="nav-2-7">
       新機能紹介
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="新機能紹介" data-md-level="2">
       <label class="md-nav__title" for="nav-2-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         新機能紹介
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2010,13 +2078,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8">
     
     <label class="md-nav__link" for="nav-2-8">
       記事
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="記事" data-md-level="2">
       <label class="md-nav__title" for="nav-2-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         記事
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2065,13 +2139,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-8-4" type="checkbox" id="nav-2-8-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-8-4" type="checkbox" id="nav-2-8-4">
     
     <label class="md-nav__link" for="nav-2-8-4">
       勉強会ページ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="勉強会ページ" data-md-level="3">
       <label class="md-nav__title" for="nav-2-8-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         勉強会ページ
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2142,13 +2222,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10" type="checkbox" id="nav-2-10">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-10" type="checkbox" id="nav-2-10">
     
     <label class="md-nav__link" for="nav-2-10">
       コミュニティ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="コミュニティ" data-md-level="2">
       <label class="md-nav__title" for="nav-2-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         コミュニティ
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2283,13 +2369,18 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -2311,7 +2402,7 @@
     18.3 ファイルにテキストを書き込む
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="18.3 ファイルにテキストを書き込む">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2338,7 +2429,7 @@
     18.5 テキストファイルのプログラムあれこれ
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="18.5 テキストファイルのプログラムあれこれ">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2353,10 +2444,6 @@
   
 </li>
       
-      
-      
-      
-      
     </ul>
   
 </nav>
@@ -2370,12 +2457,15 @@
               
                 
                 
+                  
+                
+                
                 <h1 id="18-text-file">18. Text file<a class="headerlink" href="#18-text-file" title="Permanent link">&para;</a></h1>
 <p>この章では、テキストファイルの内容を読み込んだり、テキストファイルに文字を書き込んだりする方法を学びます。</p>
 <h2 id="181-1">18.1 テキストファイルから 1 行ずつ読み込む<a class="headerlink" href="#181-1" title="Permanent link">&para;</a></h2>
-<p>テキストファイルからテキストを読み込むには <code class="codehilite"><span class="err">TextReader</span></code> の機能を使います。<code class="codehilite"><span class="err">TextReader</span></code> のコンストラクタ引数に、読み込みたいテキストファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。リリース用のアプリを作るときには、のちの章で説明する「リソース」パスの使用を推奨します。ファイルが存在しない場合など、オープンに失敗したかどうかは <code class="codehilite"><span class="err">if (!reader)</span></code> で調べられます。</p>
-<p>オープン直後は、読み込み位置はファイルの先頭にセットされています。<code class="codehilite"><span class="c">TextReader::readLine()</span></code> に <code class="codehilite"><span class="err">String</span></code> 型の変数を参照で渡すと、読み込み位置を始点とし、次に見つかった改行またはファイル終端までの 1 行分を読み込んだ内容をその変数に格納し、読み込み位置をそこまで進めて <code class="codehilite"><span class="err">true</span></code> を返します。読み込み位置がすでにファイルの終端にあって、これ以上読み込めないときには <code class="codehilite"><span class="err">false</span></code> を返します。次のプログラムのように <code class="codehilite"><span class="err">while</span></code> ループと組み合わせると便利です。</p>
-<div class="codehilite"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+<p>テキストファイルからテキストを読み込むには <code>TextReader</code> の機能を使います。<code>TextReader</code> のコンストラクタ引数に、読み込みたいテキストファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。リリース用のアプリを作るときには、のちの章で説明する「リソース」パスの使用を推奨します。ファイルが存在しない場合など、オープンに失敗したかどうかは <code>if (!reader)</code> で調べられます。</p>
+<p>オープン直後は、読み込み位置はファイルの先頭にセットされています。<code>TextReader::readLine()</code> に <code>String</code> 型の変数を参照で渡すと、読み込み位置を始点とし、次に見つかった改行またはファイル終端までの 1 行分を読み込んだ内容をその変数に格納し、読み込み位置をそこまで進めて <code>true</code> を返します。読み込み位置がすでにファイルの終端にあって、これ以上読み込めないときには <code>false</code> を返します。次のプログラムのように <code>while</code> ループと組み合わせると便利です。</p>
+<div class="highlight"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -2410,9 +2500,9 @@
 </code></pre></div>
 
 <h2 id="182">18.2 ファイルをオープン・クローズするタイミングを制御する<a class="headerlink" href="#182" title="Permanent link">&para;</a></h2>
-<p><code class="codehilite"><span class="err">TextReader</span></code> のコンストラクタでファイルをオープンせずに、<code class="codehilite"><span class="c">TextReader::open()</span></code> でファイルをオープンすることもできます。オープンに成功した場合は <code class="codehilite"><span class="err">true</span></code>, 失敗した場合は <code class="codehilite"><span class="err">false</span></code> を返します。</p>
-<p>また通常は <code class="codehilite"><span class="err">TextReader</span></code> のデストラクタが実行されるタイミングでファイルがクローズされますが、例えば内容を読み込んだあとにテキストファイルを削除したり、別の内容を書き込みたい場合には、ファイルがオープンされたままだと操作ができないため、すぐにクローズしたいというケースがあるでしょう。そうしたときには <code class="codehilite"><span class="c">TextReader::close()</span></code> でファイルを明示的にクローズします。</p>
-<div class="codehilite"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+<p><code>TextReader</code> のコンストラクタでファイルをオープンせずに、<code>TextReader::open()</code> でファイルをオープンすることもできます。オープンに成功した場合は <code>true</code>, 失敗した場合は <code>false</code> を返します。</p>
+<p>また通常は <code>TextReader</code> のデストラクタが実行されるタイミングでファイルがクローズされますが、例えば内容を読み込んだあとにテキストファイルを削除したり、別の内容を書き込みたい場合には、ファイルがオープンされたままだと操作ができないため、すぐにクローズしたいというケースがあるでしょう。そうしたときには <code>TextReader::close()</code> でファイルを明示的にクローズします。</p>
+<div class="highlight"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -2447,59 +2537,59 @@
 </code></pre></div>
 
 <h2 id="183">18.3 ファイルにテキストを書き込む<a class="headerlink" href="#183" title="Permanent link">&para;</a></h2>
-<p>ファイルにテキストを書き込むには <code class="codehilite"><span class="err">TextWriter</span></code> の機能を使います。<code class="codehilite"><span class="err">TextWriter</span></code> のコンストラクタ引数に、書き込み先のファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。ファイルが使用中だったり、ファイル名が不正なものだったりしてオープンに失敗したかどうかは <code class="codehilite"><span class="err">if (!writer)</span></code> で調べられます。</p>
+<p>ファイルにテキストを書き込むには <code>TextWriter</code> の機能を使います。<code>TextWriter</code> のコンストラクタ引数に、書き込み先のファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。ファイルが使用中だったり、ファイル名が不正なものだったりしてオープンに失敗したかどうかは <code>if (!writer)</code> で調べられます。</p>
 <p>同名のファイルがすでに存在する場合はそれを破棄してからオープンし、存在しない場合は新しい空のファイルを作成してオープンします。</p>
-<p>書き込み方法は <code class="codehilite"><span class="err">Print</span></code> と似ていて、オープン済みの <code class="codehilite"><span class="err">TextWriter</span></code> の変数に向かって <code class="codehilite"><span class="err">&lt;&lt;</span></code> で書き込みたい 1 行分の文字列や値を送ります。書き込みの最後には改行が自動で挿入されます。これを避けたい場合はメンバ関数 <code class="codehilite"><span class="na">.write</span><span class="p">()</span></code> を使って書き込みたい内容を送ります。<code class="codehilite"><span class="na">.writeln</span><span class="p">()</span></code> は改行が挿入されます。</p>
-<div class="codehilite"><pre><span></span><code><span class="o">#</span> <span class="n">include</span> <span class="o">&lt;</span><span class="n">Siv3D</span><span class="p">.</span><span class="n">hpp</span><span class="o">&gt;</span>
+<p>書き込み方法は <code>Print</code> と似ていて、オープン済みの <code>TextWriter</code> の変数に向かって <code>&lt;&lt;</code> で書き込みたい 1 行分の文字列や値を送ります。書き込みの最後には改行が自動で挿入されます。これを避けたい場合はメンバ関数 <code>.write()</code> を使って書き込みたい内容を送ります。<code>.writeln()</code> は改行が挿入されます。</p>
+<div class="highlight"><pre><span></span><code># include &lt;Siv3D.hpp&gt;
 
-<span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
-<span class="err">{</span>
-    <span class="o">//</span> <span class="err">書き込み用のファイルをオープンする</span>
-    <span class="o">//</span> <span class="err">（同名のファイルがすでに存在する場合はそれを破棄してからオープン）</span>
-    <span class="n">TextWriter</span> <span class="n">writer</span><span class="p">(</span><span class="n">U</span><span class="ss">&quot;tutorial.txt&quot;</span><span class="p">);</span>
+void Main()
+{
+    // 書き込み用のファイルをオープンする
+    // （同名のファイルがすでに存在する場合はそれを破棄してからオープン）
+    TextWriter writer(U&quot;tutorial.txt&quot;);
 
-    <span class="o">//</span> <span class="err">オープンに失敗</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">writer</span><span class="p">)</span>
-    <span class="err">{</span>
-        <span class="n">throw</span> <span class="n">Error</span><span class="p">(</span><span class="n">U</span><span class="ss">&quot;Failed to open `tutorial.txt`&quot;</span><span class="p">);</span>
-    <span class="err">}</span>
+    // オープンに失敗
+    if (!writer)
+    {
+        throw Error(U&quot;Failed to open `tutorial.txt`&quot;);
+    }
 
-    <span class="o">//</span> <span class="err">文章を</span> <span class="mi">1</span> <span class="err">行書き込む</span>
-    <span class="n">writer</span> <span class="o">&lt;&lt;</span> <span class="n">U</span><span class="ss">&quot;Hello, Siv3D!&quot;</span><span class="p">;</span>
+    // 文章を 1 行書き込む
+    writer &lt;&lt; U&quot;Hello, Siv3D!&quot;;
 
-    <span class="o">//</span> <span class="err">値や文字を</span>　<span class="mi">1</span> <span class="err">行書き込む</span>
-    <span class="n">writer</span> <span class="o">&lt;&lt;</span> <span class="mi">123</span> <span class="o">&lt;&lt;</span> <span class="n">U</span><span class="s1">&#39;,&#39;</span> <span class="o">&lt;&lt;</span> <span class="mi">456</span> <span class="o">&lt;&lt;</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    // 値や文字を　1 行書き込む
+    writer &lt;&lt; 123 &lt;&lt; U&#39;,&#39; &lt;&lt; 456 &lt;&lt; Point(10, 20);
 
-    <span class="o">//</span> <span class="mi">1</span> <span class="err">文字ずつ書き込む（改行無し）</span>
-    <span class="n">writer</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="n">U</span><span class="s1">&#39;A&#39;</span><span class="p">);</span>
-    <span class="n">writer</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="n">U</span><span class="s1">&#39;B&#39;</span><span class="p">);</span>
+    // 1 文字ずつ書き込む（改行無し）
+    writer.write(U&#39;A&#39;);
+    writer.write(U&#39;B&#39;);
 
-    <span class="o">//</span> <span class="mi">1</span> <span class="err">文字書き込んで改行も書き込む</span>
-    <span class="n">writer</span><span class="p">.</span><span class="n">writeln</span><span class="p">(</span><span class="n">U</span><span class="s1">&#39;C&#39;</span><span class="p">);</span>
+    // 1 文字書き込んで改行も書き込む
+    writer.writeln(U&#39;C&#39;);
 
-    <span class="o">//</span> <span class="err">値を書き込む（改行無し）</span>
-    <span class="n">writer</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="mi">777</span><span class="p">);</span>
-    <span class="n">writer</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="n">U</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
-    <span class="n">writer</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="mi">888</span><span class="p">);</span>
+    // 値を書き込む（改行無し）
+    writer.write(777);
+    writer.write(U&#39;,&#39;);
+    writer.write(888);
 
-    <span class="n">while</span> <span class="p">(</span><span class="k">System</span><span class="p">::</span><span class="k">Update</span><span class="p">())</span>
-    <span class="err">{</span>
+    while (System::Update())
+    {
 
-    <span class="err">}</span>
+    }
 
-    <span class="o">//</span> <span class="n">writer</span> <span class="err">のデストラクタで自動的にファイルがクローズされる</span>
-<span class="err">}</span>
+    // writer のデストラクタで自動的にファイルがクローズされる
+}
 </code></pre></div>
 
 <p>出力結果 (tutorial.txt)
-<div class="codehilite"><pre><span></span><code><span class="err">Hello, Siv3D!</span>
-<span class="err">123,456(10, 20)</span>
-<span class="err">ABC</span>
-<span class="err">777,888</span>
+<div class="highlight"><pre><span></span><code>Hello, Siv3D!
+123,456(10, 20)
+ABC
+777,888
 </code></pre></div></p>
 <h3 id="_1">オープンとクローズのタイミングの制御<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="err">TextWriter</span></code> は <code class="codehilite"><span class="err">TextReader</span></code> と同じように、<code class="codehilite"><span class="na">.open</span><span class="p">()</span></code> を使ってファイルをオープン, <code class="codehilite"><span class="na">.close</span><span class="p">()</span></code> を使ってファイルをクローズできます。</p>
-<div class="codehilite"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+<p><code>TextWriter</code> は <code>TextReader</code> と同じように、<code>.open()</code> を使ってファイルをオープン, <code>.close()</code> を使ってファイルをクローズできます。</p>
+<div class="highlight"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -2540,8 +2630,8 @@
 </code></pre></div>
 
 <h2 id="184">18.4 既存のテキストファイルにテキストを追加で書きこむ<a class="headerlink" href="#184" title="Permanent link">&para;</a></h2>
-<p>テキストを既存のテキストファイルの末尾から追加で書き込みたい場合は、<code class="codehilite"><span class="err">TextWriter</span></code> でのオープン時にファイルオープンモードとして <code class="codehilite"><span class="c">OpenMode::Append</span></code> (追加モード) を指定します。同名のテキストファイルが存在しなかった時は、通常どおり新しいファイルを作成します。</p>
-<div class="codehilite"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+<p>テキストを既存のテキストファイルの末尾から追加で書き込みたい場合は、<code>TextWriter</code> でのオープン時にファイルオープンモードとして <code>OpenMode::Append</code> (追加モード) を指定します。同名のテキストファイルが存在しなかった時は、通常どおり新しいファイルを作成します。</p>
+<div class="highlight"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -2565,16 +2655,16 @@
 </code></pre></div>
 
 <p>18.3 で作った tutorial.txt に追加した結果
-<div class="codehilite"><pre><span></span><code><span class="err">Hello, Siv3D!</span>
-<span class="err">123,456(10, 20)</span>
-<span class="err">ABC</span>
-<span class="err">777,888</span>
-<span class="err">------</span>
+<div class="highlight"><pre><span></span><code>Hello, Siv3D!
+123,456(10, 20)
+ABC
+777,888
+------
 </code></pre></div></p>
 <h2 id="185">18.5 テキストファイルのプログラムあれこれ<a class="headerlink" href="#185" title="Permanent link">&para;</a></h2>
 <h3 id="_2">スコープによる制御<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>ファイルのオープン・クローズのタイミングの制御は、<code class="codehilite"><span class="err">{ }</span></code> でスコープを作り、スコープの終了時にデストラクタで自動的にクローズされるようにするのも良い方法です。</p>
-<div class="codehilite"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
+<p>ファイルのオープン・クローズのタイミングの制御は、<code>{ }</code> でスコープを作り、スコープの終了時にデストラクタで自動的にクローズされるようにするのも良い方法です。</p>
+<div class="highlight"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
 <span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -2608,9 +2698,6 @@
 <span class="p">}</span>
 </code></pre></div>
                 
-                  
-                
-                
               
               
                 
@@ -2626,34 +2713,34 @@
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../asset/" title="17. Asset management" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+          <a href="../asset/" title="17. Asset management" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
                 17. Asset management
-              </span>
+              </div>
             </div>
           </a>
         
         
-          <a href="../config-file/" title="19. Configuration file" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+          <a href="../config-file/" title="19. Configuration file" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
                 19. Configuration file
-              </span>
+              </div>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
             </div>
           </a>
         
@@ -2668,19 +2755,31 @@
             Copyright (c) 2018 - present, Ryo Suzuki<br>Copyright (c) 2018 - present, OpenSiv3D Project
           </div>
         
-        powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
-        and
+        Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs</a>
+          Material for MkDocs
+        </a>
       </div>
       
   <div class="md-footer-social">
-    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/Siv3D/OpenSiv3D" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+      
+      
+        
+        
+      
+      <a href="https://github.com/Siv3D/OpenSiv3D" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
     
-      <a href="https://twitter.com/Siv3D" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/Siv3D" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
     
   </div>
 
@@ -2690,9 +2789,18 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
     
   </body>
