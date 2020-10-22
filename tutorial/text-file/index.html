@@ -2540,45 +2540,45 @@
 <p>ファイルにテキストを書き込むには <code>TextWriter</code> の機能を使います。<code>TextWriter</code> のコンストラクタ引数に、書き込み先のファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。ファイルが使用中だったり、ファイル名が不正なものだったりしてオープンに失敗したかどうかは <code>if (!writer)</code> で調べられます。</p>
 <p>同名のファイルがすでに存在する場合はそれを破棄してからオープンし、存在しない場合は新しい空のファイルを作成してオープンします。</p>
 <p>書き込み方法は <code>Print</code> と似ていて、オープン済みの <code>TextWriter</code> の変数に向かって <code>&lt;&lt;</code> で書き込みたい 1 行分の文字列や値を送ります。書き込みの最後には改行が自動で挿入されます。これを避けたい場合はメンバ関数 <code>.write()</code> を使って書き込みたい内容を送ります。<code>.writeln()</code> は改行が挿入されます。</p>
-<div class="highlight"><pre><span></span><code># include &lt;Siv3D.hpp&gt;
+<div class="highlight"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
-void Main()
-{
-    // 書き込み用のファイルをオープンする
-    // （同名のファイルがすでに存在する場合はそれを破棄してからオープン）
-    TextWriter writer(U&quot;tutorial.txt&quot;);
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 書き込み用のファイルをオープンする</span>
+    <span class="c1">// （同名のファイルがすでに存在する場合はそれを破棄してからオープン）</span>
+    <span class="n">TextWriter</span> <span class="n">writer</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;tutorial.txt&quot;</span><span class="p">);</span>
 
-    // オープンに失敗
-    if (!writer)
-    {
-        throw Error(U&quot;Failed to open `tutorial.txt`&quot;);
-    }
+    <span class="c1">// オープンに失敗</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">writer</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">Error</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Failed to open `tutorial.txt`&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    // 文章を 1 行書き込む
-    writer &lt;&lt; U&quot;Hello, Siv3D!&quot;;
+    <span class="c1">// 文章を 1 行書き込む</span>
+    <span class="n">writer</span> <span class="o">&lt;&lt;</span> <span class="sa">U</span><span class="s">&quot;Hello, Siv3D!&quot;</span><span class="p">;</span>
 
-    // 値や文字を　1 行書き込む
-    writer &lt;&lt; 123 &lt;&lt; U&#39;,&#39; &lt;&lt; 456 &lt;&lt; Point(10, 20);
+    <span class="c1">// 値や文字を　1 行書き込む</span>
+    <span class="n">writer</span> <span class="o">&lt;&lt;</span> <span class="mi">123</span> <span class="o">&lt;&lt;</span> <span class="n">U</span><span class="sc">&#39;,&#39;</span> <span class="o">&lt;&lt;</span> <span class="mi">456</span> <span class="o">&lt;&lt;</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
 
-    // 1 文字ずつ書き込む（改行無し）
-    writer.write(U&#39;A&#39;);
-    writer.write(U&#39;B&#39;);
+    <span class="c1">// 1 文字ずつ書き込む（改行無し）</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">U</span><span class="sc">&#39;A&#39;</span><span class="p">);</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">U</span><span class="sc">&#39;B&#39;</span><span class="p">);</span>
 
-    // 1 文字書き込んで改行も書き込む
-    writer.writeln(U&#39;C&#39;);
+    <span class="c1">// 1 文字書き込んで改行も書き込む</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">writeln</span><span class="p">(</span><span class="n">U</span><span class="sc">&#39;C&#39;</span><span class="p">);</span>
 
-    // 値を書き込む（改行無し）
-    writer.write(777);
-    writer.write(U&#39;,&#39;);
-    writer.write(888);
+    <span class="c1">// 値を書き込む（改行無し）</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">777</span><span class="p">);</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">U</span><span class="sc">&#39;,&#39;</span><span class="p">);</span>
+    <span class="n">writer</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">888</span><span class="p">);</span>
 
-    while (System::Update())
-    {
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
 
-    }
+    <span class="p">}</span>
 
-    // writer のデストラクタで自動的にファイルがクローズされる
-}
+    <span class="c1">// writer のデストラクタで自動的にファイルがクローズされる</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <p>出力結果 (tutorial.txt)
