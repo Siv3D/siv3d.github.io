@@ -1,519 +1,519 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://siv3d.github.io/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/sample/game/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/sample/app/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/sample/visual/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/sample/game-template/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/basic/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/shape/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/animation/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/2d-intersection/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/texture/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/data-structures/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/formatting/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/font/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/gui/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/window/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/keyboard/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/mouse/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/audio/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/random/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/2d-renderstates/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/effect/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/asset/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/text-file/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/config-file/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/resource/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/binary-file/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/scene-manager/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/tutorial/release/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/emojis/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/fullscreen/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/json/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/unicode/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/2d-shadow/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/2d-geometry/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/navmesh/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/nlp/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/math-parser/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/kd-tree/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/objdetection/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/gamepad/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/network/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/twitter/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/2d-particle/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/reference/2d-physics/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/training/1-1/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/training/2-1/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/api/api/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/news/v041/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/news/v042/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/news/v043/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/articles/mistakes/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/articles/troubleshooting/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/articles/build/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/store/store/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/community/community/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/community/study-meeting/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/community/dev-day/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/logo/logo/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/mascot/mascot/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/support/support/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/external/external/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/sponsors/sponsors/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/sample/game/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/sample/app/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/sample/visual/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/sample/game-template/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/sample/game-launcher/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/basic/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/shape/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/animation/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/2d-intersection/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/texture/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/data-structures/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/formatting/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/font/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/gui/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/window/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/keyboard/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/mouse/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/audio/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/random/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/2d-renderstates/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/effect/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/asset/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/text-file/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/config-file/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/resource/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/binary-file/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/scene-manager/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/tutorial/release/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/emojis/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/fullscreen/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/json/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/unicode/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/2d-shadow/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/2d-geometry/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/navmesh/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/nlp/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/math-parser/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/kd-tree/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/objdetection/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/gamepad/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/network/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/twitter/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/2d-particle/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/reference/2d-physics/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/training/1-1/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/training/2-1/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/api/api/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/news/v041/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/news/v042/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/news/v043/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/articles/mistakes/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/articles/troubleshooting/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/articles/build/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/articles/event/chiba-2020/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/articles/event/ishikawa-2020/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/articles/event/sendai-2020/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/store/store/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/community/community/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/community/study-meeting/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/community/dev-day/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/logo/logo/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/mascot/mascot/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/support/support/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/external/external/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/news/news/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://siv3d.github.io/ja-jp/sponsors/sponsors/</loc>
-     <lastmod>2020-10-24</lastmod>
+     <lastmod>2020-10-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
