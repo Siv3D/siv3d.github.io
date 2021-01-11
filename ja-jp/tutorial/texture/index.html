@@ -2908,30 +2908,30 @@
 <p>アイコンコレクションから <code>Texture</code> を作成するには、<code>Texture</code> のコンストラクタ引数に <code>Icon()</code> を渡します。アイコンは全部で約 1,300 種類用意されています。</p>
 <p><code>Icon</code> のコンストラクタには、 <a href="https://fontawesome.com/icons?d=gallery&amp;s=brands,solid&amp;m=free">アイコン一覧</a> で調べられる 16 進数コードと、アイコンのサイズ（ピクセル単位）を渡します。</p>
 <p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/5/5-0.png?raw=true" /></p>
-<div class="highlight"><pre><span></span><code># include &lt;Siv3D.hpp&gt;
+<div class="highlight"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
 
-void Main()
-{
-    Scene::SetBackground(ColorF(0.92));
+<span class="kt">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">(</span><span class="mf">0.92</span><span class="p">));</span>
 
-    // 歯車 (f013) のアイコン
-    const Texture iconConfig(Icon(0xf013, 80));
+    <span class="c1">// 歯車 (f013) のアイコン</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">iconConfig</span><span class="p">(</span><span class="n">Icon</span><span class="p">(</span><span class="mh">0xf013</span><span class="p">,</span> <span class="mi">80</span><span class="p">));</span>
 
-    // 南京錠 (f023) のアイコン
-    const Texture iconLock(Icon(0xf023, 80));
+    <span class="c1">// 南京錠 (f023) のアイコン</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">iconLock</span><span class="p">(</span><span class="n">Icon</span><span class="p">(</span><span class="mh">0xf023</span><span class="p">,</span> <span class="mi">80</span><span class="p">));</span>
 
-    // 拡大鏡 (f00e) のアイコン
-    const Texture iconZoom(Icon(0xf00e, 80));
+    <span class="c1">// 拡大鏡 (f00e) のアイコン</span>
+    <span class="k">const</span> <span class="n">Texture</span> <span class="n">iconZoom</span><span class="p">(</span><span class="n">Icon</span><span class="p">(</span><span class="mh">0xf00e</span><span class="p">,</span> <span class="mi">80</span><span class="p">));</span>
 
-    while (System::Update())
-    {
-        iconConfig.drawAt(200, 300, ColorF(0.25));
+    <span class="k">while</span> <span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">iconConfig</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
 
-        iconLock.scaled(1.5).drawAt(400, 300, ColorF(0.25));
+        <span class="n">iconLock</span><span class="p">.</span><span class="n">scaled</span><span class="p">(</span><span class="mf">1.5</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
 
-        iconZoom.drawAt(600, 300, ColorF(0.25));
-    }
-}
+        <span class="n">iconZoom</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="n">ColorF</span><span class="p">(</span><span class="mf">0.25</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <p>テクスチャを描く際、<code>.draw()</code> や <code>.drawAt()</code> に、左上、右上、右下、左下の 4 つの頂点の色を渡してグラデーションで描くこともできます。</p>
