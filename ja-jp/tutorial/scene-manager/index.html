@@ -2573,7 +2573,7 @@
 </code></pre></div>
 
 <h2 id="223">22.3 シーン間でデータを共有<a class="headerlink" href="#223" title="Permanent link">&para;</a></h2>
-<p>ゲームのスコアの情報など、シーンをまたいで共有したいデータがある場合、そのデータ型を <code>SceneManager&lt;&gt;</code> の 2 つ目のテンプレート引数に追加します。そうすることで、各シーンの関数から <code>geteData()</code> を通してそのデータにアクセスできるようになります。このデータはシーンマネージャーの作成時に 1 度だけ初期化されます。</p>
+<p>ゲームのスコアの情報など、シーンをまたいで共有したいデータがある場合、そのデータ型を <code>SceneManager&lt;&gt;</code> の 2 つ目のテンプレート引数に追加します。そうすることで、各シーンの関数から <code>getData()</code> を通してそのデータにアクセスできるようになります。このデータはシーンマネージャーの作成時に 1 度だけ初期化されます。</p>
 <video src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/22/s2.mp4?raw=true" autoplay loop muted></video>
 
 <div class="highlight"><pre><span></span><code><span class="cp"># include &lt;Siv3D.hpp&gt;</span>
