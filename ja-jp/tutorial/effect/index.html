@@ -2434,7 +2434,11 @@
                   
                 
                 
-                <h1 id="16">16. エフェクト<a class="headerlink" href="#16" title="Permanent link">&para;</a></h1>
+                <div class="admonition warning">
+<p class="admonition-title">このページよりも新しいドキュメントがあります</p>
+<p>このドキュメントは古い OpenSiv3D v0.4.3 向けです。2021 年9 月 18 日に最新の OpenSiv3D v0.6.0 がリリースされました。最新のドキュメントは <a href="https://zenn.dev/reputeless/books/siv3d-documentation">Siv3D リファレンス v0.6.0</a> です。</p>
+</div>
+<h1 id="16">16. エフェクト<a class="headerlink" href="#16" title="Permanent link">&para;</a></h1>
 <p>この章では、ちょっとしたアニメーションやエフェクトの演出に便利な <code>Effect</code> クラスの使い方を学びます。</p>
 <h2 id="161-effect">16.1 Effect の基本<a class="headerlink" href="#161-effect" title="Permanent link">&para;</a></h2>
 <p>エフェクト機能を使うには、エフェクトを管理する <code>Effect</code> オブジェクトを作成し、<code>Effect::add&lt;EffectType&gt;()</code> で個々のエフェクトのパラメータを追加してエフェクトを発生させます。ここでいう <code>EffectType</code> は、<code>IEffect</code> を継承したクラスです。このクラスに必要な実装は <code>bool update(double t) override</code> メンバ関数です。エフェクトが発生してからの経過時間 <code>t</code> を受け取り、そのエフェクトの描画を行い、最後にエフェクトを次のフレームも継続させるかを <code>bool</code> 値で返します。例えば <code>return t &lt; 3.0;</code> とすれば、エフェクトは 3 秒間継続できます。</p>

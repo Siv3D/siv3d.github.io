@@ -2948,7 +2948,11 @@
                 
                   <h1>v0.4.1 の新機能</h1>
                 
-                <h2 id="1">1. レンダーテクスチャ<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+                <div class="admonition warning">
+<p class="admonition-title">このページよりも新しいドキュメントがあります</p>
+<p>このドキュメントは古い OpenSiv3D v0.4.1 向けです。2021 年9 月 18 日に最新の OpenSiv3D v0.6.0 がリリースされました。最新のドキュメントは <a href="https://zenn.dev/reputeless/books/siv3d-documentation">Siv3D リファレンス v0.6.0</a> です。</p>
+</div>
+<h2 id="1">1. レンダーテクスチャ<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>これまで、図形やテクスチャはシーンにしか描画できませんでしたが、プログラムで用意した別のレンダーテクスチャにも描画できるようになりました。<code>RenderTexture</code> を作成し、<code>ScopedRenderTarget2D</code> オブジェクトのコンストラクタにレンダーテクスチャを渡すと、<code>ScopedRenderTarget2D</code> オブジェクトのスコープが有効な間、図形やテクスチャがそのレンダーテクスチャに描画されます（レンダーターゲットの変更）。描画されたレンダーテクスチャは、レンダーターゲットから解除されたあとにテクスチャとして描画に転用できます。</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>

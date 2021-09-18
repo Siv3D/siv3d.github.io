@@ -2460,7 +2460,11 @@
                   
                 
                 
-                <h1 id="18-text-file">18. Text file<a class="headerlink" href="#18-text-file" title="Permanent link">&para;</a></h1>
+                <div class="admonition warning">
+<p class="admonition-title">This is the documentation for an old version</p>
+<p>This is the documentation for an old version of Siv3D (v0.4.3). See <a href="https://zenn.dev/reputeless/books/siv3d-documentation-en">Siv3D Reference v0.6.0</a> for the latest version.</p>
+</div>
+<h1 id="18-text-file">18. Text file<a class="headerlink" href="#18-text-file" title="Permanent link">&para;</a></h1>
 <p>この章では、テキストファイルの内容を読み込んだり、テキストファイルに文字を書き込んだりする方法を学びます。</p>
 <h2 id="181-1">18.1 テキストファイルから 1 行ずつ読み込む<a class="headerlink" href="#181-1" title="Permanent link">&para;</a></h2>
 <p>テキストファイルからテキストを読み込むには <code>TextReader</code> の機能を使います。<code>TextReader</code> のコンストラクタ引数に、読み込みたいテキストファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は App フォルダ）を基準とする相対パスか、絶対パスを使用します。リリース用のアプリを作るときには、のちの章で説明する「リソース」パスの使用を推奨します。ファイルが存在しない場合など、オープンに失敗したかどうかは <code>if (!reader)</code> で調べられます。</p>

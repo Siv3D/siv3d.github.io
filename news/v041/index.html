@@ -2948,7 +2948,11 @@
                 
                   <h1>What's new in v0.4.1</h1>
                 
-                <h2 id="1">1. レンダーテクスチャ<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+                <div class="admonition warning">
+<p class="admonition-title">This is the documentation for an old version</p>
+<p>This is the documentation for an old version of Siv3D (v0.4.3). See <a href="https://zenn.dev/reputeless/books/siv3d-documentation-en">Siv3D Reference v0.6.0</a> for the latest version.</p>
+</div>
+<h2 id="1">1. レンダーテクスチャ<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>これまで、図形やテクスチャはシーンにしか描画できませんでしたが、プログラムで用意した別のレンダーテクスチャにも描画できるようになりました。<code>RenderTexture</code> を作成し、<code>ScopedRenderTarget2D</code> オブジェクトのコンストラクタにレンダーテクスチャを渡すと、<code>ScopedRenderTarget2D</code> オブジェクトのスコープが有効な間、図形やテクスチャがそのレンダーテクスチャに描画されます（レンダーターゲットの変更）。描画されたレンダーテクスチャは、レンダーターゲットから解除されたあとにテクスチャとして描画に転用できます。</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>

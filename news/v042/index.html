@@ -2718,7 +2718,11 @@
                 
                   <h1>What's new in v0.4.2</h1>
                 
-                <h2 id="1-sdffont">1. SDFFont<a class="headerlink" href="#1-sdffont" title="Permanent link">&para;</a></h2>
+                <div class="admonition warning">
+<p class="admonition-title">This is the documentation for an old version</p>
+<p>This is the documentation for an old version of Siv3D (v0.4.3). See <a href="https://zenn.dev/reputeless/books/siv3d-documentation-en">Siv3D Reference v0.6.0</a> for the latest version.</p>
+</div>
+<h2 id="1-sdffont">1. SDFFont<a class="headerlink" href="#1-sdffont" title="Permanent link">&para;</a></h2>
 <p><code>SDFFont</code> は、グリフの画像を Distance field 形式で持つ <code>Font</code> クラスです。<br />
 これまでの <code>Font</code> クラスは、コンストラクタで指定した固定サイズでグリフごとのビットマップ画像を生成し、それをレンダリングするため、拡大描画時にぼやけるなど、サイズの変更に弱く、縁取りのようなエフェクトを適用することも困難でした。<br />
 <code>SDFFont</code> クラスは、グリフごとの Distance Field を生成し、拡大してもぼやけない手法でテキストをレンダリングします。<code>draw()</code> ごとに第一引数でフォントのサイズを指定でき、大きな値を入れても結果がぼやけることはありません。また、<code>Garphics2D::SetSDFParameters()</code> でパラメータを調整することで、レンダリング時に文字を太らせられます。太さと色を変えて 2 回以上テキストを描画することで、縁取りの表現も可能です。<br />
