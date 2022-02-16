@@ -9,14 +9,13 @@
         <meta name="description" content="Siv3D: An open source C++17 library for creative coding">
       
       
-      
         <meta name="author" content="Ryo Suzuki">
       
       
         <link rel="canonical" href="https://siv3d.github.io/tutorial/config-file/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.8">
     
     
       
@@ -24,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8b42a75e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6e60f8b8.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -41,18 +40,17 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     
       <link rel="stylesheet" href="../../siv3d_styles.css">
     
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
 
     
     
@@ -67,7 +65,6 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
   
     
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -83,6 +80,7 @@
     <div data-md-component="announce">
       
     </div>
+    
     
       
 
@@ -118,8 +116,7 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -622,6 +619,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -2490,6 +2488,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -2557,8 +2556,8 @@
             <article class="md-content__inner md-typeset">
               
                 
-                
-                <div class="admonition warning">
+
+<div class="admonition warning">
 <p class="admonition-title">This is the documentation for an old version</p>
 <p>This is the documentation for an old version of Siv3D (v0.4.3). See <a href="https://zenn.dev/reputeless/books/siv3d-documentation-en">Siv3D Reference v0.6.0</a> for the latest version.</p>
 </div>
@@ -2575,7 +2574,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/19/csv-0.png?raw=true" /></p>
 <div class="highlight"><pre><span></span><code><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
 
-<span class="k">struct</span> <span class="nc">Item</span><span class="w"></span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Item</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// アイテムのラベル</span>
 <span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">label</span><span class="p">;</span><span class="w"></span>
@@ -2619,7 +2618,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 
 <span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">windowTitle</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">windowWidth</span><span class="p">,</span><span class="w"> </span><span class="n">windowHeight</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="nl">Sizable</span> <span class="p">:</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Sizable</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">sceneBackground</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="c1">// 6 行 1 列目のテキストを &#39;,&#39; で区切って配列にし、それぞれの要素を int32 型の値に変換</span>
@@ -2632,7 +2631,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">itemsCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parse</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">csv</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
 <span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">baseLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="nl">i</span> <span class="p">:</span><span class="w"> </span><span class="n">step</span><span class="p">(</span><span class="n">itemsCount</span><span class="p">))</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">step</span><span class="p">(</span><span class="n">itemsCount</span><span class="p">))</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">item</span><span class="p">.</span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">csv</span><span class="p">[</span><span class="n">baseLine</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
@@ -2647,7 +2646,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// アイテムを描画</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">item</span> <span class="p">:</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">Rect</span><span class="w"> </span><span class="n">rect</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w"></span>
 
@@ -2664,7 +2663,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/19/ini-0.png?raw=true" /></p>
 <div class="highlight"><pre><span></span><code><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
 
-<span class="k">struct</span> <span class="nc">Item</span><span class="w"></span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Item</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// アイテムのラベル</span>
 <span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">label</span><span class="p">;</span><span class="w"></span>
@@ -2684,13 +2683,13 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">    </span><span class="c1">// 全てのセクションを列挙</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">section</span> <span class="p">:</span><span class="w"> </span><span class="n">ini</span><span class="p">.</span><span class="n">sections</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ini</span><span class="p">.</span><span class="n">sections</span><span class="p">())</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// セクション名</span>
 <span class="w">        </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[{}]&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">section</span><span class="p">.</span><span class="n">section</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">        </span><span class="c1">// セクション内のすべてのキーを列挙</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">key</span> <span class="p">:</span><span class="w"> </span><span class="n">section</span><span class="p">.</span><span class="n">keys</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">section</span><span class="p">.</span><span class="n">keys</span><span class="p">)</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="c1">// キーの名前と値</span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;{} = {}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">key</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">.</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
@@ -2715,7 +2714,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 
 <span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">windowTitle</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">windowWidth</span><span class="p">,</span><span class="w"> </span><span class="n">windowHeight</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="nl">Sizable</span> <span class="p">:</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Sizable</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">sceneBackground</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="c1">// Array セクションの values キーの値（テキスト）を &#39;,&#39; で区切って配列にし、それぞれの要素を int32 型の値に変換</span>
@@ -2727,7 +2726,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">itemsCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parse</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Items.count&quot;</span><span class="p">]);</span><span class="w"></span>
 
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="nl">i</span> <span class="p">:</span><span class="w"> </span><span class="n">step</span><span class="p">(</span><span class="n">itemsCount</span><span class="p">))</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">step</span><span class="p">(</span><span class="n">itemsCount</span><span class="p">))</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">item</span><span class="p">.</span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ini</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Item{}.label&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">i</span><span class="p">)];</span><span class="w"></span>
@@ -2742,7 +2741,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// アイテムを描画</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">item</span> <span class="p">:</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">Rect</span><span class="w"> </span><span class="n">rect</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w"></span>
 
@@ -2759,7 +2758,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/19/json-0.png?raw=true" /></p>
 <div class="highlight"><pre><span></span><code><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
 
-<span class="k">struct</span> <span class="nc">Item</span><span class="w"></span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Item</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// アイテムのラベル</span>
 <span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">label</span><span class="p">;</span><span class="w"></span>
@@ -2771,36 +2770,36 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="c1">// 再帰的に JSON の要素を表示</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">ShowObject</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">JSONValue</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">object</span> <span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="n">objectView</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="n">objectView</span><span class="p">())</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">getType</span><span class="p">())</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="nl">Empty</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="n">Empty</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Empty]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="nl">Null</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="n">Null</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Null]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="nl">Object</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="n">Object</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Object]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">ShowObject</span><span class="p">(</span><span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="nl">Array</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="n">Array</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Array]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">element</span> <span class="p">:</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">arrayView</span><span class="p">())</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">arrayView</span><span class="p">())</span><span class="w"></span>
 <span class="w">            </span><span class="p">{</span><span class="w"></span>
 <span class="w">                </span><span class="n">ShowObject</span><span class="p">(</span><span class="n">element</span><span class="p">);</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="nl">String</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="n">String</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[String]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">getString</span><span class="p">();</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="nl">Number</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="n">Number</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Number]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="nl">Bool</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JSONValueType</span><span class="o">::</span><span class="n">Bool</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Bool]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
@@ -2832,13 +2831,13 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 
 <span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">windowTitle</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">windowWidth</span><span class="p">,</span><span class="w"> </span><span class="n">windowHeight</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="nl">Sizable</span> <span class="p">:</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Sizable</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">sceneBackground</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="c1">// 数値の配列を JSON データから作成</span>
 <span class="w">    </span><span class="n">Array</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">object</span> <span class="p">:</span><span class="w"> </span><span class="n">json</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Array.values&quot;</span><span class="p">].</span><span class="n">arrayView</span><span class="p">())</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">json</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Array.values&quot;</span><span class="p">].</span><span class="n">arrayView</span><span class="p">())</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">values</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
@@ -2848,7 +2847,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">    </span><span class="c1">// アイテムの配列を JSON データから作成</span>
 <span class="w">    </span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">items</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">object</span> <span class="p">:</span><span class="w"> </span><span class="n">json</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Items&quot;</span><span class="p">].</span><span class="n">arrayView</span><span class="p">())</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">json</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Items&quot;</span><span class="p">].</span><span class="n">arrayView</span><span class="p">())</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">item</span><span class="p">.</span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;label&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span><span class="w"></span>
@@ -2863,7 +2862,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// アイテムを描画</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">item</span> <span class="p">:</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">Rect</span><span class="w"> </span><span class="n">rect</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w"></span>
 
@@ -2880,7 +2879,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/19/toml-0.png?raw=true" /></p>
 <div class="highlight"><pre><span></span><code><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
 
-<span class="k">struct</span> <span class="nc">Item</span><span class="w"></span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Item</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// アイテムのラベル</span>
 <span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">label</span><span class="p">;</span><span class="w"></span>
@@ -2892,36 +2891,36 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="c1">// 再帰的に TOML の要素を表示</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">ShowTable</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">TOMLValue</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">table</span> <span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="n">tableView</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="n">tableView</span><span class="p">())</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">getType</span><span class="p">())</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Empty</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">Empty</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Empty]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Table</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">Table</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Table]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">ShowTable</span><span class="p">(</span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Array</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">Array</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Array]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">element</span> <span class="p">:</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">arrayView</span><span class="p">())</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">arrayView</span><span class="p">())</span><span class="w"></span>
 <span class="w">            </span><span class="p">{</span><span class="w"></span>
 <span class="w">                </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">element</span><span class="p">.</span><span class="n">getType</span><span class="p">())</span><span class="w"></span>
 <span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">String</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">String</span><span class="o">:</span><span class="w"></span>
 <span class="w">                    </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="n">getString</span><span class="p">();</span><span class="w"></span>
 <span class="w">                    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Number</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">Number</span><span class="o">:</span><span class="w"></span>
 <span class="w">                    </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
 <span class="w">                    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Bool</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">Bool</span><span class="o">:</span><span class="w"></span>
 <span class="w">                    </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
 <span class="w">                    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Date</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">Date</span><span class="o">:</span><span class="w"></span>
 <span class="w">                    </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="n">getDate</span><span class="p">();</span><span class="w"></span>
 <span class="w">                    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">DateTime</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">DateTime</span><span class="o">:</span><span class="w"></span>
 <span class="w">                    </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="n">getDateTime</span><span class="p">();</span><span class="w"></span>
 <span class="w">                    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 <span class="w">                </span><span class="k">default</span><span class="o">:</span><span class="w"></span>
@@ -2929,34 +2928,34 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">                </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">TableArray</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">TableArray</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[TableArray]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">table2</span> <span class="p">:</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">tableArrayView</span><span class="p">())</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">table2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">tableArrayView</span><span class="p">())</span><span class="w"></span>
 <span class="w">            </span><span class="p">{</span><span class="w"></span>
 <span class="w">                </span><span class="n">ShowTable</span><span class="p">(</span><span class="n">table2</span><span class="p">);</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">String</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">String</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[String]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">getString</span><span class="p">();</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Number</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">Number</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Number]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Bool</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">Bool</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Bool]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Date</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">Date</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Date]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">getDate</span><span class="p">();</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">DateTime</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">DateTime</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[DateTime]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">getDateTime</span><span class="p">();</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="nl">Unknown</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">TOMLValueType</span><span class="o">::</span><span class="n">Unknown</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;[Unknown]&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="n">name</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
@@ -2987,13 +2986,13 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 
 <span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">windowTitle</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">windowWidth</span><span class="p">,</span><span class="w"> </span><span class="n">windowHeight</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="nl">Sizable</span> <span class="p">:</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Sizable</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">sceneBackground</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="c1">// 数値の配列を TOML データから作成</span>
 <span class="w">    </span><span class="n">Array</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">object</span> <span class="p">:</span><span class="w"> </span><span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Array.values&quot;</span><span class="p">].</span><span class="n">arrayView</span><span class="p">())</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Array.values&quot;</span><span class="p">].</span><span class="n">arrayView</span><span class="p">())</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">values</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
@@ -3003,7 +3002,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">    </span><span class="c1">// アイテムの配列を TOML データから作成</span>
 <span class="w">    </span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">items</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">object</span> <span class="p">:</span><span class="w"> </span><span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Items&quot;</span><span class="p">].</span><span class="n">tableArrayView</span><span class="p">())</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Items&quot;</span><span class="p">].</span><span class="n">tableArrayView</span><span class="p">())</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="n">item</span><span class="p">.</span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;label&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span><span class="w"></span>
@@ -3018,7 +3017,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// アイテムを描画</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">item</span> <span class="p">:</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">Rect</span><span class="w"> </span><span class="n">rect</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w"></span>
 
@@ -3035,7 +3034,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <p><img alt="" src="https://github.com/Siv3D/siv3d.docs.images/blob/master/tutorial/19/xml-0.png?raw=true" /></p>
 <div class="highlight"><pre><span></span><code><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
 
-<span class="k">struct</span> <span class="nc">Item</span><span class="w"></span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Item</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// アイテムのラベル</span>
 <span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">label</span><span class="p">;</span><span class="w"></span>
@@ -3178,7 +3177,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 
 <span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">windowTitle</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="n">windowWidth</span><span class="p">,</span><span class="w"> </span><span class="n">windowHeight</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="nl">Sizable</span> <span class="p">:</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Window</span><span class="o">::</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">windowSizable</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Sizable</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">WindowStyle</span><span class="o">::</span><span class="n">Fixed</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">sceneBackground</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">values</span><span class="p">;</span><span class="w"></span>
@@ -3189,7 +3188,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// アイテムを描画</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">item</span> <span class="p">:</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">Rect</span><span class="w"> </span><span class="n">rect</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w"></span>
 
@@ -3204,7 +3203,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <p><code>DirectoryWatcher</code> を使うと、指定したディレクトリ内でのファイルの変更イベントを検知できます。設定ファイルを <code>DirectoryWatcher</code> で監視し、ファイルが更新されたときに読み込みなおす仕組みを導入することで、プログラムを実行しながら設定ファイルの変更を反映させることができます。</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
 
-<span class="k">struct</span> <span class="nc">Item</span><span class="w"></span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Item</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// アイテムのラベル</span>
 <span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">label</span><span class="p">;</span><span class="w"></span>
@@ -3225,7 +3224,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">items</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">object</span> <span class="p">:</span><span class="w"> </span><span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Items&quot;</span><span class="p">].</span><span class="n">tableArrayView</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">toml</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;Items&quot;</span><span class="p">].</span><span class="n">tableArrayView</span><span class="p">())</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="n">item</span><span class="p">.</span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object</span><span class="p">[</span><span class="sa">U</span><span class="s">&quot;label&quot;</span><span class="p">].</span><span class="n">getString</span><span class="p">();</span><span class="w"></span>
@@ -3255,7 +3254,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// ディレクトリ内の変更イベントをチェック</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">change</span> <span class="p">:</span><span class="w"> </span><span class="n">watcher</span><span class="p">.</span><span class="n">retrieveChanges</span><span class="p">())</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">change</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">watcher</span><span class="p">.</span><span class="n">retrieveChanges</span><span class="p">())</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">change</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">tomlPath</span><span class="w"></span>
 <span class="w">                </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">change</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">FileAction</span><span class="o">::</span><span class="n">Modified</span><span class="p">)</span><span class="w"> </span><span class="c1">// TOML ファイルが更新されたら</span>
@@ -3268,7 +3267,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">        </span><span class="c1">// アイテムを描画</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">item</span> <span class="p">:</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">Rect</span><span class="w"> </span><span class="nf">rect</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span><span class="w"></span>
 
@@ -3279,11 +3278,6 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-                
-              
-              
-                
-
 
               
             </article>
@@ -3292,8 +3286,7 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
@@ -3332,43 +3325,42 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            Copyright (c) 2018 - present, Ryo Suzuki<br>Copyright (c) 2018 - present, OpenSiv3D Project
-          </div>
-        
-        
-          Made with
-          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-            Material for MkDocs
-          </a>
-        
-        
-      </div>
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c) 2018 - present, Ryo Suzuki<br>Copyright (c) 2018 - present, OpenSiv3D Project
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
-  <div class="md-footer-social">
+        <div class="md-social">
+  
+    
     
       
       
-        
-        
-      
-      <a href="https://github.com/Siv3D/OpenSiv3D" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
-      </a>
+    
+    <a href="https://github.com/Siv3D/OpenSiv3D" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
     
       
       
-        
-        
-      
-      <a href="https://twitter.com/Siv3D" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-      </a>
     
-  </div>
-
+    <a href="https://twitter.com/Siv3D" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -3377,10 +3369,10 @@ OpenSiv3D での設定の記述には、読みやすさと書きやすさに優�
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.960e086b.min.js"></script>
       
     
   </body>
