@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="OpenSiv3D の実装会">
+        <meta name="description" content="Siv3D: A C++ library for creative coding">
       
       
         <meta name="author" content="Ryo Suzuki">
@@ -19,7 +19,7 @@
     
     
       
-        <title>Dev Day - Siv3D</title>
+        <title>Dev-day (Jissoukai) - Siv3D</title>
       
     
     
@@ -27,10 +27,6 @@
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
         
       
     
@@ -47,7 +43,7 @@
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     
-      <link rel="stylesheet" href="../../siv3d_styles.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -63,7 +59,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+    <body dir="ltr" data-md-color-scheme="siv3d" data-md-color-primary="" data-md-color-accent="">
   
     
     
@@ -73,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#opensiv3d" class="md-skip">
+        <a href="#opensiv3d-実装会" class="md-skip">
           Skip to content
         </a>
       
@@ -105,13 +101,39 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dev Day
+              Dev-day (Jissoukai)
             
           </span>
         </div>
       </div>
     </div>
     
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../.." hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja-jp/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -132,6 +154,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -157,6 +181,49 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        English
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ja-jp/" class="md-tabs__link">
+        日本語
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -169,8 +236,10 @@
                   <div class="md-sidebar__inner">
                     
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Siv3D" class="md-nav__button md-logo" aria-label="Siv3D" data-md-component="logo">
       
@@ -199,11 +268,35 @@
       
       
       
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
-        <label class="md-nav__link" for="__nav_1">
-          English
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../..">English</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" aria-label="English" data-md-level="1">
         <label class="md-nav__title" for="__nav_1">
@@ -213,44 +306,6 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        Getting started with Siv3D
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_1_2">
-          Sample
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Sample" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_2">
-          <span class="md-nav__icon md-icon"></span>
-          Sample
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -258,8 +313,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sample/game/" class="md-nav__link">
-        Game
+      <a href="../../features/" class="md-nav__link">
+        Features
       </a>
     </li>
   
@@ -272,385 +327,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sample/app/" class="md-nav__link">
-        Application
+      <a href="../../releases/" class="md-nav__link">
+        Release Notes
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sample/visual/" class="md-nav__link">
-        Visual effect
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sample/game-template/" class="md-nav__link">
-        Game template
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_1_3">
-          Tutorial
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_3">
-          <span class="md-nav__icon md-icon"></span>
-          Tutorial
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/basic/" class="md-nav__link">
-        1. First steps
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/shape/" class="md-nav__link">
-        2. Drawing shapes
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/animation/" class="md-nav__link">
-        3. Animation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/2d-intersection/" class="md-nav__link">
-        4. 2D intersection
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/texture/" class="md-nav__link">
-        5. Drawing images
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/data-structures/" class="md-nav__link">
-        6. Data structures
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/formatting/" class="md-nav__link">
-        7. Formatting and parsing
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/font/" class="md-nav__link">
-        8. Using fonts
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/gui/" class="md-nav__link">
-        9. GUI
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/window/" class="md-nav__link">
-        10. Scene and window
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/keyboard/" class="md-nav__link">
-        11. Keyboard
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/mouse/" class="md-nav__link">
-        12. Mouse
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/audio/" class="md-nav__link">
-        13. Audio
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/random/" class="md-nav__link">
-        14. Random
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/2d-renderstates/" class="md-nav__link">
-        15. 2D render states
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/effect/" class="md-nav__link">
-        16. Effect
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/asset/" class="md-nav__link">
-        17. Asset management
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/text-file/" class="md-nav__link">
-        18. Text file
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/config-file/" class="md-nav__link">
-        19. Configuration file
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/resource/" class="md-nav__link">
-        20. Embedded resource
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/binary-file/" class="md-nav__link">
-        21. Binary file
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/scene-manager/" class="md-nav__link">
-        22. Scene management
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -669,16 +348,28 @@
       
       
       
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_1_4">
-          Reference
+          Download
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Reference" data-md-level="2">
+      <nav class="md-nav" aria-label="Download" data-md-level="2">
         <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
-          Reference
+          Download
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -688,8 +379,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/emojis/" class="md-nav__link">
-        Emoji list
+      <a href="../../download/windows/" class="md-nav__link">
+        Windows
       </a>
     </li>
   
@@ -702,8 +393,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/fullscreen/" class="md-nav__link">
-        Fullscreen
+      <a href="../../download/macos/" class="md-nav__link">
+        macOS
       </a>
     </li>
   
@@ -716,8 +407,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/json/" class="md-nav__link">
-        JSON file
+      <a href="../../download/ubuntu/" class="md-nav__link">
+        Ubuntu
       </a>
     </li>
   
@@ -730,8 +421,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/unicode/" class="md-nav__link">
-        Text encoding conversion
+      <a href="../../download/web-vs/" class="md-nav__link">
+        Web (VS)
       </a>
     </li>
   
@@ -744,162 +435,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/2d-shadow/" class="md-nav__link">
-        2D shadow
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/2d-geometry/" class="md-nav__link">
-        2D geometry
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/navmesh/" class="md-nav__link">
-        NavMesh
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/nlp/" class="md-nav__link">
-        Natural language processing
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/math-parser/" class="md-nav__link">
-        Math parser
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/kd-tree/" class="md-nav__link">
-        kd-tree
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/objdetection/" class="md-nav__link">
-        Object detection
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/gamepad/" class="md-nav__link">
-        Gamepad
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/network/" class="md-nav__link">
-        Network
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/twitter/" class="md-nav__link">
-        Twitter
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/2d-particle/" class="md-nav__link">
-        2D particle system
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/2d-physics/" class="md-nav__link">
-        2D physics
+      <a href="../../download/web-vscode/" class="md-nav__link">
+        Web (VSCode)
       </a>
     </li>
   
@@ -926,16 +463,20 @@
       
       
       
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_1_5">
-          Training
+          Tutorial
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Training" data-md-level="2">
+      <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
         <label class="md-nav__title" for="__nav_1_5">
           <span class="md-nav__icon md-icon"></span>
-          Training
+          Tutorial
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -945,172 +486,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../training/1-1/" class="md-nav__link">
-        Circles
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../training/2-1/" class="md-nav__link">
-        Tic-tac-toe
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api/api/" class="md-nav__link">
-        API Reference
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_1_7">
-          News
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="News" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_7">
-          <span class="md-nav__icon md-icon"></span>
-          News
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../news/v041/" class="md-nav__link">
-        What's new in v0.4.1
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../news/v042/" class="md-nav__link">
-        What's new in v0.4.2
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../news/v043/" class="md-nav__link">
-        What's new in v0.4.3
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_8" type="checkbox" id="__nav_1_8" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_1_8">
-          Articles
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Articles" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_8">
-          <span class="md-nav__icon md-icon"></span>
-          Articles
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../articles/mistakes/" class="md-nav__link">
-        Mistakes made by new users
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../articles/troubleshooting/" class="md-nav__link">
-        Troubleshooting
+      <a href="../../tutorial/tutorial/" class="md-nav__link">
+        Tutorial
       </a>
     </li>
   
@@ -1135,18 +512,26 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_9" type="checkbox" id="__nav_1_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" checked>
       
       
       
+        
+          
+        
+          
+        
+          
+        
       
-        <label class="md-nav__link" for="__nav_1_9">
+      
+        <label class="md-nav__link" for="__nav_1_6">
           Community
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Community" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_9">
+        <label class="md-nav__title" for="__nav_1_6">
           <span class="md-nav__icon md-icon"></span>
           Community
         </label>
@@ -1173,7 +558,7 @@
   
     <li class="md-nav__item">
       <a href="../study-meeting/" class="md-nav__link">
-        Study meeting
+        Lectures
       </a>
     </li>
   
@@ -1196,12 +581,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Dev Day
+          Dev-day (Jissoukai)
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Dev Day
+        Dev-day (Jissoukai)
       </a>
       
         
@@ -1220,43 +605,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#opensiv3d_1" class="md-nav__link">
-    OpenSiv3D 実装会とは？
+  <a href="#主な活動内容" class="md-nav__link">
+    主な活動内容
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    主な活動
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#参加方法は" class="md-nav__link">
     参加方法は？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    遠隔参加できる？
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#参加者のコメント" class="md-nav__link">
     参加者のコメント
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    これまでの実装会
   </a>
   
 </li>
@@ -1283,36 +647,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/support/" class="md-nav__link">
-        Support
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../external/external/" class="md-nav__link">
-        External websites
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sponsors/sponsors/" class="md-nav__link">
-        💗Sponsors
+      <a href="../../acknowledgments/" class="md-nav__link">
+        Acknowledgments
       </a>
     </li>
   
@@ -1340,11 +676,37 @@
       
       
       
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
-        <label class="md-nav__link" for="__nav_2">
-          日本語
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../ja-jp/">日本語</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" aria-label="日本語" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
@@ -1354,44 +716,6 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/" class="md-nav__link">
-        Siv3D をはじめよう
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_2">
-          サンプル
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="サンプル" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
-          <span class="md-nav__icon md-icon"></span>
-          サンプル
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -1399,8 +723,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ja-jp/sample/game/" class="md-nav__link">
-        ゲーム
+      <a href="../../ja-jp/features/" class="md-nav__link">
+        Siv3D の機能
       </a>
     </li>
   
@@ -1413,399 +737,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ja-jp/sample/app/" class="md-nav__link">
-        アプリ
+      <a href="../../ja-jp/releases/" class="md-nav__link">
+        リリースノート
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/sample/visual/" class="md-nav__link">
-        ビジュアル表現
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/sample/game-template/" class="md-nav__link">
-        ゲーム開発のテンプレート
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/sample/game-launcher/" class="md-nav__link">
-        ゲームランチャー
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_3">
-          チュートリアル
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="チュートリアル" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_3">
-          <span class="md-nav__icon md-icon"></span>
-          チュートリアル
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/basic/" class="md-nav__link">
-        1. Siv3D の基本
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/shape/" class="md-nav__link">
-        2. 図形を描く
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/animation/" class="md-nav__link">
-        3. 動きを作る
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/2d-intersection/" class="md-nav__link">
-        4. あたり判定
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/texture/" class="md-nav__link">
-        5. 画像を描く
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/data-structures/" class="md-nav__link">
-        6. データ構造
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/formatting/" class="md-nav__link">
-        7. 文字列と数値の変換
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/font/" class="md-nav__link">
-        8. フォントを使う
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/gui/" class="md-nav__link">
-        9. GUI
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/window/" class="md-nav__link">
-        10. シーンとウィンドウ
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/keyboard/" class="md-nav__link">
-        11. キーボード入力
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/mouse/" class="md-nav__link">
-        12. マウス入力
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/audio/" class="md-nav__link">
-        13. オーディオ再生
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/random/" class="md-nav__link">
-        14. ランダム
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/2d-renderstates/" class="md-nav__link">
-        15. 2D レンダーステート
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/effect/" class="md-nav__link">
-        16. エフェクト
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/asset/" class="md-nav__link">
-        17. アセット管理
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/text-file/" class="md-nav__link">
-        18. テキストファイル
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/config-file/" class="md-nav__link">
-        19. 設定ファイル
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/resource/" class="md-nav__link">
-        20. リソースの埋め込み
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/binary-file/" class="md-nav__link">
-        21. バイナリファイル
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/tutorial/scene-manager/" class="md-nav__link">
-        22. シーン管理
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -1824,16 +758,28 @@
       
       
       
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_2_4">
-          リファレンス
+          ダウンロード
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="リファレンス" data-md-level="2">
+      <nav class="md-nav" aria-label="ダウンロード" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_4">
           <span class="md-nav__icon md-icon"></span>
-          リファレンス
+          ダウンロード
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1843,8 +789,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ja-jp/reference/emojis/" class="md-nav__link">
-        絵文字の一覧
+      <a href="../../ja-jp/download/windows/" class="md-nav__link">
+        Windows
       </a>
     </li>
   
@@ -1857,8 +803,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ja-jp/reference/fullscreen/" class="md-nav__link">
-        フルスクリーン
+      <a href="../../ja-jp/download/macos/" class="md-nav__link">
+        macOS
       </a>
     </li>
   
@@ -1871,8 +817,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ja-jp/reference/json/" class="md-nav__link">
-        JSON ファイル
+      <a href="../../ja-jp/download/ubuntu/" class="md-nav__link">
+        Ubuntu
       </a>
     </li>
   
@@ -1885,8 +831,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ja-jp/reference/unicode/" class="md-nav__link">
-        文字コードの変換
+      <a href="../../ja-jp/download/web-vs/" class="md-nav__link">
+        Web (VS)
       </a>
     </li>
   
@@ -1899,162 +845,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ja-jp/reference/2d-shadow/" class="md-nav__link">
-        2D 図形の影
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/reference/2d-geometry/" class="md-nav__link">
-        2D 計算幾何
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/reference/navmesh/" class="md-nav__link">
-        ナビメッシュ
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/reference/nlp/" class="md-nav__link">
-        自然言語処理
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/reference/math-parser/" class="md-nav__link">
-        数式処理
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/reference/kd-tree/" class="md-nav__link">
-        kd 木
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/reference/objdetection/" class="md-nav__link">
-        物体検出
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/reference/gamepad/" class="md-nav__link">
-        ゲームパッド
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/reference/network/" class="md-nav__link">
-        ネットワーク
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/reference/twitter/" class="md-nav__link">
-        Twitter
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/reference/2d-particle/" class="md-nav__link">
-        2D パーティクルシステム
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/reference/2d-physics/" class="md-nav__link">
-        2D 物理演算
+      <a href="../../ja-jp/download/web-vscode/" class="md-nav__link">
+        Web (VSCode)
       </a>
     </li>
   
@@ -2081,16 +873,20 @@
       
       
       
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_2_5">
-          トレーニング
+          チュートリアル
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="トレーニング" data-md-level="2">
+      <nav class="md-nav" aria-label="チュートリアル" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_5">
           <span class="md-nav__icon md-icon"></span>
-          トレーニング
+          チュートリアル
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2100,22 +896,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ja-jp/training/1-1/" class="md-nav__link">
-        円を配置する
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/training/2-1/" class="md-nav__link">
-        三目並べ
+      <a href="../../ja-jp/tutorial/tutorial/" class="md-nav__link">
+        チュートリアル
       </a>
     </li>
   
@@ -2134,10 +916,79 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          開発に参加する
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="開発に参加する" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          開発に参加する
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../ja-jp/api/api/" class="md-nav__link">
-        API 一覧
+      <a href="../../ja-jp/develop/report/" class="md-nav__link">
+        報告や提案
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ja-jp/develop/build/" class="md-nav__link">
+        自前ビルドの手順
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ja-jp/develop/commit/" class="md-nav__link">
+        GitHub でコミットする
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -2156,225 +1007,22 @@
       
       
       
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_2_7">
-          新機能紹介
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="新機能紹介" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_7">
-          <span class="md-nav__icon md-icon"></span>
-          新機能紹介
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/news/v041/" class="md-nav__link">
-        v0.4.1 の新機能
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/news/v042/" class="md-nav__link">
-        v0.4.2 の新機能
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/news/v043/" class="md-nav__link">
-        v0.4.3 の新機能
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_8">
-          記事
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="記事" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_8">
-          <span class="md-nav__icon md-icon"></span>
-          記事
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/articles/mistakes/" class="md-nav__link">
-        よくある間違い
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/articles/troubleshooting/" class="md-nav__link">
-        トラブルシューティング
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8_3" type="checkbox" id="__nav_2_8_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_8_3">
-          勉強会ページ
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="勉強会ページ" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_8_3">
-          <span class="md-nav__icon md-icon"></span>
-          勉強会ページ
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/articles/event/chiba-2020/" class="md-nav__link">
-        千葉 (2020) 資料
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/articles/event/ishikawa-2020/" class="md-nav__link">
-        石川 (2020) 資料
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/articles/event/sendai-2020/" class="md-nav__link">
-        仙台 (2020) 資料
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_9">
           コミュニティ
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="コミュニティ" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_9">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           コミュニティ
         </label>
@@ -2401,7 +1049,7 @@
   
     <li class="md-nav__item">
       <a href="../../ja-jp/community/study-meeting/" class="md-nav__link">
-        勉強会
+        Siv3D 勉強会
       </a>
     </li>
   
@@ -2415,7 +1063,7 @@
   
     <li class="md-nav__item">
       <a href="../../ja-jp/community/dev-day/" class="md-nav__link">
-        実装会
+        OpenSiv3D 実装会
       </a>
     </li>
   
@@ -2435,36 +1083,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ja-jp/support/support/" class="md-nav__link">
-        サポート
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/external/external/" class="md-nav__link">
-        外部サイト
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ja-jp/sponsors/sponsors/" class="md-nav__link">
-        💗スポンサー
+      <a href="../../ja-jp/acknowledgments/" class="md-nav__link">
+        謝辞
       </a>
     </li>
   
@@ -2504,43 +1124,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#opensiv3d_1" class="md-nav__link">
-    OpenSiv3D 実装会とは？
+  <a href="#主な活動内容" class="md-nav__link">
+    主な活動内容
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    主な活動
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#参加方法は" class="md-nav__link">
     参加方法は？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    遠隔参加できる？
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#参加者のコメント" class="md-nav__link">
     参加者のコメント
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    これまでの実装会
   </a>
   
 </li>
@@ -2559,42 +1158,10 @@
                 
 
 
-<h1 id="opensiv3d">OpenSiv3D 実装会<a class="headerlink" href="#opensiv3d" title="Permanent link">&para;</a></h1>
-<h2 id="opensiv3d_1">OpenSiv3D 実装会とは？<a class="headerlink" href="#opensiv3d_1" title="Permanent link">&para;</a></h2>
-<p>OpenSiv3D の開発者やユーザが集まって、プログラムについて質問・相談したり、ドキュメントやテストを作ったり、新機能を提案・議論・実装したり、OpenSiv3D で何かを作ったりする会です。基本個人のペースでゆるゆる進みます。</p>
-<ul>
-<li><a href="https://twitter.com/Reputeless/status/1177953612368007169">実装会の様子 (早稲田会場)</a></li>
-</ul>
-<h2 id="_1">主な活動<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>つくっている作品の紹介</li>
-<li>開発中の機能の紹介</li>
-<li>Siv3D の勉強 (未経験者)</li>
-<li>プログラミングの相談</li>
-<li>コードレビュー</li>
-<li>新機能の提案や実装</li>
-<li>ドキュメントの執筆</li>
-<li>個人の開発作業</li>
-<li>超高速ゲーム開発</li>
-<li><a href="https://twitter.com/search?q=%22OpenSiv3D%20%E5%AE%9F%E8%A3%85%E4%BC%9A%22&amp;src=typd&amp;f=live">OpenSiv3D 実装会に関するツイート</a></li>
-</ul>
-<h2 id="_2">参加方法は？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://siv3d.github.io/ja-jp/community/community/#siv3d-slack">Siv3D ユーザコミュニティ Slack</a> に登録後、# open-siv3d チャンネルにアクセスし、募集メッセージに対して参加ボタンを押します。</li>
-<li>上記のほか、実装会会場担当者の招待でも参加できます</li>
-</ul>
-<h2 id="_3">遠隔参加できる？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>以下の方を対象に、Skype 参加の招待を送っています</p>
-<ul>
-<li>スポンサー</li>
-<li>作品開発や実装への貢献実績が顕著でなおかつ現地参加が難しい方</li>
-</ul>
-<h2 id="_4">参加者のコメント<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<blockquote>今回初めての参加で私も初心者なのでとても不安でしたが、分からないところや質問に全て分かりやすく説明していただきました。また、3時間という短い時間で一からゲームを作って完成させる体験もでき、とても有意義な時間になりました</blockquote>
-
-<blockquote>OpenSiv3D実装会には約１年ぶりの参加でしたので、新機能を紹介して頂きながらのんびりとサンプルコードを作って過ごしました。コンパイル不要のスクリプト機能が強力で、実際にゲームを作る様子を超高速ゲーム開発で見ることができ、とても為になりました。</blockquote>
-
-<h2 id="_5">これまでの実装会<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h1 id="opensiv3d-実装会">OpenSiv3D 実装会<a class="headerlink" href="#opensiv3d-実装会" title="Permanent link">&para;</a></h1>
+<p>Siv3D の開発者やユーザが集まって、プログラムについて質問・相談したり、ドキュメントやテストを作ったり、新機能を提案・議論・実装したり、OpenSiv3D で何かを作ったりする会です。基本個人のペースで自由に進みます。2020 年以降はオンライン (Discord) で毎月開催しています。</p>
+<details class="summary">
+<summary>オフラインで開催された実装会</summary>
 <table>
 <thead>
 <tr>
@@ -2816,11 +1383,38 @@
 </tr>
 </tbody>
 </table>
+</details>
+<h2 id="主な活動内容">主な活動内容<a class="headerlink" href="#主な活動内容" title="Permanent link">&para;</a></h2>
+<ul>
+<li>新機能の提案や実装</li>
+<li>ドキュメントの執筆</li>
+<li>つくっている作品の紹介</li>
+<li>開発中の機能の紹介</li>
+<li>Siv3D の勉強 (未経験者)</li>
+<li>プログラミングの相談</li>
+<li>コードレビュー</li>
+<li>個人の開発作業</li>
+<li>超高速ゲーム開発</li>
+</ul>
+<p>OpenSiv3D 実装会に関するツイートを、ハッシュタグ <a href="https://twitter.com/search?q=%22OpenSiv3D%20%E5%AE%9F%E8%A3%85%E4%BC%9A%22&amp;src=typd&amp;f=live">#OpenSiv3D実装会 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg></span></a> で見つけられます。</p>
+<h2 id="参加方法は">参加方法は？<a class="headerlink" href="#参加方法は" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="./community">Siv3D ユーザコミュニティ Slack</a> に登録後、<code>#openspace</code> チャンネルでの実装会の Discord サーバの招待 URL にアクセスします</li>
+</ul>
+<h2 id="参加者のコメント">参加者のコメント<a class="headerlink" href="#参加者のコメント" title="Permanent link">&para;</a></h2>
+<blockquote>今回初めての参加で私も初心者なのでとても不安でしたが、分からないところや質問に全て分かりやすく説明していただきました。また、3時間という短い時間で一からゲームを作って完成させる体験もでき、とても有意義な時間になりました</blockquote>
+
+<blockquote>OpenSiv3D実装会には約１年ぶりの参加でしたので、新機能を紹介して頂きながらのんびりとサンプルコードを作って過ごしました。コンパイル不要のスクリプト機能が強力で、実際にゲームを作る様子を超高速ゲーム開発で見ることができ、とても為になりました。</blockquote>
 
               
             </article>
           </div>
         </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
         
       </main>
       
@@ -2829,7 +1423,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../study-meeting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Study meeting" rel="prev">
+        <a href="../study-meeting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lectures" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2838,20 +1432,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Study meeting
+              Lectures
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../support/support/" class="md-footer__link md-footer__link--next" aria-label="Next: Support" rel="next">
+        <a href="../../acknowledgments/" class="md-footer__link md-footer__link--next" aria-label="Next: Acknowledgments" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Support
+              Acknowledgments
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -2866,7 +1460,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright (c) 2018 - present, Ryo Suzuki<br>Copyright (c) 2018 - present, OpenSiv3D Project
+      Copyright (c) 2012 - 2022, Ryo Suzuki<br>Copyright (c) 2012 - 2022, OpenSiv3D Project
     </div>
   
   
@@ -2893,6 +1487,24 @@
       
       
     
+    <a href="https://join.slack.com/t/siv3d/shared_invite/enQtNjM4NzQ0MzEyMzUzLTEzNDBkNWVkMTY0OGU5OWQxOTk3NjczMjk0OGJhYzJjOThjZjQ1YmYzMWU2NzQ5NTQ4ODg3NzE2ZmE0NmVlMTM" target="_blank" rel="noopener" title="join.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/Reputeless" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
     <a href="https://twitter.com/Siv3D" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
@@ -2907,7 +1519,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
       <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
