@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://siv3d.github.io/api/classes/</loc>
+         <lastmod>2022-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://siv3d.github.io/community/community/</loc>
          <lastmod>2022-07-22</lastmod>
          <changefreq>daily</changefreq>
