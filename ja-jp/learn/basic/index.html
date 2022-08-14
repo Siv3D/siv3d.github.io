@@ -1,0 +1,2061 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Siv3D: A C++ library for creative coding">
+      
+      
+        <meta name="author" content="Ryo Suzuki">
+      
+      
+        <link rel="canonical" href="https://siv3d.github.io/ja-jp/learn/basic/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.0">
+    
+    
+      
+        <title>2. Siv3D の基本 - Siv3D</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="siv3d" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-siv3d-の基本" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Siv3D" class="md-header__button md-logo" aria-label="Siv3D" data-md-component="logo">
+      
+  <img src="../../../assets/images/code-white-48dp.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Siv3D
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Siv3D の基本
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        English
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        日本語
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Siv3D" class="md-nav__button md-logo" aria-label="Siv3D" data-md-component="logo">
+      
+  <img src="../../../assets/images/code-white-48dp.svg" alt="logo">
+
+    </a>
+    Siv3D
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../..">English</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="English" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          English
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/" class="md-nav__link">
+        Features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/" class="md-nav__link">
+        Release Notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Download" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/windows/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/macos/" class="md-nav__link">
+        macOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/ubuntu/" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/web-vs/" class="md-nav__link">
+        Web (VS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/web-vscode/" class="md-nav__link">
+        Web (VSCode)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_5">
+          Tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorial/tutorial/" class="md-nav__link">
+        Tutorial
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_6">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/classes/" class="md-nav__link">
+        Classes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_7">
+          Community
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Community" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          Community
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../community/community/" class="md-nav__link">
+        Community
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../community/study-meeting/" class="md-nav__link">
+        Lectures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../community/dev-day/" class="md-nav__link">
+        Dev-day (Jissoukai)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_8" type="checkbox" id="__nav_1_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_8">
+          Mascot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mascot" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_8">
+          <span class="md-nav__icon md-icon"></span>
+          Mascot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mascot/mascot/" class="md-nav__link">
+        Mascot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mascot/gallery/" class="md-nav__link">
+        Gallery
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acknowledgments/" class="md-nav__link">
+        Acknowledgments
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">日本語</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="日本語" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          日本語
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/" class="md-nav__link">
+        Siv3D の機能
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        リリースノート
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          ダウンロード
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ダウンロード" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          ダウンロード
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/windows/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/macos/" class="md-nav__link">
+        macOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/ubuntu/" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/web-vs/" class="md-nav__link">
+        Web (VS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/web-vscode/" class="md-nav__link">
+        Web (VSCode)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          チュートリアル
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="チュートリアル" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          チュートリアル
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/tutorial/" class="md-nav__link">
+        チュートリアル
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          勉強会コース
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="勉強会コース" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          勉強会コース
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        0. Siv3D 勉強会
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/classes/" class="md-nav__link">
+        クラス一覧
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          コミュニティ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="コミュニティ" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          コミュニティ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/community/" class="md-nav__link">
+        コミュニティ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/study-meeting/" class="md-nav__link">
+        Siv3D 勉強会
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/dev-day/" class="md-nav__link">
+        OpenSiv3D 実装会
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          開発に参加する
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="開発に参加する" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          開発に参加する
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/report/" class="md-nav__link">
+        報告や提案
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/build/" class="md-nav__link">
+        自前ビルドの手順
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/commit/" class="md-nav__link">
+        GitHub でコミットする
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_10">
+          マスコット
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="マスコット" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          マスコット
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mascot/mascot/" class="md-nav__link">
+        マスコット
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mascot/gallery/" class="md-nav__link">
+        ギャラリー
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acknowledgments/" class="md-nav__link">
+        謝辞
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-インクルードするヘッダ" class="md-nav__link">
+    2.1 インクルードするヘッダ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-エントリーポイント" class="md-nav__link">
+    2.2 エントリーポイント
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-最小のプログラム" class="md-nav__link">
+    2.3 最小のプログラム
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-ウィンドウを表示し続ける" class="md-nav__link">
+    2.4 ウィンドウを表示し続ける
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-デバッグ表示" class="md-nav__link">
+    2.5 デバッグ表示
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-さまざまな値の表示" class="md-nav__link">
+    2.6 さまざまな値の表示
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-デバッグ表示のあふれ" class="md-nav__link">
+    2.7 デバッグ表示のあふれ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-デバッグ表示の消去" class="md-nav__link">
+    2.8 デバッグ表示の消去
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-基本的なデータ型" class="md-nav__link">
+    2.9 基本的なデータ型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#210-print-以外の出力" class="md-nav__link">
+    2.10 Print 以外の出力
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#211-画面の座標系" class="md-nav__link">
+    2.11 画面の座標系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#212-アプリケーションの基本操作" class="md-nav__link">
+    2.12 アプリケーションの基本操作
+  </a>
+  
+    <nav class="md-nav" aria-label="2.12 アプリケーションの基本操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#プログラムを終了してウィンドウを閉じる" class="md-nav__link">
+    プログラムを終了してウィンドウを閉じる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#スクリーンショットを保存する" class="md-nav__link">
+    スクリーンショットを保存する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ライセンス情報を表示する" class="md-nav__link">
+    ライセンス情報を表示する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#全画面表示にするwindows-のみ" class="md-nav__link">
+    全画面表示にする（Windows のみ）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="2-siv3d-の基本">2. Siv3D の基本<a class="headerlink" href="#2-siv3d-の基本" title="Permanent link">&para;</a></h1>
+<p>この章では、Siv3D プログラミングの基本的な作法を学びます。</p>
+<h2 id="21-インクルードするヘッダ">2.1 インクルードするヘッダ<a class="headerlink" href="#21-インクルードするヘッダ" title="Permanent link">&para;</a></h2>
+<p>Siv3D のプログラムを書くときは <code>&lt;Siv3D.hpp&gt;</code> ヘッダをインクルードします。<br />
+これだけで、Siv3D の関数やクラスを使ってプログラムを書けるようになります。  </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+</code></pre></div>
+<p>経験のある C++ のプログラマである場合、ほかにも <code>&lt;iostream&gt;</code> や <code>&lt;vector&gt;</code> などの C++ 標準ライブラリをインクルードしたくなるかもしれませんが、それは不要です。すでに <code>&lt;Siv3D.hpp&gt;</code> の中で、Siv3D プログラミングでよく使われる主要な C++ 標準ライブラリがインクルードされているためです。また、標準ライブラリの機能の多くは、より便利な Siv3D の関数やクラスで置き換えられます。Siv3D の学習の序盤で C++ 標準ライブラリを使うことはめったにありません。</p>
+<details class="summary">
+<summary>インクルードが不要なヘッダの例</summary>
+<h4 id="_1"><code>&lt;string&gt;</code><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>Siv3D.hpp 内ですでにインクルードされています。<br />
+<code>std::string</code> の置き換えとして <code>String</code> があります。</p>
+<h4 id="_2"><code>&lt;vector&gt;</code><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>Siv3D.hpp 内ですでにインクルードされています。<br />
+<code>std::vector</code> の置き換えとして <code>Array</code> があります。</p>
+<h4 id="_3"><code>&lt;fstream&gt;</code><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p><code>std::ofstream</code> の置き換えとして <code>TextWriter</code> や <code>BinaryWriter</code> があります。<br />
+<code>std::ifstream</code> の置き換えとして <code>TextReader</code> や <code>BinaryReader</code> があります。</p>
+<h4 id="_4"><code>&lt;cmath&gt;</code><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>Siv3D.hpp 内ですでにインクルードされています。<br />
+<code>Math::</code> 名前空間に主要な数学関数が用意されています。</p>
+<h4 id="_5"><code>&lt;filesystem&gt;</code><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>ファイルシステムに関する機能が <code>FileSystem::</code> 名前空間に用意されています。</p>
+</details>
+<details class="summary">
+<summary>C++ の文法復習「include」</summary>
+<p><code># include &lt;ファイルパス&gt;</code> または <code># include "ファイルパス"</code> で、ヘッダ <code>パス</code> をインクルードします。前者の書き方では、標準ライブラリや、プロジェクトの設定でインクルードパスに設定されているフォルダのファイルが対象になり、後者では相対パスまたは絶対パスでファイルを検索します。Siv3D のプロジェクトでは、Siv3D のヘッダがあるディレクトリがインクルードパスに設定されているため、<code># include &lt;Siv3D.hpp&gt;</code> で Siv3D のヘッダをインクルードできます。Siv3D 以外のプロジェクトで同じように書いても <code>Siv3D.hpp</code> を見つけられずコンパイルエラーになります。</p>
+</details>
+<h2 id="22-エントリーポイント">2.2 エントリーポイント<a class="headerlink" href="#22-エントリーポイント" title="Permanent link">&para;</a></h2>
+<p>通常の C++ のエントリーポイントは <code>int main()</code> ですが、Siv3D では <code>main()</code> 関数はライブラリ内にすでに実装済みで、次のようにウィンドウやグラフィックスの初期化処理を行うプログラムが用意されています。Siv3D のユーザが実装するのは <code>Main()</code> 関数です。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Siv3D ライブラリの中にあるコード（説明のために簡略化しています）</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">Siv3D</span><span class="w"> </span><span class="n">の初期化</span><span class="p">...</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">Main</span><span class="p">();</span><span class="w"> </span><span class="c1">// この関数をユーザがプログラムする</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">Siv3D</span><span class="w"> </span><span class="n">の終了処理</span><span class="p">...</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><code>Main()</code> 関数の前で初期化処理が完了しているおかげで、<code>Main()</code> 関数の中では何もせずいきなり Siv3D の機能を使うことができます。また、<code>Main()</code> 関数の実行が終了したあとには、ウィンドウの後片付けなどサブシステムの終了処理を Siv3D が自動的に行ってくれます。</p>
+<h2 id="23-最小のプログラム">2.3 最小のプログラム<a class="headerlink" href="#23-最小のプログラム" title="Permanent link">&para;</a></h2>
+<p>これが Siv3D の最小のプログラムです。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+この <code>Main()</code> 関数は一瞬で終了してしまうので、このプログラムを実行してもウィンドウは表示されず、何も起こっていないように見えるでしょう。</p>
+<details class="summary">
+<summary>C++ の文法復習「関数の定義」</summary>
+<p>これは関数を定義するプログラムです。<code>Main</code> は関数の名前を、<code>void</code> はこの関数が結果の値を返さないことを表します。<code>{ }</code> 内には、この関数で実行したいプログラムを上から順に記述します。途中で <code>return</code> するか、終端までたどり着くと関数の実行は終了します。</p>
+</details>
+<h2 id="24-ウィンドウを表示し続ける">2.4 ウィンドウを表示し続ける<a class="headerlink" href="#24-ウィンドウを表示し続ける" title="Permanent link">&para;</a></h2>
+<p>プログラムがすぐに終了してしまっては、ユーザとインタラクションをするアプリケーションを作れません。<code>Main()</code> がずっと続くように <strong>メインループ</strong> を実装します。次のプログラムを実行するとウィンドウが表示され続けます。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><code>while</code> 文によってプログラムが半永久的に続きます。くり返しのたびに <code>System::Update()</code> がウィンドウの表示や音楽の再生、マウスやキーボードの入力情報などを更新することで、グラフィックスの表示やユーザの入力の取得などを継続的に処理できるようになります。</p>
+<p><code>System::Update()</code> は普段は <code>true</code> を返すため、メインループはいつまでも続きますが、ウィンドウが閉じられたり、<span class="keys"><kbd class="key-escape">Esc</kbd></span> が押されたりするなど、アプリケーションを終了させる特別な <strong>ユーザアクション</strong> が実行されると、以降はずっと <code>false</code> を返すようになります。 アプリケーションはこの状態になったら速やかにメインループから抜け、<code>Main()</code> を終了させる必要があります。上記のプログラムのように書いていれば、自然にこの通りに動作します。</p>
+<p>デフォルトでは、以下の 3 つのユーザアクションが、アプリケーションを終了させる操作として設定されています</p>
+<ul>
+<li>ウィンドウを閉じる</li>
+<li><span class="keys"><kbd class="key-escape">Esc</kbd></span> を押す</li>
+<li>プログラムが <code>System::Exit()</code> を呼ぶ</li>
+</ul>
+<p>この設定は、<code>System::SetTerminationTriggers()</code> に <code>UserAction</code> フラグの組み合わせを渡すことでカスタマイズできます。エスケープキーを押しても終了しないようにしたいときは、次のように設定をカスタマイズします。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">	</span><span class="c1">// ウィンドウの閉じるボタンを押すか、System::Exit() を呼ぶ操作を終了操作に設定,</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">	</span><span class="c1">// エスケープキーを押しても終了しないようになる</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">	</span><span class="n">System</span><span class="o">::</span><span class="n">SetTerminationTriggers</span><span class="p">(</span><span class="n">UserAction</span><span class="o">::</span><span class="n">CloseButtonClicked</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>メインループは、特に指定しない限り、使用しているモニターのリフレッシュレートと同じ速度で繰り返されます。一般的なモニタのリフレッシュレートは毎秒 60, 120, または 144 フレームです。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">		</span><span class="c1">// ウィンドウタイトルに直近のフレームレートを表示</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">		</span><span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">Profiler</span><span class="o">::</span><span class="n">FPS</span><span class="p">());</span><span class="w"></span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="25-デバッグ表示">2.5 デバッグ表示<a class="headerlink" href="#25-デバッグ表示" title="Permanent link">&para;</a></h2>
+<p>画面にメッセージを表示してみましょう。<code>Print</code> に向かって、出力の記号 <code>&lt;&lt;</code> でテキストを送ると、そのテキストが画面に表示されます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/tutorial/2/5.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;Hello, Siv3D!&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">		</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>テキストをプログラムに登場させるときは <code>U" "</code> で囲みます。Siv3D では UTF-32 という、日本語を扱いやすい形式でテキストデータを扱うため、ダブルクォーテーション <code>"</code> の先頭には常に <code>U</code> というプレフィックスを付け、<code>U"Hello"</code> のように記述します。</p>
+<h2 id="26-さまざまな値の表示">2.6 さまざまな値の表示<a class="headerlink" href="#26-さまざまな値の表示" title="Permanent link">&para;</a></h2>
+<p>Siv3D で提供される型のほとんどは <code>Print</code> で値の内容を表示できます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/tutorial/2/6.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">	</span><span class="c1">// 文字列リテラル</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;Hello, Siv3D!&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">	</span><span class="c1">// &lt;&lt; の連続</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;This&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot; is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;fun!&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">	</span><span class="c1">// 文字リテラル</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="sc">&#39;あ&#39;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">	</span><span class="c1">// 整数</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">	</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">	</span><span class="c1">// 浮動小数点数</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;π = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Math</span><span class="o">::</span><span class="n">Pi</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">	</span><span class="c1">// bool</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Math</span><span class="o">::</span><span class="n">IsPrime</span><span class="p">(</span><span class="mi">65537</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">	</span><span class="c1">// 時間型</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="n">h</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">	</span><span class="c1">// 数式パーサの結果 (double 型）</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Eval</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;10^3 + sqrt(81) + 0.001&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">	</span><span class="c1">// 範囲</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="w">	</span><span class="c1">// 日付と時刻クラス</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">DateTime</span><span class="o">::</span><span class="n">Now</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="27-デバッグ表示のあふれ">2.7 デバッグ表示のあふれ<a class="headerlink" href="#27-デバッグ表示のあふれ" title="Permanent link">&para;</a></h2>
+<p>次のように <code>Print</code> をメインループの中で使うと、毎フレーム新しいメッセージが追加され、古いメッセージは画面の外に追いやられます。画面外に出た古いメッセージは自動的に消去されます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/tutorial/2/7.png" />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">	</span><span class="n">int32</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">		</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">		</span><span class="o">++</span><span class="n">count</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h2 id="28-デバッグ表示の消去">2.8 デバッグ表示の消去<a class="headerlink" href="#28-デバッグ表示の消去" title="Permanent link">&para;</a></h2>
+<p><code>ClearPrint()</code> を使うと、<code>Print</code> でデバッグ表示した内容を即座に消去します。<br />
+メインループの先頭で <code>ClearPrint()</code> すると、現在のフレームで <code>Print</code> した内容だけが表示されるようになります。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/tutorial/2/8.png" />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">	</span><span class="n">int32</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">		</span><span class="c1">// Print したメッセージを消去</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">		</span><span class="n">ClearPrint</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">		</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">		</span><span class="o">++</span><span class="n">count</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h2 id="29-基本的なデータ型">2.9 基本的なデータ型<a class="headerlink" href="#29-基本的なデータ型" title="Permanent link">&para;</a></h2>
+<p>Siv3D の基本的なデータ型は次のとおりです。よく使う重要なものに ★ を付けています。</p>
+<h4 id="数値">数値<a class="headerlink" href="#数値" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>型名</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bool</td>
+<td>★ ブーリアン型（<code>false</code> または <code>true</code>）</td>
+</tr>
+<tr>
+<td>int8</td>
+<td>符号付き 8-bit 整数型（-128 ～ 127）</td>
+</tr>
+<tr>
+<td>uint8</td>
+<td>符号無し 8-bit 整数型（0 ～ 255）</td>
+</tr>
+<tr>
+<td>int16</td>
+<td>符号付き 16-bit 整数型（-32,768 ～ 32,767）</td>
+</tr>
+<tr>
+<td>uint16</td>
+<td>符号無し 16-bit 整数型（0 ～ 65,535）</td>
+</tr>
+<tr>
+<td>int32</td>
+<td>★ 符号付き 32-bit 整数型（-2,147,483,648 ～ 2,147,483,647）</td>
+</tr>
+<tr>
+<td>uint32</td>
+<td>★ 符号無し 32-bit 整数型（0 ～ 4,294,967,295）</td>
+</tr>
+<tr>
+<td>int64</td>
+<td>符号付き 64-bit 整数型（-9,223,372,036,854,775,808 ～ 9,223,372,036,854,775,807）</td>
+</tr>
+<tr>
+<td>uint64</td>
+<td>符号無し 64-bit 整数型（0 ～ 18,446,744,073,709,551,615）</td>
+</tr>
+<tr>
+<td>int128</td>
+<td>符号付き 128-bit 整数型</td>
+</tr>
+<tr>
+<td>uint128</td>
+<td>符号無し 128-bit 整数型</td>
+</tr>
+<tr>
+<td>float</td>
+<td>単精度浮動小数点数型</td>
+</tr>
+<tr>
+<td>double</td>
+<td>★ 倍精度浮動小数点数型</td>
+</tr>
+<tr>
+<td>size_t</td>
+<td>★ オブジェクトのサイズを表現する符号無し 64-bit 整数型（0 ～ 18,446,744,073,709,551,615）</td>
+</tr>
+<tr>
+<td>BigInt</td>
+<td>任意精度多倍長整数型</td>
+</tr>
+<tr>
+<td>HalfFloat</td>
+<td>半精度浮動小数点数型</td>
+</tr>
+<tr>
+<td>BigFloat</td>
+<td>有効数字 100 桁の浮動小数点数型</td>
+</tr>
+</tbody>
+</table>
+<h4 id="文字や文字列">文字や文字列<a class="headerlink" href="#文字や文字列" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>型名</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char8</td>
+<td>UTF-8 の 1 要素（<code>char</code> の別名）</td>
+</tr>
+<tr>
+<td>char16</td>
+<td>UTF-16 の 1 要素（<code>char16_t</code> の別名）</td>
+</tr>
+<tr>
+<td>char32</td>
+<td>★ UTF-32 の 1 要素（<code>char32_t</code> の別名）</td>
+</tr>
+<tr>
+<td>String</td>
+<td>★ 文字列クラス。要素は <code>char32</code></td>
+</tr>
+<tr>
+<td>StringView</td>
+<td>文字列のビュークラス</td>
+</tr>
+<tr>
+<td>FilePath</td>
+<td>★ ファイルパス文字列（<code>String</code> の別名）</td>
+</tr>
+<tr>
+<td>FilePathView</td>
+<td>ファイルパス文字列のビュー（<code>StringView</code> の別名）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="データ構造">データ構造<a class="headerlink" href="#データ構造" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>型名</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array&lt;Type, Allocator&gt;</td>
+<td>★ 動的配列（C++ 標準ライブラリの <code>std::vector</code> の置き換え）</td>
+</tr>
+<tr>
+<td>Grid&lt;Type, Allocator&gt;</td>
+<td>★ 動的な二次元配列</td>
+</tr>
+<tr>
+<td>HashSet&lt;Type, Hash, Eq, Alloc&gt;</td>
+<td>★ ハッシュテーブルによる Set（C++ 標準ライブラリの <code>std::unordered_set</code> の置き換え）</td>
+</tr>
+<tr>
+<td>HashTable&lt;Key, Value, Hash, Eq, Alloc&gt;</td>
+<td>★ ハッシュテーブルによる Map（C++ 標準ライブラリの <code>std::unordered_map</code> の置き換え）</td>
+</tr>
+<tr>
+<td>None_t</td>
+<td><code>Optional</code> 型で無効値を表現する型（<code>std::nullopt_t</code> の別名）</td>
+</tr>
+<tr>
+<td>Optional&lt;Type&gt;</td>
+<td>★ 無効値を表現できる型（C++ 標準ライブラリの <code>std::optional</code> の置き換え）</td>
+</tr>
+<tr>
+<td>std::array&lt;Type, size_t&gt;</td>
+<td>★ 固定長配列</td>
+</tr>
+</tbody>
+</table>
+<p>Siv3D で整数を扱うときは、<code>int32</code>, <code>uint64</code> のような明示的なサイズを持つ型名を使い、<code>int</code>, <code>unsigned long long</code> のような標準の型名は使いません。前者のような型名を使うことで、プラットフォーム間での移植性が高まり、一貫性のある読みやすいコードになります。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/tutorial/2/9.png" />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">	</span><span class="kt">bool</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">	</span><span class="n">int32</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">123</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">	</span><span class="n">BigInt</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">111222333444555666777888999000</span><span class="n">_big</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">	</span><span class="n">BigFloat</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1234567890123456789</span><span class="n">_bigF</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">	</span><span class="n">Byte</span><span class="w"> </span><span class="n">f</span><span class="p">{</span><span class="w"> </span><span class="mh">0xF7</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">	</span><span class="n">char32</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sa">U</span><span class="sc">&#39;あ&#39;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">	</span><span class="n">String</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;Hello!&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">	</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">	</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;aaa&quot;</span><span class="p">,</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;bbb&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">	</span><span class="n">HalfFloat</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.333333f</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">g</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">h</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot; : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot; : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">j</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot; : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">k</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h2 id="210-print-以外の出力">2.10 <code>Print</code> 以外の出力<a class="headerlink" href="#210-print-以外の出力" title="Permanent link">&para;</a></h2>
+<p><code>Print</code> 以外にも、コンソール出力 <code>Console</code>, ログ出力 <code>Logger</code>, 音声読み上げ出力 <code>Say</code> を使えます。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">	</span><span class="c1">// コンソール画面に出力</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">	</span><span class="n">Console</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;Hello, Console!&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">	</span><span class="c1">// ログに出力 (Visual Studio の場合「出力」ウィンドウ）</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">	</span><span class="n">Logger</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;Hello, Logger!&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">	</span><span class="c1">// 必要に応じて読み上げ言語を設定（OS に読み上げエンジンがインストールされていない場合は使えない）</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">	</span><span class="n">TextToSpeech</span><span class="o">::</span><span class="n">SetDefaultLanguage</span><span class="p">(</span><span class="n">LanguageCode</span><span class="o">::</span><span class="n">EnglishUS</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">	</span><span class="c1">//TextToSpeech::SetDefaultLanguage(LanguageCode::Japanese);</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">	</span><span class="c1">// 音声読み上げ出力</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">	</span><span class="n">Say</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;Hello, Say!&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h2 id="211-画面の座標系">2.11 画面の座標系<a class="headerlink" href="#211-画面の座標系" title="Permanent link">&para;</a></h2>
+<p>ウィンドウ内の黒い部分が <strong>画面（シーン）</strong> です。Siv3D はこの領域に文字や図形、画像を表示できます。</p>
+<p>画面のサイズは、基本の状態では <strong>幅 800 ピクセル、高さ 600 ピクセル</strong> です。画面上の位置を表す座標は、一番左上のピクセルを「X 座標が 0」「Y 座標が 0」を表す <code>(0, 0)</code> と表記し、右に進むと X 座標が大きく、下に進むと Y 座標が大きくなります。画面の一番右下のピクセルの座標は <code>(799, 599)</code> です。 </p>
+<p><code>Cursor::Pos()</code> を使うと、現在のマウスカーソルの座標を <code>Point</code> 型で取得できます。<code>Point</code> 型の値は X 座標を表す <code>int32 x</code> と Y 座標を表す <code>int32 y</code> の 2 つの成分を持っています。<code>Point</code> 型の値をそのまま丸ごと <code>Print</code> に送って表示することもできます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/tutorial/2/11.png" />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">		</span><span class="n">ClearPrint</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">		</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span><span class="w"> </span><span class="c1">// 現在のマウスカーソル座標を表示</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">		</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;X: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">().</span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// X 座標だけを表示</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">		</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;Y: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">().</span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="c1">// Y 座標だけを表示</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h2 id="212-アプリケーションの基本操作">2.12 アプリケーションの基本操作<a class="headerlink" href="#212-アプリケーションの基本操作" title="Permanent link">&para;</a></h2>
+<h3 id="プログラムを終了してウィンドウを閉じる">プログラムを終了してウィンドウを閉じる<a class="headerlink" href="#プログラムを終了してウィンドウを閉じる" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ウィンドウを閉じる</li>
+<li><span class="keys"><kbd class="key-escape">Esc</kbd></span> を押す</li>
+<li>プログラムが <code>System::Exit()</code> を呼ぶ</li>
+</ul>
+<p>この動作をカスタマイズする方法は、チュートリアル 2.4 を参照してください。</p>
+<h3 id="スクリーンショットを保存する">スクリーンショットを保存する<a class="headerlink" href="#スクリーンショットを保存する" title="Permanent link">&para;</a></h3>
+<ul>
+<li><span class="keys"><kbd class="key-print-screen">Print Screen</kbd></span> を押す</li>
+<li><span class="keys"><kbd class="key-f12">F12</kbd></span> を押す</li>
+</ul>
+<p>実行ファイルと同じディレクトリの <code>Screenshot</code> フォルダ、またはピクチャフォルダに実行中の画面のスクリーンショットが保存されます。</p>
+<div class="admonition tip">
+<p class="admonition-title">上級者向け</p>
+<p><code>ScreenCapture::SetShortcutKeys()</code> を使って、ショートカットキーをカスタマイズできます。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">	</span><span class="c1">// [A] キーが押されたときにスクリーンショットを保存するよう設定</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">	</span><span class="n">ScreenCapture</span><span class="o">::</span><span class="n">SetShortcutKeys</span><span class="p">({</span><span class="w"> </span><span class="n">KeyA</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">(),</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="ライセンス情報を表示する">ライセンス情報を表示する<a class="headerlink" href="#ライセンス情報を表示する" title="Permanent link">&para;</a></h3>
+<ul>
+<li><span class="keys"><kbd class="key-f1">F1</kbd></span> を押す</li>
+</ul>
+<p>アプリケーションで使われているサードパーティ・ソフトウェアのライセンス情報を Web ブラウザで表示します。</p>
+<div class="admonition tip">
+<p class="admonition-title">上級者向け</p>
+<p><code>LicenseManager::</code> 名前空間の関数を使い、ライセンス情報を追加したり、一覧を取得したりできます。<code>LicenseManager::ShowInBrowser()</code> を呼ぶことで明示的にオープンすることもできます。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">		</span><span class="c1">// &quot;Licenses&quot; ボタンが押されたら</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Licenses&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">}))</span><span class="w"></span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">		</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">			</span><span class="c1">// ライセンス情報を表示</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">			</span><span class="n">LicenseManager</span><span class="o">::</span><span class="n">ShowInBrowser</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">		</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="全画面表示にするwindows-のみ">全画面表示にする（Windows のみ）<a class="headerlink" href="#全画面表示にするwindows-のみ" title="Permanent link">&para;</a></h3>
+<ul>
+<li><span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span> を押す</li>
+</ul>
+<p>もう一度、<span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span> を押すとウィンドウ表示に戻ります。</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c) 2012 - 2022, Ryo Suzuki<br>Copyright (c) 2012 - 2022, OpenSiv3D Project
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/Siv3D/OpenSiv3D" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://join.slack.com/t/siv3d/shared_invite/enQtNjM4NzQ0MzEyMzUzLTEzNDBkNWVkMTY0OGU5OWQxOTk3NjczMjk0OGJhYzJjOThjZjQ1YmYzMWU2NzQ5NTQ4ODg3NzE2ZmE0NmVlMTM" target="_blank" rel="noopener" title="join.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/Reputeless" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/Siv3D" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>
