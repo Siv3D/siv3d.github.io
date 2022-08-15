@@ -19,7 +19,7 @@
     
     
       
-        <title>Siv3D のチュートリアル - Siv3D</title>
+        <title>5. 画像を描く - Siv3D</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#siv3d-のチュートリアル" class="md-skip">
+        <a href="#5-画像を描く" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Siv3D のチュートリアル
+              5. 画像を描く
             
           </span>
         </div>
@@ -180,13 +180,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         日本語
       </a>
     </li>
@@ -703,12 +705,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -957,15 +961,55 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" checked>
       
       
       
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
         
           
         
@@ -991,6 +1035,477 @@
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
         0. Siv3D 勉強会
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hello-siv3d/" class="md-nav__link">
+        1. はじめての Siv3D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic/" class="md-nav__link">
+        2. Siv3D の基本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shape/" class="md-nav__link">
+        3. 図形を描く
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        4. 動きを作る
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          5. 画像を描く
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        5. 画像を描く
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-絵文字を描画する" class="md-nav__link">
+    5.1 絵文字を描画する
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 絵文字を描画する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texturedrawat" class="md-nav__link">
+    Texture::drawAt()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texturedraw" class="md-nav__link">
+    Texture::draw()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siv3d-で使える絵文字の一覧" class="md-nav__link">
+    Siv3D で使える絵文字の一覧
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-テクスチャを拡大縮小して描画する" class="md-nav__link">
+    5.2 テクスチャを拡大縮小して描画する
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 テクスチャを拡大縮小して描画する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texturescaled" class="md-nav__link">
+    Texture::scaled()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textureresized" class="md-nav__link">
+    Texture::resized()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-テクスチャを回転して描画する" class="md-nav__link">
+    5.3 テクスチャを回転して描画する
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 テクスチャを回転して描画する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texturerotated" class="md-nav__link">
+    Texture::rotated()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textureroatedat" class="md-nav__link">
+    Texture::roatedAt()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-テクスチャを上下左右反転して描画する" class="md-nav__link">
+    5.4 テクスチャを上下・左右反転して描画する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-アイコンを描画する" class="md-nav__link">
+    5.5 アイコンを描画する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-画像ファイルを読み込んで描画する" class="md-nav__link">
+    5.6 画像ファイルを読み込んで描画する
+  </a>
+  
+    <nav class="md-nav" aria-label="5.6 画像ファイルを読み込んで描画する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#対応している画像フォーマット" class="md-nav__link">
+    対応している画像フォーマット
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-ミップマップの作成" class="md-nav__link">
+    5.7 ミップマップの作成
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#58-テクスチャの一部を描画する" class="md-nav__link">
+    5.8 テクスチャの一部を描画する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59-テクスチャのサイズ" class="md-nav__link">
+    5.9 テクスチャのサイズ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#510-図形の形に合わせてテクスチャを描く" class="md-nav__link">
+    5.10 図形の形に合わせてテクスチャを描く
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#511-テクスチャを透過させる" class="md-nav__link">
+    5.11 テクスチャを透過させる
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#512-空のテクスチャ" class="md-nav__link">
+    5.12 空のテクスチャ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#513-テクスチャの代入" class="md-nav__link">
+    5.13 テクスチャの代入
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-structure/" class="md-nav__link">
+        6. データ構造
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui/" class="md-nav__link">
+        7. GUI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../font/" class="md-nav__link">
+        8. テキストを描く
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keyboard/" class="md-nav__link">
+        9. キーボード
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mouse/" class="md-nav__link">
+        10. マウス
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometry/" class="md-nav__link">
+        11. あたり判定
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
+        12. オーディオ再生
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../misc/" class="md-nav__link">
+        13. その他の機能
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../make-1/" class="md-nav__link">
+        演習 A - アイテム集めゲーム
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../make-2/" class="md-nav__link">
+        演習 B - 深さ優先探索の可視化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../make-3/" class="md-nav__link">
+        演習 C - 楽譜記述言語自作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../make-4/" class="md-nav__link">
+        演習 D - 模写アプリ改造
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../make-5/" class="md-nav__link">
+        演習 E - 音ゲー基礎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../make-6/" class="md-nav__link">
+        演習 F - 脱出ゲーム
       </a>
     </li>
   
@@ -1328,6 +1843,185 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-絵文字を描画する" class="md-nav__link">
+    5.1 絵文字を描画する
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 絵文字を描画する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texturedrawat" class="md-nav__link">
+    Texture::drawAt()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texturedraw" class="md-nav__link">
+    Texture::draw()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siv3d-で使える絵文字の一覧" class="md-nav__link">
+    Siv3D で使える絵文字の一覧
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-テクスチャを拡大縮小して描画する" class="md-nav__link">
+    5.2 テクスチャを拡大縮小して描画する
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 テクスチャを拡大縮小して描画する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texturescaled" class="md-nav__link">
+    Texture::scaled()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textureresized" class="md-nav__link">
+    Texture::resized()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-テクスチャを回転して描画する" class="md-nav__link">
+    5.3 テクスチャを回転して描画する
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 テクスチャを回転して描画する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texturerotated" class="md-nav__link">
+    Texture::rotated()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textureroatedat" class="md-nav__link">
+    Texture::roatedAt()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-テクスチャを上下左右反転して描画する" class="md-nav__link">
+    5.4 テクスチャを上下・左右反転して描画する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-アイコンを描画する" class="md-nav__link">
+    5.5 アイコンを描画する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-画像ファイルを読み込んで描画する" class="md-nav__link">
+    5.6 画像ファイルを読み込んで描画する
+  </a>
+  
+    <nav class="md-nav" aria-label="5.6 画像ファイルを読み込んで描画する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#対応している画像フォーマット" class="md-nav__link">
+    対応している画像フォーマット
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-ミップマップの作成" class="md-nav__link">
+    5.7 ミップマップの作成
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#58-テクスチャの一部を描画する" class="md-nav__link">
+    5.8 テクスチャの一部を描画する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59-テクスチャのサイズ" class="md-nav__link">
+    5.9 テクスチャのサイズ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#510-図形の形に合わせてテクスチャを描く" class="md-nav__link">
+    5.10 図形の形に合わせてテクスチャを描く
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#511-テクスチャを透過させる" class="md-nav__link">
+    5.11 テクスチャを透過させる
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#512-空のテクスチャ" class="md-nav__link">
+    5.12 空のテクスチャ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#513-テクスチャの代入" class="md-nav__link">
+    5.13 テクスチャの代入
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1340,12 +2034,477 @@
                 
 
 
-<h1 id="siv3d-のチュートリアル">Siv3D のチュートリアル<a class="headerlink" href="#siv3d-のチュートリアル" title="Permanent link">&para;</a></h1>
-<p>Siv3D のチュートリアルは以下のページをご覧ください。</p>
+<h1 id="5-画像を描く">5. 画像を描く<a class="headerlink" href="#5-画像を描く" title="Permanent link">&para;</a></h1>
+<p>この章では、絵文字やアイコン、画像ファイルから読み込んだ画像をシーンに描く方法を学びます。</p>
+<h2 id="51-絵文字を描画する">5.1 絵文字を描画する<a class="headerlink" href="#51-絵文字を描画する" title="Permanent link">&para;</a></h2>
+<p>シーンに画像を描きたいときは <code>Texture</code> を作成し、<code>.draw()</code> または <code>.drawAt()</code> します。<code>Texture</code> は、次のような方法で作成できます。</p>
 <ul>
-<li>入門者向け <a href="https://zenn.dev/reputeless/books/siv3d-documentation">https://zenn.dev/reputeless/books/siv3d-documentation <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a></li>
-<li>中級者向け <a href="https://github.com/Reputeless/games">https://github.com/Reputeless/games <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a></li>
+<li>画像ファイルから画像データを読み込む</li>
+<li>プログラムで作成した画像データ (<code>Image</code>) から作成する</li>
+<li>Siv3D が標準で提供する絵文字コレクションから作成する</li>
+<li>Siv3D が標準で提供するアイコンコレクションから作成する</li>
 </ul>
+<p><code>Texture</code> はテクスチャのリソースをデストラクタで自動的に解放するため、リソースの解放処理を明示的に書く必要はありません。</p>
+<p>まず最初に、絵文字コレクションから好きな絵文字を選んで <code>Texture</code> を作成し、それを描画するプログラムを書いてみましょう。<code>Texture</code> の作成にはメモリ確保などの実行時負荷がかかります。メインループの中で毎フレーム新しい <code>Texture</code> を作成するのは避け、作成が 1 回だけで済むようにしましょう。</p>
+<p>絵文字コレクションから <code>Texture</code> を作成するには、<code>Texture</code> のコンストラクタ引数に <code>U"🐈"_emoji</code> のように絵文字を渡します。</p>
+<h3 id="texturedrawat">Texture::drawAt()<a class="headerlink" href="#texturedrawat" title="Permanent link">&para;</a></h3>
+<p><code>.drawAt()</code> では、テクスチャの中心をどこに据えるかをシーンの座標で指定します。絵文字やアイコンを描く場合はこの指定方法が便利です。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/1.1.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">	</span><span class="c1">// 🐈 の絵文字からテクスチャを作成</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">texture</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="n">_emoji</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">		</span><span class="c1">// テクスチャを座標 (0, 0) を中心に描画</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">		</span><span class="n">texture</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">		</span><span class="c1">// テクスチャを座標 (200, 200) を中心に描画</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">		</span><span class="n">texture</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">		</span><span class="c1">// テクスチャを、シーン中央を中心にして描画</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">		</span><span class="n">texture</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">());</span><span class="w"></span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="texturedraw">Texture::draw()<a class="headerlink" href="#texturedraw" title="Permanent link">&para;</a></h3>
+<p><code>.draw()</code> では、テクスチャの左上をどこに据えるかをシーンの座標で指定します。背景画像や UI などを描くときにはこの指定方法が便利な場合があります。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/1.2.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">	</span><span class="c1">// 🐈 の絵文字からテクスチャを作成</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">texture</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="n">_emoji</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">		</span><span class="c1">// テクスチャを座標 (400, 0) から描画</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">		</span><span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">		</span><span class="c1">// 座標を指定しない場合 (0, 0) から描画</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">		</span><span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">		</span><span class="c1">// テクスチャをシーン中心から描画</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">		</span><span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">());</span><span class="w"></span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="siv3d-で使える絵文字の一覧">Siv3D で使える絵文字の一覧<a class="headerlink" href="#siv3d-で使える絵文字の一覧" title="Permanent link">&para;</a></h3>
+<p>Siv3D で使える絵文字は約 3,600 種類あります。絵文字を探すときは <a href="https://emojipedia.org/">emojipedia</a> の Categories から調べるのが便利です。 OpenSiv3D v0.6.5 はオープンソースの絵文字フォント Noto Color Emoji (Unicode 14.0 版) を内蔵しているので、Siv3D アプリはどのプラットフォームでも同じ見た目の絵文字を表示できます。</p>
+<h2 id="52-テクスチャを拡大縮小して描画する">5.2 テクスチャを拡大縮小して描画する<a class="headerlink" href="#52-テクスチャを拡大縮小して描画する" title="Permanent link">&para;</a></h2>
+<h3 id="texturescaled">Texture::scaled()<a class="headerlink" href="#texturescaled" title="Permanent link">&para;</a></h3>
+<p><code>Texture::scaled()</code> に拡大縮小倍率を指定すると、<code>Texture</code> にサイズ情報が付加された <code>TextureRegion</code> を作成できます。<code>TextureRegion</code> は <code>Texture</code> のように <code>.draw()</code> または <code>.drawAt()</code> できます。<code>Texture</code> を作成するのと異なり、既存の <code>Texture</code> から <code>TextureRegion</code> を作成するのは非常に軽い実行時負荷です。サンプルでは示していませんが、縦横で異なる倍率に設定することもできます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/2.1.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">cat</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="n">_emoji</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">dog</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;🐕&quot;</span><span class="n">_emoji</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">		</span><span class="c1">// 2 倍に拡大して描画</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">		</span><span class="n">cat</span><span class="p">.</span><span class="n">scaled</span><span class="p">(</span><span class="mf">2.0</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">		</span><span class="c1">// 1.5 倍に拡大して描画</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">		</span><span class="n">cat</span><span class="p">.</span><span class="n">scaled</span><span class="p">(</span><span class="mf">1.5</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">		</span><span class="c1">// 半分のサイズに縮小して描画</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">		</span><span class="n">dog</span><span class="p">.</span><span class="n">scaled</span><span class="p">(</span><span class="mf">0.5</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="textureresized">Texture::resized()<a class="headerlink" href="#textureresized" title="Permanent link">&para;</a></h3>
+<p><code>Texture::resized()</code> は、拡大縮小後のサイズを倍率ではなくピクセル単位で指定します。Siv3D 標準の絵文字のサイズは幅が 136 ピクセルなので、136 より大きい数を指定すると拡大、小さい数を指定すると縮小表示になります。サンプルでは示していませんが、縦横で異なるサイズに設定することもできます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/2.2.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">cat</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="n">_emoji</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">dog</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;🐕&quot;</span><span class="n">_emoji</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">		</span><span class="c1">// 300px に拡大して描画</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">		</span><span class="n">cat</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">300</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">		</span><span class="c1">// 200px に拡大して描画</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">		</span><span class="n">cat</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">		</span><span class="c1">// 20px に縮小して描画</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">		</span><span class="n">dog</span><span class="p">.</span><span class="n">resized</span><span class="p">(</span><span class="mi">20</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="53-テクスチャを回転して描画する">5.3 テクスチャを回転して描画する<a class="headerlink" href="#53-テクスチャを回転して描画する" title="Permanent link">&para;</a></h2>
+<p><code>Texture::rotated()</code> または <code>Texture::rotatedAt()</code> によって、テクスチャに回転情報を付加した <code>TexturedQuad</code> を作成できます。<code>TexturedQuad</code> は <code>Texture</code> のように <code>.draw()</code> または <code>.drawAt()</code> できます。<code>TextureRegion</code> と同様、<code>TexturedQuad</code> を作成するのは非常に軽い実行時負荷です。</p>
+<h3 id="texturerotated">Texture::rotated()<a class="headerlink" href="#texturerotated" title="Permanent link">&para;</a></h3>
+<p>テクスチャの中心を軸にして回転します。回転角度はラジアンで指定します。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/3.1.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">cat</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="n">_emoji</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">		</span><span class="c1">// 毎秒 90° 時計回りに回転</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">		</span><span class="n">cat</span><span class="p">.</span><span class="n">rotated</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">90</span><span class="n">_deg</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">());</span><span class="w"></span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="textureroatedat">Texture::roatedAt()<a class="headerlink" href="#textureroatedat" title="Permanent link">&para;</a></h3>
+<p>テクスチャ上の指定した座標を軸にして回転します。<code>Vec2{ 0, 0 }</code> を指定すればテクスチャの左上が軸になります。回転角度はラジアンで指定します。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/3.2.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">cat</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="n">_emoji</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">		</span><span class="c1">// 画像中の (40, 20) を軸に回転させて描画</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">		</span><span class="n">cat</span><span class="p">.</span><span class="n">rotatedAt</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">90</span><span class="n">_deg</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">());</span><span class="w"></span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="54-テクスチャを上下左右反転して描画する">5.4 テクスチャを上下・左右反転して描画する<a class="headerlink" href="#54-テクスチャを上下左右反転して描画する" title="Permanent link">&para;</a></h2>
+<p><code>Texture::flipped()</code> で上下反転、<code>Texture::mirrored()</code> で左右反転した <code>TextureRegion</code> を作成できます。それぞれ、引数をとらずに反転する関数、引数の <code>bool</code> 値が <code>true</code> のときだけ反転する関数の 2 種類のオーバーロードがあります。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/4.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">cat</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="n">_emoji</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">		</span><span class="c1">// 上下反転</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">		</span><span class="n">cat</span><span class="p">.</span><span class="n">flipped</span><span class="p">().</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">		</span><span class="c1">// 左右反転</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">		</span><span class="n">cat</span><span class="p">.</span><span class="n">mirrored</span><span class="p">().</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">		</span><span class="c1">// 反転するかを bool 値で指定するオーバーロード</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">		</span><span class="n">cat</span><span class="p">.</span><span class="n">mirrored</span><span class="p">(</span><span class="nb">false</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="55-アイコンを描画する">5.5 アイコンを描画する<a class="headerlink" href="#55-アイコンを描画する" title="Permanent link">&para;</a></h2>
+<p>アイコンコレクションから <code>Texture</code> を作成するには、<code>Texture</code> のコンストラクタ引数にアイコンオブジェクトを渡します。アイコンは全部で約 8,000 種類用意されています。</p>
+<p><code>Texture</code> のコンストラクタには、<a href="https://pictogrammers.github.io/@mdi/font/6.5.95/">Material Design Icons</a> または <a href="https://fontawesome.com/icons?d=gallery&amp;s=brands,solid&amp;m=free">Font Awesome アイコン一覧</a> で調べられる 16 進数コードに <code>_icon</code> を付けた値と、アイコンの基本サイズ（ピクセル）を渡します。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/5.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.92</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">	</span><span class="c1">// 歯車 (f013) のアイコン</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">icon0</span><span class="p">{</span><span class="w"> </span><span class="mh">0xf013</span><span class="n">_icon</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">	</span><span class="c1">// 南京錠 (f023) のアイコン</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">icon1</span><span class="p">{</span><span class="w"> </span><span class="mh">0xf023</span><span class="n">_icon</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">	</span><span class="c1">// 拡大鏡 (f00e) のアイコン</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">icon2</span><span class="p">{</span><span class="w"> </span><span class="mh">0xf00e</span><span class="n">_icon</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">		</span><span class="n">icon0</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.25</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">		</span><span class="n">icon1</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.25</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">		</span><span class="n">icon2</span><span class="p">.</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.25</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="56-画像ファイルを読み込んで描画する">5.6 画像ファイルを読み込んで描画する<a class="headerlink" href="#56-画像ファイルを読み込んで描画する" title="Permanent link">&para;</a></h2>
+<p>画像ファイルから <code>Texture</code> を作成するには、<code>Texture</code> のコンストラクタ引数に、読み込みたい画像ファイルのパスを渡します。このファイルパスは、実行ファイルがあるフォルダ（開発中は <code>App</code> フォルダ）を基準とする相対パスか、絶対パスを使用します。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/6.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">	</span><span class="c1">// 風車の画像</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">textureWindmill</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">	</span><span class="c1">// Siv3D くん（Siv3D の公式マスコットキャラクター）の画像</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">textureSiv3DKun</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/siv3d-kun.png&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">		</span><span class="n">textureWindmill</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">		</span><span class="n">textureSiv3DKun</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="対応している画像フォーマット">対応している画像フォーマット<a class="headerlink" href="#対応している画像フォーマット" title="Permanent link">&para;</a></h3>
+<p>OpenSiv3D v0.6.5 では、9 種類の画像フォーマットの読み込みがサポートされています。</p>
+<table>
+<thead>
+<tr>
+<th>フォーマット</th>
+<th>拡張子</th>
+<th align="center">対応状況</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PNG</td>
+<td>png</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>JPEG</td>
+<td>jpg/jpeg</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>BMP</td>
+<td>bmp</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>SVG</td>
+<td>svg</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>GIF</td>
+<td>gif</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>TGA</td>
+<td>tga</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>PPM</td>
+<td>ppm/pgm/pbm/pnm</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>WebP</td>
+<td>webp</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>TIFF</td>
+<td>tif/tiff</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>JPEG2000</td>
+<td>jp2</td>
+<td align="center">(将来のバージョン)</td>
+</tr>
+<tr>
+<td>DDS</td>
+<td>dds</td>
+<td align="center">(将来のバージョン)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="57-ミップマップの作成">5.7 ミップマップの作成<a class="headerlink" href="#57-ミップマップの作成" title="Permanent link">&para;</a></h2>
+<p>テクスチャの作成時に<strong>ミップマップ</strong>を作成するオプションを設定すると、そのテクスチャを縮小して表示する際の画質や実行時性能が改善されます。ミップマップとは、あらかじめきれいに縮小された画像を、テクスチャ作成時に生成しておく技術のことです。プログラムがテクスチャを縮小表示する際に、必要に応じてミップマップテクスチャが参照されます。</p>
+<p>ミップマップを作成する場合、テクスチャのロード時間が若干の増加し、テクスチャが消費するメモリも 30% ほど増加します。それでも、画像の縮小表示が行われる多くのケースで、ミップマップ作成は最適な選択肢になります。</p>
+<p>絵文字やアイコンから Texture を作る場合はデフォルトでミップマップが作成されます。一方、画像ファイルから <code>Texture</code> を作成する場合は、コンストラクタの第 2 引数でミップマップのありなしを選択します。デフォルトではミップマップを作成しない <code>TextureDesc::Unmipped</code> になっていて、明示的に <code>TextureDesc::Mipped</code> を指定したときにだけミップマップを作成します。</p>
+<p>次のサンプルで、ミップマップの効果を確認できます。ミップマップを作成していない左のテクスチャは、サイズの変化に伴いちらちらしたノイズが発生しますが、ミップマップを作成する右のテクスチャではそれが抑えられていることがわかります。</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZsviU-05d-M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">	</span><span class="c1">// ミップマップを作成しない設定</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">unmipped</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">	</span><span class="c1">// ミップマップを作成する設定</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">mipped</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">TextureDesc</span><span class="o">::</span><span class="n">Mipped</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">0.02</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Periodic</span><span class="o">::</span><span class="n">Triangle0_1</span><span class="p">(</span><span class="mi">10</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.4</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">		</span><span class="n">unmipped</span><span class="p">.</span><span class="n">scaled</span><span class="p">(</span><span class="n">scale</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">		</span><span class="n">mipped</span><span class="p">.</span><span class="n">scaled</span><span class="p">(</span><span class="n">scale</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="58-テクスチャの一部を描画する">5.8 テクスチャの一部を描画する<a class="headerlink" href="#58-テクスチャの一部を描画する" title="Permanent link">&para;</a></h2>
+<p>テクスチャの全部ではなく、特定の長方形の領域だけを描画したい場合は <code>Texture::operator()</code> で、テクスチャ上の描画したい領域を指定して <code>TextureRegion</code> を作成します。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/8.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">textureWindmill</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">textureSiv3DKun</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/siv3d-kun.png&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">		</span><span class="c1">// 画像の (250, 100) から幅 200, 高さ 150 の長方形部分</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">		</span><span class="n">textureWindmill</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">		</span><span class="c1">// 画像の (100, 0) から幅 100, 高さ 150 の長方形部分</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">		</span><span class="n">textureSiv3DKun</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="59-テクスチャのサイズ">5.9 テクスチャのサイズ<a class="headerlink" href="#59-テクスチャのサイズ" title="Permanent link">&para;</a></h2>
+<p>テクスチャのサイズを <code>Size</code> 型（<code>Point</code> 型のエイリアス) で取得するには <code>.size()</code> を使います。横のサイズだけ、縦のサイズだけを取得したい場合は、それぞれ <code>.width()</code>, <code>.height()</code> を使います。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/9.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">texture</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">texture</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">texture</span><span class="p">.</span><span class="n">width</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">	</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">texture</span><span class="p">.</span><span class="n">height</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">		</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">texture</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="510-図形の形に合わせてテクスチャを描く">5.10 図形の形に合わせてテクスチャを描く<a class="headerlink" href="#510-図形の形に合わせてテクスチャを描く" title="Permanent link">&para;</a></h2>
+<p><code>Rect</code> や <code>RectF</code>, <code>Circle</code>, <code>Quad</code>, <code>RoundRect</code>, <code>Polygon</code> に、テクスチャ全体やテクスチャの一部領域を貼り付けて描くことができます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/10.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">textureWindmill</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">TextureDesc</span><span class="o">::</span><span class="n">Mipped</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">textureSiv3DKun</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/siv3d-kun.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">TextureDesc</span><span class="o">::</span><span class="n">Mipped</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">RoundRect</span><span class="w"> </span><span class="n">roundRect</span><span class="p">{</span><span class="w"> </span><span class="mi">430</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Circle</span><span class="w"> </span><span class="n">circle</span><span class="p">{</span><span class="w"> </span><span class="mi">480</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Polygon</span><span class="w"> </span><span class="n">hexagon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Shape2D</span><span class="o">::</span><span class="n">Hexagon</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">480</span><span class="p">,</span><span class="w"> </span><span class="mi">380</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">		</span><span class="c1">// テクスチャを長方形に貼り付けて描画</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">		</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">350</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="p">}(</span><span class="n">textureWindmill</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">		</span><span class="n">roundRect</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">		</span><span class="c1">// テクスチャの (90, 5) から幅 110 高さ 110 の領域を、roundRect に貼り付けて描画</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">		</span><span class="n">roundRect</span><span class="p">(</span><span class="n">textureSiv3DKun</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">110</span><span class="p">,</span><span class="w"> </span><span class="mi">110</span><span class="p">)).</span><span class="n">draw</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">		</span><span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">		</span><span class="c1">// テクスチャの (85, 0) から幅 120 高さ 120 の領域を、circle に貼り付けて描画</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">		</span><span class="n">circle</span><span class="p">(</span><span class="n">textureSiv3DKun</span><span class="p">(</span><span class="mi">85</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="p">)).</span><span class="n">draw</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="w">		</span><span class="n">hexagon</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">		</span><span class="c1">// Polygon に対し、(515, 560) を画像の中心とするようにテクスチャを貼り付けて描画</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">		</span><span class="n">hexagon</span><span class="p">.</span><span class="n">toBuffer2D</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span><span class="p">(</span><span class="mi">515</span><span class="p">,</span><span class="w"> </span><span class="mi">560</span><span class="p">),</span><span class="w"> </span><span class="n">textureSiv3DKun</span><span class="p">.</span><span class="n">size</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="w">			</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">textureSiv3DKun</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="511-テクスチャを透過させる">5.11 テクスチャを透過させる<a class="headerlink" href="#511-テクスチャを透過させる" title="Permanent link">&para;</a></h2>
+<p>テクスチャの <code>.draw()</code>, <code>.drawAt()</code> の引数に色を渡すと、その色で乗算して描画されます。アルファ成分に応じてテクスチャは透過します。</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uRIwKBklWQ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">textureWindmill</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">textureSiv3DKun</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/siv3d-kun.png&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">		</span><span class="n">textureWindmill</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">		</span><span class="c1">// アルファ成分を 0.0～1.0 の間で変化させる</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">		</span><span class="n">textureSiv3DKun</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">Periodic</span><span class="o">::</span><span class="n">Sine0_1</span><span class="p">(</span><span class="mi">2</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="512-空のテクスチャ">5.12 空のテクスチャ<a class="headerlink" href="#512-空のテクスチャ" title="Permanent link">&para;</a></h2>
+<p>データを持たない空（から）のテクスチャは、16x16 の黄色い画像になります。画像ファイルの読み込みに失敗したときにも空のテクスチャが作成されます。</p>
+<p>テクスチャが空であるかは <code>if (texture.isEmpty())</code> もしくは <code>if (not texture)</code> で調べられます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/12.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">	</span><span class="c1">// 初期データを与えないと、空のテクスチャになる</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">	</span><span class="n">Texture</span><span class="w"> </span><span class="n">textureA</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">not</span><span class="w"> </span><span class="n">textureA</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">		</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;textureA is empty&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">	</span><span class="c1">// 画像ファイルの読み込みに失敗すると、空のテクスチャになる</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">	</span><span class="n">Texture</span><span class="w"> </span><span class="n">textureB</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;aaa/bbb.png&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">not</span><span class="w"> </span><span class="n">textureB</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">		</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;textureB is empty&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="w">		</span><span class="n">textureA</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="w">		</span><span class="n">textureB</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="513-テクスチャの代入">5.13 テクスチャの代入<a class="headerlink" href="#513-テクスチャの代入" title="Permanent link">&para;</a></h2>
+<p><code>Texture</code> は次のように <code>=</code> 演算子を使って代入できます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/13.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">	</span><span class="n">Texture</span><span class="w"> </span><span class="n">texture</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">		</span><span class="c1">// テクスチャが空の状態で、左クリックされたら</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">not</span><span class="w"> </span><span class="n">texture</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">		</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">			</span><span class="c1">// テクスチャを作成して代入</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">			</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Texture</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">		</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">texture</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">		</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">			</span><span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">		</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 
 
@@ -1364,6 +2523,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../animation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. 動きを作る" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              4. 動きを作る
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../data-structure/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. データ構造" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              6. データ構造
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
