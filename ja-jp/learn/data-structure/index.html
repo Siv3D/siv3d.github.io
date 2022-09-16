@@ -2774,7 +2774,7 @@
 <a id="__codelineno-20-46" name="__codelineno-20-46" href="#__codelineno-20-46"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="67-これ以外のデータ構造">6.7 これ以外のデータ構造<a class="headerlink" href="#67-これ以外のデータ構造" title="Permanent link">&para;</a></h2>
-<p>Siv3D では、配列の要素数がコンパイル時に決まっていて実行中に変更されない静的配列は <code>std::array</code> を使います。また、動的配列は <code>std::deque</code> や <code>std::list</code> を使うよりも、メモリが連続性する <code>Array</code> のほうが実行時性能に優れるケースが多くあります。要素数が数万規模まで大きくならないような動的配列については <code>Array</code> を優先して使うことを推奨します。</p>
+<p>Siv3D では、配列の要素数がコンパイル時に決まっていて実行中に変更されない静的配列は <code>std::array</code> を使います。また、動的配列は <code>std::deque</code> や <code>std::list</code> を使うよりも、メモリが連続する <code>Array</code> のほうが実行時性能に優れるケースが多くあります。要素数が数万規模まで大きくならないような動的配列については <code>Array</code> を優先して使うことを推奨します。</p>
 
 
 
