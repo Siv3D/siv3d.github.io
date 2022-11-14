@@ -1,0 +1,2409 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Siv3D: A C++ library for creative coding">
+      
+      
+        <meta name="author" content="Ryo Suzuki">
+      
+      
+        <link rel="canonical" href="https://siv3d.github.io/ja-jp/reference/messagebox/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>メッセージボックス - Siv3D</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="siv3d" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#メッセージボックス" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Siv3D" class="md-header__button md-logo" aria-label="Siv3D" data-md-component="logo">
+      
+  <img src="../../../assets/images/code-white-48dp.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Siv3D
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              メッセージボックス
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        English
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        日本語
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Siv3D" class="md-nav__button md-logo" aria-label="Siv3D" data-md-component="logo">
+      
+  <img src="../../../assets/images/code-white-48dp.svg" alt="logo">
+
+    </a>
+    Siv3D
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../..">English</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="English" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          English
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/" class="md-nav__link">
+        Features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/" class="md-nav__link">
+        Release Notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          Download
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Download" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Download
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/windows/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/macos/" class="md-nav__link">
+        macOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/ubuntu/" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/web-vs/" class="md-nav__link">
+        Web (VS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/web-vscode/" class="md-nav__link">
+        Web (VSCode)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_5">
+          Tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorial/tutorial/" class="md-nav__link">
+        Tutorial
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_6">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./" class="md-nav__link">
+        Message box
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_7">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/classes/" class="md-nav__link">
+        Classes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_8" type="checkbox" id="__nav_1_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_8">
+          Community
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Community" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_8">
+          <span class="md-nav__icon md-icon"></span>
+          Community
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../community/community/" class="md-nav__link">
+        Community
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../community/study-meeting/" class="md-nav__link">
+        Lectures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../community/dev-day/" class="md-nav__link">
+        Dev-day (Jissoukai)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_9" type="checkbox" id="__nav_1_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_9">
+          Mascot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mascot" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_9">
+          <span class="md-nav__icon md-icon"></span>
+          Mascot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mascot/mascot/" class="md-nav__link">
+        Mascot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mascot/gallery/" class="md-nav__link">
+        Gallery
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acknowledgments/" class="md-nav__link">
+        Acknowledgments
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">日本語</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="日本語" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          日本語
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/" class="md-nav__link">
+        Siv3D の機能
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        リリースノート
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          ダウンロード
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ダウンロード" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          ダウンロード
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/windows/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/macos/" class="md-nav__link">
+        macOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/ubuntu/" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/web-vs/" class="md-nav__link">
+        Web (VS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/web-vscode/" class="md-nav__link">
+        Web (VSCode)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          チュートリアル
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="チュートリアル" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          チュートリアル
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/tutorial/" class="md-nav__link">
+        チュートリアル
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          リファレンス
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="リファレンス" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          リファレンス
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          メッセージボックス
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        メッセージボックス
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-概要" class="md-nav__link">
+    1. 概要
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 概要">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-機能の説明" class="md-nav__link">
+    1.1 機能の説明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-注意事項" class="md-nav__link">
+    1.2 注意事項
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-メッセージボックスの-api" class="md-nav__link">
+    2. メッセージボックスの API
+  </a>
+  
+    <nav class="md-nav" aria-label="2. メッセージボックスの API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#関数" class="md-nav__link">
+    関数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#列挙型" class="md-nav__link">
+    列挙型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-メッセージボックスのサンプル" class="md-nav__link">
+    3. メッセージボックスのサンプル
+  </a>
+  
+    <nav class="md-nav" aria-label="3. メッセージボックスのサンプル">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-一定時間が経過したらプログラムを終了する" class="md-nav__link">
+    3.1 一定時間が経過したらプログラムを終了する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ウィンドウの閉じるボタンを押したときに終了するか確認する" class="md-nav__link">
+    3.2 ウィンドウの閉じるボタンを押したときに終了するか確認する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-起動時に前回のセーブデータを読み込むか確認する" class="md-nav__link">
+    3.3 起動時に前回のセーブデータを読み込むか確認する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-作業内容を保存するか確認する" class="md-nav__link">
+    3.4 作業内容を保存するか確認する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          勉強会コース
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="勉強会コース" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          勉強会コース
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/about/" class="md-nav__link">
+        0. Siv3D 勉強会
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/hello-siv3d/" class="md-nav__link">
+        1. はじめての Siv3D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/basic/" class="md-nav__link">
+        2. Siv3D の基本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/shape/" class="md-nav__link">
+        3. 図形を描く
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/animation/" class="md-nav__link">
+        4. 動きを作る
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/texture/" class="md-nav__link">
+        5. 画像を描く
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/data-structure/" class="md-nav__link">
+        6. データ構造
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/gui/" class="md-nav__link">
+        7. GUI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/font/" class="md-nav__link">
+        8. テキストを描く
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/keyboard/" class="md-nav__link">
+        9. キーボード
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/mouse/" class="md-nav__link">
+        10. マウス
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/geometry/" class="md-nav__link">
+        11. あたり判定
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/audio/" class="md-nav__link">
+        12. オーディオ再生
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/misc/" class="md-nav__link">
+        13. その他の機能
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/make-1/" class="md-nav__link">
+        演習 A - アイテム集めゲーム
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/make-2/" class="md-nav__link">
+        演習 B - 幅優先探索の可視化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/make-3/" class="md-nav__link">
+        演習 C - 楽譜記述言語自作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/make-4/" class="md-nav__link">
+        演習 D - 模写アプリ改造
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/make-5/" class="md-nav__link">
+        演習 E - 音ゲー基礎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/make-6/" class="md-nav__link">
+        演習 F - 脱出ゲーム
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/classes/" class="md-nav__link">
+        クラス一覧
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          コミュニティ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="コミュニティ" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          コミュニティ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/community/" class="md-nav__link">
+        コミュニティ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/study-meeting/" class="md-nav__link">
+        Siv3D 勉強会
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/dev-day/" class="md-nav__link">
+        OpenSiv3D 実装会
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_10">
+          開発に参加する
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="開発に参加する" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          開発に参加する
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/report/" class="md-nav__link">
+        報告や提案
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/build/" class="md-nav__link">
+        自前ビルドの手順
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/commit/" class="md-nav__link">
+        GitHub でコミットする
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11" type="checkbox" id="__nav_2_11" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_11">
+          マスコット
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="マスコット" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          マスコット
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mascot/mascot/" class="md-nav__link">
+        マスコット
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mascot/gallery/" class="md-nav__link">
+        ギャラリー
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acknowledgments/" class="md-nav__link">
+        謝辞
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-概要" class="md-nav__link">
+    1. 概要
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 概要">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-機能の説明" class="md-nav__link">
+    1.1 機能の説明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-注意事項" class="md-nav__link">
+    1.2 注意事項
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-メッセージボックスの-api" class="md-nav__link">
+    2. メッセージボックスの API
+  </a>
+  
+    <nav class="md-nav" aria-label="2. メッセージボックスの API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#関数" class="md-nav__link">
+    関数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#列挙型" class="md-nav__link">
+    列挙型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-メッセージボックスのサンプル" class="md-nav__link">
+    3. メッセージボックスのサンプル
+  </a>
+  
+    <nav class="md-nav" aria-label="3. メッセージボックスのサンプル">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-一定時間が経過したらプログラムを終了する" class="md-nav__link">
+    3.1 一定時間が経過したらプログラムを終了する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ウィンドウの閉じるボタンを押したときに終了するか確認する" class="md-nav__link">
+    3.2 ウィンドウの閉じるボタンを押したときに終了するか確認する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-起動時に前回のセーブデータを読み込むか確認する" class="md-nav__link">
+    3.3 起動時に前回のセーブデータを読み込むか確認する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-作業内容を保存するか確認する" class="md-nav__link">
+    3.4 作業内容を保存するか確認する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="メッセージボックス">メッセージボックス<a class="headerlink" href="#メッセージボックス" title="Permanent link">&para;</a></h1>
+<h2 id="1-概要">1. 概要<a class="headerlink" href="#1-概要" title="Permanent link">&para;</a></h2>
+<h3 id="11-機能の説明">1.1 機能の説明<a class="headerlink" href="#11-機能の説明" title="Permanent link">&para;</a></h3>
+<p>メッセージボックス機能を使うと、メインウィンドウとは別のウィンドウとして、ユーザに応答を求めるメッセージボックスを表示し、ユーザの選択を取得できます。メッセージボックスの表示中は、メインループのプログラムの進行がブロックされます。</p>
+<h3 id="12-注意事項">1.2 注意事項<a class="headerlink" href="#12-注意事項" title="Permanent link">&para;</a></h3>
+<ul>
+<li>プラットフォームによっては、フルスクリーンモード中にメッセージボックスを使用すると、メッセージボックスがメインウィンドウの裏に隠れ、ユーザが操作不能に陥る場合があります。ウィンドウがフルスクリーンの際は、代わりにシーン内の描画でメッセージボックスを再現するなど、メッセージボックス機能を使わないことを推奨します</li>
+</ul>
+<h2 id="2-メッセージボックスの-api">2. メッセージボックスの API<a class="headerlink" href="#2-メッセージボックスの-api" title="Permanent link">&para;</a></h2>
+<h3 id="関数">関数<a class="headerlink" href="#関数" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">「OK」ボタンを持つメッセージボックスを表示し、その結果を返します。</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">MessageBoxResult</span><span class="w"> </span><span class="nf">System::MessageBoxOK</span><span class="p">(</span><span class="n">StringView</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">MessageBoxStyle</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MessageBoxStyle</span><span class="o">::</span><span class="n">Default</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">MessageBoxResult</span><span class="w"> </span><span class="nf">System::MessageBoxOK</span><span class="p">(</span><span class="n">StringView</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">StringView</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">MessageBoxStyle</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MessageBoxStyle</span><span class="o">::</span><span class="n">Default</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<dl>
+<dt><code>title</code></dt>
+<dd>メッセージボックスのタイトル</dd>
+<dt><code>text</code></dt>
+<dd>本文</dd>
+<dt><code>style</code></dt>
+<dd>スタイル</dd>
+<dt><code>戻り値</code></dt>
+<dd><code>MessageBoxResult::OK</code></dd>
+</dl>
+<hr />
+<div class="highlight"><span class="filename">「OK」「キャンセル」ボタンを持つメッセージボックスを表示し、その結果を返します。</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">MessageBoxResult</span><span class="w"> </span><span class="nf">System::MessageBoxOKCancel</span><span class="p">(</span><span class="n">StringView</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">MessageBoxStyle</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MessageBoxStyle</span><span class="o">::</span><span class="n">Default</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">MessageBoxResult</span><span class="w"> </span><span class="nf">System::MessageBoxOKCancel</span><span class="p">(</span><span class="n">StringView</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">StringView</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">MessageBoxStyle</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MessageBoxStyle</span><span class="o">::</span><span class="n">Default</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<dl>
+<dt><code>title</code></dt>
+<dd>メッセージボックスのタイトル</dd>
+<dt><code>text</code></dt>
+<dd>本文</dd>
+<dt><code>style</code></dt>
+<dd>スタイル</dd>
+<dt><code>戻り値</code></dt>
+<dd><code>MessageBoxResult::OK</code> または <code>MessageBoxResult::Cancel</code></dd>
+</dl>
+<hr />
+<div class="highlight"><span class="filename">「はい」「いいえ」ボタンを持つメッセージボックスを表示し、その結果を返します。</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">MessageBoxResult</span><span class="w"> </span><span class="nf">System::MessageBoxYesNo</span><span class="p">(</span><span class="n">StringView</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">MessageBoxStyle</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MessageBoxStyle</span><span class="o">::</span><span class="n">Default</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">MessageBoxResult</span><span class="w"> </span><span class="nf">System::MessageBoxYesNo</span><span class="p">(</span><span class="n">StringView</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">StringView</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">MessageBoxStyle</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MessageBoxStyle</span><span class="o">::</span><span class="n">Default</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<dl>
+<dt><code>title</code></dt>
+<dd>メッセージボックスのタイトル</dd>
+<dt><code>text</code></dt>
+<dd>本文</dd>
+<dt><code>style</code></dt>
+<dd>スタイル</dd>
+<dt><code>戻り値</code></dt>
+<dd><code>MessageBoxResult::Yes</code> または <code>MessageBoxResult::No</code></dd>
+</dl>
+<h3 id="列挙型">列挙型<a class="headerlink" href="#列挙型" title="Permanent link">&para;</a></h3>
+<h4 id="messageboxresult">MessageBoxResult<a class="headerlink" href="#messageboxresult" title="Permanent link">&para;</a></h4>
+<p>メッセージボックスに対するユーザの操作を表す定数です。プラットフォームによっては、ボタンを選択せずにメッセージボックスを閉じることができる場合があります。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OK</code></td>
+<td>「OK」が押された</td>
+</tr>
+<tr>
+<td><code>Cancel</code></td>
+<td>「キャンセル」が押されたか、メッセージボックスが閉じられた</td>
+</tr>
+<tr>
+<td><code>Yes</code></td>
+<td>「はい」が押された</td>
+</tr>
+<tr>
+<td><code>No</code></td>
+<td>「いいえ」が押された</td>
+</tr>
+</tbody>
+</table>
+<h4 id="messageboxstyle">MessageBoxStyle<a class="headerlink" href="#messageboxstyle" title="Permanent link">&para;</a></h4>
+<p>メッセージボックスのスタイルを表す定数です。プラットフォームによってはスタイルが存在しない場合があり、その場合は通常のスタイルが使われます。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Default</code></td>
+<td>通常のスタイル</td>
+</tr>
+<tr>
+<td><code>Info</code></td>
+<td>情報を伝えるスタイル</td>
+</tr>
+<tr>
+<td><code>Warning</code></td>
+<td>警告を伝えるスタイル</td>
+</tr>
+<tr>
+<td><code>Error</code></td>
+<td>深刻なエラーを伝えるスタイル</td>
+</tr>
+<tr>
+<td><code>Question</code></td>
+<td>クエスチョンマークのスタイル</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-メッセージボックスのサンプル">3. メッセージボックスのサンプル<a class="headerlink" href="#3-メッセージボックスのサンプル" title="Permanent link">&para;</a></h2>
+<h3 id="31-一定時間が経過したらプログラムを終了する">3.1 一定時間が経過したらプログラムを終了する<a class="headerlink" href="#31-一定時間が経過したらプログラムを終了する" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">	</span><span class="c1">// 5 秒間のカウントダウンタイマー</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">	</span><span class="n">Timer</span><span class="w"> </span><span class="n">timer</span><span class="p">{</span><span class="w"> </span><span class="mi">5</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">StartImmediately</span><span class="o">::</span><span class="n">Yes</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">		</span><span class="n">ClearPrint</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">		</span><span class="c1">// 残り時間を表示する</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">		</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;残り &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">timer</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;mm:ss&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">		</span><span class="c1">// タイマーが 0 に到達したら</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">timer</span><span class="p">.</span><span class="n">reachedZero</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">		</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">			</span><span class="c1">// OK のメッセージボックスを表示する</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">			</span><span class="n">System</span><span class="o">::</span><span class="n">MessageBoxOK</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;体験版の終了&quot;</span><span class="p">,</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;体験版で遊べるのはここまでです。&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">			</span><span class="c1">// プログラムを終了する</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">			</span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">		</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="32-ウィンドウの閉じるボタンを押したときに終了するか確認する">3.2 ウィンドウの閉じるボタンを押したときに終了するか確認する<a class="headerlink" href="#32-ウィンドウの閉じるボタンを押したときに終了するか確認する" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">	</span><span class="c1">// ユーザ操作でアプリが終了しないようにする</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">	</span><span class="n">System</span><span class="o">::</span><span class="n">SetTerminationTriggers</span><span class="p">(</span><span class="n">UserAction</span><span class="o">::</span><span class="n">NoAction</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">		</span><span class="c1">// ウィンドウの閉じるボタンが押されたら</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">GetUserActions</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">UserAction</span><span class="o">::</span><span class="n">CloseButtonClicked</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">		</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">			</span><span class="c1">// Yes か No のメッセージボックスを表示する</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">			</span><span class="k">const</span><span class="w"> </span><span class="n">MessageBoxResult</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="o">::</span><span class="n">MessageBoxYesNo</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;アプリケーションを終了しますか？&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">			</span><span class="c1">// Yes が選ばれたら</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MessageBoxResult</span><span class="o">::</span><span class="n">Yes</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">			</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">				</span><span class="c1">// プログラムを終了する</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">				</span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">			</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">		</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="33-起動時に前回のセーブデータを読み込むか確認する">3.3 起動時に前回のセーブデータを読み込むか確認する<a class="headerlink" href="#33-起動時に前回のセーブデータを読み込むか確認する" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">	</span><span class="c1">// セーブファイルのパス</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="n">FilePathView</span><span class="w"> </span><span class="n">SaveDataPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;save.txt&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">	</span><span class="c1">// 読み込んだセーブデータ</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">	</span><span class="n">String</span><span class="w"> </span><span class="n">saveData</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">	</span><span class="c1">// もし前回のデータが存在すれば</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">FileSystem</span><span class="o">::</span><span class="n">Exists</span><span class="p">(</span><span class="n">SaveDataPath</span><span class="p">))</span><span class="w"></span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">		</span><span class="c1">// Yes か No のメッセージボックスを表示する</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="n">MessageBoxResult</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="o">::</span><span class="n">MessageBoxYesNo</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;前回のデータが見つかりました。読み込んでそこから再開しますか？&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">		</span><span class="c1">// Yes が選ばれたら</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MessageBoxResult</span><span class="o">::</span><span class="n">Yes</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">		</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">			</span><span class="c1">// セーブファイルから文字列を読み込む</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">			</span><span class="n">saveData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TextReader</span><span class="p">{</span><span class="w"> </span><span class="n">SaveDataPath</span><span class="w"> </span><span class="p">}.</span><span class="n">readAll</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">		</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">	</span><span class="c1">// セーブデータが読み込まれていたら</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">saveData</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">		</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;前回のセーブデータ: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">saveData</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">	</span><span class="k">else</span><span class="w"></span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">		</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;新規データ&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="w">	</span><span class="c1">// セーブデータ（現在の日付と時刻）をセーブファイルに書き込んでから終了する</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">	</span><span class="n">TextWriter</span><span class="p">{</span><span class="w"> </span><span class="n">SaveDataPath</span><span class="w"> </span><span class="p">}.</span><span class="n">writeln</span><span class="p">(</span><span class="n">DateTime</span><span class="o">::</span><span class="n">Now</span><span class="p">());</span><span class="w"></span>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="34-作業内容を保存するか確認する">3.4 作業内容を保存するか確認する<a class="headerlink" href="#34-作業内容を保存するか確認する" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">	</span><span class="c1">// ユーザ操作でアプリが終了しないようにする</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">	</span><span class="n">System</span><span class="o">::</span><span class="n">SetTerminationTriggers</span><span class="p">(</span><span class="n">UserAction</span><span class="o">::</span><span class="n">NoAction</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">	</span><span class="c1">// セーブファイルのパス</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="n">FilePathView</span><span class="w"> </span><span class="n">SaveDataPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;save-hsv.txt&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">	</span><span class="c1">// 背景色</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">	</span><span class="n">HSV</span><span class="w"> </span><span class="n">hsv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">	</span><span class="c1">// セーブファイルがあればそこから色を読み込む</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">FileSystem</span><span class="o">::</span><span class="n">Exists</span><span class="p">(</span><span class="n">SaveDataPath</span><span class="p">))</span><span class="w"></span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">		</span><span class="n">Deserializer</span><span class="o">&lt;</span><span class="n">BinaryReader</span><span class="o">&gt;</span><span class="w"> </span><span class="n">reader</span><span class="p">{</span><span class="w"> </span><span class="n">SaveDataPath</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">		</span><span class="n">reader</span><span class="p">(</span><span class="n">hsv</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">	</span><span class="c1">// 現在選択している色が保存されているか</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">	</span><span class="kt">bool</span><span class="w"> </span><span class="n">saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">	</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">		</span><span class="c1">// 作業内容が未保存の場合、ウィンドウのタイトルで知らせる</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">		</span><span class="n">Window</span><span class="o">::</span><span class="n">SetTitle</span><span class="p">(</span><span class="n">saved</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;色の選択&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;* 色の選択 [未保存]&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">		</span><span class="c1">// 背景色を設定する</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="w">		</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">hsv</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="w">		</span><span class="c1">// カラーピッカーで色を選択する</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">ColorPicker</span><span class="p">(</span><span class="n">hsv</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="mi">40</span><span class="w"> </span><span class="p">}))</span><span class="w"></span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="w">		</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="w">			</span><span class="c1">// 変更があれば未保存状態にする</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="w">			</span><span class="n">saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="w">		</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a><span class="w">		</span><span class="c1">// 未保存の場合、「色を保存する」ボタンを表示</span>
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;色を保存する&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">unspecified</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">not</span><span class="w"> </span><span class="n">saved</span><span class="p">)))</span><span class="w"> </span><span class="c1">// ボタンが押されたら</span>
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a><span class="w">		</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a><span class="w">			</span><span class="c1">// セーブファイルに色を保存</span>
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a><span class="w">			</span><span class="n">Serializer</span><span class="o">&lt;</span><span class="n">BinaryWriter</span><span class="o">&gt;</span><span class="w"> </span><span class="n">writer</span><span class="p">{</span><span class="w"> </span><span class="n">SaveDataPath</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a><span class="w">			</span><span class="n">writer</span><span class="p">(</span><span class="n">hsv</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>
+<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a><span class="w">			</span><span class="c1">// 保存済みにする</span>
+<a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a><span class="w">			</span><span class="n">saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a><span class="w">		</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>
+<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a><span class="w">		</span><span class="c1">// ウィンドウの閉じるボタンが押されたら</span>
+<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">GetUserActions</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">UserAction</span><span class="o">::</span><span class="n">CloseButtonClicked</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a><span class="w">		</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a><span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">saved</span><span class="p">)</span><span class="w"> </span><span class="c1">// 保存済みなら</span>
+<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a><span class="w">			</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a><span class="w">				</span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="c1">// 何もせず終了する</span>
+<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a><span class="w">			</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a><span class="w">			</span><span class="k">else</span><span class="w"> </span><span class="c1">// 未保存なら</span>
+<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a><span class="w">			</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a><span class="w">				</span><span class="c1">// OK か キャンセル のメッセージボックスを表示する</span>
+<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a><span class="w">				</span><span class="k">const</span><span class="w"> </span><span class="n">MessageBoxResult</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="o">::</span><span class="n">MessageBoxOKCancel</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;色の選択&quot;</span><span class="p">,</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;色を保存せずにアプリケーションを終了しますか？&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>
+<a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a><span class="w">				</span><span class="c1">// OK が選ばれたら</span>
+<a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a><span class="w">				</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MessageBoxResult</span><span class="o">::</span><span class="n">OK</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-6-64" name="__codelineno-6-64" href="#__codelineno-6-64"></a><span class="w">				</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-65" name="__codelineno-6-65" href="#__codelineno-6-65"></a><span class="w">					</span><span class="c1">// プログラムを終了する</span>
+<a id="__codelineno-6-66" name="__codelineno-6-66" href="#__codelineno-6-66"></a><span class="w">					</span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-67" name="__codelineno-6-67" href="#__codelineno-6-67"></a><span class="w">				</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-68" name="__codelineno-6-68" href="#__codelineno-6-68"></a><span class="w">			</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-69" name="__codelineno-6-69" href="#__codelineno-6-69"></a><span class="w">		</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-70" name="__codelineno-6-70" href="#__codelineno-6-70"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-71" name="__codelineno-6-71" href="#__codelineno-6-71"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../tutorial/tutorial/" class="md-footer__link md-footer__link--prev" aria-label="Previous: チュートリアル" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              チュートリアル
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../learn/about/" class="md-footer__link md-footer__link--next" aria-label="Next: 0. Siv3D 勉強会" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              0. Siv3D 勉強会
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c) 2012 - 2022, Ryo Suzuki<br>Copyright (c) 2012 - 2022, OpenSiv3D Project
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/Siv3D/OpenSiv3D" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://join.slack.com/t/siv3d/shared_invite/enQtNjM4NzQ0MzEyMzUzLTEzNDBkNWVkMTY0OGU5OWQxOTk3NjczMjk0OGJhYzJjOThjZjQ1YmYzMWU2NzQ5NTQ4ODg3NzE2ZmE0NmVlMTM" target="_blank" rel="noopener" title="join.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/Reputeless" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/Siv3D" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>
