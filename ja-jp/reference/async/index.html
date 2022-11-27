@@ -2049,7 +2049,14 @@
 <h2 id="非同期処理の-api">非同期処理の API<a class="headerlink" href="#非同期処理の-api" title="Permanent link">&para;</a></h2>
 <h3 id="クラス">クラス<a class="headerlink" href="#クラス" title="Permanent link">&para;</a></h3>
 <h4 id="asynctask"><code>AsyncTask&lt;Type&gt;</code><a class="headerlink" href="#asynctask" title="Permanent link">&para;</a></h4>
-<p>ある関数を非同期実行し、その状態や結果を管理するクラスです。通常は <code>Async()</code> 関数によって作成します。</p>
+<p>ある関数を非同期実行し、その状態や結果を管理する、非同期タスククラスです。通常は <code>Async()</code> 関数によって作成します。</p>
+<p><code>AsyncTask</code> には以下の状態があります</p>
+<ol>
+<li>非同期処理を持っていない</li>
+<li>非同期処理を持っていて、タスクが実行中であり、結果はまだ返せない</li>
+<li>非同期処理を持っていて、タスクが完了しており、結果をすぐに返せる</li>
+</ol>
+<hr />
 <div class="highlight"><span class="filename">非同期処理を持っているかを返します。</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">AsyncTask</span><span class="o">&lt;</span><span class="n">Type</span><span class="o">&gt;::</span><span class="n">isValid</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <ul>
@@ -2225,15 +2232,14 @@
 <a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="w">	</span><span class="p">}</span><span class="w"></span>
 <a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>
 <a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="w">	</span><span class="c1">// 実行途中のタスクがあれば完了まで待つ。</span>
-<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="w">	</span><span class="c1">// これをしないと、実行途中のタスクを持つ AsyncTask のデストラクタが制御を返さない。</span>
-<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">task</span><span class="p">.</span><span class="n">isValid</span><span class="p">())</span><span class="w"></span>
-<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="w">    </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="w">	    </span><span class="n">task</span><span class="p">.</span><span class="n">wait</span><span class="p">();</span><span class="w"></span>
-<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">task</span><span class="p">.</span><span class="n">isValid</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="w">    </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="w">	    </span><span class="n">task</span><span class="p">.</span><span class="n">wait</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="33-非同期タスクを中断する">3.3 非同期タスクを中断する<a class="headerlink" href="#33-非同期タスクを中断する" title="Permanent link">&para;</a></h3>
-<p>プログラムを中断する場合、<code>AsyncTask</code> は関数が戻り値を返すまで待機する必要がある。この待機時間を減らすため、3.2 のサンプルを拡張し、関数を中断できる仕組みを導入する。</p>
+<p>プログラムを中断する場合、<code>AsyncTask</code> は関数が戻り値を返すまで待機する必要があります。この待機時間を減らすため、3.2 のサンプルを拡張し、関数を中断できる仕組みを導入します。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span><span class="cp"></span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">// n 秒後に n を返す関数（重い処理を Sleep で代わりに表現）</span>
