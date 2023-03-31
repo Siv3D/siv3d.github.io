@@ -2375,7 +2375,7 @@
 <a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="siv3d-で使える絵文字の一覧">Siv3D で使える絵文字の一覧<a class="headerlink" href="#siv3d-で使える絵文字の一覧" title="Permanent link">&para;</a></h3>
-<p>Siv3D で使える絵文字は約 3,600 種類あります。絵文字を探すときは <a href="https://emojipedia.org/">emojipedia</a> の Categories から調べるのが便利です。 OpenSiv3D v0.6.6 はオープンソースの絵文字フォント Noto Color Emoji (Unicode 14.0 版) を内蔵しているので、Siv3D アプリはどのプラットフォームでも同じ見た目の絵文字を表示できます。</p>
+<p>Siv3D で使える絵文字は約 3,600 種類あります。絵文字を探すときは <a href="https://emojipedia.org/">emojipedia</a> の Categories から調べるのが便利です。 OpenSiv3D v0.6.8 はオープンソースの絵文字フォント Noto Color Emoji (Unicode 15.0 版) を内蔵しているので、Siv3D アプリはどのプラットフォームでも同じ見た目の絵文字を表示できます。</p>
 <h2 id="52-テクスチャを拡大縮小して描画する">5.2 テクスチャを拡大縮小して描画する<a class="headerlink" href="#52-テクスチャを拡大縮小して描画する" title="Permanent link">&para;</a></h2>
 <h3 id="texturescaled">Texture::scaled()<a class="headerlink" href="#texturescaled" title="Permanent link">&para;</a></h3>
 <p><code>Texture::scaled()</code> に拡大縮小倍率を指定すると、<code>Texture</code> にサイズ情報が付加された <code>TextureRegion</code> を作成できます。<code>TextureRegion</code> は <code>Texture</code> のように <code>.draw()</code> または <code>.drawAt()</code> できます。<code>Texture</code> を作成するのと異なり、既存の <code>Texture</code> から <code>TextureRegion</code> を作成するのは非常に軽い実行時負荷です。サンプルでは示していませんが、縦横で異なる倍率に設定することもできます。</p>
@@ -2483,7 +2483,7 @@
 </code></pre></div>
 <h2 id="55-アイコンを描画する">5.5 アイコンを描画する<a class="headerlink" href="#55-アイコンを描画する" title="Permanent link">&para;</a></h2>
 <p>アイコンコレクションから <code>Texture</code> を作成するには、<code>Texture</code> のコンストラクタ引数にアイコンオブジェクトを渡します。アイコンは全部で約 8,000 種類用意されています。</p>
-<p><code>Texture</code> のコンストラクタには、<a href="https://pictogrammers.github.io/@mdi/font/6.5.95/">Material Design Icons</a> または <a href="https://fontawesome.com/icons?d=gallery&amp;s=brands,solid&amp;m=free">Font Awesome アイコン一覧</a> で調べられる 16 進数コードに <code>_icon</code> を付けた値と、アイコンの基本サイズ（ピクセル）を渡します。</p>
+<p><code>Texture</code> のコンストラクタには、<a href="https://pictogrammers.com/library/mdi/">Material Design Icons</a> または <a href="https://fontawesome.com/icons?d=gallery&amp;s=brands,solid&amp;m=free">Font Awesome アイコン一覧</a> で調べられる 16 進数コードに <code>_icon</code> を付けた値と、アイコンの基本サイズ（ピクセル）を渡します。</p>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/learn/texture/5.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
@@ -2534,7 +2534,7 @@
 <a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="対応している画像フォーマット">対応している画像フォーマット<a class="headerlink" href="#対応している画像フォーマット" title="Permanent link">&para;</a></h3>
-<p>OpenSiv3D v0.6.6 では、9 種類の画像フォーマットの読み込みがサポートされています。</p>
+<p>OpenSiv3D v0.6.8 では、9 種類の画像フォーマットの読み込みがサポートされています。</p>
 <table>
 <thead>
 <tr>

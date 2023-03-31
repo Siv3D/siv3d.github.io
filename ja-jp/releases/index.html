@@ -2030,8 +2030,56 @@
 <h1 id="リリースノート">リリースノート<a class="headerlink" href="#リリースノート" title="Permanent link">&para;</a></h1>
 <h2 id="v06-世代">v0.6 世代<a class="headerlink" href="#v06-世代" title="Permanent link">&para;</a></h2>
 <details class="summary" open="open">
-<summary>v0.6.7 | 2023-03-18</summary>
+<summary>v0.6.8 | 2023-04-01</summary>
 <h4 id="新機能">新機能<a class="headerlink" href="#新機能" title="Permanent link">&para;</a></h4>
+<ul>
+<li>指定したファイルをデフォルトのアプリケーションで開く <code>System::LaunchFile(fileName)</code> を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/888">#888</a>, <a href="https://github.com/Siv3D/OpenSiv3D/pull/981">#981</a>)<ul>
+<li><a href="https://zenn.dev/link/comments/8c7c4076bfbb6d">サンプル</a></li>
+</ul>
+</li>
+<li>指定したファイルをテキストエディタで開く <code>System::LaunchFileWithTextEditor(fileName)</code> を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/888">#888</a>, <a href="https://github.com/Siv3D/OpenSiv3D/pull/981">#981</a>)<ul>
+<li><a href="https://zenn.dev/link/comments/4b67ba5b069306">サンプル</a></li>
+</ul>
+</li>
+<li>同梱カラー絵文字を Unicode 14.0 から Unicode 15.0 に更新しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/980">#980</a>)<ul>
+<li><a href="https://zenn.dev/link/comments/7e722e60bed8dc">サンプル</a></li>
+</ul>
+</li>
+<li>同梱 Material Design Icons を v6.5.95 から v7.2.96 に更新しました（700 種類のアイコンが追加） (<a href="https://github.com/Siv3D/OpenSiv3D/issues/980">#980</a>)<ul>
+<li><a href="https://zenn.dev/link/comments/adaafc47825fb1">サンプル</a></li>
+</ul>
+</li>
+<li>OpenAI の Embeddings API を扱う機能を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/982">#982</a>)<ul>
+<li><a href="https://zenn.dev/link/comments/6a8483ccd76a7f">サンプル</a></li>
+</ul>
+</li>
+<li>ユーザのコンピュータ名や名前、言語を取得する関数を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/678">#678</a>, <a href="https://github.com/Siv3D/OpenSiv3D/issues/968">#968</a>, <a href="https://github.com/Siv3D/OpenSiv3D/pull/974">#974</a>)<ul>
+<li><a href="https://zenn.dev/link/comments/381ae3d6c2b201">サンプル</a></li>
+</ul>
+</li>
+<li>ドライブの情報を取得する関数を追加しました（Windows 版）(<a href="https://github.com/Siv3D/OpenSiv3D/issues/709">#709</a>, <a href="https://github.com/Siv3D/OpenSiv3D/pull/978">#978</a>)<ul>
+<li><a href="https://zenn.dev/link/comments/8d3df3d50eb1fa">サンプル</a></li>
+</ul>
+</li>
+<li>インターネットに接続されているかを返す <code>Network::IsConnected()</code> を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/975">#975</a>, <a href="https://github.com/Siv3D/OpenSiv3D/pull/976">#976</a>)</li>
+</ul>
+<h4 id="ユーザビリティ向上">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>SimpleGUI::ListBox()</code> の項目を上下キーで選択できるようになりました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/984">#984</a>)</li>
+</ul>
+<h4 id="不具合バグ修正">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正" title="Permanent link">&para;</a></h4>
+<ul>
+<li>フォールバックに設定した絵文字が特定条件下で正しく表示されなかったバグを修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/971">#971</a>, <a href="https://github.com/Siv3D/OpenSiv3D/pull/973">#973</a>)</li>
+<li><code>SimpleGUI::ListBox()</code> の項目数が多いときに、スクロールバーのつまみが細くなる / 消失していたバグを修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/985">#985</a>)</li>
+</ul>
+<h4 id="コントリビューション">コントリビューション<a class="headerlink" href="#コントリビューション" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://github.com/Raclamusi">Raclamusi</a>: <strong>絵文字フォントのフォールバックのバグを修正</strong></li>
+</ul>
+</details>
+<details class="summary">
+<summary>v0.6.7 | 2023-03-18</summary>
+<h4 id="新機能_1">新機能<a class="headerlink" href="#新機能_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>OpenAI API (Chat, Image) を扱う機能を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/957">#957</a>)<ul>
 <li><a href="https://zenn.dev/link/comments/39ca09ff7febbf">サンプル</a></li>
@@ -2076,7 +2124,7 @@
 <li>C++23 との一貫性のため、<code>StringView</code>, <code>String</code>, <code>Array</code> に、<code>.includes()</code>, <code>.includes_if()</code> と同機能の <code>.contains()</code>, <code>.contains_if()</code> を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/944">#944</a>)</li>
 <li><code>JSON</code> の機能を強化しました (<a href="https://github.com/Siv3D/OpenSiv3D/pull/925">#925</a>, <a href="https://github.com/Siv3D/OpenSiv3D/issues/931">#931</a>, <a href="https://github.com/Siv3D/OpenSiv3D/pull/959">#959</a>)</li>
 </ul>
-<h4 id="ユーザビリティ向上">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上" title="Permanent link">&para;</a></h4>
+<h4 id="ユーザビリティ向上_1">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>アセットの毎フレーム作成・破棄の問題をメッセージボックスで通知するようにしました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/926">#926</a>)</li>
 </ul>
@@ -2091,7 +2139,7 @@
 <li><code>Array</code> や <code>MultiPolygon</code> などの一部のメンバ関数のパフォーマンスを改善しました (<a href="https://github.com/Siv3D/OpenSiv3D/pull/948">#948</a>)</li>
 <li><code>Array::includes()</code>, <code>Array::contains()</code> をパフォーマンスを改善しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/945">#945</a>)</li>
 </ul>
-<h4 id="不具合バグ修正">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正" title="Permanent link">&para;</a></h4>
+<h4 id="不具合バグ修正_1">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>macOS でカレントディレクトリにファイルを作成できないことがあった不具合を修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/963">#963</a>)</li>
 <li><code>Optional</code> の挙動が <code>std::optional</code> と異なっていたバグを修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/938">#938</a>, <a href="https://github.com/Siv3D/OpenSiv3D/pull/939">#939</a>)</li>
@@ -2105,7 +2153,7 @@
 <li>シリアライズの一部マクロのバグを修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/pull/923">#923</a>)</li>
 <li>Arch Linux でのビルドの問題を修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/917">#917</a>, <a href="https://github.com/Siv3D/OpenSiv3D/pull/918">#918</a>)</li>
 </ul>
-<h4 id="コントリビューション">コントリビューション<a class="headerlink" href="#コントリビューション" title="Permanent link">&para;</a></h4>
+<h4 id="コントリビューション_1">コントリビューション<a class="headerlink" href="#コントリビューション_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://github.com/nokotan">nokotan</a>: <strong>Web 版を更新</strong></li>
 <li><a href="https://github.com/tomolatoon">tomolatoon</a>: <strong><code>JSONValidator</code> を追加</strong>, <strong><code>JSON</code> の機能強化</strong></li>
@@ -2121,7 +2169,7 @@
 </details>
 <details class="summary">
 <summary>v0.6.6 | 2022-11-22</summary>
-<h4 id="新機能_1">新機能<a class="headerlink" href="#新機能_1" title="Permanent link">&para;</a></h4>
+<h4 id="新機能_2">新機能<a class="headerlink" href="#新機能_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>シンプルなメニューバーを扱う機能を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/898">#898</a>)<ul>
 <li><a href="https://zenn.dev/link/comments/2deb08c8839b7c">サンプル</a></li>
@@ -2158,7 +2206,7 @@
 <li><code>Array::partition()</code>, <code>Array::stable_partition()</code> を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/869">#869</a>)</li>
 <li><code>Camera2DParameters</code>, <code>LicenseManager</code>, <code>LicenseInfo</code>, <code>XInput</code> がスクリプト内で使えるようになりました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/868">#868</a>)</li>
 </ul>
-<h4 id="ユーザビリティ向上_1">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_1" title="Permanent link">&para;</a></h4>
+<h4 id="ユーザビリティ向上_2">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ヘッダの軽量化のためのリファクタリングを行いました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/883">#883</a>, <a href="https://github.com/Siv3D/OpenSiv3D/issues/886">#886</a>)</li>
 <li>Windows 版における、フルスクリーン時にメッセージボックスを表示すると操作不能になる問題を解決しました。シーン内にフォールバックのメッセージボックスが表示されます (<a href="https://github.com/Siv3D/OpenSiv3D/issues/915">#915</a>)</li>
@@ -2176,7 +2224,7 @@
 <ul>
 <li><code>DisjointSet</code> のメモリ消費を削減しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/878">#878</a>)</li>
 </ul>
-<h4 id="不具合バグ修正_1">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_1" title="Permanent link">&para;</a></h4>
+<h4 id="不具合バグ修正_2">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Web 版の不具合修正、互換性向上を行いました</li>
 <li><code>XMLReader</code> の一部のコンストラクタが使えなかった不具合を修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/896">#896</a>) </li>
@@ -2188,7 +2236,7 @@
 <li>各種クラスの <code>_fmt()</code> 対応の不具合を修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/873">#873</a>)</li>
 <li><code>LineString::calculateBufferClosed()</code>, <code>LineString::calculateRoundBufferClosed()</code> が閉じないことがあった不具合を修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/870">#870</a>)</li>
 </ul>
-<h4 id="コントリビューション_1">コントリビューション<a class="headerlink" href="#コントリビューション_1" title="Permanent link">&para;</a></h4>
+<h4 id="コントリビューション_2">コントリビューション<a class="headerlink" href="#コントリビューション_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://github.com/nokotan">nokotan</a>: <strong>Web 版を更新</strong></li>
 <li><a href="https://github.com/MayFlyOvO">MayFlyOvO</a>: <strong><code>OrderedTable</code> の追加</strong></li>
@@ -2200,7 +2248,7 @@
 </details>
 <details class="summary">
 <summary>v0.6.5 | 2022-08-10</summary>
-<h4 id="新機能_2">新機能<a class="headerlink" href="#新機能_2" title="Permanent link">&para;</a></h4>
+<h4 id="新機能_3">新機能<a class="headerlink" href="#新機能_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Visual Studio 2022 17.3 に対応しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/859">#859</a>)</li>
 <li><code>LineString::extractLineString(double, CloseRing)</code> オーバーロードを追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/866">#866</a>)<ul>
@@ -2234,7 +2282,7 @@
 <li><code>Multiplayer_Photon</code> に <code>.joinRandomRoomOrCreate()</code> を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/806">#806</a>)</li>
 <li><code>NotImplementedError</code> 例外クラスを追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/787">#787</a>)</li>
 </ul>
-<h4 id="ユーザビリティ向上_2">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_2" title="Permanent link">&para;</a></h4>
+<h4 id="ユーザビリティ向上_3">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Linux 版の CMake を改善しました (<a href="https://github.com/Siv3D/OpenSiv3D/pull/829">#829</a>)</li>
 <li>Linux 版の CMakeLists.txt において、boost のバージョンを範囲指定するようにしました (<a href="https://github.com/Siv3D/OpenSiv3D/pull/847">#847</a>)</li>
@@ -2258,7 +2306,7 @@
 <li>算術型から <code>BigInt</code>, <code>BigFloat</code> を引くときの実行性能を改善しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/822">#822</a>)</li>
 <li><code>Rect</code>, <code>RectF</code> の <code>constexpr</code> 対応を改善しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/813">#813</a>)</li>
 </ul>
-<h4 id="不具合バグ修正_2">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_2" title="Permanent link">&para;</a></h4>
+<h4 id="不具合バグ修正_3">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>LineString::extractLineString()</code> が正しくない結果を返すことがあったバグを修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/862">#862</a>)</li>
 <li>始点と終点が一致する <code>LineString</code> の <code>.calculateRoundBuffer()</code> に失敗することがあることがあったバグを修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/860">#860</a>)</li>
@@ -2275,7 +2323,7 @@
 <li><code>SFMT</code> のヘッダ・フォルダ名の typo を修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/pull/818">#818</a>)</li>
 <li>macOS 版で <code>TCPClient</code> の切断が <code>TCPServer</code> に伝わらなかった不具合を修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/799">#799</a>)</li>
 </ul>
-<h4 id="コントリビューション_2">コントリビューション<a class="headerlink" href="#コントリビューション_2" title="Permanent link">&para;</a></h4>
+<h4 id="コントリビューション_3">コントリビューション<a class="headerlink" href="#コントリビューション_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://github.com/nokotan">nokotan</a>: <strong>Web 版を更新</strong></li>
 <li><a href="https://github.com/MurakamiShun">MurakamiShun</a>: <strong>Linux 版の CMake を改善</strong></li>
@@ -2292,7 +2340,7 @@
 </details>
 <details class="summary">
 <summary>v0.6.4 | 2022-05-21</summary>
-<h4 id="新機能_3">新機能<a class="headerlink" href="#新機能_3" title="Permanent link">&para;</a></h4>
+<h4 id="新機能_4">新機能<a class="headerlink" href="#新機能_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Visual Studio 2022 17.2 以降に対応しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/790">#790</a>)</li>
 <li>Xcode 13.3 以降に対応しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/753">#753</a>)</li>
@@ -2356,7 +2404,7 @@
 <li><code>Serializer&lt;Writer&gt;::operator -&gt;() const</code> を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/776">#776</a>)</li>
 <li><code>Geometry2D::Or()</code> のオーバーロードを追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/793">#793</a>)</li>
 </ul>
-<h4 id="ユーザビリティ向上_3">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_3" title="Permanent link">&para;</a></h4>
+<h4 id="ユーザビリティ向上_4">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(非公式) ARM 向けのビルドを改善しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/707">#707</a>)</li>
 <li><code>SceneManager</code> のコードを改善しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/750">#750</a>)</li>
@@ -2371,7 +2419,7 @@
 <li><code>Polygon::addHole()</code> の仕様を変更しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/786">#786</a>)</li>
 <li>engine / example ファイルを更新しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/740">#740</a>)</li>
 </ul>
-<h4 id="不具合バグ修正_3">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_3" title="Permanent link">&para;</a></h4>
+<h4 id="不具合バグ修正_4">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>Circle::boundingRect()</code> のバグを修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/718">#718</a>)</li>
 <li><code>SimpleAnimation::isDone()</code> の戻り値を修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/710">#710</a>)</li>
@@ -2388,7 +2436,7 @@
 <li><code>SimpleGUI::ListBox()</code> で範囲外アクセスが発生することがあったバグを修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/780">#780</a>)</li>
 <li><code>WaveSample</code> の変換のバグを修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/795">#795</a>)</li>
 </ul>
-<h4 id="コントリビューション_3">コントリビューション<a class="headerlink" href="#コントリビューション_3" title="Permanent link">&para;</a></h4>
+<h4 id="コントリビューション_4">コントリビューション<a class="headerlink" href="#コントリビューション_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://github.com/nokotan">nokotan</a>: <strong>Web 版を更新</strong></li>
 <li><a href="https://github.com/tana">tana</a>: <strong>ARM 向けビルドの改善</strong></li>
@@ -2407,7 +2455,7 @@
 </details>
 <details class="summary">
 <summary>v0.6.3 | 2021-11-14</summary>
-<h4 id="新機能_4">新機能<a class="headerlink" href="#新機能_4" title="Permanent link">&para;</a></h4>
+<h4 id="新機能_5">新機能<a class="headerlink" href="#新機能_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Visual Studio 2022 に対応しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/683">#683</a>)</li>
 <li>SimpleGUI にリストボックスを追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/659">#659</a>)
@@ -2941,7 +2989,7 @@
 <li>GLSL シェーダファイルのライセンス記述を簡素化し、ファイルサイズを少し削減しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/687">#687</a>)</li>
 <li><code>HalfFloat</code> のメンバ関数を constexpr にしました (<a href="https://github.com/Siv3D/OpenSiv3D/pull/689">#689</a>)</li>
 </ul>
-<h4 id="ユーザビリティ向上_4">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_4" title="Permanent link">&para;</a></h4>
+<h4 id="ユーザビリティ向上_5">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>NotoEmoji-Regular.ttf</code> をエンジンリソースに含まなくてもエンジンを初期化できるようにしました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/684">#684</a>)</li>
 <li><code>NotoSansCJK-Regular.ttc.zstdcmp</code> や <code>NotoSansJP-Regular.otf.zstdcmp</code> の代替にできる、最低限必要なグリフを格納したフォント <code>engine/font/min/siv3d-min.woff</code> を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/682">#682</a>)</li>
@@ -2953,14 +3001,14 @@
 <li>macOS 版と Linux 版において、ログは <code>std::cout</code> ではなく <code>std::clog</code> および <code>std::cerr</code> に出力するようにしました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/630">#630</a>)</li>
 <li><code>engine</code> および <code>example</code> フォルダの更新 (<a href="https://github.com/Siv3D/OpenSiv3D/issues/686">#686</a>)</li>
 </ul>
-<h4 id="不具合バグ修正_4">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_4" title="Permanent link">&para;</a></h4>
+<h4 id="不具合バグ修正_5">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>DrawableText::draw(double, Arg:: ...)</code> や <code>DrawableText::region(double, Arg ...)</code> の位置が正しくなかったバグを修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/665">#665</a>)</li>
 <li>Windows 版において<code>Window::IsToggleFullscreenEnabled()</code> が常に <code>false</code> を返すバグを修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/699">#699</a>)</li>
 <li><code>HalfFloat{ 0.0f } == HalfFloat{ -0.0f }</code> が <code>false</code> になるバグを修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/660">#660</a>)</li>
 <li><code>CircularBase&lt;float, Oclock&gt;</code> 使用時に発生する警告を解消しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/667">#667</a>)</li>
 </ul>
-<h4 id="コントリビューション_4">コントリビューション<a class="headerlink" href="#コントリビューション_4" title="Permanent link">&para;</a></h4>
+<h4 id="コントリビューション_5">コントリビューション<a class="headerlink" href="#コントリビューション_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://github.com/nokotan">nokotan</a>: <strong>Web 版を更新</strong></li>
 <li><a href="https://github.com/tetsurom">tetsurom</a>: <code>HalfFloat</code> の実装改善, <code>Optional</code> の実装改善, <code>BigFloat</code> の実装改善, 各種クラスへの三方比較演算子の実装</li>
@@ -2973,7 +3021,7 @@
 <li>Windows 版でアプリケーションの起動を高速化しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/650">#650</a>, <a href="https://github.com/Siv3D/OpenSiv3D/issues/651">#651</a>)</li>
 <li>メモリ / VRAM の消費量を削減しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/648">#648</a>)</li>
 </ul>
-<h4 id="不具合バグ修正_5">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_5" title="Permanent link">&para;</a></h4>
+<h4 id="不具合バグ修正_6">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Windows 版で重い描画処理を行ったときに v0.4.3 よりもフレームレートが低下することがあった問題を修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/652">#652</a>)</li>
 <li>Windows 版、プロジェクトテンプレートの stdafx.h を Header Files フィルタに移動しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/653">#653</a>)</li>
@@ -2981,11 +3029,11 @@
 </details>
 <details class="summary">
 <summary>v0.6.1 | 2021-09-21</summary>
-<h4 id="新機能_5">新機能<a class="headerlink" href="#新機能_5" title="Permanent link">&para;</a></h4>
+<h4 id="新機能_6">新機能<a class="headerlink" href="#新機能_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>SDF / MSDF テクスチャ描画時のパラメータを簡単に指定できる <code>Graphics2D::SetSDFParameters(const TextStyle&amp;)</code>, <code>Graphics2D::SetMSDFParameters(const TextStyle&amp;)</code> を追加しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/647">#647</a>)</li>
 </ul>
-<h4 id="ユーザビリティ向上_5">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_5" title="Permanent link">&para;</a></h4>
+<h4 id="ユーザビリティ向上_6">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Windows 版のプロジェクトで発生していたビルド時の IntelliSense の警告を 2 件抑制しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/643">#643</a>)</li>
 <li>ドキュメンテーションを追加しました</li>
@@ -2995,7 +3043,7 @@
 <li><code>Monitor</code> は <code>MonitorInfo</code> に名前が変更されました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/649">#649</a>)</li>
 <li><code>UUID</code> は <code>UUIDValue</code> に名前が変更されました</li>
 </ul>
-<h4 id="不具合バグ修正_6">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_6" title="Permanent link">&para;</a></h4>
+<h4 id="不具合バグ修正_7">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>v0.6.0 において、Windows 版でタッチ操作をしたときに左クリックと判定されにくくなっていた不具合を修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/645">#645</a>)</li>
 <li>v0.6.0 において、<code>&lt;Siv3D/Windows/Windows.hpp&gt;</code> をインクルードするとコンパイルエラーになっていた問題を修正しました (<a href="https://github.com/Siv3D/OpenSiv3D/issues/644">#644</a>)</li>
@@ -3005,7 +3053,7 @@
 </details>
 <details class="summary">
 <summary>v0.6.0 | 2021-09-18</summary>
-<h4 id="新機能_6">新機能<a class="headerlink" href="#新機能_6" title="Permanent link">&para;</a></h4>
+<h4 id="新機能_7">新機能<a class="headerlink" href="#新機能_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>基本的な 3D 描画に対応しました</li>
 <li>C++20 に対応し、Concepts や Designated initialization, コンストラクタへの <code>[[nodiscard]]</code>, 宇宙船演算子、より多くの <code>constexpr</code>, 新しい標準機能ライブラリ機能などが活用されています</li>
@@ -3097,7 +3145,7 @@
 <li>ファイルの読み書き、画像ファイルや音声ファイルのロードが高速になりました</li>
 <li><code>Parse</code> / <code>ParseOpt</code> / <code>ParseOr</code> の速度を改善しました</li>
 </ul>
-<h4 id="ユーザビリティ向上_6">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_6" title="Permanent link">&para;</a></h4>
+<h4 id="ユーザビリティ向上_7">ユーザビリティ向上<a class="headerlink" href="#ユーザビリティ向上_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>インライン関数が .hpp ファイルから .ipp ファイルに移され、ヘッダファイルが読みやすくなりました</li>
 <li>Windows 版のプロジェクトがデフォルトでプリコンパイル済みファイルを使用するようになり、ビルドが高速化しました</li>
@@ -3133,7 +3181,7 @@
 <li>並列実行に関する機能は <code>SIV3D_CONCURRENT</code> マクロを定義しなくても使えるようになりました</li>
 <li>High DPI ウィンドウがデフォルトになり、<code>SIV3D_WINDOWS_HIGH_DPI</code> マクロは廃止されました</li>
 </ul>
-<h4 id="不具合バグ修正_7">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_7" title="Permanent link">&para;</a></h4>
+<h4 id="不具合バグ修正_8">不具合・バグ修正<a class="headerlink" href="#不具合バグ修正_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>Array</code> の並列関数の不具合を修正しました</li>
 <li><code>AsyncTask</code> のプラットフォーム間による差異を解消しました</li>
@@ -3158,7 +3206,7 @@
 <li>Windows 版は <code>&lt;Siv3D.hpp&gt;</code> のプリコンパイル済みを全てのソースファイルで自動でインクルードするようになりました。Main.cpp にある <code># include &lt;Siv3D.hpp&gt;</code> は実質的には無意味です。<code># define NO_S3D_USING</code> が必要な場合はプリコンパイル済みヘッダ作成用ヘッダ <code>stdafx.h</code> で行ってください</li>
 <li><code>Audio</code> は <code>Wave</code> と互換の形式でデータを保持しなくなりました。<code>.getWave()</code> は <code>.getSamples()</code> に置き換わりました。<code>GlobalAudio::BusGetSamples()</code> も利用できます</li>
 </ul>
-<h4 id="コントリビューション_5">コントリビューション<a class="headerlink" href="#コントリビューション_5" title="Permanent link">&para;</a></h4>
+<h4 id="コントリビューション_6">コントリビューション<a class="headerlink" href="#コントリビューション_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://github.com/nokotan">nokotan</a>: <strong>Web 版開発を全面的に担当</strong></li>
 <li><a href="https://github.com/Ebishu-0309">Ebishu-0309</a>: <strong><code>Geometry2D::</code> に多数の関数を実装</strong>, <strong><code>Shape2D::Squircle()</code> の実装</strong>, <code>Bezier2</code>, <code>Bezier3</code> の <code>.boundingRect()</code> を実装, コードの改善</li>
