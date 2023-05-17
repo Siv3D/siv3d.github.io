@@ -3208,7 +3208,7 @@
 <a id="__codelineno-22-37" name="__codelineno-22-37" href="#__codelineno-22-37"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="821-縦書きでテキストを描画する">8.21 縦書きでテキストを描画する<a class="headerlink" href="#821-縦書きでテキストを描画する" title="Permanent link">&para;</a></h2>
-<p>（OpenSiv3D v0.6.9 ではテキストの縦書きに関する機能は未実装です。将来のバージョンで実装予定です）</p>
+<p>（OpenSiv3D v0.6.10 ではテキストの縦書きに関する機能は未実装です。将来のバージョンで実装予定です）</p>
 <h2 id="822-フォントのプリロード">8.22 フォントのプリロード<a class="headerlink" href="#822-フォントのプリロード" title="Permanent link">&para;</a></h2>
 <p>Siv3D の <code>Font</code> は、初めて描く文字の画像を内部でレンダリングしてキャッシュするため、リアルタイムで動作しているゲームの途中で大量のテキストを初めて表示すると、そのフレームの実行時間が長くなり、フレームレートが一瞬低下することがあります。<code>.preload(text)</code> を使うと、<code>text</code> に含まれる文字を（重複する場合は除去して）内部にあらかじめ用意するため、ゲームの実行中の負荷を抑制できます。<br />
 また、<code>.getTexture()</code> を使うと、<code>Font</code> の内部にキャッシュされている <code>Texture</code> を取得できます。</p>

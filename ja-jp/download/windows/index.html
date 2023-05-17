@@ -2125,7 +2125,7 @@
 <h1 id="windows-で-siv3d-プログラミングを始める">Windows で Siv3D プログラミングを始める<a class="headerlink" href="#windows-で-siv3d-プログラミングを始める" title="Permanent link">&para;</a></h1>
 <h2 id="1-システム要件">1. システム要件<a class="headerlink" href="#1-システム要件" title="Permanent link">&para;</a></h2>
 <h3 id="11-開発者システム要件">1.1 開発者システム要件<a class="headerlink" href="#11-開発者システム要件" title="Permanent link">&para;</a></h3>
-<p>Windows で OpenSiv3D v0.6.9 プログラミングをするのに必要な開発環境です。</p>
+<p>Windows で OpenSiv3D v0.6.10 プログラミングをするのに必要な開発環境です。</p>
 <table>
 <thead>
 <tr>
@@ -2152,7 +2152,7 @@
 </tr>
 <tr>
 <td>開発環境</td>
-<td>Microsoft Visual C++ 2022 17.4<br>(インストーラ内で「C++ によるデスクトップ開発」を追加インストールしてください)</td>
+<td>Microsoft Visual C++ 2022 17.5<br>(インストーラ内で「C++ によるデスクトップ開発」を追加インストールしてください)</td>
 </tr>
 </tbody>
 </table>
@@ -2168,7 +2168,7 @@
 <p>そのまま右下の 「インストール」 ボタンを押せば、C++ プログラミングに必要なツールのインストールがはじまります。</p>
 </details>
 <h3 id="12-アプリ動作システム要件">1.2 アプリ動作システム要件<a class="headerlink" href="#12-アプリ動作システム要件" title="Permanent link">&para;</a></h3>
-<p>Windows で OpenSiv3D v0.6.9 を使って開発されたアプリケーションを実行するのに必要な環境です。ゲームやアプリを配布するときの説明書に記載すると良いでしょう。</p>
+<p>Windows で OpenSiv3D v0.6.10 を使って開発されたアプリケーションを実行するのに必要な環境です。ゲームやアプリを配布するときの説明書に記載すると良いでしょう。</p>
 <table>
 <thead>
 <tr>
@@ -2197,7 +2197,7 @@
 </table>
 <h2 id="2-sdk-のインストール">2. SDK のインストール<a class="headerlink" href="#2-sdk-のインストール" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong><a href="https://siv3d.jp/downloads/Siv3D/OpenSiv3D_0.6.9_Installer.exe">OpenSiv3D v0.6.9 Installer for Windows Desktop</a></strong> をダウンロードして実行します</li>
+<li><strong><a href="https://siv3d.jp/downloads/Siv3D/OpenSiv3D_0.6.10_Installer.exe">OpenSiv3D v0.6.10 Installer for Windows Desktop</a></strong> をダウンロードして実行します</li>
 <li>実行時に「Windows によって PC が保護されました」と表示された場合は、<strong>詳細情報</strong>を押して<strong>実行</strong>を押します</li>
 </ol>
 <details class="warning">
@@ -2240,21 +2240,21 @@
 <summary>SDK を手動インストールする場合の手順</summary>
 <h3 id="sdk-ファイルの配置と環境変数の設定">SDK ファイルの配置と環境変数の設定<a class="headerlink" href="#sdk-ファイルの配置と環境変数の設定" title="Permanent link">&para;</a></h3>
 <ol>
-<li><a href="https://siv3d.jp/downloads/Siv3D/manual/0.6.9/OpenSiv3D_SDK_0.6.9.zip">OpenSiv3D_SDK_0.6.9.zip</a> (サイズ: 約 90 MB) をダウンロードして展開し、中身をドキュメントフォルダ（<code>.../Documents</code>）に次のように配置します<ul>
-<li><code>.../Documents/OpenSiv3D_SDK_0.6.9/addon</code></li>
-<li><code>.../Documents/OpenSiv3D_SDK_0.6.9/include</code></li>
-<li><code>.../Documents/OpenSiv3D_SDK_0.6.9/lib</code></li>
+<li><a href="https://siv3d.jp/downloads/Siv3D/manual/0.6.10/OpenSiv3D_SDK_0.6.10.zip">OpenSiv3D_SDK_0.6.10.zip</a> (サイズ: 約 90 MB) をダウンロードして展開し、中身をドキュメントフォルダ（<code>.../Documents</code>）に次のように配置します<ul>
+<li><code>.../Documents/OpenSiv3D_SDK_0.6.10/addon</code></li>
+<li><code>.../Documents/OpenSiv3D_SDK_0.6.10/include</code></li>
+<li><code>.../Documents/OpenSiv3D_SDK_0.6.10/lib</code></li>
 </ul>
 </li>
-<li>ユーザー環境変数 <code>SIV3D_0_6_9</code> を新規作成し、1. で配置した OpenSiv3D SDK のフォルダのパスを設定します<ul>
-<li>例: <code>C:/Users/Siv3D/Documents/OpenSiv3D_SDK_0.6.9/include</code> のように配置した場合、<code>C:/Users/Siv3D/Documents/OpenSiv3D_SDK_0.6.9</code> を環境変数 <code>SIV3D_0_6_9</code> に設定します</li>
+<li>ユーザー環境変数 <code>SIV3D_0_6_10</code> を新規作成し、1. で配置した OpenSiv3D SDK のフォルダのパスを設定します<ul>
+<li>例: <code>C:/Users/Siv3D/Documents/OpenSiv3D_SDK_0.6.10/include</code> のように配置した場合、<code>C:/Users/Siv3D/Documents/OpenSiv3D_SDK_0.6.10</code> を環境変数 <code>SIV3D_0_6_10</code> に設定します</li>
 </ul>
 </li>
 </ol>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/download/windows/envvariable.png" />  </p>
 <h3 id="visual-studio-プロジェクトテンプレートの配置">Visual Studio プロジェクトテンプレートの配置<a class="headerlink" href="#visual-studio-プロジェクトテンプレートの配置" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Visual Studio 用プロジェクトテンプレート <a href="https://siv3d.jp/downloads/Siv3D/manual/0.6.9/OpenSiv3D_0.6.9.zip">OpenSiv3D_0.6.9.zip</a> (サイズ: 約 63 MB) をダウンロードし、そのファイルを<strong>展開せず ZIP ファイルのまま</strong>、Visual Studio 2022 インストール時にドキュメントフォルダに作成される <code>Visual Studio 2022/Templates/ProjectTemplates/</code> フォルダの中に配置します  </li>
+<li>Visual Studio 用プロジェクトテンプレート <a href="https://siv3d.jp/downloads/Siv3D/manual/0.6.10/OpenSiv3D_0.6.10.zip">OpenSiv3D_0.6.10.zip</a> (サイズ: 約 63 MB) をダウンロードし、そのファイルを<strong>展開せず ZIP ファイルのまま</strong>、Visual Studio 2022 インストール時にドキュメントフォルダに作成される <code>Visual Studio 2022/Templates/ProjectTemplates/</code> フォルダの中に配置します  </li>
 </ol>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/download/windows/projecttemplate.png" />  </p>
 <p>以上で手動インストールの手順は完了です。環境変数の適用を確実にするために PC を再起動したのち、本ページの 3. の手順に進んでください</p>
