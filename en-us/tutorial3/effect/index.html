@@ -2704,7 +2704,7 @@
 <p>エフェクト機能を使うには、エフェクトを管理する <code>Effect</code> オブジェクトを作成し、<code>Effect::add&lt;EffectType&gt;()</code> で個々のエフェクトのパラメータを追加してエフェクトを発生させます。ここでいう <code>EffectType</code> は、<code>IEffect</code> を継承したクラスです。このクラスに必要な実装は <code>bool update(double t) override</code> メンバ関数です。</p>
 <p>この関数は、エフェクトが発生してからの経過時間 <code>t</code> を受け取り、それに応じたエフェクトの描画を行います。そして、戻り値として、エフェクトを次のフレームも継続させるかを <code>bool</code> 値で返します。例えば <code>return (t &lt; 3.0);</code> とすれば、エフェクトは 3 秒間継続してから終了します。</p>
 <p><code>Effect</code> は、時間ベースのアニメーションを簡単に作れるため、ゲームの演出に重宝します。次のプログラムは、クリックした場所に、時間とともに大きくなる輪を発生させるエフェクトを実装したものです。このエフェクトは 1 秒間継続します。</p>
-<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/1.mp4?raw=true" autoplay loop muted></video>
+<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/1.mp4?raw=true" autoplay loop muted playsinline="playsinline"></video>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -2787,7 +2787,7 @@
 </code></pre></div>
 <h2 id="403-イージングをエフェクトで使う">40.3 イージングをエフェクトで使う<a class="headerlink" href="#403-イージングをエフェクトで使う" title="Permanent link">&para;</a></h2>
 <p>チュートリアル 18. で学んだイージングを組み合わせると、より洗練された動きを作れます。</p>
-<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/3.mp4?raw=true" autoplay loop muted></video>
+<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/3.mp4?raw=true" autoplay loop muted playsinline="playsinline"></video>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -2833,7 +2833,7 @@
 </code></pre></div>
 <h2 id="404-エフェクトの一時停止と速度変更消去">40.4 エフェクトの一時停止と速度変更、消去<a class="headerlink" href="#404-エフェクトの一時停止と速度変更消去" title="Permanent link">&para;</a></h2>
 <p><code>Effect</code> の <code>.pause()</code> でエフェクトの更新を一時停止、<code>.resume()</code> 再開、<code>.setSpeed(double)</code> でスピードの変更、<code>.clear()</code> でアクティブなエフェクトをすべて消去できます。</p>
-<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/4.mp4?raw=true" autoplay loop muted></video>
+<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/4.mp4?raw=true" autoplay loop muted playsinline="playsinline"></video>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
@@ -2929,7 +2929,7 @@
 <p>この章では扱いませんが、より大量のパーティクルを効率的に制御したい場合は、<code>ParticleSystem2D</code> を使うと便利です。</p>
 <h2 id="405-サンプル上昇する文字">40.5 （サンプル）上昇する文字<a class="headerlink" href="#405-サンプル上昇する文字" title="Permanent link">&para;</a></h2>
 <p>フォントを使ったエフェクトの例です。</p>
-<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/5.mp4?raw=true" autoplay loop muted></video>
+<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/5.mp4?raw=true" autoplay loop muted playsinline="playsinline"></video>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
@@ -2975,7 +2975,7 @@
 </code></pre></div>
 <h2 id="406-サンプル飛び散る破片">40.6 （サンプル）飛び散る破片<a class="headerlink" href="#406-サンプル飛び散る破片" title="Permanent link">&para;</a></h2>
 <p>一つのエフェクトで複数の図形を描く例です。</p>
-<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/6.mp4?raw=true" autoplay loop muted></video>
+<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/6.mp4?raw=true" autoplay loop muted playsinline="playsinline"></video>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
@@ -3032,7 +3032,7 @@
 </code></pre></div>
 <h2 id="407-サンプル飛び散る星">40.7 （サンプル）飛び散る星<a class="headerlink" href="#407-サンプル飛び散る星" title="Permanent link">&para;</a></h2>
 <p>複雑な制御を行うエフェクトの例です。</p>
-<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/7.mp4?raw=true" autoplay loop muted></video>
+<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/7.mp4?raw=true" autoplay loop muted playsinline="playsinline"></video>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
@@ -3109,7 +3109,7 @@
 </code></pre></div>
 <h2 id="408-サンプル泡のようなエフェクト">40.8 （サンプル）泡のようなエフェクト<a class="headerlink" href="#408-サンプル泡のようなエフェクト" title="Permanent link">&para;</a></h2>
 <p>時間差で図形を登場させる、高度な制御を行うエフェクトの例です。</p>
-<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/8.mp4?raw=true" autoplay loop muted></video>
+<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/8.mp4?raw=true" autoplay loop muted playsinline="playsinline"></video>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
@@ -3184,7 +3184,7 @@
 </code></pre></div>
 <h2 id="409-サンプルクリック時のエフェクト">40.9 （サンプル）クリック時のエフェクト<a class="headerlink" href="#409-サンプルクリック時のエフェクト" title="Permanent link">&para;</a></h2>
 <p>1 つのエフェクトでたくさんの描画を行う例です。</p>
-<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/9.mp4?raw=true" autoplay loop muted></video>
+<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/9.mp4?raw=true" autoplay loop muted playsinline="playsinline"></video>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
@@ -3308,7 +3308,7 @@
 </code></pre></div>
 <h2 id="4010-サンプルエフェクトの再帰">40.10 （サンプル）エフェクトの再帰<a class="headerlink" href="#4010-サンプルエフェクトの再帰" title="Permanent link">&para;</a></h2>
 <p>エフェクトの中でエフェクトを発生させる例です。</p>
-<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/10.mp4?raw=true" autoplay loop muted></video>
+<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/effect/10.mp4?raw=true" autoplay loop muted playsinline="playsinline"></video>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
