@@ -2740,11 +2740,6 @@
 
 <h1 id="41-レンダーテクスチャ">41. レンダーテクスチャ<a class="headerlink" href="#41-レンダーテクスチャ" title="Permanent link">&para;</a></h1>
 <p>図形やテクスチャ、フォントの描画先をシーンではなくテクスチャにする方法を学びます。</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>準備中です。以前の記事を下記から読むことができます。<br />
-<a href="https://zenn.dev/reputeless/books/siv3d-documentation/viewer/tutorial-rendertexture" target="_blank">Siv3D リファレンス | レンダーテクスチャ <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a></p>
-</div>
 <h2 id="411-レンダーテクスチャの基本">41.1 レンダーテクスチャの基本<a class="headerlink" href="#411-レンダーテクスチャの基本" title="Permanent link">&para;</a></h2>
 <p>これまで、図形やテクスチャ、フォントの描画はシーンに対して行われていましたが、<strong>レンダーテクスチャ</strong>機能を使うことで、プログラムで用意した別のテクスチャ（レンダーテクスチャ）に対して描画できるようになります。そのテクスチャを描画に再利用することで、より高度で複雑なグラフィックス処理を実現できます。</p>
 <p><code>RenderTexture</code> を作成し、<code>ScopedRenderTarget2D</code> オブジェクトのコンストラクタにレンダーテクスチャを渡すと、<code>ScopedRenderTarget2D</code> オブジェクトのスコープが有効な間、図形やテクスチャ、フォントがそのレンダーテクスチャに描画されます（<strong>レンダーターゲット（描画先）の変更</strong>）。描画先になったレンダーテクスチャは、<strong>レンダーターゲットから解除されたあと</strong>に、通常のテクスチャのように描画に使うことができます。<code>RenderTexture</code> は <code>Texture</code> と同じ描画系のメンバ関数を持ちます。</p>
