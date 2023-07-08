@@ -3172,8 +3172,7 @@
 <h2 id="417-指定領域にガウスぼかしをかける">41.7 指定領域にガウスぼかしをかける<a class="headerlink" href="#417-指定領域にガウスぼかしをかける" title="Permanent link">&para;</a></h2>
 <p>背景がぼけて透過するような効果を実現するために、シーン全体をぼかしたレンダーテクスチャを用意して、その一部を切り出して描画するという方法があります。</p>
 <p>下記のサンプルコードではシーン全体をぼかしていますが、ぼかす領域が固定である場合、最小限の領域だけにぼかしをかけることで、より高速に処理することができるでしょう。</p>
-<video src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/render-texture/7.mp4?raw=true" autoplay loop muted playsinline></video>
-
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/render-texture/7.jpg" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1">// シーン全体のテクスチャのうち一部領域の UV を計算する関数</span>
@@ -3240,7 +3239,7 @@
 <a id="__codelineno-10-64" name="__codelineno-10-64" href="#__codelineno-10-64"></a><span class="w">		</span><span class="n">miniWindow</span><span class="p">(</span><span class="n">blur4</span><span class="p">.</span><span class="n">uv</span><span class="p">(</span><span class="n">CalculateUVRect</span><span class="p">(</span><span class="n">sceneSize</span><span class="p">,</span><span class="w"> </span><span class="n">miniWindow</span><span class="p">.</span><span class="n">rect</span><span class="p">))).</span><span class="n">draw</span><span class="p">();</span>
 <a id="__codelineno-10-65" name="__codelineno-10-65" href="#__codelineno-10-65"></a>
 <a id="__codelineno-10-66" name="__codelineno-10-66" href="#__codelineno-10-66"></a><span class="w">		</span><span class="c1">// ミニウィンドウを描画する</span>
-<a id="__codelineno-10-67" name="__codelineno-10-67" href="#__codelineno-10-67"></a><span class="w">		</span><span class="n">miniWindow</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.85</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-10-67" name="__codelineno-10-67" href="#__codelineno-10-67"></a><span class="w">		</span><span class="n">miniWindow</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
 <a id="__codelineno-10-68" name="__codelineno-10-68" href="#__codelineno-10-68"></a><span class="w">	</span><span class="p">}</span>
 <a id="__codelineno-10-69" name="__codelineno-10-69" href="#__codelineno-10-69"></a><span class="p">}</span>
 </code></pre></div>
