@@ -2809,7 +2809,7 @@
 <a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="412-クリアをしない使い方">41.2 クリアをしない使い方<a class="headerlink" href="#412-クリアをしない使い方" title="Permanent link">&para;</a></h2>
-<p>描画内容が変わらない場合、描画コストの削減のために <code>RenderTexture</code> のクリアおよび <code>RenderTexture</code> への描画を省略するのも有効です。</p>
+<p>描画内容が変わらない場合、描画コストの削減のために <code>RenderTexture</code> のクリアおよび <code>RenderTexture</code> への描画を省略することができます。</p>
 <p>下記のサンプルでは、最初のフレームで <code>RenderTexture</code> に描画を行い、以降は <code>RenderTexture</code> を描画することで、毎フレームの描画コストを削減しています。</p>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/render-texture/2.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
@@ -2841,7 +2841,7 @@
 <a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="413-透過レンダーテクスチャへの書き込み">41.3 透過レンダーテクスチャへの書き込み<a class="headerlink" href="#413-透過レンダーテクスチャへの書き込み" title="Permanent link">&para;</a></h2>
-<p>デフォルトのブレンドステートでは、初期状態が透過色の <code>RenderTexture</code> に描画を行うと、<code>RenderTexture</code> の内容の RGB 成分は更新されますがアルファチャン成分は更新されません。つまり全体が透過状態なので、そのまま描画しても何も表示されません。</p>
+<p>初期状態が透過色の <code>RenderTexture</code> に対してデフォルトのブレンドステートで描画を行うと、<code>RenderTexture</code> の内容の RGB 成分は更新されますがアルファ成分は更新されません。つまり全体が透過状態なので、レンダーテクスチャを描画しても何も表示されません。</p>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/render-texture/3a.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
@@ -2884,7 +2884,7 @@
 <a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">	</span><span class="p">}</span>
 <a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="p">}</span>
 </code></pre></div>
-<p>そこで、描画された最大のアルファ成分を保持するブレンドステートを設定します。これによって、<code>RenderTexture</code> のアルファ成分が更新されるようになります。</p>
+<p>この問題を解決するには、ブレンドステートを「描画された最大のアルファ成分を保持する」設定に変更します。これによって、<code>RenderTexture</code> のアルファ成分が更新されるようになります。</p>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/render-texture/3b.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
@@ -2966,7 +2966,7 @@
 </table>
 <p><code>MSRenderTexture</code> をレンダーターゲットに設定する方法は <code>RenderTexture</code> と同様ですが、その描画結果を使う際には下記の 2 つの追加の手順が必要になります。</p>
 <ol>
-<li><code>Graphics2D::Flush()</code> を呼び、その時点までの 2D 描画処理をすべて実行（フラッシュ）して <code>MSRenderTexture</code> のマルチサンプル・テクスチャに対して描画内容を確実に書き込む</li>
+<li><code>Graphics2D::Flush()</code> を呼び、その時点までの 2D 描画処理をすべて実行（フラッシュ）して <code>MSRenderTexture</code> のマルチサンプル・テクスチャに対する描画内容を確実に書き込む</li>
 <li><code>MSRenderTexture</code> の <code>.resolve()</code> によって、<code>MSRenderTexture</code> 内のマルチサンプル・テクスチャを、描画で使用可能な通常のテクスチャに変換（リゾルブ）する</li>
 </ol>
 <p>この手順が必要な理由は、Siv3D における <code>.draw()</code> は「予約」で、<code>.resolve()</code> は「即時実行」であり、<code>Graphics2D::Flush()</code> を行わないと、レンダーテクスチャに何も描かれていない状態で <code>resolve()</code> が実行されてしまうためです。</p>
@@ -3026,14 +3026,14 @@
 <li><code>to</code>: 出力テクスチャ</li>
 </ul>
 <p><code>from</code> のテクスチャに縦方向と横方向のガウスブラーをかけて <code>to</code> に描画します。<code>from</code>, <code>internalBuffer</code>, <code>to</code> はいずれも有効なテクスチャで、領域のサイズが同じでなければなりません。<code>from</code> と <code>to</code> は同じテクスチャにできます。</p>
-<p>1 回のガウスブラー処理で得られる効果はそれほど大きくありません。大きなガウスブラー効果を得るには、ダウンサンプルしたテクスチャにガウスブラーをかけたあと、それを元のサイズに拡大描画する方法が有効です。</p>
+<p>1 回のガウスブラー処理で得られる効果はそれほど大きくありません。大きなぼかし効果を得るには、ダウンサンプルしたテクスチャにガウスブラーをかけたあと、それを元のサイズで拡大描画する方法が有効です。</p>
 <h4 id="void-shadercopyconst-textureregion-from-const-rendertexture-to">void Shader::Copy(const TextureRegion&amp; from, const RenderTexture&amp; to);<a class="headerlink" href="#void-shadercopyconst-textureregion-from-const-rendertexture-to" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>from</code>: 入力テクスチャ</li>
 <li><code>to</code>: 出力テクスチャ</li>
 </ul>
 <p><code>from</code> のテクスチャの内容を <code>to</code> に描画します。<code>from</code> と <code>to</code> はともに有効なテクスチャで、互いに異なり、領域のサイズが同じでなければなりません。</p>
-<p>通常は <code>Texture</code> 型や <code>TextureRegion</code> 型の変数への代入で間に合うため <code>Shader::Copy()</code> が必要になるのは特殊なケースです。例えば大きいレンダーテクスチャから一部の領域だけを切り出して使う場合、<code>Shader::Copy()</code> の実行後に大きいレンダーテクスチャを破棄することで、メモリを節約できます。</p>
+<p>通常は <code>Texture</code> 型や <code>TextureRegion</code> 型の変数への代入で間に合うため <code>Shader::Copy()</code> が必要になるのは特殊なケースです。例えば大きいレンダーテクスチャから一部の領域だけを切り出して使う場合、<code>Shader::Copy()</code> の実行後に大きいレンダーテクスチャを破棄することで、消費メモリを節約できます。</p>
 <h3 id="4151-ダウンサンプル">41.5.1 ダウンサンプル<a class="headerlink" href="#4151-ダウンサンプル" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/render-texture/5a.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
@@ -3096,7 +3096,7 @@
 <a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="416-強いガウスぼかし">41.6 強いガウスぼかし<a class="headerlink" href="#416-強いガウスぼかし" title="Permanent link">&para;</a></h2>
-<p>ガウスぼかしを重ねて適用するよりも、ダウンサンプルしたテクスチャにガウスぼかしをかけたあと元のサイズで拡大描画するほうが、より低いコストで大きなぼかし効果を実現できます (3), (4)。ダウンサンプル前にガウスぼかしをかけると、コストは増えますが、ぼかしの品質が向上します (5)。</p>
+<p>ガウスぼかしを重ねて適用するよりも、ダウンサンプルしたテクスチャにガウスぼかしをかけたあと元のサイズで拡大描画するほうが、より低いコストで大きなぼかし効果を実現できます (3), (4)。また、ダウンサンプル前にガウスぼかしをかけると、コストは増えますが、ぼかしの品質が向上します (5)。</p>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/render-texture/6.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
@@ -3170,8 +3170,8 @@
 <a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="417-指定領域にガウスぼかしをかける">41.7 指定領域にガウスぼかしをかける<a class="headerlink" href="#417-指定領域にガウスぼかしをかける" title="Permanent link">&para;</a></h2>
-<p>背景がぼけて透過するような効果を実現するために、シーン全体をぼかしたレンダーテクスチャを用意して、その一部を切り出して描画するという方法があります。</p>
-<p>下記のサンプルコードではシーン全体をぼかしていますが、ぼかす領域が固定である場合、最小限の領域だけにぼかしをかけることで、より高速に処理することができるでしょう。</p>
+<p>ぼかした背景が透過するような効果を実現するために、シーン全体をぼかしたレンダーテクスチャを用意して、その一部を切り出して描画するという方法があります。</p>
+<p>なお、下記のサンプルコードではシーン全体をぼかしていますが、ぼかす領域が固定である場合、最小限の領域だけにぼかしをかけることで、より高速に処理することができるでしょう。</p>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/render-texture/7.jpg" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
@@ -3245,8 +3245,8 @@
 </code></pre></div>
 <h2 id="418-任意形状のシャドウ">41.8 任意形状のシャドウ<a class="headerlink" href="#418-任意形状のシャドウ" title="Permanent link">&para;</a></h2>
 <p>シャドウ用のテクスチャを用意して、それをぼかしたものを描画することで、任意形状のシャドウを実現できます。</p>
-<p>レンダーテクスチャを <code>ColorF{ 1.0, 0.0 }</code> でクリアしてから、ブレンドステート <code>BlendState::MaxAlpha</code> を適用して描き込みをすると、RGB 値は無視され、描画された最大のアルファ値を保持するようにできます。色の付いた絵文字の RGB 成分を無視しできるため影用の形状だけを描いたテクスチャの作成に最適なブレンドステートです。</p>
-<p>下記サンプルコードでは、マウスを左クリックしている間はぼかし済みの影テクスチャ <code>blur4</code> のみを可視化します。</p>
+<p>レンダーテクスチャを <code>ColorF{ 1.0, 0.0 }</code> でクリアしてから、ブレンドステート <code>BlendState::MaxAlpha</code> を適用して描き込みをすると、RGB 値は無視され、描画された最大のアルファ値を保持するようにできます。色の付いた絵文字の RGB 成分を無視しできるため、影用の形状だけを描きたいときに最適です。</p>
+<p>下記サンプルコードでは、マウスを左クリックしている間は、ぼかし済みの影テクスチャ <code>blur4</code> のみを可視化します。</p>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/render-texture/8.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
