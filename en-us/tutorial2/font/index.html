@@ -3304,7 +3304,7 @@
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="316-pc-にインストールされているフォントを使う">31.6 PC にインストールされているフォントを使う<a class="headerlink" href="#316-pc-にインストールされているフォントを使う" title="Permanent link">&para;</a></h2>
-<p>PC にインストールされているフォントは OS ごとに特殊なフォルダに保存されています。そのフォルダのパスを <code>FileSystem::GetFolderPath()</code> で取得し、フォントファイル名とつなげることで、ファイルパスを構築できます。<code>FileSystem::GetFolderPath()</code> に渡す <code>SpecialFolder</code> の種類と OS によって取得できるパスの対応表は次の通りです。</p>
+<p>PC にインストールされているフォントは OS ごとに特殊なフォルダに保存されています。そのフォルダのパスを <code>FileSystem::GetFolderPath()</code> で取得し、フォントファイル名とつなげることで、ファイルパスを構築できます。<code>FileSystem::GetFolderPath()</code> に渡す <code>SpecialFolder</code> の種類と OS によって取得できるパスの対応表は次のとおりです。</p>
 <table>
 <thead>
 <tr>
@@ -3483,7 +3483,7 @@
 </code></pre></div>
 <h2 id="3110-自由に拡大縮小できる-sdf--msdf-方式のフォントを使う">31.10 自由に拡大縮小できる SDF / MSDF 方式のフォントを使う<a class="headerlink" href="#3110-自由に拡大縮小できる-sdf--msdf-方式のフォントを使う" title="Permanent link">&para;</a></h2>
 <p><strong>SDF 方式</strong> / <strong>MSDF 方式</strong>を使うと、文字ごとの Distance field 画像を生成し、基本サイズ以上に拡大しても画質が粗くならない手法で文字をレンダリングできます。さらに、SDF / MSDF には影や輪郭などのエフェクトを 1 回の draw 内で行える仕組みも用意されています。</p>
-<p>各方式の利点と欠点は次の通りです。</p>
+<p>各方式の利点と欠点は次のとおりです。</p>
 <table>
 <thead>
 <tr>

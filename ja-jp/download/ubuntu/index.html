@@ -2614,7 +2614,7 @@
 
 <h1 id="ubuntu-で-siv3d-プログラミングを始める">Ubuntu で Siv3D プログラミングを始める<a class="headerlink" href="#ubuntu-で-siv3d-プログラミングを始める" title="Permanent link">&para;</a></h1>
 <h2 id="1-システム要件">1. システム要件<a class="headerlink" href="#1-システム要件" title="Permanent link">&para;</a></h2>
-<p>Ubuntu で Siv3D プログラミングをするのに必要な開発環境は次の通りです。</p>
+<p>Ubuntu で Siv3D プログラミングをするのに必要な開発環境は次のとおりです。GCC は Ubuntu のデフォルトのバージョンを使用します。</p>
 <table>
 <thead>
 <tr>
@@ -2650,14 +2650,14 @@
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/download/ubuntu/repo.png" /></p>
 <h2 id="3-siv3d-をビルドする">3. Siv3D をビルドする<a class="headerlink" href="#3-siv3d-をビルドする" title="Permanent link">&para;</a></h2>
 <ol>
-<li>必要なツールや依存パッケージをインストールします。
-<a href="https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ci.yml#L26-L49">https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ci.yml#L26-L49</a></li>
+<li>必要な依存パッケージをインストールします。
+<a href="https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ubuntu.yml#L22-L23">https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ubuntu.yml#L22-L23</a></li>
 <li>Siv3D ライブラリをビルドし、<code>libSiv3D.a</code> を作成します。 
-<a href="https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ci.yml#L51-L60">https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ci.yml#L51-L60</a></li>
+<a href="https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ubuntu.yml#L25-L34">https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ubuntu.yml#L25-L34</a></li>
 <li>Siv3D をインストールします。 
-<a href="https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ci.yml#L65">https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ci.yml#L65</a></li>
+<a href="https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ubuntu.yml#L36-L39">https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ubuntu.yml#L36-L39</a></li>
 <li>Siv3D アプリをビルドします。 
-<a href="https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ci.yml#L67-L76">https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ci.yml#L67-L76</a></li>
+<a href="https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ubuntu.yml#L41-L50">https://github.com/Siv3D/OpenSiv3D/blob/main/.github/workflows/ubuntu.yml#L41-L50</a></li>
 </ol>
 <h2 id="4-サンプルプログラム">4. サンプルプログラム<a class="headerlink" href="#4-サンプルプログラム" title="Permanent link">&para;</a></h2>
 <p>Linux 版のデフォルトの <a href="https://github.com/Siv3D/OpenSiv3D/blob/main/Linux/App/Main.cpp">Main.cpp のコード</a> は、標準出力をしてすぐに終了する単純なプログラムです。コメントアウト範囲を変更するなどして、次のようなサンプルコードで上書きしてください。実行中のプログラムは、<span class="keys"><kbd class="key-escape">Esc</kbd></span> を押すか、ウィンドウを閉じると終了します。</p>
