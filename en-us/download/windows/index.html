@@ -2748,7 +2748,7 @@
 <p>After that, just press the "Install" button at the bottom right to start installing the necessary tools for C++ programming.</p>
 </details>
 <h3 id="12-system-requirements-for-running-siv3d-application">1.2 System Requirements for Running Siv3D Application<a class="headerlink" href="#12-system-requirements-for-running-siv3d-application" title="Permanent link">&para;</a></h3>
-<p>The necessary environment to run applications developed with Siv3D v0.6.10 on Windows is as follows. You may want to include this in the instructions when distributing your game or app.</p>
+<p>The necessary environment to run applications developed with Siv3D v0.6.11 on Windows is as follows. You may want to include this in the instructions when distributing your game or app.</p>
 <table>
 <thead>
 <tr>
@@ -2777,7 +2777,7 @@
 </table>
 <h2 id="2-installing-the-siv3d-sdk">2. Installing the Siv3D SDK<a class="headerlink" href="#2-installing-the-siv3d-sdk" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Download and run <strong><a href="https://siv3d.jp/downloads/Siv3D/OpenSiv3D_0.6.10_Installer.exe" target="_blank">OpenSiv3D v0.6.10 Installer for Windows Desktop</a></strong> .</li>
+<li>Download and run <strong><a href="https://siv3d.jp/downloads/Siv3D/OpenSiv3D_0.6.11_Installer.exe" target="_blank">OpenSiv3D v0.6.11 Installer for Windows Desktop</a></strong> .</li>
 <li>If you see a message that says "Windows Protected Your PC" when you try to execute it, press <strong>More info</strong> and then press <strong>Run anyway</strong>.</li>
 </ol>
 <div class="admonition info">
@@ -2807,6 +2807,7 @@
 <p>The use of previous versions is not recommended. If necessary, please download them from the links below. 
 Due to updates to the compiler and others, you may not be able to use past versions in the latest development environment. If you want to build an old Siv3D project, it is best to port its source code to a project with the latest version.</p>
 <ul>
+<li><a href="https://siv3d.jp/downloads/Siv3D/OpenSiv3D_0.6.10_Installer.exe" target="_blank">OpenSiv3D v0.6.10 Installer for Windows Desktop</a></li>
 <li><a href="https://siv3d.jp/downloads/Siv3D/OpenSiv3D_0.6.9_Installer.exe" target="_blank">OpenSiv3D v0.6.9 Installer for Windows Desktop</a></li>
 <li><a href="https://siv3d.jp/downloads/Siv3D/OpenSiv3D_0.6.8_Installer.exe" target="_blank">OpenSiv3D v0.6.8 Installer for Windows Desktop</a></li>
 <li><a href="https://siv3d.jp/downloads/Siv3D/OpenSiv3D_0.6.7_Installer.exe" target="_blank">OpenSiv3D v0.6.7 Installer for Windows Desktop</a></li>
@@ -2843,21 +2844,21 @@ Due to updates to the compiler and others, you may not be able to use past versi
 <summary>Steps for manually installing the Siv3D SDK</summary>
 <h3 id="placing-sdk-files-and-setting-environment-variables">Placing SDK files and setting environment variables<a class="headerlink" href="#placing-sdk-files-and-setting-environment-variables" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Download and extract <a href="https://siv3d.jp/downloads/Siv3D/manual/0.6.10/OpenSiv3D_SDK_0.6.10.zip">OpenSiv3D_SDK_0.6.10.zip</a> (File size: 90 MB), and place the contents in your documents folder as follows:<ul>
-<li><code>.../Documents/OpenSiv3D_SDK_0.6.10/addon</code></li>
-<li><code>.../Documents/OpenSiv3D_SDK_0.6.10/include</code></li>
-<li><code>.../Documents/OpenSiv3D_SDK_0.6.10/lib</code></li>
+<li>Download and extract <a href="https://siv3d.jp/downloads/Siv3D/manual/0.6.11/OpenSiv3D_SDK_0.6.11.zip">OpenSiv3D_SDK_0.6.11.zip</a> (File size: 90 MB), and place the contents in your documents folder as follows:<ul>
+<li><code>.../Documents/OpenSiv3D_SDK_0.6.11/addon</code></li>
+<li><code>.../Documents/OpenSiv3D_SDK_0.6.11/include</code></li>
+<li><code>.../Documents/OpenSiv3D_SDK_0.6.11/lib</code></li>
 </ul>
 </li>
-<li>Create a new environment variable <code>SIV3D_0_6_10</code> and set the path to the SDK folder (the parent folder of the <code>addon/</code>, <code>include/</code>, and <code>lib/</code> folders)<ul>
-<li>Example: If you have placed <code>C:/Users/Siv3D/Documents/OpenSiv3D_SDK_0.6.10/include</code>, set <code>C:/Users/Siv3D/Documents/OpenSiv3D_SDK_0.6.10</code> to the environment variable <code>SIV3D_0_6_10</code>.</li>
+<li>Create a new environment variable <code>SIV3D_0_6_11</code> and set the path to the SDK folder (the parent folder of the <code>addon/</code>, <code>include/</code>, and <code>lib/</code> folders)<ul>
+<li>Example: If you have placed <code>C:/Users/Siv3D/Documents/OpenSiv3D_SDK_0.6.11/include</code>, set <code>C:/Users/Siv3D/Documents/OpenSiv3D_SDK_0.6.11</code> to the environment variable <code>SIV3D_0_6_11</code>.</li>
 </ul>
 </li>
 </ol>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/download/windows/envvariable.png" />  </p>
 <h3 id="placing-the-opensiv3d-project-template-zip">Placing the OpenSiv3D project template (ZIP)<a class="headerlink" href="#placing-the-opensiv3d-project-template-zip" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Download the Visual Studio project template <a href="https://siv3d.jp/downloads/Siv3D/manual/0.6.10/OpenSiv3D_0.6.10.zip">OpenSiv3D_0.6.10.zip</a> (size: about 63 MB), and without unzipping the file, place the ZIP file in the <code>Visual Studio 2022/Templates/ProjectTemplates/</code> folder created in the documents folder during the Visual Studio 2022 installation.  </li>
+<li>Download the Visual Studio project template <a href="https://siv3d.jp/downloads/Siv3D/manual/0.6.11/OpenSiv3D_0.6.11.zip">OpenSiv3D_0.6.11.zip</a> (size: about 63 MB), and without unzipping the file, place the ZIP file in the <code>Visual Studio 2022/Templates/ProjectTemplates/</code> folder created in the documents folder during the Visual Studio 2022 installation.  </li>
 </ol>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/download/windows/projecttemplate.png" />  </p>
 <p>After the manual installation steps are complete, reboot your PC to ensure the application of the environment variables. Then, proceed to step 3 on this page.</p>
