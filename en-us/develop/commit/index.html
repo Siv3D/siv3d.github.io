@@ -26,7 +26,7 @@
     
     
       
-        <title>Committing to GitHub - Siv3D</title>
+        <title>Contribution Guide - Siv3D</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#github-でコミットする" class="md-skip">
+        <a href="#contribution-guide-for-siv3d" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Committing to GitHub
+              Contribution Guide
             
           </span>
         </div>
@@ -3199,7 +3199,7 @@
           
   
   <span class="md-ellipsis">
-    Committing to GitHub
+    Contribution Guide
   </span>
   
 
@@ -3210,7 +3210,7 @@
         
   
   <span class="md-ellipsis">
-    Committing to GitHub
+    Contribution Guide
   </span>
   
 
@@ -3232,35 +3232,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-pull-request" class="md-nav__link">
-    1. Pull Request
+  <a href="#branching-strategy" class="md-nav__link">
+    Branching Strategy
   </a>
-  
-    <nav class="md-nav" aria-label="1. Pull Request">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-issue-を作成する" class="md-nav__link">
-    1.1 Issue を作成する
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-pull-request-を作成する" class="md-nav__link">
-    1.2 Pull Request を作成する
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-opensiv3d-実装会" class="md-nav__link">
-    2. OpenSiv3D 実装会
+  <a href="#making-a-pull-request" class="md-nav__link">
+    Making a Pull Request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-guidelines" class="md-nav__link">
+    Commit Guidelines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-and-communication" class="md-nav__link">
+    Discussion and Communication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-library" class="md-nav__link">
+    Building the Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-request-examples" class="md-nav__link">
+    Pull Request Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opensiv3d-implementation-meeting" class="md-nav__link">
+    OpenSiv3D Implementation Meeting
   </a>
   
 </li>
@@ -3466,35 +3481,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-pull-request" class="md-nav__link">
-    1. Pull Request
+  <a href="#branching-strategy" class="md-nav__link">
+    Branching Strategy
   </a>
-  
-    <nav class="md-nav" aria-label="1. Pull Request">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-issue-を作成する" class="md-nav__link">
-    1.1 Issue を作成する
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-pull-request-を作成する" class="md-nav__link">
-    1.2 Pull Request を作成する
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-opensiv3d-実装会" class="md-nav__link">
-    2. OpenSiv3D 実装会
+  <a href="#making-a-pull-request" class="md-nav__link">
+    Making a Pull Request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-guidelines" class="md-nav__link">
+    Commit Guidelines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-and-communication" class="md-nav__link">
+    Discussion and Communication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-library" class="md-nav__link">
+    Building the Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-request-examples" class="md-nav__link">
+    Pull Request Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opensiv3d-implementation-meeting" class="md-nav__link">
+    OpenSiv3D Implementation Meeting
   </a>
   
 </li>
@@ -3517,19 +3547,48 @@
   
 
 
-<h1 id="github-でコミットする">GitHub でコミットする<a class="headerlink" href="#github-でコミットする" title="Permanent link">&para;</a></h1>
-<h2 id="1-pull-request">1. Pull Request<a class="headerlink" href="#1-pull-request" title="Permanent link">&para;</a></h2>
-<h3 id="11-issue-を作成する">1.1 Issue を作成する<a class="headerlink" href="#11-issue-を作成する" title="Permanent link">&para;</a></h3>
-<p>コミットする箇所に関して、問題や変更案を記述した Issue を作成し、リポジトリの管理者の返信を待ってください。機能に影響を与えない些細な変更や修正の場合は、Issue を作成せずに直接 Pull Request を作成することもできます。</p>
-<h3 id="12-pull-request-を作成する">1.2 Pull Request を作成する<a class="headerlink" href="#12-pull-request-を作成する" title="Permanent link">&para;</a></h3>
-<p>開発ブランチ (<code>v6_develop</code>) または main ブランチ (<code>main</code>) をフォークし、<code>v6_develop</code> ブランチに向けて Pull Request を作成してください。この際、変更とは無関係なコミットが混入しないようにしてください。</p>
-<h4 id="例">例<a class="headerlink" href="#例" title="Permanent link">&para;</a></h4>
+<h1 id="contribution-guide-for-siv3d">Contribution Guide for Siv3D<a class="headerlink" href="#contribution-guide-for-siv3d" title="Permanent link">&para;</a></h1>
+<p>Thank you for considering contributing to Siv3D!<br />
+We appreciate your efforts and contributions to improve the project.<br />
+This guide provides information on how to make your contributions as smooth as possible.</p>
+<h2 id="branching-strategy">Branching Strategy<a class="headerlink" href="#branching-strategy" title="Permanent link">&para;</a></h2>
+<p>We have two main branches:</p>
 <ul>
-<li><a href="https://github.com/Siv3D/OpenSiv3D/pull/796">https://github.com/Siv3D/OpenSiv3D/pull/796 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a></li>
-<li><a href="https://github.com/Siv3D/OpenSiv3D/pull/805">https://github.com/Siv3D/OpenSiv3D/pull/805 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a></li>
+<li><a href="https://github.com/Siv3D/OpenSiv3D/tree/v6_develop" target="_blank"><code>v6_develop</code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> for development purposes.</li>
+<li><a href="https://github.com/Siv3D/OpenSiv3D" target="_blank"><code>main</code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> for stable releases.</li>
 </ul>
-<h2 id="2-opensiv3d-実装会">2. OpenSiv3D 実装会<a class="headerlink" href="#2-opensiv3d-実装会" title="Permanent link">&para;</a></h2>
-<p>GitHub の操作に不慣れな場合は、OpenSiv3D 実装会でサポートします。</p>
+<p>Please fork from the appropriate branch and make your changes there. Submit your pull requests to the <code>v6_develop</code> branch unless advised otherwise.</p>
+<h2 id="making-a-pull-request">Making a Pull Request<a class="headerlink" href="#making-a-pull-request" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Fork the repository to your GitHub account.</li>
+<li>Clone the forked repository to your local machine.</li>
+<li>Create a new branch for your feature or fix.</li>
+<li>Make your changes, adhering to our <a href="../coding-style/" target="_blank">coding standards and guidelines</a>.</li>
+<li>Commit your changes, following our <a href="#commit-guidelines">commit guidelines</a>.</li>
+<li>Push your changes to your fork.</li>
+<li>Open a pull request, providing enough information to help reviewers understand your changes.</li>
+</ol>
+<h2 id="commit-guidelines">Commit Guidelines<a class="headerlink" href="#commit-guidelines" title="Permanent link">&para;</a></h2>
+<ul>
+<li>It's okay to have multiple commits in a single pull request.</li>
+<li>Please make your commit messages clear and concise.</li>
+<li>If possible, reference relevant issue numbers in your commit messages.</li>
+</ul>
+<h2 id="discussion-and-communication">Discussion and Communication<a class="headerlink" href="#discussion-and-communication" title="Permanent link">&para;</a></h2>
+<ul>
+<li>For major changes or new features, please consult with the maintainers through the <a href="../../community/community/" target="_blank">Siv3D Discord server</a> or <a href="https://github.com/Siv3D/OpenSiv3D/issues" target="_blank">GitHub Issues <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> before starting work.</li>
+<li>Feel free to ask for help or clarification at any stage of your contribution process.</li>
+</ul>
+<h2 id="building-the-library">Building the Library<a class="headerlink" href="#building-the-library" title="Permanent link">&para;</a></h2>
+<p>For details on how to build the Siv3D library on your own, please refer to our <a href="../build/" target="_blank">Build Instructions</a>.</p>
+<h2 id="pull-request-examples">Pull Request Examples<a class="headerlink" href="#pull-request-examples" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/Siv3D/OpenSiv3D/pull/796" target="_blank">https://github.com/Siv3D/OpenSiv3D/pull/796 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a></li>
+<li><a href="https://github.com/Siv3D/OpenSiv3D/pull/805" target="_blank">https://github.com/Siv3D/OpenSiv3D/pull/805 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a></li>
+</ul>
+<p>For minor changes or fixes that do not affect functionality, you can create a pull request directly without creating an issue.</p>
+<h2 id="opensiv3d-implementation-meeting">OpenSiv3D Implementation Meeting<a class="headerlink" href="#opensiv3d-implementation-meeting" title="Permanent link">&para;</a></h2>
+<p>If you are unfamiliar with GitHub operations, we will support you on the Siv3D Discord server or at the OpenSiv3D Implementation Meeting.</p>
 
 
 
