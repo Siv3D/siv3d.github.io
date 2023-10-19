@@ -2779,36 +2779,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
-    11.
+  <a href="#11-斜め方向の移動量を調整しよう" class="md-nav__link">
+    11. 斜め方向の移動量を調整しよう
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
-    12.
+  <a href="#12-重ねずにランダムに配置する方法を知ろう" class="md-nav__link">
+    12. 重ねずにランダムに配置する方法を知ろう
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#13" class="md-nav__link">
-    13.
+  <a href="#13-マウスを使わないゲームではマウスカーソルを非表示にしよう" class="md-nav__link">
+    13. マウスを使わないゲームではマウスカーソルを非表示にしよう
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#14" class="md-nav__link">
-    14.
+  <a href="#14-色のみで区別する-ui-は避けよう" class="md-nav__link">
+    14. 色のみで区別する UI は避けよう
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#15" class="md-nav__link">
-    15.
+  <a href="#15-二次元配列には-grid-を使おう" class="md-nav__link">
+    15. 二次元配列には Grid を使おう
   </a>
   
 </li>
@@ -4076,36 +4076,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
-    11.
+  <a href="#11-斜め方向の移動量を調整しよう" class="md-nav__link">
+    11. 斜め方向の移動量を調整しよう
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
-    12.
+  <a href="#12-重ねずにランダムに配置する方法を知ろう" class="md-nav__link">
+    12. 重ねずにランダムに配置する方法を知ろう
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#13" class="md-nav__link">
-    13.
+  <a href="#13-マウスを使わないゲームではマウスカーソルを非表示にしよう" class="md-nav__link">
+    13. マウスを使わないゲームではマウスカーソルを非表示にしよう
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#14" class="md-nav__link">
-    14.
+  <a href="#14-色のみで区別する-ui-は避けよう" class="md-nav__link">
+    14. 色のみで区別する UI は避けよう
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#15" class="md-nav__link">
-    15.
+  <a href="#15-二次元配列には-grid-を使おう" class="md-nav__link">
+    15. 二次元配列には Grid を使おう
   </a>
   
 </li>
@@ -5085,11 +5085,298 @@
 <a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="p">}</span>
 </code></pre></div>
 </details>
-<h2 id="11">11.<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
-<h2 id="12">12.<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
-<h2 id="13">13.<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
-<h2 id="14">14.<a class="headerlink" href="#14" title="Permanent link">&para;</a></h2>
-<h2 id="15">15.<a class="headerlink" href="#15" title="Permanent link">&para;</a></h2>
+<h2 id="11-斜め方向の移動量を調整しよう">11. 斜め方向の移動量を調整しよう<a class="headerlink" href="#11-斜め方向の移動量を調整しよう" title="Permanent link">&para;</a></h2>
+<p><span class="keys"><kbd class="key-arrow-up">Up</kbd></span> を押すと上に 1, <span class="keys"><kbd class="key-arrow-right">Right</kbd></span> を押すと右に 1 移動する単純なコードで、<span class="keys"><kbd class="key-arrow-up">Up</kbd></span> と <span class="keys"><kbd class="key-arrow-right">Right</kbd></span> を同時に押すと、右上に √2 (約 1.41) 移動することになり、移動量が大きくなります。ゲームによってはこの挙動が望ましくない場合があります。次のようなコードで、斜め方向の移動量を調整することができます。</p>
+<details class="memo">
+<summary>コード</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">Vec2</span><span class="w"> </span><span class="nf">GetMove</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">adjust</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">{</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">	</span><span class="n">Vec2</span><span class="w"> </span><span class="n">move</span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">KeyUp</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">		</span><span class="n">move</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">	</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">KeyDown</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">		</span><span class="n">move</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">KeyLeft</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">		</span><span class="n">move</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">	</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">KeyRight</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">		</span><span class="n">move</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">adjust</span><span class="p">)</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="w">		</span><span class="c1">// ベクトルの長さを 1 にする。ゼロベクトルの場合は何もしない</span>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="w">		</span><span class="n">move</span><span class="p">.</span><span class="n">setLength</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">move</span><span class="p">;</span>
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="p">}</span>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a><span class="p">{</span>
+<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>
+<a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Font</span><span class="w"> </span><span class="n">font</span><span class="p">{</span><span class="w"> </span><span class="n">FontMethod</span><span class="o">::</span><span class="n">MSDF</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>
+<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a><span class="w">	</span><span class="c1">// 斜め方向の移動量を調整するか</span>
+<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a><span class="w">	</span><span class="kt">bool</span><span class="w"> </span><span class="n">adjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a>
+<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a><span class="w">	</span><span class="n">Circle</span><span class="w"> </span><span class="n">circle</span><span class="p">{</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a>
+<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">deltaTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">();</span>
+<a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a>
+<a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="w"> </span><span class="n">baseMove</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetMove</span><span class="p">(</span><span class="n">adjust</span><span class="p">);</span>
+<a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a>
+<a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a><span class="w">		</span><span class="n">circle</span><span class="p">.</span><span class="n">moveBy</span><span class="p">(</span><span class="n">baseMove</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">deltaTime</span><span class="p">);</span>
+<a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a>
+<a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a><span class="w">		</span><span class="n">circle</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.25</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-13-54" name="__codelineno-13-54" href="#__codelineno-13-54"></a>
+<a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a><span class="w">		</span><span class="n">SimpleGUI</span><span class="o">::</span><span class="n">CheckBox</span><span class="p">(</span><span class="n">adjust</span><span class="p">,</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;斜め方向の移動量を調整する&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a>
+<a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a><span class="w">		</span><span class="n">font</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;ベースの移動ベクトルの長さ: {:.2f}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">baseMove</span><span class="p">.</span><span class="n">length</span><span class="p">())).</span><span class="n">draw</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">360</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-13-59" name="__codelineno-13-59" href="#__codelineno-13-59"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="12-重ねずにランダムに配置する方法を知ろう">12. 重ねずにランダムに配置する方法を知ろう<a class="headerlink" href="#12-重ねずにランダムに配置する方法を知ろう" title="Permanent link">&para;</a></h2>
+<p>画面に何らかの要素をランダムに配置したい場合、<code>RandomVec2(sceneRect)</code> を使うと要素同士が重なったり、分布の偏りが生じたりすることがあります。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/reference/game_tips/11-1.png" /></p>
+<details class="memo">
+<summary>コード</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenerateRandomPoints</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Rect</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rect</span><span class="p">,</span><span class="w"> </span><span class="n">int32</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">{</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">	</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">points</span><span class="p">;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">	</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">		</span><span class="n">points</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">RandomVec2</span><span class="p">(</span><span class="n">rect</span><span class="p">));</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">points</span><span class="p">;</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="p">}</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="kt">bool</span><span class="w"> </span><span class="n">SortByY</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="p">{</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="p">}</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="kt">void</span><span class="w"> </span><span class="n">Main</span><span class="p">()</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="p">{</span>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="n">Rect</span><span class="w"> </span><span class="n">SceneRect</span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">texture</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;🌷&quot;</span><span class="n">_emoji</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="w">	</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">positions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GenerateRandomPoints</span><span class="p">(</span><span class="n">SceneRect</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="w">		</span><span class="p">.</span><span class="n">sorted_by</span><span class="p">(</span><span class="n">SortByY</span><span class="p">);</span><span class="w"> </span><span class="c1">// 手前の絵文字のほうが奥の絵文字よりあとに描画されるようにソートする</span>
+<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a><span class="w">			</span><span class="n">positions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GenerateRandomPoints</span><span class="p">(</span><span class="n">SceneRect</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">).</span><span class="n">sorted_by</span><span class="p">(</span><span class="n">SortByY</span><span class="p">);</span>
+<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>
+<a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">positions</span><span class="p">)</span>
+<a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a><span class="w">			</span><span class="n">texture</span><span class="p">.</span><span class="n">scaled</span><span class="p">(</span><span class="mf">0.4</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
+<a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<p><code>PoissonDisk2D</code> クラスを使うと、ほどよい距離で重ならない点群を生成することができます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/reference/game_tips/11-2.png" /></p>
+<details class="memo">
+<summary>コード</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="c1">/// @brief ほどよい距離で重ならない点群を生成します。</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1">/// @param rect 点群を生成する範囲</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1">/// @param radius 点群の点の間の最小距離（目安）</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1">/// @param clip true の場合、範囲外の点を切り取ります。</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1">/// @return 生成された点群</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenerateRandomPoints</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Rect</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rect</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">clip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="p">{</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">	</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">points</span><span class="p">;</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">	</span><span class="n">PoissonDisk2D</span><span class="w"> </span><span class="n">pd</span><span class="p">{</span><span class="w"> </span><span class="n">rect</span><span class="p">.</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">point</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">pd</span><span class="p">.</span><span class="n">getPoints</span><span class="p">())</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">point</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rect</span><span class="p">.</span><span class="n">pos</span><span class="p">);</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clip</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="k">not</span><span class="w"> </span><span class="n">rect</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">pos</span><span class="p">)))</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">			</span><span class="k">continue</span><span class="p">;</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">		</span><span class="n">points</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pos</span><span class="p">;</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">points</span><span class="p">;</span>
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="p">}</span>
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="kt">bool</span><span class="w"> </span><span class="n">SortByY</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="p">{</span>
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="p">}</span>
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="kt">void</span><span class="w"> </span><span class="n">Main</span><span class="p">()</span>
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a><span class="p">{</span>
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="n">Rect</span><span class="w"> </span><span class="n">SceneRect</span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Texture</span><span class="w"> </span><span class="n">texture</span><span class="p">{</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;🌷&quot;</span><span class="n">_emoji</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>
+<a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a><span class="w">	</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">positions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GenerateRandomPoints</span><span class="p">(</span><span class="n">SceneRect</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">)</span>
+<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a><span class="w">		</span><span class="p">.</span><span class="n">sorted_by</span><span class="p">(</span><span class="n">SortByY</span><span class="p">);</span><span class="w"> </span><span class="c1">// 手前の絵文字のほうが奥の絵文字よりあとに描画されるようにソートする</span>
+<a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a>
+<a id="__codelineno-15-42" name="__codelineno-15-42" href="#__codelineno-15-42"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-15-44" name="__codelineno-15-44" href="#__codelineno-15-44"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+<a id="__codelineno-15-45" name="__codelineno-15-45" href="#__codelineno-15-45"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-15-46" name="__codelineno-15-46" href="#__codelineno-15-46"></a><span class="w">			</span><span class="n">positions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GenerateRandomPoints</span><span class="p">(</span><span class="n">SceneRect</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">).</span><span class="n">sorted_by</span><span class="p">(</span><span class="n">SortByY</span><span class="p">);</span>
+<a id="__codelineno-15-47" name="__codelineno-15-47" href="#__codelineno-15-47"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-15-48" name="__codelineno-15-48" href="#__codelineno-15-48"></a>
+<a id="__codelineno-15-49" name="__codelineno-15-49" href="#__codelineno-15-49"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">positions</span><span class="p">)</span>
+<a id="__codelineno-15-50" name="__codelineno-15-50" href="#__codelineno-15-50"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-15-51" name="__codelineno-15-51" href="#__codelineno-15-51"></a><span class="w">			</span><span class="n">texture</span><span class="p">.</span><span class="n">scaled</span><span class="p">(</span><span class="mf">0.4</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
+<a id="__codelineno-15-52" name="__codelineno-15-52" href="#__codelineno-15-52"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-15-53" name="__codelineno-15-53" href="#__codelineno-15-53"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-15-54" name="__codelineno-15-54" href="#__codelineno-15-54"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="13-マウスを使わないゲームではマウスカーソルを非表示にしよう">13. マウスを使わないゲームではマウスカーソルを非表示にしよう<a class="headerlink" href="#13-マウスを使わないゲームではマウスカーソルを非表示にしよう" title="Permanent link">&para;</a></h2>
+<p>キーボードで操作することをプレイヤーに伝える最も簡単な方法は、マウスカーソルを非表示にすることです。マウスカーソルが表示されていると、プレイヤーはマウスを使って操作しようとしてしまいます。マウスを一切使わないゲームではマウスカーソルを非表示にすることを検討しましょう。</p>
+<p>毎フレーム <code>Cursor::RequestStyle(CursorStyle::Hidden)</code> を呼び出すことで、マウスカーソルを非表示にすることができます。</p>
+<details class="memo">
+<summary>コード</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">{</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">		</span><span class="c1">// 現在のフレームではマウスカーソルを非表示にする</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">		</span><span class="n">Cursor</span><span class="o">::</span><span class="n">RequestStyle</span><span class="p">(</span><span class="n">CursorStyle</span><span class="o">::</span><span class="n">Hidden</span><span class="p">);</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="14-色のみで区別する-ui-は避けよう">14. 色のみで区別する UI は避けよう<a class="headerlink" href="#14-色のみで区別する-ui-は避けよう" title="Permanent link">&para;</a></h2>
+<p>色のみで区別する UI は、色の組み合わせによっては P 型や D 型の <a href="https://cudo.jp/?page_id=540" target="_blank">色覚特性</a> を持つ人にとって操作が困難になります。色以外の要素（例えば形状やテキスト）でも区別できるようにするか、色の組み合わせを変えることで、色覚特性を持つ人にも操作しやすい UI にすることができます。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C 型</label><label for="__tabbed_1_2">D 型色覚の見え方の再現</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/reference/game_tips/14-1.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/reference/game_tips/14-2.png" /></p>
+</div>
+</div>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">DrawItem</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ColorF</span><span class="o">&amp;</span><span class="w"> </span><span class="n">color</span><span class="p">)</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">{</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">	</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">		</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="p">}</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="p">{</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">		</span><span class="n">DrawItem</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">		</span><span class="n">DrawItem</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">		</span><span class="n">DrawItem</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">380</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">		</span><span class="n">DrawItem</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">520</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">		</span><span class="n">DrawItem</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">660</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="w">		</span><span class="n">DrawItem</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">}.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.6</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="w">		</span><span class="n">DrawItem</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="w">		</span><span class="n">RectF</span><span class="p">{</span><span class="w"> </span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">),</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">}.</span><span class="n">rotated</span><span class="p">(</span><span class="mi">45</span><span class="n">_deg</span><span class="p">).</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.6</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a><span class="w">		</span><span class="n">DrawItem</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">380</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a><span class="w">		</span><span class="n">RectF</span><span class="p">{</span><span class="w"> </span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span><span class="p">(</span><span class="mi">380</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">),</span><span class="w"> </span><span class="mi">70</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.6</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="w">		</span><span class="n">DrawItem</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">520</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a><span class="w">		</span><span class="n">Shape2D</span><span class="o">::</span><span class="n">Cross</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">520</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="w"> </span><span class="p">}).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.92</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>
+<a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="w">		</span><span class="n">DrawItem</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">660</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">660</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.92</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="15-二次元配列には-grid-を使おう">15. 二次元配列には <code>Grid</code> を使おう<a class="headerlink" href="#15-二次元配列には-grid-を使おう" title="Permanent link">&para;</a></h2>
+<p>Siv3D には二次元配列専用の <code>Grid&lt;Type&gt;</code> クラスがあります。<code>Array&lt;Array&lt;Type&gt;&gt;</code> に比べて、<code>Grid&lt;Type&gt;</code> はメモリの使用量が少なく、アクセスも高速です。また、<code>Grid</code> は <code>Array</code> と同様に <code>for</code> 文で簡単に走査できます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/reference/game_tips/15.png" /></p>
+<details class="memo">
+<summary>コード</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">{</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Font</span><span class="w"> </span><span class="n">font</span><span class="p">{</span><span class="w"> </span><span class="n">FontMethod</span><span class="o">::</span><span class="n">MSDF</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">Offset</span><span class="p">{</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">	</span><span class="c1">// 幅 8, 高さ 6 の二次元配列</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">	</span><span class="n">Grid</span><span class="o">&lt;</span><span class="n">int32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">grid</span><span class="p">(</span><span class="n">Size</span><span class="p">{</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">grid</span><span class="p">)</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">		</span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Random</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">grid</span><span class="p">.</span><span class="n">height</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">grid</span><span class="p">.</span><span class="n">width</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="w">			</span><span class="p">{</span>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="w">				</span><span class="k">const</span><span class="w"> </span><span class="n">Rect</span><span class="w"> </span><span class="n">rect</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="n">Point</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">80</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">80</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Offset</span><span class="p">),</span><span class="w"> </span><span class="mi">80</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="w">				</span><span class="k">const</span><span class="w"> </span><span class="n">int32</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">];</span>
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="w">				</span><span class="n">rect</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Colormap01F</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">10.0</span><span class="p">));</span>
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="w">				</span><span class="n">rect</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.95</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a><span class="w">				</span><span class="n">font</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">TextStyle</span><span class="o">::</span><span class="n">Shadow</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="p">}),</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="n">rect</span><span class="p">.</span><span class="n">center</span><span class="p">());</span>
+<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="w">			</span><span class="p">}</span>
+<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>
+<a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">grid</span><span class="p">.</span><span class="n">height</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">grid</span><span class="p">.</span><span class="n">width</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a><span class="w">			</span><span class="p">{</span>
+<a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a><span class="w">				</span><span class="k">const</span><span class="w"> </span><span class="n">Rect</span><span class="w"> </span><span class="n">rect</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="n">Point</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">80</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">80</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Offset</span><span class="p">),</span><span class="w"> </span><span class="mi">80</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a>
+<a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a><span class="w">				</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">mouseOver</span><span class="p">())</span>
+<a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a><span class="w">				</span><span class="p">{</span>
+<a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a><span class="w">					</span><span class="n">rect</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a><span class="w">				</span><span class="p">}</span>
+<a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a><span class="w">			</span><span class="p">}</span>
+<a id="__codelineno-18-42" name="__codelineno-18-42" href="#__codelineno-18-42"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-18-43" name="__codelineno-18-43" href="#__codelineno-18-43"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-18-44" name="__codelineno-18-44" href="#__codelineno-18-44"></a><span class="p">}</span>
+</code></pre></div>
+</details>
 <h2 id="16">16.<a class="headerlink" href="#16" title="Permanent link">&para;</a></h2>
 <h2 id="17">17.<a class="headerlink" href="#17" title="Permanent link">&para;</a></h2>
 <h2 id="18">18.<a class="headerlink" href="#18" title="Permanent link">&para;</a></h2>
