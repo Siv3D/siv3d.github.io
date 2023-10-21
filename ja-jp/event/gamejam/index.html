@@ -3537,6 +3537,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#10-ソースファイルの提出方法" class="md-nav__link">
+    10. ソースファイルの提出方法
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3821,6 +3828,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#10-ソースファイルの提出方法" class="md-nav__link">
+    10. ソースファイルの提出方法
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3968,12 +3982,13 @@
 <li>概要（100 字以内）</li>
 <li>チームメンバー（名前（HN 可）、メールアドレス、作品担当箇所）</li>
 <li>作品紹介ページ（Scraobox）の URL</li>
-<li>作品を実行するための必要最小限のファイル（.exe または .app または URL またはそれらを含む .zip）<ul>
-<li>Visual Studio がビルド時に生成する <code>Intermediate</code> フォルダや <code>.rc</code>, <code>.ico</code> フォルダは不要です。外部ファイルを使っていない Siv3D アプリは実行ファイル単体で動作します。</li>
+<li>ソースファイル（GitHub リポジトリまたは Gist またはオンラインストレージ）<ul>
+<li><strong>10. ソースファイルの提出方法</strong> が参考になります。</li>
+<li>最低限、Siv3D に関連する C++ ソースコードは含めてください。</li>
 </ul>
 </li>
-<li>ソースファイル（GitHub リポジトリまたは Gist またはオンラインストレージ）<ul>
-<li>最低限、Siv3D に関連する C++ ソースコードは含める</li>
+<li>作品を実行するための必要最小限のファイル（.exe または .app または URL またはそれらを含む .zip）<ul>
+<li>Visual Studio がビルド時に生成する <code>Intermediate</code> フォルダや <code>.rc</code>, <code>.ico</code> フォルダは不要です。外部ファイルを使っていない Siv3D アプリは実行ファイル単体で動作します。</li>
 </ul>
 </li>
 </ul>
@@ -4007,6 +4022,69 @@
 <li><a href="../../learn/" target="_blank">Siv3D を学ぶ</a></li>
 <li><a href="../../reference/game_tips/" target="_blank">ゲーム開発のヒント集</a></li>
 </ul>
+<h2 id="10-ソースファイルの提出方法">10. ソースファイルの提出方法<a class="headerlink" href="#10-ソースファイルの提出方法" title="Permanent link">&para;</a></h2>
+<p>Siv3D のプロジェクトには多くのファイルが含まれます。ソースファイルの提出については、最小限のファイルの提出のみで済ませることができます。おすすめの方針は、<code>Main.cpp</code> と、自分で追加・変更したファイルのみを Gist あるいは GitHub リポジトリに公開し、その URL を提出することです。</p>
+<h4 id="a-1-つのソースコードで完結する場合github-gist-で公開">A. 1 つのソースコードで完結する場合（GitHub Gist で公開）<a class="headerlink" href="#a-1-つのソースコードで完結する場合github-gist-で公開" title="Permanent link">&para;</a></h4>
+<div class="highlight"><span class="filename">ディレクトリ構成例</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ProjectDirectory/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>└── Main.cpp
+</code></pre></div>
+<p><a class="md-button" href="https://gist.github.com/Reputeless/7c10a22d080468e239183b16fb670e34" target="_blank">A 方式のサンプル <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> </p>
+<p>Siv3D に同梱されているフォントや絵文字、アイコンのみを使い、1 つのソースファイル <code>Main.cpp</code> だけでゲームを完成させた場合、<a href="../../tools/gist/" target="_blank">GitHub Gist</a> で <code>Main.cpp</code> のみを公開するのが最も簡単です。GitHub Gist には複数のファイルを追加できます。必要に応じて <code>README.md</code> を追加して説明を書きましょう。</p>
+<h4 id="b-複数のソースコード同一ディレクトリからなる場合github-gist-で公開">B. 複数のソースコード（同一ディレクトリ）からなる場合（GitHub Gist で公開）<a class="headerlink" href="#b-複数のソースコード同一ディレクトリからなる場合github-gist-で公開" title="Permanent link">&para;</a></h4>
+<div class="highlight"><span class="filename">ディレクトリ構成例</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ProjectDirectory/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>│
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── Main.cpp
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── Common.hpp
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├── Title.hpp
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├── Title.cpp
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>├── Game.hpp
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>└── Game.cpp
+</code></pre></div>
+<p><a class="md-button" href="https://gist.github.com/Reputeless/9fdae7c44013e25f290b255dcc8701e7" target="_blank">B 方式のサンプル <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> </p>
+<p>Siv3D に同梱されているフォントや絵文字、アイコンのみを使い、同一ディレクトリ上の複数のソースファイル（.cpp / .hpp）のみでゲームを完成させた場合、<a href="../../tools/gist/" target="_blank">GitHub Gist</a> でそれらソースファイル（.cpp / .hpp）を公開するのが最も簡単です。GitHub Gist には複数のファイルを追加できます。必要に応じて <code>README.md</code> を追加して説明を書きましょう。ファイル数が多い場合は C 方式を選択することもできます。</p>
+<h4 id="c-複数の階層化されたソースコードからなる場合github-リポジトリで公開">C. 複数の階層化されたソースコードからなる場合（GitHub リポジトリで公開）<a class="headerlink" href="#c-複数の階層化されたソースコードからなる場合github-リポジトリで公開" title="Permanent link">&para;</a></h4>
+<div class="highlight"><span class="filename">ディレクトリ構成例</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ProjectDirectory/
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>│
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── Main.cpp
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>├── Common.hpp
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>├── Title/
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│	├── Title.hpp
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│	└── Title.cpp
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>└── Game/
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>	├── Game.hpp
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>	└── Game.cpp
+</code></pre></div>
+<p><a class="md-button" href="https://github.com/Reputeless/Sample_Siv3D_Project_1" target="_blank">C 方式のサンプル <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> </p>
+<p>Siv3D に同梱されているフォントや絵文字、アイコンのみを使い、階層化されたディレクトリ上の複数のソースファイル（.cpp / .hpp）のみでゲームを完成させた場合、GitHub リポジトリでソースファイル（.cpp / .hpp）を公開するのが最適です。必要に応じて <code>README.md</code> を追加して説明を書きましょう。</p>
+<p>Siv3D ユーザであれば簡単にプロジェクトを作成できるため、プロジェクトファイル（.sln / .xcodeproj / .vcxproj）は公開しなくても構いません。</p>
+<h4 id="d-画像や音声テキストなどの外部ファイルを使用する場合github-リポジトリで公開">D. 画像や音声、テキストなどの外部ファイルを使用する場合（GitHub リポジトリで公開）<a class="headerlink" href="#d-画像や音声テキストなどの外部ファイルを使用する場合github-リポジトリで公開" title="Permanent link">&para;</a></h4>
+<div class="highlight"><span class="filename">ディレクトリ構成例</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ProjectDirectory/
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>│
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── Main.cpp
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>├── Common.hpp
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>├── Title/
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   ├── Title.hpp
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│   └── Title.cpp
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>├── Game/
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│   ├── Game.hpp
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│   └── Game.cpp
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>└── App/
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    ├── asset/
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    │   ├── image1.png
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    │   └── image2.png
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    │
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    └── config.ini
+</code></pre></div>
+<p><a class="md-button" href="https://github.com/Reputeless/Sample_Siv3D_Project_2" target="_blank">D 方式のサンプル <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> </p>
+<p>App フォルダ内に画像や音声、テキストなどの外部ファイルを配置した場合、GitHub リポジトリでソースファイル（.cpp / .hpp）と <code>App</code> フォルダの差分（追加したファイル）を公開するのが最適です。必要に応じて <code>README.md</code> を追加して説明を書きましょう。</p>
+<h4 id="e-より複雑な場合github-リポジトリで公開">E. より複雑な場合（GitHub リポジトリで公開）<a class="headerlink" href="#e-より複雑な場合github-リポジトリで公開" title="Permanent link">&para;</a></h4>
+<p>より複雑な場合は、可能な範囲ソースファイル・関連ファイルを GitHub リポジトリで公開してください。必要に応じて、<a href="../../tools/gitignore/">Siv3D プロジェクト用の .gitignore ファイル</a> も活用してください。</p>
 
 
 
