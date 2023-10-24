@@ -4309,15 +4309,15 @@
 <a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a><span class="w">				</span><span class="n">box</span><span class="p">.</span><span class="n">applyForce</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">60000</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">StepTime</span><span class="p">);</span>
 <a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a><span class="w">			</span><span class="p">}</span>
 <a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>
-<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a><span class="w">			</span><span class="c1">// [↑] キーが押されていたら</span>
-<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a><span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">KeyUp</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
-<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a><span class="w">			</span><span class="p">{</span>
-<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a><span class="w">				</span><span class="c1">// ボディに上向きの力を加える</span>
-<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a><span class="w">				</span><span class="n">box</span><span class="p">.</span><span class="n">applyLinearImpulse</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-80</span><span class="w"> </span><span class="p">});</span>
-<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a><span class="w">			</span><span class="p">}</span>
-<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>
-<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a><span class="w">			</span><span class="c1">// 2D 物理演算のワールドを更新する</span>
-<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a><span class="w">			</span><span class="n">world</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">StepTime</span><span class="p">);</span>
+<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a><span class="w">			</span><span class="c1">// 2D 物理演算のワールドを更新する</span>
+<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a><span class="w">			</span><span class="n">world</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">StepTime</span><span class="p">);</span>
+<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>
+<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a><span class="w">		</span><span class="c1">// [↑] キーが押されていたら</span>
+<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">KeyUp</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a><span class="w">			</span><span class="c1">// ボディに上向きの力を加える</span>
+<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a><span class="w">			</span><span class="n">box</span><span class="p">.</span><span class="n">applyLinearImpulse</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-300</span><span class="w"> </span><span class="p">});</span>
 <a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a><span class="w">		</span><span class="p">}</span>
 <a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>
 <a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a><span class="w">		</span><span class="c1">// 2D カメラを更新する</span>
