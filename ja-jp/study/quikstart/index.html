@@ -4539,7 +4539,7 @@
 </code></pre></div></p>
 </div>
 <p>座標や大きさを <code>double</code> 型で扱いたい場合は、<code>Rect</code> の代わりに <code>RectF</code> 使います。</p>
-<p><code>Scene::Time()</code> は、ゲーム開始からの経過時間を秒 （<code>double</code> 型）で返します。</p>
+<p><code>Scene::Time()</code> は、プログラム開始からの経過時間を秒 （<code>double</code> 型）で返します。</p>
 <p>下記のコードでは、長方形の幅 <code>w</code> が毎秒 20.0 のペースで増えていきます。<code>double</code> 型である <code>w</code> に合わせるため、<code>Rect</code> ではなく <code>RectF</code> を使います。</p>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/circle-rect/7.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
@@ -4558,7 +4558,7 @@
 <div class="admonition info">
 <p class="admonition-title">RectF の構造</p>
 <p><code>RectF</code> は次のようなクラスです。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Rect</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">RectF</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="p">{</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>

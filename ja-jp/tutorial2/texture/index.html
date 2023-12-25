@@ -4319,7 +4319,7 @@
 <a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="255-ミップマップの生成">25.5 ミップマップの生成<a class="headerlink" href="#255-ミップマップの生成" title="Permanent link">&para;</a></h2>
-<p>テクスチャを元のサイズよりも縮小して描画する場合には、<strong>ミップマップ</strong>を使用すると、滑らかな描画が可能になります。ミップマップとは、元の画像を縮小した画像の集合です。ミップマップを使用すると、縮小描画時のノイズと処理コストが提言します。</p>
+<p>テクスチャを元のサイズよりも縮小して描画する場合には、<strong>ミップマップ</strong>を使用すると、滑らかな描画が可能になります。ミップマップとは、元の画像を縮小した画像の集合です。ミップマップを使用すると、縮小描画時のノイズと処理コストが低減します。</p>
 <p>Siv3D では、ミップマップは <code>Texture</code> の内部で管理されていて、<code>Texture</code> を作成する際に <code>TextureDesc::Mipped</code> を指定することでミップマップが生成され、適切に使用されます。絵文字とアイコンからテクスチャを作成する際にはデフォルトでミップマップが生成されます。一方、画像ファイルや <code>Image</code> からテクスチャを作成する場合には明示的な <code>TextureDesc::Mipped</code> の指定が必要です。</p>
 <table>
 <thead>
