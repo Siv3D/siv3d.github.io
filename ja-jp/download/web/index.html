@@ -457,8 +457,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#利用ガイド" class="md-nav__link">
-    利用ガイド
+  <a href="#1-開発環境のセットアップ" class="md-nav__link">
+    1. 開発環境のセットアップ
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 開発環境のセットアップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-共通の準備" class="md-nav__link">
+    1.1 共通の準備
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-web-版プロジェクトのビルド" class="md-nav__link">
+    2. Web 版プロジェクトのビルド
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-プログラムの公開" class="md-nav__link">
+    3. プログラムの公開
+  </a>
+  
+    <nav class="md-nav" aria-label="3. プログラムの公開">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-での設定例" class="md-nav__link">
+    Visual Studio での設定例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-web-版のサポート" class="md-nav__link">
+    4. Web 版のサポート
   </a>
   
 </li>
@@ -3661,8 +3708,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#利用ガイド" class="md-nav__link">
-    利用ガイド
+  <a href="#1-開発環境のセットアップ" class="md-nav__link">
+    1. 開発環境のセットアップ
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 開発環境のセットアップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-共通の準備" class="md-nav__link">
+    1.1 共通の準備
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-web-版プロジェクトのビルド" class="md-nav__link">
+    2. Web 版プロジェクトのビルド
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-プログラムの公開" class="md-nav__link">
+    3. プログラムの公開
+  </a>
+  
+    <nav class="md-nav" aria-label="3. プログラムの公開">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-での設定例" class="md-nav__link">
+    Visual Studio での設定例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-web-版のサポート" class="md-nav__link">
+    4. Web 版のサポート
   </a>
   
 </li>
@@ -3686,14 +3780,59 @@
 
 
 <h1 id="web-向けの-siv3d-プログラミングを始める">Web 向けの Siv3D プログラミングを始める<a class="headerlink" href="#web-向けの-siv3d-プログラミングを始める" title="Permanent link">&para;</a></h1>
-<p>Web ブラウザで動作する Siv3D が非公式で提供されています。Web 版にはいくつか制約や注意点があるため、Siv3D の使用に慣れた中級者以上を対象としています。利用にあたって困ったことがあれば Siv3D Discord サーバの <code>#web</code> チャンネルで質問してください。</p>
-<h2 id="利用ガイド">利用ガイド<a class="headerlink" href="#利用ガイド" title="Permanent link">&para;</a></h2>
+<p>Web ブラウザで実行できる Siv3D が非公式で提供されています。Web 版にはいくつか制約や注意点があるため、<strong>Siv3D の使用に慣れた中級者以上を対象</strong>としています。利用にあたって困ったことがあれば、Siv3D Discord サーバの <code>#web</code> チャンネルで質問してください。</p>
+<h2 id="1-開発環境のセットアップ">1. 開発環境のセットアップ<a class="headerlink" href="#1-開発環境のセットアップ" title="Permanent link">&para;</a></h2>
+<h3 id="11-共通の準備">1.1 共通の準備<a class="headerlink" href="#11-共通の準備" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="https://siv3d.kamenokosoft.com/docs/ja/" target="_blank">OpenSiv3D for Web <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> を参照してください。</li>
-<li>初回のビルドではエラーメッセージが表示されることがありますが、もう一度ビルドすると正常にビルドできます。</li>
-<li>Web 版のビルドでは、デフォルトで <code>engine/</code> と <code>example/</code> のすべてのファイルを最終出力に同梱するため、最終出力ファイルのサイズは Release ビルドでも合計数十 MB と大きくなります。そうしたアプリケーションを Web で公開すると、アクセスした利用者がファイルのダウンロードに時間がかかってしまうため、実際にアプリケーションを公開する際は、不要なファイルを削除する必要があります（参考: <a href="../../tutorial3/release/">チュートリアル 60. アプリの公開</a>）。</li>
-<li>Emscripten リンカの設定において「追加の依存ファイル」からプログラムが使用していないライブラリ（例: <code>Siv3DScript</code>, <code>opencv_objdetect</code>, <code>opencv_photo</code>, <code>opencv_imgproc</code>, <code>turbojpeg</code>, <code>gif</code>, <code>webp</code>, <code>opusfile</code>, <code>opus</code>, <code>tiff</code>）を削除することで、Web 版の出力ファイルのサイズは、<strong>最小で数 MB 程度</strong> までコンパクトにできます。詳しくは Siv3D Discord サーバの <code>#web</code> チャンネルでご相談ください。</li>
+<li><a href="https://siv3d.kamenokosoft.com/docs/ja/" target="_blank">OpenSiv3D for Web <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> を参照してください。<ul>
+<li>Visual Studio 2022 の場合は、全部で 3 つのソフトウェアをダウンロード・インストールします。</li>
 </ul>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">有志による最新版の提供</p>
+<p>上記では Siv3D v0.6.6 相当の SDK が提供されていますが、より新しいバージョンの Siv3D への準拠度を高めた SDK が有志によって開発・提供されています。上記 <a href="https://siv3d.kamenokosoft.com/docs/ja/" target="_blank">OpenSiv3D for Web のインストール手順 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> で導入するソフトウェアのうち、Siv3D SDK について下記リンクからダウンロードできる SDK に置き換えてください。Windows + Visual Studio の場合は「OpenSiv3D_0.6.13_Web-Installer-wasm.exe」です。</p>
+<ul>
+<li><a href="https://drive.google.com/drive/folders/15DxoEOpQnpREQpaak8xyicpAjLMpi7EX" target="_blank">OpenSiv3D v0.6.13 Web SDK <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a></li>
+</ul>
+</div>
+<h2 id="2-web-版プロジェクトのビルド">2. Web 版プロジェクトのビルド<a class="headerlink" href="#2-web-版プロジェクトのビルド" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Web 版 Siv3D のビルド所用時間は、通常の Siv3D の数倍以上です。普段の開発は通常の Siv3D で行い、Web 版での動作確認は必要に応じて行うことが推奨されます。</li>
+<li>Visual Studio では、正しいコードであってもエディタ上に赤波線やエラーメッセージが表示されることがあります。</li>
+<li>Visual Studio では「▶」でビルド・実行ができますが、Google Chrome をインストールしていない場合、ビルド完了後に実行がされないことがあります。</li>
+<li>生成された <code>.html</code> は、ローカル環境ではダブルクリックで実行することはできません。デバッガ経由で起動するか、VS Code 拡張の <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server" target="_blank">Live Preview <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> を利用してください。</li>
+</ul>
+<h2 id="3-プログラムの公開">3. プログラムの公開<a class="headerlink" href="#3-プログラムの公開" title="Permanent link">&para;</a></h2>
+<ul>
+<li>ビルドによって最終的に生成された 4 つのファイル（<code>.html</code>, <code>.js</code>, <code>.data</code>, <code>.wasm</code>）すべてを Web サーバにアップロードします。<ul>
+<li>GitHub Pages などの無料の Web サービスを利用すると便利です。</li>
+</ul>
+</li>
+<li><code>.html</code> の <code>&lt;title&gt;</code> タグを手作業で書き換えることで、Web ページのタイトルを変更できます。</li>
+<li>Web 版のビルドでは、デフォルトで <code>resource/engine/</code> と <code>example/</code> のすべてを最終生成ファイルに同梱するため、ファイルサイズは Release ビルドでも合計数十 MB と大きくなります。これらを Web で公開すると、アクセスした利用者がファイルのダウンロードに時間がかかってしまうため、実際にアプリケーションを公開する際は、<strong>不要な同梱ファイルを除外</strong>してください（参考: <a href="../../tutorial3/release/">チュートリアル 60. アプリの公開</a>）。</li>
+<li>Emscripten リンカの設定において「追加の依存ファイル」からプログラムが使用していないライブラリ（例: <code>Siv3DScript</code>, <code>opencv_objdetect</code>, <code>opencv_photo</code>, <code>turbojpeg</code>, <code>gif</code>, <code>webp</code>, <code>opusfile</code>, <code>opus</code>, <code>tiff</code>）を削除することで、Web 版の出力ファイルのサイズをさらに減らすことができます。</li>
+<li>最もコンパクトな場合、数 MB 以下のファイルサイズになります。</li>
+</ul>
+<h3 id="visual-studio-での設定例">Visual Studio での設定例<a class="headerlink" href="#visual-studio-での設定例" title="Permanent link">&para;</a></h3>
+<h4 id="同梱フォルダの指定">同梱フォルダの指定<a class="headerlink" href="#同梱フォルダの指定" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$(ProjectDir)\フォルダ名@/フォルダ名</code><ul>
+<li>例えば <code>asset</code> フォルダを同梱する場合は <code>$(ProjectDir)\asset@/asset</code> と指定します。</li>
+<li><code>example</code> フォルダを同梱しない場合は <code>$(ProjectDir)\example@/example</code> を削除します。</li>
+</ul>
+</li>
+</ul>
+<div class="noshadow-75"><img src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/download/web1.png"></div>
+
+<h4 id="依存ファイルの削除">依存ファイルの削除<a class="headerlink" href="#依存ファイルの削除" title="Permanent link">&para;</a></h4>
+<ul>
+<li>プログラムが使用していないライブラリをここから削除します。</li>
+</ul>
+<div class="noshadow-75"><img src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/download/web2.png"></div>
+
+<h2 id="4-web-版のサポート">4. Web 版のサポート<a class="headerlink" href="#4-web-版のサポート" title="Permanent link">&para;</a></h2>
+<p>Web 版 Siv3D は非公式ですが、Siv3D Discord サーバの <code>#web</code> チャンネルで質問や報告を受け付けています。</p>
 
 
 

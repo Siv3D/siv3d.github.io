@@ -3492,6 +3492,57 @@
 <li>In the web version build, all files of <code>engine/</code> and <code>example/</code> are included in the final output by default, making the final output file size several tens of MB even in the Release build. When you publish such an application on the web, it takes time for the users accessing it to download the files. Therefore, when you actually publish the application, you need to delete unnecessary files (see: <a href="../../tutorial3/release/">Tutorial 60. Publishing the Application</a> for reference).</li>
 <li>By removing libraries that are not used by the program from the "additional dependency files" in the Emscripten linker settings (e.g. <code>Siv3DScript</code>, <code>opencv_objdetect</code>, <code>opencv_photo</code>, <code>opencv_imgproc</code>, <code>turbojpeg</code>, <code>gif</code>, <code>webp</code>, <code>opusfile</code>, <code>opus</code>, <code>tiff</code>), the output file size of the web version can be compacted to <strong>a minimum of a few MBs</strong>. For more details, please consult in the <code>#web</code> channel on the Siv3D Discord server.</li>
 </ul>
+<h1 id="getting-started-with-siv3d-for-web_1">Getting Started with Siv3D for Web<a class="headerlink" href="#getting-started-with-siv3d-for-web_1" title="Permanent link">&para;</a></h1>
+<p>An unofficial version of Siv3D that can generate programs that run in a web browser is available. Due to several constraints and considerations in the Web version, it is intended for <strong>intermediate to advanced users who are familiar with using Siv3D</strong>. If you encounter any difficulties in using it, please ask questions in the <code>#web</code> channel of the Siv3D Discord server.</p>
+<h2 id="1-setting-up-the-development-environment">1. Setting Up the Development Environment<a class="headerlink" href="#1-setting-up-the-development-environment" title="Permanent link">&para;</a></h2>
+<h3 id="11-common-preparations">1.1 Common Preparations<a class="headerlink" href="#11-common-preparations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Please refer to <a href="https://siv3d.kamenokosoft.com/docs/en/">OpenSiv3D for Web <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a>. If you are using Visual Studio 2022, download and install three pieces of software.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Latest Version Provided by Volunteers</p>
+<p>The link above provides an SDK equivalent to Siv3D v0.6.6, but a more updated SDK, which is more compliant with newer versions of Siv3D, is being developed and provided by volunteers. Replace the Siv3D SDK from the software introduced in the above <a href="https://siv3d.kamenokosoft.com/docs/en/" target="_blank">installation instructions for OpenSiv3D for Web <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> with the SDK downloadable from the link below. For Windows + Visual Studio, use "OpenSiv3D_0.6.13_Web-Installer-wasm.exe."</p>
+<ul>
+<li><a href="https://drive.google.com/drive/folders/15DxoEOpQnpREQpaak8xyicpAjLMpi7EX" target="_blank">OpenSiv3D v0.6.13 Web SDK <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a></li>
+</ul>
+</div>
+<h2 id="2-building-a-web-project">2. Building a Web Project<a class="headerlink" href="#2-building-a-web-project" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The build time for the Web version of Siv3D is several times longer than for the normal version. It is recommended to develop with the normal Siv3D and perform testing on the Web version as needed.</li>
+<li>In Visual Studio, red wavy lines or error messages may appear on the editor, even with correct code.</li>
+<li>In Visual Studio, you can build and run with the "▶" button, but if Google Chrome is not installed, the program may not run after building.</li>
+<li>The generated <code>.html</code> file cannot be executed by double-clicking in a local environment. Launch it via a debugger or use the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server" target="_blank">Live Preview <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg></span></a> extension in VS Code.</li>
+</ul>
+<h2 id="3-publishing-the-program">3. Publishing the Program<a class="headerlink" href="#3-publishing-the-program" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Upload all four files generated by the build process (<code>.html</code>, <code>.js</code>, <code>.data</code>, <code>.wasm</code>) to a web server.<ul>
+<li>It's convenient to use free web services like GitHub Pages.</li>
+</ul>
+</li>
+<li>Manually editing the <code>&lt;title&gt;</code> tag in the <code>.html</code> file allows you to change the title of the web page.</li>
+<li>In the Web version build, by default, everything in <code>resource/engine/</code> and <code>example/</code> is bundled with the final output files, resulting in a total size of several tens of MB even in the Release build. When publishing these on the web, the files can take a long time to download for users, so please <strong>exclude unnecessary bundled files</strong> when actually publishing your application (see: <a href="../../tutorial3/release/">Tutorial 60. Publishing Apps</a>).</li>
+<li>By removing libraries not used by the program from the "Additional Dependencies" in the Emscripten linker settings (e.g., <code>Siv3DScript</code>, <code>opencv_objdetect</code>, <code>opencv_photo</code>, <code>turbojpeg</code>, <code>gif</code>, <code>webp</code>, <code>opusfile</code>, <code>opus</code>, <code>tiff</code>), you can further reduce the file size of the Web version output.</li>
+<li>In the most compact cases, the file size can be reduced to a few MB or less.</li>
+</ul>
+<h3 id="examples-of-settings-in-visual-studio">Examples of Settings in Visual Studio<a class="headerlink" href="#examples-of-settings-in-visual-studio" title="Permanent link">&para;</a></h3>
+<h4 id="specifying-bundled-folders">Specifying Bundled Folders<a class="headerlink" href="#specifying-bundled-folders" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$(ProjectDir)\folder_name@/folder_name</code><ul>
+<li>For example, to bundle the <code>asset</code> folder, specify <code>$(ProjectDir)\asset@/asset</code>.</li>
+<li>To exclude the <code>example</code> folder, remove <code>$(ProjectDir)\example@/example</code>.</li>
+</ul>
+</li>
+</ul>
+<div class="noshadow-75"><img src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/download/web1.png"></div>
+
+<h4 id="deleting-dependency-files">Deleting Dependency Files<a class="headerlink" href="#deleting-dependency-files" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Remove libraries not used by the program from here.</li>
+</ul>
+<div class="noshadow-75"><img src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/download/web2.png"></div>
+
+<h2 id="4-support-for-the-web-version">4. Support for the Web Version<a class="headerlink" href="#4-support-for-the-web-version" title="Permanent link">&para;</a></h2>
+<p>Although the Web version of Siv3D is unofficial, questions and reports are welcome in the <code>#web</code> channel on the Siv3D Discord server.</p>
 
 
 
