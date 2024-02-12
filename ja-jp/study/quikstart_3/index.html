@@ -1,0 +1,4778 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Siv3D: 創造のための C++ フレームワーク">
+      
+      
+        <meta name="author" content="Ryo Suzuki">
+      
+      
+        <link rel="canonical" href="https://siv3d.github.io/ja-jp/study/quikstart_3/">
+      
+      
+        <link rel="prev" href="../quikstart_2/">
+      
+      
+        <link rel="next" href="../quikstart_4/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>3 コマ目（色と図形） - Siv3D</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="siv3d" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#勉強会-3-コマ目色と図形" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="Siv3D" class="md-header__button md-logo" aria-label="Siv3D" data-md-component="logo">
+      
+  <img src="../../assets/code-white-48dp.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Siv3D
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3 コマ目（色と図形）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="言語切り替え">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="https://siv3d.github.io/ja-jp/" hreflang="ja" class="md-select__link">
+              日本語
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="https://siv3d.github.io/en-us/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Siv3D/OpenSiv3D" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Siv3D/OpenSiv3D
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Siv3D" class="md-nav__button md-logo" aria-label="Siv3D" data-md-component="logo">
+      
+  <img src="../../assets/code-white-48dp.svg" alt="logo">
+
+    </a>
+    Siv3D
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Siv3D/OpenSiv3D" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Siv3D/OpenSiv3D
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Siv3D をはじめよう
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Siv3D を学ぶ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Siv3D の機能
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ダウンロード
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ダウンロード
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/macos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    macOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/ubuntu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    チュートリアル
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            チュートリアル
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    入門チュートリアル 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            入門チュートリアル 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/hello/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. はじめての Siv3D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Siv3D の基本
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/mainloop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Main 関数の構成
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/app-basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. アプリケーションの基本操作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/print/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. 簡易的なデータ表示
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/basic-types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. 基本的なデータ型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. 背景の色を変える
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/circle-rect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. 円と長方形を描く
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/pattern/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. 模様を描く
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/emoji/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. 絵文字を描く
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. テキストを表示する
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/motion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. 変数と動き
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/keyboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. キーボード入力を扱う
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/mouse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. マウス入力を扱う
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/button/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. ボタンを作る
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/cookie-clicker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. クッキークリッカー風のゲームを作る
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    入門チュートリアル 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            入門チュートリアル 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/shape/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. 図形を描く
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/motion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18. 動きを作る
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. 文字列クラス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/array/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. 動的配列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/grid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. 二次元配列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/hash-table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22. ハッシュテーブル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/optional/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23. 無効値を表現できる型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/2d-intersection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24. あたり判定
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/texture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25. テクスチャを描く
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    26. 動画を描く
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/format/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    27. 数値と文字列の変換
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/gui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    28. GUI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    29. ランダム
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/time/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    30. 日付と時刻、時間
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/font/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    31. テキストを表示する
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    32. シーンとウィンドウ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/keyboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    33. キーボード入力
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/mouse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    34. マウス入力
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/utility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    35. 便利な関数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/interaction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    36. インタラクションの実装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    入門チュートリアル 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            入門チュートリアル 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/audio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    37. オーディオ再生
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/asset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    38. アセット管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/2d-render-state/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    39. 2D レンダーステート
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/effect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    40. エフェクト
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/render-texture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    41. レンダーテクスチャ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/filesystem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    42. ファイルシステム
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/text-file/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    43. テキストファイル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/config-file/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    44. 設定ファイル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/binary-file/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    45. バイナリファイル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/file-dialog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    46. ファイルダイアログ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/dragdrop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    47. ドラッグ & ドロップ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/messagebox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    48. メッセージボックス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/resource-file/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    49. リソースファイル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/http-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    50. HTTP クライアント
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/scene-manager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    51. シーン管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/gamepad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    52. ゲームパッド
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    53. 画像編集
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/wave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    54. 音声波形
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/microphone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    55. マイク入力
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/webcam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    56. Web カメラ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/geometry2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    57. 高度な図形処理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/profiler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    58. プロファイラと最適化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/openai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    59. OpenAI API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial3/release/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    60. アプリの公開
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    入門チュートリアル 4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            入門チュートリアル 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/2d-shader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    61. 2D カスタムシェーダ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/3d-shape/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    62. 3D 形状を描く
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/3d-shape-advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    63. 3D 形状を描く（発展）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/3d-intersection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    64. 3D の交差判定
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/tcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    65. TCP 通信
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/multiplayer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    66. マルチプレイヤー
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/serial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    67. シリアル通信
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/osc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    68. OSC 通信
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/pipe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    69. パイプ通信
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/text-to-speech/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    70. 文章の読み上げ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/qr-code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    71. QR コード
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/compression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    72. ファイルの圧縮
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/video-edit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    73. 動画編集
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/pentablet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    74. ペンタブレット
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/leap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    75. Leap デバイス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/navmesh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    76. ナビメッシュ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/physics2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    77. 2D 物理演算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/math-parser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    78. 数式パーサ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    79. ユーザ環境の取得
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/addon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    80. アドオンを作る
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    サンプル
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            サンプル
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/games/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ゲームのサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    アプリケーションのサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web サービスとの連係サンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/shapes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    図形のサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2D 描画のサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    画像のサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文字表示のサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UI のサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/visualize/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    データ可視化のサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/motion-graphics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    モーショングラフィックスのサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/addon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    アドオンのサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/sound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    音のサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/physics2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2D 物理演算のサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/3d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D 描画のサンプル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/gamelauncher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ゲームランチャーを作る
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    クラス一覧
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    記事
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            記事
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/game_tips/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ゲーム開発のヒント集
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/messagebox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    メッセージボックス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    非同期処理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/adapter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    自作クラスと Siv3D の連係
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/helloworld/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Siv3D で Hello world する 21 の方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/avoid-global-variable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    グローバル変数として作成できないクラス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/polymorphism/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多態性を使ったクラスの実装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    開発に便利なツール
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            開発に便利なツール
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/palette/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Siv3D Palette Browser
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/emoji/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    絵文字とアイコンの検索
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/easing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Easing Functions Cheat Sheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/gist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Gist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/scrapbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scrapbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/gamebar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xbox Game Bar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/vscoloroutput/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSColorOutput
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/gitignore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    .gitignore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/hot-reload/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ホットリロード
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/msvc-exception/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    例外の発生個所の表示
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    コミュニティ
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            コミュニティ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コミュニティ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    これまでのイベント
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    開発に参加する
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            開発に参加する
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    報告や提案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    自前ビルドの手順
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/commit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コントリビューションガイド
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/coding-style/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コーディングスタイル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    勉強会
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            勉強会
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quikstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    高速チュートリアル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quikstart_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 コマ目（体験）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quikstart_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 コマ目（基本）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    3 コマ目（色と図形）
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    3 コマ目（色と図形）
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-背景の色を変える" class="md-nav__link">
+    1. 背景の色を変える
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 背景の色を変える">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-palette色名-で背景色を指定する" class="md-nav__link">
+    1.1 Palette::色名 で背景色を指定する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-colorf-赤-緑-青--で背景色を指定する" class="md-nav__link">
+    1.2 ColorF{ 赤, 緑, 青 } で背景色を指定する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-colorf-グレースケール--で背景色を指定する" class="md-nav__link">
+    1.3 ColorF{ グレースケール } で背景色を指定する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-hsv-色相-彩度-明度--で背景色を指定する" class="md-nav__link">
+    1.4 HSV{ 色相, 彩度, 明度 } で背景色を指定する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-座標系" class="md-nav__link">
+    2. 座標系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-図形を描く" class="md-nav__link">
+    3. 図形を描く
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 図形を描く">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-円を描く" class="md-nav__link">
+    3.1 円を描く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-長方形を描く" class="md-nav__link">
+    3.2 長方形を描く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-円や長方形の枠を描く" class="md-nav__link">
+    3.3 円や長方形の枠を描く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-長方形のグラデーション" class="md-nav__link">
+    3.4 長方形のグラデーション
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-線分を描く" class="md-nav__link">
+    3.5 線分を描く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-三角形を描く" class="md-nav__link">
+    3.6 三角形を描く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-四角形を描く" class="md-nav__link">
+    3.7 四角形を描く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-これ以外の図形" class="md-nav__link">
+    3.8 これ以外の図形
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-模様を描く" class="md-nav__link">
+    4. 模様を描く
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 模様を描く">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-円を並べる" class="md-nav__link">
+    4.1 円を並べる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-円を縦横に並べる二重ループ" class="md-nav__link">
+    4.2 円を縦横に並べる（二重ループ）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-条件によって円の大きさを変える" class="md-nav__link">
+    4.3 条件によって円の大きさを変える
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-色を変えながら長方形を並べる" class="md-nav__link">
+    4.4 色を変えながら長方形を並べる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-色を変えながら長方形を並べるhsv" class="md-nav__link">
+    4.5 色を変えながら長方形を並べる（HSV）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quikstart_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 コマ目（絵文字と動き）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quikstart_5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 コマ目（テキストの表示）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quikstart_6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 コマ目（キーとマウス）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quikstart_7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 コマ目（時間と乱数）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quikstart_8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8 コマ目（配列と図形の交差）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quikstart_9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9 コマ目（ゲーム開発）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    生成 AI 活用例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polymorphism/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多態性入門
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    イベント
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            イベント
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/gamejam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ゲームジャム
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event/gamejam2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ゲームジャム入賞作品
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    協賛企業の募集
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            協賛企業の募集
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sponsorship/corporate-sponsor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    協賛企業の募集について
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sponsorship/corporate-sponsor-guideline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    協賛特典
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    リリースノート
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mascot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Siv3D くん
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acknowledgments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    謝辞
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-背景の色を変える" class="md-nav__link">
+    1. 背景の色を変える
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 背景の色を変える">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-palette色名-で背景色を指定する" class="md-nav__link">
+    1.1 Palette::色名 で背景色を指定する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-colorf-赤-緑-青--で背景色を指定する" class="md-nav__link">
+    1.2 ColorF{ 赤, 緑, 青 } で背景色を指定する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-colorf-グレースケール--で背景色を指定する" class="md-nav__link">
+    1.3 ColorF{ グレースケール } で背景色を指定する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-hsv-色相-彩度-明度--で背景色を指定する" class="md-nav__link">
+    1.4 HSV{ 色相, 彩度, 明度 } で背景色を指定する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-座標系" class="md-nav__link">
+    2. 座標系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-図形を描く" class="md-nav__link">
+    3. 図形を描く
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 図形を描く">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-円を描く" class="md-nav__link">
+    3.1 円を描く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-長方形を描く" class="md-nav__link">
+    3.2 長方形を描く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-円や長方形の枠を描く" class="md-nav__link">
+    3.3 円や長方形の枠を描く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-長方形のグラデーション" class="md-nav__link">
+    3.4 長方形のグラデーション
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-線分を描く" class="md-nav__link">
+    3.5 線分を描く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-三角形を描く" class="md-nav__link">
+    3.6 三角形を描く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-四角形を描く" class="md-nav__link">
+    3.7 四角形を描く
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-これ以外の図形" class="md-nav__link">
+    3.8 これ以外の図形
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-模様を描く" class="md-nav__link">
+    4. 模様を描く
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 模様を描く">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-円を並べる" class="md-nav__link">
+    4.1 円を並べる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-円を縦横に並べる二重ループ" class="md-nav__link">
+    4.2 円を縦横に並べる（二重ループ）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-条件によって円の大きさを変える" class="md-nav__link">
+    4.3 条件によって円の大きさを変える
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-色を変えながら長方形を並べる" class="md-nav__link">
+    4.4 色を変えながら長方形を並べる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-色を変えながら長方形を並べるhsv" class="md-nav__link">
+    4.5 色を変えながら長方形を並べる（HSV）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="勉強会-3-コマ目色と図形">勉強会 3 コマ目（色と図形）<a class="headerlink" href="#勉強会-3-コマ目色と図形" title="Permanent link">&para;</a></h1>
+<h2 id="1-背景の色を変える">1. 背景の色を変える<a class="headerlink" href="#1-背景の色を変える" title="Permanent link">&para;</a></h2>
+<p>背景の色は <code>Scene::SetBackground(色)</code> で変更できます。色の指定方法はさまざまな方法があります。</p>
+<table>
+<thead>
+<tr>
+<th>色の指定方法</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Palette::色名</code></td>
+<td>Siv3D で定義されている色を指定する。<br><code>Palette::White</code>, <code>Palette::Black</code>, <code>Palette::Skyblue</code> など</td>
+</tr>
+<tr>
+<td><code>ColorF{ 赤, 緑, 青 }</code></td>
+<td>赤、緑、青成分を 0.0～1.0 の範囲で指定する</td>
+</tr>
+<tr>
+<td><code>ColorF{ グレースケール }</code></td>
+<td>グレースケール 0.0～1.0 の範囲で指定する</td>
+</tr>
+<tr>
+<td><code>HSV{ 色相, 彩度, 明度 }</code></td>
+<td>色相を 0.0～360.0（下図）、彩度、明度を 0.0～1.0 の範囲で指定する<br><br><img src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/background/6-2.png"></td>
+</tr>
+<tr>
+<td><code>HSV{ 色相 }</code></td>
+<td>色相を 0.0～360.0 の範囲で指定する</td>
+</tr>
+<tr>
+<td><code>ColorF{ U"#77FF00" }</code></td>
+<td>16 進数で色を指定する</td>
+</tr>
+</tbody>
+</table>
+<details class="info">
+<summary>HSV 表色系における色相</summary>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/background/6-2.png" /></p>
+</details>
+<h3 id="11-palette色名-で背景色を指定する">1.1 Palette::色名 で背景色を指定する<a class="headerlink" href="#11-palette色名-で背景色を指定する" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/background/1.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">	</span><span class="c1">// 背景を白色にする</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="12-colorf-赤-緑-青--で背景色を指定する">1.2 ColorF{ 赤, 緑, 青 } で背景色を指定する<a class="headerlink" href="#12-colorf-赤-緑-青--で背景色を指定する" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/background/4.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">	</span><span class="c1">// 背景色を RGB で指定する</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="13-colorf-グレースケール--で背景色を指定する">1.3 ColorF{ グレースケール } で背景色を指定する<a class="headerlink" href="#13-colorf-グレースケール--で背景色を指定する" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">{</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">	</span><span class="c1">// 背景色をグレースケールで指定する</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// ColorF{ 0.8, 0.8, 0.8 } と同じ</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="14-hsv-色相-彩度-明度--で背景色を指定する">1.4 HSV{ 色相, 彩度, 明度 } で背景色を指定する<a class="headerlink" href="#14-hsv-色相-彩度-明度--で背景色を指定する" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">{</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">	</span><span class="c1">// 背景色を HSV で指定する</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mf">240.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="2-座標系">2. 座標系<a class="headerlink" href="#2-座標系" title="Permanent link">&para;</a></h2>
+<p>ウィンドウ内で、背景色を変えられる部分が <strong>画面（シーン）</strong>です。Siv3D はこの領域に文字や図形、画像を表示できます。画面のサイズは、基本の状態では<strong>幅 800 ピクセル</strong>、<strong>高さ 600 ピクセル</strong>です。</p>
+<p>画面上の位置を表す座標系は、最も左上のピクセルが「X 座標 0」「Y 座標 0」を表す (0, 0) です。右に進むと X 座標が大きくなり、下に進むと Y 座標が大きくなります。基本の状態の画面の中心ピクセルの座標は (400, 300) になります。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/circle-rect/1.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">		</span><span class="n">ClearPrint</span><span class="p">();</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">		</span><span class="c1">// 現在のマウスカーソル座標を表示する</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">		</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="3-図形を描く">3. 図形を描く<a class="headerlink" href="#3-図形を描く" title="Permanent link">&para;</a></h2>
+<h3 id="31-円を描く">3.1 円を描く<a class="headerlink" href="#31-円を描く" title="Permanent link">&para;</a></h3>
+<p>Siv3D では、何かを描く命令はメインループの中に記述します。円を描くときは <code>Circle</code> を作成し、その <code>.draw()</code> を呼びます。<code>Circle</code> は <code>Circle{ x, y, r }</code> のように、中心の X 座標、Y 座標、半径を指定して作成します。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/circle-rect/2.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">		</span><span class="c1">// 円を描く</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">();</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">}</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Circle の構造</p>
+<p><code>Circle</code> は次のようなクラスです。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Circle</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">};</span>
+</code></pre></div></p>
+</div>
+<p><code>Circle</code> は、二次元座標を表す <code>Point</code> 型や <code>Vec2</code> 型の値を使って、<code>Circle{ pos, r }</code> のように、2 つの引数から作成することもできます。<code>Cursor::Pos()</code> は現在のマウスカーソルの座標を <code>Point</code> 型で返す関数なので、これを使ってマウスに追随する円を描くことができます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/circle-rect/3.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">{</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">		</span><span class="c1">// マウスに追随する円を描く</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">();</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="p">}</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Point や Vec2 の構造</p>
+<p><code>Point</code> と <code>Vec2</code> は次のようなクラスです。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Point</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">	</span><span class="n">int32</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">	</span><span class="n">int32</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">};</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Vec2</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">{</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">};</span>
+</code></pre></div></p>
+</div>
+<p>図形に色を付けたいときは <code>.draw()</code> 関数の引数に色を渡します。色を指定しなかった場合は白色になります。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/circle-rect/4.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">{</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">();</span><span class="w"> </span><span class="c1">// 色を指定しない場合は白色</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Green</span><span class="p">);</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mf">160.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">700</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mf">160.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>ColorF</code> と <code>HSV</code> は、<strong>不透明度</strong>を指定できます。不透明度は 0.0 から 1.0 の範囲で指定します。</p>
+<p>0.0 は完全に透明、1.0 は完全に不透明で、0.5 のときは背景色と描画色が 50% ずつ混ざった色になります。</p>
+<p>不透明度 <code>a</code> （アルファ）は、<code>ColorF{ r, g, b, a }</code>, <code>ColorF{ gray, a }</code>, <code>HSV{ h, s, v, a }</code>, <code>HSV{ h, a }</code> のように、最後の引数に指定します。不透明度を指定しなかった場合の不透明度は 1.0 です。</p>
+<p><code>Scene::SetBackground()</code> に指定する色については、不透明度は無視されます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/circle-rect/5.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">{</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">		</span><span class="c1">// 中央に白い円を描く</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">();</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">		</span><span class="c1">// 左に半透明の円を描く</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">		</span><span class="c1">// 右に半透明の円を描く</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mf">240.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">		</span><span class="c1">// マウスカーソルの位置に半透明の円を描く</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="32-長方形を描く">3.2 長方形を描く<a class="headerlink" href="#32-長方形を描く" title="Permanent link">&para;</a></h3>
+<p>長方形を描くときは <code>Rect</code> を作成して <code>.draw()</code> します。</p>
+<p><code>Rect{ x, y, w, h }</code> は、左上座標が (x, y), 幅が w, 高さが h の長方形です。</p>
+<p><code>Rect{ x, y, s }</code> は引数を省略したオーバーロードで、左上座標が (x, y), 幅と高さが s の正方形です。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/circle-rect/6.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">{</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">		</span><span class="c1">// 長方形を描く </span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">		</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">();</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">		</span><span class="c1">// 正方形を描く </span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">		</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="p">}</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Rect の構造</p>
+<p><code>Rect</code> は次のようなクラスです。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Rect</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">	</span><span class="n">int32</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">	</span><span class="n">int32</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">	</span><span class="n">int32</span><span class="w"> </span><span class="n">w</span><span class="p">;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">	</span><span class="n">int32</span><span class="w"> </span><span class="n">h</span><span class="p">;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">};</span>
+</code></pre></div></p>
+</div>
+<p>座標や大きさを <code>double</code> 型で扱いたい場合は、<code>Rect</code> の代わりに <code>RectF</code> 使います。</p>
+<p><code>Scene::Time()</code> は、プログラム開始からの経過時間を秒 （<code>double</code> 型）で返します。</p>
+<p>下記のコードでは、長方形の幅 <code>w</code> が毎秒 20.0 のペースで増えていきます。<code>double</code> 型である <code>w</code> に合わせるため、<code>Rect</code> ではなく <code>RectF</code> を使います。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/circle-rect/7.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">{</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">Time</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">20.0</span><span class="p">);</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">		</span><span class="c1">// 長方形を描く </span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">		</span><span class="n">RectF</span><span class="p">{</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">();</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="p">}</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">RectF の構造</p>
+<p><code>RectF</code> は次のようなクラスです。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Rect</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">{</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">w</span><span class="p">;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">h</span><span class="p">;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="p">};</span>
+</code></pre></div></p>
+</div>
+<h3 id="33-円や長方形の枠を描く">3.3 円や長方形の枠を描く<a class="headerlink" href="#33-円や長方形の枠を描く" title="Permanent link">&para;</a></h3>
+<p>円や長方形の枠だけを描きたい場合、<code>.draw()</code> の代わりに <code>.drawFrame(innerThickness, outerThickness, color)</code> を使います。</p>
+<p><code>innerThickness</code> は内側方向への太さ、<code>outerThickness</code> は外側方向への太さを表す <code>double</code> 型の値です。<code>innerThickness</code> と <code>outerThickness</code> には、それぞれ 0.0 以上の値を指定します。</p>
+<p><code>color</code> を省略した場合、<code>.draw()</code> と同様に白色で描画されます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/circle-rect/8.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">{</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">		</span><span class="c1">// 長方形の枠を描く</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">		</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">			</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">		</span><span class="c1">// 長方形の枠を描く</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">		</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="mi">220</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">			</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">		</span><span class="c1">// 長方形の枠を描く</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">		</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">			</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">		</span><span class="c1">// 円の枠を描く</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">		</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="w">			</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="34-長方形のグラデーション">3.4 長方形のグラデーション<a class="headerlink" href="#34-長方形のグラデーション" title="Permanent link">&para;</a></h3>
+<p><code>Rect</code> や <code>RectF</code> を <code>.draw()</code> する際、<code>.draw(Arg::top = 色, Arg::bottom = 色)</code> のように書くことで、上下方向のグラデーションで長方形を描画できます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/circle-rect/9.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">{</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">		</span><span class="c1">// グラデーションで長方形を描く</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">		</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">			</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">Arg</span><span class="o">::</span><span class="n">bottom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>.draw(Arg::left = 色, Arg::right = 色)</code> のように書くことで、左右方向のグラデーションで長方形を描画できます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/circle-rect/10.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">{</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">		</span><span class="c1">// グラデーションで長方形を描く</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">		</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">			</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Arg</span><span class="o">::</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">Arg</span><span class="o">::</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="35-線分を描く">3.5 線分を描く<a class="headerlink" href="#35-線分を描く" title="Permanent link">&para;</a></h3>
+<p><code>Line{ x1, y1, x2, y2 }</code> で線分を作成できます。<code>Line</code> は <code>.draw(太さ, 色)</code> で描画できます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Reputeless/lecture-files/main/sophia/image/14-1.1.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">{</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">		</span><span class="c1">// (100, 100) - (600, 200) を結ぶ太さ 2 の線分を描く</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">		</span><span class="n">Line</span><span class="p">{</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">		</span><span class="c1">// (200, 200) - マウスカーソル を結ぶ太さ 10 の線分を描く</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">		</span><span class="n">Line</span><span class="p">{</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">()</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="36-三角形を描く">3.6 三角形を描く<a class="headerlink" href="#36-三角形を描く" title="Permanent link">&para;</a></h3>
+<p><code>Triangle{ x1, y1, x2, y2, x3, y3 }</code> に時計回りで座標を指定することで三角形を作成できます。<code>Triangle</code> は <code>.draw(色)</code> で描画できます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Reputeless/lecture-files/main/sophia/image/14-1.2.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="p">{</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">		</span><span class="c1">// (100, 100) - (600, 100) - (200, 500) からなる三角形を描く</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">		</span><span class="n">Triangle</span><span class="p">{</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="37-四角形を描く">3.7 四角形を描く<a class="headerlink" href="#37-四角形を描く" title="Permanent link">&para;</a></h3>
+<p><code>Quad{ x1, y1, x2, y2, x3, y3, x4, y4 }</code> に時計回りで座標を指定することで四角形を作成できます。ただし凹の角（180° より大きい角）があってはいけません。長方形を描く場合は <code>Rect</code> や <code>RectF</code> を使ったほうが便利です。<code>Quad</code> は <code>.draw(色)</code> で描画できます。</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Reputeless/lecture-files/main/sophia/image/14-1.3.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="p">{</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">		</span><span class="c1">// (100, 100) - (600, 100) - (500, 500) - (200, 400) からなる三角形を描く</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">		</span><span class="n">Quad</span><span class="p">{</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="38-これ以外の図形">3.8 これ以外の図形<a class="headerlink" href="#38-これ以外の図形" title="Permanent link">&para;</a></h3>
+<p>Siv3D にはこれ以外にも多くの種類の図形を簡単に描画できます。詳しくは <a href="../../tutorial2/shape/" target="_blank">17. 図形描画</a> を参照してください。</p>
+<h2 id="4-模様を描く">4. 模様を描く<a class="headerlink" href="#4-模様を描く" title="Permanent link">&para;</a></h2>
+<p>ループと図形描画を組み合わせると、模様やパターンを簡単に描くことができます。</p>
+<h3 id="41-円を並べる">4.1 円を並べる<a class="headerlink" href="#41-円を並べる" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/pattern/1.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="p">{</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">			</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">			</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="mi">50</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="42-円を縦横に並べる二重ループ">4.2 円を縦横に並べる（二重ループ）<a class="headerlink" href="#42-円を縦横に並べる二重ループ" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/pattern/2.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="p">{</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="c1">// 縦方向</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="c1">// 横方向</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">			</span><span class="p">{</span>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">				</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="w">			</span><span class="p">}</span>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="43-条件によって円の大きさを変える">4.3 条件によって円の大きさを変える<a class="headerlink" href="#43-条件によって円の大きさを変える" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/pattern/3.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="p">{</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">			</span><span class="p">{</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">				</span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">				</span><span class="p">{</span>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">					</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">				</span><span class="p">}</span>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">				</span><span class="k">else</span>
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="w">				</span><span class="p">{</span>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="w">					</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="w">				</span><span class="p">}</span>
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="w">			</span><span class="p">}</span>
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="44-色を変えながら長方形を並べる">4.4 色を変えながら長方形を並べる<a class="headerlink" href="#44-色を変えながら長方形を並べる" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/pattern/5.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="p">{</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">			</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.2</span><span class="p">),</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="45-色を変えながら長方形を並べるhsv">4.5 色を変えながら長方形を並べる（HSV）<a class="headerlink" href="#45-色を変えながら長方形を並べるhsv" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial/pattern/6.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="p">{</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">			</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">80</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">36</span><span class="p">),</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            ページトップへ戻る
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="フッター" >
+        
+          
+          <a href="../quikstart_2/" class="md-footer__link md-footer__link--prev" aria-label="前: 2 コマ目（基本）" rel="prev">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                前
+              </span>
+              <div class="md-ellipsis">
+                2 コマ目（基本）
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../quikstart_4/" class="md-footer__link md-footer__link--next" aria-label="次: 4 コマ目（絵文字と動き）" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                次
+              </span>
+              <div class="md-ellipsis">
+                4 コマ目（絵文字と動き）
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c) 2012 - 2023, Ryo Suzuki<br>Copyright (c) 2012 - 2023, OpenSiv3D Project
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>
