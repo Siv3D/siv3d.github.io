@@ -2745,11 +2745,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#演習" class="md-nav__link">
-    演習
+  <a href="#発展" class="md-nav__link">
+    発展
   </a>
   
-    <nav class="md-nav" aria-label="演習">
+    <nav class="md-nav" aria-label="発展">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2791,6 +2791,26 @@
   
   <span class="md-ellipsis">
     Using Polymorphism
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radar-chart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Radar Chart
   </span>
   
 
@@ -3734,11 +3754,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#演習" class="md-nav__link">
-    演習
+  <a href="#発展" class="md-nav__link">
+    発展
   </a>
   
-    <nav class="md-nav" aria-label="演習">
+    <nav class="md-nav" aria-label="発展">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3793,7 +3813,7 @@
 <td style="text-align: center;"><strong>難易度</strong></td>
 <td style="text-align: center;">入門</td>
 <td style="text-align: center;"><strong>時間</strong></td>
-<td style="text-align: center;">60 分～</td>
+<td style="text-align: center;">30 分～</td>
 </tr>
 </tbody>
 </table>
@@ -4088,7 +4108,7 @@
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/course/calculator/8.png" /></p>
 <ul>
 <li>配列 <code>Array&lt;Button&gt;</code> を使って、より多くのボタンを管理します。</li>
-<li><code>for (auto&amp; button : buttons) { }</code> 内に、各ボタンに対する処理を記述します。</li>
+<li><code>for (const auto&amp; button : buttons) { }</code> 内に、各ボタンに対する処理を記述します。</li>
 <li>ボタンがクリックされた場合は、そのボタンのテキストに応じて、入力式 <code>expression</code> を更新します。</li>
 </ul>
 <details class="note">
@@ -4128,7 +4148,7 @@
 <a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
 <a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="w">	</span><span class="p">{</span>
 <a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="hll"><span class="w">		</span><span class="c1">// 各ボタンについて</span>
-</span><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="hll"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">buttons</span><span class="p">)</span>
+</span><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="hll"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">buttons</span><span class="p">)</span>
 </span><a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="hll"><span class="w">		</span><span class="p">{</span>
 </span><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="hll"><span class="w">			</span><span class="c1">// ボタンの背景を描画する</span>
 </span><a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="hll"><span class="w">			</span><span class="n">button</span><span class="p">.</span><span class="n">rect</span><span class="p">.</span><span class="n">rounded</span><span class="p">(</span><span class="mi">8</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span><span class="w"> </span>
@@ -4232,7 +4252,7 @@
 <a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
 <a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a><span class="w">	</span><span class="p">{</span>
 <a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a><span class="w">		</span><span class="c1">// 各ボタンについて</span>
-<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">buttons</span><span class="p">)</span>
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">buttons</span><span class="p">)</span>
 <a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a><span class="w">		</span><span class="p">{</span>
 <a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a><span class="w">			</span><span class="c1">// ボタンの背景を描画する</span>
 <a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a><span class="w">			</span><span class="n">button</span><span class="p">.</span><span class="n">rect</span><span class="p">.</span><span class="n">rounded</span><span class="p">(</span><span class="mi">8</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span><span class="w"> </span>
@@ -4392,7 +4412,7 @@
 <a id="__codelineno-9-88" name="__codelineno-9-88" href="#__codelineno-9-88"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
 <a id="__codelineno-9-89" name="__codelineno-9-89" href="#__codelineno-9-89"></a><span class="w">	</span><span class="p">{</span>
 <a id="__codelineno-9-90" name="__codelineno-9-90" href="#__codelineno-9-90"></a><span class="w">		</span><span class="c1">// 各ボタンについて</span>
-<a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">buttons</span><span class="p">)</span>
+<a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">buttons</span><span class="p">)</span>
 <a id="__codelineno-9-92" name="__codelineno-9-92" href="#__codelineno-9-92"></a><span class="w">		</span><span class="p">{</span>
 <a id="__codelineno-9-93" name="__codelineno-9-93" href="#__codelineno-9-93"></a><span class="w">			</span><span class="c1">// ボタンの背景を描画する</span>
 <a id="__codelineno-9-94" name="__codelineno-9-94" href="#__codelineno-9-94"></a><span class="w">			</span><span class="n">button</span><span class="p">.</span><span class="n">rect</span><span class="p">.</span><span class="n">rounded</span><span class="p">(</span><span class="mi">8</span><span class="p">).</span><span class="n">draw</span><span class="p">();</span><span class="w"> </span>
@@ -4552,7 +4572,7 @@
 <a id="__codelineno-10-103" name="__codelineno-10-103" href="#__codelineno-10-103"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
 <a id="__codelineno-10-104" name="__codelineno-10-104" href="#__codelineno-10-104"></a><span class="w">	</span><span class="p">{</span>
 <a id="__codelineno-10-105" name="__codelineno-10-105" href="#__codelineno-10-105"></a><span class="w">		</span><span class="c1">// 各ボタンについて</span>
-<a id="__codelineno-10-106" name="__codelineno-10-106" href="#__codelineno-10-106"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">buttons</span><span class="p">)</span>
+<a id="__codelineno-10-106" name="__codelineno-10-106" href="#__codelineno-10-106"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">buttons</span><span class="p">)</span>
 <a id="__codelineno-10-107" name="__codelineno-10-107" href="#__codelineno-10-107"></a><span class="w">		</span><span class="p">{</span>
 <a id="__codelineno-10-108" name="__codelineno-10-108" href="#__codelineno-10-108"></a><span class="w">			</span><span class="c1">// ボタンの背景を描画する</span>
 <a id="__codelineno-10-109" name="__codelineno-10-109" href="#__codelineno-10-109"></a><span class="hll"><span class="w">			</span><span class="n">button</span><span class="p">.</span><span class="n">rect</span><span class="p">.</span><span class="n">rounded</span><span class="p">(</span><span class="mi">8</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">button</span><span class="p">.</span><span class="n">backgroundColor</span><span class="p">);</span>
@@ -4600,7 +4620,7 @@
 <a id="__codelineno-10-151" name="__codelineno-10-151" href="#__codelineno-10-151"></a><span class="p">}</span>
 </code></pre></div>
 </details>
-<h2 id="演習">演習<a class="headerlink" href="#演習" title="Permanent link">&para;</a></h2>
+<h2 id="発展">発展<a class="headerlink" href="#発展" title="Permanent link">&para;</a></h2>
 <p>ここから先は、自分で考えてプログラムを改良してみましょう。</p>
 <h3 id="機能のアイデア">機能のアイデア<a class="headerlink" href="#機能のアイデア" title="Permanent link">&para;</a></h3>
 <ul>
