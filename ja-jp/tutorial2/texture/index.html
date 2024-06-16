@@ -4910,7 +4910,7 @@
 <a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">	</span><span class="p">}</span>
 <a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="p">}</span>
 </code></pre></div>
-<p>不透明度（アルファ値）を使うこともできます。元のテクスチャのピクセル色が <code>ColorF{ sr, sg, sb }</code> で、書き込み先のピクセルの色が <code>ColorF{ dr, dg, db }</code> であるとき、色 <code>ColorF{ r, g, b, a }</code> を乗算すると、描画される色は <code>ColorF{ (sr * a + dr * (1 - a)), (sg * a + dg * (1 - a)), (sb * a + db * (1 - a)) }</code> になります（通常のブレンドモード時）。</p>
+<p>不透明度（アルファ値）を使うこともできます。元のテクスチャのピクセル色が <code>ColorF{ sr, sg, sb }</code> で、書き込み先のピクセルの色が <code>ColorF{ dr, dg, db }</code> であるとき、色 <code>ColorF{ r, g, b, a }</code> を乗算すると、描画される色は <code>ColorF{ (sr * r * a + dr * (1 - a)), (sg  * g * a + dg * (1 - a)), (sb * b * a + db * (1 - a)) }</code> になります（通常のブレンドモード時）。</p>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial2/texture/9b.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
