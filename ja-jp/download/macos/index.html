@@ -4295,7 +4295,7 @@
 <tbody>
 <tr>
 <td>OS</td>
-<td>macOS Big Sur / Monterey / Ventura</td>
+<td>macOS Big Sur / Monterey / Ventura / Sonoma</td>
 </tr>
 <tr>
 <td>CPU</td>
@@ -4334,7 +4334,7 @@
 <tbody>
 <tr>
 <td>OS</td>
-<td>macOS Mojave / Catalina / Big Sur / Monterey / Ventura</td>
+<td>macOS Mojave / Catalina / Big Sur / Monterey / Ventura / Sonoma</td>
 </tr>
 <tr>
 <td>CPU</td>
@@ -4388,7 +4388,12 @@
 </ol>
 <details class="summary">
 <summary>M1 - M3 Mac における Rosetta モードの有効化</summary>
-<p>Xcode で Rosetta オプションが表示されない場合は Product &gt; Destination &gt; Destination Architectures から、Show Rosetta Destinations を選択してください。Xcode 15.3 以降は Product &gt; Destination &gt; Show All Run Destinations を押すことで Rosetta オプションが表示されます。</p>
+<p>Xcode で Rosetta オプションを表示するには、  </p>
+<ul>
+<li>Xcode 15.3 以降では <strong>Product &gt; Destination &gt; Show All Run Destinations</strong> を押します。  </li>
+<li>Xcode 15.2 以前の場合は <strong>Product &gt; Destination &gt; Destination Architectures</strong> から、<strong>Show Rosetta Destinations</strong> を選択します。  </li>
+</ul>
+<p>Rosetta オプションが表示されたら、それを選択します。</p>
 </details>
 <details class="summary">
 <summary>サンプルプログラムを実行するときのファイルアクセス許可のダイアログの回避</summary>

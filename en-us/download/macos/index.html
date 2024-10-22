@@ -3854,7 +3854,7 @@
 <tbody>
 <tr>
 <td>OS</td>
-<td>macOS Big Sur / Monterey / Ventura</td>
+<td>macOS Big Sur / Monterey / Ventura / Sonoma</td>
 </tr>
 <tr>
 <td>CPU</td>
@@ -3893,7 +3893,7 @@
 <tbody>
 <tr>
 <td>OS</td>
-<td>macOS Mojave / Catalina / Big Sur / Monterey / Ventura</td>
+<td>macOS Mojave / Catalina / Big Sur / Monterey / Ventura / Sonoma</td>
 </tr>
 <tr>
 <td>CPU</td>
@@ -3946,8 +3946,13 @@ Due to updates to the compiler, etc., you may not be able to use past versions i
 <li>To exit a running program, press <span class="keys"><kbd class="key-escape">Esc</kbd></span> or close the window.</li>
 </ol>
 <details class="summary">
-<summary>Enabling Rosetta mode on M1 - M3 Mac</summary>
-<p>If the Rosetta option is not displayed in Xcode, select <em>Show Rosetta Destinations</em> from Product &gt; Destination &gt; Destination Architectures. From Xcode 15.3 onwards, the Rosetta option can be displayed by pressing Product &gt; Destination &gt; Show All Run Destinations.</p>
+<summary>Enabling Rosetta Mode on M1 - M3 Macs</summary>
+<p>To display the Rosetta option in Xcode, follow these steps:  </p>
+<ul>
+<li>For <strong>Xcode 15.3 or later</strong>, go to <code>Product &gt; Destination &gt; Show All Run Destinations</code>.  </li>
+<li>For <strong>Xcode 15.2 or earlier</strong>, go to <code>Product &gt; Destination &gt; Destination Architectures</code> and select <strong>Show Rosetta Destinations</strong>.  </li>
+</ul>
+<p>Once the Rosetta option appears, select it.</p>
 </details>
 <details class="summary">
 <summary>Avoiding file access permission dialog when running the sample program</summary>
