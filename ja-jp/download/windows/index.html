@@ -4368,7 +4368,7 @@
 <h1 id="windows-で-siv3d-プログラミングを始める">Windows で Siv3D プログラミングを始める<a class="headerlink" href="#windows-で-siv3d-プログラミングを始める" title="Permanent link">&para;</a></h1>
 <h2 id="1-システム要件">1. システム要件<a class="headerlink" href="#1-システム要件" title="Permanent link">&para;</a></h2>
 <h3 id="11-開発者システム要件">1.1 開発者システム要件<a class="headerlink" href="#11-開発者システム要件" title="Permanent link">&para;</a></h3>
-<p>Windows で Siv3D プログラミングをするのに必要な開発環境は次のとおりです。</p>
+<p>Windows PC での Siv3D プログラミングに必要な開発環境は次のとおりです。</p>
 <table>
 <thead>
 <tr>
@@ -4395,23 +4395,27 @@
 </tr>
 <tr>
 <td>開発環境</td>
-<td>Microsoft Visual C++ 2022 17.9<br>(インストーラ内で「C++ によるデスクトップ開発」を追加インストールしてください)</td>
+<td>Microsoft Visual C++ 2022 17.11<br>（インストーラ内で「C++ によるデスクトップ開発」を追加インストールしてください）</td>
 </tr>
 </tbody>
 </table>
 <details class="summary">
-<summary>Visual Studio のエディションについて</summary>
-<p>Windows 10, Windows 11 のパソコンで Siv3D プログラミングをする場合は<strong>「Visual Studio Community 2022（ビジュアル・スタジオ・コミュニティ 2022）」</strong>を使うのが便利です。これは世界中のプロフェッショナルのソフトウェア開発者が使う「Visual Studio」という統合開発環境の無料版です。学生、個人、少規模の開発であれば、Visual Studio の有料版と同じ機能を無料で使えます。</p>
+<summary>インストールする Visual Studio のエディション</summary>
+<p>Windows で Siv3D プログラミングをする場合、<strong>「Visual Studio Community 2022（ビジュアル・スタジオ・コミュニティ 2022）」</strong>を使うのが便利です。これは世界中のプロのソフトウェア開発者が使う「Visual Studio」という統合開発環境の無料版です。学生や個人の開発であれば、Visual Studio の有料版と同じ機能を無料で使えます。</p>
 </details>
 <details class="summary">
-<summary>Visual Studio のインストールについて</summary>
-<p><a href="https://visualstudio.microsoft.com/ja/downloads/" target="_blank">Visual Studio ダウンロードページ <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span></a> から<strong>「Visual Studio 2022 コミュニティ」</strong>のインストーラをダウンロードし実行します。</p>
-<p>インストーラを実行すると、プログラミング言語や開発ツールを選択する、次のような画面が出てきます。この中から<strong>「C++ によるデスクトップ開発」</strong>を選択します（右側の「インストールの詳細」に表示される項目は Visual Studio のバージョンによって異なるため、気にする必要はありません）。</p>
+<summary>Visual Studio のインストール手順</summary>
+<ul>
+<li><a href="https://visualstudio.microsoft.com/ja/downloads/" target="_blank">Visual Studio ダウンロードページ <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span></a> から<strong>「Visual Studio 2022 コミュニティ」</strong>のインストーラをダウンロードし、実行します。</li>
+<li>インストーラを実行すると、プログラミング言語や開発ツールを選択する、次のような画面が出てきます。この中から<strong>「C++ によるデスクトップ開発」</strong>を選択します（右側の「インストールの詳細」に表示される項目は Visual Studio のバージョンによって異なるため、気にする必要はありません）。</li>
+</ul>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/download/windows/vs_installer_desktop.png" /></p>
-<p>そのまま右下の 「インストール」 ボタンを押せば、C++ プログラミングに必要なツールのインストールが始まります。</p>
+<ul>
+<li>そのまま右下の 「インストール」 ボタンを押せば、C++ プログラミングに必要なツールのインストールが始まります。</li>
+</ul>
 </details>
 <h3 id="12-アプリ動作システム要件">1.2 アプリ動作システム要件<a class="headerlink" href="#12-アプリ動作システム要件" title="Permanent link">&para;</a></h3>
-<p>Windows で Siv3D v0.6.15 を使って開発されたアプリケーションを実行するのに必要な環境は次のとおりです。ゲームやアプリを配布するときの説明書に記載すると良いでしょう。</p>
+<p>Siv3D v0.6.15 を使って開発されたアプリケーションを Windows PC で実行するのに必要な環境は次のとおりです。ゲームやアプリを配布するときの説明書に記載すると良いでしょう。</p>
 <table>
 <thead>
 <tr>
@@ -4443,16 +4447,13 @@
 <li><strong><a href="https://siv3d.jp/downloads/Siv3D/OpenSiv3D_0.6.15_Installer.exe" target="_blank">OpenSiv3D v0.6.15 Installer for Windows Desktop</a></strong> をダウンロードして実行します。</li>
 <li>実行時に「Windows によって PC が保護されました」と表示された場合は、<strong>詳細情報</strong>を押して<strong>実行</strong>を押します。</li>
 </ol>
-<div class="admonition info">
-<p class="admonition-title">インストール後に Windows の再起動を推奨</p>
-<p>インストーラによって設定された環境変数を Visual Studio に確実に反映させるため、インストール後に Windows を再起動することを推奨します。</p>
-</div>
-<details class="warning">
-<summary>どうしても失敗する場合は</summary>
-<p>インストーラの実行に失敗する場合は、このページの「(補足) SDK を手動インストールする」の方法で SDK をインストールしてください。</p>
+<details class="info">
+<summary>管理者権限がない場合</summary>
+<p>管理者権限がなく、インストーラの実行ができない場合、このページ下部の「(補足) SDK を手動インストールする」の方法で SDK をインストールしてください。</p>
 </details>
 <details class="summary">
 <summary>インストーラが自動的に行うこと</summary>
+<p>Siv3D のインストーラは、以下の作業を行います。</p>
 <ul>
 <li>SDK の配置（デフォルトではドキュメントフォルダ）</li>
 <li>SDK を配置したパスへのユーザ環境変数の設定</li>
@@ -4461,14 +4462,14 @@
 </ul>
 </details>
 <details class="summary">
-<summary>インストールした OpenSiv3D SDK を削除するには</summary>
-<p>OpenSiv3D SDK は、通常のアプリケーションと同様、Windows の「設定」からアンインストールします。</p>
+<summary>インストールした SDK を削除するには</summary>
+<p>OpenSiv3D SDK は、通常の Windows アプリケーションと同様、Windows の「設定」からアンインストールします。</p>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/download/windows/uninstall.png" /></p>
 </details>
 <details class="summary">
 <summary>過去のバージョン</summary>
-<p>過去のバージョンの利用は非推奨です。必要な場合に限り、下記からダウンロードしてください。<br />
-コンパイラの更新等により、最新の開発環境では過去のバージョンを利用できないことがあります。古い Siv3D プロジェクトをビルドしたい場合は、そのソースコードを最新版のプロジェクトへ移植するのが良い方法です。</p>
+<p>過去のバージョンの利用は非推奨ですが、必要な場合に限り、下記からダウンロードしてください。</p>
+<p>コンパイラの更新等により、最新の開発環境では過去のバージョンでのビルドに失敗することがあります。古い Siv3D プロジェクトを動かしたい場合は、そのソースコードを最新版のプロジェクトへ移植するのが良い方法です。</p>
 <ul>
 <li><a href="https://siv3d.jp/downloads/Siv3D/OpenSiv3D_0.6.14_Installer.exe" target="_blank">OpenSiv3D v0.6.14 Installer for Windows Desktop</a></li>
 <li><a href="https://siv3d.jp/downloads/Siv3D/OpenSiv3D_0.6.13_Installer.exe" target="_blank">OpenSiv3D v0.6.13 Installer for Windows Desktop</a></li>
@@ -4496,17 +4497,34 @@
 <li>プロジェクト テンプレートの項目から <strong>OpenSiv3D</strong> を選択し、<strong>次へ</strong> を押します。</li>
 <li>プロジェクト名と保存場所を入力し（任意）、<strong>作成</strong> を押します。</li>
 </ol>
+<details class="warning">
+<summary>プロジェクト テンプレートの項目に「OpenSiv3D」が見つからない場合</summary>
+<p>OneDrive が有効化されている最近の Windows PC では「ドキュメント」フォルダが 2 つ存在することがあります。その場合、Visual Studio が参照するドキュメントフォルダと、「Siv3D プロジェクト用の Visual Studio プロジェクトテンプレート」の配置されたドキュメントフォルダが一致せず、Visual Studio がプロジェクトテンプレートを見つけられない問題が発生します。</p>
+<p>まずは、<code>OpenSiv3D_●.●.●.zip</code> という<strong>プロジェクトテンプレートファイル</strong>が、<code>C:\Users\●●●\Documents\Visual Studio 2022\Templates\ProjectTemplates</code> に存在することを確認します。その後、以下の 2 つの解決法のいずれかを選びます。</p>
+<h4 id="解決法-a--visual-studio-が参照するドキュメントフォルダを変更する">解決法 A | Visual Studio が参照するドキュメントフォルダを変更する<a class="headerlink" href="#解決法-a--visual-studio-が参照するドキュメントフォルダを変更する" title="Permanent link">&para;</a></h4>
+<p>Visual Studio を起動し、<strong>ツール</strong> メニューから <strong>オプション</strong> を選択します。<strong>プロジェクトおよびソリューション</strong> &gt; <strong>場所</strong> を選び、<strong>ユーザー プロジェクト テンプレートの場所</strong> を、OneDrive のドキュメントフォルダから、通常のドキュメントフォルダに変更します。</p>
+<ul>
+<li>変更前: <code>C:\Users\●●●\OneDrive\Documents\Visual Studio 2022\Templates\ProjectTemplates</code></li>
+<li>変更後: <code>C:\Users\●●●\Documents\Visual Studio 2022\Templates\ProjectTemplates</code></li>
+</ul>
+<h4 id="解決法-b--プロジェクトテンプレートをvisual-studio-が参照するドキュメントフォルダに移動させる">解決法 B | プロジェクトテンプレートを、Visual Studio が参照するドキュメントフォルダに移動させる<a class="headerlink" href="#解決法-b--プロジェクトテンプレートをvisual-studio-が参照するドキュメントフォルダに移動させる" title="Permanent link">&para;</a></h4>
+<p>「解決法 A」で指している OneDrive のフォルダへ、プロジェクトテンプレートファイルを移動させます。</p>
+<ul>
+<li>移動前: <code>C:\Users\●●●\Documents\Visual Studio 2022\Templates\ProjectTemplates\OpenSiv3D_●.●.●.zip</code></li>
+<li>移動後: <code>C:\Users\●●●\OneDrive\Documents\Visual Studio 2022\Templates\ProjectTemplates\OpenSiv3D_●.●.●.zip</code></li>
+</ul>
+</details>
 <h2 id="4-siv3d-アプリをビルドする">4. Siv3D アプリをビルドする<a class="headerlink" href="#4-siv3d-アプリをビルドする" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/download/msvc.png" /></p>
 <ol>
-<li>プロジェクトを作成すると、サンプルプログラム (Main.cpp) が最初から用意されています。</li>
+<li>プロジェクトを作成すると、サンプルコード（Main.cpp）が最初から用意されています。</li>
 <li><strong>ビルド</strong> メニューからプロジェクトをビルドします。</li>
-<li><strong>デバッグ</strong> メニューの <strong>デバッグの開始</strong> を押すと、ビルドしたプログラムが実行されます。</li>
+<li><strong>デバッグ</strong> メニューの <strong>デバッグの開始</strong> を押すと、ビルドしたプログラムを実行します。</li>
 <li>実行中のプログラムは、<span class="keys"><kbd class="key-escape">Esc</kbd></span> を押すか、ウィンドウを閉じると終了します。</li>
 </ol>
 <details class="warning">
 <summary>「Siv3D.hpp が見つからない」エラーが出る場合</summary>
-<p>インストーラによって設定された Siv3D SDK のインストール先の情報が、Visual Studio に反映されていないのが原因です。Windows を再起動し、再度新しい Siv3D プロジェクトを作成すると解決します。</p>
+<p>インストーラによって設定された Siv3D SDK のインストール先を示す環境変数が、Visual Studio に反映されていないことが原因です。作成したプロジェクトは破棄し、Windows を再起動したのち、再度新しい Siv3D プロジェクトを作成することで解決します。</p>
 </details>
 <h2 id="補足sdk-を手動インストールする">（補足）SDK を手動インストールする<a class="headerlink" href="#補足sdk-を手動インストールする" title="Permanent link">&para;</a></h2>
 <p>OpenSiv3D インストーラが正常に実行されない場合、代わりに手作業で OpenSiv3D をインストールできます。手順は次のとおりです。</p>
