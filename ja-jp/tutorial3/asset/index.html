@@ -4719,7 +4719,7 @@
 </code></pre></div>
 <h2 id="387-アセットの非同期ロード">38.7 アセットの非同期ロード<a class="headerlink" href="#387-アセットの非同期ロード" title="Permanent link">&para;</a></h2>
 <p>各アセットの <code>LoadAsync()</code> を使うと、そのアセットが未ロードである場合に、別スレッドを使ったアセットの非同期ロードを開始します。アセットのロード中にメインスレッドの処理が止まるのを避けたい場合はこの関数を呼びます。</p>
-<p>アセットの非同期ロードが完了したかは <code>IsReady()</code> で取得できます。非同期ロード中にそのアセットの使用または <code>Wait()</code> をすると、ロードが完了するまでメインスレッドの待機が発生します。</p>
+<p>アセットの非同期ロードが完了したかは <code>IsReady()</code> で取得できます。<code>Wait()</code> をすると、ロードが完了するまでメインスレッドの待機を発生させます。非同期ロード中にそのアセットにアクセスすると空のアセットが返ってくることに注意してください。</p>
 <div class="admonition warning">
 <p class="admonition-title">OpenGL バックエンド（macOS と Linux のデフォルト, および Windows で選択した場合）での注意</p>
 <p>OpenGL バックエンド（macOS と Linux のデフォルト, および Windows で選択した場合）では、<code>TextureAsset</code> の非同期ロードが <code>System::Update()</code> 内で完了します。<code>TextureAsset</code> の非同期ロード中は <code>System::Update()</code> の呼び出しを通常通り行ってください。</p>
