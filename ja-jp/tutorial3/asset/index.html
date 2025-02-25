@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://siv3d.github.io/ja-jp/tutorial3/asset/">
       
       
-        <link rel="prev" href="../audio/">
+        <link rel="prev" href="../camera2d/">
       
       
-        <link rel="next" href="../2d-render-state/">
+        <link rel="next" href="../effect/">
       
       
       <link rel="icon" href="../../assets/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>38. アセット管理 - Siv3D</title>
+        <title>50. アセット管理 - Siv3D</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#38-アセット管理" class="md-skip">
+        <a href="#50-アセット管理" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              38. アセット管理
+              50. アセット管理
             
           </span>
         </div>
@@ -279,11 +279,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../learn/" class="md-nav__link">
+      <a href="../../features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Siv3D を学ぶ
+    Siv3D の機能
   </span>
   
 
@@ -299,11 +299,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/" class="md-nav__link">
+      <a href="../../releases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Siv3D の機能
+    リリースノート
   </span>
   
 
@@ -442,43 +442,6 @@
       
   
   
-    
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    チュートリアル
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            チュートリアル
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
   
   
     
@@ -489,24 +452,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    入門チュートリアル 1
+    チュートリアル 1～20 章
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            入門チュートリアル 1
+            チュートリアル 1～20 章
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -538,11 +501,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/basic/" class="md-nav__link">
+      <a href="../../tutorial/samples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    2. Siv3D の基本
+    2. サンプルを試す
   </span>
   
 
@@ -559,11 +522,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/mainloop/" class="md-nav__link">
+      <a href="../../tutorial/basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    3. Main 関数の構成
+    3. Siv3D の基本
   </span>
   
 
@@ -580,11 +543,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/app-basic/" class="md-nav__link">
+      <a href="../../tutorial/main/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    4. アプリケーションの基本操作
+    4. Main 関数とメインループ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. アプリの基本操作
   </span>
   
 
@@ -605,7 +589,7 @@
         
   
   <span class="md-ellipsis">
-    5. 簡易的なデータ表示
+    6. 簡易的な出力
   </span>
   
 
@@ -626,7 +610,7 @@
         
   
   <span class="md-ellipsis">
-    6. 基本的なデータ型
+    7. 基本的な型とクラス
   </span>
   
 
@@ -647,7 +631,7 @@
         
   
   <span class="md-ellipsis">
-    7. 背景の色を変える
+    8. 背景の色を変える
   </span>
   
 
@@ -664,11 +648,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/circle-rect/" class="md-nav__link">
+      <a href="../../tutorial/scene/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    8. 円と長方形を描く
+    9. 画面と座標
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/circle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. 円を描く
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/rect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. 長方形を描く
   </span>
   
 
@@ -689,7 +715,7 @@
         
   
   <span class="md-ellipsis">
-    9. 模様を描く
+    12. 模様を描く
   </span>
   
 
@@ -710,28 +736,7 @@
         
   
   <span class="md-ellipsis">
-    10. 絵文字を描く
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial/text/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    11. テキストを表示する
+    13. 絵文字を描く
   </span>
   
 
@@ -752,7 +757,7 @@
         
   
   <span class="md-ellipsis">
-    12. 変数と動き
+    14. 図形や絵文字を動かす
   </span>
   
 
@@ -769,11 +774,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/keyboard/" class="md-nav__link">
+      <a href="../../tutorial/text/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    13. キーボード入力を扱う
+    15. テキストを表示する
   </span>
   
 
@@ -794,7 +799,7 @@
         
   
   <span class="md-ellipsis">
-    14. マウス入力を扱う
+    16. マウス入力を扱う
   </span>
   
 
@@ -811,11 +816,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/button/" class="md-nav__link">
+      <a href="../../tutorial/keyboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    15. ボタンを作る
+    17. キーボード入力を扱う
   </span>
   
 
@@ -832,11 +837,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/cookie-clicker/" class="md-nav__link">
+      <a href="../../tutorial/random/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    16. クッキークリッカー風のゲームを作る
+    18. 乱数を生成する
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/time/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19. 時間を扱う
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/click/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20. クリックゲーム
   </span>
   
 
@@ -852,10 +899,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -868,24 +914,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    入門チュートリアル 2
+    チュートリアル 21～40 章
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            入門チュートリアル 2
+            チュートリアル 21～40 章
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -896,53 +942,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial2/shape/" class="md-nav__link">
+      <a href="../../tutorial2/utility/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    17. 図形を描く
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial2/motion/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    18. 動きを作る
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial2/string/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    19. 文字列クラス
+    21. 便利な関数
   </span>
   
 
@@ -963,7 +967,7 @@
         
   
   <span class="md-ellipsis">
-    20. 動的配列
+    22. 配列
   </span>
   
 
@@ -980,11 +984,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial2/grid/" class="md-nav__link">
+      <a href="../../tutorial2/shape-array/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    21. 二次元配列
+    23. 図形の配列
   </span>
   
 
@@ -1001,11 +1005,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial2/hash-table/" class="md-nav__link">
+      <a href="../../tutorial2/intersection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    22. ハッシュテーブル
+    24. 図形どうしの交差判定
   </span>
   
 
@@ -1022,11 +1026,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial2/optional/" class="md-nav__link">
+      <a href="../../tutorial2/collect/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    23. 無効値を表現できる型
+    25. アイテム集めゲーム
   </span>
   
 
@@ -1043,11 +1047,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial2/2d-intersection/" class="md-nav__link">
+      <a href="../../tutorial2/shape/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    24. あたり判定
+    26. 図形を描く
   </span>
   
 
@@ -1064,11 +1068,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial2/texture/" class="md-nav__link">
+      <a href="../../tutorial2/shape-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    25. テクスチャを描く
+    27. 図形の操作
   </span>
   
 
@@ -1085,11 +1089,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial2/video/" class="md-nav__link">
+      <a href="../../tutorial2/button/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    26. 動画を描く
+    28. ボタンを作る
   </span>
   
 
@@ -1106,53 +1110,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial2/format/" class="md-nav__link">
+      <a href="../../tutorial2/cookie-clicker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    27. 数値と文字列の変換
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial2/gui/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    28. GUI
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial2/random/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    29. ランダム
+    29. クッキークリッカー
   </span>
   
 
@@ -1173,7 +1135,70 @@
         
   
   <span class="md-ellipsis">
-    30. 日付と時刻、時間
+    30. 時間と動き
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/texture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    31. テクスチャを描く
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    32. 動画を描く
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    33. 文字列クラス
   </span>
   
 
@@ -1194,7 +1219,7 @@
         
   
   <span class="md-ellipsis">
-    31. テキストを表示する
+    34. 文字を描く
   </span>
   
 
@@ -1211,11 +1236,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial2/scene/" class="md-nav__link">
+      <a href="../../tutorial2/optional/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    32. シーンとウィンドウ
+    35. 無効値を表現できる型
   </span>
   
 
@@ -1232,11 +1257,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial2/keyboard/" class="md-nav__link">
+      <a href="../../tutorial2/format/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    33. キーボード入力
+    36. 数値と文字列の変換
   </span>
   
 
@@ -1253,11 +1278,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial2/mouse/" class="md-nav__link">
+      <a href="../../tutorial2/grid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    34. マウス入力
+    37. 二次元配列
   </span>
   
 
@@ -1274,11 +1299,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial2/utility/" class="md-nav__link">
+      <a href="../../tutorial2/gui/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    35. 便利な関数
+    38. GUI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial2/random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    39. ランダム
   </span>
   
 
@@ -1299,7 +1345,7 @@
         
   
   <span class="md-ellipsis">
-    36. インタラクションの実装
+    40. インタラクションの実装
   </span>
   
 
@@ -1315,10 +1361,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
     
@@ -1333,24 +1378,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    入門チュートリアル 3
+    チュートリアル 41～60 章
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            入門チュートリアル 3
+            チュートリアル 41～60 章
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1365,7 +1410,175 @@
         
   
   <span class="md-ellipsis">
-    37. オーディオ再生
+    41. オーディオ再生
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keyboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    42. キーボード入力
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mouse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    43. マウス入力
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    44. シーンとウィンドウ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometry2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    45. 図形の交差判定
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hashset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    46. ハッシュセット
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hashtable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    47. ハッシュテーブル
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2d-render-state/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    48. 2D レンダーステート
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../camera2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    49. 2D 座標変換とカメラ
   </span>
   
 
@@ -1395,7 +1608,7 @@
           
   
   <span class="md-ellipsis">
-    38. アセット管理
+    50. アセット管理
   </span>
   
 
@@ -1406,7 +1619,7 @@
         
   
   <span class="md-ellipsis">
-    38. アセット管理
+    50. アセット管理
   </span>
   
 
@@ -1428,132 +1641,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#381-アセット管理の概要" class="md-nav__link">
+  <a href="#501-アセット管理の概要" class="md-nav__link">
     <span class="md-ellipsis">
-      38.1 アセット管理の概要
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="38.1 アセット管理の概要">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#登録" class="md-nav__link">
-    <span class="md-ellipsis">
-      登録
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ロード" class="md-nav__link">
-    <span class="md-ellipsis">
-      ロード
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#使用" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#リリース" class="md-nav__link">
-    <span class="md-ellipsis">
-      リリース
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#登録解除" class="md-nav__link">
-    <span class="md-ellipsis">
-      登録解除
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#各種操作の関数" class="md-nav__link">
-    <span class="md-ellipsis">
-      各種操作の関数
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#382-texture-アセットのサンプル" class="md-nav__link">
-    <span class="md-ellipsis">
-      38.2 Texture アセットのサンプル
+      50.1 アセット管理の概要
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#383-複雑な-texture-アセットの登録" class="md-nav__link">
+  <a href="#502-texture-アセット" class="md-nav__link">
     <span class="md-ellipsis">
-      38.3 複雑な Texture アセットの登録
+      50.2 Texture アセット
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#384-font-アセットのサンプル" class="md-nav__link">
+  <a href="#503-発展的な-texture-アセット" class="md-nav__link">
     <span class="md-ellipsis">
-      38.4 Font アセットのサンプル
+      50.3 発展的な Texture アセット
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#385-audio-アセットのサンプル" class="md-nav__link">
+  <a href="#504-font-アセット" class="md-nav__link">
     <span class="md-ellipsis">
-      38.5 Audio アセットのサンプル
+      50.4 Font アセット
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#386-アセットの事前ロード" class="md-nav__link">
+  <a href="#505-audio-アセット" class="md-nav__link">
     <span class="md-ellipsis">
-      38.6 アセットの事前ロード
+      50.5 Audio アセット
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#387-アセットの非同期ロード" class="md-nav__link">
+  <a href="#506-事前ロード" class="md-nav__link">
     <span class="md-ellipsis">
-      38.7 アセットの非同期ロード
+      50.6 事前ロード
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#388-アセット一覧の取得とタグ" class="md-nav__link">
+  <a href="#507-非同期ロード" class="md-nav__link">
     <span class="md-ellipsis">
-      38.8 アセット一覧の取得とタグ
+      50.7 非同期ロード
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#508-アセット一覧の取得とタグ" class="md-nav__link">
+    <span class="md-ellipsis">
+      50.8 アセット一覧の取得とタグ
     </span>
   </a>
   
@@ -1575,32 +1728,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../2d-render-state/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    39. 2D レンダーステート
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../effect/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    40. エフェクト
+    51. エフェクト
   </span>
   
 
@@ -1621,7 +1753,7 @@
         
   
   <span class="md-ellipsis">
-    41. レンダーテクスチャ
+    52. レンダーテクスチャ
   </span>
   
 
@@ -1642,7 +1774,7 @@
         
   
   <span class="md-ellipsis">
-    42. ファイルシステム
+    53. ファイルシステム
   </span>
   
 
@@ -1663,7 +1795,7 @@
         
   
   <span class="md-ellipsis">
-    43. テキストファイル
+    54. テキストファイル
   </span>
   
 
@@ -1684,7 +1816,7 @@
         
   
   <span class="md-ellipsis">
-    44. 設定ファイル
+    55. 設定ファイル
   </span>
   
 
@@ -1705,7 +1837,7 @@
         
   
   <span class="md-ellipsis">
-    45. バイナリファイル
+    56. バイナリファイル
   </span>
   
 
@@ -1722,95 +1854,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../file-dialog/" class="md-nav__link">
+      <a href="../resource/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    46. ファイルダイアログ
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dragdrop/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    47. ドラッグ & ドロップ
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../messagebox/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    48. メッセージボックス
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../resource-file/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    49. リソースファイル
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../http-client/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    50. HTTP クライアント
+    57. 埋め込みリソース
   </span>
   
 
@@ -1831,7 +1879,7 @@
         
   
   <span class="md-ellipsis">
-    51. シーン管理
+    58. シーン管理
   </span>
   
 
@@ -1852,154 +1900,7 @@
         
   
   <span class="md-ellipsis">
-    52. ゲームパッド
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../image/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    53. 画像編集
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../wave/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    54. 音声波形
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../microphone/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    55. マイク入力
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../webcam/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    56. Web カメラ
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../geometry2d/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    57. 高度な図形処理
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../profiler/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    58. プロファイラと最適化
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../openai/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    59. OpenAI API
+    59. ゲームパッド
   </span>
   
 
@@ -2036,10 +1937,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -2052,24 +1952,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    入門チュートリアル 4
+    チュートリアル 61～80 章
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            入門チュートリアル 4
+            チュートリアル 61～80 章
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2080,11 +1980,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial4/2d-shader/" class="md-nav__link">
+      <a href="../../tutorial4/file-dialog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    61. 2D カスタムシェーダ
+    61. ファイルダイアログ
   </span>
   
 
@@ -2101,11 +2001,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial4/3d-shape/" class="md-nav__link">
+      <a href="../../tutorial4/http/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    62. 3D 形状を描く
+    62. HTTP クライアント
   </span>
   
 
@@ -2122,11 +2022,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial4/3d-shape-advanced/" class="md-nav__link">
+      <a href="../../tutorial4/image/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    63. 3D 形状を描く（発展）
+    63. 画像処理
   </span>
   
 
@@ -2143,11 +2043,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial4/3d-intersection/" class="md-nav__link">
+      <a href="../../tutorial4/dragdrop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    64. 3D の交差判定
+    64. ドラッグ & ドロップ
   </span>
   
 
@@ -2164,284 +2064,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial4/tcp/" class="md-nav__link">
+      <a href="../../tutorial4/clipboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    65. TCP 通信
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/multiplayer/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    66. マルチプレイヤー
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/serial/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    67. シリアル通信
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/osc/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    68. OSC 通信
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/pipe/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    69. パイプ通信
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/text-to-speech/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    70. 文章の読み上げ
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/qr-code/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    71. QR コード
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/compression/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    72. ファイルの圧縮
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/video-edit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    73. 動画編集
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/pentablet/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    74. ペンタブレット
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/leap/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    75. Leap デバイス
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/navmesh/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    76. ナビメッシュ
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/physics2d/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    77. 2D 物理演算
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorial4/math-parser/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    78. 数式パーサ
+    65. クリップボード
   </span>
   
 
@@ -2462,7 +2089,7 @@
         
   
   <span class="md-ellipsis">
-    79. ユーザ環境の取得
+    66. ユーザ環境の取得
   </span>
   
 
@@ -2479,11 +2106,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial4/addon/" class="md-nav__link">
+      <a href="../../tutorial4/openai/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    80. アドオンを作る
+    67. OpenAI API
   </span>
   
 
@@ -2493,9 +2120,274 @@
 
               
             
-          </ul>
-        </nav>
-      
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/shiritori/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    68. AI 絵しりとり
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/physics2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    69. 2D 物理演算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/microphone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    70. マイクと音声波形
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/webcam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    71. Web カメラ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/serial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    72. シリアル通信
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/osc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    73. OSC 通信
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/tcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    74. TCP 通信
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/multiplayer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    75. マルチプレイヤー
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    76. 非同期処理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/mathparser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    77. 数式パーサー
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/qr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    78. QR コード
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/tts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    79. テキスト読み上げ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial4/performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    80. 効率的な描画
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2522,24 +2414,108 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    サンプル
+    チュートリアル 81～ 章
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            サンプル
+            チュートリアル 81～ 章
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial5/messagebox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    81. メッセージボックス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial5/wip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    今後の更新予定
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    サンプル集
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            サンプル集
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2879,10 +2855,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2893,8 +2869,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             コース
           </label>
@@ -3005,10 +2981,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3019,8 +2995,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             API
           </label>
@@ -3068,10 +3044,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3082,8 +3058,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             記事
           </label>
@@ -3122,27 +3098,6 @@
   
   <span class="md-ellipsis">
     メッセージボックス
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/async/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    非同期処理
   </span>
   
 
@@ -3257,10 +3212,94 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    コミュニティ
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            コミュニティ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コミュニティ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    これまでのイベント
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3271,8 +3310,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
             <span class="md-nav__icon md-icon"></span>
             開発に便利なツール
           </label>
@@ -3369,11 +3408,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/scrapbox/" class="md-nav__link">
+      <a href="../../tools/cosense/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Scrapbox
+    Cosense
   </span>
   
 
@@ -3509,94 +3548,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    コミュニティ
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
-            <span class="md-nav__icon md-icon"></span>
-            コミュニティ
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../community/community/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    コミュニティ
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../community/history/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    これまでのイベント
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
-        
-          
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3607,8 +3562,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
             <span class="md-nav__icon md-icon"></span>
             開発に参加する
           </label>
@@ -3719,346 +3674,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    勉強会
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_13">
-            <span class="md-nav__icon md-icon"></span>
-            勉強会
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/quikstart/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    高速チュートリアル
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/quikstart_1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    1 コマ目（体験）
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/quikstart_2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2 コマ目（基本）
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/quikstart_3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3 コマ目（色と図形）
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/quikstart_4/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4 コマ目（絵文字と動き）
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/quikstart_5/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    5 コマ目（テキストの表示）
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/quikstart_6/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    6 コマ目（キーとマウス）
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/quikstart_7/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    7 コマ目（時間と乱数）
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/quikstart_8/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    8 コマ目（配列と図形の交差）
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/quikstart_9/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    9 コマ目（ゲーム開発）
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/openai/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    生成 AI 活用例
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/polymorphism/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    多態性入門
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/quadwarp/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    奥行型 UI の作成
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../study/boardgame/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3D のボードゲームテンプレート
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
-        
-          
-          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4069,8 +3688,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_14">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
             <span class="md-nav__icon md-icon"></span>
             イベント
           </label>
@@ -4139,10 +3758,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
         
           
-          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4153,8 +3772,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_15">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
             <span class="md-nav__icon md-icon"></span>
             協賛企業の募集
           </label>
@@ -4216,11 +3835,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/" class="md-nav__link">
+      <a href="../../steam/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    リリースノート
+    Steam
   </span>
   
 
@@ -4256,11 +3875,51 @@
   
   
     <li class="md-nav__item">
+      <a href="../../social-contribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    社会貢献
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../acknowledgments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     謝辞
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    お問い合わせ
   </span>
   
 
@@ -4296,132 +3955,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#381-アセット管理の概要" class="md-nav__link">
+  <a href="#501-アセット管理の概要" class="md-nav__link">
     <span class="md-ellipsis">
-      38.1 アセット管理の概要
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="38.1 アセット管理の概要">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#登録" class="md-nav__link">
-    <span class="md-ellipsis">
-      登録
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ロード" class="md-nav__link">
-    <span class="md-ellipsis">
-      ロード
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#使用" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#リリース" class="md-nav__link">
-    <span class="md-ellipsis">
-      リリース
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#登録解除" class="md-nav__link">
-    <span class="md-ellipsis">
-      登録解除
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#各種操作の関数" class="md-nav__link">
-    <span class="md-ellipsis">
-      各種操作の関数
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#382-texture-アセットのサンプル" class="md-nav__link">
-    <span class="md-ellipsis">
-      38.2 Texture アセットのサンプル
+      50.1 アセット管理の概要
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#383-複雑な-texture-アセットの登録" class="md-nav__link">
+  <a href="#502-texture-アセット" class="md-nav__link">
     <span class="md-ellipsis">
-      38.3 複雑な Texture アセットの登録
+      50.2 Texture アセット
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#384-font-アセットのサンプル" class="md-nav__link">
+  <a href="#503-発展的な-texture-アセット" class="md-nav__link">
     <span class="md-ellipsis">
-      38.4 Font アセットのサンプル
+      50.3 発展的な Texture アセット
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#385-audio-アセットのサンプル" class="md-nav__link">
+  <a href="#504-font-アセット" class="md-nav__link">
     <span class="md-ellipsis">
-      38.5 Audio アセットのサンプル
+      50.4 Font アセット
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#386-アセットの事前ロード" class="md-nav__link">
+  <a href="#505-audio-アセット" class="md-nav__link">
     <span class="md-ellipsis">
-      38.6 アセットの事前ロード
+      50.5 Audio アセット
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#387-アセットの非同期ロード" class="md-nav__link">
+  <a href="#506-事前ロード" class="md-nav__link">
     <span class="md-ellipsis">
-      38.7 アセットの非同期ロード
+      50.6 事前ロード
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#388-アセット一覧の取得とタグ" class="md-nav__link">
+  <a href="#507-非同期ロード" class="md-nav__link">
     <span class="md-ellipsis">
-      38.8 アセット一覧の取得とタグ
+      50.7 非同期ロード
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#508-アセット一覧の取得とタグ" class="md-nav__link">
+    <span class="md-ellipsis">
+      50.8 アセット一覧の取得とタグ
     </span>
   </a>
   
@@ -4445,11 +4044,13 @@
   
 
 
-<h1 id="38-アセット管理">38. アセット管理<a class="headerlink" href="#38-アセット管理" title="Permanent link">&para;</a></h1>
+<h1 id="50-アセット管理">50. アセット管理<a class="headerlink" href="#50-アセット管理" title="Permanent link">&para;</a></h1>
 <p>プログラムのあらゆるところから <code>Texture</code>, <code>Font</code>, <code>Audio</code> などのアセットデータにアクセスできる機能を学びます。</p>
-<h2 id="381-アセット管理の概要">38.1 アセット管理の概要<a class="headerlink" href="#381-アセット管理の概要" title="Permanent link">&para;</a></h2>
-<p>Siv3D は <code>Texture</code> や <code>Font</code>, <code>Audio</code> などのアセットのハンドルに名前をつけ、その名前を通してプログラムのどこからでもグローバル変数のようにアクセスできる「アセット管理」の機能を提供しています。</p>
-<p>プログラムでアセット管理を扱う手順は以下の通りです。</p>
+<h2 id="501-アセット管理の概要">50.1 アセット管理の概要<a class="headerlink" href="#501-アセット管理の概要" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Siv3D には <code>Texture</code> や <code>Font</code>, <code>Audio</code> などのアセットのハンドルに名前をつけ、その名前を通してプログラムのどこからでもグローバル変数のようにアクセスできる「アセット管理」の機能があります</li>
+</ul>
+<h3 id="5011-アセット管理を扱う手順">50.1.1 アセット管理を扱う手順<a class="headerlink" href="#5011-アセット管理を扱う手順" title="Permanent link">&para;</a></h3>
 <ol>
 <li>アセットの「<strong>登録 (Register)</strong>」</li>
 <li>アセットの「<strong>ロード (Load)</strong>」（省略可能）</li>
@@ -4457,84 +4058,104 @@
 <li>アセットの「<strong>リリース (Release)</strong>」（省略可能）</li>
 <li>アセットの「<strong>登録解除 (Unregister)</strong>」（省略可能）</li>
 </ol>
-<h3 id="登録">登録<a class="headerlink" href="#登録" title="Permanent link">&para;</a></h3>
-<p>アセットをエンジンに登録します。アセットの種類（テクスチャであるか、オーディオであるかなど）を関数で指定し、アセットに一意の名前をつけ、ファイル名やプロパティなどの情報を登録します。</p>
-<p>特に指定しない限り、この時点ではアセットデータは構築されないので、登録によってメモリの消費量が増えることはありません。</p>
-<h3 id="ロード">ロード<a class="headerlink" href="#ロード" title="Permanent link">&para;</a></h3>
-<p>アセットデータを実際にロードします。アセットの名前を指定すると、エンジンが該当アセットの登録時に与えられたファイル名やプロパティに従って、メモリ上にアセットデータを構築します。指定されたアセットがすでにロードされている場合は何もしません。</p>
-<p>非同期でロードを行うオプションも提供されています。</p>
-<h3 id="使用">使用<a class="headerlink" href="#使用" title="Permanent link">&para;</a></h3>
-<p>アセットの名前を指定して、<code>Texture</code> や <code>Audio</code> を取得し、これを使って、前章までのプログラムのように <code>.draw()</code> したり、<code>.play()</code> したりできます。</p>
-<p>該当アセットが未ロードである場合、このタイミングで自動的にロードを行います。指定されたアセットが登録されていなかった場合は空の <code>Texture</code> や <code>Audio</code> を返します。</p>
-<h3 id="リリース">リリース<a class="headerlink" href="#リリース" title="Permanent link">&para;</a></h3>
-<p>登録情報を残したまま、アセットデータをメモリ上から解放します。リリース後もアセットの登録情報は残っているため、再度ロードしたり、使用したりすることができます。</p>
-<p>一度ロードしたアセットをしばらく使わず、メモリ消費を減らしたい場合にアセットをリリースするとよいでしょう。</p>
-<h3 id="登録解除">登録解除<a class="headerlink" href="#登録解除" title="Permanent link">&para;</a></h3>
-<p>アセットの登録情報と名前をアセット管理から削除します。該当アセットが未リリースである場合、自動的にリリースします。</p>
-<p>アプリケーション終了時には、すべてのアセットが自動でリリースされ登録解除されるため、アセットの登録解除を明示的に行う必要はありません。</p>
-<h3 id="各種操作の関数">各種操作の関数<a class="headerlink" href="#各種操作の関数" title="Permanent link">&para;</a></h3>
+<h3 id="5012-登録">50.1.2 登録<a class="headerlink" href="#5012-登録" title="Permanent link">&para;</a></h3>
+<ul>
+<li>アセットをエンジンに登録します</li>
+<li>アセットの種類（テクスチャであるか、オーディオであるかなど）に応じた関数を呼び出し、アセットに一意の名前をつけ、ファイル名やプロパティなどの情報を登録します</li>
+<li>とくに指定しない限り、この時点ではアセットデータは構築されないため、登録によってメモリの消費量が増えることはありません</li>
+</ul>
+<h3 id="5013-ロード">50.1.3 ロード<a class="headerlink" href="#5013-ロード" title="Permanent link">&para;</a></h3>
+<ul>
+<li>アセットデータを実際にロードします</li>
+<li>アセットの名前を指定し、エンジンが該当アセットの登録時に与えられたファイル名やプロパティに従って、メモリ上にアセットデータを構築します</li>
+<li>指定されたアセットがすでにロードされている場合は何もしません</li>
+<li>非同期でロードを行うオプションも提供されています</li>
+</ul>
+<h3 id="5014-使用">50.1.4 使用<a class="headerlink" href="#5014-使用" title="Permanent link">&para;</a></h3>
+<ul>
+<li>アセットの名前を指定して、<code>Texture</code> や <code>Audio</code> を取得し、これを使って通常どおり <code>.draw()</code> したり、<code>.play()</code> したりします</li>
+<li>該当アセットが未ロードである場合、このタイミングで自動的にロードを行います</li>
+<li>指定されたアセットが登録されていなかった場合や、非同期ロード中である場合、空の <code>Texture</code> や <code>Audio</code> を返します</li>
+</ul>
+<h3 id="5015-リリース">50.1.5 リリース<a class="headerlink" href="#5015-リリース" title="Permanent link">&para;</a></h3>
+<ul>
+<li>登録情報を残したまま、アセットデータをメモリ上から解放します</li>
+<li>リリース後もアセットの登録情報は残っているため、再度ロードしたり、使用したりすることができます</li>
+<li>一度ロードしたアセットをしばらく使わず、メモリ消費を減らしたい場合にアセットをリリースするとよいでしょう</li>
+</ul>
+<h3 id="5016-登録解除">50.1.6 登録解除<a class="headerlink" href="#5016-登録解除" title="Permanent link">&para;</a></h3>
+<ul>
+<li>アセットの登録情報と名前をアセット管理から削除します</li>
+<li>該当アセットが未リリースである場合、自動的にリリースします</li>
+<li>アプリケーション終了時には、すべてのアセットが自動でリリースされ登録解除されるため、登録解除を明示的に行う必要はありません</li>
+</ul>
+<h3 id="5017-各種操作の関数">50.1.7 各種操作の関数<a class="headerlink" href="#5017-各種操作の関数" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>関数</th>
+<th>コード</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Register(name, ...)</code></td>
-<td>アセットを登録します。</td>
+<td>アセットを登録する</td>
 </tr>
 <tr>
 <td><code>IsRegistered(name)</code></td>
-<td>アセットが登録されているかを返します。</td>
+<td>アセットが登録されているかを返す</td>
 </tr>
 <tr>
 <td><code>Load(name)</code></td>
-<td>アセットをロードします。</td>
+<td>アセットをロードする</td>
 </tr>
 <tr>
 <td><code>LoadAsync(name)</code></td>
-<td>アセットの非同期ロードを開始します。</td>
+<td>アセットの非同期ロードを開始する</td>
 </tr>
 <tr>
 <td><code>Wait(name)</code></td>
-<td>アセットの非同期ロードが完了するまで待機します。</td>
+<td>アセットの非同期ロードが完了するまで待機する</td>
 </tr>
 <tr>
 <td><code>IsReady(name)</code></td>
-<td>アセットがロードが（成否にかかわらず）完了しているかを返します。</td>
+<td>アセットがロードが（成否にかかわらず）完了しているかを返す</td>
 </tr>
 <tr>
 <td><code>Release(name)</code></td>
-<td>アセットをリリースします。</td>
+<td>アセットをリリースする</td>
 </tr>
 <tr>
 <td><code>Unregister(name)</code></td>
-<td>アセットを登録解除します。</td>
+<td>アセットを登録解除する</td>
 </tr>
 <tr>
 <td><code>ReleaseAll()</code></td>
-<td>登録されているすべてのアセットをリリースします。</td>
+<td>登録されているすべてのアセットをリリースする</td>
 </tr>
 <tr>
 <td><code>UnregisterAll()</code></td>
-<td>登録されているすべてのアセットを登録解除します。</td>
+<td>登録されているすべてのアセットを登録解除する</td>
 </tr>
 <tr>
 <td><code>Enumerate()</code></td>
-<td>登録されているすべてのアセットの情報一覧を列挙します。</td>
+<td>登録されているすべてのアセットの情報一覧を列挙する</td>
 </tr>
 </tbody>
 </table>
-<h2 id="382-texture-アセットのサンプル">38.2 Texture アセットのサンプル<a class="headerlink" href="#382-texture-アセットのサンプル" title="Permanent link">&para;</a></h2>
-<p>登録済みの Texture アセットは <code>TextureAsset(名前)</code> で取得できます。取得した値は <code>Texture</code> と同じように扱えます。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/asset/2.png" /></p>
+<h2 id="502-texture-アセット">50.2 Texture アセット<a class="headerlink" href="#502-texture-アセット" title="Permanent link">&para;</a></h2>
+<ul>
+<li>アセット管理を通して <code>Texture</code> を扱う場合、<code>TextureAsset::</code> から始まる関数を使います</li>
+<li><code>Texture</code> アセットには <code>TextureAsset(名前)</code> でアクセスします</li>
+<li>次のサンプルコードでは、<code>"Windmill"</code> という名前で <code>example/windmill.png</code> を登録し、<code>"Siv3D-kun"</code> という名前で <code>example/siv3d-kun.png</code> を登録し、<code>"Cat"</code> という名前で絵文字 🐈 を登録します</li>
+</ul>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/2025/tutorial3/asset/2.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Draw</span><span class="p">()</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">{</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">	</span><span class="c1">// アセットを使用する</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">	</span><span class="c1">// Texture アセットを使用する</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">	</span><span class="n">TextureAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Windmill&quot;</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">);</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">	</span><span class="n">TextureAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Siv3D-kun&quot;</span><span class="p">).</span><span class="n">scaled</span><span class="p">(</span><span class="mf">0.8</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">	</span><span class="n">TextureAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Cat&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">);</span>
@@ -4544,7 +4165,7 @@
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">{</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">	</span><span class="c1">// アセットを登録する</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">	</span><span class="c1">// Texture アセットを登録する</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">	</span><span class="n">TextureAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Windmill&quot;</span><span class="p">,</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/windmill.png&quot;</span><span class="p">);</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">	</span><span class="n">TextureAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Siv3D-kun&quot;</span><span class="p">,</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/siv3d-kun.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">TextureDesc</span><span class="o">::</span><span class="n">Mipped</span><span class="p">);</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">	</span><span class="n">TextureAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Cat&quot;</span><span class="p">,</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;🐈&quot;</span><span class="n">_emoji</span><span class="p">);</span>
@@ -4555,10 +4176,18 @@
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">	</span><span class="p">}</span>
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="383-複雑な-texture-アセットの登録">38.3 複雑な Texture アセットの登録<a class="headerlink" href="#383-複雑な-texture-アセットの登録" title="Permanent link">&para;</a></h2>
-<p><code>Image</code> からテクスチャを作成したり、ロード時に前処理を行ったりするような複雑な Texture アセットの登録を行う場合は、<code>TextureAssetData</code> を使います。</p>
-<p>空のテクスチャアセットを作成し、<code>onLoad</code> メンバ変数に、ロード時の処理を記述した <code>bool(TextureAssetData&amp;, const String&amp;)</code> のシグネチャを持つ関数オブジェクトを設定します。この関数オブジェクトは、アセットのロード時に呼び出され、<code>asset.texture</code> にテクスチャを代入することで、アセットデータを構築します。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/asset/3.png" /></p>
+<h2 id="503-発展的な-texture-アセット">50.3 発展的な Texture アセット<a class="headerlink" href="#503-発展的な-texture-アセット" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>Image</code> からテクスチャを作成したり、ロード時に前処理を行ったりするような複雑な Texture アセットの登録を行う場合は、<code>TextureAssetData</code> を使います</li>
+<li>空の <code>TextureAssetData</code> を作成し、<code>onLoad</code> メンバ変数に、ロード時の処理を記述した <code>bool(TextureAssetData&amp; asset, const String&amp;)</code> のシグネチャを持つ関数オブジェクトを設定します</li>
+<li>この関数オブジェクトは、アセットのロード時に自動的に呼び出されます</li>
+<li><code>asset.texture</code> にテクスチャを代入してアセットデータを構築することが求められます</li>
+<li>次のサンプルでは、<code>TextureAssetData</code> を使うことで、プログラムで生成する画像や、ファイルから読み込んだ画像の縮小版をテクスチャとして登録しています<ul>
+<li><code>Image</code> クラスについては、<strong>チュートリアル 63</strong> で詳しく説明します</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/2025/tutorial3/asset/3.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">TextureAssetData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">MakeTextureAssetData1</span><span class="p">()</span>
@@ -4567,17 +4196,17 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">TextureAssetData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">assetData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">TextureAssetData</span><span class="o">&gt;</span><span class="p">();</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">	</span><span class="c1">// ロード時の仕事を設定する</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">	</span><span class="n">assetData</span><span class="o">-&gt;</span><span class="n">onLoad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="n">TextureAssetData</span><span class="o">&amp;</span><span class="w"> </span><span class="n">asset</span><span class="p">,</span><span class="w"> </span><span class="p">[[</span><span class="n">maybe_unused</span><span class="p">]]</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">String</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hint</span><span class="p">)</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">	</span><span class="p">{</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">		</span><span class="c1">// アセットデータにテクスチャを代入する</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">		</span><span class="n">asset</span><span class="p">.</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Texture</span><span class="p">{</span><span class="w"> </span><span class="n">Image</span><span class="p">{</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="w"> </span><span class="p">},</span><span class="w">  </span><span class="n">TextureDesc</span><span class="o">::</span><span class="n">Mipped</span><span class="w"> </span><span class="p">};</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="k">not</span><span class="w"> </span><span class="n">asset</span><span class="p">.</span><span class="n">texture</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">());</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">	</span><span class="p">};</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">	</span><span class="n">assetData</span><span class="o">-&gt;</span><span class="n">onLoad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="n">TextureAssetData</span><span class="o">&amp;</span><span class="w"> </span><span class="n">asset</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">String</span><span class="o">&amp;</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">			</span><span class="c1">// アセットデータにテクスチャを代入する</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">			</span><span class="n">asset</span><span class="p">.</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Texture</span><span class="p">{</span><span class="w"> </span><span class="n">Image</span><span class="p">{</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="w"> </span><span class="p">},</span><span class="w">  </span><span class="n">TextureDesc</span><span class="o">::</span><span class="n">Mipped</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">asset</span><span class="p">.</span><span class="n">texture</span><span class="p">);</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">		</span><span class="p">};</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">assetData</span><span class="p">;</span>
 <a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">}</span>
 <a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">TextureAssetData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">MakeTextureAssetData2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FilePath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">TextureDesc</span><span class="w"> </span><span class="n">textureDesc</span><span class="p">)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">TextureAssetData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">MakeTextureAssetData2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FilePath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TextureDesc</span><span class="w"> </span><span class="n">textureDesc</span><span class="p">)</span>
 <a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">{</span>
 <a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">	</span><span class="c1">// 空のテクスチャアセットデータを作成する</span>
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">TextureAssetData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">assetData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">TextureAssetData</span><span class="o">&gt;</span><span class="p">();</span>
@@ -4589,12 +4218,12 @@
 <a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">	</span><span class="n">assetData</span><span class="o">-&gt;</span><span class="n">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">textureDesc</span><span class="p">;</span>
 <a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
 <a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">	</span><span class="c1">// ロード時の仕事を設定する</span>
-<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">	</span><span class="n">assetData</span><span class="o">-&gt;</span><span class="n">onLoad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="n">TextureAssetData</span><span class="o">&amp;</span><span class="w"> </span><span class="n">asset</span><span class="p">,</span><span class="w"> </span><span class="p">[[</span><span class="n">maybe_unused</span><span class="p">]]</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">String</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hint</span><span class="p">)</span>
-<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">	</span><span class="p">{</span>
-<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">		</span><span class="c1">// 指定されたファイルパスの画像を 0.5 倍に縮小してテクスチャにする</span>
-<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">		</span><span class="n">asset</span><span class="p">.</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Texture</span><span class="p">{</span><span class="w"> </span><span class="n">Image</span><span class="p">{</span><span class="w"> </span><span class="n">asset</span><span class="p">.</span><span class="n">path</span><span class="w"> </span><span class="p">}.</span><span class="n">scaled</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span><span class="w"> </span><span class="n">asset</span><span class="p">.</span><span class="n">desc</span><span class="w"> </span><span class="p">};</span>
-<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="k">not</span><span class="w"> </span><span class="n">asset</span><span class="p">.</span><span class="n">texture</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">());</span>
-<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">	</span><span class="p">};</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">	</span><span class="n">assetData</span><span class="o">-&gt;</span><span class="n">onLoad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="n">TextureAssetData</span><span class="o">&amp;</span><span class="w"> </span><span class="n">asset</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">String</span><span class="o">&amp;</span><span class="p">)</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">			</span><span class="c1">// 指定されたファイルパスの画像を 0.5 倍に縮小してテクスチャにする</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">			</span><span class="n">asset</span><span class="p">.</span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Texture</span><span class="p">{</span><span class="w"> </span><span class="n">Image</span><span class="p">{</span><span class="w"> </span><span class="n">asset</span><span class="p">.</span><span class="n">path</span><span class="w"> </span><span class="p">}.</span><span class="n">scaled</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span><span class="w"> </span><span class="n">asset</span><span class="p">.</span><span class="n">desc</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">asset</span><span class="p">.</span><span class="n">texture</span><span class="p">);</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">		</span><span class="p">};</span>
 <a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>
 <a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">assetData</span><span class="p">;</span>
 <a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="p">}</span>
@@ -4616,17 +4245,20 @@
 <a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="w">	</span><span class="p">}</span>
 <a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="384-font-アセットのサンプル">38.4 Font アセットのサンプル<a class="headerlink" href="#384-font-アセットのサンプル" title="Permanent link">&para;</a></h2>
-<p>登録済みの Font アセットは <code>FontAsset(名前)</code> で取得できます。取得した値は <code>Font</code> と同じように扱えます。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/asset/4.png" /></p>
+<h2 id="504-font-アセット">50.4 Font アセット<a class="headerlink" href="#504-font-アセット" title="Permanent link">&para;</a></h2>
+<ul>
+<li>アセット管理を通して <code>Font</code> を扱う場合、<code>FontAsset::</code> から始まる関数を使います</li>
+<li><code>Font</code> アセットには <code>FontAsset(名前)</code> でアクセスします</li>
+</ul>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/2025/tutorial3/asset/4.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Draw</span><span class="p">()</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">{</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">	</span><span class="c1">// アセットを使用する</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">	</span><span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Title&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;My Game&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">});</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">	</span><span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Menu&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;Play&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="p">});</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">	</span><span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Menu&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;Exit&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">	</span><span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Title&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;My Game&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">	</span><span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Menu&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;Play&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">	</span><span class="n">FontAsset</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Menu&quot;</span><span class="p">)(</span><span class="sa">U</span><span class="s">&quot;Exit&quot;</span><span class="p">).</span><span class="n">drawAt</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="p">});</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
@@ -4634,8 +4266,8 @@
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">	</span><span class="c1">// アセットを登録する</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">	</span><span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Title&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/font/RocknRoll/RocknRollOne-Regular.ttf&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">	</span><span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Menu&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FontMethod</span><span class="o">::</span><span class="n">MSDF</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="n">Typeface</span><span class="o">::</span><span class="n">Medium</span><span class="p">);</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">	</span><span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Title&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FontMethod</span><span class="o">::</span><span class="n">MSDF</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="sa">U</span><span class="s">&quot;example/font/RocknRoll/RocknRollOne-Regular.ttf&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">	</span><span class="n">FontAsset</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;Menu&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FontMethod</span><span class="o">::</span><span class="n">MSDF</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="p">);</span>
 <a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
 <a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
 <a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">	</span><span class="p">{</span>
@@ -4643,8 +4275,11 @@
 <a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">	</span><span class="p">}</span>
 <a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="385-audio-アセットのサンプル">38.5 Audio アセットのサンプル<a class="headerlink" href="#385-audio-アセットのサンプル" title="Permanent link">&para;</a></h2>
-<p>登録済みの Audio アセットは <code>AudioAsset(名前)</code> で取得できます。取得した値は <code>Audio</code> と同じように扱えます。</p>
+<h2 id="505-audio-アセット">50.5 Audio アセット<a class="headerlink" href="#505-audio-アセット" title="Permanent link">&para;</a></h2>
+<ul>
+<li>アセット管理を通して <code>Audio</code> を扱う場合、<code>AudioAsset::</code> から始まる関数を使います</li>
+<li><code>Audio</code> アセットには <code>AudioAsset(名前)</code> でアクセスします</li>
+</ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">PlayPiano</span><span class="p">()</span>
@@ -4684,10 +4319,14 @@
 <a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">	</span><span class="p">}</span>
 <a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="386-アセットの事前ロード">38.6 アセットの事前ロード<a class="headerlink" href="#386-アセットの事前ロード" title="Permanent link">&para;</a></h2>
-<p>各アセットの <code>Load()</code> を使うと、そのアセットが未ロードである場合にロードを即座に行います。ゲームの実行中にアセットのロードが発生してフレームレートが低下するのを防ぎたい場合は、この関数を呼びます。</p>
-<p><code>FontAsset::Load()</code> では、プリロードするテキストを渡すこともできます。アセットのロードが完了しているかは <code>IsReady()</code> で取得できます。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/asset/6.png" /></p>
+<h2 id="506-事前ロード">50.6 事前ロード<a class="headerlink" href="#506-事前ロード" title="Permanent link">&para;</a></h2>
+<ul>
+<li>各アセットの <code>Load()</code> を使うと、そのアセットが未ロードである場合にロードを即座に行います</li>
+<li>ゲームの進行中にアセットのロードを行ってフレーム時間のスパイクが発生するのを防ぎたい場合、この関数を使ってロード画面などで事前にロードを行うことができます</li>
+<li><code>FontAsset::Load()</code> では、プリロードするテキストを渡すこともできます</li>
+<li>アセットのロードが完了しているかは <code>IsReady()</code> で確認できます</li>
+</ul>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/2025/tutorial3/asset/6.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
@@ -4717,13 +4356,25 @@
 <a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">	</span><span class="p">}</span>
 <a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="387-アセットの非同期ロード">38.7 アセットの非同期ロード<a class="headerlink" href="#387-アセットの非同期ロード" title="Permanent link">&para;</a></h2>
-<p>各アセットの <code>LoadAsync()</code> を使うと、そのアセットが未ロードである場合に、別スレッドを使ったアセットの非同期ロードを開始します。アセットのロード中にメインスレッドの処理が止まるのを避けたい場合はこの関数を呼びます。</p>
-<p>アセットの非同期ロードが完了したかは <code>IsReady()</code> で取得できます。<code>Wait()</code> をすると、ロードが完了するまでメインスレッドの待機を発生させます。非同期ロード中にそのアセットにアクセスすると空のアセットが返ってくることに注意してください。</p>
+<h2 id="507-非同期ロード">50.7 非同期ロード<a class="headerlink" href="#507-非同期ロード" title="Permanent link">&para;</a></h2>
+<ul>
+<li>各アセットの <code>LoadAsync()</code> を使うと、そのアセットが未ロードである場合に、別スレッドを使ったアセットの非同期ロードを開始します</li>
+<li>アセットのロード中にメインスレッドの処理が止まるのを避けることができます</li>
+<li>アセットの非同期ロードが完了したかは <code>IsReady()</code> で確認できます</li>
+<li><code>Wait()</code> をすると、ロードが完了するまでメインスレッドの待機を発生させます</li>
+<li>非同期ロード中にそのアセットにアクセスした場合は、空のアセットが返ってきます<ul>
+<li>とくに Audio アセットでは、空のアセットの再生により予期しない音（<strong>チュートリアル 41.7</strong>）を再生してしまうため、注意が必要です</li>
+</ul>
+</li>
+</ul>
 <div class="admonition warning">
-<p class="admonition-title">OpenGL バックエンド（macOS と Linux のデフォルト, および Windows で選択した場合）での注意</p>
-<p>OpenGL バックエンド（macOS と Linux のデフォルト, および Windows で選択した場合）では、<code>TextureAsset</code> の非同期ロードが <code>System::Update()</code> 内で完了します。<code>TextureAsset</code> の非同期ロード中は <code>System::Update()</code> の呼び出しを通常通り行ってください。</p>
+<p class="admonition-title">OpenGL バックエンドでの注意</p>
+<ul>
+<li>OpenGL バックエンド（macOS と Linux のデフォルト, および Windows で選択した場合）では、<code>TextureAsset</code> の非同期ロードが <code>System::Update()</code> 内で進行します</li>
+<li><code>TextureAsset</code> の非同期ロード中は <code>System::Update()</code> の呼び出しを通常どおりの頻度で行ってください</li>
+</ul>
 </div>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/2025/tutorial3/asset/7.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
@@ -4753,10 +4404,12 @@
 <a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">	</span><span class="p">}</span>
 <a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="388-アセット一覧の取得とタグ">38.8 アセット一覧の取得とタグ<a class="headerlink" href="#388-アセット一覧の取得とタグ" title="Permanent link">&para;</a></h2>
-<p><code>Register()</code> では、<code>{ asstName, { assetTag, ... } }</code> によって、アセット名とアセットの<strong>タグ</strong>を指定できます。</p>
-<p>登録されているアセットの一覧を取得する <code>::Enumerate()</code> と組み合わせることで、特定のタグを持つアセットをロード、リリースするなど、アセットの分類が便利になります。</p>
-<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/tutorial3/asset/8.png" /></p>
+<h2 id="508-アセット一覧の取得とタグ">50.8 アセット一覧の取得とタグ<a class="headerlink" href="#508-アセット一覧の取得とタグ" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>Register()</code> では、<code>{ asstName, { assetTag, ... } }</code> によって、アセット名とアセットの<strong>タグ</strong>を登録できます</li>
+<li>登録されているアセットの一覧を取得する <code>::Enumerate()</code> と組み合わせることで、特定のタグを持つアセットをロード、リリースするなど、アセットの管理が便利になります</li>
+</ul>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/2025/tutorial3/asset/8.png" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
@@ -4832,7 +4485,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../audio/" class="md-footer__link md-footer__link--prev" aria-label="前: 37. オーディオ再生">
+          <a href="../camera2d/" class="md-footer__link md-footer__link--prev" aria-label="前: 49. 2D 座標変換とカメラ">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4842,20 +4495,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                37. オーディオ再生
+                49. 2D 座標変換とカメラ
               </div>
             </div>
           </a>
         
         
           
-          <a href="../2d-render-state/" class="md-footer__link md-footer__link--next" aria-label="次: 39. 2D レンダーステート">
+          <a href="../effect/" class="md-footer__link md-footer__link--next" aria-label="次: 51. エフェクト">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                39. 2D レンダーステート
+                51. エフェクト
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -4872,7 +4525,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright (c) 2012 - 2024, Ryo Suzuki<br>Copyright (c) 2012 - 2024, OpenSiv3D Project
+      Copyright (c) 2012 - 2025, Ryo Suzuki<br>Copyright (c) 2012 - 2025, OpenSiv3D Project
     </div>
   
   
