@@ -4048,11 +4048,11 @@
 </ul>
 <h2 id="762-非同期でのアセット作成">76.2 非同期でのアセット作成<a class="headerlink" href="#762-非同期でのアセット作成" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>Texture</code>, <code>Audio</code>, <code>Font</code>, <code>PixelShader</code> などのアセットを非同期で作成する場合、適切な方法は <strong>アセット管理</strong> が提供する非同期 API を利用することです</li>
+<li><code>Texture</code>, <code>Audio</code>, <code>Font</code>, <code>PixelShader</code> などのアセットを非同期で作成する場合、<strong>アセット管理</strong> が提供する非同期 API を利用するのが適切な方法です</li>
 <li>アセットの非同期ロードが完了したかは <code>IsReady()</code> で確認できます</li>
 <li><code>Wait()</code> をすると、ロードが完了するまでメインスレッドの待機を発生させます</li>
 <li>非同期ロード中にそのアセットにアクセスした場合は、空のアセットが返ってきます</li>
-<li>同時に非同期ロードできるアセット数に上限は設けられていません</li>
+<li>同時に非同期ロードできるアセット数に上限はありませんが、メモリやディスクアクセスの負荷を考慮して適切な数に制限することが推奨されます</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">OpenGL バックエンドでの注意</p>
