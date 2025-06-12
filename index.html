@@ -1,43 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Siv3D</title>
-    <script type="text/javascript">
-        function redirectToLanguage() {
-            // ブラウザの言語設定を取得
-            var userLang = navigator.language || navigator.userLanguage; 
-            userLang = userLang.toLowerCase();
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siv3D - Redirecting...</title>
 
-            // 日本語なら日本語ページへ、それ以外は英語ページへリダイレクト
-            if (userLang.includes("ja")) {
-                window.location.href = "https://siv3d.github.io/ja-jp/";
-            } else {
-                window.location.href = "https://siv3d.github.io/en-us/";
-            }
+  <!-- hreflangタグで各言語バージョンを検索エンジンに伝える -->
+  <link rel="alternate" hreflang="ja" href="https://siv3d.github.io/ja-jp/" />
+  <link rel="alternate" hreflang="en" href="https://siv3d.github.io/en-us/" />
+  <link rel="alternate" hreflang="x-default" href="https://siv3d.github.io/en-us/" /> <!-- デフォルトの言語バージョン -->
+
+  <script type="text/javascript">
+    (function() { // 即時実行関数でスコープを限定
+      var userLang = navigator.language || navigator.userLanguage;
+      var targetUrl = "https://siv3d.github.io/en-us/"; // デフォルトは英語ページ
+
+      if (userLang) {
+        userLang = userLang.toLowerCase();
+        if (userLang.startsWith("ja")) { // 'ja'で始まる言語コード（ja, ja-jpなど）
+          targetUrl = "https://siv3d.github.io/ja-jp/";
         }
-        //ページが読み込まれたときに実行される関数
-        window.onload = function() {
-            //要素を非表示にする
-            document.getElementById("redirect_message").style.display = "none";
-            //言語に基づくリダイレクトを行う
-            redirectToLanguage();
-        }
-    </script>
+      }
+      // ページを履歴に残さずにリダイレクト
+      window.location.replace(targetUrl);
+    })();
+  </script>
+  <style>
+    /* JavaScriptが無効な場合や、リダイレクトが非常に遅い場合のフォールバックメッセージ用 */
+    body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 10px 0; }
+  </style>
 </head>
 <body>
-  <div id="redirect_message">
-    <p>If you are not redirected, please use the following links:</p>
+  <!-- このメッセージは主に、JavaScriptリダイレクトが何らかの理由で非常に遅いか、
+       部分的に失敗した場合の最終フォールバックとして表示される可能性があります。
+       通常、JavaScriptが有効であればユーザーはこれを見る前にリダイレクトされます。 -->
+  <div>
+    <p>If you are not redirected automatically, please use the following links:</p>
     <ul>
-      <li><a href="./ja-jp/">Japanese</a></li>
-      <li><a href="./en-us/">English</a></li>
+      <li><a href="https://siv3d.github.io/ja-jp/">日本語 (Japanese)</a></li>
+      <li><a href="https://siv3d.github.io/en-us/">English</a></li>
     </ul>
   </div>
+
   <noscript>
     <!-- JavaScriptが無効な場合のみ表示 -->
     <div>
       <p>It seems JavaScript is disabled in your browser. Please use the following links:</p>
       <ul>
-        <li><a href="https://siv3d.github.io/ja-jp/">Japanese</a></li>
+        <li><a href="https://siv3d.github.io/ja-jp/">日本語 (Japanese)</a></li>
         <li><a href="https://siv3d.github.io/en-us/">English</a></li>
       </ul>
     </div>
