@@ -2833,6 +2833,69 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#12-getting-spline2d-curvature" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Getting Spline2D Curvature
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-linestring-total-length-and-point-at-a-specific-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. LineString Total Length and Point at a Specific Distance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-hausdorff-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Hausdorff Distance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-convex-hull-of-a-point-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Convex Hull of a Point Set
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-extending-a-polygon" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Extending a Polygon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-determining-if-a-vertex-array-is-clockwise" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Determining if a Vertex Array is Clockwise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-automatic-correction-of-invalid-polygon-vertices" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Automatic Correction of Invalid Polygon Vertices
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4433,6 +4496,69 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#12-getting-spline2d-curvature" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Getting Spline2D Curvature
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-linestring-total-length-and-point-at-a-specific-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. LineString Total Length and Point at a Specific Distance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-hausdorff-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Hausdorff Distance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-convex-hull-of-a-point-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Convex Hull of a Point Set
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-extending-a-polygon" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Extending a Polygon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-determining-if-a-vertex-array-is-clockwise" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Determining if a Vertex Array is Clockwise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-automatic-correction-of-invalid-polygon-vertices" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Automatic Correction of Invalid Polygon Vertices
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5225,6 +5351,377 @@
 <a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a><span class="w">		</span><span class="n">points</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 <a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="w">	</span><span class="p">}</span>
 <a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="12-getting-spline2d-curvature">12. Getting Spline2D Curvature<a class="headerlink" href="#12-getting-spline2d-curvature" title="Permanent link">&para;</a></h2>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BMUod9VWbgI?si=iPu3wvIvn3wbTBWs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<details class="memo">
+<summary>Code</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">{</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">	</span><span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="p">);</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.75</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">	</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">points</span><span class="p">;</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">	</span><span class="n">Spline2D</span><span class="w"> </span><span class="n">spline</span><span class="p">;</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">	</span><span class="n">Polygon</span><span class="w"> </span><span class="n">polygon</span><span class="p">;</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">	</span><span class="n">Stopwatch</span><span class="w"> </span><span class="n">stopwatch</span><span class="p">;</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">	</span><span class="n">SplineIndex</span><span class="w"> </span><span class="n">si</span><span class="p">;</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">		</span><span class="c1">// Add a control point</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">			</span><span class="n">points</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">			</span><span class="n">spline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Spline2D</span><span class="p">{</span><span class="w"> </span><span class="n">points</span><span class="p">,</span><span class="w"> </span><span class="n">CloseRing</span><span class="o">::</span><span class="n">Yes</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">			</span><span class="n">polygon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spline</span><span class="p">.</span><span class="n">calculateRoundBuffer</span><span class="p">(</span><span class="mi">24</span><span class="p">);</span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">			</span><span class="n">stopwatch</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">		</span><span class="c1">// Visualize the Bounding Rect of each segment</span>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">spline</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a><span class="w">			</span><span class="k">const</span><span class="w"> </span><span class="n">ColorF</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Colormap01F</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">18.0</span><span class="p">);</span>
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="w">			</span><span class="n">spline</span><span class="p">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="w">				</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="p">})</span>
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="w">				</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="w">		</span><span class="c1">// Display the triangulation for 1 second after adding a point</span>
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stopwatch</span><span class="p">.</span><span class="n">isRunning</span><span class="p">()</span>
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a><span class="w">			</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">stopwatch</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="n">s</span><span class="p">))</span>
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a><span class="w">			</span><span class="n">polygon</span><span class="p">.</span><span class="n">drawWireframe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">stopwatch</span><span class="p">.</span><span class="n">sF</span><span class="p">())</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a><span class="w">			</span><span class="n">polygon</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span><span class="w"> </span><span class="n">stopwatch</span><span class="p">.</span><span class="n">sF</span><span class="p">()</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a><span class="w">		</span><span class="k">else</span>
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a><span class="w">			</span><span class="n">polygon</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.4</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a><span class="w">			</span><span class="c1">// Draw the spline with a color corresponding to its curvature</span>
+<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a><span class="w">			</span><span class="n">spline</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">SplineIndex</span><span class="w"> </span><span class="n">si</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Colormap01F</span><span class="p">(</span><span class="n">spline</span><span class="p">.</span><span class="n">curvature</span><span class="p">(</span><span class="n">si</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>
+<a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a><span class="w">		</span><span class="c1">// Display the control points</span>
+<a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">point</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">points</span><span class="p">)</span>
+<a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a><span class="w">			</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">}.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>
+<a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a><span class="w">		</span><span class="c1">// Draw an object moving along the spline</span>
+<a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">spline</span><span class="p">)</span>
+<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a><span class="w">			</span><span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spline</span><span class="p">.</span><span class="n">advanceWrap</span><span class="p">(</span><span class="n">si</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">400</span><span class="p">));</span>
+<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a><span class="w">			</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="n">spline</span><span class="p">.</span><span class="n">position</span><span class="p">(</span><span class="n">si</span><span class="p">),</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">145</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w"> </span><span class="mf">0.95</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="13-linestring-total-length-and-point-at-a-specific-distance">13. LineString Total Length and Point at a Specific Distance<a class="headerlink" href="#13-linestring-total-length-and-point-at-a-specific-distance" title="Permanent link">&para;</a></h2>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/f18dwkDLApI?si=IuIMLb1nCHDBkwvy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<details class="memo">
+<summary>Code</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">{</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">	</span><span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="p">);</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">	</span><span class="n">LineString</span><span class="w"> </span><span class="n">points</span><span class="p">;</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">	</span><span class="n">Polygon</span><span class="w"> </span><span class="n">polygon</span><span class="p">;</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">	</span><span class="c1">// The distance of the moving object from the starting position</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">distanceFromOrigin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">	</span><span class="c1">// The total length of the LineString</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">			</span><span class="n">points</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">			</span><span class="n">polygon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">calculateRoundBuffer</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">			</span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">calculateLength</span><span class="p">();</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">		</span><span class="n">polygon</span><span class="p">.</span><span class="n">draw</span><span class="p">().</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">		</span><span class="n">points</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.75</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">())</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">length</span><span class="p">)</span>
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="w">			</span><span class="n">distanceFromOrigin</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">Scene</span><span class="o">::</span><span class="n">DeltaTime</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">800</span><span class="p">);</span>
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>
+<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a><span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">length</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">distanceFromOrigin</span><span class="p">)</span>
+<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a><span class="w">			</span><span class="p">{</span>
+<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a><span class="w">				</span><span class="n">distanceFromOrigin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="o">::</span><span class="n">Fmod</span><span class="p">(</span><span class="n">distanceFromOrigin</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">);</span>
+<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a><span class="w">			</span><span class="p">}</span>
+<a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>
+<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a><span class="w">			</span><span class="c1">// The point on the LineString at the specified distance</span>
+<a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a><span class="w">			</span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">calculatePointFromOrigin</span><span class="p">(</span><span class="n">distanceFromOrigin</span><span class="p">);</span>
+<a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a><span class="w">			</span><span class="n">position</span><span class="p">.</span><span class="n">asCircle</span><span class="p">(</span><span class="mi">20</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="14-hausdorff-distance">14. Hausdorff Distance<a class="headerlink" href="#14-hausdorff-distance" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/samples/shapes/14.gif" /></p>
+<details class="memo">
+<summary>Code</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">{</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.96</span><span class="p">,</span><span class="w"> </span><span class="mf">0.92</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Font</span><span class="w"> </span><span class="n">font</span><span class="p">{</span><span class="w"> </span><span class="n">FontMethod</span><span class="o">::</span><span class="n">MSDF</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="n">Typeface</span><span class="o">::</span><span class="n">Heavy</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Polygon</span><span class="w"> </span><span class="n">polygon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Shape2D</span><span class="o">::</span><span class="n">Star</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="n">Scene</span><span class="o">::</span><span class="n">Center</span><span class="p">());</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">LineString</span><span class="w"> </span><span class="n">contour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polygon</span><span class="p">.</span><span class="n">outline</span><span class="p">();</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">	</span><span class="c1">// Use a LineString that goes around the polygon, connecting the start and end points, as a reference</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">	</span><span class="n">LineString</span><span class="w"> </span><span class="n">contourClosed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contour</span><span class="p">;</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">	</span><span class="n">contourClosed</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">contour</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">	</span><span class="c1">// Densify the LineString to improve the calculation accuracy</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">LineString</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contourClosed</span><span class="p">.</span><span class="n">densified</span><span class="p">(</span><span class="mf">10.0</span><span class="p">);</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">	</span><span class="n">LineString</span><span class="w"> </span><span class="n">lines</span><span class="p">;</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="o">::</span><span class="n">Inf</span><span class="p">;</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">		</span><span class="n">contour</span><span class="p">.</span><span class="n">drawClosed</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="w">		</span><span class="n">lines</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">HSV</span><span class="p">{</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.95</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a><span class="w">			</span><span class="n">lines</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="w">			</span><span class="c1">// Hausdorff distance</span>
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="w">			</span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Geometry2D</span><span class="o">::</span><span class="n">HausdorffDistance</span><span class="p">(</span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">lines</span><span class="p">);</span>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MouseR</span><span class="p">.</span><span class="n">pressed</span><span class="p">())</span>
+<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a><span class="w">			</span><span class="n">lines</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a><span class="w">			</span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="o">::</span><span class="n">Inf</span><span class="p">;</span>
+<a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a>
+<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">IsFinite</span><span class="p">(</span><span class="n">distance</span><span class="p">))</span>
+<a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a><span class="w">			</span><span class="n">font</span><span class="p">(</span><span class="sa">U</span><span class="s">&quot;{:.2f}&quot;</span><span class="n">_fmt</span><span class="p">(</span><span class="n">distance</span><span class="p">)).</span><span class="n">draw</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.25</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="15-convex-hull-of-a-point-set">15. Convex Hull of a Point Set<a class="headerlink" href="#15-convex-hull-of-a-point-set" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/samples/shapes/15.gif" /></p>
+<details class="memo">
+<summary>Code</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">{</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">	</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">points</span><span class="p">;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">	</span><span class="n">Polygon</span><span class="w"> </span><span class="n">convexHull</span><span class="p">;</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">			</span><span class="c1">// Add a point</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">			</span><span class="n">points</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">			</span><span class="c1">// Calculate the convex hull</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">			</span><span class="n">convexHull</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Geometry2D</span><span class="o">::</span><span class="n">ConvexHull</span><span class="p">(</span><span class="n">points</span><span class="p">);</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="w">		</span><span class="n">convexHull</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">point</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">points</span><span class="p">)</span>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="w">			</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Seagreen</span><span class="p">);</span>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="16-extending-a-polygon">16. Extending a Polygon<a class="headerlink" href="#16-extending-a-polygon" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/samples/shapes/16.gif" /></p>
+<details class="memo">
+<summary>Code</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">{</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">	</span><span class="n">Polygon</span><span class="w"> </span><span class="n">polygon</span><span class="p">;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="n">Rect</span><span class="w"> </span><span class="n">rect</span><span class="p">{</span><span class="w"> </span><span class="n">Arg</span><span class="o">::</span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">(),</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">			</span><span class="c1">// Add a rect to the polygon</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">			</span><span class="c1">// However, it will fail and return false if the polygon and rect do not connect</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">			</span><span class="n">polygon</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">rect</span><span class="p">);</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">		</span><span class="n">polygon</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">			</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">)</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">			</span><span class="p">.</span><span class="n">drawWireframe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Palette</span><span class="o">::</span><span class="n">White</span><span class="p">);</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">		</span><span class="n">rect</span><span class="p">.</span><span class="n">drawFrame</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Palette</span><span class="o">::</span><span class="n">Skyblue</span><span class="p">);</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="17-determining-if-a-vertex-array-is-clockwise">17. Determining if a Vertex Array is Clockwise<a class="headerlink" href="#17-determining-if-a-vertex-array-is-clockwise" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/samples/shapes/17.png" /></p>
+<details class="memo">
+<summary>Code</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">DrawArrow</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">end</span><span class="p">)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">{</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">	</span><span class="n">Line</span><span class="p">{</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="p">}.</span><span class="n">stretched</span><span class="p">(</span><span class="mi">-10</span><span class="p">)</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">		</span><span class="p">.</span><span class="n">drawArrow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="o">::</span><span class="n">All</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"> </span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.25</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">}</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="p">{</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">	</span><span class="n">Scene</span><span class="o">::</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">ColorF</span><span class="p">{</span><span class="w"> </span><span class="mf">0.96</span><span class="p">,</span><span class="w"> </span><span class="mf">0.98</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">	</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">points</span><span class="p">;</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">		</span><span class="c1">// Add a point with a left-click</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">			</span><span class="n">points</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">		</span><span class="c1">// Remove all points with a right-click</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MouseR</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="w">			</span><span class="n">points</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">isClockwise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Geometry2D</span><span class="o">::</span><span class="n">IsClockwise</span><span class="p">(</span><span class="n">points</span><span class="p">);</span>
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w">		</span><span class="n">ClearPrint</span><span class="p">();</span>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="w">		</span><span class="n">Print</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">isClockwise</span><span class="p">;</span>
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">point</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">points</span><span class="p">)</span>
+<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span class="w">			</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">(</span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a>
+<a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+<a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a><span class="w">			</span><span class="c1">// Draw arrows to always appear clockwise</span>
+<a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a><span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isClockwise</span><span class="p">)</span>
+<a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a><span class="w">			</span><span class="p">{</span>
+<a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a><span class="w">				</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-16-45" name="__codelineno-16-45" href="#__codelineno-16-45"></a><span class="w">				</span><span class="p">{</span>
+<a id="__codelineno-16-46" name="__codelineno-16-46" href="#__codelineno-16-46"></a><span class="w">					</span><span class="n">DrawArrow</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">points</span><span class="p">[(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">()]);</span>
+<a id="__codelineno-16-47" name="__codelineno-16-47" href="#__codelineno-16-47"></a><span class="w">				</span><span class="p">}</span>
+<a id="__codelineno-16-48" name="__codelineno-16-48" href="#__codelineno-16-48"></a><span class="w">			</span><span class="p">}</span>
+<a id="__codelineno-16-49" name="__codelineno-16-49" href="#__codelineno-16-49"></a><span class="w">			</span><span class="k">else</span>
+<a id="__codelineno-16-50" name="__codelineno-16-50" href="#__codelineno-16-50"></a><span class="w">			</span><span class="p">{</span>
+<a id="__codelineno-16-51" name="__codelineno-16-51" href="#__codelineno-16-51"></a><span class="w">				</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-16-52" name="__codelineno-16-52" href="#__codelineno-16-52"></a><span class="w">				</span><span class="p">{</span>
+<a id="__codelineno-16-53" name="__codelineno-16-53" href="#__codelineno-16-53"></a><span class="w">					</span><span class="c1">// Draw arrows in the opposite direction</span>
+<a id="__codelineno-16-54" name="__codelineno-16-54" href="#__codelineno-16-54"></a><span class="w">					</span><span class="n">DrawArrow</span><span class="p">(</span><span class="n">points</span><span class="p">[(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">()],</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<a id="__codelineno-16-55" name="__codelineno-16-55" href="#__codelineno-16-55"></a><span class="w">				</span><span class="p">}</span>
+<a id="__codelineno-16-56" name="__codelineno-16-56" href="#__codelineno-16-56"></a><span class="w">			</span><span class="p">}</span>
+<a id="__codelineno-16-57" name="__codelineno-16-57" href="#__codelineno-16-57"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-16-58" name="__codelineno-16-58" href="#__codelineno-16-58"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-16-59" name="__codelineno-16-59" href="#__codelineno-16-59"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="18-automatic-correction-of-invalid-polygon-vertices">18. Automatic Correction of Invalid Polygon Vertices<a class="headerlink" href="#18-automatic-correction-of-invalid-polygon-vertices" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v7/samples/shapes/18.gif" /></p>
+<details class="memo">
+<summary>Code</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;Siv3D.hpp&gt;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">{</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">	</span><span class="n">Window</span><span class="o">::</span><span class="n">Resize</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="p">);</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">Font</span><span class="w"> </span><span class="n">font</span><span class="p">{</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="n">Typeface</span><span class="o">::</span><span class="n">Bold</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">	</span><span class="c1">// Input vertex sequence</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">	</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Vec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">points</span><span class="p">;</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">	</span><span class="c1">// Array of proper Polygons generated from the vertex sequence</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">	</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Polygon</span><span class="o">&gt;</span><span class="w"> </span><span class="n">solvedPolygons</span><span class="p">;</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="o">::</span><span class="n">Update</span><span class="p">())</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">	</span><span class="p">{</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MouseL</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">			</span><span class="n">points</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Cursor</span><span class="o">::</span><span class="n">Pos</span><span class="p">();</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="w">			</span><span class="c1">// Create proper Polygons from the input vertex sequence</span>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="w">			</span><span class="n">solvedPolygons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Polygon</span><span class="o">::</span><span class="n">Correct</span><span class="p">(</span><span class="n">points</span><span class="p">,</span><span class="w"> </span><span class="p">{});</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="w">		</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MouseR</span><span class="p">.</span><span class="n">down</span><span class="p">())</span>
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="w">			</span><span class="n">points</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a><span class="w">			</span><span class="n">solvedPolygons</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="w">		</span><span class="c1">// Visualize the input vertex sequence</span>
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">point</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Indexed</span><span class="p">(</span><span class="n">points</span><span class="p">))</span>
+<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="w">			</span><span class="n">Circle</span><span class="p">{</span><span class="w"> </span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">}.</span><span class="n">draw</span><span class="p">();</span>
+<a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a><span class="w">			</span><span class="n">Line</span><span class="p">{</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">points</span><span class="p">[(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">()]</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a><span class="w">				</span><span class="p">.</span><span class="n">drawArrow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">Palette</span><span class="o">::</span><span class="n">Orange</span><span class="p">);</span>
+<a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a>
+<a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a><span class="w">		</span><span class="n">font</span><span class="p">(</span><span class="n">points</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a>
+<a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a><span class="w">		</span><span class="c1">// Visualize the Polygon</span>
+<a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a><span class="w">		</span><span class="p">{</span>
+<a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a><span class="w">			</span><span class="k">const</span><span class="w"> </span><span class="n">Transformer2D</span><span class="w"> </span><span class="n">transformer</span><span class="p">{</span><span class="w"> </span><span class="n">Mat3x2</span><span class="o">::</span><span class="n">Translate</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a>
+<a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">solvedPolygon</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Indexed</span><span class="p">(</span><span class="n">solvedPolygons</span><span class="p">))</span>
+<a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a><span class="w">			</span><span class="p">{</span>
+<a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a><span class="w">				</span><span class="k">const</span><span class="w"> </span><span class="n">HSV</span><span class="w"> </span><span class="n">color</span><span class="p">{</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">40.0</span><span class="p">),</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-17-47" name="__codelineno-17-47" href="#__codelineno-17-47"></a><span class="w">				</span><span class="n">solvedPolygon</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+<a id="__codelineno-17-48" name="__codelineno-17-48" href="#__codelineno-17-48"></a>
+<a id="__codelineno-17-49" name="__codelineno-17-49" href="#__codelineno-17-49"></a><span class="w">				</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">outer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solvedPolygon</span><span class="p">.</span><span class="n">outer</span><span class="p">();</span>
+<a id="__codelineno-17-50" name="__codelineno-17-50" href="#__codelineno-17-50"></a>
+<a id="__codelineno-17-51" name="__codelineno-17-51" href="#__codelineno-17-51"></a><span class="w">				</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">point</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Indexed</span><span class="p">(</span><span class="n">outer</span><span class="p">))</span>
+<a id="__codelineno-17-52" name="__codelineno-17-52" href="#__codelineno-17-52"></a><span class="w">				</span><span class="p">{</span>
+<a id="__codelineno-17-53" name="__codelineno-17-53" href="#__codelineno-17-53"></a><span class="w">					</span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="w"> </span><span class="n">begin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outer</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+<a id="__codelineno-17-54" name="__codelineno-17-54" href="#__codelineno-17-54"></a><span class="w">					</span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outer</span><span class="p">[(</span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">outer</span><span class="p">.</span><span class="n">size</span><span class="p">()];</span>
+<a id="__codelineno-17-55" name="__codelineno-17-55" href="#__codelineno-17-55"></a><span class="w">					</span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">begin</span><span class="p">).</span><span class="n">normalized</span><span class="p">();</span>
+<a id="__codelineno-17-56" name="__codelineno-17-56" href="#__codelineno-17-56"></a><span class="w">					</span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">begin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-17-57" name="__codelineno-17-57" href="#__codelineno-17-57"></a><span class="w">					</span><span class="k">const</span><span class="w"> </span><span class="n">Vec2</span><span class="w"> </span><span class="n">oc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">rotated</span><span class="p">(</span><span class="mi">-90</span><span class="n">_deg</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-17-58" name="__codelineno-17-58" href="#__codelineno-17-58"></a><span class="w">					</span><span class="n">Line</span><span class="p">{</span><span class="w"> </span><span class="n">oc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="n">oc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-17-59" name="__codelineno-17-59" href="#__codelineno-17-59"></a><span class="w">					</span><span class="p">.</span><span class="n">drawArrow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">Vec2</span><span class="p">{</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<a id="__codelineno-17-60" name="__codelineno-17-60" href="#__codelineno-17-60"></a><span class="w">				</span><span class="p">}</span>
+<a id="__codelineno-17-61" name="__codelineno-17-61" href="#__codelineno-17-61"></a><span class="w">			</span><span class="p">}</span>
+<a id="__codelineno-17-62" name="__codelineno-17-62" href="#__codelineno-17-62"></a>
+<a id="__codelineno-17-63" name="__codelineno-17-63" href="#__codelineno-17-63"></a><span class="w">			</span><span class="n">font</span><span class="p">(</span><span class="n">solvedPolygons</span><span class="p">).</span><span class="n">draw</span><span class="p">(</span><span class="n">Rect</span><span class="p">{</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-17-64" name="__codelineno-17-64" href="#__codelineno-17-64"></a><span class="w">		</span><span class="p">}</span>
+<a id="__codelineno-17-65" name="__codelineno-17-65" href="#__codelineno-17-65"></a><span class="w">	</span><span class="p">}</span>
+<a id="__codelineno-17-66" name="__codelineno-17-66" href="#__codelineno-17-66"></a><span class="p">}</span>
 </code></pre></div>
 </details>
 
