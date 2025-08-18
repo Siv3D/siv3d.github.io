@@ -4340,6 +4340,9 @@
 <p>Opening <code>WindowsDesktop/OpenSiv3D.sln</code> in the OpenSiv3D project folder obtained in 1.2 with Visual Studio opens a solution containing the Siv3D library main project "Siv3D" and the test app project "Siv3D-Test".</p>
 <p>Build the "Siv3D-Test" project. Since the necessary library files don't exist for the first build, the build of the Siv3D library main project "Siv3D" will automatically start first. Building the library takes several minutes.</p>
 <p>If you get the error <code>error C2039: '​CheckForDuplicateEntries': is not a member of 'Microsoft::WRL::Details'</code> when building the Windows version Siv3D library, it can be resolved by installing a newer Windows 10 SDK (version 10.0.18362.0 or later) using Visual Studio Installer.</p>
+<h3 id="15-optional-overwrite-existing-sdk-files">1.5 (Optional) Overwrite Existing SDK Files<a class="headerlink" href="#15-optional-overwrite-existing-sdk-files" title="Permanent link">&para;</a></h3>
+<p>◆ Use the following steps if you want to use your self-built library from existing or new projects.</p>
+<p>After building Siv3D yourself, <code>Siv3D.lib</code> (Release build) and <code>Siv3D_d.lib</code> (Debug build) are generated. By overwriting the files in your installed OpenSiv3D SDK with these static library files and the headers used for the build (<code>Siv3D/include/</code> folder), you can use your self-built version of Siv3D from existing and new projects. For safety, it is recommended to back up the library and header files before overwriting.</p>
 <h2 id="2-macos">2. macOS<a class="headerlink" href="#2-macos" title="Permanent link">&para;</a></h2>
 <h3 id="21-download-additional-third-party-libraries">2.1 Download Additional Third-Party Libraries<a class="headerlink" href="#21-download-additional-third-party-libraries" title="Permanent link">&para;</a></h3>
 <p>◆ Prepare the C++ library <strong>"Boost"</strong> required for building the Siv3D library itself.</p>
@@ -4361,6 +4364,9 @@
 <h3 id="25-build-siv3d-apps">2.5 Build Siv3D Apps<a class="headerlink" href="#25-build-siv3d-apps" title="Permanent link">&para;</a></h3>
 <p>◆ Build Siv3D test apps with Xcode.</p>
 <p>Next, build the target "Siv3D-Test". There is only one source code file: <code>macOS/Main.cpp</code>. The build takes a few seconds. When the build is complete, <code>Siv3D-Test.app</code> is generated.</p>
+<h3 id="26-optional-overwrite-existing-sdk-files">2.6 (Optional) Overwrite Existing SDK Files<a class="headerlink" href="#26-optional-overwrite-existing-sdk-files" title="Permanent link">&para;</a></h3>
+<p>◆ Use the following steps if you want to use your self-built library from existing or new projects.</p>
+<p>After building Siv3D yourself, the static library <code>libSiv3D.a</code> is generated. By overwriting the files in your installed OpenSiv3D SDK with this static library and the headers used for the build (<code>Siv3D/include/</code> folder), you can use your self-built version of Siv3D from existing and new projects. For safety, it is recommended to back up the library and header files before overwriting.</p>
 <h2 id="3-linux">3. Linux<a class="headerlink" href="#3-linux" title="Permanent link">&para;</a></h2>
 <p>The normal setup procedure is the custom build procedure.</p>
 

@@ -4340,6 +4340,9 @@
 <p>1.2 で入手した OpenSiv3D プロジェクトのフォルダ内の <code>WindowsDesktop/OpenSiv3D.sln</code> を Visual Studio で開くと、Siv3D ライブラリ本体のプロジェクト「Siv3D」と、テスト用のアプリのプロジェクト「Siv3D-Test」を含むソリューションが開きます。</p>
 <p>「Siv3D-Test」プロジェクトをビルドします。初回のビルドでは必要なライブラリファイルが存在しないため、先に自動的に Siv3D のライブラリ本体のプロジェクト「Siv3D」のビルドが始まります。ライブラリのビルドには数分かかります。</p>
 <p>Windows 版の Siv3D ライブラリビルドで <code>error C2039: '​CheckForDuplicateEntries': is not a member of 'Microsoft::WRL::Details'</code> というエラーが出た場合、Visual Studio Installer を使って新しい Windows 10 SDK (バージョン 10.0.18362.0 以降) をインストールすることで解決します。</p>
+<h3 id="15-オプション既存の-sdk-ファイルを上書きする">1.5 （オプション）既存の SDK ファイルを上書きする<a class="headerlink" href="#15-オプション既存の-sdk-ファイルを上書きする" title="Permanent link">&para;</a></h3>
+<p>◆ ここからは、自前ビルドしたライブラリを既存・新規プロジェクトから利用したい場合の手順です。</p>
+<p>Siv3D を自前ビルドすると、<code>Siv3D.lib</code>（Release ビルド）および <code>Siv3D_d.lib</code>（Debug ビルド）が生成されます。これらの静的ライブラリファイルと、ビルドに使ったヘッダ (<code>Siv3D/include/</code> フォルダ) で、インストール済みの OpenSiv3D SDK 内のファイルを上書きすると、自前ビルド版の Siv3D を既存・新規プロジェクトから利用できます。念のため、上書きする前にライブラリファイルやヘッダファイルのバックアップを取っておくことをおすすめします。</p>
 <h2 id="2-macos-の場合">2. macOS の場合<a class="headerlink" href="#2-macos-の場合" title="Permanent link">&para;</a></h2>
 <h3 id="21-追加のサードパーティライブラリをダウンロードする">2.1 追加のサードパーティ・ライブラリをダウンロードする<a class="headerlink" href="#21-追加のサードパーティライブラリをダウンロードする" title="Permanent link">&para;</a></h3>
 <p>◆ Siv3D のライブラリ本体のビルドに必要な C++ ライブラリ<strong>「Boost」</strong>を準備します。</p>
@@ -4361,6 +4364,9 @@
 <h3 id="25-siv3d-アプリをビルドする">2.5 Siv3D アプリをビルドする<a class="headerlink" href="#25-siv3d-アプリをビルドする" title="Permanent link">&para;</a></h3>
 <p>◆ Xcode で Siv3D のテストアプリをビルドします。</p>
 <p>次に「Siv3D-Test」という Target をビルドします。ソースコードは 1 つだけで、<code>macOS/Main.cpp</code> です。ビルドには数秒かかります。ビルドが完了すると <code>Siv3D-Test.app</code> が生成されます。</p>
+<h3 id="26-オプション既存の-sdk-ファイルを上書きする">2.6 （オプション）既存の SDK ファイルを上書きする<a class="headerlink" href="#26-オプション既存の-sdk-ファイルを上書きする" title="Permanent link">&para;</a></h3>
+<p>◆ ここからは、自前ビルドしたライブラリを既存・新規プロジェクトから利用したい場合の手順です。</p>
+<p>Siv3D を自前ビルドすると、<code>Siv3D.a</code> が生成されます。この静的ライブラリファイルと、ビルドに使ったヘッダ (<code>Siv3D/include/</code> フォルダ)  で、インストール済みの OpenSiv3D SDK 内のファイルを上書きすると、自前ビルド版の Siv3D を既存・新規プロジェクトから利用できます。念のため、上書きする前にライブラリファイルやヘッダファイルのバックアップを取っておくことをおすすめします。</p>
 <h2 id="3-linux-の場合">3. Linux の場合<a class="headerlink" href="#3-linux-の場合" title="Permanent link">&para;</a></h2>
 <p>通常のセットアップ手順が、自前ビルドの手順になります。</p>
 
