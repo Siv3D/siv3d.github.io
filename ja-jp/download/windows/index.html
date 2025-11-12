@@ -4399,14 +4399,14 @@
 </tr>
 <tr>
 <td>開発環境</td>
-<td><strong>Microsoft Visual C++ 2022 17.13 以降</strong><br>（インストーラ内で「C++ によるデスクトップ開発」を追加インストールしてください）</td>
+<td><strong>Microsoft Visual C++ 2022 17.14</strong> または <strong>Microsoft Visual C++ 2026</strong><br>（インストーラ内で「C++ によるデスクトップ開発」を追加インストールしてください）</td>
 </tr>
 </tbody>
 </table>
 <details class="summary">
 <summary>インストールする Visual Studio のエディション</summary>
 <ul>
-<li>Windows で Siv3D プログラミングをする場合、<strong>「Visual Studio Community 2022（ビジュアル・スタジオ・コミュニティ 2022）」</strong>を使うのが便利です</li>
+<li>Windows で Siv3D プログラミングをする場合、<strong>「Visual Studio Community 2022 / 2026（ビジュアル・スタジオ・コミュニティ 2022 / 2026）」</strong>を使うのが便利です</li>
 <li>これは世界中のプロのソフトウェア開発者が使う「Visual Studio」という統合開発環境の無料版です</li>
 <li>学生や個人の開発であれば、Visual Studio の有料版と同じ機能を無料で使えます</li>
 </ul>
@@ -4414,7 +4414,7 @@
 <details class="summary">
 <summary>Visual Studio のインストール手順</summary>
 <ul>
-<li><a href="https://visualstudio.microsoft.com/ja/downloads/" target="_blank">Visual Studio ダウンロードページ <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span></a> から<strong>「Visual Studio 2022 コミュニティ」</strong>のインストーラをダウンロードし、実行します</li>
+<li><a href="https://visualstudio.microsoft.com/ja/downloads/" target="_blank">Visual Studio ダウンロードページ <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span></a> から<strong>「Visual Studio 2026 コミュニティ」</strong>のインストーラをダウンロードし、実行します</li>
 <li>インストーラを実行すると、プログラミング言語や開発ツールを選択する、次のような画面が出てきます。この中から<strong>「C++ によるデスクトップ開発」</strong>を選択します（右側の「インストールの詳細」に表示される項目は Visual Studio のバージョンによって異なるため、気にする必要はありません）</li>
 </ul>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/download/windows/vs_installer_desktop.png" /></p>
@@ -4436,7 +4436,7 @@
 <tbody>
 <tr>
 <td>OS</td>
-<td>Windows 7 SP1 (64-bit) / Windows 8.1 (64-bit) / Windows 10 (64-bit) /  Windows 11</td>
+<td>Windows 8.1 (64-bit) / Windows 10 (64-bit) /  Windows 11</td>
 </tr>
 <tr>
 <td>CPU</td>
@@ -4469,7 +4469,11 @@
 <li>Siv3D のインストーラは、以下を自動で行います：<ul>
 <li>SDK の配置（デフォルトではドキュメントフォルダ）</li>
 <li>SDK を配置したパスへのユーザ環境変数の設定</li>
-<li>Siv3D プロジェクト用の Visual Studio プロジェクトテンプレートのコピー (通常は <code>ドキュメント/Visual Studio 2022/Templates/ProjectTemplates/</code>)</li>
+<li>Siv3D プロジェクト用の Visual Studio プロジェクトテンプレートのコピー<ul>
+<li><code>ドキュメント/Visual Studio 2022/Templates/ProjectTemplates/OpenSiv3D_0.x.xx.zip</code>（Visual Studio 2022 の場合）</li>
+<li><code>ドキュメント/Visual Studio 18/Templates/ProjectTemplates/OpenSiv3D_0.x.xx.zip</code>（Visual Studio 2026 の場合）</li>
+</ul>
+</li>
 <li>アンインストーラの登録</li>
 </ul>
 </li>
@@ -4517,8 +4521,9 @@
 <details class="warning">
 <summary>プロジェクト テンプレートの項目に「OpenSiv3D」が見つからない場合</summary>
 <ul>
+<li>Visual Studio 2026 の場合、下記の「2022」を「18」に読み替えてください</li>
 <li>OneDrive を有効化した Windows PC では「ドキュメント」フォルダが 2 つ存在することがあります</li>
-<li>その場合、Visual Studio が参照するドキュメントフォルダと、「Siv3D プロジェクト用の Visual Studio プロジェクトテンプレート」の配置されたドキュメントフォルダが一致せず、Visual Studio がプロジェクトテンプレートを見つけられない問題が発生します</li>
+<li>その場合、Visual Studio が参照するドキュメントフォルダと、「Siv3D プロジェクト用の Visual Studio プロジェクトテンプレート」の配置されたドキュメントフォルダが一致せず、Visual Studio がプロジェクトテンプレートを見つけられない問題が発生することがあります</li>
 <li>まずは、<code>OpenSiv3D_●.●.●.zip</code> という<strong>プロジェクトテンプレートファイル</strong>が、<code>C:\Users\●●●\Documents\Visual Studio 2022\Templates\ProjectTemplates</code> に存在することを確認します</li>
 <li>その後、以下の 2 つの解決法のいずれかを選びます</li>
 </ul>

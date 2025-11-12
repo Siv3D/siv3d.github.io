@@ -4399,14 +4399,14 @@
 </tr>
 <tr>
 <td>Development Environment</td>
-<td><strong>Microsoft Visual C++ 2022 17.13 or later</strong><br>(Please install the "Desktop development with C++" workload)</td>
+<td><strong>Microsoft Visual C++ 2022 17.14</strong> or <strong>Microsoft Visual C++ 2026</strong><br>(Please install the "Desktop development with C++" workload)</td>
 </tr>
 </tbody>
 </table>
 <details class="summary">
 <summary>Which Visual Studio Edition to Install</summary>
 <ul>
-<li>For Siv3D programming on Windows, we recommend using <strong>"Visual Studio Community 2022"</strong>.</li>
+<li>For Siv3D programming on Windows, we recommend using <strong>"Visual Studio Community 2022 / 2026"</strong>.</li>
 <li>This is the free version of "Visual Studio," an integrated development environment used by professional software developers worldwide.</li>
 <li>For students and individual developers, it offers the same features as the paid editions of Visual Studio for free.</li>
 </ul>
@@ -4414,7 +4414,7 @@
 <details class="summary">
 <summary>Visual Studio Installation Steps</summary>
 <ul>
-<li>Download the installer for <strong>"Visual Studio 2022 Community"</strong> from the <a href="https://visualstudio.microsoft.com/ja/downloads/" target="_blank">Visual Studio download page <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span></a> and run it.</li>
+<li>Download the installer for <strong>"Visual Studio 2026 Community"</strong> from the <a href="https://visualstudio.microsoft.com/ja/downloads/" target="_blank">Visual Studio download page <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg></span></a> and run it.</li>
 <li>When you run the installer, a screen for selecting workloads (sets of tools) will appear. Select <strong>"Desktop development with C++"</strong>. (The individual components shown on the right under "Installation details" may vary depending on your Visual Studio version; you don't need to worry about them.)</li>
 </ul>
 <p><img alt="" src="https://raw.githubusercontent.com/Siv3D/siv3d.site.resource/main/v6/download/windows/vs_installer_desktop.png" /></p>
@@ -4436,7 +4436,7 @@
 <tbody>
 <tr>
 <td>OS</td>
-<td>Windows 7 SP1 (64-bit) / Windows 8.1 (64-bit) / Windows 10 (64-bit) / Windows 11</td>
+<td>Windows 8.1 (64-bit) / Windows 10 (64-bit) / Windows 11</td>
 </tr>
 <tr>
 <td>CPU</td>
@@ -4469,7 +4469,11 @@
 <li>The Siv3D installer automatically performs the following actions:<ul>
 <li>Places the SDK files (in the Documents folder by default).</li>
 <li>Sets a user environment variable to the path where the SDK is located.</li>
-<li>Copies the Siv3D Visual Studio project template (usually to <code>Documents\Visual Studio 2022\Templates\ProjectTemplates\</code>).</li>
+<li>Copies the Siv3D Visual Studio project templat<ul>
+<li><code>Documents\Visual Studio 2022\Templates\ProjectTemplates\OpenSiv3D_0.x.xx.zip</code> (for Visual Studio 2022)</li>
+<li><code>Documents\Visual Studio 18\Templates\ProjectTemplates\OpenSiv3D_0.x.xx.zip</code> (for Visual Studio 2026)</li>
+</ul>
+</li>
 <li>Registers an uninstaller.</li>
 </ul>
 </li>
@@ -4517,6 +4521,7 @@
 <details class="warning">
 <summary>If you can't find 'OpenSiv3D' in the project templates</summary>
 <ul>
+<li>If you are using Visual Studio 2026, please replace "2022" with "18".</li>
 <li>On Windows PCs with OneDrive enabled, there can sometimes be two "Documents" folders.</li>
 <li>If this happens, the Documents folder that Visual Studio uses might not be the same one where the Siv3D project template was installed, causing Visual Studio to not find the template.</li>
 <li>First, verify that the project template file, <code>OpenSiv3D_vX.X.X.zip</code>, exists in <code>C:\Users\YourUsername\Documents\Visual Studio 2022\Templates\ProjectTemplates</code>.</li>
